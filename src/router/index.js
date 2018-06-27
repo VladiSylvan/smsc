@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LoginPage from '@/components/auth/Login'
 import RegisterPage from '@/components/auth/Register'
+import Dashboard from '@/components/auth/Dashboard'
 
 Vue.use(Router)
 
@@ -16,5 +17,10 @@ export default new Router({
         path: '/register',
         name: 'Register',
         component: RegisterPage
+    },
+    {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: Dashboard
     }]
 })
