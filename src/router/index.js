@@ -3,6 +3,11 @@ import Router from 'vue-router'
 import LoginPage from '@/components/auth/Login'
 import RegisterPage from '@/components/auth/Register'
 import Dashboard from '@/components/auth/Dashboard'
+import VueCharts from 'vue-chartjs'
+import { Bar, Line } from 'vue-chartjs'
+
+import CommitChart from '@/components/auth/CommitChart'
+import BarChart from '@/components/auth/BarChart'
 
 Vue.use(Router)
 

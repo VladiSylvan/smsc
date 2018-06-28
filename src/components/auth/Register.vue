@@ -27,13 +27,13 @@
                         </div>
                         <div class="col-md-3">
                           <label>Country</label>
-                          <select name="Country" class="country" v-model="user.country">
+                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.country">
                             <option value="Luxembourg">Luxembourg</option>
                           </select>
                         </div>
                         <div class="col-md-3">
                           <label id="state">State</label>
-                          <select name="State" class="state" v-model="user.state">
+                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="state" v-model="user.state">
                             <option value="Nebraska">Nebraska</option>
                           </select>
                         </div>
@@ -107,8 +107,6 @@ export default {
       -webkit-appearance: none;
       -moz-appearance: none;
       background: transparent;
-      background-image: url("/Down.svg") white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
-      background-image: url("/Down.svg") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
       background-repeat: no-repeat;
       background-position-x: 100%;
       background-position-y: 5px;

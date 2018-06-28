@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 require('./assets/grid.css')
-require('./assets/fonts/circular/style.css') 
+require('./assets/fonts/circular/style.css')
 
 Vue.config.productionTip = false
 
