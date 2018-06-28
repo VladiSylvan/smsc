@@ -135,7 +135,7 @@ export default {
         margin-bottom: 30px;
     }
     input[type="text"], input[type="password"]{
-        width: 335px;
+        width: 100%;
         height: 40px;
         border: 1px solid #EDEEF3;
         border-radius: 4px;
@@ -222,7 +222,6 @@ export default {
         margin-left: 10px;
     }
     label{
-        width: 335px;
     	color: #000000;	font-family: "Circular Std Book";
         font-size: 12px;
         font-weight: 300;
