@@ -107,7 +107,7 @@
           <div class="chart-box">
             <img src="@/assets/Icon/Arrow/Up.svg">
           </div>
-          <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
+          <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
         </div>
         <div class="chart-3">
           <div class="chart-3-title">
@@ -134,6 +134,7 @@
 <script>
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
+import BarChart2 from '@/components/auth/BarChart2'
 export default {
     data () {
         return {
@@ -145,7 +146,8 @@ export default {
     },
     components:{
       CommitChart,
-      BarChart
+      BarChart,
+      BarChart2
     },
     methods:{
         sendForm(){
@@ -157,11 +159,12 @@ export default {
 <style>
 .main{
   width: 1140px;
-  height: 964px;
   display: inline-block;
   vertical-align: top;
-  margin-left: 300px;
-  margin-top: -964px;
+  float: left;
+}
+.container{
+  width: 1440px;
 }
 .chart-1{
   height: 360px;
@@ -233,7 +236,7 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-top: 5px;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 .chart-3-title{
   height: 30px;
@@ -251,13 +254,12 @@ export default {
 }
 .chart-3#second{
   margin-top: 5px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .side#active svg g{
   fill: white;
 }
 .navigation{
-    width: 1440px;
     height: 60px;
     background-color: #FFFFFF;
 }
@@ -382,10 +384,11 @@ select{
     margin-top: 10px;
 }
 .sidebar {
-	height: 964px;
+	height: 100vh;
 	width: 300px;
 	background-color: #F0F1FA;
   display: inline-block;
+  float: left;
 }
 .side{
   height: 40px;
