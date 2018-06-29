@@ -26,15 +26,7 @@ export default {
           borderWidth: 1,
           pointBorderColor: 'white',
           backgroundColor: this.gradient,
-          data: [0, 100, 2000, 12000, 30000, 35000, 21000, 13000],
-          options: {
-                  legend: {
-                      display: false,
-                      labels: {
-                          fontSize: 6
-                      }
-                  }
-          }
+          data: [0, 100, 2000, 12000, 30000, 35000, 21000, 13000]
         },
         {
           label: 'GitHub Commits',

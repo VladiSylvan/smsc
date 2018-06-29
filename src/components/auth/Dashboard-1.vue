@@ -128,64 +128,50 @@
       </div>
       </transition>
       <div class="main">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="chart-1">
-              <div class="chart-1-title">
-                Leads and Sales
-              </div>
-              <div class="chart-box">
-                <img src="@/assets/Icon/Arrow/Up.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="789" :height="273"></commit-chart>
-            </div>
+        <div class="chart-1">
+          <div class="chart-1-title">
+            Leads and Sales
           </div>
-          <div class="col-md-2">
-            <div class="chart-2">
-              <div class="chart-2-title">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img src="@/assets/Icon/Arrow/Up.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
+          <div class="chart-box">
+            <img src="@/assets/Icon/Arrow/Up.svg">
           </div>
-          <div class="col-md-2">
-            <div class="chart-2">
-              <div class="chart-2-title">
-                Activity
-              </div>
-              <div class="chart-box">
-                <img src="@/assets/Icon/Arrow/Up.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
+          <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="789" :height="273"></commit-chart>
+        </div>
+        <div class="chart-2">
+          <div class="chart-2-title">
+            Visits
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="chart-3">
-                <div class="chart-3-title">
-                  Resellers
-                </div>
-                <div class="chart-box">
-                  <img src="@/assets/Icon/Arrow/Up.svg">
-                </div>
-                <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="226.22"></commit-chart>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="chart-3" id="second">
-                <div class="chart-3-title">
-                  Companies
-                </div>
-                <div class="chart-box">
-                  <img src="@/assets/Icon/Arrow/Up.svg">
-                </div>
-                <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="201.71"></commit-chart>
-              </div>
-            </div>
+          <div class="chart-box">
+            <img src="@/assets/Icon/Arrow/Up.svg">
           </div>
+          <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
+        </div>
+        <div class="chart-2" id="second">
+          <div class="chart-2-title">
+            Activity
+          </div>
+          <div class="chart-box">
+            <img src="@/assets/Icon/Arrow/Up.svg">
+          </div>
+          <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
+        </div>
+        <div class="chart-3">
+          <div class="chart-3-title">
+            Resellers
+          </div>
+          <div class="chart-box">
+            <img src="@/assets/Icon/Arrow/Up.svg">
+          </div>
+          <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="226.22"></commit-chart>
+        </div>
+        <div class="chart-3" id="second">
+          <div class="chart-3-title">
+            Companies
+          </div>
+          <div class="chart-box">
+            <img src="@/assets/Icon/Arrow/Up.svg">
+          </div>
+          <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="201.71"></commit-chart>
         </div>
       </div>
     </div>
@@ -228,9 +214,6 @@ export default {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-.col-md-6{
-  width: 45.83%;
-}
 .user{
   display: inline-block;
   vertical-align: top;
@@ -243,7 +226,6 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-left: 355px;
-  z-index: 99999;
 }
 .username-popup {
 	color: #51A3F3;
@@ -364,7 +346,7 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 15px;
 }
 .chart-2-title{
   height: 30px;
@@ -380,6 +362,10 @@ export default {
   margin-left: 15px;
   margin-bottom: 10px;
 }
+.chart-2#second{
+  margin-top: -170px;
+  margin-left: 860px;
+}
 .chart-3{
   height: 300px;
   width: 540px;
@@ -388,8 +374,8 @@ export default {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
   display: inline-block;
   vertical-align: top;
-  margin-top: 20px;
-  margin-left: 35px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 .chart-3-title{
   height: 30px;
@@ -406,7 +392,7 @@ export default {
   margin-bottom: 10px;
 }
 .chart-3#second{
-  margin-top: 20px;
+  margin-top: 5px;
   margin-left: 15px;
 }
 .side#active svg g{
