@@ -204,7 +204,7 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .chart-2-title{
   height: 30px;
@@ -222,7 +222,7 @@ export default {
 }
 .chart-2#second{
   margin-top: -170px;
-  margin-left: 855px;
+  margin-left: 860px;
 }
 .chart-3{
   height: 300px;
@@ -233,7 +233,7 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-top: 5px;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 .chart-3-title{
   height: 30px;
@@ -259,6 +259,7 @@ export default {
 .navigation{
     width: 1440px;
     height: 60px;
+    background-color: #FFFFFF;
 }
 .head-logo{
     display: inline-block;
