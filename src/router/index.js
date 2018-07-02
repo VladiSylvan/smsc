@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import LoginPage from '@/components/auth/Login'
 import RegisterPage from '@/components/auth/Register'
 import Dashboard from '@/components/auth/Dashboard'
+import Reporting from '@/components/auth/Reporting'
+import Product from '@/components/auth/Product'
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
 
@@ -27,5 +29,15 @@ export default new Router({
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard
+    },
+    {
+        path: '/reporting',
+        name: 'Reporting',
+        component: Reporting
+    },
+    {
+        path: '/product',
+        name: 'Product',
+        component: Product
     }]
 })

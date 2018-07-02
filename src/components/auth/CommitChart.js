@@ -38,6 +38,10 @@ export default {
           data: [0,100,20000,37000,25000,20000,11000,5000]
         }
       ]
-    })
+    }, {
+         legend: { //hides the legend
+            display: false,
+         }
+      })
   }
 }

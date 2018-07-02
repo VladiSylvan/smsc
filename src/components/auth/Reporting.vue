@@ -8,13 +8,7 @@
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
-          <div class="title">Dashboard</div>
-          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="System" class="system" v-model="user.system">
-            <option value="Overall system">Overall system</option>
-          </select>
-          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Days" class="days" v-model="user.days">
-            <option value="Last 30 days">Last 30 days</option>
-          </select>
+          <div class="title">Reporting</div>
         </div>
         <div v-if="!popup" v-on:click="popup = !popup" class="user">
           <div class="username">Linnie Weaver</div>
@@ -61,32 +55,33 @@
       </nav>
       <transition name="fade">
       <div v-bind:class="{'sidebar-hide': !show}" class="sidebar">
-        <div v-bind:class="{'side-hide': !show}" id="active" class="side">
+        <div class="side">
           <router-link :to="{ name: 'Dashboard'}">
+            <img class="image-box" src="@/assets/Icon/Dashboard.svg">
+            <span v-if="show" id="side-link">Dashboard</span>
+          </router-link>
+        </div>
+        <div v-bind:class="{'side-hide': !show}" id="active" class="side">
+          <router-link :to="{ name: 'Reporting'}">
             <div class="image-box">
               <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <title>Icon / Dashboard</title>
+                  <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+                  <title>Icon / Reporting</title>
                   <desc>Created with Sketch.</desc>
                   <defs>
-                      <path d="M24.7133515,13.5075766 L15.4490463,5.20674095 C15.1919891,4.97649025 14.8079564,4.97649025 14.5509537,5.20674095 L5.2866485,13.5075766 C5.00376022,13.7610585 4.97542234,14.2010585 5.22337875,14.4903621 C5.47133515,14.7794986 5.90179837,14.8085237 6.18468665,14.5549861 L6.90201635,13.912312 L6.90201635,24.2696379 C6.90201635,24.6542061 7.20697548,24.9660167 7.58321526,24.9660167 L12.7457766,24.9660167 L17.2542234,24.9660167 L22.4167302,24.9660167 C22.79297,24.9660167 23.0979292,24.6542061 23.0979292,24.2696379 L23.0979292,13.9123677 L23.8152589,14.5550975 C23.9445777,14.6708635 24.1046866,14.7277994 24.2639782,14.7277994 C24.453406,14.7277994 24.6418529,14.6475209 24.7765123,14.4904178 C25.0246322,14.2010585 24.9962943,13.7611142 24.7133515,13.5075766 Z M13.4269755,23.5733148 L13.4269755,17.8366574 L16.57297,17.8366574 L16.57297,23.5733148 L13.4269755,23.5733148 Z M21.7356403,12.6969916 L21.7356403,23.5732591 L17.9355313,23.5732591 L17.9355313,17.1402786 C17.9355313,16.7557103 17.6304632,16.4438997 17.2543324,16.4438997 L12.7458856,16.4438997 C12.3697003,16.4438997 12.0646866,16.7557103 12.0646866,17.1402786 L12.0646866,23.5733148 L8.26446866,23.5733148 L8.26446866,12.6969916 C8.26446866,12.6952089 8.26425068,12.6935376 8.26425068,12.6918106 L15,6.65643454 L21.7358583,12.6917549 C21.7359128,12.6935933 21.7356403,12.6952089 21.7356403,12.6969916 Z M13.4741144,11.5592201 C13.4741144,11.943844 13.7790736,12.2555989 14.1553134,12.2555989 L15.8446866,12.2555989 C16.2208719,12.2555989 16.5258856,11.943844 16.5258856,11.5592201 C16.5258856,11.1745961 16.2208719,10.8628412 15.8446866,10.8628412 L14.1553134,10.8628412 C13.7791281,10.8628412 13.4741144,11.1745961 13.4741144,11.5592201 Z" id="path-1"></path>
+                      <path d="M24.3333333,22.6234595 L7.1656,22.6234595 L9.95824,16.9509189 L12.8546667,18.8602162 C13.03872,18.9815676 13.2700267,19.0032973 13.47296,18.9181081 C13.6759467,18.8331351 13.8245333,18.6521622 13.8701867,18.4344865 L15.0018133,13.0466486 L18.1837867,14.6959459 C18.4528,14.8354595 18.78064,14.7740541 18.9827733,14.5463784 L21.6315733,11.5637297 L21.71488,12.467027 C21.7470933,12.8172432 22.0377067,13.0799459 22.37792,13.0799459 C22.3986667,13.0799459 22.4196267,13.078973 22.4406933,13.076973 C22.8073067,13.0422703 23.0766933,12.712973 23.0425067,12.3414054 L22.8059733,9.774 C22.7716267,9.40243243 22.4470933,9.12924324 22.0802133,9.16405405 L19.5470933,9.40367568 C19.1805333,9.43837838 18.91104,9.76767568 18.9452267,10.1391892 C18.9796267,10.5107568 19.3035733,10.7838919 19.67104,10.7491351 L20.6428267,10.6571892 L18.33472,13.2562703 L14.8345067,11.442 C14.6498667,11.3462162 14.43168,11.3431351 14.24448,11.4334595 C14.0571733,11.5237838 13.92208,11.6972973 13.87888,11.9029189 L12.7682667,17.1910811 L10.0589333,15.4051351 C9.89962667,15.3001081 9.70362667,15.2689189 9.52037333,15.3195676 C9.33701333,15.3701081 9.18368,15.4975135 9.09893333,15.6697838 L6.33333333,21.2874054 L6.33333333,6.70086486 C6.33333333,6.32767568 6.03482667,6.02518919 5.66666667,6.02518919 C5.29850667,6.02518919 5,6.32767568 5,6.70086486 L5,23.2991351 C5,23.6722703 5.29850667,23.9748108 5.66666667,23.9748108 L24.3333333,23.9748108 C24.70144,23.9748108 25,23.6722703 25,23.2991351 C25,22.926 24.70144,22.6234595 24.3333333,22.6234595 Z" id="path-1"></path>
                   </defs>
-                  <g id="Icon-/-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Icon-/-Reporting" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <mask id="mask-2" fill="white">
                           <use xlink:href="#path-1"></use>
                       </mask>
-                      <g id="Combined-Shape" fill-rule="nonzero"></g>
-                      <g id="Color-/-Dark-4" mask="url(#mask-2)" fill="#55616E">
+                      <g id="Shape" fill-rule="nonzero"></g>
+                      <g id="Color-/-Dark-4" mask="url(#mask-2)" fill="white">
                           <rect id="Rectangle" x="0" y="0" width="30" height="30"></rect>
                       </g>
                   </g>
               </svg>
-          </div>
-          <span v-if="show" id="side-link">Dashboard</span>
-          </router-link>
-        </div>
-        <div class="side">
-          <router-link :to="{ name: 'Reporting'}">
-            <img class="image-box" src="@/assets/Icon/Reporting.svg">
+            </div>
             <span v-if="show" id="side-link">Reporting</span>
           </router-link>
         </div>
@@ -135,20 +130,124 @@
       </transition>
       <div class="main">
         <div class="row">
-          <div class="col-md-8">
-            <div class="chart-1">
-              <div class="chart-1-title">
-                Leads and Sales
+          <div class="col-md-6">
+            <div class="chart-1-reporting">
+              <div class="chart-1-title-reporting">
+                Resellers
               </div>
               <div class="chart-box">
                 <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
               </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="789" :height="273"></commit-chart>
+              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
+              <input id="search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
+              <button type="submit">Filter</button>
+              <div class="info">
+                <span class="info-title">
+                  Resellers
+                </span>
+                <span class="info-title">
+                  Date
+                </span>
+                <span class="info-title">
+                  Status
+                </span>
+              </div>
+              <div class="info">
+                <span class="info-content">
+                  Nellie Ferguson
+                </span>
+                <span class="info-content">
+                  29 Apr 2018
+                </span>
+                <span class="info-content">
+                  <div class="active">Active</div>
+                </span>
+              </div>
+              <div class="info">
+                <span class="info-content">
+                  Lou Haynes
+                </span>
+                <span class="info-content">
+                  06 Nov 2018
+                </span>
+                <span class="info-content">
+                  <div class="not-active">Not Active</div>
+                </span>
+              </div>
+              <div class="info">
+                <span class="info-content">
+                  Nellie Ferguson
+                </span>
+                <span class="info-content">
+                  29 Apr 2018
+                </span>
+                <span class="info-content">
+                  <div class="active">Active</div>
+                </span>
+              </div>
+              <div class="info">
+                <span class="info-content">
+                  Nellie Ferguson
+                </span>
+                <span class="info-content">
+                  29 Apr 2018
+                </span>
+                <span class="info-content">
+                  <div class="active">Active</div>
+                </span>
+              </div>
+              <div class="info">
+                <span class="info-content">
+                  Lou Haynes
+                </span>
+                <span class="info-content">
+                  06 Nov 2018
+                </span>
+                <span class="info-content">
+                  <div class="not-active">Not Active</div>
+                </span>
+              </div>
+              <div class="info">
+                <span class="info-content">
+                  Nellie Ferguson
+                </span>
+                <span class="info-content">
+                  29 Apr 2018
+                </span>
+                <span class="info-content">
+                  <div class="active">Active</div>
+                </span>
+              </div>
+              <div class="info">
+                <span class="info-content">
+                  Lou Haynes
+                </span>
+                <span class="info-content">
+                  06 Nov 2018
+                </span>
+                <span class="info-content">
+                  <div class="not-active">Not Active</div>
+                </span>
+              </div>
+              <div class="info">
+                <span class="info-content">
+                  Nellie Ferguson
+                </span>
+                <span class="info-content">
+                  29 Apr 2018
+                </span>
+                <span class="info-content">
+                  <div class="active">Active</div>
+                </span>
+              </div>
+              <div class="show-more">
+                <a href="#" id="show-more">Show more</a>
+              </div>
             </div>
           </div>
-          <div class="col-md-2">
-            <div class="chart-2">
-              <div class="chart-2-title">
+          <div class="col-md-3">
+            <div class="chart-2-reporting">
+              <div class="chart-2-title-reporting">
                 Visits
               </div>
               <div class="chart-box">
@@ -157,39 +256,48 @@
               <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
             </div>
           </div>
-          <div class="col-md-2">
-            <div class="chart-2">
-              <div class="chart-2-title">
+          <div class="col-md-3">
+            <div class="chart-2-reporting" id="second">
+              <div class="chart-2-title-reporting">
+                Activity
+              </div>
+              <div class="chart-box">
+              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+              </div>
+              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="chart-3-reporting">
+              <div class="chart-3-title-reporting">
+                Companies
+              </div>
+              <div class="chart-box">
+                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+              </div>
+              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="chart-2-reporting">
+              <div class="chart-2-title-reporting">
+                Visits
+              </div>
+              <div class="chart-box">
+                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+              </div>
+              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="chart-2-reporting" id="second">
+              <div class="chart-2-title-reporting">
                 Activity
               </div>
               <div class="chart-box">
                 <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
               </div>
               <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="chart-3">
-                <div class="chart-3-title">
-                  Resellers
-                </div>
-                <div class="chart-box">
-                  <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-                </div>
-                <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="226.22"></commit-chart>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="chart-3" id="second">
-                <div class="chart-3-title">
-                  Companies
-                </div>
-                <div class="chart-box">
-                  <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-                </div>
-                <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="201.71"></commit-chart>
-              </div>
             </div>
           </div>
         </div>
@@ -228,6 +336,118 @@ export default {
 }
 </script>
 <style>
+.info{
+  height: 37px;
+  width: 510px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+  margin-left: 15px;
+}
+.info-title{
+  width: 155px;
+  float: left;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  margin-left: 15px;
+  margin-top: 11px;
+}
+.info-content{
+  width: 155px;
+  float: left;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+.active{
+  box-sizing: border-box;
+  height: 24px;
+  width: 59px;
+  border: 2px solid #FFFFFF;
+  border-radius: 100px;
+  background-color: #24E2B8;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  padding-top: 2px;
+}
+.not-active{
+  box-sizing: border-box;
+  height: 24px;
+  width: 85px;
+  border: 2px solid #FFFFFF;
+  border-radius: 100px;
+  background-color: #D2305B;
+  color: #FFFFFF;
+  font-family: "SF Pro Text";
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  padding-top: 2px;
+}
+.show-more{
+  text-align: center;
+  margin-top: 5px;
+}
+a#show-more{
+  	height: 15px;
+    width: 69px;
+    color: #51A3F3;
+    font-family: "SF Pro Text";
+    font-size: 13px;
+    line-height: 15px;
+    text-decoration: none;
+}
+.side a{
+  text-decoration: none;
+  color: #55616E;
+}
+.side#active a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+input[type="text"]{
+  width: 377px;
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: 5px;
+  height: 40px !important;
+  padding-left: 40px;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  margin-left: 13px;
+}
+input[type="text"]#search{
+  height: 36px !important;
+}
+button{
+  	height: 36px;
+    width: 80px;
+    border: 1px
+    solid #BDBFD8;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    font-family: "Helvetica Neue";
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 10px;
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
 }
@@ -236,6 +456,9 @@ export default {
 }
 .col-md-6{
   width: 45.83%;
+}
+.col-md-3{
+  width: 20.8%;
 }
 .user{
   display: inline-block;
@@ -336,9 +559,9 @@ export default {
 .container{
   width: 1440px;
 }
-.chart-1{
-  height: 360px;
-  width: 820px;
+.chart-1-reporting{
+  height: 774px;
+  width: 540px;
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
@@ -347,9 +570,34 @@ export default {
   margin-top: 20px;
   margin-left: 20px;
 }
-.chart-1-title{
+.chart-1-title-reporting{
   height: 30px;
-  width: 760px;
+  width: 480px;
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+.chart-3-reporting{
+  height: 360px;
+  width: 540px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.chart-3-title-reporting{
+  height: 30px;
+  width: 480px;
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -368,7 +616,7 @@ export default {
   vertical-align: top;
   margin-top: 15px;
 }
-.chart-2{
+.chart-2-reporting{
   height: 170px;
   width: 260px;
   border-radius: 4px;
@@ -377,10 +625,13 @@ export default {
   display: inline-block;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 15px;
   position: relative;
 }
-.chart-2-title{
+.chart-2-reporting#second{
+  margin-left: 20px;
+}
+.chart-2-title-reporting{
   height: 30px;
   width: 200px;
   color: #000000;
@@ -393,35 +644,6 @@ export default {
   margin-top: 15px;
   margin-left: 15px;
   margin-bottom: 10px;
-}
-.chart-3{
-  height: 300px;
-  width: 540px;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 35px;
-}
-.chart-3-title{
-  height: 30px;
-  width: 480px;
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3#second{
-  margin-top: 20px;
-  margin-left: 15px;
 }
 .side#active svg g{
   fill: white;
@@ -474,56 +696,6 @@ export default {
   display: inline-block;
   width: 300px;
   float: left;
-}
-.system{
-    width: 180px !important;
-    height: 40px !important;
-    border: 1px solid #EDEEF3;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 10px 15px;
-    font-size: 14px;
-    line-height: 25px;
-    font-family: "Helvetica Neue";
-    color: #55616E;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-.days{
-    width: 210px !important;
-    height: 40px !important;
-    border: 1px solid #EDEEF3;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 10px 15px;
-    font-size: 14px;
-    line-height: 25px;
-    font-family: "Helvetica Neue";
-    color: #55616E;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 10px;
-}
-select{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
-  height: 40px !important;
 }
 .username {
 	color: #55616E;
@@ -578,14 +750,6 @@ select{
   color: #55616E;
   display: inline-block;
   cursor: pointer;
-}
-.side a{
-  text-decoration: none;
-  color: #55616E;
-}
-.side#active a{
-  text-decoration: none;
-  color: #FFFFFF;
 }
 .side-hide{
   height: 40px;
