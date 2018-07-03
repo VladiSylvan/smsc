@@ -8,7 +8,7 @@
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
-          <div class="title">Reporting</div>
+          <div class="title">Product</div>
         </div>
         <div v-if="!popup" v-on:click="popup = !popup" class="user">
           <div class="username">Linnie Weaver</div>
@@ -61,35 +61,35 @@
             <span v-if="show" id="side-link">Dashboard</span>
           </router-link>
         </div>
-        <div v-bind:class="{'side-hide': !show}" id="active" class="side">
+        <div class="side">
           <router-link :to="{ name: 'Reporting'}">
+            <img class="image-box" src="@/assets/Icon/Reporting.svg">
+            <span v-if="show" id="side-link">Reporting</span>
+          </router-link>
+        </div>
+        <div v-bind:class="{'side-hide': !show}" class="side" id="active">
+          <router-link :to="{ name: 'Product'}">
             <div class="image-box">
               <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-                  <title>Icon / Reporting</title>
+                  <title>Icon / Product</title>
                   <desc>Created with Sketch.</desc>
                   <defs>
-                      <path d="M24.3333333,22.6234595 L7.1656,22.6234595 L9.95824,16.9509189 L12.8546667,18.8602162 C13.03872,18.9815676 13.2700267,19.0032973 13.47296,18.9181081 C13.6759467,18.8331351 13.8245333,18.6521622 13.8701867,18.4344865 L15.0018133,13.0466486 L18.1837867,14.6959459 C18.4528,14.8354595 18.78064,14.7740541 18.9827733,14.5463784 L21.6315733,11.5637297 L21.71488,12.467027 C21.7470933,12.8172432 22.0377067,13.0799459 22.37792,13.0799459 C22.3986667,13.0799459 22.4196267,13.078973 22.4406933,13.076973 C22.8073067,13.0422703 23.0766933,12.712973 23.0425067,12.3414054 L22.8059733,9.774 C22.7716267,9.40243243 22.4470933,9.12924324 22.0802133,9.16405405 L19.5470933,9.40367568 C19.1805333,9.43837838 18.91104,9.76767568 18.9452267,10.1391892 C18.9796267,10.5107568 19.3035733,10.7838919 19.67104,10.7491351 L20.6428267,10.6571892 L18.33472,13.2562703 L14.8345067,11.442 C14.6498667,11.3462162 14.43168,11.3431351 14.24448,11.4334595 C14.0571733,11.5237838 13.92208,11.6972973 13.87888,11.9029189 L12.7682667,17.1910811 L10.0589333,15.4051351 C9.89962667,15.3001081 9.70362667,15.2689189 9.52037333,15.3195676 C9.33701333,15.3701081 9.18368,15.4975135 9.09893333,15.6697838 L6.33333333,21.2874054 L6.33333333,6.70086486 C6.33333333,6.32767568 6.03482667,6.02518919 5.66666667,6.02518919 C5.29850667,6.02518919 5,6.32767568 5,6.70086486 L5,23.2991351 C5,23.6722703 5.29850667,23.9748108 5.66666667,23.9748108 L24.3333333,23.9748108 C24.70144,23.9748108 25,23.6722703 25,23.2991351 C25,22.926 24.70144,22.6234595 24.3333333,22.6234595 Z" id="path-1"></path>
+                      <path d="M23.4256131,9.45680858 L19.2124251,9.45680858 L19.2124251,8.68064356 C19.2124251,7.76533663 18.4892098,7.02064686 17.600109,7.02064686 L12.3855041,7.02064686 C11.4965123,7.02064686 10.773188,7.76528053 10.773188,8.68064356 L10.773188,9.45680858 L6.5600545,9.45680858 C5.69983651,9.45680858 5,10.1772607 5,11.0628317 L5,22.358462 C5,23.244033 5.69983651,23.9645413 6.5600545,23.9645413 L23.4255586,23.9645413 C24.2857766,23.9645413 24.9856131,23.244033 24.9856131,22.358462 L24.9856131,11.0628317 C24.9856676,10.1773168 24.2858856,9.45680858 23.4256131,9.45680858 Z M12.1356403,8.68064356 C12.1356403,8.53875248 12.2477929,8.42328713 12.3855586,8.42328713 L17.6001635,8.42328713 C17.7379292,8.42328713 17.8500817,8.53875248 17.8500817,8.68064356 L17.8500817,9.45680858 L12.1356403,9.45680858 L12.1356403,8.68064356 Z M6.56010899,10.8594488 L23.4256131,10.8594488 C23.5346049,10.8594488 23.6232698,10.9506766 23.6232698,11.0628317 L23.6232698,14.7432475 C21.5122071,15.5494851 18.3279564,16.0257096 14.9870845,16.0257096 C11.6535695,16.0257096 8.47367847,15.5511122 6.36239782,14.7475677 L6.36239782,11.0628317 C6.36245232,10.9506766 6.45111717,10.8594488 6.56010899,10.8594488 Z M23.4256131,22.561901 L6.56010899,22.561901 C6.45111717,22.561901 6.36245232,22.4706733 6.36245232,22.358462 L6.36245232,16.2335809 C8.29476839,16.8898482 10.8353134,17.3000363 13.6039782,17.4028218 C13.6038147,17.4109571 13.6028338,17.4188119 13.6028338,17.4270594 L13.6028338,17.7363696 C13.6028338,18.3162211 14.0610354,18.7879571 14.6243052,18.7879571 L15.3614714,18.7879571 C15.9247411,18.7879571 16.3829428,18.3162211 16.3829428,17.7363696 L16.3829428,17.4270594 C16.3829428,17.4188119 16.3818529,17.4107327 16.3817984,17.4024851 C19.1522071,17.298802 21.6923706,16.8874356 23.6233787,16.2298779 L23.6233787,22.3585182 C23.6232698,22.4706733 23.5346049,22.561901 23.4256131,22.561901 Z" id="path-1"></path>
                   </defs>
-                  <g id="Icon-/-Reporting" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Icon-/-Product" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <mask id="mask-2" fill="white">
                           <use xlink:href="#path-1"></use>
                       </mask>
-                      <g id="Shape" fill-rule="nonzero"></g>
+                      <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
                       <g id="Color-/-Dark-4" mask="url(#mask-2)" fill="white">
                           <rect id="Rectangle" x="0" y="0" width="30" height="30"></rect>
                       </g>
                   </g>
               </svg>
             </div>
-            <span v-if="show" id="side-link">Reporting</span>
           </router-link>
-        </div>
-        <div class="side">
-          <router-link :to="{ name: 'Product'}">
-            <img class="image-box" src="@/assets/Icon/Product.svg">
-            <span v-if="show" id="side-link">Product</span>
-          </router-link>
+          <span v-if="show" id="side-link">Product</span>
         </div>
         <div class="side">
           <img class="image-box" src="@/assets/Icon/Template.svg">
@@ -129,177 +129,7 @@
       </div>
       </transition>
       <div class="main">
-        <div class="cont-1-rep">
-            <div class="chart-1-reporting">
-              <div class="chart-1-title-reporting">
-                Resellers
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-              <input id="search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
-              <button type="submit">Filter</button>
-              <div class="info">
-                <span class="info-title">
-                  Resellers
-                </span>
-                <span class="info-title">
-                  Date
-                </span>
-                <span class="info-title">
-                  Status
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Lou Haynes
-                </span>
-                <span class="info-content">
-                  06 Nov 2018
-                </span>
-                <span class="info-content">
-                  <div class="not-active">Not Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Lou Haynes
-                </span>
-                <span class="info-content">
-                  06 Nov 2018
-                </span>
-                <span class="info-content">
-                  <div class="not-active">Not Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Lou Haynes
-                </span>
-                <span class="info-content">
-                  06 Nov 2018
-                </span>
-                <span class="info-content">
-                  <div class="not-active">Not Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="show-more">
-                <a href="#" id="show-more">Show more</a>
-              </div>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
-          </div>
-          <div class="cont-1-rep">
-            <div class="chart-3-reporting">
-              <div class="chart-3-title-reporting">
-                Companies
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
 </template>
@@ -307,14 +137,17 @@
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
 import BarChart2 from '@/components/auth/BarChart2'
+import modal from '@/components/modal.vue'
 
 export default {
+    name: 'app',
     data () {
         return {
           show: true,
           width: '60px',
           transitionName: 'fade',
           popup: false,
+          isModalVisible: false,
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -325,71 +158,130 @@ export default {
     components:{
       CommitChart,
       BarChart,
-      BarChart2
+      BarChart2,
+      modal
     },
     methods:{
         sendForm(){
             event.preventDefault()
+        },
+        showModal() {
+          this.isModalVisible = true;
+        },
+        closeModal() {
+          this.isModalVisible = false;
         }
     },
 }
 </script>
 <style>
-
-.info{
-  height: 37px;
-  width: 94.1828254848%;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-  margin-left: 15px;
+.main-head{
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 100%;
 }
-.info-title{
-  width: 28.3%;
+.product-name{
+  margin-left: 15px;
+  width: 169px;
+  padding-top: 11px;
   float: left;
+}
+.product-create{
+  width: 372px;
+  padding-top: 11px;
+  float: left;
+}
+.product-by{
+  width: 189px;
+  padding-top: 11px;
+  float: left;
+}
+.product-owed{
+  width: 200px;
+  padding-top: 11px;
+  float: left;
+}
+
+.product-name-info{
+  margin-left: 3px;
+  width: 169px;
+  padding-top: 12px;
+  float: left;
+}
+.product-create-info{
+  width: 372px;
+  padding-top: 12px;
+  float: left;
+}
+.product-by-info{
+  width: 189px;
+  padding-top: 12px;
+  float: left;
+}
+.product-owed-info{
+  width: 200px;
+  padding-top: 12px;
+  float: left;
+}
+.product-control-info{
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  float: left;
+}
+.product-title{
+  width: 100%;
+  height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   font-weight: 600;
   line-height: 16px;
   margin-left: 15px;
-  margin-top: 11px;
+  margin-top: 15px;
 }
-.info-content{
-  width: 28.3%;
-  float: left;
+.product-info{
+  width: 100%;
+  height: 44px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 20px;
+  line-height: 16px;
+  margin-left: 15px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.product-info-offline{
+  width: 100%;
+  height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 20px;
   margin-left: 15px;
-  margin-top: 8px;
+  background-color: #F0F1FA;
+  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
 }
-.active{
+.product-active{
   box-sizing: border-box;
-  height: 24px;
-  width: 59px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
   background-color: #24E2B8;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
+  margin-top: 15px;
+  float: left;
+  margin-left: 2px;
 }
-.not-active{
+.product-not-active{
   box-sizing: border-box;
-  height: 24px;
-  width: 85px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
   background-color: #D2305B;
-  color: #FFFFFF;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
+  margin-top: 15px;
+  float: left;
+  margin-left: 2px;
 }
 .show-more{
   text-align: center;
@@ -413,7 +305,7 @@ a#show-more{
   color: #FFFFFF;
 }
 input[type="text"]{
-  width: 69.621421976%;
+  width: 345px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -430,23 +322,24 @@ input[type="text"]{
   line-height: 25px;
   margin-left: 13px;
 }
-input[type="text"]#search{
-  height: 36px !important;
+input[type="text"]#product-search{
+  height: 40px !important;
 }
-button{
-  	height: 36px;
-    width: 16.7737765466%;
-    border: 1px
-    solid #BDBFD8;
+button#product{
+  	height: 40px;
+    width: 130px;
     border-radius: 4px;
-    background-color: #FFFFFF;
+    background-color: #51A3F3;
+    border-radius: 4px;
+    color: #fff;
     font-family: "Helvetica Neue";
     font-size: 15px;
     font-weight: 300;
     line-height: 30px;
     text-align: center;
-    margin-top: 15px;
-    margin-left: 10px;
+    margin-top: 0px;
+    margin-right: 20px;
+    float: right;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -454,13 +347,11 @@ button{
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-.cont-1-rep{
-  width: 47.5%;
-  float: left;
+.col-md-6{
+  width: 45.83%;
 }
-.cont-2-rep{
-  width: 22.9%;
-  float: left;
+.col-md-3{
+  width: 20.8%;
 }
 .user{
   display: inline-block;
@@ -477,7 +368,6 @@ button{
   position: absolute;
   z-index: 1;
   float: right;
-  margin-left: 32px;
 }
 .username-popup {
 	color: #51A3F3;
@@ -540,19 +430,16 @@ button{
     margin-top: 21px;
 }
 .main{
-  max-width: calc(100% - 310px);
-  width: 100%;
+  width: calc(100%-300px);
   display: inline-block;
   vertical-align: top;
   float: left;
-  margin-right: 10px;
 }
 .header{
   display: inline-block;
   vertical-align: top;
   position: relative;
-  width: 61.1111111111%;
-  float: left;
+  width: 912px;
 }
 .header-min{
   display: inline-block;
@@ -562,99 +449,12 @@ button{
   position: relative;
   z-index: 1000;
 }
-.chart-1-reporting{
-  height: 100vh;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.chart-1-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3-reporting{
-  height: 360px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-}
-.chart-3-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-box{
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-}
-.chart-2-reporting{
-  height: 170px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-  position: relative;
-}
-.chart-2-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-2-reporting#second{
-  margin-left: 60px;
-}
 .side#active svg g{
   fill: white;
 }
 .navigation{
     height: 60px;
     background-color: #FFFFFF;
-    width: 100%;
 }
 .head-logo{
     display: inline-block;
@@ -698,7 +498,7 @@ button{
 .logo-place{
   margin: 0;
   display: inline-block;
-  width: 20.8333333333%;
+  width: 300px;
   float: left;
 }
 .username {
@@ -735,8 +535,7 @@ button{
 }
 .sidebar {
 	height: 100vh;
-	max-width: 300px;
-  width: 100%;
+	width: 300px;
 	background-color: #F0F1FA;
   display: inline-block;
   float: left;
@@ -751,7 +550,7 @@ button{
 }
 .side{
   height: 40px;
-  width: 100%;
+  width: 290px;
   color: #55616E;
   display: inline-block;
   cursor: pointer;

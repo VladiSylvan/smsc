@@ -131,7 +131,27 @@
       <div class="main">
         <div class="main-head">
           <input id="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
-          <button id="product" type="submit">Add Product</button>
+          <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
+
+          <!-- <table>
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Created On</th>
+                <th>Created By</th>
+                <th>Owned By</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Parkerport</td>
+                <td>10-03-2018</td>
+                <td>San Marino</td>
+                <td>Appolo Inc.</td>
+              </tr>
+            </tbody>
+          </table> -->
+
           <div class="product-title">
             <div class="product-name">Product Name</div>
             <div class="product-create">Created On</div>
@@ -144,7 +164,7 @@
             <div class="product-create-info">10-03-2018</div>
             <div class="product-by-info">San Marino</div>
             <div class="product-owed-info">Appolo Inc.</div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/DID.svg"></div>
+            <div class="product-control-info"><img v-on:click="showModal()" class="image-box" src="@/assets/Icon/DID.svg"></div>
             <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Edit.svg"></div>
             <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Delete.svg"></div>
           </div>
@@ -154,7 +174,7 @@
             <div class="product-create-info">08-19-2018</div>
             <div class="product-by-info">San Marino</div>
             <div class="product-owed-info">Appolo Inc.</div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/DID.svg"></div>
+            <div class="product-control-info"><img v-on:click="showModal()" class="image-box" src="@/assets/Icon/DID.svg"></div>
             <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Edit.svg"></div>
             <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Delete.svg"></div>
           </div>
@@ -164,10 +184,13 @@
             <div class="product-create-info">01-04-2018</div>
             <div class="product-by-info">San Marino</div>
             <div class="product-owed-info">Appolo Inc.</div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/DID.svg"></div>
+            <div class="product-control-info"><img v-on:click="showModal()" class="image-box" src="@/assets/Icon/DID.svg"></div>
             <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Edit.svg"></div>
             <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Delete.svg"></div>
           </div>
+        </div>
+        <div id="app">
+          <modal v-show="isModalVisible" @close="closeModal"/>
         </div>
       </div>
     </div>
@@ -179,13 +202,14 @@ import BarChart2 from '@/components/auth/BarChart2'
 import modal from '@/components/modal.vue'
 
 export default {
-    name: 'modal-div',
+    name: 'app',
     data () {
         return {
           show: true,
           width: '60px',
           transitionName: 'fade',
           popup: false,
+          isModalVisible: false,
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -196,11 +220,18 @@ export default {
     components:{
       CommitChart,
       BarChart,
-      BarChart2
+      BarChart2,
+      modal
     },
     methods:{
         sendForm(){
             event.preventDefault()
+        },
+        showModal() {
+          this.isModalVisible = true;
+        },
+        closeModal() {
+          this.isModalVisible = false;
         }
     },
 }
@@ -209,6 +240,7 @@ export default {
 .main-head{
   margin-top: 20px;
   margin-left: 5px;
+  width: 100%;
 }
 .product-name{
   margin-left: 15px;
@@ -260,7 +292,7 @@ export default {
   float: left;
 }
 .product-title{
-  width: 1100px;
+  width: 100%;
   height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -271,7 +303,7 @@ export default {
   margin-top: 15px;
 }
 .product-info{
-  width: 1100px;
+  width: 100%;
   height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -283,7 +315,7 @@ export default {
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .product-info-offline{
-  width: 1100px;
+  width: 100%;
   height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -334,7 +366,7 @@ a#show-more{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]{
+input[type="text"]#product-search{
   width: 345px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
@@ -351,8 +383,6 @@ input[type="text"]{
   font-size: 14px;
   line-height: 25px;
   margin-left: 13px;
-}
-input[type="text"]#product-search{
   height: 40px !important;
 }
 button#product{
@@ -460,10 +490,11 @@ button#product{
     margin-top: 21px;
 }
 .main{
-  width: 1140px;
+  width: calc(100%-310px);
   display: inline-block;
   vertical-align: top;
   float: left;
+  margin-right: 10px;
 }
 .header{
   display: inline-block;
@@ -478,95 +509,6 @@ button#product{
   margin-right: 150px;
   position: relative;
   z-index: 1000;
-}
-.container{
-  width: 1440px;
-}
-.chart-1-reporting{
-  height: 774px;
-  width: 540px;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.chart-1-title-reporting{
-  height: 30px;
-  width: 480px;
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3-reporting{
-  height: 360px;
-  width: 540px;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 15px;
-}
-.chart-3-title-reporting{
-  height: 30px;
-  width: 480px;
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-box{
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-}
-.chart-2-reporting{
-  height: 170px;
-  width: 260px;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 15px;
-  position: relative;
-}
-.chart-2-reporting#second{
-  margin-left: 20px;
-}
-.chart-2-title-reporting{
-  height: 30px;
-  width: 200px;
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
 }
 .side#active svg g{
   fill: white;
@@ -654,7 +596,8 @@ button#product{
 }
 .sidebar {
 	height: 100vh;
-	width: 300px;
+	max-width: 300px;
+  width: 100%;
 	background-color: #F0F1FA;
   display: inline-block;
   float: left;
@@ -669,7 +612,7 @@ button#product{
 }
 .side{
   height: 40px;
-  width: 290px;
+  width: 100%;
   color: #55616E;
   display: inline-block;
   cursor: pointer;

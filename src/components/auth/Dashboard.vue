@@ -323,8 +323,10 @@ export default {
   display: inline-block;
   vertical-align: top;
   float: left;
-  width: calc(100% - 300px);
+  max-width: calc(100% - 310px);
+  width: 100%;
   margin-top: -10px;
+  margin-right: 10px;
 }
 .header{
   display: inline-block;
@@ -565,7 +567,8 @@ select{
 }
 .sidebar {
 	height: 100vh;
-	width: 300px;
+	max-width: 300px;
+  width: 100%;
 	background-color: #F0F1FA;
   display: inline-block;
   float: left;
@@ -581,7 +584,7 @@ select{
 }
 .side{
   height: 40px;
-  width: 290px;
+  width: 100%;
   color: #55616E;
   display: inline-block;
   cursor: pointer;
