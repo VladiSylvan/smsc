@@ -176,8 +176,10 @@
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
 import BarChart2 from '@/components/auth/BarChart2'
+import modal from '@/components/modal.vue'
 
 export default {
+    name: 'modal-div',
     data () {
         return {
           show: true,

@@ -134,63 +134,59 @@
       </div>
       </transition>
       <div class="main">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="chart-1">
-              <div class="chart-1-title">
-                Leads and Sales
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="789" :height="273"></commit-chart>
+        <div class="cont-1">
+          <div class="chart-1">
+            <div class="chart-1-title">
+              Leads and Sales
             </div>
+            <div class="chart-box">
+              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+            </div>
+            <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="789" :height="273"></commit-chart>
           </div>
-          <div class="col-md-2">
-            <div class="chart-2">
-              <div class="chart-2-title">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
+        </div>
+        <div class="cont-2">
+          <div class="chart-2">
+            <div class="chart-2-title">
+              Visits
             </div>
+            <div class="chart-box">
+              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+            </div>
+            <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
           </div>
-          <div class="col-md-2">
-            <div class="chart-2">
-              <div class="chart-2-title">
-                Activity
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
+        </div>
+        <div class="cont-2">
+          <div class="chart-2">
+            <div class="chart-2-title">
+              Activity
             </div>
+            <div class="chart-box">
+              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+            </div>
+            <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="chart-3">
-                <div class="chart-3-title">
-                  Resellers
-                </div>
-                <div class="chart-box">
-                  <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-                </div>
-                <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="226.22"></commit-chart>
-              </div>
+        </div>
+        <div class="cont-3">
+          <div class="chart-3">
+            <div class="chart-3-title">
+              Resellers
             </div>
-            <div class="col-md-6">
-              <div class="chart-3" id="second">
-                <div class="chart-3-title">
-                  Companies
-                </div>
-                <div class="chart-box">
-                  <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-                </div>
-                <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="201.71"></commit-chart>
-              </div>
+            <div class="chart-box">
+              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
             </div>
+            <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="226.22"></commit-chart>
+          </div>
+        </div>
+        <div class="cont-3">
+          <div class="chart-3" id="second">
+            <div class="chart-3-title">
+              Companies
+            </div>
+            <div class="chart-box">
+              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+            </div>
+            <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="201.71"></commit-chart>
           </div>
         </div>
       </div>
@@ -234,8 +230,17 @@ export default {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-.col-md-6{
-  width: 45.83%;
+.cont-1{
+  width: 74%;
+  float: left;
+}
+.cont-2{
+  width: 21%;
+  float: left;
+}
+.cont-3{
+  width: 47.5%;
+  float: left;
 }
 .user{
   display: inline-block;
@@ -252,6 +257,7 @@ export default {
   position: absolute;
   z-index: 1;
   float: right;
+  margin-left: 32px;
 }
 .username-popup {
 	color: #51A3F3;
@@ -314,16 +320,18 @@ export default {
     margin-top: 21px;
 }
 .main{
-  width: 1140px;
   display: inline-block;
   vertical-align: top;
   float: left;
+  width: calc(100% - 300px);
+  margin-top: -10px;
 }
 .header{
   display: inline-block;
   vertical-align: top;
   position: relative;
-  width: 912px;
+  width: 61.1111111111%;
+  float: left;
 }
 .header-min{
   display: inline-block;
@@ -333,12 +341,9 @@ export default {
   position: relative;
   z-index: 1000;
 }
-.container{
-  width: 1440px;
-}
 .chart-1{
   height: 360px;
-  width: 820px;
+  width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
@@ -349,7 +354,7 @@ export default {
 }
 .chart-1-title{
   height: 30px;
-  width: 760px;
+  width: calc(100% - 60px);
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -370,19 +375,19 @@ export default {
 }
 .chart-2{
   height: 170px;
-  width: 260px;
+  width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
   display: inline-block;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 40px;
   position: relative;
 }
 .chart-2-title{
   height: 30px;
-  width: 200px;
+  width: calc(100% - 60px);
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -396,18 +401,18 @@ export default {
 }
 .chart-3{
   height: 300px;
-  width: 540px;
+  width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
   display: inline-block;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 35px;
+  margin-left: 20px;
 }
 .chart-3-title{
   height: 30px;
-  width: 480px;
+  width: calc(100% - 60px);
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -421,12 +426,13 @@ export default {
 }
 .chart-3#second{
   margin-top: 20px;
-  margin-left: 15px;
+  margin-left: 40px;
 }
 .side#active svg g{
   fill: white;
 }
 .navigation{
+    width: 100%;
     height: 60px;
     background-color: #FFFFFF;
 }
@@ -472,7 +478,7 @@ export default {
 .logo-place{
   margin: 0;
   display: inline-block;
-  width: 300px;
+  width: 20.8333333333%;
   float: left;
 }
 .system{
@@ -563,6 +569,7 @@ select{
 	background-color: #F0F1FA;
   display: inline-block;
   float: left;
+  margin-top: -10px;
 }
 .sidebar-hide {
 	height: 100vh;
