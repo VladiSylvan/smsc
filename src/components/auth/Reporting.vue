@@ -129,8 +129,7 @@
       </div>
       </transition>
       <div class="main">
-        <div class="row">
-          <div class="col-md-6">
+        <div class="cont-1-rep">
             <div class="chart-1-reporting">
               <div class="chart-1-title-reporting">
                 Resellers
@@ -245,7 +244,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="cont-2-rep">
             <div class="chart-2-reporting">
               <div class="chart-2-title-reporting">
                 Visits
@@ -256,7 +255,7 @@
               <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="cont-2-rep">
             <div class="chart-2-reporting" id="second">
               <div class="chart-2-title-reporting">
                 Activity
@@ -267,7 +266,7 @@
               <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="cont-1-rep">
             <div class="chart-3-reporting">
               <div class="chart-3-title-reporting">
                 Companies
@@ -278,7 +277,7 @@
               <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="cont-2-rep">
             <div class="chart-2-reporting">
               <div class="chart-2-title-reporting">
                 Visits
@@ -289,7 +288,7 @@
               <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="cont-2-rep">
             <div class="chart-2-reporting" id="second">
               <div class="chart-2-title-reporting">
                 Activity
@@ -336,14 +335,15 @@ export default {
 }
 </script>
 <style>
+
 .info{
   height: 37px;
-  width: 510px;
+  width: 94.1828254848%;
   box-shadow: inset 0 -1px 0 0 #DFE3E8;
   margin-left: 15px;
 }
 .info-title{
-  width: 155px;
+  width: 28.3%;
   float: left;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -354,7 +354,7 @@ export default {
   margin-top: 11px;
 }
 .info-content{
-  width: 155px;
+  width: 28.3%;
   float: left;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -413,7 +413,7 @@ a#show-more{
   color: #FFFFFF;
 }
 input[type="text"]{
-  width: 377px;
+  width: 69.621421976%;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -435,7 +435,7 @@ input[type="text"]#search{
 }
 button{
   	height: 36px;
-    width: 80px;
+    width: 16.7737765466%;
     border: 1px
     solid #BDBFD8;
     border-radius: 4px;
@@ -454,11 +454,13 @@ button{
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-.col-md-6{
-  width: 45.83%;
+.cont-1-rep{
+  width: 47.5%;
+  float: left;
 }
-.col-md-3{
-  width: 20.8%;
+.cont-2-rep{
+  width: 22.9%;
+  float: left;
 }
 .user{
   display: inline-block;
@@ -475,6 +477,7 @@ button{
   position: absolute;
   z-index: 1;
   float: right;
+  margin-left: 32px;
 }
 .username-popup {
 	color: #51A3F3;
@@ -537,7 +540,7 @@ button{
     margin-top: 21px;
 }
 .main{
-  width: 1140px;
+  width: calc(100% - 300px);
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -546,7 +549,8 @@ button{
   display: inline-block;
   vertical-align: top;
   position: relative;
-  width: 912px;
+  width: 61.1111111111%;
+  float: left;
 }
 .header-min{
   display: inline-block;
@@ -556,12 +560,9 @@ button{
   position: relative;
   z-index: 1000;
 }
-.container{
-  width: 1440px;
-}
 .chart-1-reporting{
-  height: 774px;
-  width: 540px;
+  height: 100vh;
+  width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
@@ -572,7 +573,7 @@ button{
 }
 .chart-1-title-reporting{
   height: 30px;
-  width: 480px;
+  width: calc(100% - 60px);
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -586,18 +587,18 @@ button{
 }
 .chart-3-reporting{
   height: 360px;
-  width: 540px;
+  width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
   display: inline-block;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 15px;
+  margin-left: 40px;
 }
 .chart-3-title-reporting{
   height: 30px;
-  width: 480px;
+  width: calc(100% - 60px);
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -618,22 +619,19 @@ button{
 }
 .chart-2-reporting{
   height: 170px;
-  width: 260px;
+  width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
   display: inline-block;
   vertical-align: top;
   margin-top: 20px;
-  margin-left: 15px;
+  margin-left: 40px;
   position: relative;
-}
-.chart-2-reporting#second{
-  margin-left: 20px;
 }
 .chart-2-title-reporting{
   height: 30px;
-  width: 200px;
+  width: calc(100% - 60px);
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -645,12 +643,16 @@ button{
   margin-left: 15px;
   margin-bottom: 10px;
 }
+.chart-2-reporting#second{
+  margin-left: 60px;
+}
 .side#active svg g{
   fill: white;
 }
 .navigation{
     height: 60px;
     background-color: #FFFFFF;
+    width: 100%;
 }
 .head-logo{
     display: inline-block;
@@ -694,7 +696,7 @@ button{
 .logo-place{
   margin: 0;
   display: inline-block;
-  width: 300px;
+  width: 20.8333333333%;
   float: left;
 }
 .username {
