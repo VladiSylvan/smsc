@@ -140,105 +140,58 @@
               <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
               <input id="search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
               <button type="submit">Filter</button>
-              <div class="info">
-                <span class="info-title">
-                  Resellers
-                </span>
-                <span class="info-title">
-                  Date
-                </span>
-                <span class="info-title">
-                  Status
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Lou Haynes
-                </span>
-                <span class="info-content">
-                  06 Nov 2018
-                </span>
-                <span class="info-content">
-                  <div class="not-active">Not Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Lou Haynes
-                </span>
-                <span class="info-content">
-                  06 Nov 2018
-                </span>
-                <span class="info-content">
-                  <div class="not-active">Not Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Lou Haynes
-                </span>
-                <span class="info-content">
-                  06 Nov 2018
-                </span>
-                <span class="info-content">
-                  <div class="not-active">Not Active</div>
-                </span>
-              </div>
-              <div class="info">
-                <span class="info-content">
-                  Nellie Ferguson
-                </span>
-                <span class="info-content">
-                  29 Apr 2018
-                </span>
-                <span class="info-content">
-                  <div class="active">Active</div>
-                </span>
-              </div>
+              <table cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th id="resellers">Resellers</th>
+                    <th id="date">Date</th>
+                    <th id="status">Status</th>
+                  </tr>
+                  <tr>
+                    <td id="resellers">Nellie Ferguson</td>
+                    <td id="date">29 Apr 2018</td>
+                    <td id="status"><div class="active">Active</div></td>
+                  </tr>
+                  <tr>
+                    <td id="resellers">Lou Haynes</td>
+                    <td id="date">06 Nov 2018</td>
+                    <td id="status"><div class="not-active">Not Active</div></td>
+                  </tr>
+                  <tr>
+                    <td id="resellers">Nellie Ferguson</td>
+                    <td id="date">29 Apr 2018</td>
+                    <td id="status"><div class="active">Active</div></td>
+                  </tr>
+                  <tr>
+                    <td id="resellers">Nellie Ferguson</td>
+                    <td id="date">29 Apr 2018</td>
+                    <td id="status"><div class="active">Active</div></td>
+                  </tr>
+                  <tr>
+                    <td id="resellers">Lou Haynes</td>
+                    <td id="date">06 Nov 2018</td>
+                    <td id="status"><div class="not-active">Not Active</div></td>
+                  </tr>
+                  <tr>
+                    <td id="resellers">Nellie Ferguson</td>
+                    <td id="date">29 Apr 2018</td>
+                    <td id="status"><div class="active">Active</div></td>
+                  </tr>
+                  <tr>
+                    <td id="resellers">Lou Haynes</td>
+                    <td id="date">06 Nov 2018</td>
+                    <td id="status"><div class="not-active">Not Active</div></td>
+                  </tr>
+                  <tr>
+                    <td id="resellers">Nellie Ferguson</td>
+                    <td id="date">29 Apr 2018</td>
+                    <td id="status"><div class="active">Active</div></td>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
               <div class="show-more">
                 <a href="#" id="show-more">Show more</a>
               </div>
@@ -335,34 +288,43 @@ export default {
 }
 </script>
 <style>
-
-.info{
-  height: 37px;
-  width: 94.1828254848%;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-  margin-left: 15px;
+table{
+  margin-left: 20px;
+  border: none;
+  max-width: calc(100% - 40px);
+  width: 100%;
 }
-.info-title{
-  width: 28.3%;
-  float: left;
+tr{
+  height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
-  font-weight: 600;
   line-height: 16px;
   margin-left: 15px;
-  margin-top: 11px;
+  text-align: left;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
-.info-content{
-  width: 28.3%;
-  float: left;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 20px;
+td#resellers{
+  width: 174px;
   margin-left: 15px;
-  margin-top: 8px;
 }
+td#date{
+  width: 189px;
+}
+td#status{
+  width: 132px;
+}
+
+th#resellers{
+  width: 174px;
+}
+th#date{
+  width: 189px;
+}
+th#status{
+  width: 132px;
+}
+
 .active{
   box-sizing: border-box;
   height: 24px;
@@ -413,7 +375,7 @@ a#show-more{
   color: #FFFFFF;
 }
 input[type="text"]{
-  width: 69.621421976%;
+  width: calc(69.621421976% - 30px);
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -435,7 +397,7 @@ input[type="text"]#search{
 }
 button{
   	height: 36px;
-    width: 16.7737765466%;
+    width: calc(16.7737765466% + 10px);
     border: 1px
     solid #BDBFD8;
     border-radius: 4px;

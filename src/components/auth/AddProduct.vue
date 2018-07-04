@@ -3,7 +3,7 @@
       <nav class="navigation">
         <div class="logo-place">
           <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="circle"></div>
-          <div v-if="!show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Open.svg') + ')' }" class="circle"></div>
+          <div v-if="!show" v-on:click="show = !show" style="transform: rotate(180deg);" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="circle"></div>
           <img v-if="show" class="head-logo" src="@/assets/logo.png">
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
@@ -129,14 +129,16 @@
       </div>
       </transition>
       <div class="main">
-        <div class="navbar">
-          <div class="navbar-link" id="active">
-            SMS Routes
-            <div class="navbar-line"></div>
-          </div>
-          <div class="navbar-link">
-            SMS Pricing
-          </div>
+        <div class="svg-back">
+          <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+            L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+            L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+            </path>
+          </svg>
+        </div>
+        <div class='back'>
+          Back to Products
         </div>
       </div>
     </div>
@@ -183,31 +185,22 @@ export default {
 }
 </script>
 <style>
-.navbar{
-  width: 1140px;
-  height: 50px;
-  background-color: #FFFFFF;
+.svg path{
+  fill: #51A3F3;
 }
-.navbar-link{
+.svg-back{
   float: left;
   display: inline-block;
-  height: 50px;
+  margin-top: 25px;
   margin-left: 20px;
-  color: #BDBFD8;
-  font-family: "Circular Std";
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 20px;
-  text-align: center;
-  margin-top: 15px;
 }
-.navbar-link#active{
+.back{
   color: #51A3F3;
-}
-.navbar-line{
-  border-top: 2px solid #51A3F3;
-  margin-top: 13px;
-  width: 102px;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 25px;
 }
 .side a{
   text-decoration: none;
@@ -281,6 +274,7 @@ button#product{
   position: absolute;
   z-index: 1;
   float: right;
+  margin-left: 32px;
 }
 .username-popup {
 	color: #51A3F3;
@@ -352,7 +346,8 @@ button#product{
   display: inline-block;
   vertical-align: top;
   position: relative;
-  width: 912px;
+  width: 61.1111111111%;
+  float: left;
 }
 .header-min{
   display: inline-block;
@@ -411,7 +406,7 @@ button#product{
 .logo-place{
   margin: 0;
   display: inline-block;
-  width: 300px;
+  width: 20.8333333333%;
   float: left;
 }
 .username {
