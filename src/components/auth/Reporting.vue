@@ -356,6 +356,7 @@ th#status{
 .show-more{
   text-align: center;
   margin-top: 5px;
+  margin-bottom: 23px;
 }
 a#show-more{
   	height: 15px;
@@ -525,7 +526,6 @@ button{
   z-index: 1000;
 }
 .chart-1-reporting{
-  height: 100vh;
   width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;

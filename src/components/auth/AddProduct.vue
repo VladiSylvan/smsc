@@ -140,6 +140,22 @@
         <div class='back'>
           Back to Products
         </div>
+        <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
+        <router-link :to="{ name: 'Product'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        <div class="add-product">
+          <div class="product-main">
+            <div class="product-add-title">
+              Add Product Information
+            </div>
+            <div class="product-input-name">
+              Product Name
+            </div>
+            <input id="product-name" type="text" v-model="user.productName" placeholder="Product Name">
+          </div>
+          <div class="product-vendor">
+
+          </div>
+        </div>
       </div>
     </div>
 </template>
@@ -159,8 +175,7 @@ export default {
           popup: false,
           isModalVisible: false,
                 user:{
-                system: 'Overall system',
-                days: 'Last 30 days'
+                productName: 'Caroline'
             },
 
         }
@@ -192,7 +207,9 @@ export default {
   float: left;
   display: inline-block;
   margin-top: 25px;
+  margin-bottom: 25px;
   margin-left: 20px;
+  margin-right: 5px;
 }
 .back{
   color: #51A3F3;
@@ -200,7 +217,46 @@ export default {
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
-  margin-top: 25px;
+  float: left;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.add-product{
+  float: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  width: calc(100% - 20px);
+  margin-left: 20px;
+}
+.product-main{
+  margin-left: 15px;
+  margin-top: 15px;
+  display: inline-block;
+  float: left;
+  max-width: 58.1818181818%;
+  width: 100%;
+}
+.product-vendor{
+
+}
+.product-add-title{
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+.product-input-name{
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
 }
 .side a{
   text-decoration: none;
@@ -211,7 +267,6 @@ export default {
   color: #FFFFFF;
 }
 input[type="text"]{
-  width: 345px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -221,15 +276,14 @@ input[type="text"]{
   background-position-x: 5px;
   background-position-y: 5px;
   height: 40px !important;
-  padding-left: 40px;
+  padding-left: 10px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-  margin-left: 13px;
 }
-input[type="text"]#product-search{
-  height: 40px !important;
+input[type="text"]#product-name{
+  width: 570px;
 }
 button#product{
   	height: 40px;
@@ -243,9 +297,27 @@ button#product{
     font-weight: 300;
     line-height: 30px;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
     float: right;
+}
+button#cancel{
+  height: 40px;
+  width: 90px;
+  border: 1px solid #BDBFD8;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #55616E;
+  font-family: "Circular Std";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  float: right;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -337,7 +409,8 @@ button#product{
     margin-top: 21px;
 }
 .main{
-  width: calc(100%-300px);
+  max-width: calc(100% - 300px);
+  width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
