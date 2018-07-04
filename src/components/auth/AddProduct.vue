@@ -128,18 +128,20 @@
         </div>
       </div>
       </transition>
-      <div class="main">
-        <div class="svg-back">
-          <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
-            L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
-            L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
-            </path>
-          </svg>
-        </div>
-        <div class='back'>
-          Back to Products
-        </div>
+      <div class="main-add">
+        <router-link :to="{ name: 'Product'}">
+          <div class="svg-back">
+            <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+              L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+              L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+              </path>
+            </svg>
+          </div>
+          <div class='back'>
+            Back to Products
+          </div>
+        </router-link>
         <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
         <router-link :to="{ name: 'Product'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-product">
@@ -151,9 +153,113 @@
               Product Name
             </div>
             <input id="product-name" type="text" v-model="user.productName" placeholder="Product Name">
+            <table cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td id="add-country"><div class="product-input-name">Country</div></td>
+                  <td id="add-operator"><div class="product-input-name">Operator</div></td>
+                  <td id="add-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td id="add-country">
+                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.country">
+                      <option value="China">China</option>
+                    </select>
+                  </td>
+                  <td id="add-operator">
+                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user.operator">
+                      <option value="China Unicom">China Unicom</option>
+                    </select>
+                  </td>
+                  <td id="add-sell-rate">
+                    <input id="sell-rate" type="text" v-model="user.sellRate" placeholder="Sell Rate">
+                  </td>
+                  <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td id="add-country"><div class="product-input-name">Country</div></td>
+                  <td id="add-operator"><div class="product-input-name">Operator</div></td>
+                  <td id="add-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td id="add-country">
+                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user2.country">
+                      <option value="China">China</option>
+                    </select>
+                  </td>
+                  <td id="add-operator">
+                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user2.operator">
+                      <option value="China Mobile">China Mobile</option>
+                    </select>
+                  </td>
+                  <td id="add-sell-rate">
+                    <input id="sell-rate" type="text" v-model="user2.sellRate" placeholder="Sell Rate">
+                  </td>
+                  <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
+                </tr>
+              </tbody>
+              <tbody id="active">
+                <tr>
+                  <td id="add-country"><div class="product-input-name">Country</div></td>
+                  <td id="add-operator"><div class="product-input-name">Operator</div></td>
+                  <td id="add-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td id="add-country">
+                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user3.country">
+                      <option value="United States">United States</option>
+                    </select>
+                  </td>
+                  <td id="add-operator">
+                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user3.operator">
+                      <option value="AT & T">AT & T</option>
+                    </select>
+                  </td>
+                  <td id="add-sell-rate">
+                    <input id="sell-rate" type="text" v-model="user3.sellRate" placeholder="Sell Rate">
+                  </td>
+                  <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="add-operator">
+              <div class="operator-image">
+                <img src="@/assets/Icon/Plus.svg">
+              </div>
+              <div class="operator-text">
+                Add Operator
+              </div>
+            </div>
           </div>
           <div class="product-vendor">
+            <div class="vendor-title">
+              Vendors for AT & T
+            </div>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName1">
+                <option value="Vendor BB">Vendor BB</option>
+              </select>
+              <input id="vendor" type="text" v-model="vendor.vendorRate1" placeholder="Vendor">
+              <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
 
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName2">
+                <option value="Vendor CC">Vendor CC</option>
+              </select>
+              <input id="vendor" type="text" v-model="vendor.vendorRate2" placeholder="Vendor">
+              <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
+
+              <div class="add-vendor">
+                <div class="vendor-image">
+                  <img src="@/assets/Icon/Plus.svg">
+                </div>
+                <div class="vendor-text">
+                  Add Vendor for AT & T
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -175,9 +281,27 @@ export default {
           popup: false,
           isModalVisible: false,
                 user:{
-                productName: 'Caroline'
+                productName: 'Caroline',
+                country: 'China',
+                operator: 'China Unicom',
+                sellRate: '0.001'
             },
-
+            user2:{
+              country: 'China',
+              operator: 'China Mobile',
+              sellRate: '0.0012'
+            },
+            user3:{
+              country: 'United States',
+              operator: 'AT & T',
+              sellRate: '0.0003'
+            },
+            vendor:{
+              vendorName1: 'Vendor BB',
+              vendorName2: 'Vendor CC',
+              vendorRate1: '0.0009',
+              vendorRate2: '0.0008'
+            }
         }
     },
     components:{
@@ -200,6 +324,73 @@ export default {
 }
 </script>
 <style>
+.vendor-title{
+  color: #BDBFD8;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.add-operator{
+  height: 60px;
+  display: inline-block;
+}
+.add-vendor{
+  height: 60px;
+  display: inline-block;
+}
+.operator-text{
+  float: left;
+  display: inline-block;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 20px;
+}
+.vendor-text{
+  float: left;
+  display: inline-block;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 20px;
+}
+.operator-image{
+  float: left;
+  display: inline-block;
+  margin-top: 17px;
+  margin-right: 7px;
+}
+.vendor-image{
+  float: left;
+  display: inline-block;
+  margin-top: 17px;
+  margin-right: 7px;
+  margin-left: 15px;
+}
+table{
+  max-width: 100%;
+  width: 100%;
+}
+tbody#active{
+	background-color: #F8F9FE;
+}
+td#add-country{
+  width: 190px;
+  padding-left: 15px;
+}
+td#add-operator{
+  width: 215px;
+}
+td#add-sell-rate{
+  width: 150px;
+}
 .svg path{
   fill: #51A3F3;
 }
@@ -226,19 +417,31 @@ export default {
   float: left;
   display: inline-block;
   background-color: #FFFFFF;
-  width: calc(100% - 20px);
-  margin-left: 20px;
+  width: calc(100% - 50px);
+  padding: 15px;
 }
 .product-main{
-  margin-left: 15px;
-  margin-top: 15px;
   display: inline-block;
   float: left;
   max-width: 58.1818181818%;
   width: 100%;
 }
 .product-vendor{
-
+  display: inline-block;
+  float: left;
+  max-width: calc(100% - 58.1818181818%);
+  width: 100%;
+  background-color: #F8F9FE;
+  height: 458px;
+}
+.delete-image{
+  margin-top: -10px;
+}
+.delete-vendor-image{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 .product-add-title{
   color: #000000;
@@ -257,6 +460,7 @@ export default {
   line-height: 15px;
   text-transform: uppercase;
   margin-bottom: 5px;
+  padding-top: 10px;
 }
 .side a{
   text-decoration: none;
@@ -284,6 +488,20 @@ input[type="text"]{
 }
 input[type="text"]#product-name{
   width: 570px;
+  margin-bottom: 20px;
+}
+input[type="text"]#sell-rate{
+  width: 150px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 36px !important;
+}
+input[type="text"]#vendor{
+  width: 120px;
+  height: 36px !important;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 button#product{
   	height: 40px;
@@ -301,6 +519,73 @@ button#product{
     margin-right: 20px;
     margin-bottom: 20px;
     float: right;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+  height: 40px !important;
+}
+.country{
+    width: 180px !important;
+    height: 40px !important;
+    border: 1px solid #EDEEF3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: "Helvetica Neue";
+    color: #55616E;
+    margin-top: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+.operator{
+    width: 205px !important;
+    height: 40px !important;
+    border: 1px solid #EDEEF3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: "Helvetica Neue";
+    color: #55616E;
+    margin-top: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+.vendor{
+    width: 245px !important;
+    height: 40px !important;
+    border: 1px solid #EDEEF3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: "Helvetica Neue";
+    color: #55616E;
+    margin-top: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+    margin-bottom: 5px;
 }
 button#cancel{
   height: 40px;
@@ -385,6 +670,7 @@ button#cancel{
     margin-top: 15px;
     color: #51A3F3;
 }
+
 .popup-image-box{
   width: 30px;
   height: 30px;
@@ -408,7 +694,7 @@ button#cancel{
     margin-left: 15px;
     margin-top: 21px;
 }
-.main{
+.main-add{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
