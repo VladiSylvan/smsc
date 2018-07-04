@@ -129,70 +129,59 @@
       </div>
       </transition>
       <div class="main">
-        <div class="main-head">
           <input id="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
           <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
 
-          <!-- <table>
+          <table cellspacing="0" cellpadding="0">
             <thead>
               <tr>
-                <th>Product Name</th>
-                <th>Created On</th>
-                <th>Created By</th>
-                <th>Owned By</th>
+                <th id="active"></th>
+                <th id="name">Product Name</th>
+                <th id="created">Created On</th>
+                <th id="created-by">Created By</th>
+                <th id="owned-by">Owned By</th>
+                <th id="options"></th>
+                <th id="options"></th>
+                <th id="options"></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Parkerport</td>
-                <td>10-03-2018</td>
-                <td>San Marino</td>
-                <td>Appolo Inc.</td>
+              <tr id="online">
+                <td id="active"><div class="product-active"></div></td>
+                <td id="name">Parkerport</td>
+                <td id="created">10-03-2018</td>
+                <td id="created-by">San Marino</td>
+                <td id="owned-by">Appolo Inc.</td>
+                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
+                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+              </tr>
+              <tr id="online">
+                <td id="active"><div class="product-active"></div></td>
+                <td id="name">Blickview</td>
+                <td id="created">08-19-2018</td>
+                <td id="created-by">San Marino</td>
+                <td id="owned-by">Appolo Inc.</td>
+                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
+                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+              </tr>
+              <tr id="offline">
+                <td id="active"><div class="product-not-active"></div></td>
+                <td id="name">Lake Woodrow</td>
+                <td id="created">01-04-2018</td>
+                <td id="created-by">San Marino</td>
+                <td id="owned-by">Appolo Inc.</td>
+                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
+                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
               </tr>
             </tbody>
-          </table> -->
-
-          <div class="product-title">
-            <div class="product-name">Product Name</div>
-            <div class="product-create">Created On</div>
-            <div class="product-by">Created By</div>
-            <div class="product-owed">Owned By</div>
-          </div>
-          <div class="product-info">
-            <div class="product-active"></div>
-            <div class="product-name-info">Parkerport</div>
-            <div class="product-create-info">10-03-2018</div>
-            <div class="product-by-info">San Marino</div>
-            <div class="product-owed-info">Appolo Inc.</div>
-            <div class="product-control-info"><img v-on:click="showModal()" class="image-box" src="@/assets/Icon/DID.svg"></div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Edit.svg"></div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Delete.svg"></div>
-          </div>
-          <div class="product-info">
-            <div class="product-active"></div>
-            <div class="product-name-info">Blickview</div>
-            <div class="product-create-info">08-19-2018</div>
-            <div class="product-by-info">San Marino</div>
-            <div class="product-owed-info">Appolo Inc.</div>
-            <div class="product-control-info"><img v-on:click="showModal()" class="image-box" src="@/assets/Icon/DID.svg"></div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Edit.svg"></div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Delete.svg"></div>
-          </div>
-          <div class="product-info-offline">
-            <div class="product-not-active"></div>
-            <div class="product-name-info">Lake Woodrow</div>
-            <div class="product-create-info">01-04-2018</div>
-            <div class="product-by-info">San Marino</div>
-            <div class="product-owed-info">Appolo Inc.</div>
-            <div class="product-control-info"><img v-on:click="showModal()" class="image-box" src="@/assets/Icon/DID.svg"></div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Edit.svg"></div>
-            <div class="product-control-info"><img class="image-box" src="@/assets/Icon/Delete.svg"></div>
-          </div>
+          </table>
         </div>
         <div id="app">
           <modal v-show="isModalVisible" @close="closeModal"/>
         </div>
-      </div>
     </div>
 </template>
 <script>
@@ -237,93 +226,65 @@ export default {
 }
 </script>
 <style>
-.main-head{
-  margin-top: 20px;
-  margin-left: 5px;
+table{
+  margin-left: 20px;
+  border: none;
+  max-width: calc(100% - 30px);
   width: 100%;
 }
-.product-name{
-  margin-left: 15px;
-  width: 169px;
-  padding-top: 11px;
-  float: left;
-}
-.product-create{
-  width: 372px;
-  padding-top: 11px;
-  float: left;
-}
-.product-by{
-  width: 189px;
-  padding-top: 11px;
-  float: left;
-}
-.product-owed{
-  width: 200px;
-  padding-top: 11px;
-  float: left;
-}
-
-.product-name-info{
-  margin-left: 3px;
-  width: 169px;
-  padding-top: 12px;
-  float: left;
-}
-.product-create-info{
-  width: 372px;
-  padding-top: 12px;
-  float: left;
-}
-.product-by-info{
-  width: 189px;
-  padding-top: 12px;
-  float: left;
-}
-.product-owed-info{
-  width: 200px;
-  padding-top: 12px;
-  float: left;
-}
-.product-control-info{
-  width: 30px;
-  height: 30px;
-  margin-right: 20px;
-  float: left;
-}
-.product-title{
-  width: 100%;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 16px;
-  margin-left: 15px;
-  margin-top: 15px;
-}
-.product-info{
-  width: 100%;
+tr{
   height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
-  line-height: 20px;
   line-height: 16px;
   margin-left: 15px;
+  text-align: left;
+}
+tr#online{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.product-info-offline{
-  width: 100%;
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 20px;
-  margin-left: 15px;
+tr#offline{
   background-color: #F0F1FA;
   box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
+}
+td#active{
+  width: 18px;
+}
+td#name{
+  width: 169px;
+}
+td#created{
+  width: 334px;
+}
+td#created-by{
+  width: 227px;
+}
+td#owned-by{
+  width: 200px;
+}
+td#options{
+  width: 50px;
+}
+
+th#active{
+  width: 18px;
+}
+th#name{
+  width: 169px;
+}
+th#created{
+  width: 334px;
+}
+th#created-by{
+  width: 227px;
+}
+th#owned-by{
+  width: 200px;
+}
+th#options{
+  width: 50px;
 }
 .product-active{
   box-sizing: border-box;
@@ -331,9 +292,8 @@ export default {
   width: 10px;
   border-radius: 50%;
   background-color: #24E2B8;
-  margin-top: 15px;
   float: left;
-  margin-left: 2px;
+  margin-left: 3px;
 }
 .product-not-active{
   box-sizing: border-box;
@@ -341,22 +301,15 @@ export default {
   width: 10px;
   border-radius: 50%;
   background-color: #D2305B;
-  margin-top: 15px;
   float: left;
-  margin-left: 2px;
+  margin-left: 3px;
 }
-.show-more{
-  text-align: center;
-  margin-top: 5px;
-}
-a#show-more{
-  	height: 15px;
-    width: 69px;
-    color: #51A3F3;
-    font-family: "SF Pro Text";
-    font-size: 13px;
-    line-height: 15px;
-    text-decoration: none;
+.product-control-info{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: -10px;
+  margin-left: 15px;
 }
 .side a{
   text-decoration: none;
@@ -382,7 +335,8 @@ input[type="text"]#product-search{
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-  margin-left: 13px;
+  margin-left: 20px;
+  margin-top: 20px;
   height: 40px !important;
 }
 button#product{
@@ -397,8 +351,7 @@ button#product{
     font-weight: 300;
     line-height: 30px;
     text-align: center;
-    margin-top: 0px;
-    margin-right: 20px;
+    margin-top: 20px;
     float: right;
 }
 .fade-enter-active, .fade-leave-active {
@@ -428,6 +381,7 @@ button#product{
   position: absolute;
   z-index: 1;
   float: right;
+  margin-left: 32px;
 }
 .username-popup {
 	color: #51A3F3;
@@ -490,7 +444,8 @@ button#product{
     margin-top: 21px;
 }
 .main{
-  width: calc(100%-310px);
+  max-width: calc(100% - 310px);
+  width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
@@ -500,7 +455,8 @@ button#product{
   display: inline-block;
   vertical-align: top;
   position: relative;
-  width: 912px;
+  width: 61.1111111111%;
+  float: left;
 }
 .header-min{
   display: inline-block;
@@ -514,6 +470,7 @@ button#product{
   fill: white;
 }
 .navigation{
+    width: 100%;
     height: 60px;
     background-color: #FFFFFF;
 }
@@ -559,7 +516,7 @@ button#product{
 .logo-place{
   margin: 0;
   display: inline-block;
-  width: 300px;
+  width: 20.8333333333%;
   float: left;
 }
 .username {
@@ -646,6 +603,13 @@ button#product{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
+}
+.control-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
 }
 .side-title{
   	height: 30px;

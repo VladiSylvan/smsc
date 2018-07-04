@@ -60,8 +60,8 @@
         </div>
       </nav>
       <transition name="fade">
-      <div v-bind:class="{'sidebar-hide': !show}" class="sidebar">
-        <div v-bind:class="{'side-hide': !show}" id="active" class="side">
+      <ul v-bind:class="{'sidebar-hide': !show}">
+        <li id="active">
           <router-link :to="{ name: 'Dashboard'}">
             <div class="image-box">
               <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -81,57 +81,57 @@
                   </g>
               </svg>
           </div>
-          <span v-if="show" id="side-link">Dashboard</span>
+          <span v-if="show" class="side-link" id="active">Dashboard</span>
           </router-link>
-        </div>
-        <div class="side">
+        </li>
+        <li>
           <router-link :to="{ name: 'Reporting'}">
             <img class="image-box" src="@/assets/Icon/Reporting.svg">
-            <span v-if="show" id="side-link">Reporting</span>
+            <span v-if="show" class="side-link">Reporting</span>
           </router-link>
-        </div>
-        <div class="side">
+        </li>
+        <li>
           <router-link :to="{ name: 'Product'}">
             <img class="image-box" src="@/assets/Icon/Product.svg">
-            <span v-if="show" id="side-link">Product</span>
+            <span v-if="show" class="side-link">Product</span>
           </router-link>
-        </div>
-        <div class="side">
+        </li>
+        <li>
           <img class="image-box" src="@/assets/Icon/Template.svg">
-          <span v-if="show" id="side-link">Template Approval</span>
-        </div>
-        <div class="side">
+          <span v-if="show" class="side-link">Template Approval</span>
+        </li>
+        <li>
           <img class="image-box" src="@/assets/Icon/Billing.svg">
-          <span v-if="show" id="side-link">Billing</span>
-        </div>
+          <span v-if="show" class="side-link">Billing</span>
+        </li>
         <div v-if="show" class="side-title">
           Manage
         </div>
-        <div class="side">
+        <li>
           <img class="image-box" src="@/assets/Icon/Reseller.svg">
-          <span v-if="show" id="side-link">Resellers</span>
-        </div>
-        <div class="side">
+          <span v-if="show" class="side-link">Resellers</span>
+        </li>
+        <li>
           <img class="image-box" src="@/assets/Icon/Users.svg">
-          <span v-if="show" id="side-link">Users</span>
-        </div>
-        <div class="side">
+          <span v-if="show" class="side-link">Users</span>
+        </li>
+        <li>
           <img class="image-box" src="@/assets/Icon/Companies.svg">
-          <span v-if="show" id="side-link">Companies</span>
-        </div>
-        <div class="side">
+          <span v-if="show" class="side-link">Companies</span>
+        </li>
+        <li>
           <img class="image-box" src="@/assets/Icon/Vendors.svg">
-          <span v-if="show" id="side-link">Vendors</span>
-        </div>
-        <div class="side">
+          <span v-if="show" class="side-link">Vendors</span>
+        </li>
+        <li>
           <img class="image-box" src="@/assets/Icon/DID.svg">
-          <span v-if="show" id="side-link">DID</span>
-        </div>
-        <div class="side">
+          <span v-if="show" class="side-link">DID</span>
+        </li>
+        <li>
           <img class="image-box" src="@/assets/Icon/Filters.svg">
-          <span v-if="show" id="side-link">Filters</span>
-        </div>
-      </div>
+          <span v-if="show" class="side-link">Filters</span>
+        </li>
+      </ul>
       </transition>
       <div class="main">
         <div class="cont-1">
@@ -223,7 +223,16 @@ export default {
     },
 }
 </script>
+
 <style>
+.side a{
+  text-decoration: none;
+  color: #55616E;
+}
+.side#active a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
 }
@@ -320,12 +329,11 @@ export default {
     margin-top: 21px;
 }
 .main{
+  max-width: calc(100% - 310px);
+  width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-  max-width: calc(100% - 310px);
-  width: 100%;
-  margin-top: -10px;
   margin-right: 10px;
 }
 .header{
@@ -430,13 +438,13 @@ export default {
   margin-top: 20px;
   margin-left: 40px;
 }
-.side#active svg g{
+li#active svg g{
   fill: white;
 }
 .navigation{
-    width: 100%;
     height: 60px;
     background-color: #FFFFFF;
+    width: 100%;
 }
 .head-logo{
     display: inline-block;
@@ -494,7 +502,6 @@ export default {
     line-height: 25px;
     font-family: "Helvetica Neue";
     color: #55616E;
-    margin-bottom: 20px;
     margin-top: 5px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -515,7 +522,6 @@ export default {
     line-height: 25px;
     font-family: "Helvetica Neue";
     color: #55616E;
-    margin-bottom: 20px;
     margin-top: 5px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -556,7 +562,7 @@ select{
     margin-top: 7px;
     display: inline-block;
 }
-#side-link{
+.side-link{
   	height: 20px;
     width: 220px;
     font-family: "Helvetica Neue";
@@ -565,14 +571,23 @@ select{
     display: inline-block;
     margin-top: 10px;
 }
-.sidebar {
+.side-link#active{
+  	color: #FFFFFF;
+}
+ul{
 	height: 100vh;
 	max-width: 300px;
   width: 100%;
 	background-color: #F0F1FA;
   display: inline-block;
   float: left;
-  margin-top: -10px;
+  margin: 0;
+  padding: 0;
+}
+li a{
+  text-decoration: none;
+  color: #55616E;
+  cursor: pointer;
 }
 .sidebar-hide {
 	height: 100vh;
@@ -582,20 +597,12 @@ select{
   float: left;
   margin-right: 75px;
 }
-.side{
+li{
   height: 40px;
   width: 100%;
   color: #55616E;
   display: inline-block;
   cursor: pointer;
-}
-.side a{
-  text-decoration: none;
-  color: #55616E;
-}
-.side#active a{
-  text-decoration: none;
-  color: #FFFFFF;
 }
 .side-hide{
   height: 40px;
@@ -609,13 +616,13 @@ select{
   color: #FFFFFF;
   fill: #FFFFFF;
 }
-.side#active{
+li#active{
 	border-radius: 0 4px 4px 0;
 	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
   color: #FFFFFF;
   fill: #FFFFFF;
 }
-.side:first-child{
+li:first-child{
   margin-top: 10px;
 }
 .image-box{

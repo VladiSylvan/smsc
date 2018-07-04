@@ -88,8 +88,8 @@
                   </g>
               </svg>
             </div>
-          </router-link>
           <span v-if="show" id="side-link">Product</span>
+          </router-link>
         </div>
         <div class="side">
           <img class="image-box" src="@/assets/Icon/Template.svg">
@@ -129,7 +129,15 @@
       </div>
       </transition>
       <div class="main">
-        
+        <div class="navbar">
+          <div class="navbar-link" id="active">
+            SMS Routes
+            <div class="navbar-line"></div>
+          </div>
+          <div class="navbar-link">
+            SMS Pricing
+          </div>
+        </div>
       </div>
     </div>
 </template>
@@ -175,126 +183,31 @@ export default {
 }
 </script>
 <style>
-.main-head{
-  margin-top: 20px;
-  margin-left: 5px;
-  width: 100%;
+.navbar{
+  width: 1140px;
+  height: 50px;
+  background-color: #FFFFFF;
 }
-.product-name{
-  margin-left: 15px;
-  width: 169px;
-  padding-top: 11px;
+.navbar-link{
   float: left;
-}
-.product-create{
-  width: 372px;
-  padding-top: 11px;
-  float: left;
-}
-.product-by{
-  width: 189px;
-  padding-top: 11px;
-  float: left;
-}
-.product-owed{
-  width: 200px;
-  padding-top: 11px;
-  float: left;
-}
-
-.product-name-info{
-  margin-left: 3px;
-  width: 169px;
-  padding-top: 12px;
-  float: left;
-}
-.product-create-info{
-  width: 372px;
-  padding-top: 12px;
-  float: left;
-}
-.product-by-info{
-  width: 189px;
-  padding-top: 12px;
-  float: left;
-}
-.product-owed-info{
-  width: 200px;
-  padding-top: 12px;
-  float: left;
-}
-.product-control-info{
-  width: 30px;
-  height: 30px;
-  margin-right: 20px;
-  float: left;
-}
-.product-title{
-  width: 100%;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 16px;
-  margin-left: 15px;
-  margin-top: 15px;
-}
-.product-info{
-  width: 100%;
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
+  display: inline-block;
+  height: 50px;
+  margin-left: 20px;
+  color: #BDBFD8;
+  font-family: "Circular Std";
+  font-size: 16px;
+  font-weight: 300;
   line-height: 20px;
-  line-height: 16px;
-  margin-left: 15px;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.product-info-offline{
-  width: 100%;
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 20px;
-  margin-left: 15px;
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-}
-.product-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #24E2B8;
-  margin-top: 15px;
-  float: left;
-  margin-left: 2px;
-}
-.product-not-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #D2305B;
-  margin-top: 15px;
-  float: left;
-  margin-left: 2px;
-}
-.show-more{
   text-align: center;
-  margin-top: 5px;
+  margin-top: 15px;
 }
-a#show-more{
-  	height: 15px;
-    width: 69px;
-    color: #51A3F3;
-    font-family: "SF Pro Text";
-    font-size: 13px;
-    line-height: 15px;
-    text-decoration: none;
+.navbar-link#active{
+  color: #51A3F3;
+}
+.navbar-line{
+  border-top: 2px solid #51A3F3;
+  margin-top: 13px;
+  width: 102px;
 }
 .side a{
   text-decoration: none;
