@@ -70,41 +70,34 @@
         <div v-bind:class="{'side-hide': !show}" class="side" id="active">
           <router-link :to="{ name: 'Product'}">
             <div class="image-box">
-              <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-                  <title>Icon / Product</title>
-                  <desc>Created with Sketch.</desc>
-                  <defs>
-                      <path d="M23.4256131,9.45680858 L19.2124251,9.45680858 L19.2124251,8.68064356 C19.2124251,7.76533663 18.4892098,7.02064686 17.600109,7.02064686 L12.3855041,7.02064686 C11.4965123,7.02064686 10.773188,7.76528053 10.773188,8.68064356 L10.773188,9.45680858 L6.5600545,9.45680858 C5.69983651,9.45680858 5,10.1772607 5,11.0628317 L5,22.358462 C5,23.244033 5.69983651,23.9645413 6.5600545,23.9645413 L23.4255586,23.9645413 C24.2857766,23.9645413 24.9856131,23.244033 24.9856131,22.358462 L24.9856131,11.0628317 C24.9856676,10.1773168 24.2858856,9.45680858 23.4256131,9.45680858 Z M12.1356403,8.68064356 C12.1356403,8.53875248 12.2477929,8.42328713 12.3855586,8.42328713 L17.6001635,8.42328713 C17.7379292,8.42328713 17.8500817,8.53875248 17.8500817,8.68064356 L17.8500817,9.45680858 L12.1356403,9.45680858 L12.1356403,8.68064356 Z M6.56010899,10.8594488 L23.4256131,10.8594488 C23.5346049,10.8594488 23.6232698,10.9506766 23.6232698,11.0628317 L23.6232698,14.7432475 C21.5122071,15.5494851 18.3279564,16.0257096 14.9870845,16.0257096 C11.6535695,16.0257096 8.47367847,15.5511122 6.36239782,14.7475677 L6.36239782,11.0628317 C6.36245232,10.9506766 6.45111717,10.8594488 6.56010899,10.8594488 Z M23.4256131,22.561901 L6.56010899,22.561901 C6.45111717,22.561901 6.36245232,22.4706733 6.36245232,22.358462 L6.36245232,16.2335809 C8.29476839,16.8898482 10.8353134,17.3000363 13.6039782,17.4028218 C13.6038147,17.4109571 13.6028338,17.4188119 13.6028338,17.4270594 L13.6028338,17.7363696 C13.6028338,18.3162211 14.0610354,18.7879571 14.6243052,18.7879571 L15.3614714,18.7879571 C15.9247411,18.7879571 16.3829428,18.3162211 16.3829428,17.7363696 L16.3829428,17.4270594 C16.3829428,17.4188119 16.3818529,17.4107327 16.3817984,17.4024851 C19.1522071,17.298802 21.6923706,16.8874356 23.6233787,16.2298779 L23.6233787,22.3585182 C23.6232698,22.4706733 23.5346049,22.561901 23.4256131,22.561901 Z" id="path-1"></path>
-                  </defs>
-                  <g id="Icon-/-Product" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <mask id="mask-2" fill="white">
-                          <use xlink:href="#path-1"></use>
-                      </mask>
-                      <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
-                      <g id="Color-/-Dark-4" mask="url(#mask-2)" fill="white">
-                          <rect id="Rectangle" x="0" y="0" width="30" height="30"></rect>
-                      </g>
-                  </g>
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M23.4256131,9.45680858 L19.2124251,9.45680858 L19.2124251,8.68064356 C19.2124251,7.76533663 18.4892098,7.02064686 17.600109,7.02064686 L12.3855041,7.02064686 C11.4965123,7.02064686 10.773188,7.76528053 10.773188,8.68064356 L10.773188,9.45680858 L6.5600545,9.45680858 C5.69983651,9.45680858 5,10.1772607 5,11.0628317 L5,22.358462 C5,23.244033 5.69983651,23.9645413 6.5600545,23.9645413 L23.4255586,23.9645413 C24.2857766,23.9645413 24.9856131,23.244033 24.9856131,22.358462 L24.9856131,11.0628317 C24.9856676,10.1773168 24.2858856,9.45680858 23.4256131,9.45680858 Z M12.1356403,8.68064356 C12.1356403,8.53875248 12.2477929,8.42328713 12.3855586,8.42328713 L17.6001635,8.42328713 C17.7379292,8.42328713 17.8500817,8.53875248 17.8500817,8.68064356 L17.8500817,9.45680858 L12.1356403,9.45680858 L12.1356403,8.68064356 Z M6.56010899,10.8594488 L23.4256131,10.8594488 C23.5346049,10.8594488 23.6232698,10.9506766 23.6232698,11.0628317 L23.6232698,14.7432475 C21.5122071,15.5494851 18.3279564,16.0257096 14.9870845,16.0257096 C11.6535695,16.0257096 8.47367847,15.5511122 6.36239782,14.7475677 L6.36239782,11.0628317 C6.36245232,10.9506766 6.45111717,10.8594488 6.56010899,10.8594488 Z M23.4256131,22.561901 L6.56010899,22.561901 C6.45111717,22.561901 6.36245232,22.4706733 6.36245232,22.358462 L6.36245232,16.2335809 C8.29476839,16.8898482 10.8353134,17.3000363 13.6039782,17.4028218 C13.6038147,17.4109571 13.6028338,17.4188119 13.6028338,17.4270594 L13.6028338,17.7363696 C13.6028338,18.3162211 14.0610354,18.7879571 14.6243052,18.7879571 L15.3614714,18.7879571 C15.9247411,18.7879571 16.3829428,18.3162211 16.3829428,17.7363696 L16.3829428,17.4270594 C16.3829428,17.4188119 16.3818529,17.4107327 16.3817984,17.4024851 C19.1522071,17.298802 21.6923706,16.8874356 23.6233787,16.2298779 L23.6233787,22.3585182 C23.6232698,22.4706733 23.5346049,22.561901 23.4256131,22.561901 Z" id="path-1">
+                </path>
               </svg>
             </div>
-          <span v-if="show" id="side-link">Product</span>
+            <span v-if="show" id="side-link">Product</span>
           </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Template.svg">
-          <span v-if="show" id="side-link">Template Approval</span>
+          <router-link :to="{ name: 'Template'}">
+            <img class="image-box" src="@/assets/Icon/Template.svg">
+            <span v-if="show" id="side-link">Template Approval</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Billing.svg">
-          <span v-if="show" id="side-link">Billing</span>
+          <router-link :to="{ name: 'Billing'}">
+            <img class="image-box" src="@/assets/Icon/Billing.svg">
+            <span v-if="show" id="side-link">Billing</span>
+          </router-link>
         </div>
         <div v-if="show" class="side-title">
           Manage
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Reseller.svg">
-          <span v-if="show" id="side-link">Resellers</span>
+          <router-link :to="{ name: 'Resellers'}">
+            <img class="image-box" src="@/assets/Icon/Reseller.svg">
+            <span v-if="show" id="side-link">Resellers</span>
+          </router-link>
         </div>
         <div class="side">
           <img class="image-box" src="@/assets/Icon/Users.svg">
@@ -178,7 +171,7 @@
                   <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
                 </tr>
               </tbody>
-              <tbody>
+              <tbody v-bind:class="{'active-table': !vendors}" v-on:click="vendors = false">
                 <tr>
                   <td id="add-country"><div class="product-input-name">Country</div></td>
                   <td id="add-operator"><div class="product-input-name">Operator</div></td>
@@ -202,7 +195,7 @@
                   <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
                 </tr>
               </tbody>
-              <tbody id="active">
+              <tbody v-bind:class="{'active-table': vendors}" v-on:click="vendors = true">
                 <tr>
                   <td id="add-country"><div class="product-input-name">Country</div></td>
                   <td id="add-operator"><div class="product-input-name">Operator</div></td>
@@ -237,29 +230,53 @@
             </div>
           </div>
           <div class="product-vendor">
-            <div class="vendor-title">
+            <div v-if="vendors" class="vendor-title">
               Vendors for AT & T
             </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName1">
-                <option value="Vendor BB">Vendor BB</option>
-              </select>
-              <input id="vendor" type="text" v-model="vendor.vendorRate1" placeholder="Vendor">
-              <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
-
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName2">
-                <option value="Vendor CC">Vendor CC</option>
-              </select>
-              <input id="vendor" type="text" v-model="vendor.vendorRate2" placeholder="Vendor">
-              <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
-
-              <div class="add-vendor">
-                <div class="vendor-image">
-                  <img src="@/assets/Icon/Plus.svg">
-                </div>
-                <div class="vendor-text">
-                  Add Vendor for AT & T
-                </div>
+            <div v-if="!vendors" class="vendor-title">
+              Vendors for China Mobile
+            </div>
+            <table v-if="vendors">
+              <tbody>
+                <tr>
+                  <td>
+                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName1">
+                      <option value="Vendor BB">Vendor BB</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input id="vendor" type="text" v-model="vendor.vendorRate1" placeholder="Vendor">
+                  </td>
+                  <td>
+                    <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName2">
+                      <option value="Vendor CC">Vendor CC</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input id="vendor" type="text" v-model="vendor.vendorRate2" placeholder="Vendor">
+                  </td>
+                  <td>
+                    <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="add-vendor">
+              <div class="vendor-image">
+                <img src="@/assets/Icon/Plus.svg">
               </div>
+              <div v-if="vendors" class="vendor-text">
+                Add Vendor for AT & T
+              </div>
+              <div v-if="!vendors" class="vendor-text">
+                Add Vendor for China Mobile
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -280,6 +297,7 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
+          vendors: true,
                 user:{
                 productName: 'Caroline',
                 country: 'China',
@@ -378,7 +396,7 @@ table{
   max-width: 100%;
   width: 100%;
 }
-tbody#active{
+.active-table{
 	background-color: #F8F9FE;
 }
 td#add-country{
@@ -440,8 +458,7 @@ td#add-sell-rate{
 .delete-vendor-image{
   display: inline-block;
   vertical-align: top;
-  margin-top: 10px;
-  margin-left: 5px;
+  margin-right: 5px;
 }
 .product-add-title{
   color: #000000;

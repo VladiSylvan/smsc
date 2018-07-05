@@ -8,7 +8,7 @@
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
-          <div class="title">Reporting</div>
+          <div class="title">Resellers</div>
         </div>
         <div v-if="!popup" v-on:click="popup = !popup" class="user">
           <div class="username">Linnie Weaver</div>
@@ -61,14 +61,9 @@
             <span v-if="show" id="side-link">Dashboard</span>
           </router-link>
         </div>
-        <div v-bind:class="{'side-hide': !show}" id="active" class="side">
+        <div class="side">
           <router-link :to="{ name: 'Reporting'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M24.3333333,22.6234595 L7.1656,22.6234595 L9.95824,16.9509189 L12.8546667,18.8602162 C13.03872,18.9815676 13.2700267,19.0032973 13.47296,18.9181081 C13.6759467,18.8331351 13.8245333,18.6521622 13.8701867,18.4344865 L15.0018133,13.0466486 L18.1837867,14.6959459 C18.4528,14.8354595 18.78064,14.7740541 18.9827733,14.5463784 L21.6315733,11.5637297 L21.71488,12.467027 C21.7470933,12.8172432 22.0377067,13.0799459 22.37792,13.0799459 C22.3986667,13.0799459 22.4196267,13.078973 22.4406933,13.076973 C22.8073067,13.0422703 23.0766933,12.712973 23.0425067,12.3414054 L22.8059733,9.774 C22.7716267,9.40243243 22.4470933,9.12924324 22.0802133,9.16405405 L19.5470933,9.40367568 C19.1805333,9.43837838 18.91104,9.76767568 18.9452267,10.1391892 C18.9796267,10.5107568 19.3035733,10.7838919 19.67104,10.7491351 L20.6428267,10.6571892 L18.33472,13.2562703 L14.8345067,11.442 C14.6498667,11.3462162 14.43168,11.3431351 14.24448,11.4334595 C14.0571733,11.5237838 13.92208,11.6972973 13.87888,11.9029189 L12.7682667,17.1910811 L10.0589333,15.4051351 C9.89962667,15.3001081 9.70362667,15.2689189 9.52037333,15.3195676 C9.33701333,15.3701081 9.18368,15.4975135 9.09893333,15.6697838 L6.33333333,21.2874054 L6.33333333,6.70086486 C6.33333333,6.32767568 6.03482667,6.02518919 5.66666667,6.02518919 C5.29850667,6.02518919 5,6.32767568 5,6.70086486 L5,23.2991351 C5,23.6722703 5.29850667,23.9748108 5.66666667,23.9748108 L24.3333333,23.9748108 C24.70144,23.9748108 25,23.6722703 25,23.2991351 C25,22.926 24.70144,22.6234595 24.3333333,22.6234595 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
+            <img class="image-box" src="@/assets/Icon/Reporting.svg">
             <span v-if="show" id="side-link">Reporting</span>
           </router-link>
         </div>
@@ -93,9 +88,14 @@
         <div v-if="show" class="side-title">
           Manage
         </div>
-        <div class="side">
+        <div v-bind:class="{'side-hide': !show}" class="side" id="active">
           <router-link :to="{ name: 'Resellers'}">
-            <img class="image-box" src="@/assets/Icon/Reseller.svg">
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M24.302168,8.01773234 L5.67750678,8.01773234 C5.30336043,8.01773234 5,8.32983271 5,8.71475836 L5,22.2642751 C5,22.649145 5.30336043,22.9613011 5.67750678,22.9613011 L24.302168,22.9613011 C24.6762602,22.9613011 24.9796748,22.649145 24.9796748,22.2642751 L24.9796748,8.71475836 C24.9796748,8.32988848 24.6762602,8.01773234 24.302168,8.01773234 Z M23.6246612,21.5673048 L6.35501355,21.5673048 L6.35501355,9.41178439 L23.6246612,9.41178439 L23.6246612,21.5673048 Z M8.1303523,12.695223 L14.6344173,16.8181041 C14.7433604,16.8871933 14.8665583,16.92171 14.9898103,16.92171 C15.1130623,16.92171 15.2362602,16.8871933 15.3452033,16.8181041 L21.8492683,12.695223 C22.1678049,12.4933086 22.2669919,12.0638848 22.0707317,11.736171 C21.8744715,11.4084572 21.4569648,11.3064126 21.1385366,11.5083829 L14.9898103,15.4059294 L8.84113821,11.5083829 C8.52271003,11.3065799 8.10531165,11.4084015 7.90894309,11.736171 C7.71262873,12.063829 7.81176152,12.4933086 8.1303523,12.695223 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
             <span v-if="show" id="side-link">Resellers</span>
           </router-link>
         </div>
@@ -122,142 +122,130 @@
       </div>
       </transition>
       <div class="main">
-        <div class="cont-1-rep">
-            <div class="chart-1-reporting">
-              <div class="chart-1-title-reporting">
-                Resellers
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-              <input id="search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
-              <button type="submit">Filter</button>
-              <table cellspacing="0" cellpadding="0">
-                <thead>
-                  <tr>
-                    <th id="resellers">Resellers</th>
-                    <th id="date">Date</th>
-                    <th id="status">Status</th>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                </thead>
-              </table>
-              <div class="show-more">
-                <a href="#" id="show-more">Show more</a>
-              </div>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
-          </div>
-          <div class="cont-1-rep">
-            <div class="chart-3-reporting">
-              <div class="chart-3-title-reporting">
-                Companies
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
-          </div>
+          <input id="reseller-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchReseller" placeholder="Search for reseller">
+          <router-link :to="{ name: 'AddReseller'}"><button id="reseller" type="submit">Add Reseller</button></router-link>
+
+          <table cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th class="reseller-name">Name</th>
+                <th class="reseller-balance">Balance</th>
+                <th class="reseller-clients">Clients</th>
+                <th class="reseller-member-since">Member Since</th>
+                <th class="reseller-option"></th>
+                <th class="reseller-option"></th>
+                <th class="reseller-option"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="reseller-name">San Marino</td>
+                <td class="reseller-balance"><b>$38</b></td>
+                <td class="reseller-clients">12</td>
+                <td class="reseller-member-since">10-03-2018</td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                <td class="reseller-option">
+                  <div v-on:click="test = !test" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
+                  <div v-if="test" class="reseller-menu">
+                    <div class="reseller-menu-link">
+                      Payment History
+                      <div v-on:click="test = !test" class="reseller-menu-button">
+                        <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path d="M10,16 C9.44771525,16 9,15.5522847 9,15 C9,14.4477153 9.44771525,14 10,14 C10.5522847,14 11,14.4477153 11,15 C11,15.5522847 10.5522847,16 10,16 Z M15,16 C14.4477153,16 14,15.5522847 14,15 C14,14.4477153 14.4477153,14 15,14 C15.5522847,14 16,14.4477153 16,15 C16,15.5522847 15.5522847,16 15,16 Z M20,16 C19.4477153,16 19,15.5522847 19,15 C19,14.4477153 19.4477153,14 20,14 C20.5522847,14 21,14.4477153 21,15 C21,15.5522847 20.5522847,16 20,16 Z" id="path-1">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="reseller-menu-link">
+                      Invoice History
+                    </div>
+                    <div class="reseller-menu-link">
+                      Transaction History
+                    </div>
+                    <div class="reseller-menu-add">
+                      <div class="reseller-span">
+                        Add Manual Payment
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="reseller-name">Henrietta McDaniel</td>
+                <td class="reseller-balance"><b>$38</b></td>
+                <td class="reseller-clients">70</td>
+                <td class="reseller-member-since">10-03-2018</td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="reseller-name">Mollie Garrett</td>
+                <td class="reseller-balance"><b>$38</b></td>
+                <td class="reseller-clients">19</td>
+                <td class="reseller-member-since">10-03-2018</td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="reseller-name">Martha Vasquez</td>
+                <td class="reseller-balance"><b>$38</b></td>
+                <td class="reseller-clients">81</td>
+                <td class="reseller-member-since">10-03-2018</td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="reseller-name">Stanley Burgess</td>
+                <td class="reseller-balance"><b>$38</b></td>
+                <td class="reseller-clients">78</td>
+                <td class="reseller-member-since">10-03-2018</td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="reseller-name">Leona Duncan</td>
+                <td class="reseller-balance"><b>$38</b></td>
+                <td class="reseller-clients">27</td>
+                <td class="reseller-member-since">10-03-2018</td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="reseller-name">Alex Elliott</td>
+                <td class="reseller-balance"><b>$38</b></td>
+                <td class="reseller-clients">26</td>
+                <td class="reseller-member-since">10-03-2018</td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
     </div>
 </template>
 <script>
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
 import BarChart2 from '@/components/auth/BarChart2'
+import modal from '@/components/modal.vue'
 
 export default {
+    name: 'app',
     data () {
         return {
           show: true,
           width: '60px',
           transitionName: 'fade',
           popup: false,
+          test: false,
+          isModalVisible: false,
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -268,26 +256,80 @@ export default {
     components:{
       CommitChart,
       BarChart,
-      BarChart2
+      BarChart2,
+      modal
     },
     methods:{
         sendForm(){
             event.preventDefault()
+        },
+        showModal() {
+          this.isModalVisible = true;
+        },
+        closeModal() {
+          this.isModalVisible = false;
         }
     },
 }
 </script>
 <style>
+.svg-blue path{
+  fill: #51A3F3;
+}
+.reseller-menu{
+	height: 210px;
+	width: 228px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
+  display: inline-block;
+  vertical-align: top;
+  position: fixed;
+  z-index: 1;
+  float: right;
+  margin-left: -220px;
+  margin-top: -35px;
+}
+.reseller-menu-link{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.reseller-menu-link:first-child{
+  margin-top: 35px;
+}
+.reseller-span{
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.reseller-menu-add{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  background-color: #F8F9FE;
+}
+.reseller-menu-button{
+  float: right;
+  display: inline-block;
+  margin-top: -5px;
+  margin-right: -7px;
+}
 .svg-active path{
   fill: white;
 }
 table{
   margin-left: 20px;
   border: none;
-  max-width: calc(100% - 40px);
+  max-width: calc(100% - 30px);
   width: 100%;
+  margin-top: 20px;
 }
-tr{
+th{
   height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -295,70 +337,58 @@ tr{
   line-height: 16px;
   margin-left: 15px;
   text-align: left;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
-td#resellers{
-  width: 174px;
-  margin-left: 15px;
-}
-td#date{
-  width: 189px;
-}
-td#status{
-  width: 132px;
-}
-
-th#resellers{
-  width: 174px;
-}
-th#date{
-  width: 189px;
-}
-th#status{
-  width: 132px;
-}
-
-.active{
-  box-sizing: border-box;
-  height: 24px;
-  width: 59px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
-  background-color: #24E2B8;
+td{
+  height: 50px;
   color: #212B36;
   font-family: "SF Pro Text";
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.not-active{
+.reseller-name{
+  width: 169px;
+  padding-left: 15px;
+}
+.reseller-balance{
+  width: 171px;
+}
+.reseller-clients{
+  width: 190px;
+}
+.reseller-member-since{
+  width: 403px;
+}
+.reseller-option{
+  width: 49px;
+}
+.product-active{
   box-sizing: border-box;
-  height: 24px;
-  width: 85px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #24E2B8;
+  float: left;
+  margin-left: 3px;
+}
+.product-not-active{
+  box-sizing: border-box;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
   background-color: #D2305B;
-  color: #FFFFFF;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
+  float: left;
+  margin-left: 3px;
 }
-.show-more{
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 23px;
-}
-a#show-more{
-  	height: 15px;
-    width: 69px;
-    color: #51A3F3;
-    font-family: "SF Pro Text";
-    font-size: 13px;
-    line-height: 15px;
-    text-decoration: none;
+.product-control-info{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: -10px;
+  margin-left: 15px;
 }
 .side a{
   text-decoration: none;
@@ -368,8 +398,8 @@ a#show-more{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]{
-  width: calc(69.621421976% - 30px);
+input[type="text"]#reseller-search{
+  width: 345px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -384,25 +414,24 @@ input[type="text"]{
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-  margin-left: 13px;
+  margin-left: 20px;
+  margin-top: 20px;
+  height: 40px !important;
 }
-input[type="text"]#search{
-  height: 36px !important;
-}
-button{
-  	height: 36px;
-    width: calc(16.7737765466% + 10px);
-    border: 1px
-    solid #BDBFD8;
+button#reseller{
+  	height: 40px;
+    width: 130px;
     border-radius: 4px;
-    background-color: #FFFFFF;
+    background-color: #51A3F3;
+    border-radius: 4px;
+    color: #fff;
     font-family: "Helvetica Neue";
     font-size: 15px;
     font-weight: 300;
     line-height: 30px;
     text-align: center;
-    margin-top: 15px;
-    margin-left: 10px;
+    margin-top: 20px;
+    float: right;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -410,13 +439,11 @@ button{
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-.cont-1-rep{
-  width: 47.5%;
-  float: left;
+.col-md-6{
+  width: 45.83%;
 }
-.cont-2-rep{
-  width: 22.9%;
-  float: left;
+.col-md-3{
+  width: 20.8%;
 }
 .user{
   display: inline-block;
@@ -518,98 +545,13 @@ button{
   position: relative;
   z-index: 1000;
 }
-.chart-1-reporting{
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.chart-1-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3-reporting{
-  height: 360px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-}
-.chart-3-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-box{
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-}
-.chart-2-reporting{
-  height: 170px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-  position: relative;
-}
-.chart-2-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-2-reporting#second{
-  margin-left: 60px;
-}
 .side#active svg g{
   fill: white;
 }
 .navigation{
+    width: 100%;
     height: 60px;
     background-color: #FFFFFF;
-    width: 100%;
 }
 .head-logo{
     display: inline-block;
@@ -740,6 +682,13 @@ button{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
+}
+.control-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
 }
 .side-title{
   	height: 30px;
