@@ -11,6 +11,14 @@ import Billing from '@/components/auth/Billing'
 import BillingPayment from '@/components/auth/BillingPayment'
 import Resellers from '@/components/auth/Resellers'
 import AddReseller from '@/components/auth/AddReseller'
+import EditReseller from '@/components/auth/EditReseller'
+import PaymentHistory from '@/components/auth/PaymentHistory'
+import InvoiceHistory from '@/components/auth/InvoiceHistory'
+import TransactionHistory from '@/components/auth/TransactionHistory'
+import Users from '@/components/auth/Users'
+import AddUser from '@/components/auth/AddUser'
+import EditUser from '@/components/auth/EditUser'
+import Companies from '@/components/auth/Companies'
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
 
@@ -75,5 +83,45 @@ export default new Router({
         path: '/addreseller',
         name: 'AddReseller',
         component: AddReseller
+    },
+    {
+        path: '/editreseller',
+        name: 'EditReseller',
+        component: EditReseller
+    },
+    {
+        path: '/paymenthistory',
+        name: 'PaymentHistory',
+        component: PaymentHistory
+    },
+    {
+        path: '/invoicehistory',
+        name: 'InvoiceHistory',
+        component: InvoiceHistory
+    },
+    {
+        path: '/transactionhistory',
+        name: 'TransactionHistory',
+        component: TransactionHistory
+    },
+    {
+        path: '/users',
+        name: 'Users',
+        component: Users
+    },
+    {
+        path: '/adduser',
+        name: 'AddUser',
+        component: AddUser
+    },
+    {
+        path: '/edituser',
+        name: 'EditUser',
+        component: EditUser
+    },
+    {
+        path: '/companies',
+        name: 'Companies',
+        component: Companies
     }]
 })

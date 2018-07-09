@@ -3,12 +3,12 @@
       <nav class="navigation">
         <div class="logo-place">
           <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="circle"></div>
-          <div v-if="!show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Open.svg') + ')' }" class="circle"></div>
+          <div v-if="!show" v-on:click="show = !show" style="transform: rotate(180deg);" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="circle"></div>
           <img v-if="show" class="head-logo" src="@/assets/logo.png">
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
-          <div class="title">Product</div>
+          <div class="title">Users</div>
         </div>
         <div v-if="!popup" v-on:click="popup = !popup" class="user">
           <div class="username">Linnie Weaver</div>
@@ -67,14 +67,9 @@
             <span v-if="show" id="side-link">Reporting</span>
           </router-link>
         </div>
-        <div v-bind:class="{'side-hide': !show}" class="side" id="active">
+        <div class="side">
           <router-link :to="{ name: 'Product'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M23.4256131,9.45680858 L19.2124251,9.45680858 L19.2124251,8.68064356 C19.2124251,7.76533663 18.4892098,7.02064686 17.600109,7.02064686 L12.3855041,7.02064686 C11.4965123,7.02064686 10.773188,7.76528053 10.773188,8.68064356 L10.773188,9.45680858 L6.5600545,9.45680858 C5.69983651,9.45680858 5,10.1772607 5,11.0628317 L5,22.358462 C5,23.244033 5.69983651,23.9645413 6.5600545,23.9645413 L23.4255586,23.9645413 C24.2857766,23.9645413 24.9856131,23.244033 24.9856131,22.358462 L24.9856131,11.0628317 C24.9856676,10.1773168 24.2858856,9.45680858 23.4256131,9.45680858 Z M12.1356403,8.68064356 C12.1356403,8.53875248 12.2477929,8.42328713 12.3855586,8.42328713 L17.6001635,8.42328713 C17.7379292,8.42328713 17.8500817,8.53875248 17.8500817,8.68064356 L17.8500817,9.45680858 L12.1356403,9.45680858 L12.1356403,8.68064356 Z M6.56010899,10.8594488 L23.4256131,10.8594488 C23.5346049,10.8594488 23.6232698,10.9506766 23.6232698,11.0628317 L23.6232698,14.7432475 C21.5122071,15.5494851 18.3279564,16.0257096 14.9870845,16.0257096 C11.6535695,16.0257096 8.47367847,15.5511122 6.36239782,14.7475677 L6.36239782,11.0628317 C6.36245232,10.9506766 6.45111717,10.8594488 6.56010899,10.8594488 Z M23.4256131,22.561901 L6.56010899,22.561901 C6.45111717,22.561901 6.36245232,22.4706733 6.36245232,22.358462 L6.36245232,16.2335809 C8.29476839,16.8898482 10.8353134,17.3000363 13.6039782,17.4028218 C13.6038147,17.4109571 13.6028338,17.4188119 13.6028338,17.4270594 L13.6028338,17.7363696 C13.6028338,18.3162211 14.0610354,18.7879571 14.6243052,18.7879571 L15.3614714,18.7879571 C15.9247411,18.7879571 16.3829428,18.3162211 16.3829428,17.7363696 L16.3829428,17.4270594 C16.3829428,17.4188119 16.3818529,17.4107327 16.3817984,17.4024851 C19.1522071,17.298802 21.6923706,16.8874356 23.6233787,16.2298779 L23.6233787,22.3585182 C23.6232698,22.4706733 23.5346049,22.561901 23.4256131,22.561901 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
+            <img class="image-box" src="@/assets/Icon/Product.svg">
             <span v-if="show" id="side-link">Product</span>
           </router-link>
         </div>
@@ -99,9 +94,14 @@
             <span v-if="show" id="side-link">Resellers</span>
           </router-link>
         </div>
-        <div class="side">
+        <div v-bind:class="{'side-hide': !show}" class="side" id="active">
           <router-link :to="{ name: 'Users'}">
-            <img class="image-box" src="@/assets/Icon/Users.svg">
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M19.3070588,15.3745636 L18.5167157,15.3745636 C20.0434804,14.3694763 21.0561275,12.6217456 21.0561275,10.6378055 C21.0561275,7.52907731 18.5704412,5 15.515049,5 C12.4596569,5 9.97397059,7.52907731 9.97397059,10.6378055 C9.97397059,12.6217456 10.9865196,14.3694763 12.5133824,15.3745636 L11.7230392,15.3745636 C9.69196078,15.3745636 8.03955882,17.0557107 8.03955882,19.1222444 L8.03955882,24.3573067 C8.03955882,24.7016459 8.31392157,24.9807481 8.65230392,24.9807481 L22.3777941,24.9807481 C22.7161765,24.9807481 22.9905392,24.7016459 22.9905392,24.3573067 L22.9905392,19.1221945 C22.9905392,17.0557107 21.3381373,15.3745636 19.3070588,15.3745636 Z M11.1994608,10.6378055 C11.1994608,8.21665835 13.1353922,6.24688279 15.515049,6.24688279 C17.8946569,6.24688279 19.8306373,8.21665835 19.8306373,10.6378055 C19.8306373,13.0589027 17.8946569,15.0286284 15.515049,15.0286284 C13.1353922,15.0286284 11.1994608,13.0589027 11.1994608,10.6378055 Z M17.3078431,15.9724688 L15.515049,17.7966085 L13.7222549,15.9725187 C14.2848529,16.1687781 14.8878922,16.2755112 15.515049,16.2755112 C16.1422059,16.2755112 16.7452941,16.1687781 17.3078431,15.9724688 Z M21.765049,23.7338155 L20.0983824,23.7338155 L20.0983824,20.7383541 C20.0983824,20.394015 19.8240196,20.1149127 19.4856373,20.1149127 C19.1472549,20.1149127 18.8728922,20.394015 18.8728922,20.7383541 L18.8728922,23.7338155 L12.1572059,23.7338155 L12.1572059,20.7383541 C12.1572059,20.394015 11.8828431,20.1149127 11.5444608,20.1149127 C11.2060784,20.1149127 10.9317157,20.394015 10.9317157,20.7383541 L10.9317157,23.7338155 L9.26504902,23.7338155 L9.26504902,19.1221945 C9.26504902,17.7432918 10.3676961,16.6213965 11.7230392,16.6213965 L12.6269118,16.6213965 L15.0817647,19.1190524 C15.2014216,19.240798 15.3582353,19.3016459 15.515049,19.3016459 C15.6718627,19.3016459 15.8285784,19.240798 15.9483333,19.1190524 L18.4031863,16.6213965 L19.3070588,16.6213965 C20.6623529,16.6213965 21.765049,17.743192 21.765049,19.1221945 L21.765049,23.7338155 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
             <span v-if="show" id="side-link">Users</span>
           </router-link>
         </div>
@@ -125,60 +125,85 @@
         </div>
       </div>
       </transition>
-      <div class="main">
-          <input id="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
-          <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
-
-          <table cellspacing="0" cellpadding="0">
-            <thead>
-              <tr>
-                <th id="active"></th>
-                <th id="name">Product Name</th>
-                <th id="created">Created On</th>
-                <th id="created-by">Created By</th>
-                <th id="owned-by">Owned By</th>
-                <th id="options"></th>
-                <th id="options"></th>
-                <th id="options"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr id="online">
-                <td id="active"><div class="product-active"></div></td>
-                <td id="name">Parkerport</td>
-                <td id="created">10-03-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-              </tr>
-              <tr id="online">
-                <td id="active"><div class="product-active"></div></td>
-                <td id="name">Blickview</td>
-                <td id="created">08-19-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-              </tr>
-              <tr id="offline">
-                <td id="active"><div class="product-not-active"></div></td>
-                <td id="name">Lake Woodrow</td>
-                <td id="created">01-04-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="main-add">
+        <router-link :to="{ name: 'Users'}">
+          <div class="svg-back">
+            <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+              L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+              L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+              </path>
+            </svg>
+          </div>
+          <div class='back'>
+            Back to Users
+          </div>
+        </router-link>
+        <router-link :to="{ name: 'AddUser'}"><button id="product" type="submit">Add User</button></router-link>
+        <router-link :to="{ name: 'Users'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        <div class="add-user">
+          <div class="user-main">
+            <div class="user-add-title">
+              Add User
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                First Name
+              </div>
+              <input class="grid-input" type="text" v-model="user.firstName" placeholder="Caroline">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Last Name
+              </div>
+              <input class="grid-input" type="text" v-model="user.lastName" placeholder="Thomas">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                username
+              </div>
+              <input class="grid-input" type="text" v-model="user.username" placeholder="Enter username">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Email
+              </div>
+              <input class="grid-input" type="text" v-model="user.email" placeholder="Thomas">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Password
+              </div>
+              <input class="grid-input" type="text" v-model="user.password" placeholder="********">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Re-Enter Password
+              </div>
+              <input class="grid-input" type="text" v-model="user.rePassword" placeholder="********">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Role
+              </div>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Role" class="grid-select" v-model="user.role">
+                <option value="Choose Role">Choose Role</option>
+              </select>
+            </div>
+          </div>
+          <div class="user-second">
+            <div class="grid-title">
+              Choose Photo
+            </div>
+            <div class="upload">
+              <div class="upload-title">
+                Drop photo here or browse
+              </div>
+              <button class="upload-button" type="submit">Upload photo</button>
+            </div>
+          </div>
         </div>
-        <div id="app">
-          <modal v-show="isModalVisible" @close="closeModal"/>
-        </div>
+      </div>
     </div>
 </template>
 <script>
@@ -196,11 +221,26 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
+          vendors: true,
                 user:{
-                system: 'Overall system',
-                days: 'Last 30 days'
+                role: 'Choose Role',
             },
-
+            user2:{
+              country: 'China',
+              operator: 'China Mobile',
+              sellRate: '0.0012'
+            },
+            user3:{
+              country: 'United States',
+              operator: 'AT & T',
+              sellRate: '0.0003'
+            },
+            vendor:{
+              vendorName1: 'Vendor BB',
+              vendorName2: 'Vendor CC',
+              vendorRate1: '0.0009',
+              vendorRate2: '0.0008'
+            }
         }
     },
     components:{
@@ -223,93 +263,180 @@ export default {
 }
 </script>
 <style>
-.svg-active path{
-  fill: white;
+.upload{
+  border: 1px dashed #5171F3;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  height: 280px;
+  text-align: center;
 }
-table{
-  margin-left: 20px;
-  border: none;
-  max-width: calc(100% - 30px);
+.upload-title{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 97px;
+  margin-bottom: 10px;
+}
+.upload-button{
+  border-radius: 4px;
+  background-color: #51A3F3;
+  color: #FFFFFF;
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  height: 36px;
+  width: 136px;
+}
+.grid-1{
+  margin-left: 15px;
+  width: 29.3%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-2{
+  margin-left: 15px;
+  width: 69%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-3{
+  margin-left: 15px;
+  width: 22.2672064777%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-4{
+  margin-left: 15px;
+  width: 45.5%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-title{
+  width: 100%;
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.grid-input{
   width: 100%;
 }
-tr{
+.grid-select{
+  width: calc(100% + 13px);
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
   height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
+}
+table{
+  max-width: 100%;
+  width: 100%;
+}
+.active-table{
+	background-color: #F8F9FE;
+}
+td#add-country{
+  width: 190px;
+  padding-left: 15px;
+}
+td#add-operator{
+  width: 215px;
+}
+td#add-sell-rate{
+  width: 150px;
+}
+.svg path{
+  fill: #51A3F3;
+}
+.svg-back{
+  float: left;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+.back{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  float: left;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.add-user{
+  float: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  width: calc(100% - 30px);
   margin-left: 15px;
-  text-align: left;
+  margin-right: 15px;
 }
-tr#online{
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-tr#offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-}
-td#active{
-  width: 18px;
-}
-td#name{
-  width: 169px;
-}
-td#created{
-  width: 334px;
-}
-td#created-by{
-  width: 227px;
-}
-td#owned-by{
-  width: 200px;
-}
-td#options{
-  width: 50px;
-}
-
-th#active{
-  width: 18px;
-}
-th#name{
-  width: 169px;
-}
-th#created{
-  width: 334px;
-}
-th#created-by{
-  width: 227px;
-}
-th#owned-by{
-  width: 200px;
-}
-th#options{
-  width: 50px;
-}
-.product-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #24E2B8;
+.user-main{
+  display: inline-block;
   float: left;
-  margin-left: 3px;
+  max-width: 66.8181818182%;
+  width: 100%;
 }
-.product-not-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #D2305B;
+.user-second{
+  display: inline-block;
   float: left;
-  margin-left: 3px;
+  max-width: 31.8%;
+  width: 100%;
+  margin-top: 60px;
 }
-.product-control-info{
-  width: 30px;
-  height: 30px;
+.product-vendor{
+  display: inline-block;
   float: left;
+  max-width: calc(100% - 58.1818181818%);
+  width: 100%;
+  background-color: #F8F9FE;
+  height: 458px;
+}
+.delete-image{
   margin-top: -10px;
-  margin-left: 15px;
+}
+.delete-vendor-image{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.user-add-title{
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 15px;
+}
+.product-input-name{
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding-top: 10px;
 }
 .side a{
   text-decoration: none;
@@ -319,8 +446,7 @@ th#options{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#product-search{
-  width: 345px;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -330,14 +456,11 @@ input[type="text"]#product-search{
   background-position-x: 5px;
   background-position-y: 5px;
   height: 40px !important;
-  padding-left: 40px;
+  padding-left: 10px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-  margin-left: 20px;
-  margin-top: 20px;
-  height: 40px !important;
 }
 button#product{
   	height: 40px;
@@ -352,7 +475,34 @@ button#product{
     line-height: 30px;
     text-align: center;
     margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
     float: right;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+}
+button#cancel{
+  height: 40px;
+  width: 90px;
+  border: 1px solid #BDBFD8;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #55616E;
+  font-family: "Circular Std";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  float: right;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -420,6 +570,7 @@ button#product{
     margin-top: 15px;
     color: #51A3F3;
 }
+
 .popup-image-box{
   width: 30px;
   height: 30px;
@@ -443,13 +594,12 @@ button#product{
     margin-left: 15px;
     margin-top: 21px;
 }
-.main{
-  max-width: calc(100% - 310px);
+.main-add{
+  max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-  margin-right: 10px;
 }
 .header{
   display: inline-block;
@@ -470,7 +620,6 @@ button#product{
   fill: white;
 }
 .navigation{
-    width: 100%;
     height: 60px;
     background-color: #FFFFFF;
 }
@@ -492,7 +641,7 @@ button#product{
     vertical-align: top;
     margin-left: 15px;
     height: 30px;
-    width: 100%;
+    width: 90px;
     color: #55616E;
     font-family: "Circular Std";
     font-size: 18px;
@@ -553,8 +702,7 @@ button#product{
 }
 .sidebar {
 	height: 100vh;
-	max-width: 300px;
-  width: 100%;
+	width: 300px;
 	background-color: #F0F1FA;
   display: inline-block;
   float: left;
@@ -569,7 +717,7 @@ button#product{
 }
 .side{
   height: 40px;
-  width: 100%;
+  width: 290px;
   color: #55616E;
   display: inline-block;
   cursor: pointer;
@@ -603,13 +751,6 @@ button#product{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
-}
-.control-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 5px;
 }
 .side-title{
   	height: 30px;

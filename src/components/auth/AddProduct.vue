@@ -100,12 +100,16 @@
           </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Users.svg">
-          <span v-if="show" id="side-link">Users</span>
+          <router-link :to="{ name: 'Users'}">
+            <img class="image-box" src="@/assets/Icon/Users.svg">
+            <span v-if="show" id="side-link">Users</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Companies.svg">
-          <span v-if="show" id="side-link">Companies</span>
+          <router-link :to="{ name: 'Companies'}">
+            <img class="image-box" src="@/assets/Icon/Companies.svg">
+            <span v-if="show" id="side-link">Companies</span>
+          </router-link>
         </div>
         <div class="side">
           <img class="image-box" src="@/assets/Icon/Vendors.svg">

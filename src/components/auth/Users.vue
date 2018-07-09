@@ -8,7 +8,7 @@
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
-          <div class="title">Product</div>
+          <div class="title">Users</div>
         </div>
         <div v-if="!popup" v-on:click="popup = !popup" class="user">
           <div class="username">Linnie Weaver</div>
@@ -67,14 +67,9 @@
             <span v-if="show" id="side-link">Reporting</span>
           </router-link>
         </div>
-        <div v-bind:class="{'side-hide': !show}" class="side" id="active">
+        <div class="side">
           <router-link :to="{ name: 'Product'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M23.4256131,9.45680858 L19.2124251,9.45680858 L19.2124251,8.68064356 C19.2124251,7.76533663 18.4892098,7.02064686 17.600109,7.02064686 L12.3855041,7.02064686 C11.4965123,7.02064686 10.773188,7.76528053 10.773188,8.68064356 L10.773188,9.45680858 L6.5600545,9.45680858 C5.69983651,9.45680858 5,10.1772607 5,11.0628317 L5,22.358462 C5,23.244033 5.69983651,23.9645413 6.5600545,23.9645413 L23.4255586,23.9645413 C24.2857766,23.9645413 24.9856131,23.244033 24.9856131,22.358462 L24.9856131,11.0628317 C24.9856676,10.1773168 24.2858856,9.45680858 23.4256131,9.45680858 Z M12.1356403,8.68064356 C12.1356403,8.53875248 12.2477929,8.42328713 12.3855586,8.42328713 L17.6001635,8.42328713 C17.7379292,8.42328713 17.8500817,8.53875248 17.8500817,8.68064356 L17.8500817,9.45680858 L12.1356403,9.45680858 L12.1356403,8.68064356 Z M6.56010899,10.8594488 L23.4256131,10.8594488 C23.5346049,10.8594488 23.6232698,10.9506766 23.6232698,11.0628317 L23.6232698,14.7432475 C21.5122071,15.5494851 18.3279564,16.0257096 14.9870845,16.0257096 C11.6535695,16.0257096 8.47367847,15.5511122 6.36239782,14.7475677 L6.36239782,11.0628317 C6.36245232,10.9506766 6.45111717,10.8594488 6.56010899,10.8594488 Z M23.4256131,22.561901 L6.56010899,22.561901 C6.45111717,22.561901 6.36245232,22.4706733 6.36245232,22.358462 L6.36245232,16.2335809 C8.29476839,16.8898482 10.8353134,17.3000363 13.6039782,17.4028218 C13.6038147,17.4109571 13.6028338,17.4188119 13.6028338,17.4270594 L13.6028338,17.7363696 C13.6028338,18.3162211 14.0610354,18.7879571 14.6243052,18.7879571 L15.3614714,18.7879571 C15.9247411,18.7879571 16.3829428,18.3162211 16.3829428,17.7363696 L16.3829428,17.4270594 C16.3829428,17.4188119 16.3818529,17.4107327 16.3817984,17.4024851 C19.1522071,17.298802 21.6923706,16.8874356 23.6233787,16.2298779 L23.6233787,22.3585182 C23.6232698,22.4706733 23.5346049,22.561901 23.4256131,22.561901 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
+            <img class="image-box" src="@/assets/Icon/Product.svg">
             <span v-if="show" id="side-link">Product</span>
           </router-link>
         </div>
@@ -99,9 +94,14 @@
             <span v-if="show" id="side-link">Resellers</span>
           </router-link>
         </div>
-        <div class="side">
+        <div v-bind:class="{'side-hide': !show}" class="side" id="active">
           <router-link :to="{ name: 'Users'}">
-            <img class="image-box" src="@/assets/Icon/Users.svg">
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M19.3070588,15.3745636 L18.5167157,15.3745636 C20.0434804,14.3694763 21.0561275,12.6217456 21.0561275,10.6378055 C21.0561275,7.52907731 18.5704412,5 15.515049,5 C12.4596569,5 9.97397059,7.52907731 9.97397059,10.6378055 C9.97397059,12.6217456 10.9865196,14.3694763 12.5133824,15.3745636 L11.7230392,15.3745636 C9.69196078,15.3745636 8.03955882,17.0557107 8.03955882,19.1222444 L8.03955882,24.3573067 C8.03955882,24.7016459 8.31392157,24.9807481 8.65230392,24.9807481 L22.3777941,24.9807481 C22.7161765,24.9807481 22.9905392,24.7016459 22.9905392,24.3573067 L22.9905392,19.1221945 C22.9905392,17.0557107 21.3381373,15.3745636 19.3070588,15.3745636 Z M11.1994608,10.6378055 C11.1994608,8.21665835 13.1353922,6.24688279 15.515049,6.24688279 C17.8946569,6.24688279 19.8306373,8.21665835 19.8306373,10.6378055 C19.8306373,13.0589027 17.8946569,15.0286284 15.515049,15.0286284 C13.1353922,15.0286284 11.1994608,13.0589027 11.1994608,10.6378055 Z M17.3078431,15.9724688 L15.515049,17.7966085 L13.7222549,15.9725187 C14.2848529,16.1687781 14.8878922,16.2755112 15.515049,16.2755112 C16.1422059,16.2755112 16.7452941,16.1687781 17.3078431,15.9724688 Z M21.765049,23.7338155 L20.0983824,23.7338155 L20.0983824,20.7383541 C20.0983824,20.394015 19.8240196,20.1149127 19.4856373,20.1149127 C19.1472549,20.1149127 18.8728922,20.394015 18.8728922,20.7383541 L18.8728922,23.7338155 L12.1572059,23.7338155 L12.1572059,20.7383541 C12.1572059,20.394015 11.8828431,20.1149127 11.5444608,20.1149127 C11.2060784,20.1149127 10.9317157,20.394015 10.9317157,20.7383541 L10.9317157,23.7338155 L9.26504902,23.7338155 L9.26504902,19.1221945 C9.26504902,17.7432918 10.3676961,16.6213965 11.7230392,16.6213965 L12.6269118,16.6213965 L15.0817647,19.1190524 C15.2014216,19.240798 15.3582353,19.3016459 15.515049,19.3016459 C15.6718627,19.3016459 15.8285784,19.240798 15.9483333,19.1190524 L18.4031863,16.6213965 L19.3070588,16.6213965 C20.6623529,16.6213965 21.765049,17.743192 21.765049,19.1221945 L21.765049,23.7338155 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
             <span v-if="show" id="side-link">Users</span>
           </router-link>
         </div>
@@ -126,58 +126,93 @@
       </div>
       </transition>
       <div class="main">
-          <input id="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
-          <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
-
-          <table cellspacing="0" cellpadding="0">
-            <thead>
-              <tr>
-                <th id="active"></th>
-                <th id="name">Product Name</th>
-                <th id="created">Created On</th>
-                <th id="created-by">Created By</th>
-                <th id="owned-by">Owned By</th>
-                <th id="options"></th>
-                <th id="options"></th>
-                <th id="options"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr id="online">
-                <td id="active"><div class="product-active"></div></td>
-                <td id="name">Parkerport</td>
-                <td id="created">10-03-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-              </tr>
-              <tr id="online">
-                <td id="active"><div class="product-active"></div></td>
-                <td id="name">Blickview</td>
-                <td id="created">08-19-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-              </tr>
-              <tr id="offline">
-                <td id="active"><div class="product-not-active"></div></td>
-                <td id="name">Lake Woodrow</td>
-                <td id="created">01-04-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div id="app">
-          <modal v-show="isModalVisible" @close="closeModal"/>
+          <div class="main-header">
+            <input id="user-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchUser" placeholder="Search for user">
+            <div class="user-header-title">
+              Filter by:
+            </div>
+            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="company" v-model="user.company">
+              <option value="Company">Company</option>
+            </select>
+            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Choose Company" class="company2" v-model="user.chooseCompany">
+              <option value="Choose Company">Choose Company</option>
+            </select>
+            <router-link :to="{ name: 'AddUser'}"><button id="users" type="submit">Add User</button></router-link>
+          </div>
+          <div class="main-container">
+            <table cellspacing="0" cellpadding="0">
+              <thead>
+                <tr>
+                  <th class="users-avatar"></th>
+                  <th class="users-name">Name</th>
+                  <th class="users-username">Username</th>
+                  <th class="users-company">Company</th>
+                  <th class="users-reseller">Reseller</th>
+                  <th class="users-start">Start from</th>
+                  <th class="users-role">Role</th>
+                  <th class="users-option"></th>
+                  <th class="users-option"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Nellie Ferguson</td>
+                  <td class="users-username">nellief</td>
+                  <td class="users-company">San Marino</td>
+                  <td class="users-reseller">Mason Carroll</td>
+                  <td class="users-start">29 Apr 2018</td>
+                  <td class="users-role">Default</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Frances Ruiz</td>
+                  <td class="users-username">Peanut</td>
+                  <td class="users-company">Latvia</td>
+                  <td class="users-reseller">Connor Phillips</td>
+                  <td class="users-start">20 Feb 2018</td>
+                  <td class="users-role">Premium</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Keith Gardner</td>
+                  <td class="users-username">Samson</td>
+                  <td class="users-company">Grenada</td>
+                  <td class="users-reseller">Tom Terry</td>
+                  <td class="users-start">05 May 2018</td>
+                  <td class="users-role">VIP</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Abbie Obrien</td>
+                  <td class="users-username">Madison</td>
+                  <td class="users-company">Pakistan</td>
+                  <td class="users-reseller">Martha Duncan</td>
+                  <td class="users-start">23 Sep 2018</td>
+                  <td class="users-role">Default</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Willie Neal</td>
+                  <td class="users-username">Jack</td>
+                  <td class="users-company">India</td>
+                  <td class="users-reseller">Ada Beck</td>
+                  <td class="users-start">02 Jun 2018</td>
+                  <td class="users-role">Premium</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
     </div>
 </template>
@@ -195,10 +230,14 @@ export default {
           width: '60px',
           transitionName: 'fade',
           popup: false,
+          test: false,
+          del: false,
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
-                days: 'Last 30 days'
+                days: 'Last 30 days',
+                company: 'Company',
+                chooseCompany: 'Choose Company',
             },
 
         }
@@ -223,17 +262,70 @@ export default {
 }
 </script>
 <style>
+.svg-blue path{
+  fill: #51A3F3;
+}
+a{
+  text-decoration: none;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+}
+.reseller-menu{
+	height: 210px;
+	width: 228px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
+  display: inline-block;
+  vertical-align: top;
+  position: fixed;
+  z-index: 1;
+  float: right;
+  margin-left: -220px;
+  margin-top: -35px;
+}
+.reseller-menu-link{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.reseller-menu-link:first-child{
+  margin-top: 35px;
+}
+.reseller-span{
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.reseller-menu-add{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  background-color: #F8F9FE;
+}
+.reseller-menu-button{
+  float: right;
+  display: inline-block;
+  margin-top: -5px;
+  margin-right: -7px;
+}
 .svg-active path{
   fill: white;
 }
 table{
-  margin-left: 20px;
   border: none;
-  max-width: calc(100% - 30px);
+  max-width: calc(100% - 10px);
   width: 100%;
+  margin-top: 20px;
 }
-tr{
-  height: 44px;
+th{
+  height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
@@ -241,68 +333,49 @@ tr{
   margin-left: 15px;
   text-align: left;
 }
-tr#online{
+td{
+  height: 44px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-tr#offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
+.user-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
 }
-td#active{
-  width: 18px;
+.users-avatar{
+  width: 45px;
+  padding-left: 8px;
 }
-td#name{
+.users-name{
+  width: 204px;
+}
+.users-username{
   width: 169px;
 }
-td#created{
-  width: 334px;
+.users-company{
+  width: 182px;
 }
-td#created-by{
-  width: 227px;
+.users-reseller{
+  width: 190px;
 }
-td#owned-by{
-  width: 200px;
+.users-start{
+  width: 120px;
 }
-td#options{
-  width: 50px;
+.users-role{
+  width: 80px;
 }
-
-th#active{
-  width: 18px;
-}
-th#name{
-  width: 169px;
-}
-th#created{
-  width: 334px;
-}
-th#created-by{
-  width: 227px;
-}
-th#owned-by{
-  width: 200px;
-}
-th#options{
-  width: 50px;
-}
-.product-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #24E2B8;
-  float: left;
-  margin-left: 3px;
-}
-.product-not-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #D2305B;
-  float: left;
-  margin-left: 3px;
+.users-option{
+  width: 54px;
 }
 .product-control-info{
   width: 30px;
@@ -311,6 +384,17 @@ th#options{
   margin-top: -10px;
   margin-left: 15px;
 }
+.user-header-title{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  float: left;
+  margin-left: 20px;
+  display: inline-block;
+  margin-top: 30px;
+}
+
 .side a{
   text-decoration: none;
   color: #55616E;
@@ -319,8 +403,9 @@ th#options{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#product-search{
-  width: 345px;
+input[type="text"]#user-search{
+  max-width: 26.3636363636%;
+  width: 100%;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -338,10 +423,12 @@ input[type="text"]#product-search{
   margin-left: 20px;
   margin-top: 20px;
   height: 40px !important;
+  float: left;
 }
-button#product{
+button#users{
   	height: 40px;
-    width: 130px;
+    max-width: 11.8181818182%;
+    width: 100%;
     border-radius: 4px;
     background-color: #51A3F3;
     border-radius: 4px;
@@ -352,6 +439,7 @@ button#product{
     line-height: 30px;
     text-align: center;
     margin-top: 20px;
+    margin-right: 20px;
     float: right;
 }
 .fade-enter-active, .fade-leave-active {
@@ -444,12 +532,18 @@ button#product{
     margin-top: 21px;
 }
 .main{
-  max-width: calc(100% - 310px);
+  max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-  margin-right: 10px;
+}
+.main-container{
+  float: left;
+  display: inline-block;
+  width: calc(100% - 30px);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .header{
   display: inline-block;
@@ -500,6 +594,57 @@ button#product{
     line-height: 30px;
     margin-top: 15px;
     margin-right: 32px;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+  height: 40px !important;
+}
+.company{
+    max-width: 13.6363636364% !important;
+    width: 100%;
+    height: 40px !important;
+    border: 1px solid #EDEEF3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: "Helvetica Neue";
+    color: #55616E;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.company2{
+    max-width: 16.3636363636% !important;
+    width: 100%;
+    height: 40px !important;
+    border: 1px solid #EDEEF3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: "Helvetica Neue";
+    color: #55616E;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 .circle{
   height: 30px;
