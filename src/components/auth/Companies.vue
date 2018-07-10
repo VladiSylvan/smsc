@@ -112,16 +112,22 @@
           </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Vendors.svg">
-          <span v-if="show" id="side-link">Vendors</span>
+          <router-link :to="{ name: 'Vendors'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" id="side-link">Vendors</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/DID.svg">
-          <span v-if="show" id="side-link">DID</span>
+          <router-link :to="{ name: 'DID'}">
+            <img class="image-box" src="@/assets/Icon/DID.svg">
+            <span v-if="show" id="side-link">DID</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Filters.svg">
-          <span v-if="show" id="side-link">Filters</span>
+          <router-link :to="{ name: 'Filters'}">
+            <img class="image-box" src="@/assets/Icon/Filters.svg">
+            <span v-if="show" id="side-link">Filters</span>
+          </router-link>
         </div>
       </div>
       </transition>
@@ -164,10 +170,34 @@
                   <td class="company-pay">$805/$781</td>
                   <td class="company-contact-text">Eula Hernandez</td>
                   <td class="company-resellers">Jean Riley</td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+                  <td class="company-option">
+                    <div v-on:click="test = !test" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
+                    <div v-if="test" class="company-menu">
+                      <div class="company-menu-link">
+                        <router-link :to="{ name: 'PaymentHistory'}">Payment History</router-link>
+                        <div v-on:click="test = !test" class="company-menu-button">
+                          <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="M10,16 C9.44771525,16 9,15.5522847 9,15 C9,14.4477153 9.44771525,14 10,14 C10.5522847,14 11,14.4477153 11,15 C11,15.5522847 10.5522847,16 10,16 Z M15,16 C14.4477153,16 14,15.5522847 14,15 C14,14.4477153 14.4477153,14 15,14 C15.5522847,14 16,14.4477153 16,15 C16,15.5522847 15.5522847,16 15,16 Z M20,16 C19.4477153,16 19,15.5522847 19,15 C19,14.4477153 19.4477153,14 20,14 C20.5522847,14 21,14.4477153 21,15 C21,15.5522847 20.5522847,16 20,16 Z" id="path-1">
+                            </path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="company-menu-link">
+                        <router-link :to="{ name: 'InvoiceHistory'}">Invoice History</router-link>
+                      </div>
+                      <div class="company-menu-link">
+                        <router-link :to="{ name: 'TransactionHistory'}">Transaction History</router-link>
+                      </div>
+                      <div class="company-menu-add">
+                        <div class="company-span">
+                          Add Manual Payment
+                        </div>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
                   <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Indonesia</div></td>
@@ -175,7 +205,7 @@
                   <td class="company-pay">$776/$627</td>
                   <td class="company-contact-text">Ray Dennis</td>
                   <td class="company-resellers">Eva Armstrong</td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -186,7 +216,7 @@
                   <td class="company-pay">$691/$123</td>
                   <td class="company-contact-text">Helen Schmidt</td>
                   <td class="company-resellers">Joseph Little</td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -200,7 +230,7 @@
                   <td class="company-pay">$805/$781</td>
                   <td class="company-contact-text">Herman Goodwin</td>
                   <td class="company-resellers">Anthony Christensen</td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -211,7 +241,7 @@
                   <td class="company-pay">$776/$627</td>
                   <td class="company-contact-text">Katie Guzman</td>
                   <td class="company-resellers">Clifford Evans</td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -222,7 +252,7 @@
                   <td class="company-pay">$691/$123</td>
                   <td class="company-contact-text">Glenn Holmes</td>
                   <td class="company-resellers">Eliza Dunn</td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -231,13 +261,16 @@
             </table>
           </div>
         </div>
+        <div id="app">
+          <modal v-show="isModalVisible" @close="closeModal"/>
+        </div>
     </div>
 </template>
 <script>
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
 import BarChart2 from '@/components/auth/BarChart2'
-import modal from '@/components/modal.vue'
+import modal from '@/components/companyModal.vue'
 
 export default {
     name: 'app',
@@ -311,7 +344,7 @@ a{
   font-size: 16px;
   line-height: 20px;
 }
-.reseller-menu{
+.company-menu{
 	height: 210px;
 	width: 228px;
 	background-color: #FFFFFF;
@@ -324,7 +357,7 @@ a{
   margin-left: -220px;
   margin-top: -35px;
 }
-.reseller-menu-link{
+.company-menu-link{
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 16px;
@@ -333,14 +366,14 @@ a{
   margin-left: 15px;
   margin-right: 15px;
 }
-.reseller-menu-link:first-child{
+.company-menu-link:first-child{
   margin-top: 35px;
 }
-.reseller-span{
+.company-span{
   padding-top: 10px;
   padding-left: 15px;
 }
-.reseller-menu-add{
+.company-menu-add{
   color: #51A3F3;
   font-family: "Helvetica Neue";
   font-size: 16px;
@@ -348,7 +381,7 @@ a{
   height: 40px;
   background-color: #F8F9FE;
 }
-.reseller-menu-button{
+.company-menu-button{
   float: right;
   display: inline-block;
   margin-top: -5px;

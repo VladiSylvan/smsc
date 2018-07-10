@@ -8,7 +8,7 @@
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
-          <div class="title">Reporting</div>
+          <div class="title">Vendors</div>
         </div>
         <div v-if="!popup" v-on:click="popup = !popup" class="user">
           <div class="username">Linnie Weaver</div>
@@ -61,14 +61,9 @@
             <span v-if="show" id="side-link">Dashboard</span>
           </router-link>
         </div>
-        <div v-bind:class="{'side-hide': !show}" id="active" class="side">
+        <div class="side">
           <router-link :to="{ name: 'Reporting'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M24.3333333,22.6234595 L7.1656,22.6234595 L9.95824,16.9509189 L12.8546667,18.8602162 C13.03872,18.9815676 13.2700267,19.0032973 13.47296,18.9181081 C13.6759467,18.8331351 13.8245333,18.6521622 13.8701867,18.4344865 L15.0018133,13.0466486 L18.1837867,14.6959459 C18.4528,14.8354595 18.78064,14.7740541 18.9827733,14.5463784 L21.6315733,11.5637297 L21.71488,12.467027 C21.7470933,12.8172432 22.0377067,13.0799459 22.37792,13.0799459 C22.3986667,13.0799459 22.4196267,13.078973 22.4406933,13.076973 C22.8073067,13.0422703 23.0766933,12.712973 23.0425067,12.3414054 L22.8059733,9.774 C22.7716267,9.40243243 22.4470933,9.12924324 22.0802133,9.16405405 L19.5470933,9.40367568 C19.1805333,9.43837838 18.91104,9.76767568 18.9452267,10.1391892 C18.9796267,10.5107568 19.3035733,10.7838919 19.67104,10.7491351 L20.6428267,10.6571892 L18.33472,13.2562703 L14.8345067,11.442 C14.6498667,11.3462162 14.43168,11.3431351 14.24448,11.4334595 C14.0571733,11.5237838 13.92208,11.6972973 13.87888,11.9029189 L12.7682667,17.1910811 L10.0589333,15.4051351 C9.89962667,15.3001081 9.70362667,15.2689189 9.52037333,15.3195676 C9.33701333,15.3701081 9.18368,15.4975135 9.09893333,15.6697838 L6.33333333,21.2874054 L6.33333333,6.70086486 C6.33333333,6.32767568 6.03482667,6.02518919 5.66666667,6.02518919 C5.29850667,6.02518919 5,6.32767568 5,6.70086486 L5,23.2991351 C5,23.6722703 5.29850667,23.9748108 5.66666667,23.9748108 L24.3333333,23.9748108 C24.70144,23.9748108 25,23.6722703 25,23.2991351 C25,22.926 24.70144,22.6234595 24.3333333,22.6234595 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
+            <img class="image-box" src="@/assets/Icon/Reporting.svg">
             <span v-if="show" id="side-link">Reporting</span>
           </router-link>
         </div>
@@ -111,9 +106,14 @@
             <span v-if="show" id="side-link">Companies</span>
           </router-link>
         </div>
-        <div class="side">
+        <div v-bind:class="{'side-hide': !show}" class="side" id="active">
           <router-link :to="{ name: 'Vendors'}">
-            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M21.4696919,6.01274052 L8.50140056,6.01274052 C6.57070028,6.01274052 5,7.56586589 5,9.47489504 L5,17.3839913 C5,19.2930204 6.57070028,20.8460904 8.50140056,20.8460904 L16.7615126,20.8461458 L20.7156303,24.7558251 C20.8496359,24.8883819 21.0286835,24.9586764 21.2109804,24.9586764 C21.3011765,24.9586764 21.3921569,24.9413936 21.4787675,24.9058863 C21.7404482,24.7987551 21.9110924,24.5463819 21.9110924,24.2662566 L21.9110924,20.8187259 C23.6342857,20.6035219 24.9710924,19.1452303 24.9710924,17.3839913 L24.9710924,9.47489504 C24.9710924,7.56586589 23.4003922,6.01274052 21.4696919,6.01274052 Z M23.5705322,17.3840466 C23.5705322,18.5294752 22.6281232,19.4613061 21.4696919,19.4613061 L21.2108123,19.4613061 C20.8240896,19.4613061 20.5105322,19.7713994 20.5105322,20.1537259 L20.5105322,22.5945889 L17.5467787,19.664102 C17.4154622,19.5342041 17.237423,19.4613061 17.0515966,19.4613061 L8.50140056,19.4613061 C7.34296919,19.4613061 6.40056022,18.5294752 6.40056022,17.3840466 L6.40056022,9.47495044 C6.40056022,8.32952187 7.34296919,7.39769096 8.50140056,7.39769096 L21.4696919,7.39769096 C22.6281232,7.39769096 23.5705322,8.32952187 23.5705322,9.47495044 L23.5705322,17.3840466 Z M20.1396078,10.915793 L9.83148459,10.915793 C9.4447619,10.915793 9.13120448,11.2257755 9.13120448,11.6082128 C9.13120448,11.9905948 9.4447619,12.3006327 9.83148459,12.3006327 L20.1396078,12.3006327 C20.5263305,12.3006327 20.839888,11.9905948 20.839888,11.6082128 C20.839888,11.2257755 20.5263866,10.915793 20.1396078,10.915793 Z M20.1396078,14.793344 L9.83148459,14.793344 C9.4447619,14.793344 9.13120448,15.1033265 9.13120448,15.4857638 C9.13120448,15.8682012 9.4447619,16.1781837 9.83148459,16.1781837 L20.1396078,16.1781837 C20.5263305,16.1781837 20.839888,15.8681458 20.839888,15.4857638 C20.839888,15.1033819 20.5263866,14.793344 20.1396078,14.793344 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
             <span v-if="show" id="side-link">Vendors</span>
           </router-link>
         </div>
@@ -132,127 +132,114 @@
       </div>
       </transition>
       <div class="main">
-        <div class="cont-1-rep">
-            <div class="chart-1-reporting">
-              <div class="chart-1-title-reporting">
-                Resellers
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-              <input id="search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
-              <button type="submit">Filter</button>
-              <table id="reporting" cellspacing="0" cellpadding="0">
-                <thead>
-                  <tr>
-                    <th id="resellers">Resellers</th>
-                    <th id="date">Date</th>
-                    <th id="status">Status</th>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                </thead>
-              </table>
-              <div class="show-more">
-                <a href="#" id="show-more">Show more</a>
-              </div>
-            </div>
+        <router-link :to="{ name: 'Vendors'}">
+          <div class="svg-back">
+            <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+              L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+              L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+              </path>
+            </svg>
           </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
+          <div class='back'>
+            Back to Vendors
           </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
+        </router-link>
+        <div class="add-vendor-rate">
+          <div class="vendor-rate-main">
+            <div class="vendor-add-title">
+              Rate deck
             </div>
-          </div>
-          <div class="cont-1-rep">
-            <div class="chart-3-reporting">
-              <div class="chart-3-title-reporting">
-                Companies
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
+            <table id="vendors-rate">
+              <thead>
+                <tr>
+                  <th class="vendor-active"></th>
+                  <th class="vendor-country">Country</th>
+                  <th class="vendor-operator">Operator</th>
+                  <th class="vendor-sell-rate">Sell Rate</th>
+                  <th class="vendor-vendors">Vendors</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="vendor-active"><div class="vendor-active-circle"></div></th>
+                  <td class="vendor-country">China</td>
+                  <td class="vendor-operator">China Mobile</td>
+                  <td class="vendor-sell-rate">0.001</td>
+                  <td class="vendor-vendors">
+                    <div class="vendor-table">
+                      <div class="vendor-table-text">
+                        Vendor BB
+                      </div>
+                      <div class="vendors-info-bar">0.0008</div>
+                      <div class="vendor-table-text">
+                        Vendor CC
+                      </div>
+                      <div class="vendors-info-bar">0.0009</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="vendor-active"><div class="vendor-active-circle"></div></th>
+                  <td class="vendor-country">China</td>
+                  <td class="vendor-operator">China Unicom</td>
+                  <td class="vendor-sell-rate">0.0012</td>
+                  <td class="vendor-vendors">
+                    <div class="vendor-table">
+                      <div class="vendor-table-text">
+                        Vendor BB
+                      </div>
+                      <div class="vendors-info-bar">0.0008</div>
+                      <div class="vendor-table-text">
+                        Vendor CC
+                      </div>
+                      <div class="vendors-info-bar">0.0009</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="vendor-active"><div class="vendor-not-active-circle"></div></th>
+                  <td class="vendor-country">United States</td>
+                  <td class="vendor-operator">AT & T</td>
+                  <td class="vendor-sell-rate">0.0003</td>
+                  <td class="vendor-vendors">
+                    <div class="vendor-table">
+                      <div class="vendor-table-text">
+                        Vendor BB
+                      </div>
+                      <div class="vendors-info-bar">0.0008</div>
+                      <div class="vendor-table-text">
+                        Vendor CC
+                      </div>
+                      <div class="vendors-info-bar">0.0009</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="vendor-active"><div class="vendor-active-circle"></div></th>
+                  <td class="vendor-country">China</td>
+                  <td class="vendor-operator">China Unicom</td>
+                  <td class="vendor-sell-rate">0.0012</td>
+                  <td class="vendor-vendors">
+                    <div class="vendor-table">
+                      <div class="vendor-table-text">
+                        Vendor BB
+                      </div>
+                      <div class="vendors-info-bar">0.0008</div>
+                      <div class="vendor-table-text">
+                        Vendor CC
+                      </div>
+                      <div class="vendors-info-bar">0.0009</div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
+      </div>
+      <div id="app">
+        <modal v-show="isModalVisible" @close="closeModal"/>
       </div>
     </div>
 </template>
@@ -260,14 +247,17 @@
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
 import BarChart2 from '@/components/auth/BarChart2'
+import modal from '@/components/modal.vue'
 
 export default {
+    name: 'app',
     data () {
         return {
           show: true,
           width: '60px',
           transitionName: 'fade',
           popup: false,
+          isModalVisible: false,
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -278,97 +268,178 @@ export default {
     components:{
       CommitChart,
       BarChart,
-      BarChart2
+      BarChart2,
+      modal
     },
     methods:{
         sendForm(){
             event.preventDefault()
+        },
+        showModal() {
+          this.isModalVisible = true;
+        },
+        closeModal() {
+          this.isModalVisible = false;
         }
     },
 }
 </script>
 <style>
+.vendor-table{
+  width: 145px;
+}
+.vendor-table-text{
+  display: inline-block;
+  float: left;
+  width: 80px;
+  margin-bottom: 5px;
+}
+.vendors-info-bar{
+  	height: 18px;
+    width: 60px;
+    border: 1px solid #BDBFD8;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #55616E;
+    font-family: "Circular Std";
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 15px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    margin-bottom: 5px;
+}
+.svg path{
+  fill: #51A3F3;
+}
+.svg-back{
+  float: left;
+  display: inline-block;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+.back{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  float: left;
+  display: inline-block;
+  margin-top: 30px;
+}
+.vendor-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.vendor-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.add-vendor-rate{
+  float: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.vendor-rate-main{
+  display: inline-block;
+  float: left;
+  max-width: 100%;
+  width: 100%;
+}
+.vendor-add-title{
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 15px;
+}
 .svg-active path{
   fill: white;
 }
-table#reporting{
-  margin-left: 20px;
+table#vendor-rate{
   border: none;
-  max-width: calc(100% - 40px);
+  max-width: 100%;
   width: 100%;
 }
-tr{
+th{
   height: 37px;
+}
+tr{
+  height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
   margin-left: 15px;
   text-align: left;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-td#resellers{
-  width: 174px;
-  margin-left: 15px;
-}
-td#date{
-  width: 189px;
-}
-td#status{
-  width: 132px;
 }
 
-th#resellers{
-  width: 174px;
+.online{
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-th#date{
-  width: 189px;
+.offline{
+  background-color: #F0F1FA;
+  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
 }
-th#status{
-  width: 132px;
+.vendor-active{
+  width: 18px;
+  padding-left: 8px;
+  vertical-align: text-top;
+}
+.vendor-country{
+  width: 133px;
+  vertical-align: text-top;
+}
+.vendor-operator{
+  width: 150px;
+  vertical-align: text-top;
+}
+.vendor-sell-rate{
+  width: 121px;
+  vertical-align: text-top;
+}
+.vendor-vendors{
+  width: 661px;
 }
 
-.active{
+.vendor-active-circle{
   box-sizing: border-box;
-  height: 24px;
-  width: 59px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
   background-color: #24E2B8;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
+  float: left;
+  margin-left: 3px;
 }
-.not-active{
+.vendor-not-active-circle{
   box-sizing: border-box;
-  height: 24px;
-  width: 85px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
   background-color: #D2305B;
-  color: #FFFFFF;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
+  float: left;
+  margin-left: 3px;
 }
-.show-more{
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 23px;
-}
-a#show-more{
-  	height: 15px;
-    width: 69px;
-    color: #51A3F3;
-    font-family: "SF Pro Text";
-    font-size: 13px;
-    line-height: 15px;
-    text-decoration: none;
+.product-control-info{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: -10px;
 }
 .side a{
   text-decoration: none;
@@ -378,8 +449,8 @@ a#show-more{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]{
-  width: calc(69.621421976% - 30px);
+input[type="text"]#vendor-search{
+  width: 345px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -394,25 +465,25 @@ input[type="text"]{
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-  margin-left: 13px;
+  margin-left: 20px;
+  margin-top: 20px;
+  height: 40px !important;
 }
-input[type="text"]#search{
-  height: 36px !important;
-}
-button{
-  	height: 36px;
-    width: calc(16.7737765466% + 10px);
-    border: 1px
-    solid #BDBFD8;
+button#product{
+  	height: 40px;
+    width: 130px;
     border-radius: 4px;
-    background-color: #FFFFFF;
+    background-color: #51A3F3;
+    border-radius: 4px;
+    color: #fff;
     font-family: "Helvetica Neue";
     font-size: 15px;
     font-weight: 300;
     line-height: 30px;
     text-align: center;
-    margin-top: 15px;
-    margin-left: 10px;
+    margin-top: 20px;
+    float: right;
+    margin-right: 20px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -420,13 +491,11 @@ button{
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-.cont-1-rep{
-  width: 47.5%;
-  float: left;
+.col-md-6{
+  width: 45.83%;
 }
-.cont-2-rep{
-  width: 22.9%;
-  float: left;
+.col-md-3{
+  width: 20.8%;
 }
 .user{
   display: inline-block;
@@ -527,98 +596,13 @@ button{
   position: relative;
   z-index: 1000;
 }
-.chart-1-reporting{
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.chart-1-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3-reporting{
-  height: 360px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-}
-.chart-3-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-box{
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-}
-.chart-2-reporting{
-  height: 170px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-  position: relative;
-}
-.chart-2-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-2-reporting#second{
-  margin-left: 60px;
-}
 .side#active svg g{
   fill: white;
 }
 .navigation{
+    width: 100%;
     height: 60px;
     background-color: #FFFFFF;
-    width: 100%;
 }
 .head-logo{
     display: inline-block;
@@ -749,6 +733,13 @@ button{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
+}
+.control-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
 }
 .side-title{
   	height: 30px;

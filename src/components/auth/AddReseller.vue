@@ -112,16 +112,22 @@
           </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Vendors.svg">
-          <span v-if="show" id="side-link">Vendors</span>
+          <router-link :to="{ name: 'Vendors'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" id="side-link">Vendors</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/DID.svg">
-          <span v-if="show" id="side-link">DID</span>
+          <router-link :to="{ name: 'DID'}">
+            <img class="image-box" src="@/assets/Icon/DID.svg">
+            <span v-if="show" id="side-link">DID</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Filters.svg">
-          <span v-if="show" id="side-link">Filters</span>
+          <router-link :to="{ name: 'Filters'}">
+            <img class="image-box" src="@/assets/Icon/Filters.svg">
+            <span v-if="show" id="side-link">Filters</span>
+          </router-link>
         </div>
       </div>
       </transition>
@@ -420,9 +426,9 @@ td#add-sell-rate{
   float: left;
   display: inline-block;
   background-color: #FFFFFF;
-  width: calc(100% - 30px);
-  margin-left: 15px;
-  margin-right: 15px;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .reseller-main{
   display: inline-block;

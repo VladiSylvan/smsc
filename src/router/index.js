@@ -19,6 +19,13 @@ import Users from '@/components/auth/Users'
 import AddUser from '@/components/auth/AddUser'
 import EditUser from '@/components/auth/EditUser'
 import Companies from '@/components/auth/Companies'
+import AddCompany from '@/components/auth/AddCompany'
+import EditCompany from '@/components/auth/EditCompany'
+import Vendors from '@/components/auth/Vendors'
+import AddVendor from '@/components/auth/AddVendor'
+import EditVendor from '@/components/auth/EditVendor'
+import VendorsRate from '@/components/auth/VendorsRate'
+import DID from '@/components/auth/DID'
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
 
@@ -123,5 +130,40 @@ export default new Router({
         path: '/companies',
         name: 'Companies',
         component: Companies
+    },
+    {
+        path: '/addcompany',
+        name: 'AddCompany',
+        component: AddCompany
+    },
+    {
+        path: '/editcompany',
+        name: 'EditCompany',
+        component: EditCompany
+    },
+    {
+        path: '/vendors',
+        name: 'Vendors',
+        component: Vendors
+    },
+    {
+        path: '/addvendor',
+        name: 'AddVendor',
+        component: AddVendor
+    },
+    {
+        path: '/editvendor',
+        name: 'EditVendor',
+        component: EditVendor
+    },
+    {
+        path: '/vendorsrate',
+        name: 'VendorsRate',
+        component: VendorsRate
+    },
+    {
+        path: '/did',
+        name: 'DID',
+        component: DID
     }]
 })

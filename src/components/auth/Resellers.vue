@@ -112,16 +112,22 @@
           </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Vendors.svg">
-          <span v-if="show" id="side-link">Vendors</span>
+          <router-link :to="{ name: 'Vendors'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" id="side-link">Vendors</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/DID.svg">
-          <span v-if="show" id="side-link">DID</span>
+          <router-link :to="{ name: 'DID'}">
+            <img class="image-box" src="@/assets/Icon/DID.svg">
+            <span v-if="show" id="side-link">DID</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Filters.svg">
-          <span v-if="show" id="side-link">Filters</span>
+          <router-link :to="{ name: 'Filters'}">
+            <img class="image-box" src="@/assets/Icon/Filters.svg">
+            <span v-if="show" id="side-link">Filters</span>
+          </router-link>
         </div>
       </div>
       </transition>
@@ -510,6 +516,7 @@ button#reseller{
     text-align: center;
     margin-top: 20px;
     float: right;
+    margin-right: 20px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;

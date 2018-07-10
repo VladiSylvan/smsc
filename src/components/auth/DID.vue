@@ -8,7 +8,7 @@
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
-          <div class="title">Reporting</div>
+          <div class="title">DID</div>
         </div>
         <div v-if="!popup" v-on:click="popup = !popup" class="user">
           <div class="username">Linnie Weaver</div>
@@ -61,14 +61,9 @@
             <span v-if="show" id="side-link">Dashboard</span>
           </router-link>
         </div>
-        <div v-bind:class="{'side-hide': !show}" id="active" class="side">
+        <div class="side">
           <router-link :to="{ name: 'Reporting'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M24.3333333,22.6234595 L7.1656,22.6234595 L9.95824,16.9509189 L12.8546667,18.8602162 C13.03872,18.9815676 13.2700267,19.0032973 13.47296,18.9181081 C13.6759467,18.8331351 13.8245333,18.6521622 13.8701867,18.4344865 L15.0018133,13.0466486 L18.1837867,14.6959459 C18.4528,14.8354595 18.78064,14.7740541 18.9827733,14.5463784 L21.6315733,11.5637297 L21.71488,12.467027 C21.7470933,12.8172432 22.0377067,13.0799459 22.37792,13.0799459 C22.3986667,13.0799459 22.4196267,13.078973 22.4406933,13.076973 C22.8073067,13.0422703 23.0766933,12.712973 23.0425067,12.3414054 L22.8059733,9.774 C22.7716267,9.40243243 22.4470933,9.12924324 22.0802133,9.16405405 L19.5470933,9.40367568 C19.1805333,9.43837838 18.91104,9.76767568 18.9452267,10.1391892 C18.9796267,10.5107568 19.3035733,10.7838919 19.67104,10.7491351 L20.6428267,10.6571892 L18.33472,13.2562703 L14.8345067,11.442 C14.6498667,11.3462162 14.43168,11.3431351 14.24448,11.4334595 C14.0571733,11.5237838 13.92208,11.6972973 13.87888,11.9029189 L12.7682667,17.1910811 L10.0589333,15.4051351 C9.89962667,15.3001081 9.70362667,15.2689189 9.52037333,15.3195676 C9.33701333,15.3701081 9.18368,15.4975135 9.09893333,15.6697838 L6.33333333,21.2874054 L6.33333333,6.70086486 C6.33333333,6.32767568 6.03482667,6.02518919 5.66666667,6.02518919 C5.29850667,6.02518919 5,6.32767568 5,6.70086486 L5,23.2991351 C5,23.6722703 5.29850667,23.9748108 5.66666667,23.9748108 L24.3333333,23.9748108 C24.70144,23.9748108 25,23.6722703 25,23.2991351 C25,22.926 24.70144,22.6234595 24.3333333,22.6234595 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
+            <img class="image-box" src="@/assets/Icon/Reporting.svg">
             <span v-if="show" id="side-link">Reporting</span>
           </router-link>
         </div>
@@ -117,9 +112,14 @@
             <span v-if="show" id="side-link">Vendors</span>
           </router-link>
         </div>
-        <div class="side">
+        <div v-bind:class="{'side-hide': !show}" class="side" id="active">
           <router-link :to="{ name: 'DID'}">
-            <img class="image-box" src="@/assets/Icon/DID.svg">
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M22.8623041,6.4771831 L13.5686636,6.4771831 C13.5290323,6.12976526 13.382765,5.80741784 13.1409217,5.55164319 C12.8413825,5.23474178 12.4369585,5.06028169 12.0023041,5.06028169 L6.67198157,5.06028169 C6.23723502,5.06028169 5.83290323,5.23474178 5.53336406,5.5515493 C5.23382488,5.8684507 5.07788018,6.28666667 5.09410138,6.72929577 L5.36138249,13.9882629 C5.37963134,14.4824413 5.38,15.3179343 5.36221198,15.8126761 L5.09317972,23.3000939 C5.07732719,23.7425352 5.23354839,24.1606573 5.53327189,24.4773709 C5.83290323,24.7940845 6.23732719,24.9684507 6.6718894,24.9684507 L12.0021198,24.9684507 C12.436682,24.9684507 12.841106,24.7940845 13.1407373,24.4773709 C13.3157604,24.2923944 13.4402765,24.0723005 13.5117051,23.8334272 L22.8621198,23.8334272 C24.0056221,23.8334272 24.9358525,22.8857277 24.9358525,21.7207512 L24.9358525,8.58985915 C24.9360369,7.42497653 24.0058065,6.4771831 22.8623041,6.4771831 Z M12.1457143,23.4997183 C12.1197235,23.5271362 12.0737327,23.5599061 12.0023041,23.5599061 L6.67198157,23.5599061 C6.600553,23.5599061 6.55456221,23.5271362 6.52857143,23.4997183 C6.50258065,23.4723005 6.4721659,23.4243192 6.47483871,23.3515493 L6.74387097,15.8641315 C6.76294931,15.3320188 6.76258065,14.4667606 6.74294931,13.9353052 L6.4756682,6.67643192 C6.47299539,6.60384977 6.50322581,6.55596244 6.52912442,6.5286385 C6.55493088,6.50131455 6.60073733,6.46873239 6.67198157,6.46873239 L12.002212,6.46873239 C12.0734562,6.46873239 12.1192627,6.50131455 12.1451613,6.5286385 C12.1709677,6.55605634 12.2011982,6.60384977 12.1986175,6.67643192 L11.9313364,13.9353991 C11.9117972,14.4675117 11.9113364,15.3326761 11.9304147,15.8642254 L12.1993548,23.3516432 C12.2020276,23.4243192 12.1716129,23.4723005 12.1457143,23.4997183 Z M23.5535484,21.7207512 C23.5535484,22.109108 23.2435023,22.4249765 22.8623041,22.4249765 L13.5495853,22.4249765 L13.3120737,15.81277 C13.2942857,15.3185915 13.2947465,14.4830986 13.3129032,13.9882629 L13.5376037,7.8857277 L22.8623963,7.8857277 C23.2435945,7.8857277 23.5536406,8.20159624 23.5536406,8.58995305 L23.5536406,21.7207512 L23.5535484,21.7207512 Z M21.9180645,9.61521127 L14.6610138,9.61521127 C14.2792627,9.61521127 13.9697696,9.93051643 13.9697696,10.3194366 C13.9697696,10.7083568 14.2792627,11.023662 14.6610138,11.023662 L21.9180645,11.023662 C22.2998157,11.023662 22.6093088,10.7083568 22.6093088,10.3194366 C22.6093088,9.93051643 22.2998157,9.61521127 21.9180645,9.61521127 Z M15.6228571,13.0598122 L14.8454378,13.0598122 C14.4636866,13.0598122 14.1541935,13.3751174 14.1541935,13.7640376 C14.1541935,14.1529577 14.4636866,14.4682629 14.8454378,14.4682629 L15.6228571,14.4682629 C16.0046083,14.4682629 16.3141014,14.1529577 16.3141014,13.7640376 C16.3141014,13.3751174 16.0046083,13.0598122 15.6228571,13.0598122 Z M18.6320737,13.0598122 L17.8546544,13.0598122 C17.4729032,13.0598122 17.1634101,13.3751174 17.1634101,13.7640376 C17.1634101,14.1529577 17.4729032,14.4682629 17.8546544,14.4682629 L18.6320737,14.4682629 C19.0138249,14.4682629 19.323318,14.1529577 19.323318,13.7640376 C19.323318,13.3751174 19.0139171,13.0598122 18.6320737,13.0598122 Z M21.6413825,13.0598122 L20.8639631,13.0598122 C20.482212,13.0598122 20.1727189,13.3751174 20.1727189,13.7640376 C20.1727189,14.1529577 20.482212,14.4682629 20.8639631,14.4682629 L21.6413825,14.4682629 C22.0231336,14.4682629 22.3326267,14.1529577 22.3326267,13.7640376 C22.3326267,13.3751174 22.0231336,13.0598122 21.6413825,13.0598122 Z M15.6228571,15.7551174 L14.8454378,15.7551174 C14.4636866,15.7551174 14.1541935,16.0704225 14.1541935,16.4593427 C14.1541935,16.8482629 14.4636866,17.1635681 14.8454378,17.1635681 L15.6228571,17.1635681 C16.0046083,17.1635681 16.3141014,16.8482629 16.3141014,16.4593427 C16.3141014,16.0704225 16.0046083,15.7551174 15.6228571,15.7551174 Z M18.6320737,15.7551174 L17.8546544,15.7551174 C17.4729032,15.7551174 17.1634101,16.0704225 17.1634101,16.4593427 C17.1634101,16.8482629 17.4729032,17.1635681 17.8546544,17.1635681 L18.6320737,17.1635681 C19.0138249,17.1635681 19.323318,16.8482629 19.323318,16.4593427 C19.323318,16.0704225 19.0139171,15.7551174 18.6320737,15.7551174 Z M21.6413825,15.7551174 L20.8639631,15.7551174 C20.482212,15.7551174 20.1727189,16.0704225 20.1727189,16.4593427 C20.1727189,16.8482629 20.482212,17.1635681 20.8639631,17.1635681 L21.6413825,17.1635681 C22.0231336,17.1635681 22.3326267,16.8482629 22.3326267,16.4593427 C22.3326267,16.0704225 22.0231336,15.7551174 21.6413825,15.7551174 Z M15.6228571,18.4505164 L14.8454378,18.4505164 C14.4636866,18.4505164 14.1541935,18.7658216 14.1541935,19.1547418 C14.1541935,19.543662 14.4636866,19.8589671 14.8454378,19.8589671 L15.6228571,19.8589671 C16.0046083,19.8589671 16.3141014,19.543662 16.3141014,19.1547418 C16.3141014,18.7658216 16.0046083,18.4505164 15.6228571,18.4505164 Z M18.6320737,18.4505164 L17.8546544,18.4505164 C17.4729032,18.4505164 17.1634101,18.7658216 17.1634101,19.1547418 C17.1634101,19.543662 17.4729032,19.8589671 17.8546544,19.8589671 L18.6320737,19.8589671 C19.0138249,19.8589671 19.323318,19.543662 19.323318,19.1547418 C19.323318,18.7658216 19.0139171,18.4505164 18.6320737,18.4505164 Z M21.6413825,18.4505164 L20.8639631,18.4505164 C20.482212,18.4505164 20.1727189,18.7658216 20.1727189,19.1547418 C20.1727189,19.543662 20.482212,19.8589671 20.8639631,19.8589671 L21.6413825,19.8589671 C22.0231336,19.8589671 22.3326267,19.543662 22.3326267,19.1547418 C22.3326267,18.7658216 22.0231336,18.4505164 21.6413825,18.4505164 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
             <span v-if="show" id="side-link">DID</span>
           </router-link>
         </div>
@@ -132,142 +132,58 @@
       </div>
       </transition>
       <div class="main">
-        <div class="cont-1-rep">
-            <div class="chart-1-reporting">
-              <div class="chart-1-title-reporting">
-                Resellers
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-              <input id="search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
-              <button type="submit">Filter</button>
-              <table id="reporting" cellspacing="0" cellpadding="0">
-                <thead>
-                  <tr>
-                    <th id="resellers">Resellers</th>
-                    <th id="date">Date</th>
-                    <th id="status">Status</th>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
-                  </tr>
-                  <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
-                  </tr>
-                </thead>
-              </table>
-              <div class="show-more">
-                <a href="#" id="show-more">Show more</a>
-              </div>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
-          </div>
-          <div class="cont-1-rep">
-            <div class="chart-3-reporting">
-              <div class="chart-3-title-reporting">
-                Companies
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
-            </div>
+          <input id="did-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
+          <router-link :to="{ name: 'ImportDID'}"><button id="did" type="submit">Import DID</button></router-link>
+          <div class="main-container">
+            <table cellspacing="0" cellpadding="0">
+              <thead>
+                <tr>
+                  <th class="did-active"></th>
+                  <th class="did-number">Number</th>
+                  <th class="did-created">Created On</th>
+                  <th class="did-created-by">Created By</th>
+                  <th class="did-country">Country</th>
+                  <th class="did-type">Type</th>
+                  <th class="did-assigned">Assigned To</th>
+                  <th class="did-option"></th>
+                  <th class="did-option"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="did-active"></td>
+                  <td class="did-number">Number</td>
+                  <td class="did-created">Created On</td>
+                  <td class="did-created-by">Created By</td>
+                  <td class="did-country">Country</td>
+                  <td class="did-type">Type</td>
+                  <td class="did-assigned">Assigned To</td>
+                  <td class="did-option"></td>
+                  <td class="did-option"></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </div>
     </div>
 </template>
 <script>
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
 import BarChart2 from '@/components/auth/BarChart2'
+import modal from '@/components/modal.vue'
 
 export default {
+    name: 'app',
     data () {
         return {
           show: true,
           width: '60px',
           transitionName: 'fade',
           popup: false,
+          test: false,
+          del: false,
+          isModalVisible: false,
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -278,26 +194,111 @@ export default {
     components:{
       CommitChart,
       BarChart,
-      BarChart2
+      BarChart2,
+      modal
     },
     methods:{
         sendForm(){
             event.preventDefault()
+        },
+        showModal() {
+          this.isModalVisible = true;
+        },
+        closeModal() {
+          this.isModalVisible = false;
         }
     },
 }
 </script>
 <style>
+.undo-title{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  margin-right: 30px;
+}
+.undo-image{
+  display: inline-block;
+  float: right;
+  margin-right: 15px;
+}
+.undo-undo{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+.svg-blue path{
+  fill: #51A3F3;
+}
+a{
+  text-decoration: none;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+}
+.reseller-menu{
+	height: 210px;
+	width: 228px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
+  display: inline-block;
+  vertical-align: top;
+  position: fixed;
+  z-index: 1;
+  float: right;
+  margin-left: -220px;
+  margin-top: -35px;
+}
+.reseller-menu-link{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.reseller-menu-link:first-child{
+  margin-top: 35px;
+}
+.reseller-span{
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.reseller-menu-add{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  background-color: #F8F9FE;
+}
+.reseller-menu-button{
+  float: right;
+  display: inline-block;
+  margin-top: -5px;
+  margin-right: -7px;
+}
 .svg-active path{
   fill: white;
 }
-table#reporting{
-  margin-left: 20px;
+table{
   border: none;
-  max-width: calc(100% - 40px);
+  max-width: calc(100% - 10px);
   width: 100%;
+  margin-top: 20px;
 }
-tr{
+th{
   height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -305,70 +306,68 @@ tr{
   line-height: 16px;
   margin-left: 15px;
   text-align: left;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
-td#resellers{
-  width: 174px;
-  margin-left: 15px;
-}
-td#date{
-  width: 189px;
-}
-td#status{
-  width: 132px;
-}
-
-th#resellers{
-  width: 174px;
-}
-th#date{
-  width: 189px;
-}
-th#status{
-  width: 132px;
-}
-
-.active{
-  box-sizing: border-box;
-  height: 24px;
-  width: 59px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
-  background-color: #24E2B8;
+td{
+  height: 50px;
   color: #212B36;
   font-family: "SF Pro Text";
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.not-active{
+.did-active{
+  width: 20px;
+  padding-left: 15px;
+}
+.did-number{
+  width: 199px;
+}
+.did-created{
+  width: 119px;
+}
+.did-created-by{
+  width: 223px;
+}
+.did-country{
+  width: 116px;
+}
+.did-type{
+  width: 118px;
+}
+.did-assigned{
+  width: 190px;
+}
+.did-option{
+  width: 50px;
+}
+
+.product-active{
   box-sizing: border-box;
-  height: 24px;
-  width: 85px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #24E2B8;
+  float: left;
+  margin-left: 3px;
+}
+.product-not-active{
+  box-sizing: border-box;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
   background-color: #D2305B;
-  color: #FFFFFF;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
+  float: left;
+  margin-left: 3px;
 }
-.show-more{
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 23px;
-}
-a#show-more{
-  	height: 15px;
-    width: 69px;
-    color: #51A3F3;
-    font-family: "SF Pro Text";
-    font-size: 13px;
-    line-height: 15px;
-    text-decoration: none;
+.product-control-info{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: -10px;
+  margin-left: 15px;
 }
 .side a{
   text-decoration: none;
@@ -378,8 +377,8 @@ a#show-more{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]{
-  width: calc(69.621421976% - 30px);
+input[type="text"]#did-search{
+  width: 345px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -394,25 +393,25 @@ input[type="text"]{
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-  margin-left: 13px;
+  margin-left: 20px;
+  margin-top: 20px;
+  height: 40px !important;
 }
-input[type="text"]#search{
-  height: 36px !important;
-}
-button{
-  	height: 36px;
-    width: calc(16.7737765466% + 10px);
-    border: 1px
-    solid #BDBFD8;
+button#did{
+  	height: 40px;
+    width: 130px;
     border-radius: 4px;
-    background-color: #FFFFFF;
+    background-color: #51A3F3;
+    border-radius: 4px;
+    color: #fff;
     font-family: "Helvetica Neue";
     font-size: 15px;
     font-weight: 300;
     line-height: 30px;
     text-align: center;
-    margin-top: 15px;
-    margin-left: 10px;
+    margin-top: 20px;
+    float: right;
+    margin-right: 20px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -420,13 +419,11 @@ button{
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-.cont-1-rep{
-  width: 47.5%;
-  float: left;
+.col-md-6{
+  width: 45.83%;
 }
-.cont-2-rep{
-  width: 22.9%;
-  float: left;
+.col-md-3{
+  width: 20.8%;
 }
 .user{
   display: inline-block;
@@ -512,6 +509,13 @@ button{
   vertical-align: top;
   float: left;
 }
+.main-container{
+  float: left;
+  display: inline-block;
+  width: calc(100% - 30px);
+  margin-left: 20px;
+  margin-right: 20px;
+}
 .header{
   display: inline-block;
   vertical-align: top;
@@ -527,98 +531,13 @@ button{
   position: relative;
   z-index: 1000;
 }
-.chart-1-reporting{
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.chart-1-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3-reporting{
-  height: 360px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-}
-.chart-3-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-box{
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-}
-.chart-2-reporting{
-  height: 170px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-  position: relative;
-}
-.chart-2-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-2-reporting#second{
-  margin-left: 60px;
-}
 .side#active svg g{
   fill: white;
 }
 .navigation{
+    width: 100%;
     height: 60px;
     background-color: #FFFFFF;
-    width: 100%;
 }
 .head-logo{
     display: inline-block;
@@ -749,6 +668,13 @@ button{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
+}
+.control-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
 }
 .side-title{
   	height: 30px;

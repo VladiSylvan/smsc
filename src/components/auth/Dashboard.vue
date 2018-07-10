@@ -118,16 +118,22 @@
           </router-link>
         </li>
         <li>
-          <img class="image-box" src="@/assets/Icon/Vendors.svg">
-          <span v-if="show" class="side-link">Vendors</span>
+          <router-link :to="{ name: 'Vendors'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" class="side-link">Vendors</span>
+          </router-link>
         </li>
         <li>
-          <img class="image-box" src="@/assets/Icon/DID.svg">
-          <span v-if="show" class="side-link">DID</span>
+          <router-link :to="{ name: 'DID'}">
+            <img class="image-box" src="@/assets/Icon/DID.svg">
+            <span v-if="show" class="side-link">DID</span>
+          </router-link>
         </li>
         <li>
-          <img class="image-box" src="@/assets/Icon/Filters.svg">
-          <span v-if="show" class="side-link">Filters</span>
+          <router-link :to="{ name: 'Filters'}">
+            <img class="image-box" src="@/assets/Icon/Filters.svg">
+            <span v-if="show" class="side-link">Filters</span>
+          </router-link>
         </li>
       </ul>
       </transition>
@@ -330,12 +336,11 @@ export default {
     margin-top: 21px;
 }
 .main{
-  max-width: calc(100% - 310px);
+  max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-  margin-right: 10px;
 }
 .header{
   display: inline-block;

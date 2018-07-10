@@ -112,23 +112,29 @@
           </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Vendors.svg">
-          <span v-if="show" id="side-link">Vendors</span>
+          <router-link :to="{ name: 'Vendors'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" id="side-link">Vendors</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/DID.svg">
-          <span v-if="show" id="side-link">DID</span>
+          <router-link :to="{ name: 'DID'}">
+            <img class="image-box" src="@/assets/Icon/DID.svg">
+            <span v-if="show" id="side-link">DID</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Filters.svg">
-          <span v-if="show" id="side-link">Filters</span>
+          <router-link :to="{ name: 'Filters'}">
+            <img class="image-box" src="@/assets/Icon/Filters.svg">
+            <span v-if="show" id="side-link">Filters</span>
+          </router-link>
         </div>
       </div>
       </transition>
       <div class="main">
-          <input id="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
-          <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
-
+        <input id="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
+        <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
+        <div class="product-main">
           <table cellspacing="0" cellpadding="0">
             <thead>
               <tr>
@@ -176,9 +182,10 @@
             </tbody>
           </table>
         </div>
-        <div id="app">
-          <modal v-show="isModalVisible" @close="closeModal"/>
-        </div>
+      </div>
+      <div id="app">
+        <modal v-show="isModalVisible" @close="closeModal"/>
+      </div>
     </div>
 </template>
 <script>
@@ -223,13 +230,19 @@ export default {
 }
 </script>
 <style>
+.product-main{
+  float: left;
+  display: inline-block;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
+}
 .svg-active path{
   fill: white;
 }
 table{
-  margin-left: 20px;
   border: none;
-  max-width: calc(100% - 30px);
+  max-width: 100%;
   width: 100%;
 }
 tr{
@@ -353,6 +366,7 @@ button#product{
     text-align: center;
     margin-top: 20px;
     float: right;
+    margin-right: 20px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -444,12 +458,11 @@ button#product{
     margin-top: 21px;
 }
 .main{
-  max-width: calc(100% - 310px);
+  max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-  margin-right: 10px;
 }
 .header{
   display: inline-block;

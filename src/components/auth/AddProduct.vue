@@ -112,16 +112,22 @@
           </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Vendors.svg">
-          <span v-if="show" id="side-link">Vendors</span>
+          <router-link :to="{ name: 'Vendors'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" id="side-link">Vendors</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/DID.svg">
-          <span v-if="show" id="side-link">DID</span>
+          <router-link :to="{ name: 'DID'}">
+            <img class="image-box" src="@/assets/Icon/DID.svg">
+            <span v-if="show" id="side-link">DID</span>
+          </router-link>
         </div>
         <div class="side">
-          <img class="image-box" src="@/assets/Icon/Filters.svg">
-          <span v-if="show" id="side-link">Filters</span>
+          <router-link :to="{ name: 'Filters'}">
+            <img class="image-box" src="@/assets/Icon/Filters.svg">
+            <span v-if="show" id="side-link">Filters</span>
+          </router-link>
         </div>
       </div>
       </transition>
@@ -141,8 +147,8 @@
         </router-link>
         <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
         <router-link :to="{ name: 'Product'}"><button id="cancel" type="submit">Cancel</button></router-link>
-        <div class="add-product">
-          <div class="product-main">
+        <div class="product-add-main">
+          <div class="add-product">
             <div class="product-add-title">
               Add Product Information
             </div>
@@ -435,23 +441,25 @@ td#add-sell-rate{
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.add-product{
+.product-add-main{
   float: left;
   display: inline-block;
   background-color: #FFFFFF;
-  width: calc(100% - 50px);
+  width: calc(100% - 70px);
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 15px;
 }
-.product-main{
+.add-product{
   display: inline-block;
   float: left;
-  max-width: 58.1818181818%;
+  max-width: 59.1818181818%;
   width: 100%;
 }
 .product-vendor{
   display: inline-block;
   float: left;
-  max-width: calc(100% - 58.1818181818%);
+  max-width: calc(100% - 59.1818181818%);
   width: 100%;
   background-color: #F8F9FE;
   height: 458px;
@@ -589,7 +597,7 @@ select{
     margin-bottom: 10px;
 }
 .vendor{
-    width: 245px !important;
+    width: 230px !important;
     height: 40px !important;
     border: 1px solid #EDEEF3;
     border-radius: 4px;
