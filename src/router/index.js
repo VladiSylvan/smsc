@@ -26,6 +26,10 @@ import AddVendor from '@/components/auth/AddVendor'
 import EditVendor from '@/components/auth/EditVendor'
 import VendorsRate from '@/components/auth/VendorsRate'
 import DID from '@/components/auth/DID'
+import EditDID from '@/components/auth/EditDID'
+import ImportDID from '@/components/auth/ImportDID'
+import VerifyDID from '@/components/auth/VerifyDID'
+import Filters from '@/components/auth/Filters'
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
 
@@ -165,5 +169,25 @@ export default new Router({
         path: '/did',
         name: 'DID',
         component: DID
+    },
+    {
+        path: '/editdid',
+        name: 'EditDID',
+        component: EditDID
+    },
+    {
+        path: '/importdid',
+        name: 'ImportDID',
+        component: ImportDID
+    },
+    {
+        path: '/verifydid',
+        name: 'VerifyDID',
+        component: VerifyDID
+    },
+    {
+        path: '/filters',
+        name: 'Filters',
+        component: Filters
     }]
 })

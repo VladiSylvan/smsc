@@ -3,7 +3,7 @@
       <nav class="navigation">
         <div class="logo-place">
           <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="circle"></div>
-          <div v-if="!show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Open.svg') + ')' }" class="circle"></div>
+          <div v-if="!show" v-on:click="show = !show" style="transform: rotate(180deg);" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="circle"></div>
           <img v-if="show" class="head-logo" src="@/assets/logo.png">
           <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
         </div>
@@ -131,95 +131,49 @@
         </div>
       </div>
       </transition>
-      <div class="main">
-          <input id="did-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
-          <router-link :to="{ name: 'ImportDID'}"><button id="did" type="submit">Import DID</button></router-link>
-          <div class="main-container">
-            <table cellspacing="0" cellpadding="0">
-              <thead>
-                <tr>
-                  <th class="did-active"></th>
-                  <th class="did-number">Number</th>
-                  <th class="did-created">Created On</th>
-                  <th class="did-created-by">Created By</th>
-                  <th class="did-country">Country</th>
-                  <th class="did-type">Type</th>
-                  <th class="did-assigned">Assigned To</th>
-                  <th class="did-option"></th>
-                  <th class="did-option"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">050-185-4229</td>
-                  <td class="did-created">10-03-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">San Marino</div></td>
-                  <td class="did-country">Ethiopia</td>
-                  <td class="did-type">Toll Free</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Appolo Inc.</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">215-054-1288</td>
-                  <td class="did-created">11-28-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Douglas Richards</div></td>
-                  <td class="did-country">South Africa</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">George Burns</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">697-431-7827</td>
-                  <td class="did-created">01-26-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Eleanor Jensen</div></td>
-                  <td class="did-country">Marshall</td>
-                  <td class="did-type">Toll Free</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Stanley Powell</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">239-429-1353</td>
-                  <td class="did-created">01-24-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Evelyn Holland</div></td>
-                  <td class="did-country">Angola</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Allen Roberts</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="offline">
-                  <td class="did-active"><div class="product-not-active"></div></td>
-                  <td class="did-number">625-867-0083</td>
-                  <td class="did-created">12-14-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Polly Mitchell</div></td>
-                  <td class="did-country">Dominican</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Susie Dean</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="offline">
-                  <td class="did-active"><div class="product-not-active"></div></td>
-                  <td class="did-number">542-961-8296</td>
-                  <td class="did-created">10-03-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Winnie Medina</div></td>
-                  <td class="did-country">Isle of Man</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Peter Nelson</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-              </tbody>
-            </table>
+      <div class="main-add">
+        <router-link :to="{ name: 'DID'}">
+          <div class="svg-back">
+            <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+              L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+              L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+              </path>
+            </svg>
+          </div>
+          <div class='back'>
+            Back to DID
+          </div>
+        </router-link>
+        <router-link :to="{ name: 'VerifyDID'}"><button id="product" type="submit">Verify</button></router-link>
+        <router-link :to="{ name: 'DID'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        <div class="add-did">
+          <div class="did-main">
+            <div class="did-add-title">
+              Import DID
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Number
+              </div>
+              <input class="grid-input" type="text" v-model="user.number" placeholder="Enter number to import">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Origination IP
+              </div>
+              <input class="grid-input" type="text" v-model="user.originationIP" placeholder="Enter Origination IP">
+            </div>
+          </div>
+          <div class="did-second">
+            <div class="did-info">
+              <div class="did-info-text">
+                To Verify DID, we will send out call to the number and play a 4 digit text for the you to enter to system. Enter the digits in the text field below.
+              </div>
+            </div>
           </div>
         </div>
+      </div>
     </div>
 </template>
 <script>
@@ -236,14 +190,28 @@ export default {
           width: '60px',
           transitionName: 'fade',
           popup: false,
-          test: false,
-          del: false,
           isModalVisible: false,
+          vendors: true,
                 user:{
-                system: 'Overall system',
-                days: 'Last 30 days'
+                contact: 'Chad Sullivan',
+                type: 'SMPP',
             },
-
+            user2:{
+              country: 'China',
+              operator: 'China Mobile',
+              sellRate: '0.0012'
+            },
+            user3:{
+              country: 'United States',
+              operator: 'AT & T',
+              sellRate: '0.0003'
+            },
+            vendor:{
+              vendorName1: 'Vendor BB',
+              vendorName2: 'Vendor CC',
+              vendorRate1: '0.0009',
+              vendorRate2: '0.0008'
+            }
         }
     },
     components:{
@@ -266,133 +234,193 @@ export default {
 }
 </script>
 <style>
-.did-name-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
+.did-info{
+  border-radius: 4px;
+  background-color: #F8F9FE;
+  padding: 10px 13px 10px 14px;
+  margin-top: 20px;
 }
-.did-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
+.did-info-text{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  line-height: 15px;
 }
-.undo-title{
+.upload{
+  border: 1px dashed #5171F3;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  height: 280px;
+  text-align: center;
+}
+.upload-title{
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 16px;
   line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 30px;
+  text-align: center;
+  margin-top: 97px;
+  margin-bottom: 10px;
 }
-.undo-image{
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
+.upload-button{
+  border-radius: 4px;
+  background-color: #51A3F3;
+  color: #FFFFFF;
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  height: 36px;
+  width: 136px;
 }
-.undo-undo{
+.grid-1{
+  margin-left: 15px;
+  width: 29.3%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-2{
+  margin-left: 15px;
+  width: 69%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-3{
+  margin-left: 15px;
+  width: 21.0672064777%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-4{
+  margin-left: 15px;
+  width: 45.5%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-title{
+  width: 100%;
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.grid-input{
+  width: 100%;
+}
+.grid-select{
+  width: calc(100% + 13px);
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  height: 44px;
+}
+table{
+  max-width: 100%;
+  width: 100%;
+}
+.active-table{
+	background-color: #F8F9FE;
+}
+td#add-country{
+  width: 190px;
+  padding-left: 15px;
+}
+td#add-operator{
+  width: 215px;
+}
+td#add-sell-rate{
+  width: 150px;
+}
+.svg path{
+  fill: #51A3F3;
+}
+.svg-back{
+  float: left;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+.back{
   color: #51A3F3;
   font-family: "Helvetica Neue";
   font-size: 16px;
+  font-weight: 500;
   line-height: 20px;
+  float: left;
   display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.svg-blue path{
-  fill: #51A3F3;
+.add-did{
+  float: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.svg-active path{
-  fill: white;
-}
-table{
-  border: none;
-  max-width: calc(100% - 10px);
+.did-main{
+  display: inline-block;
+  float: left;
+  max-width: 66.8181818182%;
   width: 100%;
-  margin-top: 20px;
 }
-th{
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 600;
-  margin-left: 15px;
-  text-align: left;
-}
-td{
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.online{
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-}
-.did-active{
-  width: 20px;
-  padding-left: 7px;
-}
-.did-number{
-  width: 199px;
-}
-.did-created{
-  width: 119px;
-}
-.did-created-by{
-  width: 223px;
-}
-.did-country{
-  width: 116px;
-}
-.did-type{
-  width: 118px;
-}
-.did-assigned{
-  width: 190px;
-}
-.did-option{
-  width: 50px;
-}
-
-.product-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #24E2B8;
+.did-second{
+  display: inline-block;
   float: left;
-  margin-left: 3px;
+  max-width: 31.8%;
+  width: 100%;
+  margin-top: 60px;
+  height: 100px;
 }
-.product-not-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #D2305B;
+.product-did{
+  display: inline-block;
   float: left;
-  margin-left: 3px;
+  max-width: calc(100% - 58.1818181818%);
+  width: 100%;
+  background-color: #F8F9FE;
+  height: 200px;
 }
-.did-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
+.delete-image{
   margin-top: -10px;
+}
+.delete-vendor-image{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.did-add-title{
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 15px;
+}
+.product-input-name{
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding-top: 10px;
 }
 .side a{
   text-decoration: none;
@@ -402,8 +430,7 @@ td{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#did-search{
-  width: 345px;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -413,16 +440,13 @@ input[type="text"]#did-search{
   background-position-x: 5px;
   background-position-y: 5px;
   height: 40px !important;
-  padding-left: 40px;
+  padding-left: 10px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-  margin-left: 20px;
-  margin-top: 20px;
-  height: 40px !important;
 }
-button#did{
+button#product{
   	height: 40px;
     width: 130px;
     border-radius: 4px;
@@ -435,8 +459,34 @@ button#did{
     line-height: 30px;
     text-align: center;
     margin-top: 20px;
-    float: right;
     margin-right: 20px;
+    margin-bottom: 20px;
+    float: right;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+}
+button#cancel{
+  height: 40px;
+  width: 90px;
+  border: 1px solid #BDBFD8;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #55616E;
+  font-family: "Circular Std";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  float: right;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -504,6 +554,7 @@ button#did{
     margin-top: 15px;
     color: #51A3F3;
 }
+
 .popup-image-box{
   width: 30px;
   height: 30px;
@@ -527,19 +578,12 @@ button#did{
     margin-left: 15px;
     margin-top: 21px;
 }
-.main{
+.main-add{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.main-container{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .header{
   display: inline-block;
@@ -560,7 +604,6 @@ button#did{
   fill: white;
 }
 .navigation{
-    width: 100%;
     height: 60px;
     background-color: #FFFFFF;
 }
@@ -582,7 +625,7 @@ button#did{
     vertical-align: top;
     margin-left: 15px;
     height: 30px;
-    width: 100%;
+    width: 90px;
     color: #55616E;
     font-family: "Circular Std";
     font-size: 18px;
@@ -643,8 +686,7 @@ button#did{
 }
 .sidebar {
 	height: 100vh;
-	max-width: 300px;
-  width: 100%;
+	width: 300px;
 	background-color: #F0F1FA;
   display: inline-block;
   float: left;
@@ -659,7 +701,7 @@ button#did{
 }
 .side{
   height: 40px;
-  width: 100%;
+  width: 290px;
   color: #55616E;
   display: inline-block;
   cursor: pointer;
@@ -693,13 +735,6 @@ button#did{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
-}
-.control-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 5px;
 }
 .side-title{
   	height: 30px;

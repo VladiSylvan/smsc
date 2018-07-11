@@ -148,16 +148,16 @@
           </div>
         </div>
         <div class="billing-main">
-          <table cellspacing="0" cellpadding="0">
+          <table class="billing-table" cellspacing="0" cellpadding="0">
             <thead>
               <tr>
-                <th class="billing-active"></th>
-                <th class="billing-id">Invoice #</th>
-                <th class="billing-created">Created On</th>
-                <th class="billing-created-by">Created By</th>
-                <th class="billing-company">Company</th>
-                <th class="billing-total">Total</th>
-                <th class="billing-options"></th>
+                <th class="billing-active-th"></th>
+                <th class="billing-id-th">Invoice #</th>
+                <th class="billing-created-th">Created On</th>
+                <th class="billing-created-by-th">Created By</th>
+                <th class="billing-company-th">Company</th>
+                <th class="billing-total-th">Total</th>
+                <th class="billing-options-th"></th>
               </tr>
             </thead>
             <tbody>
@@ -165,7 +165,7 @@
                 <td class="billing-active"><div class="billing-active-img"></div></td>
                 <td class="billing-id">25964</td>
                 <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by">San Marino</td>
+                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
                 <td class="billing-company">Appolo Inc.</td>
                 <td class="billing-total"><b>$38</b></td>
                 <td class="billing-options">
@@ -192,7 +192,7 @@
                 <td class="billing-active"><div class="billing-active-img"></div></td>
                 <td class="billing-id">25964</td>
                 <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by">San Marino</td>
+                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
                 <td class="billing-company">Appolo Inc.</td>
                 <td class="billing-total"><b>$38</b></td>
                 <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -201,7 +201,7 @@
                 <td class="billing-active"><div class="billing-active-img"></div></td>
                 <td class="billing-id">25964</td>
                 <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by">San Marino</td>
+                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
                 <td class="billing-company">Appolo Inc.</td>
                 <td class="billing-total"><b>$38</b></td>
                 <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -210,7 +210,7 @@
                 <td class="billing-active"><div class="billing-active-img"></div></td>
                 <td class="billing-id">25964</td>
                 <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by">San Marino</td>
+                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
                 <td class="billing-company">Appolo Inc.</td>
                 <td class="billing-total"><b>$38</b></td>
                 <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -219,7 +219,7 @@
                 <td class="billing-active"><div class="billing-active-img"></div></td>
                 <td class="billing-id">25964</td>
                 <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by">San Marino</td>
+                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
                 <td class="billing-company">Appolo Inc.</td>
                 <td class="billing-total"><b>$38</b></td>
                 <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -228,7 +228,7 @@
                 <td class="billing-active"><div class="billing-active-img"></div></td>
                 <td class="billing-id">25964</td>
                 <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by">San Marino</td>
+                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
                 <td class="billing-company">Appolo Inc.</td>
                 <td class="billing-total"><b>$38</b></td>
                 <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
@@ -285,6 +285,20 @@ export default {
 }
 </script>
 <style>
+.billing-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.billing-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
 .svg-blue path{
   fill: #51A3F3;
 }
@@ -383,22 +397,14 @@ a{
 .svg-active path{
   fill: white;
 }
-table{
+.billing-table{
   border: none;
   max-width: 100%;
   width: 100%;
   margin-top: 20px;
 }
-th{
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-td{
+.billing-active{
+  width: 35px;
   height: 50px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -409,26 +415,148 @@ td{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.billing-active{
-  width: 35px;
-}
 .billing-id{
   width: 221px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .billing-created{
   width: 234px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .billing-created-by{
   width: 225px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .billing-company{
   width: 200px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .billing-total{
   width: 140px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .billing-options{
   width: 45px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+
+.billing-active-th{
+  width: 35px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.billing-id-th{
+  width: 221px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.billing-created-th{
+  width: 234px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.billing-created-by-th{
+  width: 225px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.billing-company-th{
+  width: 200px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.billing-total-th{
+  width: 140px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.billing-options-th{
+  width: 45px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
 }
 
 .billing-active-img{

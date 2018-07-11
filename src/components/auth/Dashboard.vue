@@ -9,10 +9,10 @@
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
           <div class="title">Dashboard</div>
-          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="System" class="system" v-model="user.system">
+          <select id="dashboard" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="System" class="system" v-model="user.system">
             <option value="Overall system">Overall system</option>
           </select>
-          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Days" class="days" v-model="user.days">
+          <select id="dashboard" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Days" class="days" v-model="user.days">
             <option value="Last 30 days">Last 30 days</option>
           </select>
         </div>
@@ -536,7 +536,7 @@ li#active svg g{
     vertical-align: top;
     margin-top: 10px;
 }
-select{
+select#dashboard{
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;

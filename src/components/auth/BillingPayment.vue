@@ -148,23 +148,23 @@
           </div>
         </div>
         <div class="billing-main">
-          <table cellspacing="0" cellpadding="0">
+          <table class="payment-table" cellspacing="0" cellpadding="0">
             <thead>
               <tr>
-                <th class="payment-id">Payment #</th>
-                <th class="payment-paid">Paid On</th>
-                <th class="payment-gateway">Gateway</th>
-                <th class="payment-method">Method</th>
-                <th class="payment-total">Total</th>
-                <th class="payment-options"></th>
+                <th class="payment-id-th">Payment #</th>
+                <th class="payment-paid-th">Paid On</th>
+                <th class="payment-gateway-th">Gateway</th>
+                <th class="payment-method-th">Method</th>
+                <th class="payment-total-th">Total</th>
+                <th class="payment-options-th"></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="payment-id">25964</td>
                 <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway">San Marino</td>
-                <td class="payment-metho">Wire</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">Wire</td>
                 <td class="payment-total"><b>$4</b></td>
                 <td class="billing-options">
                   <div v-on:click="test = !test" class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div>
@@ -189,40 +189,40 @@
               <tr>
                 <td class="payment-id">25964</td>
                 <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway">San Marino</td>
-                <td class="payment-metho">Paypal</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">Paypal</td>
                 <td class="payment-total"><b>$19</b></td>
                 <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
               </tr>
               <tr>
                 <td class="payment-id">25964</td>
                 <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway">San Marino</td>
-                <td class="payment-metho">ACH</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">ACH</td>
                 <td class="payment-total"><b>$80</b></td>
                 <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
               </tr>
               <tr>
                 <td class="payment-id">25964</td>
                 <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway">San Marino</td>
-                <td class="payment-metho">Wire</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">Wire</td>
                 <td class="payment-total"><b>$4</b></td>
                 <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
               </tr>
               <tr>
                 <td class="payment-id">25964</td>
                 <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway">San Marino</td>
-                <td class="payment-metho">Paypal</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">Paypal</td>
                 <td class="payment-total"><b>$19</b></td>
                 <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
               </tr>
               <tr>
                 <td class="payment-id">25964</td>
                 <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway">San Marino</td>
-                <td class="payment-metho">ACH</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">ACH</td>
                 <td class="payment-total"><b>$80</b></td>
                 <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
               </tr>
@@ -275,6 +275,20 @@ export default {
 }
 </script>
 <style>
+.payment-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.payment-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
 .billing-main{
   float: left;
   display: inline-block;
@@ -370,13 +384,15 @@ a{
 .svg-active path{
   fill: white;
 }
-table{
+.payment-table{
   border: none;
   max-width: 100%;
   width: 100%;
   margin-top: 20px;
 }
-th{
+.payment-id-th{
+  width: 241px;
+  padding-left: 15px;
   height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -385,7 +401,60 @@ th{
   margin-left: 15px;
   text-align: left;
 }
-td{
+.payment-paid-th{
+  width: 234px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-gateway-th{
+  width: 225px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-method-th{
+  width: 200px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-total-th{
+  width: 140px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-options-th{
+  width: 45px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.payment-id{
+  width: 241px;
+  padding-left: 15px;
   height: 50px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -396,24 +465,65 @@ td{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.payment-id{
-  width: 241px;
-  padding-left: 15px;
-}
 .payment-paid{
   width: 234px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .payment-gateway{
   width: 225px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .payment-method{
   width: 200px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .payment-total{
   width: 140px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .payment-options{
   width: 45px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .payment-control-info{
   width: 30px;

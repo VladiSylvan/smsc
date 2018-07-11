@@ -156,26 +156,26 @@
               Product Name
             </div>
             <input id="product-name" type="text" v-model="user.productName" placeholder="Product Name">
-            <table cellspacing="0" cellpadding="0">
+            <table class="add-product-table" cellspacing="0" cellpadding="0">
               <tbody>
                 <tr>
-                  <td id="add-country"><div class="product-input-name">Country</div></td>
-                  <td id="add-operator"><div class="product-input-name">Operator</div></td>
-                  <td id="add-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                  <td class="add-product-country"><div class="product-input-name">Country</div></td>
+                  <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
+                  <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td id="add-country">
+                  <td class="add-product-country">
                     <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.country">
                       <option value="China">China</option>
                     </select>
                   </td>
-                  <td id="add-operator">
+                  <td class="add-product-operator">
                     <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user.operator">
                       <option value="China Unicom">China Unicom</option>
                     </select>
                   </td>
-                  <td id="add-sell-rate">
+                  <td class="add-product-sell-rate">
                     <input id="sell-rate" type="text" v-model="user.sellRate" placeholder="Sell Rate">
                   </td>
                   <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
@@ -183,23 +183,23 @@
               </tbody>
               <tbody v-bind:class="{'active-table': !vendors}" v-on:click="vendors = false">
                 <tr>
-                  <td id="add-country"><div class="product-input-name">Country</div></td>
-                  <td id="add-operator"><div class="product-input-name">Operator</div></td>
-                  <td id="add-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                  <td class="add-product-country"><div class="product-input-name">Country</div></td>
+                  <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
+                  <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td id="add-country">
+                  <td class="add-product-country">
                     <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user2.country">
                       <option value="China">China</option>
                     </select>
                   </td>
-                  <td id="add-operator">
+                  <td class="add-product-operator">
                     <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user2.operator">
                       <option value="China Mobile">China Mobile</option>
                     </select>
                   </td>
-                  <td id="add-sell-rate">
+                  <td class="add-product-sell-rate">
                     <input id="sell-rate" type="text" v-model="user2.sellRate" placeholder="Sell Rate">
                   </td>
                   <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
@@ -207,23 +207,23 @@
               </tbody>
               <tbody v-bind:class="{'active-table': vendors}" v-on:click="vendors = true">
                 <tr>
-                  <td id="add-country"><div class="product-input-name">Country</div></td>
-                  <td id="add-operator"><div class="product-input-name">Operator</div></td>
-                  <td id="add-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                  <td class="add-product-country"><div class="product-input-name">Country</div></td>
+                  <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
+                  <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td id="add-country">
+                  <td class="add-product-country">
                     <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user3.country">
                       <option value="United States">United States</option>
                     </select>
                   </td>
-                  <td id="add-operator">
+                  <td class="add-product-operator">
                     <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user3.operator">
                       <option value="AT & T">AT & T</option>
                     </select>
                   </td>
-                  <td id="add-sell-rate">
+                  <td class="add-product-sell-rate">
                     <input id="sell-rate" type="text" v-model="user3.sellRate" placeholder="Sell Rate">
                   </td>
                   <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
@@ -402,21 +402,21 @@ export default {
   margin-right: 7px;
   margin-left: 15px;
 }
-table{
+.add-product-table{
   max-width: 100%;
   width: 100%;
 }
 .active-table{
 	background-color: #F8F9FE;
 }
-td#add-country{
+.add-product-country{
   width: 190px;
   padding-left: 15px;
 }
-td#add-operator{
+.add-product-operator{
   width: 215px;
 }
-td#add-sell-rate{
+.add-product-sell-rate{
   width: 150px;
 }
 .svg path{

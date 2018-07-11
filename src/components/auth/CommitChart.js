@@ -3,6 +3,7 @@ import { Line } from 'vue-chartjs'
 
 export default {
   extends: Line,
+  props: ['data', 'options'],
   mounted () {
 
     this.gradient = this.$refs.canvas.getContext('2d').createLinearGradient(0, 0, 0, 450)
@@ -35,12 +36,40 @@ export default {
           pointBorderColor: 'white',
           borderWidth: 1,
           backgroundColor: this.gradient2,
-          data: [0,100,20000,37000,25000,20000,11000,5000]
+          data: [0,100,20000,37000,25000,20000,11000,5000],
         }
       ]
     }, {
          legend: { //hides the legend
             display: false,
+         },
+         elements: {
+            point: {
+                radius: 0
+            }
+         },
+         scales: {
+           xAxes: [{
+             gridLines: {
+                 display:false
+             },
+             ticks: {
+                stepSize:10,
+                min: 1940,
+                max: 2010,
+             }
+           }],
+           yAxes: [{
+             ticks: {
+                beginAtZero: true,
+                steps:6,
+                stepSize: 10000,
+                max: 50000,
+                callback: function(value, index, values) {
+                  return value / 1000 + 'k';
+                }
+             }
+           }],
          }
       })
   }

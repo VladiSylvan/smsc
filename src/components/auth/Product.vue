@@ -135,49 +135,49 @@
         <input id="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
         <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
         <div class="product-main">
-          <table cellspacing="0" cellpadding="0">
+          <table class="product-table" cellspacing="0" cellpadding="0">
             <thead>
-              <tr>
-                <th id="active"></th>
-                <th id="name">Product Name</th>
-                <th id="created">Created On</th>
-                <th id="created-by">Created By</th>
-                <th id="owned-by">Owned By</th>
-                <th id="options"></th>
-                <th id="options"></th>
-                <th id="options"></th>
+              <tr class="product-tr">
+                <th class="active"></th>
+                <th class="name">Product Name</th>
+                <th class="created">Created On</th>
+                <th class="created-by">Created By</th>
+                <th class="owned-by">Owned By</th>
+                <th class="options"></th>
+                <th class="options"></th>
+                <th class="options"></th>
               </tr>
             </thead>
             <tbody>
-              <tr id="online">
-                <td id="active"><div class="product-active"></div></td>
-                <td id="name">Parkerport</td>
-                <td id="created">10-03-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+              <tr class="online">
+                <td class="active"><div class="product-active"></div></td>
+                <td class="name">Parkerport</td>
+                <td class="created">10-03-2018</td>
+                <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
+                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">Appolo Inc.</div></td>
+                <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
+                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
               </tr>
-              <tr id="online">
-                <td id="active"><div class="product-active"></div></td>
-                <td id="name">Blickview</td>
-                <td id="created">08-19-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+              <tr class="online">
+                <td class="active"><div class="product-active"></div></td>
+                <td class="name">Blickview</td>
+                <td class="created">08-19-2018</td>
+                <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
+                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">Appolo Inc.</div></td>
+                <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
+                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
               </tr>
-              <tr id="offline">
-                <td id="active"><div class="product-not-active"></div></td>
-                <td id="name">Lake Woodrow</td>
-                <td id="created">01-04-2018</td>
-                <td id="created-by">San Marino</td>
-                <td id="owned-by">Appolo Inc.</td>
-                <td id="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td id="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+              <tr class="offline">
+                <td class="active"><div class="product-not-active"></div></td>
+                <td class="name">Lake Woodrow</td>
+                <td class="created">01-04-2018</td>
+                <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
+                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">Appolo Inc.</div></td>
+                <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
+                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
+                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
               </tr>
             </tbody>
           </table>
@@ -230,6 +230,20 @@ export default {
 }
 </script>
 <style>
+.product-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.product-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
 .product-main{
   float: left;
   display: inline-block;
@@ -240,12 +254,12 @@ export default {
 .svg-active path{
   fill: white;
 }
-table{
+.product-table{
   border: none;
   max-width: 100%;
   width: 100%;
 }
-tr{
+.product-tr{
   height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -254,49 +268,44 @@ tr{
   margin-left: 15px;
   text-align: left;
 }
-tr#online{
+.online{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  height: 44px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
 }
-tr#offline{
+.offline{
   background-color: #F0F1FA;
   box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
+  height: 44px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
 }
-td#active{
+.active{
   width: 18px;
 }
-td#name{
+.name{
   width: 169px;
 }
-td#created{
+.created{
   width: 334px;
 }
-td#created-by{
+.created-by{
   width: 227px;
 }
-td#owned-by{
+.owned-by{
   width: 200px;
 }
-td#options{
-  width: 50px;
-}
-
-th#active{
-  width: 18px;
-}
-th#name{
-  width: 169px;
-}
-th#created{
-  width: 334px;
-}
-th#created-by{
-  width: 227px;
-}
-th#owned-by{
-  width: 200px;
-}
-th#options{
+.options{
   width: 50px;
 }
 .product-active{

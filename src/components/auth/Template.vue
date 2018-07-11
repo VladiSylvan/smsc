@@ -134,27 +134,27 @@
       <div class="main">
         <input id="template-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchTemplate" placeholder="Search for template">
         <div class="template-main">
-          <table cellspacing="0" cellpadding="0">
+          <table class="template-table" cellspacing="0" cellpadding="0">
             <thead>
-              <tr>
-                <th class="template-active-table"></th>
-                <th class="template-name">Template Name</th>
-                <th class="template-created">Created On</th>
-                <th class="template-created-by">Created By</th>
-                <th class="template-sms">SMS Text</th>
-                <th class="template-replacible">Replacible</th>
-                <th class="template-options"></th>
+              <tr class="template-tr">
+                <th class="template-active-table-th"></th>
+                <th class="template-name-th">Template Name</th>
+                <th class="template-created-th">Created On</th>
+                <th class="template-created-by-th">Created By</th>
+                <th class="template-sms-th">SMS Text</th>
+                <th class="template-replacible-th">Replacible</th>
+                <th class="template-options-th"></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td colspan="7"><div class="template-title-new">New Templates</div></td>
+              <tr class="template-tr">
+                <td class="template-title" colspan="7"><div class="template-title-new">New Templates</div></td>
               </tr>
-              <tr>
+              <tr class="template-tr">
                 <td class="template-active-table"><div class="template-active"></div></td>
                 <td class="template-name">Parkerport</td>
                 <td class="template-created">10-03-2018</td>
-                <td class="template-created-by">San Marino</td>
+                <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
                 <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
                 <td class="template-replacible-text">29493</td>
                 <td class="template-options">
@@ -172,11 +172,11 @@
                   </div>
                 </td>
               </tr>
-                <tr>
+                <tr class="template-tr">
                 <td class="template-active-table"><div class="template-active"></div></td>
                 <td class="template-name">Braulioborough</td>
                 <td class="template-created">10-03-2018</td>
-                <td class="template-created-by">San Marino</td>
+                <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
                 <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
                 <td class="template-replacible-text">73391</td>
                 <td class="template-options">
@@ -194,23 +194,23 @@
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td colspan="7"><div class="template-title-all">All Templates</div></td>
+              <tr class="template-tr">
+                <td class="template-title" colspan="7"><div class="template-title-all">All Templates</div></td>
               </tr>
-              <tr>
+              <tr class="template-tr">
                 <td class="template-active-table"><div class="template-active"></div></td>
                 <td class="template-name">New Lue</td>
                 <td class="template-created">10-03-2018</td>
-                <td class="template-created-by">San Marino</td>
+                <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
                 <td class="template-sms-text">In the last five to six years the  device.</td>
                 <td class="template-replacible-text">50515</td>
                 <td class="template-options"><div class="template-approved">Approved</div></td>
               </tr>
-              <tr>
+              <tr class="template-tr">
                 <td class="template-active-table"><div class="template-not-active"></div></td>
                 <td class="template-name">Destineyland</td>
                 <td class="template-created">10-03-2018</td>
-                <td class="template-created-by">San Marino</td>
+                <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
                 <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
                 <td class="template-replacible-text">17243</td>
                 <td class="template-options"><div class="template-rejected">Rejected</div></td>
@@ -263,6 +263,20 @@ export default {
 }
 </script>
 <style>
+.template-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.template-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
 .template-main{
   float: left;
   display: inline-block;
@@ -332,12 +346,12 @@ export default {
   fill: #D2305B;
 }
 
-table{
+.template-table{
   border: none;
   max-width: 100%;
   width: 100%;
 }
-tr{
+.template-tr{
   height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -346,50 +360,87 @@ tr{
   margin-left: 15px;
   text-align: left;
 }
-td{
-  background-color: #FFFFFF;
-  vertical-align: text-top;
+.template-active-table-th{
+  width: 35px;
 }
 .template-active-table{
   width: 35px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-name-th{
+  width: 169px;
 }
 .template-name{
   width: 169px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-created-th{
+  width: 149px;
 }
 .template-created{
   width: 149px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-created-by-th{
+  width: 142px;
 }
 .template-created-by{
   width: 142px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-sms-th{
+  width: 390px;
 }
 .template-sms{
   width: 390px;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
 }
 .template-sms-text{
   width: 390px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.template-sms-text, .template-replacible-text{
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
   padding: 7px 0 7px 0;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
 }
 .template-replacible-text{
   width: 117px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  padding: 7px 0 7px 0;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
 }
-.template-replacible{
+.template-title{
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-replacible-th{
   width: 115px;
+}
+.template-options-th{
+  width: 100px;
 }
 .template-options{
   width: 100px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
 }
 .template-active{
   box-sizing: border-box;
@@ -423,7 +474,7 @@ td{
   color: #FFFFFF;
 }
 input[type="text"]#template-search{
-  width: 345px;
+  width: 317px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;

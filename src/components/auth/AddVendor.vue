@@ -162,7 +162,7 @@
               <div class="grid-title">
                 Contact
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Contact" class="grid-select" v-model="user.contact">
+              <select id="vendors" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Contact" class="grid-select" v-model="user.contact">
                 <option value="Chad Sullivan">Chad Sullivan</option>
               </select>
             </div>
@@ -170,7 +170,7 @@
               <div class="grid-title">
                 Type
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-select" v-model="user.type">
+              <select id="vendors" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-select" v-model="user.type">
                 <option value="SMPP">SMPP</option>
               </select>
             </div>
@@ -345,6 +345,12 @@ export default {
   border-radius: 4px;
   background-color: #FFFFFF;
   height: 44px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
 }
 table{
   max-width: 100%;
@@ -482,14 +488,6 @@ button#product{
     margin-right: 20px;
     margin-bottom: 20px;
     float: right;
-}
-select{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
 }
 button#cancel{
   height: 40px;

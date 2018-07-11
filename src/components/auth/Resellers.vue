@@ -135,16 +135,16 @@
           <input id="reseller-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchReseller" placeholder="Search for reseller">
           <router-link :to="{ name: 'AddReseller'}"><button id="reseller" type="submit">Add Reseller</button></router-link>
           <div class="main-container">
-            <table cellspacing="0" cellpadding="0">
+            <table class="resellers-table" cellspacing="0" cellpadding="0">
               <thead>
                 <tr>
-                  <th class="reseller-name">Name</th>
-                  <th class="reseller-balance">Balance</th>
-                  <th class="reseller-clients">Clients</th>
-                  <th class="reseller-member-since">Member Since</th>
-                  <th class="reseller-option"></th>
-                  <th class="reseller-option"></th>
-                  <th class="reseller-option"></th>
+                  <th class="reseller-name-th">Name</th>
+                  <th class="reseller-balance-th">Balance</th>
+                  <th class="reseller-clients-th">Clients</th>
+                  <th class="reseller-member-since-th">Member Since</th>
+                  <th class="reseller-option-th"></th>
+                  <th class="reseller-option-th"></th>
+                  <th class="reseller-option-th"></th>
                 </tr>
               </thead>
               <tbody>
@@ -399,47 +399,69 @@ a{
 .svg-active path{
   fill: white;
 }
-table{
+.resellers-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
   margin-top: 20px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
 }
-th{
+.reseller-name-th{
+  width: 189px;
+  padding-left: 15px;
   height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
 }
-td{
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+.reseller-balance-th{
+  width: 171px;
+  height: 37px;
 }
+.reseller-clients-th{
+  width: 190px;
+  height: 37px;
+}
+.reseller-member-since-th{
+  width: 383px;
+  height: 37px;
+}
+.reseller-option-th{
+  width: 49px;
+  height: 37px;
+}
+
 .reseller-name{
   width: 189px;
   padding-left: 15px;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .reseller-balance{
   width: 171px;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .reseller-clients{
   width: 190px;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .reseller-member-since{
   width: 383px;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .reseller-option{
   width: 49px;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 
 .reseller-name-del{
