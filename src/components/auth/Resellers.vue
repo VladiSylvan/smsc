@@ -149,7 +149,7 @@
               </thead>
               <tbody>
                 <tr v-if="!del">
-                  <td class="reseller-name">San Marino</td>
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">San Marino</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">12</td>
                   <td class="reseller-member-since">10-03-2018</td>
@@ -182,7 +182,7 @@
                   </td>
                 </tr>
                 <tr v-if="del">
-                  <td class="reseller-name-del">San Marino</td>
+                  <td class="reseller-name-del"><div class="reseller-avatar"></div> <div class="reseller-name-fix">San Marino</div></td>
                   <td class="reseller-balance-del"><b>$38</b></td>
                   <td class="reseller-clients-del">12</td>
                   <td class="reseller-options-del" colspan="4">
@@ -201,7 +201,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="reseller-name">Henrietta McDaniel</td>
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Henrietta McDaniel</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">70</td>
                   <td class="reseller-member-since">10-03-2018</td>
@@ -210,7 +210,7 @@
                   <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
                 </tr>
                 <tr>
-                  <td class="reseller-name">Mollie Garrett</td>
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Mollie Garrett</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">19</td>
                   <td class="reseller-member-since">10-03-2018</td>
@@ -219,7 +219,7 @@
                   <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
                 </tr>
                 <tr>
-                  <td class="reseller-name">Martha Vasquez</td>
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Martha Vasquez</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">81</td>
                   <td class="reseller-member-since">10-03-2018</td>
@@ -228,7 +228,7 @@
                   <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
                 </tr>
                 <tr>
-                  <td class="reseller-name">Stanley Burgess</td>
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Stanley Burgess</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">78</td>
                   <td class="reseller-member-since">10-03-2018</td>
@@ -237,7 +237,7 @@
                   <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
                 </tr>
                 <tr>
-                  <td class="reseller-name">Leona Duncan</td>
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Leona Duncan</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">27</td>
                   <td class="reseller-member-since">10-03-2018</td>
@@ -246,7 +246,7 @@
                   <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
                 </tr>
                 <tr>
-                  <td class="reseller-name">Alex Elliott</td>
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Alex Elliott</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">26</td>
                   <td class="reseller-member-since">10-03-2018</td>
@@ -304,6 +304,20 @@ export default {
 }
 </script>
 <style>
+.reseller-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.reseller-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
 .undo-title{
   color: #55616E;
   font-family: "Helvetica Neue";
@@ -412,7 +426,7 @@ td{
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .reseller-name{
-  width: 169px;
+  width: 189px;
   padding-left: 15px;
 }
 .reseller-balance{
@@ -422,7 +436,7 @@ td{
   width: 190px;
 }
 .reseller-member-since{
-  width: 403px;
+  width: 383px;
 }
 .reseller-option{
   width: 49px;

@@ -153,7 +153,7 @@
             <table id="vendors-rate">
               <thead>
                 <tr>
-                  <th class="vendor-active"></th>
+                  <th class="vendor-rate-active"></th>
                   <th class="vendor-country">Country</th>
                   <th class="vendor-operator">Operator</th>
                   <th class="vendor-sell-rate">Sell Rate</th>
@@ -162,7 +162,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <th class="vendor-active"><div class="vendor-active-circle"></div></th>
+                  <th class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
                   <td class="vendor-country">China</td>
                   <td class="vendor-operator">China Mobile</td>
                   <td class="vendor-sell-rate">0.001</td>
@@ -180,7 +180,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <th class="vendor-active"><div class="vendor-active-circle"></div></th>
+                  <th class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
                   <td class="vendor-country">China</td>
                   <td class="vendor-operator">China Unicom</td>
                   <td class="vendor-sell-rate">0.0012</td>
@@ -198,7 +198,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <th class="vendor-active"><div class="vendor-not-active-circle"></div></th>
+                  <th class="vendor-rate-active"><div class="vendor-not-active-circle"></div></th>
                   <td class="vendor-country">United States</td>
                   <td class="vendor-operator">AT & T</td>
                   <td class="vendor-sell-rate">0.0003</td>
@@ -216,7 +216,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <th class="vendor-active"><div class="vendor-active-circle"></div></th>
+                  <th class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
                   <td class="vendor-country">China</td>
                   <td class="vendor-operator">China Unicom</td>
                   <td class="vendor-sell-rate">0.0012</td>
@@ -396,7 +396,7 @@ tr{
   background-color: #F0F1FA;
   box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
 }
-.vendor-active{
+.vendor-rate-active{
   width: 18px;
   padding-left: 8px;
   vertical-align: text-top;

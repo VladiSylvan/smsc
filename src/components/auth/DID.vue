@@ -157,7 +157,7 @@
                   <td class="did-created-by">Created By</td>
                   <td class="did-country">Country</td>
                   <td class="did-type">Type</td>
-                  <td class="did-assigned">Assigned To</td>
+                  <td class="did-assigned">Assigned Togit</td>
                   <td class="did-option"></td>
                   <td class="did-option"></td>
                 </tr>
