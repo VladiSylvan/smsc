@@ -132,12 +132,12 @@
       </div>
       </transition>
       <div class="main">
-          <input id="did-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
+          <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
           <router-link :to="{ name: 'ImportDID'}"><button id="did" type="submit">Import DID</button></router-link>
           <div class="main-container">
-            <table cellspacing="0" cellpadding="0">
+            <table class="did-table" cellspacing="0" cellpadding="0">
               <thead>
-                <tr>
+                <tr class="did-table-th">
                   <th class="did-active"></th>
                   <th class="did-number">Number</th>
                   <th class="did-created">Created On</th>
@@ -150,7 +150,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="online">
+                <tr class="did-online">
                   <td class="did-active"><div class="product-active"></div></td>
                   <td class="did-number">050-185-4229</td>
                   <td class="did-created">10-03-2018</td>
@@ -161,7 +161,7 @@
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
-                <tr class="online">
+                <tr class="did-online">
                   <td class="did-active"><div class="product-active"></div></td>
                   <td class="did-number">215-054-1288</td>
                   <td class="did-created">11-28-2018</td>
@@ -172,7 +172,7 @@
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
-                <tr class="online">
+                <tr class="did-online">
                   <td class="did-active"><div class="product-active"></div></td>
                   <td class="did-number">697-431-7827</td>
                   <td class="did-created">01-26-2018</td>
@@ -183,7 +183,7 @@
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
-                <tr class="online">
+                <tr class="did-online">
                   <td class="did-active"><div class="product-active"></div></td>
                   <td class="did-number">239-429-1353</td>
                   <td class="did-created">01-24-2018</td>
@@ -194,7 +194,7 @@
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
-                <tr class="offline">
+                <tr class="did-offline">
                   <td class="did-active"><div class="product-not-active"></div></td>
                   <td class="did-number">625-867-0083</td>
                   <td class="did-created">12-14-2018</td>
@@ -205,7 +205,7 @@
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
-                <tr class="offline">
+                <tr class="did-offline">
                   <td class="did-active"><div class="product-not-active"></div></td>
                   <td class="did-number">542-961-8296</td>
                   <td class="did-created">10-03-2018</td>
@@ -311,38 +311,29 @@ export default {
 .svg-active path{
   fill: white;
 }
-table{
+.did-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
   margin-top: 20px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
 }
-th{
+.did-table-th{
   height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 600;
-  margin-left: 15px;
-  text-align: left;
 }
-td{
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.online{
+.did-online{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  height: 50px;
 }
-.offline{
+.did-offline{
   background-color: #F0F1FA;
   box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
+  height: 50px;
 }
 .did-active{
   width: 20px;
@@ -402,8 +393,7 @@ td{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#did-search{
-  width: 345px;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -412,15 +402,17 @@ input[type="text"]#did-search{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+}
+.did-input-search{
+  width: 302px;
+  height: 40px !important;
+  padding-left: 40px;
   margin-left: 20px;
   margin-top: 20px;
-  height: 40px !important;
 }
 button#did{
   	height: 40px;

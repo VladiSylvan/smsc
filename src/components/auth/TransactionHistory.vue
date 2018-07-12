@@ -149,14 +149,14 @@
           <div class="transaction-title">
             Transaction History
           </div>
-          <table cellspacing="0" cellpadding="0">
+          <table class="transaction-table" cellspacing="0" cellpadding="0">
             <thead>
               <tr>
-                <th class="transaction-date">Date</th>
-                <th class="transaction-type">Type</th>
-                <th class="transaction-description">Description</th>
-                <th class="transaction-company">Company</th>
-                <th class="transaction-amount">Amount</th>
+                <th class="transaction-date-th">Date</th>
+                <th class="transaction-type-th">Type</th>
+                <th class="transaction-description-th">Description</th>
+                <th class="transaction-company-th">Company</th>
+                <th class="transaction-amount-th">Amount</th>
               </tr>
             </thead>
             <tbody>
@@ -278,22 +278,15 @@ export default {
 }
 </script>
 <style>
-table{
+.transaction-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
-}
-tr{
-  height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
   text-align: left;
-}
-td{
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .transaction-title{
   color: #000000;
@@ -304,21 +297,59 @@ td{
   margin-left: 5px;
   margin-bottom: 10px;
 }
+
+.transaction-date-th{
+  width: 201px;
+  padding-left: 15px;
+  height: 37px;
+}
+.transaction-type-th{
+  width: 170px;
+  height: 37px;
+}
+.transaction-description-th{
+  width: 397px;
+  height: 37px;
+}
+.transaction-company-th{
+  width: 177px;
+  height: 37px;
+}
+.transaction-amount-th{
+  width: 140px;
+  height: 37px;
+}
+
 .transaction-date{
   width: 201px;
   padding-left: 15px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .transaction-type{
   width: 170px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .transaction-description{
   width: 397px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .transaction-company{
   width: 177px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .transaction-amount{
   width: 140px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .svg path{
   fill: #51A3F3;
@@ -355,22 +386,6 @@ td{
 .side#active a{
   text-decoration: none;
   color: #FFFFFF;
-}
-input[type="text"]{
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 10px;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
 }
 button#product{
   	height: 40px;

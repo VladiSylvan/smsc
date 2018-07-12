@@ -132,12 +132,12 @@
       </div>
       </transition>
       <div class="main">
-        <input id="vendor-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for vendor">
+        <input class="vendor-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for vendor">
         <router-link :to="{ name: 'AddVendor'}"><button id="product" type="submit">Add Vendor</button></router-link>
         <div class="vendors-main">
-          <table cellspacing="0" cellpadding="0">
+          <table class="vendors-table" cellspacing="0" cellpadding="0">
             <thead>
-              <tr>
+              <tr class="vendors-table-th">
                 <th class="vendor-active"></th>
                 <th class="vendor-company">Company Name</th>
                 <th class="vendor-contact">Contact Name</th>
@@ -291,32 +291,33 @@ export default {
 .svg-active path{
   fill: white;
 }
-table{
+.vendors-table{
   border: none;
   max-width: 100%;
   width: 100%;
-  margin-top: 30px;
-}
-tr{
-  height: 44px;
+  margin-top: 20px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
-  margin-left: 15px;
   text-align: left;
 }
 .online{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  height: 44px;
 }
 .offline{
   background-color: #F0F1FA;
   box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
+  height: 44px;
+}
+.vendors-table-th{
+  height: 37px;
 }
 .vendor-active{
-  width: 32px;
-  padding-left: 15px;
+  width: 25px;
+  padding-left: 8px;
 }
 .vendor-company{
   width: 158px;
@@ -375,8 +376,7 @@ tr{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#vendor-search{
-  width: 345px;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -385,15 +385,17 @@ input[type="text"]#vendor-search{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+}
+.vendor-input-search{
+  width: 317px;
+  height: 40px;
+  padding-left: 40px;
   margin-left: 20px;
   margin-top: 20px;
-  height: 40px !important;
 }
 button#product{
   	height: 40px;

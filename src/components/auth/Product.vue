@@ -132,13 +132,13 @@
       </div>
       </transition>
       <div class="main">
-        <input id="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
+        <input class="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
         <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
         <div class="product-main">
           <table class="product-table" cellspacing="0" cellpadding="0">
             <thead>
               <tr class="product-tr">
-                <th class="active"></th>
+                <th class="product-table-active"></th>
                 <th class="name">Product Name</th>
                 <th class="created">Created On</th>
                 <th class="created-by">Created By</th>
@@ -150,7 +150,7 @@
             </thead>
             <tbody>
               <tr class="online">
-                <td class="active"><div class="product-active"></div></td>
+                <td class="product-table-active"><div class="product-active"></div></td>
                 <td class="name">Parkerport</td>
                 <td class="created">10-03-2018</td>
                 <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
@@ -160,7 +160,7 @@
                 <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
               </tr>
               <tr class="online">
-                <td class="active"><div class="product-active"></div></td>
+                <td class="product-table-active"><div class="product-active"></div></td>
                 <td class="name">Blickview</td>
                 <td class="created">08-19-2018</td>
                 <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
@@ -170,7 +170,7 @@
                 <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
               </tr>
               <tr class="offline">
-                <td class="active"><div class="product-not-active"></div></td>
+                <td class="product-table-active"><div class="product-not-active"></div></td>
                 <td class="name">Lake Woodrow</td>
                 <td class="created">01-04-2018</td>
                 <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
@@ -258,6 +258,7 @@ export default {
   border: none;
   max-width: 100%;
   width: 100%;
+  margin-top: 20px;
 }
 .product-tr{
   height: 44px;
@@ -290,7 +291,7 @@ export default {
   margin-left: 15px;
   text-align: left;
 }
-.active{
+.product-table-active{
   width: 18px;
 }
 .name{
@@ -341,8 +342,8 @@ export default {
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#product-search{
-  width: 345px;
+.product-search{
+  width: 302px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;

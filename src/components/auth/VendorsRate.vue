@@ -150,18 +150,18 @@
             <div class="vendor-add-title">
               Rate deck
             </div>
-            <table id="vendors-rate">
+            <table class="vendors-rate-table">
               <thead>
-                <tr>
+                <tr class="vendor-rate-tr">
                   <th class="vendor-rate-active"></th>
                   <th class="vendor-country">Country</th>
                   <th class="vendor-operator">Operator</th>
                   <th class="vendor-sell-rate">Sell Rate</th>
-                  <th class="vendor-vendors">Vendors</th>
+                  <th class="vendor-vendors-th">Vendors</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="vendor-rate-tr">
                   <th class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
                   <td class="vendor-country">China</td>
                   <td class="vendor-operator">China Mobile</td>
@@ -179,7 +179,7 @@
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <tr class="vendor-rate-tr">
                   <th class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
                   <td class="vendor-country">China</td>
                   <td class="vendor-operator">China Unicom</td>
@@ -197,7 +197,7 @@
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <tr class="vendor-rate-tr">
                   <th class="vendor-rate-active"><div class="vendor-not-active-circle"></div></th>
                   <td class="vendor-country">United States</td>
                   <td class="vendor-operator">AT & T</td>
@@ -215,7 +215,7 @@
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <tr class="vendor-rate-tr">
                   <th class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
                   <td class="vendor-country">China</td>
                   <td class="vendor-operator">China Unicom</td>
@@ -370,15 +370,12 @@ export default {
 .svg-active path{
   fill: white;
 }
-table#vendor-rate{
+.vendor-rate-table{
   border: none;
   max-width: 100%;
   width: 100%;
 }
-th{
-  height: 37px;
-}
-tr{
+.vendor-rate-tr{
   height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
@@ -404,6 +401,7 @@ tr{
 .vendor-country{
   width: 133px;
   vertical-align: text-top;
+  padding-top: 14px;
 }
 .vendor-operator{
   width: 150px;
@@ -414,6 +412,9 @@ tr{
   vertical-align: text-top;
 }
 .vendor-vendors{
+  width: 661px;
+}
+.vendor-vendors-th{
   width: 661px;
 }
 

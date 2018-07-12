@@ -133,7 +133,7 @@
       </transition>
       <div class="main">
           <div class="main-header">
-            <input id="company-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchCompany" placeholder="Search for company">
+            <input class="company-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchCompany" placeholder="Search for company">
             <div class="company-header-title">
               Filter by:
             </div>
@@ -146,23 +146,23 @@
             <router-link :to="{ name: 'AddCompany'}"><button id="company" type="submit">Add Company</button></router-link>
           </div>
           <div class="main-container">
-            <table cellspacing="0" cellpadding="0">
+            <table class="companies-table" cellspacing="0" cellpadding="0">
               <thead>
                 <tr>
-                  <th class="company-name">Company Name</th>
-                  <th class="company-balance">Balance</th>
-                  <th class="company-pay">Prepay/Postpay</th>
-                  <th class="company-contact">Contact Person</th>
-                  <th class="company-resellers">Resellers</th>
-                  <th class="company-option"></th>
-                  <th class="company-option"></th>
-                  <th class="company-option"></th>
-                  <th class="company-option"></th>
+                  <th class="company-name-th">Company Name</th>
+                  <th class="company-balance-th">Balance</th>
+                  <th class="company-pay-th">Prepay/Postpay</th>
+                  <th class="company-contact-th">Contact Person</th>
+                  <th class="company-resellers-th">Resellers</th>
+                  <th class="company-option-th"></th>
+                  <th class="company-option-th"></th>
+                  <th class="company-option-th"></th>
+                  <th class="company-option-th"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td colspan="9"><div class="company-title-my">My Companies</div></td>
+                  <td class="companies-title" colspan="9"><div class="company-title-my">My Companies</div></td>
                 </tr>
                 <tr>
                   <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Appolo Inc.</div></td>
@@ -222,7 +222,7 @@
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
                 </tr>
                 <tr>
-                  <td colspan="9"><div class="company-title-all">All Companies</div></td>
+                  <td class="companies-title" colspan="9"><div class="company-title-all">All Companies</div></td>
                 </tr>
                 <tr>
                   <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Appolo Inc.</div></td>
@@ -390,30 +390,16 @@ a{
 .svg-active path{
   fill: white;
 }
-table{
+.companies-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
   margin-top: 20px;
-}
-th{
-  height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
-  margin-left: 15px;
   text-align: left;
-}
-td{
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
 }
 .company-name-fix{
   display: inline-block;
@@ -429,21 +415,59 @@ td{
   vertical-align: top;
   margin-right: 5px;
 }
+.company-name-th{
+  width: 184px;
+  padding-left: 15px;
+  height: 37px;
+}
+.company-balance-th{
+  width: 90px;
+  height: 37px;
+}
+.company-pay-th{
+  width: 281px;
+  height: 37px;
+}
+.company-contact-th{
+  width: 150px;
+  height: 37px;
+}
+.company-resellers-th{
+  width: 180px;
+  height: 37px;
+}
+.company-option-th{
+  width: 48px;
+  height: 37px;
+}
+
+.companies-title{
+  background-color: #ffffff;
+}
+
 .company-name{
   width: 184px;
   padding-left: 15px;
+  height: 44px;
+  background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .company-balance{
   width: 90px;
+  height: 44px;
+  background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .company-pay{
   width: 281px;
+  height: 44px;
+  background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .company-contact{
   width: 150px;
+  height: 44px;
+  background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .company-contact-text{
@@ -451,14 +475,20 @@ td{
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+  height: 44px;
+  background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .company-resellers{
   width: 180px;
+  height: 44px;
+  background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .company-option{
   width: 48px;
+  height: 44px;
+  background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .product-control-info{
@@ -487,9 +517,7 @@ td{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#company-search{
-  max-width: 26.3636363636%;
-  width: 100%;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -498,15 +526,18 @@ input[type="text"]#company-search{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+}
+.company-input-search{
+  max-width: 26.3636363636%;
+  width: 100%;
+  height: 40px !important;
+  padding-left: 40px;
   margin-left: 20px;
   margin-top: 20px;
-  height: 40px !important;
   float: left;
 }
 button#company{
@@ -686,7 +717,6 @@ select{
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 5px;
-  height: 40px !important;
 }
 .reseller{
     max-width: 13.6363636364% !important;

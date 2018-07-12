@@ -146,16 +146,16 @@
           </div>
         </router-link>
         <div class="add-reseller">
-          <div class="payment-title">
+          <div class="payment-history-title">
             Payment History
           </div>
-          <table cellspacing="0" cellpadding="0">
+          <table class='payment-table' cellspacing="0" cellpadding="0">
             <thead>
               <tr>
-                <th class="payment-date">Date</th>
-                <th class="payment-company">Company</th>
-                <th class="payment-description">Description</th>
-                <th class="payment-amount">Amount</th>
+                <th class="payment-date-th">Date</th>
+                <th class="payment-company-th">Company</th>
+                <th class="payment-description-th">Description</th>
+                <th class="payment-amount-th">Amount</th>
               </tr>
             </thead>
             <tbody>
@@ -270,24 +270,17 @@ export default {
 }
 </script>
 <style>
-table{
+.payment-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
-}
-tr{
-  height: 44px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
   text-align: left;
 }
-td{
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-title{
+.payment-history-title{
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -296,18 +289,49 @@ td{
   margin-left: 5px;
   margin-bottom: 10px;
 }
+
+.payment-date-th{
+  width: 189px;
+  padding-left: 15px;
+  height: 37px;
+}
+.payment-company-th{
+  width: 263px;
+  height: 37px;
+}
+.payment-description-th{
+  width: 493px;
+  height: 37px;
+}
+.payment-amount-th{
+  width: 140px;
+  height: 37px;
+}
+
 .payment-date{
   width: 189px;
   padding-left: 15px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .payment-company{
   width: 263px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .payment-description{
   width: 493px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .payment-amount{
   width: 140px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .svg path{
   fill: #51A3F3;
@@ -344,22 +368,6 @@ td{
 .side#active a{
   text-decoration: none;
   color: #FFFFFF;
-}
-input[type="text"]{
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 10px;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
 }
 button#product{
   	height: 40px;

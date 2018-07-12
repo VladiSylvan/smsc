@@ -166,7 +166,7 @@
                 <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
                 <td class="payment-method">Wire</td>
                 <td class="payment-total"><b>$4</b></td>
-                <td class="billing-options">
+                <td class="payment-options">
                   <div v-on:click="test = !test" class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div>
                   <div v-if="test" class="billing-payment-menu">
                     <div class="billing-payment-menu-link">

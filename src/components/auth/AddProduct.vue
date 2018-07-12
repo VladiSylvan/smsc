@@ -155,7 +155,7 @@
             <div class="product-input-name">
               Product Name
             </div>
-            <input id="product-name" type="text" v-model="user.productName" placeholder="Product Name">
+            <input class="product-input" type="text" v-model="user.productName" placeholder="Product Name">
             <table class="add-product-table" cellspacing="0" cellpadding="0">
               <tbody>
                 <tr>
@@ -176,7 +176,7 @@
                     </select>
                   </td>
                   <td class="add-product-sell-rate">
-                    <input id="sell-rate" type="text" v-model="user.sellRate" placeholder="Sell Rate">
+                    <input class="product-input-sell-rate" type="text" v-model="user.sellRate" placeholder="Sell Rate">
                   </td>
                   <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
                 </tr>
@@ -200,7 +200,7 @@
                     </select>
                   </td>
                   <td class="add-product-sell-rate">
-                    <input id="sell-rate" type="text" v-model="user2.sellRate" placeholder="Sell Rate">
+                    <input class="product-input-sell-rate" type="text" v-model="user2.sellRate" placeholder="Sell Rate">
                   </td>
                   <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
                 </tr>
@@ -224,7 +224,7 @@
                     </select>
                   </td>
                   <td class="add-product-sell-rate">
-                    <input id="sell-rate" type="text" v-model="user3.sellRate" placeholder="Sell Rate">
+                    <input class="product-input-sell-rate" type="text" v-model="user3.sellRate" placeholder="Sell Rate">
                   </td>
                   <td><img class="delete-image" src="@/assets/Icon/Close.svg"></td>
                 </tr>
@@ -255,7 +255,7 @@
                     </select>
                   </td>
                   <td>
-                    <input id="vendor" type="text" v-model="vendor.vendorRate1" placeholder="Vendor">
+                    <input class="product-input-vendor" type="text" v-model="vendor.vendorRate1" placeholder="Vendor">
                   </td>
                   <td>
                     <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
@@ -268,7 +268,7 @@
                     </select>
                   </td>
                   <td>
-                    <input id="vendor" type="text" v-model="vendor.vendorRate2" placeholder="Vendor">
+                    <input class="product-input-vendor" type="text" v-model="vendor.vendorRate2" placeholder="Vendor">
                   </td>
                   <td>
                     <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
@@ -508,29 +508,32 @@ input[type="text"]{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 10px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
 }
-input[type="text"]#product-name{
-  width: 570px;
+.product-input{
+  max-width: 570px;
+  width: 100%;
   margin-bottom: 20px;
+  height: 36px;
+  padding-left: 10px;
 }
-input[type="text"]#sell-rate{
+.product-input-sell-rate{
   width: 150px;
   margin-right: 10px;
   margin-bottom: 10px;
-  height: 36px !important;
+  height: 36px;
+  padding-left: 10px;
 }
-input[type="text"]#vendor{
+.product-input-vendor{
   width: 120px;
-  height: 36px !important;
+  height: 36px;
   margin-top: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
+  padding-left: 10px;
 }
 button#product{
   	height: 40px;
@@ -556,7 +559,6 @@ select{
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 5px;
-  height: 40px !important;
 }
 .country{
     width: 180px !important;

@@ -132,7 +132,7 @@
       </div>
       </transition>
       <div class="main">
-        <input id="template-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchTemplate" placeholder="Search for template">
+        <input class="template-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchTemplate" placeholder="Search for template">
         <div class="template-main">
           <table class="template-table" cellspacing="0" cellpadding="0">
             <thead>
@@ -350,6 +350,7 @@ export default {
   border: none;
   max-width: 100%;
   width: 100%;
+  margin-top: 20px;
 }
 .template-tr{
   height: 44px;
@@ -473,8 +474,7 @@ export default {
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#template-search{
-  width: 317px;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -483,15 +483,17 @@ input[type="text"]#template-search{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+}
+.template-input-search{
+  width: 317px;
+  height: 40px !important;
   margin-left: 20px;
   margin-top: 20px;
-  height: 40px !important;
+  padding-left: 40px;
 }
 button#product{
   	height: 40px;

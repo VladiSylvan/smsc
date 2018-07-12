@@ -132,11 +132,11 @@
       </div>
       </transition>
       <div class="main">
-          <input id="filters-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchFilters" placeholder="Search for filter">
+          <input class="filters-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchFilters" placeholder="Search for filter">
           <div class="main-container">
-            <table id="filters" cellspacing="0" cellpadding="0">
+            <table class="filters-table" cellspacing="0" cellpadding="0">
               <thead>
-                <tr>
+                <tr class="filters-table-th">
                   <th class="filter-active"></th>
                   <th class="filter-text">Text to block</th>
                   <th class="filter-applied">Applied to Vendor(s)</th>
@@ -147,7 +147,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="online">
+                <tr class="filters-online">
                   <td class="filter-active-td"><div class="product-active"></div></td>
                   <td class="filter-text">Computer Hardware Desktops</td>
                   <td class="filter-applied">Apple</td>
@@ -160,10 +160,10 @@
                       871-281-3671 <div class="blocked-by">bocked by</div> Pinterest
                     </div>
                   </td>
-                  <td class="filter-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="filter-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
                   <td class="filter-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
-                <tr class="offline">
+                <tr class="filters-offline">
                   <td class="filter-active-td"><div class="product-not-active"></div></td>
                   <td class="filter-text">Windows Registry Cleaner Checklist</td>
                   <td class="filter-applied">Google</td>
@@ -176,7 +176,7 @@
                       624-270-8113 <div class="blocked-by">bocked by</div> Airbnb
                     </div>
                   </td>
-                  <td class="filter-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="filter-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
                   <td class="filter-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
               </tbody>
@@ -260,42 +260,34 @@ export default {
 .svg-active path{
   fill: white;
 }
-table#filters{
+.filters-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
+  margin-top: 20px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
 }
-th{
+.filters-table-th{
   height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
   font-weight: 600;
-  margin-left: 15px;
-  text-align: left;
 }
-td{
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.online{
+.filters-online{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  height: 50px;
 }
-.offline{
+.filters-offline{
   background-color: #F0F1FA;
   box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
+  height: 50px;
 }
 .filter-active{
   width: 20px;
   padding-left: 7px;
-  vertical-align: text-top;
 }
 .filter-active-td{
   width: 20px;
@@ -365,8 +357,7 @@ td{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#filters-search{
-  width: 345px;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -375,15 +366,17 @@ input[type="text"]#filters-search{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+}
+.filters-input-search{
+  width: 302px;
   margin-left: 20px;
   margin-top: 20px;
   height: 40px !important;
+  padding-left: 40px;
 }
 button#did{
   	height: 40px;

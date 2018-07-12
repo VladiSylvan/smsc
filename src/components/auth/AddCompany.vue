@@ -350,6 +350,8 @@ export default {
 }
 .grid-input{
   width: 100%;
+  height: 40px !important;
+  padding-left: 10px;
 }
 .grid-select{
   width: calc(100% + 13px);
@@ -470,8 +472,6 @@ input[type="text"]{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 10px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;

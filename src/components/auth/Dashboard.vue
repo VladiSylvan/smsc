@@ -9,10 +9,10 @@
         </div>
         <div v-bind:class="{'header-min': !show}" class="header">
           <div class="title">Dashboard</div>
-          <select id="dashboard" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="System" class="system" v-model="user.system">
+          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="System" class="system" v-model="user.system">
             <option value="Overall system">Overall system</option>
           </select>
-          <select id="dashboard" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Days" class="days" v-model="user.days">
+          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Days" class="days" v-model="user.days">
             <option value="Last 30 days">Last 30 days</option>
           </select>
         </div>
@@ -179,7 +179,7 @@
             <div class="chart-box">
               <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
             </div>
-            <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="226.22"></commit-chart>
+            <resellers-line-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="201.71"></resellers-line-chart>
           </div>
         </div>
         <div class="cont-3">
@@ -190,7 +190,7 @@
             <div class="chart-box">
               <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
             </div>
-            <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="201.71"></commit-chart>
+            <companies-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="201.71"></companies-chart>
           </div>
         </div>
       </div>
@@ -200,6 +200,8 @@
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
 import BarChart2 from '@/components/auth/BarChart2'
+import ResellersLineChart from '@/components/auth/ResellersLineChart'
+import CompaniesChart from '@/components/auth/CompaniesChart'
 
 export default {
     data () {
@@ -218,7 +220,9 @@ export default {
     components:{
       CommitChart,
       BarChart,
-      BarChart2
+      BarChart2,
+      ResellersLineChart,
+      CompaniesChart
     },
     methods:{
         sendForm(){
@@ -536,14 +540,13 @@ li#active svg g{
     vertical-align: top;
     margin-top: 10px;
 }
-select#dashboard{
+select{
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 5px;
-  height: 40px !important;
 }
 .username {
 	color: #55616E;

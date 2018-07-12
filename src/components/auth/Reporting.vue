@@ -140,55 +140,55 @@
               <div class="chart-box">
                 <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
               </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
-              <input id="search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
+              <resellers-line :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></resellers-line>
+              <input class="reporting-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
               <button type="submit">Filter</button>
-              <table id="reporting" cellspacing="0" cellpadding="0">
+              <table class="reporting-table" cellspacing="0" cellpadding="0">
                 <thead>
                   <tr>
-                    <th id="resellers">Resellers</th>
-                    <th id="date">Date</th>
-                    <th id="status">Status</th>
+                    <th class="resellers">Resellers</th>
+                    <th class="date">Date</th>
+                    <th class="status">Status</th>
                   </tr>
                   <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
+                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
                   </tr>
                   <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
+                    <td class="resellers">Lou Haynes</td>
+                    <td class="date">06 Nov 2018</td>
+                    <td class="status"><div class="not-active">Not Active</div></td>
                   </tr>
                   <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
+                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
                   </tr>
                   <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
+                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
                   </tr>
                   <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
+                    <td class="resellers">Lou Haynes</td>
+                    <td class="date">06 Nov 2018</td>
+                    <td class="status"><div class="not-active">Not Active</div></td>
                   </tr>
                   <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
+                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
                   </tr>
                   <tr>
-                    <td id="resellers">Lou Haynes</td>
-                    <td id="date">06 Nov 2018</td>
-                    <td id="status"><div class="not-active">Not Active</div></td>
+                    <td class="resellers">Lou Haynes</td>
+                    <td class="date">06 Nov 2018</td>
+                    <td class="status"><div class="not-active">Not Active</div></td>
                   </tr>
                   <tr>
-                    <td id="resellers">Nellie Ferguson</td>
-                    <td id="date">29 Apr 2018</td>
-                    <td id="status"><div class="active">Active</div></td>
+                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
                   </tr>
                 </thead>
               </table>
@@ -227,7 +227,7 @@
               <div class="chart-box">
                 <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
               </div>
-              <commit-chart :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></commit-chart>
+              <companies-line :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></companies-line>
             </div>
           </div>
           <div class="cont-2-rep">
@@ -260,6 +260,8 @@
 import CommitChart from '@/components/auth/CommitChart'
 import BarChart from '@/components/auth/BarChart'
 import BarChart2 from '@/components/auth/BarChart2'
+import ResellersLine from '@/components/auth/ResellersLine'
+import CompaniesLine from '@/components/auth/CompaniesLine'
 
 export default {
     data () {
@@ -278,7 +280,9 @@ export default {
     components:{
       CommitChart,
       BarChart,
-      BarChart2
+      BarChart2,
+      ResellersLine,
+      CompaniesLine
     },
     methods:{
         sendForm(){
@@ -291,41 +295,33 @@ export default {
 .svg-active path{
   fill: white;
 }
-table#reporting{
+.reporting-table{
   margin-left: 20px;
   border: none;
   max-width: calc(100% - 40px);
   width: 100%;
-}
-tr{
-  height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
   margin-left: 15px;
   text-align: left;
+}
+.resellers{
+  width: 174px;
+  padding-left: 15px;
+  height: 37px;
   box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
-td#resellers{
-  width: 174px;
-  margin-left: 15px;
-}
-td#date{
+.date{
   width: 189px;
+  height: 37px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
-td#status{
+.status{
   width: 132px;
-}
-
-th#resellers{
-  width: 174px;
-}
-th#date{
-  width: 189px;
-}
-th#status{
-  width: 132px;
+  height: 37px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
 
 .active{
@@ -379,7 +375,6 @@ a#show-more{
   color: #FFFFFF;
 }
 input[type="text"]{
-  width: calc(69.621421976% - 30px);
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -388,16 +383,16 @@ input[type="text"]{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-  margin-left: 13px;
 }
-input[type="text"]#search{
+.reporting-search{
   height: 36px !important;
+  width: calc(69.621421976% - 30px);
+  margin-left: 13px;
+  padding-left: 40px;
 }
 button{
   	height: 36px;

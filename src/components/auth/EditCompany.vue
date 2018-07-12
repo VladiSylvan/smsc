@@ -380,6 +380,8 @@ export default {
 }
 .grid-input{
   width: 100%;
+  height: 40px !important;
+  padding-left: 10px;
 }
 .grid-select{
   width: calc(100% + 13px);
@@ -387,23 +389,6 @@ export default {
   border-radius: 4px;
   background-color: #FFFFFF;
   height: 44px;
-}
-table{
-  max-width: 100%;
-  width: 100%;
-}
-.active-table{
-	background-color: #F8F9FE;
-}
-td#add-country{
-  width: 190px;
-  padding-left: 15px;
-}
-td#add-operator{
-  width: 215px;
-}
-td#add-sell-rate{
-  width: 150px;
 }
 .svg path{
   fill: #51A3F3;
@@ -500,8 +485,6 @@ input[type="text"]{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 10px;
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 14px;
@@ -531,10 +514,6 @@ select{
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 5px;
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
 }
 button#cancel{
   height: 40px;

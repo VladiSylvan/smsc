@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="modal-body">
-          <table>
+          <table class="company-modal-table">
             <tbody>
               <tr>
                 <td class="email-type">NOC Email</td>
@@ -48,6 +48,17 @@
   </transition>
 </template>
 <style>
+.company-modal-table{
+  border: none;
+  max-width: calc(100% - 10px);
+  width: 100%;
+  margin-top: 20px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+}
 .email-type{
   color: #212B36;
   font-family: "SF Pro Text";

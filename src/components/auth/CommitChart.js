@@ -18,7 +18,7 @@ export default {
     this.gradient2.addColorStop(1, 'rgba(50, 146, 227, 0.1)');
 
     this.renderChart({
-      labels: ['1940', '1950', '1960', '1970', '1980', '1990', '2000', '2010'],
+      labels: ['1940', '1942', '1944', '1946', '1948', '1950', '1952', '1954', '1956', '1958', '1960', '2010'],
       datasets: [
         {
           label: 'GitHub Commits',
@@ -27,7 +27,7 @@ export default {
           borderWidth: 1,
           pointBorderColor: 'white',
           backgroundColor: this.gradient,
-          data: [0, 100, 2000, 12000, 30000, 35000, 21000, 13000]
+          data: [0, 0, 0, 200, 300, 1000, 1800, 2500, 4000, 10000, 20000, 5000]
         },
         {
           label: 'GitHub Commits',
@@ -36,7 +36,7 @@ export default {
           pointBorderColor: 'white',
           borderWidth: 1,
           backgroundColor: this.gradient2,
-          data: [0,100,20000,37000,25000,20000,11000,5000],
+          data: [0, 0, 0, 0, 0, 200, 200, 200, 200, 1000, 2100, 13500],
         }
       ]
     }, {
@@ -57,6 +57,11 @@ export default {
                 stepSize:10,
                 min: 1940,
                 max: 2010,
+                callback: function(tickValue, index, ticks) {
+                if(!(index % parseInt(ticks.length / 8))) {
+                  return tickValue
+                }
+                }
              }
            }],
            yAxes: [{

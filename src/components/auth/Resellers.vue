@@ -132,7 +132,7 @@
       </div>
       </transition>
       <div class="main">
-          <input id="reseller-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchReseller" placeholder="Search for reseller">
+          <input class="reseller-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchReseller" placeholder="Search for reseller">
           <router-link :to="{ name: 'AddReseller'}"><button id="reseller" type="submit">Add Reseller</button></router-link>
           <div class="main-container">
             <table class="resellers-table" cellspacing="0" cellpadding="0">
@@ -518,8 +518,7 @@ a{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#reseller-search{
-  width: 345px;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -528,15 +527,17 @@ input[type="text"]#reseller-search{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+}
+.reseller-input-search{
+  width: 302px;
+  height: 40px !important;
+  padding-left: 40px;
   margin-left: 20px;
   margin-top: 20px;
-  height: 40px !important;
 }
 button#reseller{
   	height: 40px;

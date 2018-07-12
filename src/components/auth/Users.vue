@@ -133,7 +133,7 @@
       </transition>
       <div class="main">
           <div class="main-header">
-            <input id="user-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchUser" placeholder="Search for user">
+            <input class="user-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchUser" placeholder="Search for user">
             <div class="user-header-title">
               Filter by:
             </div>
@@ -146,18 +146,18 @@
             <router-link :to="{ name: 'AddUser'}"><button id="users" type="submit">Add User</button></router-link>
           </div>
           <div class="main-container">
-            <table cellspacing="0" cellpadding="0">
+            <table class="users-table" cellspacing="0" cellpadding="0">
               <thead>
                 <tr>
-                  <th class="users-avatar"></th>
-                  <th class="users-name">Name</th>
-                  <th class="users-username">Username</th>
-                  <th class="users-company">Company</th>
-                  <th class="users-reseller">Reseller</th>
-                  <th class="users-start">Start from</th>
-                  <th class="users-role">Role</th>
-                  <th class="users-option"></th>
-                  <th class="users-option"></th>
+                  <th class="users-avatar-th"></th>
+                  <th class="users-name-th">Name</th>
+                  <th class="users-username-th">Username</th>
+                  <th class="users-company-th">Company</th>
+                  <th class="users-reseller-th">Reseller</th>
+                  <th class="users-start-th">Start from</th>
+                  <th class="users-role-th">Role</th>
+                  <th class="users-option-th"></th>
+                  <th class="users-option-th"></th>
                 </tr>
               </thead>
               <tbody>
@@ -324,31 +324,16 @@ a{
 .svg-active path{
   fill: white;
 }
-table{
+.users-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
   margin-top: 20px;
-}
-th{
-  height: 37px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
-  margin-left: 15px;
   text-align: left;
-}
-td{
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .user-avatar{
   height: 30px;
@@ -358,30 +343,89 @@ td{
   display: inline-block;
   vertical-align: top;
 }
+.users-avatar-th{
+  width: 45px;
+  padding-left: 8px;
+  height: 37px;
+}
+.users-name-th{
+  width: 204px;
+  height: 37px;
+}
+.users-username-th{
+  width: 169px;
+  height: 37px;
+}
+.users-company-th{
+  width: 182px;
+  height: 37px;
+}
+.users-reseller-th{
+  width: 190px;
+  height: 37px;
+}
+.users-start-th{
+  width: 120px;
+  height: 37px;
+}
+.users-role-th{
+  width: 80px;
+  height: 37px;
+}
+.users-option-th{
+  width: 54px;
+  height: 37px;
+}
+
+
 .users-avatar{
   width: 45px;
   padding-left: 8px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .users-name{
   width: 204px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .users-username{
   width: 169px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .users-company{
   width: 182px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .users-reseller{
   width: 190px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .users-start{
   width: 120px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .users-role{
   width: 80px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .users-option{
   width: 54px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .product-control-info{
   width: 30px;
@@ -409,9 +453,7 @@ td{
   text-decoration: none;
   color: #FFFFFF;
 }
-input[type="text"]#user-search{
-  max-width: 26.3636363636%;
-  width: 100%;
+input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -420,15 +462,18 @@ input[type="text"]#user-search{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+}
+.user-input-search{
+  max-width: 26.3636363636%;
+  width: 100%;
+  height: 40px !important;
+  padding-left: 40px;
   margin-left: 20px;
   margin-top: 20px;
-  height: 40px !important;
   float: left;
 }
 button#users{
@@ -608,7 +653,6 @@ select{
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 5px;
-  height: 40px !important;
 }
 .company{
     max-width: 13.6363636364% !important;
