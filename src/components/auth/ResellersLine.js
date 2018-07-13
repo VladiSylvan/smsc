@@ -24,13 +24,28 @@ export default {
           pointBorderColor: 'white',
           lineTension: 0,
           backgroundColor: this.gradient,
-          data: [0,15000,11000,36000,33000,70000]
+          data: [0,15000,11000,36000,33562,70000]
         }
       ]
     }, {
          legend: { //hides the legend
             display: false,
          },
+         tooltips: {
+           backgroundColor: '#FFFFFF',
+           bodyFontSize: '14',
+            callbacks: {
+                labelColor: function(tooltipItem, chart) {
+                    return {
+                        borderColor: 'rgb(255, 0, 0)',
+                        backgroundColor: 'rgb(255, 0, 0)'
+                    }
+                },
+                labelTextColor:function(tooltipItem, chart){
+                    return '#543453';
+                }
+            }
+        },
          scales: {
            xAxes: [{
              ticks: {

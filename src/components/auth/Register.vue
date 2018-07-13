@@ -4,26 +4,26 @@
             <div class="logo">
                 <img src="@/assets/logo.png">
             </div>
-            <div id="register">
+            <div class="register">
                 <div class="content">
                     <h1>Sign up</h1>
                     <form v-on:submit="sendForm()">
                       <div class="row">
                         <div class="col-md-6">
                           <label>First Name</label>
-                          <input type="text" v-model="user.firstName" placeholder="Enter first name">
+                          <input class="input-first-name" type="text" v-model="user.firstName" placeholder="Enter first name">
                           <label>Company Name</label>
-                          <input type="text" v-model="user.companyName" placeholder="Enter company name">
+                          <input class="input-company-name" type="text" v-model="user.companyName" placeholder="Enter company name">
                           <label>Phone Number</label>
-                          <input type="text" v-model="user.phoneNumber" placeholder="Enter phone number">
+                          <input class="input-phone-number" type="text" v-model="user.phoneNumber" placeholder="Enter phone number">
                         </div>
                         <div class="col-md-6">
                           <label>Second Name</label>
-                          <input type="text" v-model="user.secondName" placeholder="Enter second name">
+                          <input class="input-second-name" type="text" v-model="user.secondName" placeholder="Enter second name">
                           <label>Email</label>
-                          <input type="text" v-model="user.email" placeholder="elyse_sauer@yahoo.com">
+                          <input class="input-register-email" type="text" v-model="user.email" placeholder="elyse_sauer@yahoo.com">
                           <label>Address</label>
-                          <input type="text" v-model="user.address" placeholder="Enter address">
+                          <input class="input-address" type="text" v-model="user.address" placeholder="Enter address">
                         </div>
                         <div class="col-md-3">
                           <label>Country</label>
@@ -39,19 +39,19 @@
                         </div>
                         <div class="col-md-3">
                           <label>City</label>
-                          <input class="city" type="text" v-model="user.city" placeholder="Enter city">
+                          <input class="input-city" type="text" v-model="user.city" placeholder="Enter city">
                         </div>
                         <div class="col-md-3">
                           <label>Zip Code</label>
-                          <input class="zipCode" type="text" v-model="user.zipCode" placeholder="Enter zip code">
+                          <input class="input-zipCode" type="text" v-model="user.zipCode" placeholder="Enter zip code">
                         </div>
                         <div class="col-md-6">
                           <label>Password</label>
-                          <input type="text" v-model="user.password" placeholder="********">
+                          <input class="input-password" type="text" v-model="user.password" placeholder="********">
                         </div>
                         <div class="col-md-6">
                           <label>Re-enter Password</label>
-                          <input type="text" v-model="user.rePassword" placeholder="********">
+                          <input class="input-repassword" type="text" v-model="user.rePassword" placeholder="********">
                         </div>
                       </div>
                         <button type="submit">Sign up</button>
@@ -110,9 +110,8 @@ export default {
       background-repeat: no-repeat;
       background-position-x: 100%;
       background-position-y: 5px;
-      height: 40px !important;
     }
-    #register{
+    .register{
         width: 810px;
         border-radius: 4px;
         background-color: #FFFFFF;
@@ -133,24 +132,28 @@ export default {
         margin-bottom: 30px;
     }
     input[type="text"], input[type="password"]{
-        width: 100%;
-        height: 40px;
-        border: 1px solid #EDEEF3;
-        border-radius: 4px;
-        background-color: #FFFFFF;
-        padding: 10px 15px;
-        font-size: 14px;
-        line-height: 25px;
-    	font-family: "Helvetica Neue";
-    	color: #55616E;
-        margin-bottom: 20px;
-        margin-top: 5px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
+      border: 1px solid #EDEEF3;
+      border-radius: 4px;
+      background-color: #FFFFFF;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-repeat: no-repeat;
+      background-position-x: 5px;
+      background-position-y: 5px;
+      color: #55616E;
+      font-family: "Helvetica Neue";
+      font-size: 14px;
+      line-height: 25px;
+    }
+    .input-first-name, .input-second-name, .input-company-name, .input-phone-number, .input-register-email, .input-address, .input-password, .input-repassword{
+      width: calc(100% - 15px);
+      height: 40px !important;
+      margin-bottom: 20px;
+      margin-top: 5px;
+      padding-left: 15px;
     }
 
-    .city{
+    .input-city{
         width: 165px !important;
         height: 40px !important;
         border: 1px solid #EDEEF3;
@@ -167,7 +170,7 @@ export default {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
-    .zipCode{
+    .input-zipCode{
         width: 155px !important;
         height: 40px !important;
         border: 1px solid #EDEEF3;
