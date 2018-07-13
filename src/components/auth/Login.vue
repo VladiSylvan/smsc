@@ -12,7 +12,7 @@
                         <input class="input-email" type="text" v-model="user.email" placeholder="elyse_sauer@yahoo.com">
                         <label>Password</label>
                         <input class="input-password" type="text" v-model="user.password" placeholder="********">
-                        <router-link :to="{ name: 'Dashboard'}"><button type="submit">Log In</button></router-link>
+                        <button type="submit">Log In</button>
                         <div class="no-account">
                             Don't have an account? <router-link :to="{ name: 'Register'}">Register</router-link>
                         </div>
@@ -24,18 +24,25 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
                 user:{
-                email: '',
+                user_name: '',
                 password: ''
             }
         }
     },
     methods:{
         sendForm(){
-            event.preventDefault()
+
+
+            axios.post('http://88.198.106.121/api_smsc/v1/auth', this.user).then(function(res){
+              console.log(res)
+            }).catch(function(err){
+              console.log(err)
+            })
         }
     },
 }

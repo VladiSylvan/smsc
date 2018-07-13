@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import LoginPage from '@/components/auth/Login'
 import RegisterPage from '@/components/auth/Register'
 import Dashboard from '@/components/auth/Dashboard'
+import Dashboard1 from '@/components/auth/Dashboard1'
 import Reporting from '@/components/auth/Reporting'
 import Product from '@/components/auth/Product'
 import AddProduct from '@/components/auth/AddProduct'
@@ -54,6 +55,11 @@ export default new Router({
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard
+    },
+    {
+        path: '/dashboard1',
+        name: 'Dashboard1',
+        component: Dashboard1
     },
     {
         path: '/reporting',

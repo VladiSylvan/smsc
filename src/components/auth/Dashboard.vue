@@ -657,4 +657,16 @@ li:first-child{
     margin-left: 15px;
     margin-top: 21px;
 }
+
+@media only screen and (max-width: 1100px) {
+    .cont-1{
+      width: 100%;
+    }
+    .cont-2{
+      width: 100%;
+    }
+    .cont-3{
+      width: 100%;
+    }
+}
 </style>

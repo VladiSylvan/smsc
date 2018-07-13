@@ -21,7 +21,8 @@ export default {
           pointBackgroundColor: 'white',
           borderWidth: 1.5,
           pointRadius: 5,
-          pointBorderColor: 'white',
+          pointBorderWidth: 2,
+          pointBorderColor: '#b334c2',
           lineTension: 0,
           backgroundColor: this.gradient,
           data: [0,15000,11000,36000,33562,70000]
@@ -33,16 +34,18 @@ export default {
          },
          tooltips: {
            backgroundColor: '#FFFFFF',
-           bodyFontSize: '14',
+           bodyFontSize: 14,
+           xPadding: 20,
+           yPadding: 20,
             callbacks: {
                 labelColor: function(tooltipItem, chart) {
                     return {
-                        borderColor: 'rgb(255, 0, 0)',
-                        backgroundColor: 'rgb(255, 0, 0)'
+                        borderColor: '#b334c2',
+                        backgroundColor: '#b334c2',
                     }
                 },
                 labelTextColor:function(tooltipItem, chart){
-                    return '#543453';
+                    return '#55616E';
                 }
             }
         },

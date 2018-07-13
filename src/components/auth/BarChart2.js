@@ -19,7 +19,35 @@ export default {
     }, {
          legend: { //hides the legend
             display: false,
-         }
+         },
+         scales: {
+           xAxes: [{
+             barThickness : 2.5,
+                       gridLines: {
+                           display:false
+                       },
+                       ticks: {
+                          beginAtZero: true,
+                          steps:5,
+                          stepValue:1,
+                          max:100,
+                          autoSkip: false,
+                          minRotation: 0,
+                          maxRotation: 0,
+                          callback: function(tickValue, index, ticks) {
+                          if(!(index % parseInt(ticks.length / 3))) {
+                            return tickValue
+                          }
+                          }
+                      }
+                   }],
+           yAxes: [{
+             display: false,
+                       gridLines: {
+                           display:false
+                       }
+                   }]
+           }
       })
   }
 }

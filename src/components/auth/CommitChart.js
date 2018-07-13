@@ -18,16 +18,23 @@ export default {
     this.gradient2.addColorStop(1, 'rgba(50, 146, 227, 0.1)');
 
     this.renderChart({
-      labels: ['1940', '1942', '1944', '1946', '1948', '1950', '1952', '1954', '1956', '1958', '1960', '2010'],
+      labels: ['1940','1942','1944','1946','1948','1950','1952','1954','1956','1958',
+               '1960','1962','1964','1966','1968','1970','1972','1974','1976','1978',
+               '1980','1982','1984','1986','1988','1990','1992','1994','1996','1998',
+               '2000','2002','2004','2006','2008','2010'],
       datasets: [
         {
           label: 'GitHub Commits',
           borderColor: '#000000',
           pointBackgroundColor: 'white',
           borderWidth: 1,
+          lineTension: 0,
           pointBorderColor: 'white',
           backgroundColor: this.gradient,
-          data: [0, 0, 0, 200, 300, 1000, 1800, 2500, 4000, 10000, 20000, 5000]
+          data: [0,0,0,0,0,0,200,200,300,900,
+                 2000,3800,5400,7400,9400,11500,14000,18000,22000,25000,
+                   30000,33000,36200,39000,45000,38000,33000,30000,25000,22500,
+                   21000,19500,18500,18500,16000,13000]
         },
         {
           label: 'GitHub Commits',
@@ -36,7 +43,10 @@ export default {
           pointBorderColor: 'white',
           borderWidth: 1,
           backgroundColor: this.gradient2,
-          data: [0, 0, 0, 0, 0, 200, 200, 200, 200, 1000, 2100, 13500],
+          data: [0,0,0,100,100,300,1000,2000,4000,8000,
+                   20500,29000,32000,33000,29500,27000,28000,28500,26000,22500,
+                   24000,24000,24500,24500,25000,22000,14000,12500,12000,11000,
+                   10850,10700,10500,10200,9900,5000],
         }
       ]
     }, {
@@ -57,8 +67,11 @@ export default {
                 stepSize:10,
                 min: 1940,
                 max: 2010,
+                autoSkip: false,
+                minRotation: 0,
+                maxRotation: 0,
                 callback: function(tickValue, index, ticks) {
-                if(!(index % parseInt(ticks.length / 8))) {
+                if(!(index % parseInt(ticks.length / 7))) {
                   return tickValue
                 }
                 }

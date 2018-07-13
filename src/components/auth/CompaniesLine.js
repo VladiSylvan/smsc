@@ -16,21 +16,38 @@ export default {
       labels: ['', '', '', '', '', ''],
       datasets: [
         {
-          label: 'Resellers',
+          label: 'Companies',
           borderColor: '#00db9f',
           pointBackgroundColor: 'white',
           borderWidth: 1.5,
           pointRadius: 5,
-          pointBorderColor: 'white',
+          pointBorderColor: '#00e1ab',
           lineTension: 0,
           backgroundColor: this.gradient,
-          data: [0,15000,11000,36000,33000,70000]
+          data: [0,235,172,562,515,1094]
         }
       ]
     }, {
          legend: { //hides the legend
             display: false,
          },
+         tooltips: {
+           backgroundColor: '#FFFFFF',
+           bodyFontSize: 14,
+           xPadding: 20,
+           yPadding: 20,
+            callbacks: {
+                labelColor: function(tooltipItem, chart) {
+                    return {
+                        borderColor: '#00db9f',
+                        backgroundColor: '#00db9f',
+                    }
+                },
+                labelTextColor:function(tooltipItem, chart){
+                    return '#55616E';
+                }
+            }
+        },
          scales: {
            xAxes: [{
              ticks: {
