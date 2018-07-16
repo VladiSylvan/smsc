@@ -1,14 +1,17 @@
 <template>
     <div class="container">
       <nav class="navigation">
-        <div class="logo-place">
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="circle"></div>
-          <div v-if="!show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Open.svg') + ')' }" class="circle"></div>
-          <img v-if="show" class="head-logo" src="@/assets/logo.png">
-          <img v-if="!show" class="head-logo-min" src="@/assets/logo-min.png">
+        <div class="navi-logo">
+          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-close"></div>
+          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
+          <div v-if="!show" v-bind:class="{'navi-circle-open-menu': !show}" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
+          <img class="logo" src="@/assets/logo.png">
+          <img class="logo-small" src="@/assets/logo-min.png">
         </div>
-        <div v-bind:class="{'header-min': !show}" class="header">
-          <div class="title">Dashboard</div>
+        <div class="navi-head">
+          <div class="head-title">
+            Dashboard
+          </div>
           <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="System" class="system" v-model="user.system">
             <option value="Overall system">Overall system</option>
           </select>
@@ -16,47 +19,51 @@
             <option value="Last 30 days">Last 30 days</option>
           </select>
         </div>
-        <div v-if="!popup" v-on:click="popup = !popup" class="user">
-          <div class="username">Linnie Weaver</div>
-          <div class="circle"><span id="avatar">A</span></div>
-        </div>
-        <div v-if="popup" class="popup-menu">
-          <div v-on:click="popup = !popup" class="username-popup">Linnie Weaver</div>
-          <div v-on:click="popup = !popup" class="circle"><span id="avatar">A</span></div>
-          <img class="popup-image-box" src="@/assets/Icon/Users.svg">
-          <span id="popup-link">Profile</span>
-          <img class="popup-image-box" src="@/assets/Icon/Settings.svg">
-          <span id="popup-link">Settings</span>
-          <div class="popup-title">
-            Switch to
+        <div class="navi-user">
+          <div v-if="popup" class="user-menu">
+            <div v-on:click="popup = !popup" class="username">
+              Linnie Weaver
+            </div>
+            <div v-on:click="popup = !popup" class="user-circle"><span id="avatar">A</span></div>
+            <img class="popup-image-box" src="@/assets/Icon/Users.svg">
+            <span id="popup-link">Profile</span>
+            <img class="popup-image-box" src="@/assets/Icon/Settings.svg">
+            <span id="popup-link">Settings</span>
+            <div class="popup-title">
+              Switch to
+            </div>
+            <div class="popup-image-box">
+              <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Icon / Dashboard</title>
+                  <desc>Created with Sketch.</desc>
+                  <defs>
+                      <path d="M24.7133515,13.5075766 L15.4490463,5.20674095 C15.1919891,4.97649025 14.8079564,4.97649025 14.5509537,5.20674095 L5.2866485,13.5075766 C5.00376022,13.7610585 4.97542234,14.2010585 5.22337875,14.4903621 C5.47133515,14.7794986 5.90179837,14.8085237 6.18468665,14.5549861 L6.90201635,13.912312 L6.90201635,24.2696379 C6.90201635,24.6542061 7.20697548,24.9660167 7.58321526,24.9660167 L12.7457766,24.9660167 L17.2542234,24.9660167 L22.4167302,24.9660167 C22.79297,24.9660167 23.0979292,24.6542061 23.0979292,24.2696379 L23.0979292,13.9123677 L23.8152589,14.5550975 C23.9445777,14.6708635 24.1046866,14.7277994 24.2639782,14.7277994 C24.453406,14.7277994 24.6418529,14.6475209 24.7765123,14.4904178 C25.0246322,14.2010585 24.9962943,13.7611142 24.7133515,13.5075766 Z M13.4269755,23.5733148 L13.4269755,17.8366574 L16.57297,17.8366574 L16.57297,23.5733148 L13.4269755,23.5733148 Z M21.7356403,12.6969916 L21.7356403,23.5732591 L17.9355313,23.5732591 L17.9355313,17.1402786 C17.9355313,16.7557103 17.6304632,16.4438997 17.2543324,16.4438997 L12.7458856,16.4438997 C12.3697003,16.4438997 12.0646866,16.7557103 12.0646866,17.1402786 L12.0646866,23.5733148 L8.26446866,23.5733148 L8.26446866,12.6969916 C8.26446866,12.6952089 8.26425068,12.6935376 8.26425068,12.6918106 L15,6.65643454 L21.7358583,12.6917549 C21.7359128,12.6935933 21.7356403,12.6952089 21.7356403,12.6969916 Z M13.4741144,11.5592201 C13.4741144,11.943844 13.7790736,12.2555989 14.1553134,12.2555989 L15.8446866,12.2555989 C16.2208719,12.2555989 16.5258856,11.943844 16.5258856,11.5592201 C16.5258856,11.1745961 16.2208719,10.8628412 15.8446866,10.8628412 L14.1553134,10.8628412 C13.7791281,10.8628412 13.4741144,11.1745961 13.4741144,11.5592201 Z" id="path-1"></path>
+                  </defs>
+                  <g id="Icon-/-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <mask id="mask-2" fill="white">
+                          <use xlink:href="#path-1"></use>
+                      </mask>
+                      <g id="Combined-Shape" fill-rule="nonzero"></g>
+                      <g id="Color-/-Dark-4" mask="url(#mask-2)" fill="#51A3F3">
+                          <rect id="Rectangle" x="0" y="0" width="30" height="30"></rect>
+                      </g>
+                  </g>
+              </svg>
           </div>
-          <div class="popup-image-box">
-            <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>Icon / Dashboard</title>
-                <desc>Created with Sketch.</desc>
-                <defs>
-                    <path d="M24.7133515,13.5075766 L15.4490463,5.20674095 C15.1919891,4.97649025 14.8079564,4.97649025 14.5509537,5.20674095 L5.2866485,13.5075766 C5.00376022,13.7610585 4.97542234,14.2010585 5.22337875,14.4903621 C5.47133515,14.7794986 5.90179837,14.8085237 6.18468665,14.5549861 L6.90201635,13.912312 L6.90201635,24.2696379 C6.90201635,24.6542061 7.20697548,24.9660167 7.58321526,24.9660167 L12.7457766,24.9660167 L17.2542234,24.9660167 L22.4167302,24.9660167 C22.79297,24.9660167 23.0979292,24.6542061 23.0979292,24.2696379 L23.0979292,13.9123677 L23.8152589,14.5550975 C23.9445777,14.6708635 24.1046866,14.7277994 24.2639782,14.7277994 C24.453406,14.7277994 24.6418529,14.6475209 24.7765123,14.4904178 C25.0246322,14.2010585 24.9962943,13.7611142 24.7133515,13.5075766 Z M13.4269755,23.5733148 L13.4269755,17.8366574 L16.57297,17.8366574 L16.57297,23.5733148 L13.4269755,23.5733148 Z M21.7356403,12.6969916 L21.7356403,23.5732591 L17.9355313,23.5732591 L17.9355313,17.1402786 C17.9355313,16.7557103 17.6304632,16.4438997 17.2543324,16.4438997 L12.7458856,16.4438997 C12.3697003,16.4438997 12.0646866,16.7557103 12.0646866,17.1402786 L12.0646866,23.5733148 L8.26446866,23.5733148 L8.26446866,12.6969916 C8.26446866,12.6952089 8.26425068,12.6935376 8.26425068,12.6918106 L15,6.65643454 L21.7358583,12.6917549 C21.7359128,12.6935933 21.7356403,12.6952089 21.7356403,12.6969916 Z M13.4741144,11.5592201 C13.4741144,11.943844 13.7790736,12.2555989 14.1553134,12.2555989 L15.8446866,12.2555989 C16.2208719,12.2555989 16.5258856,11.943844 16.5258856,11.5592201 C16.5258856,11.1745961 16.2208719,10.8628412 15.8446866,10.8628412 L14.1553134,10.8628412 C13.7791281,10.8628412 13.4741144,11.1745961 13.4741144,11.5592201 Z" id="path-1"></path>
-                </defs>
-                <g id="Icon-/-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <mask id="mask-2" fill="white">
-                        <use xlink:href="#path-1"></use>
-                    </mask>
-                    <g id="Combined-Shape" fill-rule="nonzero"></g>
-                    <g id="Color-/-Dark-4" mask="url(#mask-2)" fill="#51A3F3">
-                        <rect id="Rectangle" x="0" y="0" width="30" height="30"></rect>
-                    </g>
-                </g>
-            </svg>
-        </div>
-          <span id="popup-link-active">System Admin</span>
-          <img class="popup-image-box" src="@/assets/Icon/Reseller.svg">
-          <span id="popup-link">Reseller Portal</span>
-          <img class="popup-image-box" src="@/assets/Icon/Companies.svg">
-          <span id="popup-link">Appolo Inc.</span>
-          <div class="popup-logout">
-            <img class="popup-image-box" src="@/assets/Icon/Arrow/Right.svg">
-            <span id="popup-link">Log out</span>
+            <span id="popup-link-active">System Admin</span>
+            <img class="popup-image-box" src="@/assets/Icon/Reseller.svg">
+            <span id="popup-link">Reseller Portal</span>
+            <img class="popup-image-box" src="@/assets/Icon/Companies.svg">
+            <span id="popup-link">Appolo Inc.</span>
+            <div class="popup-logout">
+              <img class="popup-image-box" src="@/assets/Icon/Arrow/Right.svg">
+              <span id="popup-link">Log out</span>
+            </div>
           </div>
+          <div v-on:click="popup = !popup" class="username">
+            Linnie Weaver
+          </div>
+          <div v-on:click="popup = !popup" class="user-circle"><span id="avatar">A</span></div>
         </div>
       </nav>
       <transition name="fade">
@@ -138,6 +145,19 @@
       </ul>
       </transition>
       <div class="main">
+        <div class="res-div">
+          <div class="head-title">
+            Dashboard
+          </div>
+          <div class="res-select">
+            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="System" class="system" v-model="user.system">
+              <option value="Overall system">Overall system</option>
+            </select>
+            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Days" class="days" v-model="user.days">
+              <option value="Last 30 days">Last 30 days</option>
+            </select>
+          </div>
+        </div>
         <div class="cont-1">
           <div class="chart-1">
             <div class="chart-1-title">
@@ -262,83 +282,6 @@ export default {
   width: 47.5%;
   float: left;
 }
-.user{
-  display: inline-block;
-  vertical-align: top;
-  float: right;
-}
-.popup-menu{
-	height: 380px;
-	width: 228px;
-	background-color: #FFFFFF;
-	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
-  display: inline-block;
-  vertical-align: top;
-  position: absolute;
-  z-index: 1;
-  float: right;
-  margin-left: 32px;
-}
-.username-popup {
-	color: #51A3F3;
-	font-family: "Helvetica Neue";
-	font-size: 15px;
-	line-height: 20px;
-	text-align: right;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 66px;
-  margin-right: -8px;
-}
-.popup-logout{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-}
-#popup-link{
-  	height: 20px;
-    width: 158px;
-    font-family: "Helvetica Neue";
-    font-size: 16px;
-    line-height: 20px;
-    display: inline-block;
-    margin-top: 15px;
-    cursor: pointer;
-}
-#popup-link-active{
-  	height: 20px;
-    width: 158px;
-    font-family: "Helvetica Neue";
-    font-size: 16px;
-    line-height: 20px;
-    display: inline-block;
-    margin-top: 15px;
-    color: #51A3F3;
-}
-.popup-image-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 10px;
-  margin-left: 15px;
-  margin-right: 10px;
-}
-.popup-title{
-  	height: 30px;
-    width: 198px;
-    color: #BDBFD8;
-    font-family: "Circular Std";
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: 30px;
-    display: inline-block;
-    text-transform: uppercase;
-    margin-left: 15px;
-    margin-top: 21px;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
@@ -362,7 +305,7 @@ export default {
   z-index: 1000;
 }
 .chart-1{
-  height: 360px;
+  height: auto;
   width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -394,7 +337,7 @@ export default {
   margin-top: 15px;
 }
 .chart-2{
-  height: 170px;
+  height: auto;
   width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -420,7 +363,7 @@ export default {
   margin-bottom: 10px;
 }
 .chart-3{
-  height: 300px;
+  height: auto;
   width: 100%;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -451,59 +394,9 @@ export default {
 li#active svg g{
   fill: white;
 }
-.navigation{
-    height: 60px;
-    background-color: #FFFFFF;
-    width: 100%;
-}
-.head-logo{
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 15px;
-    margin-right: 20px;
-}
-.head-logo-min{
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 15px;
-    margin-left: 25px;
-}
-.title{
-    display: inline-block;
-    vertical-align: top;
-    vertical-align: top;
-    margin-left: 15px;
-    height: 30px;
-    width: 90px;
-    color: #55616E;
-    font-family: "Circular Std";
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 30px;
-    margin-top: 15px;
-    margin-right: 32px;
-}
-.circle{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-}
-.logo-place{
-  margin: 0;
-  display: inline-block;
-  width: 20.8333333333%;
-  float: left;
-}
 .system{
-    width: 180px !important;
-    height: 40px !important;
+    width: 180px;
+    height: 40px;
     border: 1px solid #EDEEF3;
     border-radius: 4px;
     background-color: #FFFFFF;
@@ -522,8 +415,8 @@ li#active svg g{
     margin-right: 10px;
 }
 .days{
-    width: 210px !important;
-    height: 40px !important;
+    width: 210px;
+    height: 40px;
     border: 1px solid #EDEEF3;
     border-radius: 4px;
     background-color: #FFFFFF;
@@ -532,7 +425,6 @@ li#active svg g{
     line-height: 25px;
     font-family: "Helvetica Neue";
     color: #55616E;
-    margin-top: 5px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -547,18 +439,6 @@ select{
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 5px;
-}
-.username {
-	color: #55616E;
-	font-family: "Helvetica Neue";
-	font-size: 15px;
-	line-height: 20px;
-	text-align: right;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-right: -3px;
-  float: left;
 }
 #avatar{
   	font-family: "Helvetica Neue";
@@ -658,15 +538,253 @@ li:first-child{
     margin-top: 21px;
 }
 
-@media only screen and (max-width: 1100px) {
-    .cont-1{
+.user-menu{
+	height: auto;
+	width: 228px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
+  vertical-align: top;
+  position: fixed;
+  z-index: 999999;
+  float: right;
+}
+.navigation{
+  max-width: 100%;
+  height: 60px;
+  background-color: #FFFFFF;
+}
+.navi-logo{
+  max-width: 300px;
+  display: inline-block;
+  width: 100%;
+}
+.navi-circle-open{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: none;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  transform: rotate(180deg);
+}
+.navi-circle-open-menu{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  transform: rotate(180deg);
+}
+.navi-circle-close{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+.user-circle{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  float: left;
+}
+.username{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  line-height: 20px;
+  text-align: left;
+  margin-top: 20px;
+  float: left;
+  margin-left: 63px;
+}
+.navi-head{
+  max-width: 560px;
+  display: inline-block;
+  width: auto;
+}
+.navi-user{
+  max-width: 228px;
+  float: right;
+  display: inline-block;
+  width: auto;
+}
+.popup-logout{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#popup-link{
+  	height: 20px;
+    width: 158px;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#popup-link-active{
+  	height: 20px;
+    width: 158px;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    color: #51A3F3;
+}
+.popup-image-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.popup-title{
+  	height: 30px;
+    width: 198px;
+    color: #BDBFD8;
+    font-family: "Circular Std";
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-top: 21px;
+}
+.head-title{
+    display: inline-block;
+    vertical-align: top;
+    vertical-align: top;
+    color: #55616E;
+    font-family: "Circular Std";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 32px;
+}
+.logo{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.logo-small{
+  display: none;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.res-div{
+  display: none;
+  width: 100%;
+}
+.res-select{
+  display: inline-block;
+  width: calc(100% - 15px);
+  margin-left: 15px;
+}
+@media only screen and (max-width: 1200px) {
+    .navi-head{
+      display: none;
+    }
+    .navi-logo{
+      max-width: 40.8333333333%;
       width: 100%;
     }
-    .cont-2{
+    .res-div{
+      display: inline-block;
+    }
+    .system{
+      width: 47.8%;
+    }
+    .days{
+      width: 47.8%;
+    }
+    .cont-1, .cont-2, .cont-3{
+      width: calc(100% - 30px);
+    }
+    .chart-1, .chart-2, .chart-3, .chart-3#second{
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+}
+@media only screen and (max-width: 990px) {
+    .system{
+      width: 46.5%;
+    }
+    .days{
+      width: 46.5%;
+    }
+}
+@media only screen and (max-width: 605px) {
+    .logo{
+      display: none;
+    }
+    .logo-small{
+      display: inline-block;
+    }
+    .navi-logo{
+      max-width: 38.8333333333%;
       width: 100%;
     }
-    .cont-3{
-      width: 100%;
+    .navi-circle-open{
+      display: inline-block;
+    }
+    .navi-circle-close{
+      display: none;
+    }
+    ul, .sidebar-hide{
+      display: none;
+    }
+    .main{
+      max-width: 100%;
+    }
+    .system{
+      width: 46.5%;
+    }
+    .days{
+      width: 46.5%;
+    }
+}
+@media only screen and (max-width: 390px) {
+    .username{
+      display: none;
+    }
+    .system{
+      width: calc(100% - 15px);
+    }
+    .days{
+      width: calc(100% - 15px);
     }
 }
 </style>

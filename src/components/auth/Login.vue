@@ -36,8 +36,6 @@ export default {
     },
     methods:{
         sendForm(){
-
-
             axios.post('http://88.198.106.121/api_smsc/v1/auth', this.user).then(function(res){
               console.log(res)
             }).catch(function(err){
