@@ -2,40 +2,41 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LoginPage from '@/components/auth/Login'
 import RegisterPage from '@/components/auth/Register'
-import Dashboard from '@/components/auth/Dashboard'
-import Dashboard1 from '@/components/auth/Dashboard1'
-import Reporting from '@/components/auth/Reporting'
-import Product from '@/components/auth/Product'
-import AddProduct from '@/components/auth/AddProduct'
-import Template from '@/components/auth/Template'
-import Billing from '@/components/auth/Billing'
-import BillingPayment from '@/components/auth/BillingPayment'
-import Resellers from '@/components/auth/Resellers'
-import AddReseller from '@/components/auth/AddReseller'
-import EditReseller from '@/components/auth/EditReseller'
-import PaymentHistory from '@/components/auth/PaymentHistory'
-import InvoiceHistory from '@/components/auth/InvoiceHistory'
-import TransactionHistory from '@/components/auth/TransactionHistory'
-import Users from '@/components/auth/Users'
-import AddUser from '@/components/auth/AddUser'
-import EditUser from '@/components/auth/EditUser'
-import Companies from '@/components/auth/Companies'
-import AddCompany from '@/components/auth/AddCompany'
-import EditCompany from '@/components/auth/EditCompany'
-import Vendors from '@/components/auth/Vendors'
-import AddVendor from '@/components/auth/AddVendor'
-import EditVendor from '@/components/auth/EditVendor'
-import VendorsRate from '@/components/auth/VendorsRate'
-import DID from '@/components/auth/DID'
-import EditDID from '@/components/auth/EditDID'
-import ImportDID from '@/components/auth/ImportDID'
-import VerifyDID from '@/components/auth/VerifyDID'
-import Filters from '@/components/auth/Filters'
+import Dashboard from '@/components/admin/Dashboard'
+import Reporting from '@/components/admin/Reporting'
+import Product from '@/components/admin/Product'
+import AddProduct from '@/components/admin/AddProduct'
+import Template from '@/components/admin/Template'
+import Billing from '@/components/admin/Billing'
+import BillingPayment from '@/components/admin/BillingPayment'
+import Resellers from '@/components/admin/Resellers'
+import AddReseller from '@/components/admin/AddReseller'
+import EditReseller from '@/components/admin/EditReseller'
+import PaymentHistory from '@/components/admin/PaymentHistory'
+import InvoiceHistory from '@/components/admin/InvoiceHistory'
+import TransactionHistory from '@/components/admin/TransactionHistory'
+import Users from '@/components/admin/Users'
+import AddUser from '@/components/admin/AddUser'
+import EditUser from '@/components/admin/EditUser'
+import Companies from '@/components/admin/Companies'
+import AddCompany from '@/components/admin/AddCompany'
+import EditCompany from '@/components/admin/EditCompany'
+import Vendors from '@/components/admin/Vendors'
+import AddVendor from '@/components/admin/AddVendor'
+import EditVendor from '@/components/admin/EditVendor'
+import VendorsRate from '@/components/admin/VendorsRate'
+import DID from '@/components/admin/DID'
+import EditDID from '@/components/admin/EditDID'
+import ImportDID from '@/components/admin/ImportDID'
+import VerifyDID from '@/components/admin/VerifyDID'
+import Filters from '@/components/admin/Filters'
+import Profile from '@/components/reseller/Profile'
+import ProfilePayment from '@/components/reseller/ProfilePayment'
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
 
-import CommitChart from '@/components/auth/CommitChart'
-import BarChart from '@/components/auth/BarChart'
+import CommitChart from '@/components/admin/CommitChart'
+import BarChart from '@/components/admin/BarChart'
 
 Vue.use(Router)
 
@@ -55,11 +56,6 @@ export default new Router({
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard
-    },
-    {
-        path: '/dashboard1',
-        name: 'Dashboard1',
-        component: Dashboard1
     },
     {
         path: '/reporting',
@@ -195,5 +191,15 @@ export default new Router({
         path: '/filters',
         name: 'Filters',
         component: Filters
+    },
+    {
+        path: '/profile',
+        name: 'Profile',
+        component: Profile
+    },
+    {
+        path: '/profilepayment',
+        name: 'ProfilePayment',
+        component: ProfilePayment
     }]
 })

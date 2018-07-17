@@ -10,7 +10,7 @@
         </div>
         <div class="navi-head">
           <div class="head-title">
-            Product
+            Resellers
           </div>
         </div>
         <div class="navi-user">
@@ -61,7 +61,7 @@
         </div>
       </nav>
       <transition name="fade">
-      <ul v-bind:class="{'sidebar-hide': !show}" class="sidebar">
+      <ul v-bind:class="{'sidebar-hide': !show}">
         <li>
           <router-link :to="{ name: 'Dashboard'}">
             <img class="image-box" src="@/assets/Icon/Dashboard.svg">
@@ -74,15 +74,10 @@
             <span v-if="show" class="side-link">Reporting</span>
           </router-link>
         </li>
-        <li id="active">
+        <li>
           <router-link :to="{ name: 'Product'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M23.4256131,9.45680858 L19.2124251,9.45680858 L19.2124251,8.68064356 C19.2124251,7.76533663 18.4892098,7.02064686 17.600109,7.02064686 L12.3855041,7.02064686 C11.4965123,7.02064686 10.773188,7.76528053 10.773188,8.68064356 L10.773188,9.45680858 L6.5600545,9.45680858 C5.69983651,9.45680858 5,10.1772607 5,11.0628317 L5,22.358462 C5,23.244033 5.69983651,23.9645413 6.5600545,23.9645413 L23.4255586,23.9645413 C24.2857766,23.9645413 24.9856131,23.244033 24.9856131,22.358462 L24.9856131,11.0628317 C24.9856676,10.1773168 24.2858856,9.45680858 23.4256131,9.45680858 Z M12.1356403,8.68064356 C12.1356403,8.53875248 12.2477929,8.42328713 12.3855586,8.42328713 L17.6001635,8.42328713 C17.7379292,8.42328713 17.8500817,8.53875248 17.8500817,8.68064356 L17.8500817,9.45680858 L12.1356403,9.45680858 L12.1356403,8.68064356 Z M6.56010899,10.8594488 L23.4256131,10.8594488 C23.5346049,10.8594488 23.6232698,10.9506766 23.6232698,11.0628317 L23.6232698,14.7432475 C21.5122071,15.5494851 18.3279564,16.0257096 14.9870845,16.0257096 C11.6535695,16.0257096 8.47367847,15.5511122 6.36239782,14.7475677 L6.36239782,11.0628317 C6.36245232,10.9506766 6.45111717,10.8594488 6.56010899,10.8594488 Z M23.4256131,22.561901 L6.56010899,22.561901 C6.45111717,22.561901 6.36245232,22.4706733 6.36245232,22.358462 L6.36245232,16.2335809 C8.29476839,16.8898482 10.8353134,17.3000363 13.6039782,17.4028218 C13.6038147,17.4109571 13.6028338,17.4188119 13.6028338,17.4270594 L13.6028338,17.7363696 C13.6028338,18.3162211 14.0610354,18.7879571 14.6243052,18.7879571 L15.3614714,18.7879571 C15.9247411,18.7879571 16.3829428,18.3162211 16.3829428,17.7363696 L16.3829428,17.4270594 C16.3829428,17.4188119 16.3818529,17.4107327 16.3817984,17.4024851 C19.1522071,17.298802 21.6923706,16.8874356 23.6233787,16.2298779 L23.6233787,22.3585182 C23.6232698,22.4706733 23.5346049,22.561901 23.4256131,22.561901 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Product</span>
+            <img class="image-box" src="@/assets/Icon/Product.svg">
+            <span v-if="show" class="side-link">Product</span>
           </router-link>
         </li>
         <li>
@@ -100,10 +95,15 @@
         <div v-if="show" class="side-title">
           Manage
         </div>
-        <li>
+        <li id="active">
           <router-link :to="{ name: 'Resellers'}">
-            <img class="image-box" src="@/assets/Icon/Reseller.svg">
-            <span v-if="show" class="side-link">Resellers</span>
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M24.302168,8.01773234 L5.67750678,8.01773234 C5.30336043,8.01773234 5,8.32983271 5,8.71475836 L5,22.2642751 C5,22.649145 5.30336043,22.9613011 5.67750678,22.9613011 L24.302168,22.9613011 C24.6762602,22.9613011 24.9796748,22.649145 24.9796748,22.2642751 L24.9796748,8.71475836 C24.9796748,8.32988848 24.6762602,8.01773234 24.302168,8.01773234 Z M23.6246612,21.5673048 L6.35501355,21.5673048 L6.35501355,9.41178439 L23.6246612,9.41178439 L23.6246612,21.5673048 Z M8.1303523,12.695223 L14.6344173,16.8181041 C14.7433604,16.8871933 14.8665583,16.92171 14.9898103,16.92171 C15.1130623,16.92171 15.2362602,16.8871933 15.3452033,16.8181041 L21.8492683,12.695223 C22.1678049,12.4933086 22.2669919,12.0638848 22.0707317,11.736171 C21.8744715,11.4084572 21.4569648,11.3064126 21.1385366,11.5083829 L14.9898103,15.4059294 L8.84113821,11.5083829 C8.52271003,11.3065799 8.10531165,11.4084015 7.90894309,11.736171 C7.71262873,12.063829 7.81176152,12.4933086 8.1303523,12.695223 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
+            <span v-if="show" class="side-link" id="active">Resellers</span>
           </router-link>
         </li>
         <li>
@@ -138,72 +138,96 @@
         </li>
       </ul>
       </transition>
-      <div class="main">
+      <div class="main-add">
         <div class="res-div">
           <div class="head-title">
-            Product
+            Resellers
           </div>
         </div>
-        <input class="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
-        <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
-        <div class="product-main">
-          <table class="product-table" cellspacing="0" cellpadding="0">
+        <router-link :to="{ name: 'Resellers'}">
+          <div class="svg-back">
+            <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+              L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+              L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+              </path>
+            </svg>
+          </div>
+          <div class='back'>
+            Back to Resellers
+          </div>
+        </router-link>
+        <div class="add-reseller">
+          <div class="invoice-title">
+            Invoice History
+          </div>
+          <table class="invoice-table" cellspacing="0" cellpadding="0">
             <thead>
-              <tr class="product-tr">
-                <th class="product-table-active"></th>
-                <th class="name">Product Name</th>
-                <th class="created">Created On</th>
-                <th class="created-by">Created By</th>
-                <th class="owned-by">Owned By</th>
-                <th class="options"></th>
-                <th class="options"></th>
-                <th class="options"></th>
+              <tr>
+                <th class="invoice-created-th">Created</th>
+                <th class="invoice-company-th">Company</th>
+                <th class="invoice-paid-th">Paid</th>
+                <th class="invoice-description-th">Description</th>
+                <th class="invoice-amount-th">Amount</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="online">
-                <td class="product-table-active"><div class="product-active"></div></td>
-                <td class="name">Parkerport</td>
-                <td class="created">10-03-2018</td>
-                <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
-                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">Appolo Inc.</div></td>
-                <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+              <tr>
+                <td class="invoice-created">29 Dec 2018</td>
+                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-paid">07 Jul 2018</td>
+                <td class="invoice-description">Payment ID#367192</td>
+                <td class="invoice-amount">$74</td>
               </tr>
-              <tr class="online">
-                <td class="product-table-active"><div class="product-active"></div></td>
-                <td class="name">Blickview</td>
-                <td class="created">08-19-2018</td>
-                <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
-                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">Appolo Inc.</div></td>
-                <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+              <tr>
+                <td class="invoice-created">15 Mar 2018</td>
+                <td class="invoice-company">Universal Inc.</td>
+                <td class="invoice-paid">04 Jan 2018</td>
+                <td class="invoice-description">Payment ID#367192</td>
+                <td class="invoice-amount">$38</td>
               </tr>
-              <tr class="offline">
-                <td class="product-table-active"><div class="product-not-active"></div></td>
-                <td class="name">Lake Woodrow</td>
-                <td class="created">01-04-2018</td>
-                <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
-                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">Appolo Inc.</div></td>
-                <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+              <tr>
+                <td class="invoice-created">29 Dec 2018</td>
+                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-paid">07 Jul 2018</td>
+                <td class="invoice-description">Payment ID#367192</td>
+                <td class="invoice-amount">$74</td>
+              </tr>
+              <tr>
+                <td class="invoice-created">29 Dec 2018</td>
+                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-paid">07 Jul 2018</td>
+                <td class="invoice-description">Payment ID#367192</td>
+                <td class="invoice-amount">$74</td>
+              </tr>
+              <tr>
+                <td class="invoice-created">29 Dec 2018</td>
+                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-paid">07 Jul 2018</td>
+                <td class="invoice-description">Payment ID#367192</td>
+                <td class="invoice-amount">$74</td>
+              </tr>
+              <tr>
+                <td class="invoice-created">29 Dec 2018</td>
+                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-paid">07 Jul 2018</td>
+                <td class="invoice-description">Payment ID#367192</td>
+                <td class="invoice-amount">$74</td>
+              </tr>
+              <tr>
+                <td class="invoice-created">29 Dec 2018</td>
+                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-paid">07 Jul 2018</td>
+                <td class="invoice-description">Payment ID#367192</td>
+                <td class="invoice-amount">$74</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-      <div id="app">
-        <modal v-show="isModalVisible" @close="closeModal"/>
-      </div>
     </div>
 </template>
 <script>
-import CommitChart from '@/components/auth/CommitChart'
-import BarChart from '@/components/auth/BarChart'
-import BarChart2 from '@/components/auth/BarChart2'
 import modal from '@/components/modal.vue'
 
 export default {
@@ -215,17 +239,35 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
+          vendors: true,
                 user:{
-                system: 'Overall system',
-                days: 'Last 30 days'
+                productName: 'Caroline',
+                country: 'China',
+                operator: 'China Unicom',
+                sellRate: '0.001',
+                company: 'Choose Company',
+                country: 'Select',
+                state: 'Select State',
             },
-
+            user2:{
+              country: 'China',
+              operator: 'China Mobile',
+              sellRate: '0.0012'
+            },
+            user3:{
+              country: 'United States',
+              operator: 'AT & T',
+              sellRate: '0.0003'
+            },
+            vendor:{
+              vendorName1: 'Vendor BB',
+              vendorName2: 'Vendor CC',
+              vendorRate1: '0.0009',
+              vendorRate2: '0.0008'
+            }
         }
     },
     components:{
-      CommitChart,
-      BarChart,
-      BarChart2,
       modal
     },
     methods:{
@@ -242,109 +284,106 @@ export default {
 }
 </script>
 <style>
-.product-name-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
+.invoice-table{
+  border: none;
+  max-width: calc(100% - 10px);
+  width: 100%;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
 }
-.product-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
+.invoice-title{
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.invoice-created-th{
+  width: 189px;
+  padding-left: 15px;
+  height: 37px;
+}
+.invoice-company-th{
+  width: 233px;
+  height: 37px;
+}
+.invoice-paid-th{
+  width: 230px;
+  height: 37px;
+}
+.invoice-description-th{
+  width: 293px;
+  height: 37px;
+}
+.invoice-amount-th{
+  width: 140px;
+  height: 37px;
+}
+
+.invoice-created{
+  width: 189px;
+  padding-left: 15px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.invoice-company{
+  width: 233px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.invoice-paid{
+  width: 230px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.invoice-description{
+  width: 293px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.invoice-amount{
+  width: 140px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.svg path{
+  fill: #51A3F3;
+}
+.svg-back{
+  float: left;
   display: inline-block;
-  vertical-align: top;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 20px;
   margin-right: 5px;
 }
-.product-main{
+.back{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
   float: left;
   display: inline-block;
-  width: calc(100% - 40px);
+  margin-top: 30px;
+}
+.add-reseller{
+  float: left;
+  display: inline-block;
+  width: calc(100% - 30px);
   margin-left: 20px;
   margin-right: 20px;
-}
-.svg-active path{
-  fill: white;
-}
-.product-table{
-  border: none;
-  max-width: 100%;
-  width: 100%;
-  margin-top: 20px;
-}
-.product-tr{
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.online{
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.product-table-active{
-  width: 18px;
-}
-.name{
-  width: 169px;
-}
-.created{
-  width: 334px;
-}
-.created-by{
-  width: 227px;
-}
-.owned-by{
-  width: 200px;
-}
-.options{
-  width: 50px;
-}
-.product-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #24E2B8;
-  float: left;
-  margin-left: 3px;
-}
-.product-not-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #D2305B;
-  float: left;
-  margin-left: 3px;
-}
-.product-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: -10px;
-  margin-left: 15px;
 }
 .side a{
   text-decoration: none;
@@ -353,26 +392,6 @@ export default {
 .side#active a{
   text-decoration: none;
   color: #FFFFFF;
-}
-.product-search{
-  width: 302px;
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 5px;
-  height: 40px !important;
-  padding-left: 40px;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
-  margin-left: 20px;
-  margin-top: 20px;
-  height: 40px !important;
 }
 button#product{
   	height: 40px;
@@ -387,8 +406,34 @@ button#product{
     line-height: 30px;
     text-align: center;
     margin-top: 20px;
-    float: right;
     margin-right: 20px;
+    margin-bottom: 20px;
+    float: right;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+}
+button#cancel{
+  height: 40px;
+  width: 90px;
+  border: 1px solid #BDBFD8;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #55616E;
+  font-family: "Circular Std";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  float: right;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -402,27 +447,12 @@ button#product{
 .col-md-3{
   width: 20.8%;
 }
-.main{
+.main-add{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.header{
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: 61.1111111111%;
-  float: left;
-}
-.header-min{
-  display: inline-block;
-  vertical-align: top;
-  margin-left: -150px;
-  margin-right: 150px;
-  position: relative;
-  z-index: 1000;
 }
 .side#active svg g{
   fill: white;
@@ -509,6 +539,13 @@ li:first-child{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
+}
+.control-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
 }
 .side-title{
   	height: 30px;
@@ -733,7 +770,7 @@ li:first-child{
     ul, .sidebar-hide{
       display: none;
     }
-    .main{
+    .main-add{
       max-width: 100%;
     }
 }

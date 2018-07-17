@@ -258,9 +258,6 @@
     </div>
 </template>
 <script>
-import CommitChart from '@/components/auth/CommitChart'
-import BarChart from '@/components/auth/BarChart'
-import BarChart2 from '@/components/auth/BarChart2'
 import modal from '@/components/modal.vue'
 
 export default {
@@ -305,9 +302,6 @@ export default {
         }
     },
     components:{
-      CommitChart,
-      BarChart,
-      BarChart2,
       modal
     },
     methods:{

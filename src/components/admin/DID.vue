@@ -10,7 +10,7 @@
         </div>
         <div class="navi-head">
           <div class="head-title">
-            Billing
+            DID
           </div>
         </div>
         <div class="navi-user">
@@ -61,7 +61,7 @@
         </div>
       </nav>
       <transition name="fade">
-      <ul v-bind:class="{'sidebar-hide': !show}" >
+      <ul v-bind:class="{'sidebar-hide': !show}">
         <li>
           <router-link :to="{ name: 'Dashboard'}">
             <img class="image-box" src="@/assets/Icon/Dashboard.svg">
@@ -86,15 +86,10 @@
             <span v-if="show" class="side-link">Template Approval</span>
           </router-link>
         </li>
-        <li id="active">
+        <li>
           <router-link :to="{ name: 'Billing'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M24.2624044,8.95795211 L9.82234973,8.95795211 L8.99054645,7.0429662 C8.90540984,6.84697183 8.73005464,6.70241127 8.5184153,6.6536 L5.83961749,6.03628732 C5.47240437,5.95140282 5.10464481,6.17458592 5.01830601,6.53430141 C4.93185792,6.89396338 5.1595082,7.25410704 5.52677596,7.33872394 L7.86885246,7.87853803 L13.8646448,21.6829211 C13.6789617,22.0041014 13.5722951,22.3747887 13.5722951,22.769507 C13.5722951,23.9894141 14.5856284,24.9819099 15.8310929,24.9819099 C17.076612,24.9819099 18.0899454,23.9894676 18.0899454,22.769507 C18.0899454,22.4630451 18.0259016,22.1710338 17.9104372,21.9054085 L20.3700546,21.9054085 C20.2545902,22.1709803 20.1905464,22.4629915 20.1905464,22.769507 C20.1905464,23.9894141 21.2039344,24.9819099 22.4495082,24.9819099 C23.6949727,24.9819099 24.7082514,23.9894676 24.7082514,22.769507 C24.7082514,21.549493 23.6949727,20.5570507 22.4495082,20.5570507 L14.8647541,20.5673803 L13.929235,18.4135296 L24.262459,18.4135296 C24.6397268,18.4135296 24.9455191,18.1139718 24.9455191,17.7445155 L24.9455191,9.6269662 C24.9454645,9.25750986 24.6396721,8.95795211 24.2624044,8.95795211 Z M22.4508743,21.8957746 C22.9438251,21.8957746 23.3434426,22.2871211 23.3434426,22.7699352 C23.3434426,23.2526958 22.9438798,23.6440958 22.4508743,23.6440958 C21.9579235,23.6440958 21.5583607,23.2526958 21.5583607,22.7699352 C21.5583607,22.2871211 21.9579235,21.8957746 22.4508743,21.8957746 Z M15.8345355,21.8957746 C16.3274863,21.8957746 16.7271038,22.2871211 16.7271038,22.7699352 C16.7271038,23.2526958 16.3274863,23.6440958 15.8345355,23.6440958 C15.3415847,23.6440958 14.9420219,23.2526958 14.9420219,22.7699352 C14.9420219,22.2871211 15.3416393,21.8957746 15.8345355,21.8957746 Z M23.5793443,13.0167268 L19.0518033,13.0167268 C18.6745902,13.0167268 18.3687432,13.3162845 18.3687432,13.6857408 C18.3687432,14.0551972 18.6745902,14.3547549 19.0518033,14.3547549 L23.5793443,14.3547549 L23.5793443,17.0755014 L13.3481421,17.0755014 L10.4034426,10.2959803 L23.5793443,10.2959803 L23.5793443,13.0167268 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Billing</span>
+            <img class="image-box" src="@/assets/Icon/Billing.svg">
+            <span v-if="show" class="side-link">Billing</span>
           </router-link>
         </li>
         <div v-if="show" class="side-title">
@@ -124,10 +119,15 @@
             <span v-if="show" class="side-link">Vendors</span>
           </router-link>
         </li>
-        <li>
+        <li id="active">
           <router-link :to="{ name: 'DID'}">
-            <img class="image-box" src="@/assets/Icon/DID.svg">
-            <span v-if="show" class="side-link">DID</span>
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M22.8623041,6.4771831 L13.5686636,6.4771831 C13.5290323,6.12976526 13.382765,5.80741784 13.1409217,5.55164319 C12.8413825,5.23474178 12.4369585,5.06028169 12.0023041,5.06028169 L6.67198157,5.06028169 C6.23723502,5.06028169 5.83290323,5.23474178 5.53336406,5.5515493 C5.23382488,5.8684507 5.07788018,6.28666667 5.09410138,6.72929577 L5.36138249,13.9882629 C5.37963134,14.4824413 5.38,15.3179343 5.36221198,15.8126761 L5.09317972,23.3000939 C5.07732719,23.7425352 5.23354839,24.1606573 5.53327189,24.4773709 C5.83290323,24.7940845 6.23732719,24.9684507 6.6718894,24.9684507 L12.0021198,24.9684507 C12.436682,24.9684507 12.841106,24.7940845 13.1407373,24.4773709 C13.3157604,24.2923944 13.4402765,24.0723005 13.5117051,23.8334272 L22.8621198,23.8334272 C24.0056221,23.8334272 24.9358525,22.8857277 24.9358525,21.7207512 L24.9358525,8.58985915 C24.9360369,7.42497653 24.0058065,6.4771831 22.8623041,6.4771831 Z M12.1457143,23.4997183 C12.1197235,23.5271362 12.0737327,23.5599061 12.0023041,23.5599061 L6.67198157,23.5599061 C6.600553,23.5599061 6.55456221,23.5271362 6.52857143,23.4997183 C6.50258065,23.4723005 6.4721659,23.4243192 6.47483871,23.3515493 L6.74387097,15.8641315 C6.76294931,15.3320188 6.76258065,14.4667606 6.74294931,13.9353052 L6.4756682,6.67643192 C6.47299539,6.60384977 6.50322581,6.55596244 6.52912442,6.5286385 C6.55493088,6.50131455 6.60073733,6.46873239 6.67198157,6.46873239 L12.002212,6.46873239 C12.0734562,6.46873239 12.1192627,6.50131455 12.1451613,6.5286385 C12.1709677,6.55605634 12.2011982,6.60384977 12.1986175,6.67643192 L11.9313364,13.9353991 C11.9117972,14.4675117 11.9113364,15.3326761 11.9304147,15.8642254 L12.1993548,23.3516432 C12.2020276,23.4243192 12.1716129,23.4723005 12.1457143,23.4997183 Z M23.5535484,21.7207512 C23.5535484,22.109108 23.2435023,22.4249765 22.8623041,22.4249765 L13.5495853,22.4249765 L13.3120737,15.81277 C13.2942857,15.3185915 13.2947465,14.4830986 13.3129032,13.9882629 L13.5376037,7.8857277 L22.8623963,7.8857277 C23.2435945,7.8857277 23.5536406,8.20159624 23.5536406,8.58995305 L23.5536406,21.7207512 L23.5535484,21.7207512 Z M21.9180645,9.61521127 L14.6610138,9.61521127 C14.2792627,9.61521127 13.9697696,9.93051643 13.9697696,10.3194366 C13.9697696,10.7083568 14.2792627,11.023662 14.6610138,11.023662 L21.9180645,11.023662 C22.2998157,11.023662 22.6093088,10.7083568 22.6093088,10.3194366 C22.6093088,9.93051643 22.2998157,9.61521127 21.9180645,9.61521127 Z M15.6228571,13.0598122 L14.8454378,13.0598122 C14.4636866,13.0598122 14.1541935,13.3751174 14.1541935,13.7640376 C14.1541935,14.1529577 14.4636866,14.4682629 14.8454378,14.4682629 L15.6228571,14.4682629 C16.0046083,14.4682629 16.3141014,14.1529577 16.3141014,13.7640376 C16.3141014,13.3751174 16.0046083,13.0598122 15.6228571,13.0598122 Z M18.6320737,13.0598122 L17.8546544,13.0598122 C17.4729032,13.0598122 17.1634101,13.3751174 17.1634101,13.7640376 C17.1634101,14.1529577 17.4729032,14.4682629 17.8546544,14.4682629 L18.6320737,14.4682629 C19.0138249,14.4682629 19.323318,14.1529577 19.323318,13.7640376 C19.323318,13.3751174 19.0139171,13.0598122 18.6320737,13.0598122 Z M21.6413825,13.0598122 L20.8639631,13.0598122 C20.482212,13.0598122 20.1727189,13.3751174 20.1727189,13.7640376 C20.1727189,14.1529577 20.482212,14.4682629 20.8639631,14.4682629 L21.6413825,14.4682629 C22.0231336,14.4682629 22.3326267,14.1529577 22.3326267,13.7640376 C22.3326267,13.3751174 22.0231336,13.0598122 21.6413825,13.0598122 Z M15.6228571,15.7551174 L14.8454378,15.7551174 C14.4636866,15.7551174 14.1541935,16.0704225 14.1541935,16.4593427 C14.1541935,16.8482629 14.4636866,17.1635681 14.8454378,17.1635681 L15.6228571,17.1635681 C16.0046083,17.1635681 16.3141014,16.8482629 16.3141014,16.4593427 C16.3141014,16.0704225 16.0046083,15.7551174 15.6228571,15.7551174 Z M18.6320737,15.7551174 L17.8546544,15.7551174 C17.4729032,15.7551174 17.1634101,16.0704225 17.1634101,16.4593427 C17.1634101,16.8482629 17.4729032,17.1635681 17.8546544,17.1635681 L18.6320737,17.1635681 C19.0138249,17.1635681 19.323318,16.8482629 19.323318,16.4593427 C19.323318,16.0704225 19.0139171,15.7551174 18.6320737,15.7551174 Z M21.6413825,15.7551174 L20.8639631,15.7551174 C20.482212,15.7551174 20.1727189,16.0704225 20.1727189,16.4593427 C20.1727189,16.8482629 20.482212,17.1635681 20.8639631,17.1635681 L21.6413825,17.1635681 C22.0231336,17.1635681 22.3326267,16.8482629 22.3326267,16.4593427 C22.3326267,16.0704225 22.0231336,15.7551174 21.6413825,15.7551174 Z M15.6228571,18.4505164 L14.8454378,18.4505164 C14.4636866,18.4505164 14.1541935,18.7658216 14.1541935,19.1547418 C14.1541935,19.543662 14.4636866,19.8589671 14.8454378,19.8589671 L15.6228571,19.8589671 C16.0046083,19.8589671 16.3141014,19.543662 16.3141014,19.1547418 C16.3141014,18.7658216 16.0046083,18.4505164 15.6228571,18.4505164 Z M18.6320737,18.4505164 L17.8546544,18.4505164 C17.4729032,18.4505164 17.1634101,18.7658216 17.1634101,19.1547418 C17.1634101,19.543662 17.4729032,19.8589671 17.8546544,19.8589671 L18.6320737,19.8589671 C19.0138249,19.8589671 19.323318,19.543662 19.323318,19.1547418 C19.323318,18.7658216 19.0139171,18.4505164 18.6320737,18.4505164 Z M21.6413825,18.4505164 L20.8639631,18.4505164 C20.482212,18.4505164 20.1727189,18.7658216 20.1727189,19.1547418 C20.1727189,19.543662 20.482212,19.8589671 20.8639631,19.8589671 L21.6413825,19.8589671 C22.0231336,19.8589671 22.3326267,19.543662 22.3326267,19.1547418 C22.3326267,18.7658216 22.0231336,18.4505164 21.6413825,18.4505164 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
+            <span v-if="show" class="side-link" id="active">DID</span>
           </router-link>
         </li>
         <li>
@@ -141,123 +141,100 @@
       <div class="main">
         <div class="res-div">
           <div class="head-title">
-            Billing
+            DID
           </div>
         </div>
-        <div class="navbar">
-          <div class="nav-link">
-            <div id="active" class="nav-text">
-              Invoices
-              <div class="nav-line-bill"></div>
-            </div>
+          <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
+          <router-link :to="{ name: 'ImportDID'}"><button id="did" type="submit">Import DID</button></router-link>
+          <div class="main-container">
+            <table class="did-table" cellspacing="0" cellpadding="0">
+              <thead>
+                <tr class="did-table-th">
+                  <th class="did-active"></th>
+                  <th class="did-number">Number</th>
+                  <th class="did-created">Created On</th>
+                  <th class="did-created-by">Created By</th>
+                  <th class="did-country">Country</th>
+                  <th class="did-type">Type</th>
+                  <th class="did-assigned">Assigned To</th>
+                  <th class="did-option"></th>
+                  <th class="did-option"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="did-online">
+                  <td class="did-active"><div class="product-active"></div></td>
+                  <td class="did-number">050-185-4229</td>
+                  <td class="did-created">10-03-2018</td>
+                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">San Marino</div></td>
+                  <td class="did-country">Ethiopia</td>
+                  <td class="did-type">Toll Free</td>
+                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Appolo Inc.</div></td>
+                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr class="did-online">
+                  <td class="did-active"><div class="product-active"></div></td>
+                  <td class="did-number">215-054-1288</td>
+                  <td class="did-created">11-28-2018</td>
+                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Douglas Richards</div></td>
+                  <td class="did-country">South Africa</td>
+                  <td class="did-type">Local</td>
+                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">George Burns</div></td>
+                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr class="did-online">
+                  <td class="did-active"><div class="product-active"></div></td>
+                  <td class="did-number">697-431-7827</td>
+                  <td class="did-created">01-26-2018</td>
+                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Eleanor Jensen</div></td>
+                  <td class="did-country">Marshall</td>
+                  <td class="did-type">Toll Free</td>
+                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Stanley Powell</div></td>
+                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr class="did-online">
+                  <td class="did-active"><div class="product-active"></div></td>
+                  <td class="did-number">239-429-1353</td>
+                  <td class="did-created">01-24-2018</td>
+                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Evelyn Holland</div></td>
+                  <td class="did-country">Angola</td>
+                  <td class="did-type">Local</td>
+                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Allen Roberts</div></td>
+                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr class="did-offline">
+                  <td class="did-active"><div class="product-not-active"></div></td>
+                  <td class="did-number">625-867-0083</td>
+                  <td class="did-created">12-14-2018</td>
+                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Polly Mitchell</div></td>
+                  <td class="did-country">Dominican</td>
+                  <td class="did-type">Local</td>
+                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Susie Dean</div></td>
+                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr class="did-offline">
+                  <td class="did-active"><div class="product-not-active"></div></td>
+                  <td class="did-number">542-961-8296</td>
+                  <td class="did-created">10-03-2018</td>
+                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Winnie Medina</div></td>
+                  <td class="did-country">Isle of Man</td>
+                  <td class="did-type">Local</td>
+                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Peter Nelson</div></td>
+                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="nav-link">
-            <router-link :to="{ name: 'BillingPayment' }">
-              <div class="nav-text">
-                Payment
-              </div>
-            </router-link>
-          </div>
-        </div>
-        <div class="billing-main">
-          <table class="billing-table" cellspacing="0" cellpadding="0">
-            <thead>
-              <tr>
-                <th class="billing-active-th"></th>
-                <th class="billing-id-th">Invoice #</th>
-                <th class="billing-created-th">Created On</th>
-                <th class="billing-created-by-th">Created By</th>
-                <th class="billing-company-th">Company</th>
-                <th class="billing-total-th">Total</th>
-                <th class="billing-options-th"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options">
-                  <div v-on:click="test = !test" class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div>
-                  <div v-if="test" class="billing-menu">
-                    <div class="billing-menu-link">
-                      <div v-on:click="test = !test" class="billing-menu-button">
-                        <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <path d="M10,16 C9.44771525,16 9,15.5522847 9,15 C9,14.4477153 9.44771525,14 10,14 C10.5522847,14 11,14.4477153 11,15 C11,15.5522847 10.5522847,16 10,16 Z M15,16 C14.4477153,16 14,15.5522847 14,15 C14,14.4477153 14.4477153,14 15,14 C15.5522847,14 16,14.4477153 16,15 C16,15.5522847 15.5522847,16 15,16 Z M20,16 C19.4477153,16 19,15.5522847 19,15 C19,14.4477153 19.4477153,14 20,14 C20.5522847,14 21,14.4477153 21,15 C21,15.5522847 20.5522847,16 20,16 Z" id="path-1">
-                          </path>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="billing-menu-link">
-                      <router-link :to="{ name: 'InvoiceHistory'}">Download Excel Summary</router-link>
-                    </div>
-                    <div class="billing-menu-link">
-                      <router-link :to="{ name: 'TransactionHistory'}">Download PDF</router-link>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        </div>
-        <div id="app">
-          <modal v-show="isModalVisible" @close="closeModal"/>
         </div>
     </div>
 </template>
 <script>
-import CommitChart from '@/components/auth/CommitChart'
-import BarChart from '@/components/auth/BarChart'
-import BarChart2 from '@/components/auth/BarChart2'
 import modal from '@/components/modal.vue'
 
 export default {
@@ -269,6 +246,7 @@ export default {
           transitionName: 'fade',
           popup: false,
           test: false,
+          del: false,
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
@@ -278,9 +256,6 @@ export default {
         }
     },
     components:{
-      CommitChart,
-      BarChart,
-      BarChart2,
       modal
     },
     methods:{
@@ -297,12 +272,12 @@ export default {
 }
 </script>
 <style>
-.billing-name-fix{
+.did-name-fix{
   display: inline-block;
   vertical-align: top;
   margin-top: 7px;
 }
-.billing-avatar{
+.did-avatar{
   height: 30px;
   width: 30px;
   background-color: #ECEEF0;
@@ -311,276 +286,97 @@ export default {
   vertical-align: top;
   margin-right: 5px;
 }
+.undo-title{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  margin-right: 30px;
+}
+.undo-image{
+  display: inline-block;
+  float: right;
+  margin-right: 15px;
+}
+.undo-undo{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  margin-right: 15px;
+}
 .svg-blue path{
   fill: #51A3F3;
 }
-a{
-  text-decoration: none;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-}
-.billing-menu{
-	height: 140px;
-	width: 250px;
-	border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
-  display: inline-block;
-  vertical-align: top;
-  position: fixed;
-  z-index: 1;
-  float: right;
-  margin-left: -235px;
-  margin-top: -20px;
-}
-.billing-menu-link{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  height: 40px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-.billing-menu-link:first-child{
-  margin-top: 25px;
-}
-.billing-span{
-  padding-top: 10px;
-  padding-left: 15px;
-}
-.billing-menu-add{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  height: 40px;
-  background-color: #F8F9FE;
-}
-.billing-menu-button{
-  float: right;
-  display: inline-block;
-  margin-top: -5px;
-}
-.navbar{
-  height: 50px;
-  width: 100%;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 1px 0 0 #F8F9FE;
-}
-.billing-main{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 40px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.nav-text{
-  color: #BDBFD8;
-  font-family: "Circular Std";
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 20px;
-  text-align: center;
-  margin-top: 15px;
-}
-.nav-text#active{
-  color: #51A3F3;
-  font-weight: 500;
-}
-a{
-  text-decoration: none;
-}
-.nav-link{
-  display: inline-block;
-  float: left;
-  height: 50px;
-  width: 76px;
-  margin-left: 20px;
-}
-.nav-line-bill{
-  border-bottom: 2px solid #51A3F3;
-  width: 72px;
-  margin-top: 13px;
-}
-
 .svg-active path{
   fill: white;
 }
-.billing-table{
+.did-table{
   border: none;
-  max-width: 100%;
+  max-width: calc(100% - 10px);
   width: 100%;
   margin-top: 20px;
-}
-.billing-active{
-  width: 35px;
-  height: 50px;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
-  margin-left: 15px;
   text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.billing-id{
-  width: 221px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+.did-table-th{
+  height: 37px;
 }
-.billing-created{
-  width: 234px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
+.did-online{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  height: 50px;
 }
-.billing-created-by{
-  width: 225px;
+.did-offline{
+  background-color: #F0F1FA;
+  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
   height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.billing-company{
-  width: 200px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+.did-active{
+  width: 20px;
+  padding-left: 7px;
 }
-.billing-total{
-  width: 140px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+.did-number{
+  width: 199px;
 }
-.billing-options{
-  width: 45px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+.did-created{
+  width: 119px;
+}
+.did-created-by{
+  width: 223px;
+}
+.did-country{
+  width: 116px;
+}
+.did-type{
+  width: 118px;
+}
+.did-assigned{
+  width: 190px;
+}
+.did-option{
+  width: 50px;
 }
 
-.billing-active-th{
-  width: 35px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.billing-id-th{
-  width: 221px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.billing-created-th{
-  width: 234px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.billing-created-by-th{
-  width: 225px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.billing-company-th{
-  width: 200px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.billing-total-th{
-  width: 140px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.billing-options-th{
-  width: 45px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-
-.billing-active-img{
+.product-active{
   box-sizing: border-box;
   height: 10px;
   width: 10px;
   border-radius: 50%;
   background-color: #24E2B8;
   float: left;
-  margin-left: 12px;
+  margin-left: 3px;
 }
-.billing-not-active{
+.product-not-active{
   box-sizing: border-box;
   height: 10px;
   width: 10px;
@@ -589,10 +385,11 @@ a{
   float: left;
   margin-left: 3px;
 }
-.billing-control-info{
+.did-control-info{
   width: 30px;
   height: 30px;
   float: left;
+  margin-top: -10px;
 }
 .side a{
   text-decoration: none;
@@ -601,6 +398,43 @@ a{
 .side#active a{
   text-decoration: none;
   color: #FFFFFF;
+}
+input[type="text"]{
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: 5px;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+}
+.did-input-search{
+  width: 302px;
+  height: 40px !important;
+  padding-left: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+button#did{
+  	height: 40px;
+    width: 130px;
+    border-radius: 4px;
+    background-color: #51A3F3;
+    border-radius: 4px;
+    color: #fff;
+    font-family: "Helvetica Neue";
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    float: right;
+    margin-right: 20px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -620,6 +454,13 @@ a{
   display: inline-block;
   vertical-align: top;
   float: left;
+}
+.main-container{
+  float: left;
+  display: inline-block;
+  width: calc(100% - 30px);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .side#active svg g{
   fill: white;
@@ -698,12 +539,6 @@ li#active{
 li:first-child{
   margin-top: 10px;
 }
-.billing-control-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-}
 .image-box{
   width: 30px;
   height: 30px;
@@ -712,6 +547,13 @@ li:first-child{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
+}
+.control-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
 }
 .side-title{
   	height: 30px;
@@ -915,8 +757,11 @@ li:first-child{
     .res-div{
       display: inline-block;
     }
+    .did-input-search{
+      max-width: calc(100% - 80px);
+    }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 990px) {
     .logo{
       display: none;
     }

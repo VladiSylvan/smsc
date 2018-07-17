@@ -217,11 +217,11 @@
     </div>
 </template>
 <script>
-import CommitChart from '@/components/auth/CommitChart'
-import BarChart from '@/components/auth/BarChart'
-import BarChart2 from '@/components/auth/BarChart2'
-import ResellersLineChart from '@/components/auth/ResellersLineChart'
-import CompaniesChart from '@/components/auth/CompaniesChart'
+import CommitChart from '@/components/admin/CommitChart'
+import BarChart from '@/components/admin/BarChart'
+import BarChart2 from '@/components/admin/BarChart2'
+import ResellersLineChart from '@/components/admin/ResellersLineChart'
+import CompaniesChart from '@/components/admin/CompaniesChart'
 
 export default {
     data () {

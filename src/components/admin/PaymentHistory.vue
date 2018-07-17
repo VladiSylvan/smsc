@@ -157,107 +157,69 @@
             Back to Resellers
           </div>
         </router-link>
-        <router-link :to="{ name: 'AddReseller'}"><button id="product" type="submit">Add Reseller</button></router-link>
-        <router-link :to="{ name: 'Resellers'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-reseller">
-          <div class="reseller-main">
-            <div class="reseller-add-title">
-              Add Reseller Information
-            </div>
-            <div class="grid-1">
-              <div class="grid-title">
-                First Name
-              </div>
-              <input class="grid-input" type="text" v-model="user.firstName" placeholder="Caroline">
-            </div>
-            <div class="grid-1">
-              <div class="grid-title">
-                Last Name
-              </div>
-              <input class="grid-input" type="text" v-model="user.lastName" placeholder="Thomas">
-            </div>
-            <div class="grid-1">
-              <div class="grid-title">
-                Username
-              </div>
-              <input class="grid-input" type="text" v-model="user.username" placeholder="cthomas">
-            </div>
-            <div class="grid-1">
-              <div class="grid-title">
-                Phone Number
-              </div>
-              <input class="grid-input" type="text" v-model="user.phoneNumber" placeholder="Caroline">
-            </div>
-            <div class="grid-1">
-              <div class="grid-title">
-                Email
-              </div>
-              <input class="grid-input" type="text" v-model="user.email" placeholder="Enter Email">
-            </div>
-            <div class="grid-1">
-              <div class="grid-title">
-                Company
-              </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company">
-                <option value="Choose Company">Choose Company</option>
-              </select>
-            </div>
-            <div class="grid-2">
-              <div class="grid-title">
-                Address
-              </div>
-              <input class="grid-input" type="text" v-model="user.address" placeholder="Caroline">
-            </div>
-            <div class="grid-3">
-              <div class="grid-title">
-                Zip Code
-              </div>
-              <input class="grid-input" type="text" v-model="user.zipCode" placeholder="75832-4568">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Country
-              </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="user.country">
-                <option value="Select">Select</option>
-              </select>
-            </div>
-            <div class="grid-3">
-              <div class="grid-title">
-                State
-              </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="user.state">
-                <option value="Select State">Select State</option>
-              </select>
-            </div>
-            <div class="grid-3">
-              <div class="grid-title">
-                City
-              </div>
-              <input class="grid-input" type="text" v-model="user.city" placeholder="Port Joyce">
-            </div>
+          <div class="payment-history-title">
+            Payment History
           </div>
-          <div class="reseller-second">
-            <div class="grid-title">
-              Choose Photo
-            </div>
-            <div class="upload">
-              <div class="upload-title">
-                Drop photo here or browse
-              </div>
-              <button class="upload-button" type="submit">Upload photo</button>
-            </div>
-          </div>
+          <table class='payment-table' cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th class="payment-date-th">Date</th>
+                <th class="payment-company-th">Company</th>
+                <th class="payment-description-th">Description</th>
+                <th class="payment-amount-th">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="payment-date">04 Apr 2018</td>
+                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-description">Payment ID#367192</td>
+                <td class="payment-amount">$74</td>
+              </tr>
+              <tr>
+                <td class="payment-date">12-30-2018</td>
+                <td class="payment-company">Universal Inc.</td>
+                <td class="payment-description">Payment ID#367192</td>
+                <td class="payment-amount">$38</td>
+              </tr>
+              <tr>
+                <td class="payment-date">07-30-2018</td>
+                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-description">Payment ID#367192</td>
+                <td class="payment-amount">$71</td>
+              </tr>
+              <tr>
+                <td class="payment-date">08-10-2018</td>
+                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-description">Payment ID#367192</td>
+                <td class="payment-amount">$76</td>
+              </tr>
+              <tr>
+                <td class="payment-date">05-08-2018</td>
+                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-description">Payment ID#367192</td>
+                <td class="payment-amount">$61</td>
+              </tr>
+              <tr>
+                <td class="payment-date">12-19-2018</td>
+                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-description">Payment ID#367192</td>
+                <td class="payment-amount">$18</td>
+              </tr>
+              <tr>
+                <td class="payment-date">02-27-2018</td>
+                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-description">Payment ID#367192</td>
+                <td class="payment-amount">$4</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
 </template>
 <script>
-import CommitChart from '@/components/auth/CommitChart'
-import BarChart from '@/components/auth/BarChart'
-import BarChart2 from '@/components/auth/BarChart2'
-import modal from '@/components/modal.vue'
-
 export default {
     name: 'app',
     data () {
@@ -295,12 +257,6 @@ export default {
             }
         }
     },
-    components:{
-      CommitChart,
-      BarChart,
-      BarChart2,
-      modal
-    },
     methods:{
         sendForm(){
             event.preventDefault()
@@ -315,87 +271,68 @@ export default {
 }
 </script>
 <style>
-.upload{
-  border: 1px dashed #5171F3;
-  border-radius: 6px;
-  background-color: #FFFFFF;
-  height: 280px;
-  text-align: center;
+.payment-table{
+  border: none;
+  max-width: calc(100% - 10px);
+  width: 100%;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
 }
-.upload-title{
-  color: #55616E;
+.payment-history-title{
+  color: #000000;
   font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  margin-top: 97px;
-  margin-bottom: 10px;
-}
-.upload-button{
-  border-radius: 4px;
-  background-color: #51A3F3;
-  color: #FFFFFF;
-  font-family: "Helvetica Neue";
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 30px;
-  height: 36px;
-  width: 136px;
+  margin-left: 5px;
+  margin-bottom: 10px;
 }
-.grid-1{
-  margin-left: 15px;
-  width: 29.3%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
+
+.payment-date-th{
+  width: 189px;
+  padding-left: 15px;
+  height: 37px;
 }
-.grid-2{
-  margin-left: 15px;
-  width: 69%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
+.payment-company-th{
+  width: 263px;
+  height: 37px;
 }
-.grid-3{
-  margin-left: 15px;
-  width: 22.2672064777%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
+.payment-description-th{
+  width: 493px;
+  height: 37px;
 }
-.grid-4{
-  margin-left: 15px;
-  width: 43.5%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
+.payment-amount-th{
+  width: 140px;
+  height: 37px;
 }
-.grid-title{
-  width: 100%;
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-.grid-input{
-  width: 100%;
-  height: 40px;
-  padding-left: 10px;
-}
-.grid-select{
-  width: calc(100% + 13px);
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
+
+.payment-date{
+  width: 189px;
+  padding-left: 15px;
   height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-company{
+  width: 263px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-description{
+  width: 493px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-amount{
+  width: 140px;
+  height: 44px;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .svg path{
   fill: #51A3F3;
@@ -417,63 +354,13 @@ export default {
   float: left;
   display: inline-block;
   margin-top: 30px;
-  margin-bottom: 30px;
 }
 .add-reseller{
   float: left;
   display: inline-block;
-  background-color: #FFFFFF;
-  width: calc(100% - 40px);
+  width: calc(100% - 30px);
   margin-left: 20px;
   margin-right: 20px;
-}
-.reseller-main{
-  display: inline-block;
-  float: left;
-  max-width: 66.8181818182%;
-  width: 100%;
-}
-.reseller-second{
-  display: inline-block;
-  float: left;
-  max-width: 31.8%;
-  width: 100%;
-  margin-top: 60px;
-}
-.product-vendor{
-  display: inline-block;
-  float: left;
-  max-width: calc(100% - 58.1818181818%);
-  width: 100%;
-  background-color: #F8F9FE;
-  height: 458px;
-}
-.delete-image{
-  margin-top: -10px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.reseller-add-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin: 15px;
-}
-.product-input-name{
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  padding-top: 10px;
 }
 .side a{
   text-decoration: none;
@@ -482,20 +369,6 @@ export default {
 .side#active a{
   text-decoration: none;
   color: #FFFFFF;
-}
-input[type="text"]{
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 5px;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
 }
 button#product{
   	height: 40px;
@@ -851,18 +724,6 @@ li:first-child{
     }
     .res-div{
       display: inline-block;
-    }
-    .grid-1, .grid-2, .grid-3, .grid-4{
-      width: calc(100% - 40px);
-    }
-    .reseller-main{
-      max-width: 100%;
-    }
-    .reseller-second{
-      margin-top: 0px;
-      max-width: calc(100% - 30px);
-      margin-left: 15px;
-      margin-right: 15px;
     }
 }
 @media only screen and (max-width: 750px) {
