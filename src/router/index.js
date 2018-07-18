@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LoginPage from '@/components/auth/Login'
 import RegisterPage from '@/components/auth/Register'
+
 import Dashboard from '@/components/admin/Dashboard'
 import Reporting from '@/components/admin/Reporting'
 import Product from '@/components/admin/Product'
@@ -30,8 +31,31 @@ import EditDID from '@/components/admin/EditDID'
 import ImportDID from '@/components/admin/ImportDID'
 import VerifyDID from '@/components/admin/VerifyDID'
 import Filters from '@/components/admin/Filters'
+
 import Profile from '@/components/reseller/Profile'
 import ProfilePayment from '@/components/reseller/ProfilePayment'
+import ResellerProduct from '@/components/reseller/Product'
+import ResellerAddProduct from '@/components/reseller/AddProduct'
+import ResellerEditProduct from '@/components/reseller/EditProduct'
+import MailTemplateRegister from '@/components/reseller/MailTemplateRegister'
+import MailTemplate from '@/components/reseller/MailTemplate'
+import ResellerTemplate from '@/components/reseller/Template'
+import ResellerBilling from '@/components/reseller/Billing'
+import ResellerBillingPayment from '@/components/reseller/BillingPayment'
+import ResellerUsers from '@/components/reseller/Users'
+import ResellerAddUser from '@/components/reseller/AddUser'
+import ResellerEditUser from '@/components/reseller/EditUser'
+import ResellerCompanies from '@/components/reseller/Companies'
+import ResellerAddCompany from '@/components/reseller/AddCompany'
+import ResellerEditCompany from '@/components/reseller/EditCompany'
+import ResellerPaymentHistory from '@/components/reseller/PaymentHistory'
+import ResellerInvoiceHistory from '@/components/reseller/InvoiceHistory'
+import ResellerTransactionHistory from '@/components/reseller/TransactionHistory'
+import ResellerVendors from '@/components/reseller/Vendors'
+import ResellerAddVendor from '@/components/reseller/AddVendor'
+import ResellerEditVendor from '@/components/reseller/EditVendor'
+import ResellerDIDs from '@/components/reseller/DIDs'
+
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
 
@@ -201,5 +225,110 @@ export default new Router({
         path: '/profilepayment',
         name: 'ProfilePayment',
         component: ProfilePayment
+    },
+    {
+        path: '/resellerproduct',
+        name: 'ResellerProduct',
+        component: ResellerProduct
+    },
+    {
+        path: '/reselleraddproduct',
+        name: 'ResellerAddProduct',
+        component: ResellerAddProduct
+    },
+    {
+        path: '/resellereditproduct',
+        name: 'ResellerEditProduct',
+        component: ResellerEditProduct
+    },
+    {
+        path: '/mailtemplateregister',
+        name: 'MailTemplateRegister',
+        component: MailTemplateRegister
+    },
+    {
+        path: '/mailtemplate',
+        name: 'MailTemplate',
+        component: MailTemplate
+    },
+    {
+        path: '/resellertemplate',
+        name: 'ResellerTemplate',
+        component: ResellerTemplate
+    },
+    {
+        path: '/resellerbilling',
+        name: 'ResellerBilling',
+        component: ResellerBilling
+    },
+    {
+        path: '/resellerbillingpayment',
+        name: 'ResellerBillingPayment',
+        component: ResellerBillingPayment
+    },
+    {
+        path: '/resellerusers',
+        name: 'ResellerUsers',
+        component: ResellerUsers
+    },
+    {
+        path: '/reselleradduser',
+        name: 'ResellerAddUser',
+        component: ResellerAddUser
+    },
+    {
+        path: '/reselleredituser',
+        name: 'ResellerEditUser',
+        component: ResellerEditUser
+    },
+    {
+        path: '/resellercompanies',
+        name: 'ResellerCompanies',
+        component: ResellerCompanies
+    },
+    {
+        path: '/reselleraddcompany',
+        name: 'ResellerAddCompany',
+        component: ResellerAddCompany
+    },
+    {
+        path: '/resellereditcompany',
+        name: 'ResellerEditCompany',
+        component: ResellerEditCompany
+    },
+    {
+        path: '/resellerpaymenthistory',
+        name: 'ResellerPaymentHistory',
+        component: ResellerPaymentHistory
+    },
+    {
+        path: '/resellerinvoicehistory',
+        name: 'ResellerInvoiceHistory',
+        component: ResellerInvoiceHistory
+    },
+    {
+        path: '/resellertransactionhistory',
+        name: 'ResellerTransactionHistory',
+        component: ResellerTransactionHistory
+    },
+    {
+        path: '/resellervendors',
+        name: 'ResellerVendors',
+        component: ResellerVendors
+    },
+    {
+        path: '/reselleraddvendor',
+        name: 'ResellerAddVendor',
+        component: ResellerAddVendor
+    },
+    {
+        path: '/resellereditvendor',
+        name: 'ResellerEditVendor',
+        component: ResellerEditVendor
+    },
+    {
+        path: '/resellerdids',
+        name: 'ResellerDIDs',
+        component: ResellerDIDs
     }]
 })

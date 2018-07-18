@@ -1,0 +1,840 @@
+<template>
+    <div class="container">
+      <nav class="navigation">
+        <div class="navi-logo">
+          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-close"></div>
+          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
+          <div v-if="!show" v-bind:class="{'navi-circle-open-menu': !show}" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
+          <img class="logo" src="@/assets/logo.png">
+          <img class="logo-small" src="@/assets/logo-min.png">
+        </div>
+        <div class="navi-head">
+          <div class="head-title">
+            Templates
+          </div>
+        </div>
+        <div class="navi-user">
+          <div v-if="popup" class="user-menu">
+            <div v-on:click="popup = !popup" class="username">
+              Adriana French
+            </div>
+            <div v-on:click="popup = !popup" class="user-circle"><span id="avatar">A</span></div>
+            <img class="popup-image-box" src="@/assets/Icon/Users.svg">
+            <span id="popup-link">Profile</span>
+            <img class="popup-image-box" src="@/assets/Icon/Settings.svg">
+            <span id="popup-link">Settings</span>
+            <div class="popup-title">
+              Switch to
+            </div>
+            <img class="popup-image-box" src="@/assets/Icon/Dashboard.svg">
+            <span id="popup-link">System Admin</span>
+            <div class="popup-image-box">
+              <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M24.302168,8.01773234 L5.67750678,8.01773234 C5.30336043,8.01773234 5,8.32983271 5,8.71475836 L5,22.2642751 C5,22.649145 5.30336043,22.9613011 5.67750678,22.9613011 L24.302168,22.9613011 C24.6762602,22.9613011 24.9796748,22.649145 24.9796748,22.2642751 L24.9796748,8.71475836 C24.9796748,8.32988848 24.6762602,8.01773234 24.302168,8.01773234 Z M23.6246612,21.5673048 L6.35501355,21.5673048 L6.35501355,9.41178439 L23.6246612,9.41178439 L23.6246612,21.5673048 Z M8.1303523,12.695223 L14.6344173,16.8181041 C14.7433604,16.8871933 14.8665583,16.92171 14.9898103,16.92171 C15.1130623,16.92171 15.2362602,16.8871933 15.3452033,16.8181041 L21.8492683,12.695223 C22.1678049,12.4933086 22.2669919,12.0638848 22.0707317,11.736171 C21.8744715,11.4084572 21.4569648,11.3064126 21.1385366,11.5083829 L14.9898103,15.4059294 L8.84113821,11.5083829 C8.52271003,11.3065799 8.10531165,11.4084015 7.90894309,11.736171 C7.71262873,12.063829 7.81176152,12.4933086 8.1303523,12.695223 Z" id="path-1">
+                </path>
+              </svg>
+          </div>
+            <span id="popup-link-active">Reseller Portal</span>
+            <img class="popup-image-box" src="@/assets/Icon/Companies.svg">
+            <span id="popup-link">Appolo Inc.</span>
+            <div class="popup-logout">
+              <img class="popup-image-box" src="@/assets/Icon/Arrow/Right.svg">
+              <span id="popup-link">Log out</span>
+            </div>
+          </div>
+          <div v-on:click="popup = !popup" class="username">
+            Adriana French
+          </div>
+          <div v-on:click="popup = !popup" class="user-circle"><span id="avatar">A</span></div>
+        </div>
+      </nav>
+      <transition name="fade">
+      <ul v-bind:class="{'sidebar-hide': !show}" >
+        <li>
+          <router-link :to="{ name: 'Profile'}">
+            <img class="image-box" src="@/assets/Icon/Users.svg">
+            <span v-if="show" class="side-link">Profile</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'SMSCenter'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" class="side-link">SMS Center</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerProduct'}">
+            <img class="image-box" src="@/assets/Icon/Product.svg">
+            <span v-if="show" class="side-link">Product</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'MailTemplateRegister'}">
+            <img class="image-box" src="@/assets/Icon/Reseller.svg">
+            <span v-if="show" class="side-link">Mail Template</span>
+          </router-link>
+        </li>
+        <li id="active">
+          <router-link :to="{ name: 'ResellerTemplate'}">
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M21.8241579,6.62015748 L19.3376842,6.62015748 L19.3376842,5.65616798 C19.3376842,5.29375328 19.0431053,5 18.6797895,5 C18.3164737,5 18.0218947,5.29375328 18.0218947,5.65616798 L18.0218947,6.62015748 L15.6534737,6.62015748 L15.6534737,5.65616798 C15.6534737,5.29375328 15.3588947,5 14.9955789,5 C14.6322632,5 14.3376842,5.29375328 14.3376842,5.65616798 L14.3376842,6.62015748 L11.9692632,6.62015748 L11.9692632,5.65616798 C11.9692632,5.29375328 11.6746842,5 11.3113684,5 C10.9480526,5 10.6534737,5.29375328 10.6534737,5.65616798 L10.6534737,6.62015748 L8.167,6.62015748 C7.80368421,6.62015748 7.50910526,6.91396325 7.50910526,7.27632546 L7.50910526,24.3350131 C7.50910526,24.6973753 7.80368421,24.9911811 8.167,24.9911811 L21.8241579,24.9911811 C22.1874737,24.9911811 22.4820526,24.6973753 22.4820526,24.3350131 L22.4820526,7.27632546 C22.4820526,6.91396325 22.1874737,6.62015748 21.8241579,6.62015748 Z M21.1662632,23.6788451 L8.82489474,23.6788451 L8.82489474,7.93249344 L10.6534737,7.93249344 L10.6534737,8.6983727 C10.6534737,9.0607874 10.9480526,9.35454068 11.3113684,9.35454068 C11.6746842,9.35454068 11.9692632,9.0607874 11.9692632,8.6983727 L11.9692632,7.93249344 L14.3376842,7.93249344 L14.3376842,8.6983727 C14.3376842,9.0607874 14.6322632,9.35454068 14.9955789,9.35454068 C15.3588947,9.35454068 15.6534737,9.0607874 15.6534737,8.6983727 L15.6534737,7.93249344 L18.0218947,7.93249344 L18.0218947,8.6983727 C18.0218947,9.0607874 18.3164737,9.35454068 18.6797895,9.35454068 C19.0431053,9.35454068 19.3376842,9.0607874 19.3376842,8.6983727 L19.3376842,7.93249344 L21.1662632,7.93249344 L21.1662632,23.6788451 Z M18.8903158,12.336378 L11.1008421,12.336378 C10.7375263,12.336378 10.4429474,12.6301837 10.4429474,12.9925459 C10.4429474,13.3549081 10.7375263,13.6487139 11.1008421,13.6487139 L18.8903158,13.6487139 C19.2536316,13.6487139 19.5482105,13.3549081 19.5482105,12.9925459 C19.5482105,12.6301837 19.2536316,12.336378 18.8903158,12.336378 Z M18.8903158,16.0109186 L11.1008421,16.0109186 C10.7375263,16.0109186 10.4429474,16.3047769 10.4429474,16.6670866 C10.4429474,17.0294488 10.7375263,17.3232546 11.1008421,17.3232546 L18.8903158,17.3232546 C19.2536316,17.3232546 19.5482105,17.0294488 19.5482105,16.6670866 C19.5482105,16.3047244 19.2536316,16.0109186 18.8903158,16.0109186 Z M18.8903158,19.6854593 L11.1008421,19.6854593 C10.7375263,19.6854593 10.4429474,19.9793176 10.4429474,20.3416273 C10.4429474,20.7039895 10.7375263,20.9977953 11.1008421,20.9977953 L18.8903158,20.9977953 C19.2536316,20.9977953 19.5482105,20.7039895 19.5482105,20.3416273 C19.5482105,19.9792651 19.2536316,19.6854593 18.8903158,19.6854593 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
+            <span v-if="show" class="side-link" id="active">Templates</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerBilling'}">
+            <img class="image-box" src="@/assets/Icon/Billing.svg">
+            <span v-if="show" class="side-link">Billing</span>
+          </router-link>
+        </li>
+        <div v-if="show" class="side-title">
+          Manage
+        </div>
+        <li>
+          <router-link :to="{ name: 'ResellerUsers'}">
+            <img class="image-box" src="@/assets/Icon/Users.svg">
+            <span v-if="show" class="side-link">Users</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerCompanies'}">
+            <img class="image-box" src="@/assets/Icon/Companies.svg">
+            <span v-if="show" class="side-link">Companies</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerVendors'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" class="side-link">Vendors</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerDIDs'}">
+            <img class="image-box" src="@/assets/Icon/DID.svg">
+            <span v-if="show" class="side-link">DIDs</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerFilters'}">
+            <img class="image-box" src="@/assets/Icon/Filters.svg">
+            <span v-if="show" class="side-link">Filters</span>
+          </router-link>
+        </li>
+      </ul>
+      </transition>
+      <div class="main">
+        <div class="res-div">
+          <div class="head-title">
+            Templates
+          </div>
+        </div>
+        <input class="template-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchTemplate" placeholder="Search for template">
+        <div class="template-main">
+          <table class="template-table" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr class="template-tr">
+                <th class="template-active-table-th"></th>
+                <th class="template-name-th">Template Name</th>
+                <th class="template-created-th">Created On</th>
+                <th class="template-created-by-th">Created By</th>
+                <th class="template-sms-th">SMS Text</th>
+                <th class="template-options-th"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="template-tr">
+                <td class="template-title" colspan="7"><div class="template-title-new">New Templates</div></td>
+              </tr>
+              <tr class="template-tr">
+                <td class="template-active-table"><div class="template-active"></div></td>
+                <td class="template-name">Parkerport</td>
+                <td class="template-created">10-03-2018</td>
+                <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
+                <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
+                <td class="template-options">
+                  <div class="template-box">
+                    <svg class="template-like" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path d="M22.5198124,17.5572982 C22.8571248,17.1129235 23.0188971,16.6365537 22.9982453,16.145964 C22.9775935,15.6056043 22.74354,15.1825596 22.5507901,14.9230448 C22.7745177,14.3471351 22.8605668,13.4406106 22.1136607,12.736721 C21.5663886,12.2212463 20.6370585,11.9901715 19.3497642,12.0541614 C18.4445279,12.0968214 17.687296,12.2710163 17.6563183,12.2781263 L17.6528763,12.2781263 C17.4807782,12.3101213 17.2983541,12.3492263 17.1124881,12.3918862 C17.0987202,12.1643664 17.1365818,11.5991217 17.5427335,10.3264325 C18.0246084,8.81200335 17.9970727,7.65307403 17.4532425,6.87808448 C16.8818766,6.06398996 15.9697563,6 15.7012832,6 C15.4431359,6 15.2056404,6.11020494 15.0369842,6.31283982 C14.6549263,6.77143455 14.6996718,7.61752405 14.7478593,8.00857382 C14.2935202,9.26704308 13.0199938,12.3527813 11.9426593,13.2095358 C11.9220075,13.2237558 11.9047977,13.2415307 11.8875878,13.2593057 C11.5709272,13.6041405 11.3575255,13.9774153 11.212963,14.3044751 C11.0098872,14.1907152 10.7792757,14.1267252 10.5314543,14.1267252 L8.43185672,14.1267252 C7.64020517,14.1267252 7,14.7915098 7,15.6056043 L7,21.382476 C7,22.2001255 7.64364713,22.8613551 8.43185672,22.8613551 L10.5314543,22.8613551 C10.8377891,22.8613551 11.123472,22.7618151 11.3575255,22.5911752 L12.1663869,22.6907152 C12.2902976,22.7084902 14.493154,22.996445 16.7545239,22.95023 C17.1641175,22.982225 17.5496174,23 17.9075816,23 C18.523693,23 19.0606393,22.95023 19.5080945,22.8506901 C20.5613353,22.6196152 21.2807056,22.1574655 21.6455537,21.4784609 C21.9243528,20.9594312 21.9243528,20.4439565 21.8796072,20.1168967 C22.5645579,19.4769971 22.6850266,18.7695525 22.6609329,18.2718528 C22.647165,17.983898 22.5852097,17.7386031 22.5198124,17.5572982 Z M8.43185672,21.9015056 C8.1530577,21.9015056 7.92933008,21.6668758 7.92933008,21.382476 L7.92933008,15.6020494 C7.92933008,15.3140945 8.15649966,15.0830197 8.43185672,15.0830197 L10.5314543,15.0830197 C10.8102533,15.0830197 11.033981,15.3176495 11.033981,15.6020494 L11.033981,21.378921 C11.033981,21.6668758 10.8068114,21.8979506 10.5314543,21.8979506 L8.43185672,21.8979506 L8.43185672,21.9015056 Z M21.6386698,17.1413634 C21.4941073,17.2977834 21.4665716,17.5359682 21.5767145,17.7208281 C21.5767145,17.7243831 21.717835,17.973233 21.7350448,18.3145128 C21.7591385,18.7802175 21.5422948,19.1925972 21.0879557,19.544542 C20.9261834,19.672522 20.8607861,19.8929318 20.9296254,20.0920117 C20.9296254,20.0955667 21.0776298,20.5648264 20.8366924,21.0092012 C20.6060808,21.4358009 20.0932283,21.7415307 19.3153446,21.9121706 C18.6923492,22.0508156 17.8456263,22.0757005 16.8061534,21.9903806 C16.7923855,21.9903806 16.7751757,21.9903806 16.7579659,21.9903806 C14.5447835,22.0401506 12.3075074,21.7415307 12.2834136,21.7379757 L12.2799717,21.7379757 L11.9323334,21.6953158 C11.9529852,21.5957758 11.963311,21.4891259 11.963311,21.382476 L11.963311,15.6020494 C11.963311,15.4491844 11.9392173,15.2998745 11.8979137,15.1612296 C11.9598691,14.9230448 12.1319672,14.3933501 12.5381189,13.9418653 C14.0835604,12.6762861 15.5945823,8.40673358 15.6599796,8.22187369 C15.6875153,8.14721874 15.6943992,8.06545379 15.6806314,7.98368883 C15.622118,7.58552907 15.6427698,7.09849435 15.7253769,6.95273944 C15.907801,6.95629444 16.4000017,7.00961941 16.6960105,7.43266416 C17.0470908,7.93391886 17.0333229,8.82977834 16.654707,10.0171476 C16.0764572,11.8266416 16.0282697,12.779381 16.4860508,13.1988708 C16.7132204,13.4086156 17.0161131,13.4192806 17.2363988,13.3375157 C17.4463585,13.2877457 17.6459924,13.2450857 17.8353004,13.2130908 C17.8490682,13.2095358 17.8662781,13.2059808 17.8800459,13.2024258 C18.9367286,12.9642409 20.8298084,12.818486 21.4872234,13.4370556 C22.0448215,13.9631953 21.6489957,14.6599749 21.6042502,14.7346299 C21.4768975,14.9337097 21.5147591,15.1932246 21.6868573,15.3531995 C21.6902993,15.3567545 22.0517054,15.7086993 22.0689152,16.181514 C22.0826831,16.4979088 21.9381206,16.8214136 21.6386698,17.1413634 Z" id="path-1">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="template-box">
+                    <svg class="template-dislike" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path d="M23.4719421,12.4326889 C23.5412554,12.2516868 23.6069206,12.0068017 23.6251609,11.7228768 C23.6506974,11.2224593 23.523015,10.5197453 22.7970494,9.88091441 C22.8444742,9.55440084 22.8444742,9.036238 22.5489807,8.52162422 C22.1586373,7.84020459 21.396191,7.37882672 20.279882,7.14813779 C19.5320279,6.99197912 18.5506974,6.96003758 17.361427,7.04876409 C14.9646459,7.0026263 12.629882,7.29010021 12.4985515,7.30784551 L11.6412554,7.40721921 C11.3931867,7.2368643 11.090397,7.13749061 10.7657189,7.13749061 L8.540397,7.13749061 C7.7013412,7.13749061 7.02280043,7.80116493 7.02280043,8.61389979 L7.02280043,14.3811232 C7.02280043,15.1974071 7.70498927,15.8575324 8.540397,15.8575324 L10.7657189,15.8575324 C11.0283798,15.8575324 11.2728004,15.7936493 11.4880365,15.6800793 C11.6412554,16.0065929 11.8674356,16.3792443 12.2030579,16.7235031 C12.2212983,16.7412484 12.2395386,16.7589937 12.261427,16.77319 C13.4069206,17.6285136 14.756706,20.7090981 15.234603,21.9654656 C15.1871781,22.3558622 15.1397532,23.2005386 15.5410408,23.6583674 C15.7197961,23.8606639 15.9678648,23.9706848 16.245118,23.9706848 C16.5260193,23.9706848 17.4964056,23.9068017 18.101985,23.0940668 C18.6747318,22.3203716 18.7075644,21.1633779 18.1968348,19.6514781 C17.7663627,18.3809144 17.7262339,17.8166138 17.7408262,17.5894739 C17.9378219,17.6320626 18.1311695,17.6711023 18.317221,17.7030438 L18.3208691,17.7030438 C18.3537017,17.710142 19.1562768,17.8840459 20.1157189,17.9266347 C21.4800966,17.9905177 22.4687232,17.7598288 23.045118,17.245215 C23.840397,16.538952 23.7455472,15.6374906 23.5084227,15.0625428 C23.7127146,14.8034614 23.9607833,14.3811232 23.9826717,13.841666 C23.9972639,13.3518956 23.8294528,12.8798706 23.4719421,12.4326889 Z M10.7657189,14.9028351 L8.540397,14.9028351 C8.24490343,14.9028351 8.00777897,14.6685971 8.00777897,14.3846722 L8.00777897,8.61744885 C8.00777897,8.32997495 8.2485515,8.09928601 8.540397,8.09928601 L10.7657189,8.09928601 C11.0612124,8.09928601 11.2983369,8.33352401 11.2983369,8.61744885 L11.2983369,14.3846722 C11.2983369,14.6721461 11.0612124,14.9028351 10.7657189,14.9028351 Z M22.5015558,15.2470939 C22.5015558,15.250643 22.6292382,15.4458413 22.673015,15.7120209 C22.7277361,16.0420835 22.6328863,16.3153612 22.3775215,16.542501 C21.6807403,17.1600376 19.6743026,17.0180752 18.5543455,16.776739 C18.5397532,16.77319 18.5251609,16.7696409 18.5069206,16.7660919 C18.3062768,16.7306013 18.0910408,16.6880125 17.8721567,16.6418747 C17.6386803,16.5602463 17.3176502,16.5708935 17.0768777,16.7802881 C16.5916845,17.1990772 16.6464056,18.1502255 17.255633,19.9566973 C17.6569206,21.1420835 17.6715129,22.0364468 17.2994099,22.5368643 C16.985676,22.9592025 16.4676502,23.0124384 16.2706545,23.0159875 C16.1831009,22.8740251 16.1575644,22.3878038 16.2232296,21.9867599 C16.2341738,21.9086806 16.2268777,21.8270522 16.2013412,21.7489729 C16.1320279,21.5679708 14.5305258,17.302 12.8925429,16.0385344 C12.4657189,15.5878038 12.2796674,15.0589937 12.2140021,14.8212067 C12.257779,14.6827933 12.2833155,14.5337328 12.2833155,14.3811232 L12.2833155,8.61744885 C12.2833155,8.51097704 12.2723712,8.40450522 12.2504828,8.30513152 L12.6189378,8.2625428 L12.6225858,8.2625428 C12.6444742,8.25899374 15.019367,7.96087265 17.3650751,8.0105595 C17.3796674,8.0105595 17.3979077,8.0105595 17.4161481,8.0105595 C18.5215129,7.92538205 19.4152897,7.95022547 20.0755901,8.08863883 C20.8927575,8.25899374 21.4326717,8.55711482 21.6807403,8.97945303 C21.9397532,9.41598747 21.7974785,9.86671816 21.7865343,9.90930689 C21.7099249,10.1080543 21.7792382,10.324547 21.9543455,10.4523132 C23.0341738,11.2402046 22.5380365,12.1594113 22.4723712,12.2729812 C22.351985,12.4575324 22.3811695,12.6917704 22.5380365,12.8514781 C22.8517704,13.1708935 23.0049893,13.490309 22.9940451,13.8026263 C22.9794528,14.2675532 22.6109979,14.6153612 22.5854614,14.6366555 C22.4030579,14.7892651 22.3702253,15.0483466 22.5015558,15.2470939 Z" id="path-1">
+                      </path>
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+                <tr class="template-tr">
+                <td class="template-active-table"><div class="template-active"></div></td>
+                <td class="template-name">Braulioborough</td>
+                <td class="template-created">10-03-2018</td>
+                <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
+                <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
+                <td class="template-options">
+                  <div class="template-box">
+                    <svg class="template-like" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path d="M22.5198124,17.5572982 C22.8571248,17.1129235 23.0188971,16.6365537 22.9982453,16.145964 C22.9775935,15.6056043 22.74354,15.1825596 22.5507901,14.9230448 C22.7745177,14.3471351 22.8605668,13.4406106 22.1136607,12.736721 C21.5663886,12.2212463 20.6370585,11.9901715 19.3497642,12.0541614 C18.4445279,12.0968214 17.687296,12.2710163 17.6563183,12.2781263 L17.6528763,12.2781263 C17.4807782,12.3101213 17.2983541,12.3492263 17.1124881,12.3918862 C17.0987202,12.1643664 17.1365818,11.5991217 17.5427335,10.3264325 C18.0246084,8.81200335 17.9970727,7.65307403 17.4532425,6.87808448 C16.8818766,6.06398996 15.9697563,6 15.7012832,6 C15.4431359,6 15.2056404,6.11020494 15.0369842,6.31283982 C14.6549263,6.77143455 14.6996718,7.61752405 14.7478593,8.00857382 C14.2935202,9.26704308 13.0199938,12.3527813 11.9426593,13.2095358 C11.9220075,13.2237558 11.9047977,13.2415307 11.8875878,13.2593057 C11.5709272,13.6041405 11.3575255,13.9774153 11.212963,14.3044751 C11.0098872,14.1907152 10.7792757,14.1267252 10.5314543,14.1267252 L8.43185672,14.1267252 C7.64020517,14.1267252 7,14.7915098 7,15.6056043 L7,21.382476 C7,22.2001255 7.64364713,22.8613551 8.43185672,22.8613551 L10.5314543,22.8613551 C10.8377891,22.8613551 11.123472,22.7618151 11.3575255,22.5911752 L12.1663869,22.6907152 C12.2902976,22.7084902 14.493154,22.996445 16.7545239,22.95023 C17.1641175,22.982225 17.5496174,23 17.9075816,23 C18.523693,23 19.0606393,22.95023 19.5080945,22.8506901 C20.5613353,22.6196152 21.2807056,22.1574655 21.6455537,21.4784609 C21.9243528,20.9594312 21.9243528,20.4439565 21.8796072,20.1168967 C22.5645579,19.4769971 22.6850266,18.7695525 22.6609329,18.2718528 C22.647165,17.983898 22.5852097,17.7386031 22.5198124,17.5572982 Z M8.43185672,21.9015056 C8.1530577,21.9015056 7.92933008,21.6668758 7.92933008,21.382476 L7.92933008,15.6020494 C7.92933008,15.3140945 8.15649966,15.0830197 8.43185672,15.0830197 L10.5314543,15.0830197 C10.8102533,15.0830197 11.033981,15.3176495 11.033981,15.6020494 L11.033981,21.378921 C11.033981,21.6668758 10.8068114,21.8979506 10.5314543,21.8979506 L8.43185672,21.8979506 L8.43185672,21.9015056 Z M21.6386698,17.1413634 C21.4941073,17.2977834 21.4665716,17.5359682 21.5767145,17.7208281 C21.5767145,17.7243831 21.717835,17.973233 21.7350448,18.3145128 C21.7591385,18.7802175 21.5422948,19.1925972 21.0879557,19.544542 C20.9261834,19.672522 20.8607861,19.8929318 20.9296254,20.0920117 C20.9296254,20.0955667 21.0776298,20.5648264 20.8366924,21.0092012 C20.6060808,21.4358009 20.0932283,21.7415307 19.3153446,21.9121706 C18.6923492,22.0508156 17.8456263,22.0757005 16.8061534,21.9903806 C16.7923855,21.9903806 16.7751757,21.9903806 16.7579659,21.9903806 C14.5447835,22.0401506 12.3075074,21.7415307 12.2834136,21.7379757 L12.2799717,21.7379757 L11.9323334,21.6953158 C11.9529852,21.5957758 11.963311,21.4891259 11.963311,21.382476 L11.963311,15.6020494 C11.963311,15.4491844 11.9392173,15.2998745 11.8979137,15.1612296 C11.9598691,14.9230448 12.1319672,14.3933501 12.5381189,13.9418653 C14.0835604,12.6762861 15.5945823,8.40673358 15.6599796,8.22187369 C15.6875153,8.14721874 15.6943992,8.06545379 15.6806314,7.98368883 C15.622118,7.58552907 15.6427698,7.09849435 15.7253769,6.95273944 C15.907801,6.95629444 16.4000017,7.00961941 16.6960105,7.43266416 C17.0470908,7.93391886 17.0333229,8.82977834 16.654707,10.0171476 C16.0764572,11.8266416 16.0282697,12.779381 16.4860508,13.1988708 C16.7132204,13.4086156 17.0161131,13.4192806 17.2363988,13.3375157 C17.4463585,13.2877457 17.6459924,13.2450857 17.8353004,13.2130908 C17.8490682,13.2095358 17.8662781,13.2059808 17.8800459,13.2024258 C18.9367286,12.9642409 20.8298084,12.818486 21.4872234,13.4370556 C22.0448215,13.9631953 21.6489957,14.6599749 21.6042502,14.7346299 C21.4768975,14.9337097 21.5147591,15.1932246 21.6868573,15.3531995 C21.6902993,15.3567545 22.0517054,15.7086993 22.0689152,16.181514 C22.0826831,16.4979088 21.9381206,16.8214136 21.6386698,17.1413634 Z" id="path-1">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="template-box">
+                    <svg class="template-dislike" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path d="M23.4719421,12.4326889 C23.5412554,12.2516868 23.6069206,12.0068017 23.6251609,11.7228768 C23.6506974,11.2224593 23.523015,10.5197453 22.7970494,9.88091441 C22.8444742,9.55440084 22.8444742,9.036238 22.5489807,8.52162422 C22.1586373,7.84020459 21.396191,7.37882672 20.279882,7.14813779 C19.5320279,6.99197912 18.5506974,6.96003758 17.361427,7.04876409 C14.9646459,7.0026263 12.629882,7.29010021 12.4985515,7.30784551 L11.6412554,7.40721921 C11.3931867,7.2368643 11.090397,7.13749061 10.7657189,7.13749061 L8.540397,7.13749061 C7.7013412,7.13749061 7.02280043,7.80116493 7.02280043,8.61389979 L7.02280043,14.3811232 C7.02280043,15.1974071 7.70498927,15.8575324 8.540397,15.8575324 L10.7657189,15.8575324 C11.0283798,15.8575324 11.2728004,15.7936493 11.4880365,15.6800793 C11.6412554,16.0065929 11.8674356,16.3792443 12.2030579,16.7235031 C12.2212983,16.7412484 12.2395386,16.7589937 12.261427,16.77319 C13.4069206,17.6285136 14.756706,20.7090981 15.234603,21.9654656 C15.1871781,22.3558622 15.1397532,23.2005386 15.5410408,23.6583674 C15.7197961,23.8606639 15.9678648,23.9706848 16.245118,23.9706848 C16.5260193,23.9706848 17.4964056,23.9068017 18.101985,23.0940668 C18.6747318,22.3203716 18.7075644,21.1633779 18.1968348,19.6514781 C17.7663627,18.3809144 17.7262339,17.8166138 17.7408262,17.5894739 C17.9378219,17.6320626 18.1311695,17.6711023 18.317221,17.7030438 L18.3208691,17.7030438 C18.3537017,17.710142 19.1562768,17.8840459 20.1157189,17.9266347 C21.4800966,17.9905177 22.4687232,17.7598288 23.045118,17.245215 C23.840397,16.538952 23.7455472,15.6374906 23.5084227,15.0625428 C23.7127146,14.8034614 23.9607833,14.3811232 23.9826717,13.841666 C23.9972639,13.3518956 23.8294528,12.8798706 23.4719421,12.4326889 Z M10.7657189,14.9028351 L8.540397,14.9028351 C8.24490343,14.9028351 8.00777897,14.6685971 8.00777897,14.3846722 L8.00777897,8.61744885 C8.00777897,8.32997495 8.2485515,8.09928601 8.540397,8.09928601 L10.7657189,8.09928601 C11.0612124,8.09928601 11.2983369,8.33352401 11.2983369,8.61744885 L11.2983369,14.3846722 C11.2983369,14.6721461 11.0612124,14.9028351 10.7657189,14.9028351 Z M22.5015558,15.2470939 C22.5015558,15.250643 22.6292382,15.4458413 22.673015,15.7120209 C22.7277361,16.0420835 22.6328863,16.3153612 22.3775215,16.542501 C21.6807403,17.1600376 19.6743026,17.0180752 18.5543455,16.776739 C18.5397532,16.77319 18.5251609,16.7696409 18.5069206,16.7660919 C18.3062768,16.7306013 18.0910408,16.6880125 17.8721567,16.6418747 C17.6386803,16.5602463 17.3176502,16.5708935 17.0768777,16.7802881 C16.5916845,17.1990772 16.6464056,18.1502255 17.255633,19.9566973 C17.6569206,21.1420835 17.6715129,22.0364468 17.2994099,22.5368643 C16.985676,22.9592025 16.4676502,23.0124384 16.2706545,23.0159875 C16.1831009,22.8740251 16.1575644,22.3878038 16.2232296,21.9867599 C16.2341738,21.9086806 16.2268777,21.8270522 16.2013412,21.7489729 C16.1320279,21.5679708 14.5305258,17.302 12.8925429,16.0385344 C12.4657189,15.5878038 12.2796674,15.0589937 12.2140021,14.8212067 C12.257779,14.6827933 12.2833155,14.5337328 12.2833155,14.3811232 L12.2833155,8.61744885 C12.2833155,8.51097704 12.2723712,8.40450522 12.2504828,8.30513152 L12.6189378,8.2625428 L12.6225858,8.2625428 C12.6444742,8.25899374 15.019367,7.96087265 17.3650751,8.0105595 C17.3796674,8.0105595 17.3979077,8.0105595 17.4161481,8.0105595 C18.5215129,7.92538205 19.4152897,7.95022547 20.0755901,8.08863883 C20.8927575,8.25899374 21.4326717,8.55711482 21.6807403,8.97945303 C21.9397532,9.41598747 21.7974785,9.86671816 21.7865343,9.90930689 C21.7099249,10.1080543 21.7792382,10.324547 21.9543455,10.4523132 C23.0341738,11.2402046 22.5380365,12.1594113 22.4723712,12.2729812 C22.351985,12.4575324 22.3811695,12.6917704 22.5380365,12.8514781 C22.8517704,13.1708935 23.0049893,13.490309 22.9940451,13.8026263 C22.9794528,14.2675532 22.6109979,14.6153612 22.5854614,14.6366555 C22.4030579,14.7892651 22.3702253,15.0483466 22.5015558,15.2470939 Z" id="path-1">
+                      </path>
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+              <tr class="template-tr">
+                <td class="template-title" colspan="6"><div class="template-title-all">All Templates</div></td>
+              </tr>
+              <tr class="template-tr">
+                <td class="template-active-table"><div class="template-active"></div></td>
+                <td class="template-name">New Lue</td>
+                <td class="template-created">10-03-2018</td>
+                <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
+                <td class="template-sms-text">In the last five to six years the  device.</td>
+                <td class="template-options"><div class="template-approved">Approved</div></td>
+              </tr>
+              <tr class="template-tr">
+                <td class="template-active-table"><div class="template-not-active"></div></td>
+                <td class="template-name">Destineyland</td>
+                <td class="template-created">10-03-2018</td>
+                <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
+                <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
+                <td class="template-options"><div class="template-rejected">Rejected</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</template>
+<script>
+import modal from '@/components/modal.vue'
+
+export default {
+    name: 'app',
+    data () {
+        return {
+          show: true,
+          width: '60px',
+          transitionName: 'fade',
+          popup: false,
+          isModalVisible: false,
+                user:{
+                system: 'Overall system',
+                days: 'Last 30 days'
+            },
+
+        }
+    },
+    components:{
+      modal
+    },
+    methods:{
+        sendForm(){
+            event.preventDefault()
+        },
+        showModal() {
+          this.isModalVisible = true;
+        },
+        closeModal() {
+          this.isModalVisible = false;
+        }
+    },
+}
+</script>
+<style>
+.template-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.template-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.template-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.template-main{
+  float: left;
+  display: inline-block;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.template-approved{
+  box-sizing: border-box;
+  height: 24px;
+  width: 80px;
+  border: 2px solid #FFFFFF;
+  border-radius: 100px;
+  background-color: #24E2B8;
+  color: #FFFFFF;
+  font-family: "SF Pro Text";
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  padding-top: 2px;
+}
+.template-rejected{
+  box-sizing: border-box;
+  height: 24px;
+  width: 74px;
+  border: 2px solid #FFFFFF;
+  border-radius: 100px;
+  background-color: #D2305B;
+  color: #FFFFFF;
+  font-family: "SF Pro Text";
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  padding-top: 2px;
+}
+.template-title-new{
+  color: #BDBFD8;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-left: 15px;
+  margin-top: 7px;
+}
+.template-title-all{
+  color: #BDBFD8;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-left: 15px;
+  margin-top: 25px;
+}
+.svg-active path{
+  fill: white;
+}
+
+.template-like path{
+  fill: #24E2B8;
+}
+
+.template-dislike path{
+  fill: #D2305B;
+}
+
+.template-table{
+  border: none;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
+}
+.template-tr{
+  height: 44px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.template-active-table-th{
+  width: 35px;
+}
+.template-active-table{
+  width: 35px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-name-th{
+  width: 169px;
+}
+.template-name{
+  width: 169px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-created-th{
+  width: 149px;
+}
+.template-created{
+  width: 149px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-created-by-th{
+  width: 142px;
+}
+.template-created-by{
+  width: 142px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-sms-th{
+  width: 390px;
+}
+.template-sms{
+  width: 390px;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-sms-text{
+  width: 507px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  padding: 7px 0 7px 0;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-title{
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-options-th{
+  width: 100px;
+}
+.template-options{
+  width: 100px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  background-color: #FFFFFF;
+  vertical-align: text-top;
+}
+.template-active{
+  box-sizing: border-box;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #24E2B8;
+  margin-left: 12px;
+}
+.template-not-active{
+  box-sizing: border-box;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #D2305B;
+  margin-left: 12px;
+}
+.product-control-info{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: -10px;
+  margin-left: 15px;
+}
+.side a{
+  text-decoration: none;
+  color: #55616E;
+}
+.side#active a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+input[type="text"]{
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: 5px;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+}
+.template-input-search{
+  width: 317px;
+  height: 40px !important;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding-left: 40px;
+}
+button#product{
+  	height: 40px;
+    width: 130px;
+    border-radius: 4px;
+    background-color: #51A3F3;
+    border-radius: 4px;
+    color: #fff;
+    font-family: "Helvetica Neue";
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    float: right;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.col-md-6{
+  width: 45.83%;
+}
+.col-md-3{
+  width: 20.8%;
+}
+.main{
+  max-width: calc(100% - 300px);
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+}
+.side#active svg g{
+  fill: white;
+}
+#avatar{
+  	font-family: "Helvetica Neue";
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 15px;
+    text-align: center;
+    margin-left: 11px;
+    margin-top: 7px;
+    display: inline-block;
+}
+.side-link{
+  	height: 20px;
+    width: 220px;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.side-link#active{
+  	color: #FFFFFF;
+}
+ul{
+	height: 100vh;
+	max-width: 300px;
+  width: 100%;
+	background-color: #F0F1FA;
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+li a{
+  text-decoration: none;
+  color: #55616E;
+  cursor: pointer;
+}
+.sidebar-hide {
+	height: 100vh;
+	width: 60px;
+	background-color: #F0F1FA;
+  display: inline-block;
+  float: left;
+  margin-right: 75px;
+}
+li{
+  height: 40px;
+  width: 100%;
+  color: #55616E;
+  display: inline-block;
+  cursor: pointer;
+}
+.side-hide{
+  height: 40px;
+  width: 60px;
+  color: #55616E;
+  display: inline-block;
+}
+.side-hide#active{
+	border-radius: 0 4px 4px 0;
+	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
+  color: #FFFFFF;
+  fill: #FFFFFF;
+}
+li#active{
+	border-radius: 0 4px 4px 0;
+	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
+  color: #FFFFFF;
+  fill: #FFFFFF;
+}
+li:first-child{
+  margin-top: 10px;
+}
+.image-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.side-title{
+  	height: 30px;
+    width: 270px;
+    color: #BDBFD8;
+    font-family: "Circular Std";
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-top: 21px;
+}
+
+
+.user-menu{
+	height: auto;
+	width: 228px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
+  vertical-align: top;
+  position: fixed;
+  z-index: 999999;
+  float: right;
+}
+.navigation{
+  max-width: 100%;
+  height: 60px;
+  background-color: #FFFFFF;
+}
+.navi-logo{
+  max-width: 300px;
+  display: inline-block;
+  width: 100%;
+}
+.navi-circle-open{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: none;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  transform: rotate(180deg);
+}
+.navi-circle-open-menu{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  transform: rotate(180deg);
+}
+.navi-circle-close{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+.user-circle{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  float: left;
+}
+.username{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  line-height: 20px;
+  text-align: left;
+  margin-top: 20px;
+  float: left;
+  margin-left: 50px;
+}
+.navi-head{
+  max-width: 560px;
+  display: inline-block;
+  width: auto;
+}
+.navi-user{
+  max-width: 228px;
+  float: right;
+  display: inline-block;
+  width: auto;
+}
+.popup-logout{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#popup-link{
+  	height: 20px;
+    width: 158px;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#popup-link-active{
+  	height: 20px;
+    width: 158px;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    color: #51A3F3;
+}
+.popup-image-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.popup-title{
+  	height: 30px;
+    width: 198px;
+    color: #BDBFD8;
+    font-family: "Circular Std";
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-top: 21px;
+}
+.head-title{
+    display: inline-block;
+    vertical-align: top;
+    vertical-align: top;
+    color: #55616E;
+    font-family: "Circular Std";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 32px;
+}
+.logo{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.logo-small{
+  display: none;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.res-div{
+  display: none;
+  width: 100%;
+}
+.res-select{
+  display: inline-block;
+  width: calc(100% - 15px);
+  margin-left: 15px;
+}
+@media only screen and (max-width: 1200px) {
+    .navi-head{
+      display: none;
+    }
+    .navi-logo{
+      max-width: 40.8333333333%;
+      width: 100%;
+    }
+    .res-div{
+      display: inline-block;
+    }
+    .cont-1-rep, .cont-2-rep{
+      width: calc(100% - 30px);
+    }
+    .chart-1-reporting, .chart-2-reporting, .chart-2-reporting#second, .chart-3-reporting, .chart-3#second{
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+}
+@media only screen and (max-width: 990px) {
+    .logo{
+      display: none;
+    }
+    .logo-small{
+      display: inline-block;
+    }
+    .navi-logo{
+      max-width: 38.8333333333%;
+      width: 100%;
+    }
+    .navi-circle-open{
+      display: inline-block;
+    }
+    .navi-circle-close{
+      display: none;
+    }
+    ul, .sidebar-hide{
+      display: none;
+    }
+    .main{
+      max-width: 100%;
+    }
+}
+@media only screen and (max-width: 390px) {
+    .username{
+      display: none;
+    }
+}
+</style>

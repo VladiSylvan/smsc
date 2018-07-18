@@ -10,7 +10,7 @@
         </div>
         <div class="navi-head">
           <div class="head-title">
-            Profile
+            Billing
           </div>
         </div>
         <div class="navi-user">
@@ -50,15 +50,10 @@
       </nav>
       <transition name="fade">
       <ul v-bind:class="{'sidebar-hide': !show}" >
-        <li id="active">
+        <li>
           <router-link :to="{ name: 'Profile'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M19.3070588,15.3745636 L18.5167157,15.3745636 C20.0434804,14.3694763 21.0561275,12.6217456 21.0561275,10.6378055 C21.0561275,7.52907731 18.5704412,5 15.515049,5 C12.4596569,5 9.97397059,7.52907731 9.97397059,10.6378055 C9.97397059,12.6217456 10.9865196,14.3694763 12.5133824,15.3745636 L11.7230392,15.3745636 C9.69196078,15.3745636 8.03955882,17.0557107 8.03955882,19.1222444 L8.03955882,24.3573067 C8.03955882,24.7016459 8.31392157,24.9807481 8.65230392,24.9807481 L22.3777941,24.9807481 C22.7161765,24.9807481 22.9905392,24.7016459 22.9905392,24.3573067 L22.9905392,19.1221945 C22.9905392,17.0557107 21.3381373,15.3745636 19.3070588,15.3745636 Z M11.1994608,10.6378055 C11.1994608,8.21665835 13.1353922,6.24688279 15.515049,6.24688279 C17.8946569,6.24688279 19.8306373,8.21665835 19.8306373,10.6378055 C19.8306373,13.0589027 17.8946569,15.0286284 15.515049,15.0286284 C13.1353922,15.0286284 11.1994608,13.0589027 11.1994608,10.6378055 Z M17.3078431,15.9724688 L15.515049,17.7966085 L13.7222549,15.9725187 C14.2848529,16.1687781 14.8878922,16.2755112 15.515049,16.2755112 C16.1422059,16.2755112 16.7452941,16.1687781 17.3078431,15.9724688 Z M21.765049,23.7338155 L20.0983824,23.7338155 L20.0983824,20.7383541 C20.0983824,20.394015 19.8240196,20.1149127 19.4856373,20.1149127 C19.1472549,20.1149127 18.8728922,20.394015 18.8728922,20.7383541 L18.8728922,23.7338155 L12.1572059,23.7338155 L12.1572059,20.7383541 C12.1572059,20.394015 11.8828431,20.1149127 11.5444608,20.1149127 C11.2060784,20.1149127 10.9317157,20.394015 10.9317157,20.7383541 L10.9317157,23.7338155 L9.26504902,23.7338155 L9.26504902,19.1221945 C9.26504902,17.7432918 10.3676961,16.6213965 11.7230392,16.6213965 L12.6269118,16.6213965 L15.0817647,19.1190524 C15.2014216,19.240798 15.3582353,19.3016459 15.515049,19.3016459 C15.6718627,19.3016459 15.8285784,19.240798 15.9483333,19.1190524 L18.4031863,16.6213965 L19.3070588,16.6213965 C20.6623529,16.6213965 21.765049,17.743192 21.765049,19.1221945 L21.765049,23.7338155 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Profile</span>
+            <img class="image-box" src="@/assets/Icon/Users.svg">
+            <span v-if="show" class="side-link">Profile</span>
           </router-link>
         </li>
         <li>
@@ -85,10 +80,15 @@
             <span v-if="show" class="side-link">Templates</span>
           </router-link>
         </li>
-        <li>
+        <li id="active">
           <router-link :to="{ name: 'ResellerBilling'}">
-            <img class="image-box" src="@/assets/Icon/Billing.svg">
-            <span v-if="show" class="side-link">Billing</span>
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M24.2624044,8.95795211 L9.82234973,8.95795211 L8.99054645,7.0429662 C8.90540984,6.84697183 8.73005464,6.70241127 8.5184153,6.6536 L5.83961749,6.03628732 C5.47240437,5.95140282 5.10464481,6.17458592 5.01830601,6.53430141 C4.93185792,6.89396338 5.1595082,7.25410704 5.52677596,7.33872394 L7.86885246,7.87853803 L13.8646448,21.6829211 C13.6789617,22.0041014 13.5722951,22.3747887 13.5722951,22.769507 C13.5722951,23.9894141 14.5856284,24.9819099 15.8310929,24.9819099 C17.076612,24.9819099 18.0899454,23.9894676 18.0899454,22.769507 C18.0899454,22.4630451 18.0259016,22.1710338 17.9104372,21.9054085 L20.3700546,21.9054085 C20.2545902,22.1709803 20.1905464,22.4629915 20.1905464,22.769507 C20.1905464,23.9894141 21.2039344,24.9819099 22.4495082,24.9819099 C23.6949727,24.9819099 24.7082514,23.9894676 24.7082514,22.769507 C24.7082514,21.549493 23.6949727,20.5570507 22.4495082,20.5570507 L14.8647541,20.5673803 L13.929235,18.4135296 L24.262459,18.4135296 C24.6397268,18.4135296 24.9455191,18.1139718 24.9455191,17.7445155 L24.9455191,9.6269662 C24.9454645,9.25750986 24.6396721,8.95795211 24.2624044,8.95795211 Z M22.4508743,21.8957746 C22.9438251,21.8957746 23.3434426,22.2871211 23.3434426,22.7699352 C23.3434426,23.2526958 22.9438798,23.6440958 22.4508743,23.6440958 C21.9579235,23.6440958 21.5583607,23.2526958 21.5583607,22.7699352 C21.5583607,22.2871211 21.9579235,21.8957746 22.4508743,21.8957746 Z M15.8345355,21.8957746 C16.3274863,21.8957746 16.7271038,22.2871211 16.7271038,22.7699352 C16.7271038,23.2526958 16.3274863,23.6440958 15.8345355,23.6440958 C15.3415847,23.6440958 14.9420219,23.2526958 14.9420219,22.7699352 C14.9420219,22.2871211 15.3416393,21.8957746 15.8345355,21.8957746 Z M23.5793443,13.0167268 L19.0518033,13.0167268 C18.6745902,13.0167268 18.3687432,13.3162845 18.3687432,13.6857408 C18.3687432,14.0551972 18.6745902,14.3547549 19.0518033,14.3547549 L23.5793443,14.3547549 L23.5793443,17.0755014 L13.3481421,17.0755014 L10.4034426,10.2959803 L23.5793443,10.2959803 L23.5793443,13.0167268 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
+            <span v-if="show" class="side-link" id="active">Billing</span>
           </router-link>
         </li>
         <div v-if="show" class="side-title">
@@ -129,53 +129,105 @@
       <div class="main">
         <div class="res-div">
           <div class="head-title">
-            Profile
+            Billing
           </div>
         </div>
-        <div class="navbar-profile">
-          <div class="nav-link-profile">
-            <router-link :to="{ name: 'Profile' }">
-              <div class="nav-text-profile">
-                Portal Customization
+        <div class="navbar">
+          <div class="nav-link">
+            <router-link :to="{ name: 'ResellerBilling' }">
+              <div class="nav-text">
+                Invoices
               </div>
             </router-link>
           </div>
-          <div class="nav-link-profile">
-            <div id="active" class="nav-text-profile">
-              Payment Gateway
+          <div class="nav-link">
+            <div id="active" class="nav-text">
+              Payment
+              <div class="nav-line-pay"></div>
             </div>
-            <div class="nav-line-profile"></div>
           </div>
         </div>
-        <div class="profile-main">
-          <router-link :to="{ name: 'Profile'}"><button id="preview" type="submit">Prev: Portal Customization</button></router-link>
-          <router-link :to="{ name: 'Profile'}"><button id="payment" type="submit">Finish</button></router-link>
-        </div>
-        <div class="profile-payment-title">
-          Payment Gateway
-        </div>
-        <div class="profile-payment-content">
-          <div v-on:click="active = 1" v-bind:class="{'profile-payment-item-active': active == 1}" class="profile-payment-item">
-            <label class="profile-payment-container"><img class="profile-payment-image" id="paypal" src="@/assets/paypal.png">
-              <input type="radio" checked="checked" name="radio">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div v-on:click="active = 2" v-bind:class="{'profile-payment-item-active': active == 2}" class="profile-payment-item">
-            <label class="profile-payment-container"><img class="profile-payment-image" id="stripe" src="@/assets/stripe.png">
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div v-on:click="active = 3" v-bind:class="{'profile-payment-item-active': active == 3}" class="profile-payment-item">
-            <label class="profile-payment-container"><img class="profile-payment-image" id="mastercard" src="@/assets/mastercard.png">
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-        <div class="profile-payment-input">
-          <input class="profile-input" type="text" v-model="user.email" placeholder="Enter your paypal email">
+        <div class="billing-main">
+          <table class="payment-table" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th class="payment-id-th">Payment #</th>
+                <th class="payment-paid-th">Paid On</th>
+                <th class="payment-gateway-th">Gateway</th>
+                <th class="payment-method-th">Method</th>
+                <th class="payment-total-th">Total</th>
+                <th class="payment-options-th"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="payment-id">25964</td>
+                <td class="payment-paid">10-03-2018</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">Wire</td>
+                <td class="payment-total"><b>$4</b></td>
+                <td class="payment-options">
+                  <div v-on:click="test = !test" class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div>
+                  <div v-if="test" class="billing-payment-menu">
+                    <div class="billing-payment-menu-link">
+                      <div v-on:click="test = !test" class="billing-payment-menu-button">
+                        <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path d="M10,16 C9.44771525,16 9,15.5522847 9,15 C9,14.4477153 9.44771525,14 10,14 C10.5522847,14 11,14.4477153 11,15 C11,15.5522847 10.5522847,16 10,16 Z M15,16 C14.4477153,16 14,15.5522847 14,15 C14,14.4477153 14.4477153,14 15,14 C15.5522847,14 16,14.4477153 16,15 C16,15.5522847 15.5522847,16 15,16 Z M20,16 C19.4477153,16 19,15.5522847 19,15 C19,14.4477153 19.4477153,14 20,14 C20.5522847,14 21,14.4477153 21,15 C21,15.5522847 20.5522847,16 20,16 Z" id="path-1">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="billing-payment-menu-link">
+                      <router-link :to="{ name: 'BillingPayment'}">Download Excel Summary</router-link>
+                    </div>
+                    <div class="billing-payment-menu-link">
+                      <router-link :to="{ name: 'BillingPayment'}">Download PDF</router-link>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="payment-id">25964</td>
+                <td class="payment-paid">10-03-2018</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">Paypal</td>
+                <td class="payment-total"><b>$19</b></td>
+                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="payment-id">25964</td>
+                <td class="payment-paid">10-03-2018</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">ACH</td>
+                <td class="payment-total"><b>$80</b></td>
+                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="payment-id">25964</td>
+                <td class="payment-paid">10-03-2018</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">Wire</td>
+                <td class="payment-total"><b>$4</b></td>
+                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="payment-id">25964</td>
+                <td class="payment-paid">10-03-2018</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">Paypal</td>
+                <td class="payment-total"><b>$19</b></td>
+                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+              <tr>
+                <td class="payment-id">25964</td>
+                <td class="payment-paid">10-03-2018</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
+                <td class="payment-method">ACH</td>
+                <td class="payment-total"><b>$80</b></td>
+                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -192,7 +244,6 @@ export default {
           transitionName: 'fade',
           popup: false,
           test: false,
-          active: 1,
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
@@ -218,144 +269,26 @@ export default {
 }
 </script>
 <style>
-/* The container */
-.profile-payment-container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.profile-payment-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom radio button */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 22px;
-    width: 22px;
-    border: 1px solid #BDBFD8;
-    background-color: #FFF;
-    border-radius: 50%;
-    margin-top: 23px;
-    margin-left: 15px;
-}
-
-/* On mouse-over, add a grey background color */
-.profile-payment-container:hover input ~ .checkmark {
-    background-color: #FFF;
-}
-
-/* When the radio button is checked, add a blue background */
-.profile-payment-container input:checked ~ .checkmark {
-    background-color: #FFF;
-    border: 2px solid #51A3F3;
-    margin-top: 22px;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.profile-payment-container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.profile-payment-container .checkmark:after {
- 	top: 3px;
-	left: 3px;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background: #51A3F3;
-}
-
-.profile-payment-container input:checked ~ .profile-payment-item {
-  border: 2px solid #51A3F3;
-}
-
-.profile-payment-input{
-    display: inline-block;
-    width: 100%;
-    float: left;
-}
-.profile-payment-content{
-    display: inline-block;
-    width: 100%;
-    float: left;
-}
-
-.profile-payment-title{
-  clear:both;
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
+.payment-name-fix{
   display: inline-block;
-  float: left;
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 100%;
+  vertical-align: top;
+  margin-top: 7px;
 }
-.profile-payment-image{
+.payment-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.billing-main{
+  float: left;
+  display: inline-block;
+  width: calc(100% - 40px);
   margin-left: 20px;
   margin-right: 20px;
-}
-.profile-payment-image#paypal{
-  margin-top: 22px;
-}
-.profile-payment-image#stripe{
-  margin-top: 16px;
-}
-.profile-payment-image#mastercard{
-  margin-top: 20px;
-}
-.profile-payment-item{
-  	box-sizing: border-box;
-    height: 74px;
-    width: auto;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    display: inline-block;
-    float: left;
-    margin-top: 15px;
-    margin-left: 20px;
-    border: 2px solid #FFFFFF;
-}
-.profile-payment-item-active{
-    box-sizing: border-box;
-    height: 74px;
-    width: auto;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    display: inline-block;
-    float: left;
-    margin-top: 15px;
-    margin-left: 20px;
-    border: 2px solid #51A3F3;
-}
-input[type="radio"]{
-  border: 1px solid #BDBFD8;
-  width: 24px;
-  height: 24px;
 }
 .svg-blue path{
   fill: #51A3F3;
@@ -367,20 +300,56 @@ a{
   font-size: 16px;
   line-height: 20px;
 }
-.navbar-profile{
+.billing-payment-menu{
+	height: 140px;
+	width: 250px;
+	border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
+  display: inline-block;
+  vertical-align: top;
+  position: fixed;
+  z-index: 1;
+  float: right;
+  margin-left: -205px;
+  margin-top: -54px;
+}
+.billing-payment-menu-link{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.billing-payment-menu-link:first-child{
+  margin-top: 25px;
+}
+.billing-payment-span{
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.billing-payment-menu-add{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  background-color: #F8F9FE;
+}
+.billing-payment-menu-button{
+  float: right;
+  display: inline-block;
+  margin-top: -5px;
+}
+.navbar{
   height: 50px;
   width: 100%;
   background-color: #FFFFFF;
   box-shadow: inset 0 1px 0 0 #F8F9FE;
 }
-.profile-main{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 40px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.nav-text-profile{
+.nav-text{
   color: #BDBFD8;
   font-family: "Circular Std";
   font-size: 16px;
@@ -389,24 +358,171 @@ a{
   text-align: center;
   margin-top: 15px;
 }
-.nav-text-profile#active{
+.nav-text#active{
   color: #51A3F3;
   font-weight: 500;
 }
-a{
-  text-decoration: none;
-}
-.nav-link-profile{
+.nav-link{
   display: inline-block;
   float: left;
   height: 50px;
-  width: 170px;
+  width: 76px;
   margin-left: 20px;
 }
-.nav-line-profile{
+.nav-line-pay{
   border-bottom: 2px solid #51A3F3;
-  width: 170px;
+  width: 76px;
   margin-top: 13px;
+}
+
+.svg-active path{
+  fill: white;
+}
+.payment-table{
+  border: none;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
+}
+.payment-id-th{
+  width: 241px;
+  padding-left: 15px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-paid-th{
+  width: 234px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-gateway-th{
+  width: 225px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-method-th{
+  width: 200px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-total-th{
+  width: 140px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+.payment-options-th{
+  width: 45px;
+  height: 37px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.payment-id{
+  width: 241px;
+  padding-left: 15px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-paid{
+  width: 234px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-gateway{
+  width: 225px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-method{
+  width: 200px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-total{
+  width: 140px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-options{
+  width: 45px;
+  height: 50px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.payment-control-info{
+  width: 30px;
+  height: 30px;
+  float: left;
 }
 .side a{
   text-decoration: none;
@@ -427,64 +543,6 @@ a{
 }
 .col-md-3{
   width: 20.8%;
-}
-
-input[type="text"]{
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 5px;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
-}
-.profile-input{
-  max-width: 500px;
-  width: 100%;
-  height: 40px;
-  padding-left: 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-button#payment{
-  	height: 40px;
-    width: auto;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 20px;
-    float: right;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-button#preview{
-  	height: 40px;
-    width: auto;
-    border: 1px solid #BDBFD8;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    color: #55616E;
-    font-family: "Circular Std";
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 19px;
-    text-align: center;
-    margin-top: 20px;
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 .main{
   max-width: calc(100% - 300px);
@@ -570,12 +628,6 @@ li#active{
 li:first-child{
   margin-top: 10px;
 }
-.billing-control-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-}
 .image-box{
   width: 30px;
   height: 30px;
@@ -584,6 +636,12 @@ li:first-child{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
+}
+.payment-con-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
 }
 .side-title{
   	height: 30px;

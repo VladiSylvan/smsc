@@ -10,7 +10,7 @@
         </div>
         <div class="navi-head">
           <div class="head-title">
-            Profile
+            Users
           </div>
         </div>
         <div class="navi-user">
@@ -50,15 +50,10 @@
       </nav>
       <transition name="fade">
       <ul v-bind:class="{'sidebar-hide': !show}" >
-        <li id="active">
+        <li>
           <router-link :to="{ name: 'Profile'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M19.3070588,15.3745636 L18.5167157,15.3745636 C20.0434804,14.3694763 21.0561275,12.6217456 21.0561275,10.6378055 C21.0561275,7.52907731 18.5704412,5 15.515049,5 C12.4596569,5 9.97397059,7.52907731 9.97397059,10.6378055 C9.97397059,12.6217456 10.9865196,14.3694763 12.5133824,15.3745636 L11.7230392,15.3745636 C9.69196078,15.3745636 8.03955882,17.0557107 8.03955882,19.1222444 L8.03955882,24.3573067 C8.03955882,24.7016459 8.31392157,24.9807481 8.65230392,24.9807481 L22.3777941,24.9807481 C22.7161765,24.9807481 22.9905392,24.7016459 22.9905392,24.3573067 L22.9905392,19.1221945 C22.9905392,17.0557107 21.3381373,15.3745636 19.3070588,15.3745636 Z M11.1994608,10.6378055 C11.1994608,8.21665835 13.1353922,6.24688279 15.515049,6.24688279 C17.8946569,6.24688279 19.8306373,8.21665835 19.8306373,10.6378055 C19.8306373,13.0589027 17.8946569,15.0286284 15.515049,15.0286284 C13.1353922,15.0286284 11.1994608,13.0589027 11.1994608,10.6378055 Z M17.3078431,15.9724688 L15.515049,17.7966085 L13.7222549,15.9725187 C14.2848529,16.1687781 14.8878922,16.2755112 15.515049,16.2755112 C16.1422059,16.2755112 16.7452941,16.1687781 17.3078431,15.9724688 Z M21.765049,23.7338155 L20.0983824,23.7338155 L20.0983824,20.7383541 C20.0983824,20.394015 19.8240196,20.1149127 19.4856373,20.1149127 C19.1472549,20.1149127 18.8728922,20.394015 18.8728922,20.7383541 L18.8728922,23.7338155 L12.1572059,23.7338155 L12.1572059,20.7383541 C12.1572059,20.394015 11.8828431,20.1149127 11.5444608,20.1149127 C11.2060784,20.1149127 10.9317157,20.394015 10.9317157,20.7383541 L10.9317157,23.7338155 L9.26504902,23.7338155 L9.26504902,19.1221945 C9.26504902,17.7432918 10.3676961,16.6213965 11.7230392,16.6213965 L12.6269118,16.6213965 L15.0817647,19.1190524 C15.2014216,19.240798 15.3582353,19.3016459 15.515049,19.3016459 C15.6718627,19.3016459 15.8285784,19.240798 15.9483333,19.1190524 L18.4031863,16.6213965 L19.3070588,16.6213965 C20.6623529,16.6213965 21.765049,17.743192 21.765049,19.1221945 L21.765049,23.7338155 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Profile</span>
+            <img class="image-box" src="@/assets/Icon/Users.svg">
+            <span v-if="show" class="side-link">Profile</span>
           </router-link>
         </li>
         <li>
@@ -94,10 +89,15 @@
         <div v-if="show" class="side-title">
           Manage
         </div>
-        <li>
+        <li id="active">
           <router-link :to="{ name: 'ResellerUsers'}">
-            <img class="image-box" src="@/assets/Icon/Users.svg">
-            <span v-if="show" class="side-link">Users</span>
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M19.3070588,15.3745636 L18.5167157,15.3745636 C20.0434804,14.3694763 21.0561275,12.6217456 21.0561275,10.6378055 C21.0561275,7.52907731 18.5704412,5 15.515049,5 C12.4596569,5 9.97397059,7.52907731 9.97397059,10.6378055 C9.97397059,12.6217456 10.9865196,14.3694763 12.5133824,15.3745636 L11.7230392,15.3745636 C9.69196078,15.3745636 8.03955882,17.0557107 8.03955882,19.1222444 L8.03955882,24.3573067 C8.03955882,24.7016459 8.31392157,24.9807481 8.65230392,24.9807481 L22.3777941,24.9807481 C22.7161765,24.9807481 22.9905392,24.7016459 22.9905392,24.3573067 L22.9905392,19.1221945 C22.9905392,17.0557107 21.3381373,15.3745636 19.3070588,15.3745636 Z M11.1994608,10.6378055 C11.1994608,8.21665835 13.1353922,6.24688279 15.515049,6.24688279 C17.8946569,6.24688279 19.8306373,8.21665835 19.8306373,10.6378055 C19.8306373,13.0589027 17.8946569,15.0286284 15.515049,15.0286284 C13.1353922,15.0286284 11.1994608,13.0589027 11.1994608,10.6378055 Z M17.3078431,15.9724688 L15.515049,17.7966085 L13.7222549,15.9725187 C14.2848529,16.1687781 14.8878922,16.2755112 15.515049,16.2755112 C16.1422059,16.2755112 16.7452941,16.1687781 17.3078431,15.9724688 Z M21.765049,23.7338155 L20.0983824,23.7338155 L20.0983824,20.7383541 C20.0983824,20.394015 19.8240196,20.1149127 19.4856373,20.1149127 C19.1472549,20.1149127 18.8728922,20.394015 18.8728922,20.7383541 L18.8728922,23.7338155 L12.1572059,23.7338155 L12.1572059,20.7383541 C12.1572059,20.394015 11.8828431,20.1149127 11.5444608,20.1149127 C11.2060784,20.1149127 10.9317157,20.394015 10.9317157,20.7383541 L10.9317157,23.7338155 L9.26504902,23.7338155 L9.26504902,19.1221945 C9.26504902,17.7432918 10.3676961,16.6213965 11.7230392,16.6213965 L12.6269118,16.6213965 L15.0817647,19.1190524 C15.2014216,19.240798 15.3582353,19.3016459 15.515049,19.3016459 C15.6718627,19.3016459 15.8285784,19.240798 15.9483333,19.1190524 L18.4031863,16.6213965 L19.3070588,16.6213965 C20.6623529,16.6213965 21.765049,17.743192 21.765049,19.1221945 L21.765049,23.7338155 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
+            <span v-if="show" class="side-link" id="active">Users</span>
           </router-link>
         </li>
         <li>
@@ -129,55 +129,91 @@
       <div class="main">
         <div class="res-div">
           <div class="head-title">
-            Profile
+            Users
           </div>
         </div>
-        <div class="navbar-profile">
-          <div class="nav-link-profile">
-            <router-link :to="{ name: 'Profile' }">
-              <div class="nav-text-profile">
-                Portal Customization
-              </div>
-            </router-link>
-          </div>
-          <div class="nav-link-profile">
-            <div id="active" class="nav-text-profile">
-              Payment Gateway
+          <div class="main-header">
+            <input class="user-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchUser" placeholder="Search for user">
+            <div class="user-header-title">
+              Filter by:
             </div>
-            <div class="nav-line-profile"></div>
+            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="company" v-model="user.company">
+              <option value="Company">Company</option>
+            </select>
+            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Choose Company" class="company2" v-model="user.chooseCompany">
+              <option value="Choose Company">Choose Company</option>
+            </select>
+            <router-link :to="{ name: 'ResellerAddUser'}"><button id="users" type="submit">Add User</button></router-link>
+          </div>
+          <div class="main-container">
+            <table class="users-table" cellspacing="0" cellpadding="0">
+              <thead>
+                <tr>
+                  <th class="users-avatar-th"></th>
+                  <th class="users-name-th">Name</th>
+                  <th class="users-username-th">Username</th>
+                  <th class="users-company-th">Company</th>
+                  <th class="users-reseller-th">Reseller</th>
+                  <th class="users-start-th">Start from</th>
+                  <th class="users-option-th"></th>
+                  <th class="users-option-th"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Nellie Ferguson</td>
+                  <td class="users-username">nellief</td>
+                  <td class="users-company">San Marino</td>
+                  <td class="users-reseller">Mason Carroll</td>
+                  <td class="users-start">29 Apr 2018</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'ResellerEditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Frances Ruiz</td>
+                  <td class="users-username">Peanut</td>
+                  <td class="users-company">Latvia</td>
+                  <td class="users-reseller">Connor Phillips</td>
+                  <td class="users-start">20 Feb 2018</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'ResellerEditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Keith Gardner</td>
+                  <td class="users-username">Samson</td>
+                  <td class="users-company">Grenada</td>
+                  <td class="users-reseller">Tom Terry</td>
+                  <td class="users-start">05 May 2018</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'ResellerEditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Abbie Obrien</td>
+                  <td class="users-username">Madison</td>
+                  <td class="users-company">Pakistan</td>
+                  <td class="users-reseller">Martha Duncan</td>
+                  <td class="users-start">23 Sep 2018</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'ResellerEditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+                <tr>
+                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-name">Willie Neal</td>
+                  <td class="users-username">Jack</td>
+                  <td class="users-company">India</td>
+                  <td class="users-reseller">Ada Beck</td>
+                  <td class="users-start">02 Jun 2018</td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'ResellerEditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="profile-main">
-          <router-link :to="{ name: 'Profile'}"><button id="preview" type="submit">Prev: Portal Customization</button></router-link>
-          <router-link :to="{ name: 'Profile'}"><button id="payment" type="submit">Finish</button></router-link>
-        </div>
-        <div class="profile-payment-title">
-          Payment Gateway
-        </div>
-        <div class="profile-payment-content">
-          <div v-on:click="active = 1" v-bind:class="{'profile-payment-item-active': active == 1}" class="profile-payment-item">
-            <label class="profile-payment-container"><img class="profile-payment-image" id="paypal" src="@/assets/paypal.png">
-              <input type="radio" checked="checked" name="radio">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div v-on:click="active = 2" v-bind:class="{'profile-payment-item-active': active == 2}" class="profile-payment-item">
-            <label class="profile-payment-container"><img class="profile-payment-image" id="stripe" src="@/assets/stripe.png">
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div v-on:click="active = 3" v-bind:class="{'profile-payment-item-active': active == 3}" class="profile-payment-item">
-            <label class="profile-payment-container"><img class="profile-payment-image" id="mastercard" src="@/assets/mastercard.png">
-              <input type="radio" name="radio">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-        <div class="profile-payment-input">
-          <input class="profile-input" type="text" v-model="user.email" placeholder="Enter your paypal email">
-        </div>
-      </div>
     </div>
 </template>
 <script>
@@ -192,11 +228,13 @@ export default {
           transitionName: 'fade',
           popup: false,
           test: false,
-          active: 1,
+          del: false,
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
-                days: 'Last 30 days'
+                days: 'Last 30 days',
+                company: 'Company',
+                chooseCompany: 'Choose Company',
             },
 
         }
@@ -218,145 +256,6 @@ export default {
 }
 </script>
 <style>
-/* The container */
-.profile-payment-container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.profile-payment-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom radio button */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 22px;
-    width: 22px;
-    border: 1px solid #BDBFD8;
-    background-color: #FFF;
-    border-radius: 50%;
-    margin-top: 23px;
-    margin-left: 15px;
-}
-
-/* On mouse-over, add a grey background color */
-.profile-payment-container:hover input ~ .checkmark {
-    background-color: #FFF;
-}
-
-/* When the radio button is checked, add a blue background */
-.profile-payment-container input:checked ~ .checkmark {
-    background-color: #FFF;
-    border: 2px solid #51A3F3;
-    margin-top: 22px;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.profile-payment-container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.profile-payment-container .checkmark:after {
- 	top: 3px;
-	left: 3px;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background: #51A3F3;
-}
-
-.profile-payment-container input:checked ~ .profile-payment-item {
-  border: 2px solid #51A3F3;
-}
-
-.profile-payment-input{
-    display: inline-block;
-    width: 100%;
-    float: left;
-}
-.profile-payment-content{
-    display: inline-block;
-    width: 100%;
-    float: left;
-}
-
-.profile-payment-title{
-  clear:both;
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  float: left;
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 100%;
-}
-.profile-payment-image{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.profile-payment-image#paypal{
-  margin-top: 22px;
-}
-.profile-payment-image#stripe{
-  margin-top: 16px;
-}
-.profile-payment-image#mastercard{
-  margin-top: 20px;
-}
-.profile-payment-item{
-  	box-sizing: border-box;
-    height: 74px;
-    width: auto;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    display: inline-block;
-    float: left;
-    margin-top: 15px;
-    margin-left: 20px;
-    border: 2px solid #FFFFFF;
-}
-.profile-payment-item-active{
-    box-sizing: border-box;
-    height: 74px;
-    width: auto;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    display: inline-block;
-    float: left;
-    margin-top: 15px;
-    margin-left: 20px;
-    border: 2px solid #51A3F3;
-}
-input[type="radio"]{
-  border: 1px solid #BDBFD8;
-  width: 24px;
-  height: 24px;
-}
 .svg-blue path{
   fill: #51A3F3;
 }
@@ -367,47 +266,163 @@ a{
   font-size: 16px;
   line-height: 20px;
 }
-.navbar-profile{
-  height: 50px;
-  width: 100%;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 1px 0 0 #F8F9FE;
-}
-.profile-main{
-  float: left;
+.reseller-menu{
+	height: 210px;
+	width: 228px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
   display: inline-block;
-  width: calc(100% - 40px);
-  margin-left: 20px;
-  margin-right: 20px;
+  vertical-align: top;
+  position: fixed;
+  z-index: 1;
+  float: right;
+  margin-left: -220px;
+  margin-top: -35px;
 }
-.nav-text-profile{
-  color: #BDBFD8;
-  font-family: "Circular Std";
+.reseller-menu-link{
+  color: #55616E;
+  font-family: "Helvetica Neue";
   font-size: 16px;
-  font-weight: 300;
   line-height: 20px;
-  text-align: center;
-  margin-top: 15px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
-.nav-text-profile#active{
+.reseller-menu-link:first-child{
+  margin-top: 35px;
+}
+.reseller-span{
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.reseller-menu-add{
   color: #51A3F3;
-  font-weight: 500;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  height: 40px;
+  background-color: #F8F9FE;
 }
-a{
-  text-decoration: none;
-}
-.nav-link-profile{
+.reseller-menu-button{
+  float: right;
   display: inline-block;
+  margin-top: -5px;
+  margin-right: -7px;
+}
+.svg-active path{
+  fill: white;
+}
+.users-table{
+  border: none;
+  max-width: calc(100% - 10px);
+  width: 100%;
+  margin-top: 20px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+}
+.user-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+.users-avatar-th{
+  width: 45px;
+  padding-left: 8px;
+  height: 37px;
+}
+.users-name-th{
+  width: 204px;
+  height: 37px;
+}
+.users-username-th{
+  width: 169px;
+  height: 37px;
+}
+.users-company-th{
+  width: 182px;
+  height: 37px;
+}
+.users-reseller-th{
+  width: 190px;
+  height: 37px;
+}
+.users-start-th{
+  width: 200px;
+  height: 37px;
+}
+.users-option-th{
+  width: 54px;
+  height: 37px;
+}
+
+
+.users-avatar{
+  width: 45px;
+  padding-left: 8px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.users-name{
+  width: 204px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.users-username{
+  width: 169px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.users-company{
+  width: 182px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.users-reseller{
+  width: 190px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.users-start{
+  width: 200px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.users-option{
+  width: 54px;
+  height: 44px;
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.product-control-info{
+  width: 30px;
+  height: 30px;
   float: left;
-  height: 50px;
-  width: 170px;
+  margin-top: -10px;
+  margin-left: 15px;
+}
+.user-header-title{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  float: left;
   margin-left: 20px;
+  display: inline-block;
+  margin-top: 30px;
 }
-.nav-line-profile{
-  border-bottom: 2px solid #51A3F3;
-  width: 170px;
-  margin-top: 13px;
-}
+
 .side a{
   text-decoration: none;
   color: #55616E;
@@ -416,19 +431,6 @@ a{
   text-decoration: none;
   color: #FFFFFF;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 2s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-.col-md-6{
-  width: 45.83%;
-}
-.col-md-3{
-  width: 20.8%;
-}
-
 input[type="text"]{
   border: 1px solid #EDEEF3;
   border-radius: 4px;
@@ -443,18 +445,19 @@ input[type="text"]{
   font-size: 14px;
   line-height: 25px;
 }
-.profile-input{
-  max-width: 500px;
+.user-input-search{
+  max-width: 26.3636363636%;
   width: 100%;
-  height: 40px;
-  padding-left: 20px;
+  height: 40px !important;
+  padding-left: 40px;
   margin-left: 20px;
   margin-top: 20px;
+  float: left;
 }
-
-button#payment{
+button#users{
   	height: 40px;
-    width: auto;
+    max-width: 11.8181818182%;
+    width: 100%;
     border-radius: 4px;
     background-color: #51A3F3;
     border-radius: 4px;
@@ -465,26 +468,20 @@ button#payment{
     line-height: 30px;
     text-align: center;
     margin-top: 20px;
+    margin-right: 20px;
     float: right;
-    padding-left: 15px;
-    padding-right: 15px;
 }
-button#preview{
-  	height: 40px;
-    width: auto;
-    border: 1px solid #BDBFD8;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    color: #55616E;
-    font-family: "Circular Std";
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 19px;
-    text-align: center;
-    margin-top: 20px;
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.col-md-6{
+  width: 45.83%;
+}
+.col-md-3{
+  width: 20.8%;
 }
 .main{
   max-width: calc(100% - 300px);
@@ -493,8 +490,65 @@ button#preview{
   vertical-align: top;
   float: left;
 }
+.main-container{
+  float: left;
+  display: inline-block;
+  width: calc(100% - 30px);
+  margin-left: 20px;
+  margin-right: 20px;
+}
 .side#active svg g{
   fill: white;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+}
+.company{
+    max-width: 13.6363636364%;
+    width: 100%;
+    height: 40px !important;
+    border: 1px solid #EDEEF3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: "Helvetica Neue";
+    color: #55616E;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.company2{
+    max-width: 16.3636363636%;
+    width: 100%;
+    height: 40px !important;
+    border: 1px solid #EDEEF3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: "Helvetica Neue";
+    color: #55616E;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 #avatar{
   	font-family: "Helvetica Neue";
@@ -570,12 +624,6 @@ li#active{
 li:first-child{
   margin-top: 10px;
 }
-.billing-control-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-}
 .image-box{
   width: 30px;
   height: 30px;
@@ -584,6 +632,13 @@ li:first-child{
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 10px;
+}
+.control-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
 }
 .side-title{
   	height: 30px;
@@ -787,8 +842,15 @@ li:first-child{
     .res-div{
       display: inline-block;
     }
+    .user-input-search{
+      max-width: calc(100% - 80px);
+    }
+    .company, .company2{
+      max-width: 30%;
+      width: 100%;
+    }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 990px) {
     .logo{
       display: none;
     }

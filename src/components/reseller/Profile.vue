@@ -74,9 +74,15 @@
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'MailTemplate'}">
+          <router-link :to="{ name: 'MailTemplateRegister'}">
             <img class="image-box" src="@/assets/Icon/Reseller.svg">
             <span v-if="show" class="side-link">Mail Template</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerTemplate'}">
+            <img class="image-box" src="@/assets/Icon/Template.svg">
+            <span v-if="show" class="side-link">Templates</span>
           </router-link>
         </li>
         <li>
@@ -141,7 +147,7 @@
             </router-link>
           </div>
         </div>
-        <div class="billing-main">
+        <div class="profile-main">
           <router-link :to="{ name: 'ProfilePayment'}"><button id="payment" type="submit">Next: Payment Gateway</button></router-link>
         </div>
         </div>
@@ -269,7 +275,6 @@ button#payment{
     text-align: center;
     margin-top: 20px;
     float: right;
-    margin-right: 20px;
     padding-left: 15px;
     padding-right: 15px;
 }
