@@ -55,6 +55,15 @@ import ResellerVendors from '@/components/reseller/Vendors'
 import ResellerAddVendor from '@/components/reseller/AddVendor'
 import ResellerEditVendor from '@/components/reseller/EditVendor'
 import ResellerDIDs from '@/components/reseller/DIDs'
+import ResellerFilters from '@/components/reseller/Filters'
+import ResellerEditDIDs from '@/components/reseller/EditDIDs'
+
+import Alert from '@/components/cadmin/Alert'
+import AlertWeekly from '@/components/cadmin/AlertWeekly'
+import CompanyTemplate from '@/components/cadmin/Template'
+import CompanyBilling from '@/components/cadmin/Billing'
+import CompanyBillingPayment from '@/components/cadmin/BillingPayment'
+import CompanyDIDs from '@/components/cadmin/DIDs'
 
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
@@ -330,5 +339,45 @@ export default new Router({
         path: '/resellerdids',
         name: 'ResellerDIDs',
         component: ResellerDIDs
+    },
+    {
+        path: '/resellerfilters',
+        name: 'ResellerFilters',
+        component: ResellerFilters
+    },
+    {
+        path: '/resellereditdids',
+        name: 'ResellerEditDIDs',
+        component: ResellerEditDIDs
+    },
+    {
+        path: '/alert',
+        name: 'Alert',
+        component: Alert
+    },
+    {
+        path: '/alertweekly',
+        name: 'AlertWeekly',
+        component: AlertWeekly
+    },
+    {
+        path: '/companytemplate',
+        name: 'CompanyTemplate',
+        component: CompanyTemplate
+    },
+    {
+        path: '/companybilling',
+        name: 'CompanyBilling',
+        component: CompanyBilling
+    },
+    {
+        path: '/companybillingpayment',
+        name: 'CompanyBillingPayment',
+        component: CompanyBillingPayment
+    },
+    {
+        path: '/companydids',
+        name: 'CompanyDIDs',
+        component: CompanyDIDs
     }]
 })

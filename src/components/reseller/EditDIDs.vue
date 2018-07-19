@@ -126,114 +126,78 @@
         </li>
       </ul>
       </transition>
-      <div class="main">
+      <div class="main-add">
         <div class="res-div">
           <div class="head-title">
             DIDs
           </div>
         </div>
-          <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
-          <router-link :to="{ name: 'ResellerDIDs'}"><button v-on:click="showModal()" id="did" type="submit">Buy DID</button></router-link>
-          <div class="main-container">
-            <table class="did-table" cellspacing="0" cellpadding="0">
-              <thead>
-                <tr class="did-table-th">
-                  <th class="did-active"></th>
-                  <th class="did-number">Number</th>
-                  <th class="did-did"></th>
-                  <th class="did-created">Created On</th>
-                  <th class="did-created-by">Created By</th>
-                  <th class="did-country">Country</th>
-                  <th class="did-type">Type</th>
-                  <th class="did-assigned">Assigned To</th>
-                  <th class="did-option"></th>
-                  <th class="did-option"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">050-185-4229</td>
-                  <td class="did-did"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                  <td class="did-created">10-03-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">San Marino</div></td>
-                  <td class="did-country">Ethiopia</td>
-                  <td class="did-type">Toll Free</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Appolo Inc.</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">215-054-1288</td>
-                  <td class="did-did"></td>
-                  <td class="did-created">11-28-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Douglas Richards</div></td>
-                  <td class="did-country">South Africa</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">George Burns</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">697-431-7827</td>
-                  <td class="did-did"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                  <td class="did-created">01-26-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Eleanor Jensen</div></td>
-                  <td class="did-country">Marshall</td>
-                  <td class="did-type">Toll Free</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Stanley Powell</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">239-429-1353</td>
-                  <td class="did-did"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                  <td class="did-created">01-24-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Evelyn Holland</div></td>
-                  <td class="did-country">Angola</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Allen Roberts</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-offline">
-                  <td class="did-active"><div class="product-not-active"></div></td>
-                  <td class="did-number">625-867-0083</td>
-                  <td class="did-did"></td>
-                  <td class="did-created">12-14-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Polly Mitchell</div></td>
-                  <td class="did-country">Dominican</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Susie Dean</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-offline">
-                  <td class="did-active"><div class="product-not-active"></div></td>
-                  <td class="did-number">542-961-8296</td>
-                  <td class="did-did"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                  <td class="did-created">10-03-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Winnie Medina</div></td>
-                  <td class="did-country">Isle of Man</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Peter Nelson</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-              </tbody>
-            </table>
+        <router-link :to="{ name: 'ResellerDIDs'}">
+          <div class="svg-back">
+            <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+              L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+              L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+              </path>
+            </svg>
+          </div>
+          <div class='back'>
+            Back to DID
+          </div>
+        </router-link>
+        <router-link :to="{ name: 'ResellerEditDIDs'}"><button id="product" type="submit">Save DID</button></router-link>
+        <router-link :to="{ name: 'ResellerDIDs'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        <div class="add-did">
+          <div class="did-main">
+            <div class="did-add-title">
+              Edit DID
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Phone Number
+              </div>
+              <input class="grid-input" type="text" v-model="user.phoneNumber" placeholder="640-463-3807">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Location
+              </div>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Location" class="grid-select" v-model="user.location">
+                <option value="North Malcolm">North Malcolm</option>
+              </select>
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Billing Rule
+              </div>
+              <div class="grid-5">
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Rule" class="grid-select" v-model="user.billingRule">
+                  <option value="$1.00">$1.00</option>
+                </select>
+              </div>
+              <div class="grid-5-second">
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Rule Time" class="grid-select" v-model="user.billingRuleTime">
+                  <option value="per month">per month</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Company
+              </div>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company">
+                <option value="Appolo Inc.">Appolo Inc.</option>
+              </select>
+            </div>
+          </div>
+          <div class="vendor-second">
           </div>
         </div>
-        <div id="app">
-          <modal v-show="isModalVisible" @close="closeModal"/>
-        </div>
+      </div>
     </div>
 </template>
 <script>
-import modal from '@/components/DIDsModal.vue'
+import modal from '@/components/modal.vue'
 
 export default {
     name: 'app',
@@ -243,14 +207,30 @@ export default {
           width: '60px',
           transitionName: 'fade',
           popup: false,
-          test: false,
-          del: false,
           isModalVisible: false,
+          vendors: true,
                 user:{
-                system: 'Overall system',
-                days: 'Last 30 days'
+                location: 'North Malcolm',
+                billingRule: '$1.00',
+                billingRuleTime: 'per month',
+                company: 'Appolo Inc.'
             },
-
+            user2:{
+              country: 'China',
+              operator: 'China Mobile',
+              sellRate: '0.0012'
+            },
+            user3:{
+              country: 'United States',
+              operator: 'AT & T',
+              sellRate: '0.0003'
+            },
+            vendor:{
+              vendorName1: 'Vendor BB',
+              vendorName2: 'Vendor CC',
+              vendorRate1: '0.0009',
+              vendorRate2: '0.0008'
+            }
         }
     },
     components:{
@@ -270,127 +250,197 @@ export default {
 }
 </script>
 <style>
-.did-name-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
-}
-.did-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
+.upload-circle{
+  box-sizing: border-box;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
+  background-color: #F0F1FA;
+  margin: 5px;
 }
-.undo-title{
+.upload-image{
+  border: 1px dashed #5171F3;
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  text-align: center;
+  float: left;
+  display: inline-block;
+  margin-right: 15px;
+}
+.upload-edit{
+  background-color: #FFFFFF;
+  height: 220px;
+}
+.upload-container{
+  float: left;
+  display: inline-block;
+  height: 90px;
+  margin-top: 15px;
+}
+.upload-title-edit{
   color: #55616E;
   font-family: "Helvetica Neue";
   font-size: 16px;
   line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 30px;
+  text-align: center;
 }
-.undo-image{
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
+.upload-button-edit{
+  border-radius: 4px;
+  background-color: #51A3F3;
+  color: #FFFFFF;
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  height: 36px;
+  width: 136px;
 }
-.undo-undo{
+.grid-1{
+  margin-left: 15px;
+  width: 29.3%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-2{
+  margin-left: 15px;
+  width: 69%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-3{
+  margin-left: 15px;
+  width: 21.0672064777%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-4{
+  margin-left: 15px;
+  width: 45.5%;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.grid-5{
+  width: 46%;
+  display: inline-block;
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 15px;
+}
+.grid-5-second{
+  width: 46%;
+  display: inline-block;
+  float: left;
+  margin-bottom: 15px;
+}
+.grid-title{
+  width: 100%;
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.grid-input{
+  width: 100%;
+  height: 40px !important;
+  padding-left: 10px;
+}
+.grid-select{
+  width: calc(100% + 13px);
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  height: 44px;
+}
+.svg path{
+  fill: #51A3F3;
+}
+.svg-back{
+  float: left;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+.back{
   color: #51A3F3;
   font-family: "Helvetica Neue";
   font-size: 16px;
+  font-weight: 500;
   line-height: 20px;
+  float: left;
   display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.svg-blue path{
-  fill: #51A3F3;
+.add-did{
+  float: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.svg-active path{
-  fill: white;
-}
-.did-table{
-  border: none;
-  max-width: calc(100% - 10px);
+.did-main{
+  display: inline-block;
+  float: left;
+  max-width: 66.8181818182%;
   width: 100%;
-  margin-top: 20px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  text-align: left;
 }
-.did-table-th{
-  height: 37px;
-}
-.did-online{
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-  height: 50px;
-}
-.did-offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-  height: 50px;
-}
-.did-active{
-  width: 20px;
-  padding-left: 7px;
-}
-.did-number{
-  width: 129px;
-}
-.did-did{
-  width: 70px;
-}
-.did-created{
-  width: 119px;
-}
-.did-created-by{
-  width: 223px;
-}
-.did-country{
-  width: 116px;
-}
-.did-type{
-  width: 118px;
-}
-.did-assigned{
-  width: 190px;
-}
-.did-option{
-  width: 50px;
-}
-
-.product-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #24E2B8;
+.did-second{
+  display: inline-block;
   float: left;
-  margin-left: 3px;
+  max-width: 31.8%;
+  width: 100%;
+  margin-top: 60px;
 }
-.product-not-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #D2305B;
+.product-did{
+  display: inline-block;
   float: left;
-  margin-left: 3px;
+  max-width: calc(100% - 58.1818181818%);
+  width: 100%;
+  background-color: #F8F9FE;
+  height: 458px;
 }
-.did-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
+.delete-image{
   margin-top: -10px;
+}
+.delete-vendor-image{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.did-add-title{
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 15px;
+}
+.product-input-name{
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding-top: 10px;
 }
 .side a{
   text-decoration: none;
@@ -409,21 +459,14 @@ input[type="text"]{
   background-repeat: no-repeat;
   background-position-x: 5px;
   background-position-y: 5px;
-  color: #55616E;
+  color: #000000;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
 }
-.did-input-search{
-  width: 302px;
-  height: 40px !important;
-  padding-left: 40px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-button#did{
+button#product{
   	height: 40px;
-    width: 130px;
+    width: 150px;
     border-radius: 4px;
     background-color: #51A3F3;
     border-radius: 4px;
@@ -434,8 +477,38 @@ button#did{
     line-height: 30px;
     text-align: center;
     margin-top: 20px;
-    float: right;
     margin-right: 20px;
+    margin-bottom: 20px;
+    float: right;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+}
+button#cancel{
+  height: 40px;
+  width: 90px;
+  border: 1px solid #BDBFD8;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #55616E;
+  font-family: "Circular Std";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  float: right;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -449,19 +522,12 @@ button#did{
 .col-md-3{
   width: 20.8%;
 }
-.main{
+.main-add{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.main-container{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .side#active svg g{
   fill: white;
@@ -570,6 +636,7 @@ li:first-child{
     margin-left: 15px;
     margin-top: 21px;
 }
+
 
 
 .user-menu{
@@ -758,11 +825,23 @@ li:first-child{
     .res-div{
       display: inline-block;
     }
-    .did-input-search{
-      max-width: calc(100% - 80px);
+    .grid-1, .grid-2, .grid-3, .grid-4{
+      width: calc(50% - 35px);
+    }
+    .grid-5, .grid-5-second{
+      width: calc(50% - 13px);
+    }
+    .did-main{
+      max-width: 100%;
+    }
+    .did-second{
+      margin-top: 0px;
+      max-width: calc(100% - 30px);
+      margin-left: 15px;
+      margin-right: 15px;
     }
 }
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 750px) {
     .logo{
       display: none;
     }
@@ -782,13 +861,16 @@ li:first-child{
     ul, .sidebar-hide{
       display: none;
     }
-    .main{
+    .main-add{
       max-width: 100%;
     }
 }
 @media only screen and (max-width: 390px) {
     .username{
       display: none;
+    }
+    .grid-1, .grid-2, .grid-3, .grid-4{
+      width: calc(100% - 45px);
     }
 }
 </style>

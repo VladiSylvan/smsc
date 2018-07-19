@@ -10,13 +10,13 @@
         </div>
         <div class="navi-head">
           <div class="head-title">
-            Reporting
+            Mail Template
           </div>
         </div>
         <div class="navi-user">
           <div v-if="popup" class="user-menu">
             <div v-on:click="popup = !popup" class="username">
-              Linnie Weaver
+              Adriana French
             </div>
             <div v-on:click="popup = !popup" class="user-circle"><span id="avatar">A</span></div>
             <img class="popup-image-box" src="@/assets/Icon/Users.svg">
@@ -26,27 +26,15 @@
             <div class="popup-title">
               Switch to
             </div>
+            <img class="popup-image-box" src="@/assets/Icon/Dashboard.svg">
+            <span id="popup-link">System Admin</span>
             <div class="popup-image-box">
-              <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <title>Icon / Dashboard</title>
-                  <desc>Created with Sketch.</desc>
-                  <defs>
-                      <path d="M24.7133515,13.5075766 L15.4490463,5.20674095 C15.1919891,4.97649025 14.8079564,4.97649025 14.5509537,5.20674095 L5.2866485,13.5075766 C5.00376022,13.7610585 4.97542234,14.2010585 5.22337875,14.4903621 C5.47133515,14.7794986 5.90179837,14.8085237 6.18468665,14.5549861 L6.90201635,13.912312 L6.90201635,24.2696379 C6.90201635,24.6542061 7.20697548,24.9660167 7.58321526,24.9660167 L12.7457766,24.9660167 L17.2542234,24.9660167 L22.4167302,24.9660167 C22.79297,24.9660167 23.0979292,24.6542061 23.0979292,24.2696379 L23.0979292,13.9123677 L23.8152589,14.5550975 C23.9445777,14.6708635 24.1046866,14.7277994 24.2639782,14.7277994 C24.453406,14.7277994 24.6418529,14.6475209 24.7765123,14.4904178 C25.0246322,14.2010585 24.9962943,13.7611142 24.7133515,13.5075766 Z M13.4269755,23.5733148 L13.4269755,17.8366574 L16.57297,17.8366574 L16.57297,23.5733148 L13.4269755,23.5733148 Z M21.7356403,12.6969916 L21.7356403,23.5732591 L17.9355313,23.5732591 L17.9355313,17.1402786 C17.9355313,16.7557103 17.6304632,16.4438997 17.2543324,16.4438997 L12.7458856,16.4438997 C12.3697003,16.4438997 12.0646866,16.7557103 12.0646866,17.1402786 L12.0646866,23.5733148 L8.26446866,23.5733148 L8.26446866,12.6969916 C8.26446866,12.6952089 8.26425068,12.6935376 8.26425068,12.6918106 L15,6.65643454 L21.7358583,12.6917549 C21.7359128,12.6935933 21.7356403,12.6952089 21.7356403,12.6969916 Z M13.4741144,11.5592201 C13.4741144,11.943844 13.7790736,12.2555989 14.1553134,12.2555989 L15.8446866,12.2555989 C16.2208719,12.2555989 16.5258856,11.943844 16.5258856,11.5592201 C16.5258856,11.1745961 16.2208719,10.8628412 15.8446866,10.8628412 L14.1553134,10.8628412 C13.7791281,10.8628412 13.4741144,11.1745961 13.4741144,11.5592201 Z" id="path-1"></path>
-                  </defs>
-                  <g id="Icon-/-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <mask id="mask-2" fill="white">
-                          <use xlink:href="#path-1"></use>
-                      </mask>
-                      <g id="Combined-Shape" fill-rule="nonzero"></g>
-                      <g id="Color-/-Dark-4" mask="url(#mask-2)" fill="#51A3F3">
-                          <rect id="Rectangle" x="0" y="0" width="30" height="30"></rect>
-                      </g>
-                  </g>
+              <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M24.302168,8.01773234 L5.67750678,8.01773234 C5.30336043,8.01773234 5,8.32983271 5,8.71475836 L5,22.2642751 C5,22.649145 5.30336043,22.9613011 5.67750678,22.9613011 L24.302168,22.9613011 C24.6762602,22.9613011 24.9796748,22.649145 24.9796748,22.2642751 L24.9796748,8.71475836 C24.9796748,8.32988848 24.6762602,8.01773234 24.302168,8.01773234 Z M23.6246612,21.5673048 L6.35501355,21.5673048 L6.35501355,9.41178439 L23.6246612,9.41178439 L23.6246612,21.5673048 Z M8.1303523,12.695223 L14.6344173,16.8181041 C14.7433604,16.8871933 14.8665583,16.92171 14.9898103,16.92171 C15.1130623,16.92171 15.2362602,16.8871933 15.3452033,16.8181041 L21.8492683,12.695223 C22.1678049,12.4933086 22.2669919,12.0638848 22.0707317,11.736171 C21.8744715,11.4084572 21.4569648,11.3064126 21.1385366,11.5083829 L14.9898103,15.4059294 L8.84113821,11.5083829 C8.52271003,11.3065799 8.10531165,11.4084015 7.90894309,11.736171 C7.71262873,12.063829 7.81176152,12.4933086 8.1303523,12.695223 Z" id="path-1">
+                </path>
               </svg>
           </div>
-            <span id="popup-link-active">System Admin</span>
-            <img class="popup-image-box" src="@/assets/Icon/Reseller.svg">
-            <span id="popup-link">Reseller Portal</span>
+            <span id="popup-link-active">Reseller Portal</span>
             <img class="popup-image-box" src="@/assets/Icon/Companies.svg">
             <span id="popup-link">Appolo Inc.</span>
             <div class="popup-logout">
@@ -55,44 +43,50 @@
             </div>
           </div>
           <div v-on:click="popup = !popup" class="username">
-            Linnie Weaver
+            Adriana French
           </div>
           <div v-on:click="popup = !popup" class="user-circle"><span id="avatar">A</span></div>
         </div>
       </nav>
       <transition name="fade">
-        <ul v-bind:class="{'sidebar-hide': !show}">
-          <li>
-          <router-link :to="{ name: 'Dashboard'}">
-            <img class="image-box" src="@/assets/Icon/Dashboard.svg">
-            <span v-if="show" class="side-link">Dashboard</span>
-          </router-link>
-        </li>
-        <li id="active">
-          <router-link :to="{ name: 'Reporting'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M24.3333333,22.6234595 L7.1656,22.6234595 L9.95824,16.9509189 L12.8546667,18.8602162 C13.03872,18.9815676 13.2700267,19.0032973 13.47296,18.9181081 C13.6759467,18.8331351 13.8245333,18.6521622 13.8701867,18.4344865 L15.0018133,13.0466486 L18.1837867,14.6959459 C18.4528,14.8354595 18.78064,14.7740541 18.9827733,14.5463784 L21.6315733,11.5637297 L21.71488,12.467027 C21.7470933,12.8172432 22.0377067,13.0799459 22.37792,13.0799459 C22.3986667,13.0799459 22.4196267,13.078973 22.4406933,13.076973 C22.8073067,13.0422703 23.0766933,12.712973 23.0425067,12.3414054 L22.8059733,9.774 C22.7716267,9.40243243 22.4470933,9.12924324 22.0802133,9.16405405 L19.5470933,9.40367568 C19.1805333,9.43837838 18.91104,9.76767568 18.9452267,10.1391892 C18.9796267,10.5107568 19.3035733,10.7838919 19.67104,10.7491351 L20.6428267,10.6571892 L18.33472,13.2562703 L14.8345067,11.442 C14.6498667,11.3462162 14.43168,11.3431351 14.24448,11.4334595 C14.0571733,11.5237838 13.92208,11.6972973 13.87888,11.9029189 L12.7682667,17.1910811 L10.0589333,15.4051351 C9.89962667,15.3001081 9.70362667,15.2689189 9.52037333,15.3195676 C9.33701333,15.3701081 9.18368,15.4975135 9.09893333,15.6697838 L6.33333333,21.2874054 L6.33333333,6.70086486 C6.33333333,6.32767568 6.03482667,6.02518919 5.66666667,6.02518919 C5.29850667,6.02518919 5,6.32767568 5,6.70086486 L5,23.2991351 C5,23.6722703 5.29850667,23.9748108 5.66666667,23.9748108 L24.3333333,23.9748108 C24.70144,23.9748108 25,23.6722703 25,23.2991351 C25,22.926 24.70144,22.6234595 24.3333333,22.6234595 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Reporting</span>
+      <ul v-bind:class="{'sidebar-hide': !show}" >
+        <li>
+          <router-link :to="{ name: 'Profile'}">
+            <img class="image-box" src="@/assets/Icon/Users.svg">
+            <span v-if="show" class="side-link">Profile</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Product'}">
+          <router-link :to="{ name: 'SMSCenter'}">
+            <img class="image-box" src="@/assets/Icon/Vendors.svg">
+            <span v-if="show" class="side-link">SMS Center</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerProduct'}">
             <img class="image-box" src="@/assets/Icon/Product.svg">
             <span v-if="show" class="side-link">Product</span>
           </router-link>
         </li>
-        <li>
-          <router-link :to="{ name: 'Template'}">
-            <img class="image-box" src="@/assets/Icon/Template.svg">
-            <span v-if="show" class="side-link">Template Approval</span>
+        <li id="active">
+          <router-link :to="{ name: 'MailTemplateRegister'}">
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M24.302168,8.01773234 L5.67750678,8.01773234 C5.30336043,8.01773234 5,8.32983271 5,8.71475836 L5,22.2642751 C5,22.649145 5.30336043,22.9613011 5.67750678,22.9613011 L24.302168,22.9613011 C24.6762602,22.9613011 24.9796748,22.649145 24.9796748,22.2642751 L24.9796748,8.71475836 C24.9796748,8.32988848 24.6762602,8.01773234 24.302168,8.01773234 Z M23.6246612,21.5673048 L6.35501355,21.5673048 L6.35501355,9.41178439 L23.6246612,9.41178439 L23.6246612,21.5673048 Z M8.1303523,12.695223 L14.6344173,16.8181041 C14.7433604,16.8871933 14.8665583,16.92171 14.9898103,16.92171 C15.1130623,16.92171 15.2362602,16.8871933 15.3452033,16.8181041 L21.8492683,12.695223 C22.1678049,12.4933086 22.2669919,12.0638848 22.0707317,11.736171 C21.8744715,11.4084572 21.4569648,11.3064126 21.1385366,11.5083829 L14.9898103,15.4059294 L8.84113821,11.5083829 C8.52271003,11.3065799 8.10531165,11.4084015 7.90894309,11.736171 C7.71262873,12.063829 7.81176152,12.4933086 8.1303523,12.695223 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
+            <span v-if="show" class="side-link" id="active">Mail Template</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Billing'}">
+          <router-link :to="{ name: 'ResellerTemplate'}">
+            <img class="image-box" src="@/assets/Icon/Template.svg">
+            <span v-if="show" class="side-link">Templates</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'ResellerBilling'}">
             <img class="image-box" src="@/assets/Icon/Billing.svg">
             <span v-if="show" class="side-link">Billing</span>
           </router-link>
@@ -101,37 +95,31 @@
           Manage
         </div>
         <li>
-          <router-link :to="{ name: 'Resellers'}">
-            <img class="image-box" src="@/assets/Icon/Reseller.svg">
-            <span v-if="show" class="side-link">Resellers</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Users'}">
+          <router-link :to="{ name: 'ResellerUsers'}">
             <img class="image-box" src="@/assets/Icon/Users.svg">
             <span v-if="show" class="side-link">Users</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Companies'}">
+          <router-link :to="{ name: 'ResellerCompanies'}">
             <img class="image-box" src="@/assets/Icon/Companies.svg">
             <span v-if="show" class="side-link">Companies</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Vendors'}">
+          <router-link :to="{ name: 'ResellerVendors'}">
             <img class="image-box" src="@/assets/Icon/Vendors.svg">
             <span v-if="show" class="side-link">Vendors</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'DID'}">
+          <router-link :to="{ name: 'ResellerDIDs'}">
             <img class="image-box" src="@/assets/Icon/DID.svg">
-            <span v-if="show" class="side-link">DID</span>
+            <span v-if="show" class="side-link">DIDs</span>
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Filters'}">
+          <router-link :to="{ name: 'ResellerFilters'}">
             <img class="image-box" src="@/assets/Icon/Filters.svg">
             <span v-if="show" class="side-link">Filters</span>
           </router-link>
@@ -141,16 +129,35 @@
       <div class="main">
         <div class="res-div">
           <div class="head-title">
-            Reporting
+            Mail Template
           </div>
         </div>
         <div class="cont-1-rep">
+            <div class="header-title">
+              Welcome to Mail Template!
+            </div>
+            <div class="header-text">
+              Many of us are so used to working on computer desktop that when it comes time to puschase a new
+              computer, we don't consider other options.
+            </div>
             <div class="chart-1-reporting">
               <div class="chart-1-title-reporting">
-                Resellers
+                Usage
               </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+              <div class="usage">
+                <div class="mail-nav-link">
+                  <div id="active" class="mail-nav-text">
+                    Daily
+                    <div class="nav-line-mail"></div>
+                  </div>
+                </div>
+                <div class="mail-nav-link">
+                  <router-link :to="{ name: 'ResellerBillingPayment' }">
+                    <div class="mail-nav-text">
+                      Weekly
+                    </div>
+                  </router-link>
+                </div>
               </div>
               <resellers-line :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></resellers-line>
               <input class="reporting-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
@@ -158,49 +165,94 @@
               <table class="reporting-table" cellspacing="0" cellpadding="0">
                 <thead>
                   <tr>
-                    <th class="resellers">Resellers</th>
+                    <th class="company">Company</th>
                     <th class="date">Date</th>
-                    <th class="status">Status</th>
+                    <th class="sms">SMS</th>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="company">Nellie Ferguson</td>
                     <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="sms">97322</td>
                   </tr>
                   <tr>
-                    <td class="resellers">Lou Haynes</td>
+                    <td class="company">Lou Haynes</td>
                     <td class="date">06 Nov 2018</td>
-                    <td class="status"><div class="not-active">Not Active</div></td>
+                    <td class="sms">86906</td>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="company">Nellie Ferguson</td>
                     <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="sms">49288</td>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="company">Littelfort</td>
                     <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="sms">18248</td>
                   </tr>
                   <tr>
-                    <td class="resellers">Lou Haynes</td>
+                    <td class="company">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="sms">97322</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Lou Haynes</td>
                     <td class="date">06 Nov 2018</td>
-                    <td class="status"><div class="not-active">Not Active</div></td>
+                    <td class="sms">86906</td>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="company">Nellie Ferguson</td>
                     <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="sms">49288</td>
                   </tr>
                   <tr>
-                    <td class="resellers">Lou Haynes</td>
+                    <td class="company">Littelfort</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="sms">18248</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="sms">97322</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Lou Haynes</td>
                     <td class="date">06 Nov 2018</td>
-                    <td class="status"><div class="not-active">Not Active</div></td>
+                    <td class="sms">86906</td>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
+                    <td class="company">Nellie Ferguson</td>
                     <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="sms">49288</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Littelfort</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="sms">18248</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="sms">97322</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Lou Haynes</td>
+                    <td class="date">06 Nov 2018</td>
+                    <td class="sms">86906</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="sms">49288</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Littelfort</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="sms">18248</td>
+                  </tr>
+                  <tr>
+                    <td class="company">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="sms">97322</td>
                   </tr>
                 </thead>
               </table>
@@ -209,59 +261,170 @@
               </div>
             </div>
           </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
+          <div class="cont-1-rep">
+            <div class="chart-3-reporting">
+              <div class="chart-3-title-reporting">
+                Credit Below Limit
               </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+              <div class="credit">
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Days" class="mail-days" v-model="user.days">
+                  <option value="Last 7 days">Last 7 days</option>
+                </select>
               </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
+              <table class="reporting-table" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th class="title">Title</th>
+                    <th class="date">Date</th>
+                    <th class="status">Status</th>
+                  </tr>
+                  <tr>
+                    <td class="title">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Below</div></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Lou Haynes</td>
+                    <td class="date">06 Nov 2018</td>
+                    <td class="status"><div class="not-active">Not Active</div></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Lou Haynes</td>
+                    <td class="date">06 Nov 2018</td>
+                    <td class="status"><div class="not-active">Not Active</div></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Lou Haynes</td>
+                    <td class="date">06 Nov 2018</td>
+                    <td class="status"><div class="not-active">Not Active</div></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Nellie Ferguson</td>
+                    <td class="date">29 Apr 2018</td>
+                    <td class="status"><div class="active">Active</div></td>
+                  </tr>
+                </thead>
+              </table>
             </div>
           </div>
           <div class="cont-1-rep">
             <div class="chart-3-reporting">
               <div class="chart-3-title-reporting">
-                Companies
+                Invoice
               </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+              <table class="invoice-table" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th class="created">Created</th>
+                    <th class="company2">Company</th>
+                    <th class="paid">Paid</th>
+                    <th class="amount">Amount</th>
+                  </tr>
+                  <tr>
+                    <td class="created">29 Dec 2018</td>
+                    <td class="company2"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Appolo Inc.</div></td>
+                    <td class="paid">07 Jul 2018</td>
+                    <td class="amount">$74</td>
+                  </tr>
+                  <tr>
+                    <td class="created">15 Mar 2018</td>
+                    <td class="company2"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Universal Inc.</div></td>
+                    <td class="paid">04 Jan 2018</td>
+                    <td class="amount">$38</td>
+                  </tr>
+                  <tr>
+                    <td class="created">08 Nov 2018</td>
+                    <td class="company2"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Appolo Inc.</div></td>
+                    <td class="paid">29 Feb 2018</td>
+                    <td class="amount">$71</td>
+                  </tr>
+                  <tr>
+                    <td class="created">03 Jun 2018</td>
+                    <td class="company2"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Appolo Inc.</div></td>
+                    <td class="paid">20 Jun 2018</td>
+                    <td class="amount">$76</td>
+                  </tr>
+                  <tr>
+                    <td class="created">17 Jan 2018</td>
+                    <td class="company2"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Appolo Inc.</div></td>
+                    <td class="paid">03 Feb 2018</td>
+                    <td class="amount">$61</td>
+                  </tr>
+                </thead>
+              </table>
+              <div class="show-more">
+                <a href="#" id="show-more">Show more</a>
               </div>
-              <companies-line :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></companies-line>
             </div>
           </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting">
-              <div class="chart-2-title-reporting">
-                Visits
+          <div class="cont-1-rep">
+            <div class="chart-3-reporting">
+              <div class="chart-3-title-reporting">
+                Payment Received
               </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+              <table class="invoice-table" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th class="date2">Date</th>
+                    <th class="company3">Company</th>
+                    <th class="description">Description</th>
+                    <th class="amount2">Amount</th>
+                  </tr>
+                  <tr>
+                    <td class="date2">04 Apr 2018</td>
+                    <td class="company3"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Appolo Inc.</div></td>
+                    <td class="description">Payment ID#367192</td>
+                    <td class="amount2">$74</td>
+                  </tr>
+                  <tr>
+                    <td class="date2">12-30-2018</td>
+                    <td class="company3"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Universal Inc.</div></td>
+                    <td class="description">Payment ID#367192</td>
+                    <td class="amount2">$38</td>
+                  </tr>
+                  <tr>
+                    <td class="date2">07-30-2018</td>
+                    <td class="company3"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Appolo Inc.</div></td>
+                    <td class="description">Payment ID#367192</td>
+                    <td class="amount2">$71</td>
+                  </tr>
+                  <tr>
+                    <td class="date2">08-10-2018</td>
+                    <td class="company3"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Appolo Inc.</div></td>
+                    <td class="description">Payment ID#367192</td>
+                    <td class="amount2">$76</td>
+                  </tr>
+                  <tr>
+                    <td class="date2">05-08-2018</td>
+                    <td class="company3"><div class="mail-avatar"></div> <div class="mail-avatar-fix">Appolo Inc.</div></td>
+                    <td class="description">Payment ID#367192</td>
+                    <td class="amount2">$61</td>
+                  </tr>
+                </thead>
+              </table>
+              <div class="show-more">
+                <a href="#" id="show-more">Show more</a>
               </div>
-              <bar-chart :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart>
-            </div>
-          </div>
-          <div class="cont-2-rep">
-            <div class="chart-2-reporting" id="second">
-              <div class="chart-2-title-reporting">
-                Activity
-              </div>
-              <div class="chart-box">
-                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
-              </div>
-              <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
             </div>
           </div>
         </div>
@@ -284,7 +447,7 @@ export default {
           popup: false,
                 user:{
                 system: 'Overall system',
-                days: 'Last 30 days'
+                days: 'Last 7 days'
             },
 
         }
@@ -304,6 +467,108 @@ export default {
 }
 </script>
 <style>
+.mail-avatar-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.mail-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.mail-days{
+    width: 170px;
+    height: 40px;
+    border: 1px solid #EDEEF3;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: "Helvetica Neue";
+    color: #55616E;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+}
+.usage{
+  display: inline-block;
+  float: right;
+  width: 150px;
+}
+.credit{
+  display: inline-block;
+  float: right;
+  width: 185px;
+}
+.mail-nav-text{
+  color: #BDBFD8;
+  font-family: "Circular Std";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 15px;
+}
+.mail-nav-text#active{
+  color: #51A3F3;
+  font-weight: 500;
+}
+a{
+  text-decoration: none;
+}
+.mail-nav-link{
+  display: inline-block;
+  float: left;
+  height: 50px;
+  width: 35px;
+  margin-left: 20px;
+}
+.nav-line-mail{
+  border-bottom: 2px solid #51A3F3;
+  width: 45px;
+  margin-top: 13px;
+}
+.header-text{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 13px;
+  line-height: 25px;
+  margin-left: 20px;
+  display: inline-block;
+  float: left;
+}
+.header-title{
+  height: auto;
+  width: calc(100% - 60px);
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
 .svg-active path{
   fill: white;
 }
@@ -319,7 +584,23 @@ export default {
   margin-left: 15px;
   text-align: left;
 }
-.resellers{
+.invoice-table{
+  border: none;
+  max-width: calc(100%);
+  width: 100%;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+}
+.company{
+  width: 174px;
+  padding-left: 15px;
+  height: 37px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
+.title{
   width: 174px;
   padding-left: 15px;
   height: 37px;
@@ -330,9 +611,56 @@ export default {
   height: 37px;
   box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
+.sms{
+  width: 132px;
+  height: 37px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
 .status{
   width: 132px;
   height: 37px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
+.created{
+  width: 134px;
+  height: 44px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+  padding-left: 15px;
+}
+.company2{
+  width: 169px;
+  height: 44px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
+.paid{
+  width: 96px;
+  height: 44px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
+.amount{
+  width: 96px;
+  height: 44px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
+.date2{
+  padding-left: 15px;
+  width: 124px;
+  height: 44px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
+.company3{
+  width: 129px;
+  height: 44px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
+.description{
+  width: 162px;
+  height: 44px;
+  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+}
+.amount2{
+  width: 70px;
+  height: 44px;
   box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
 
@@ -469,7 +797,6 @@ button{
 }
 .chart-1-title-reporting{
   height: 30px;
-  width: calc(100% - 60px);
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -494,7 +821,6 @@ button{
 }
 .chart-3-title-reporting{
   height: 30px;
-  width: calc(100% - 60px);
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -722,7 +1048,7 @@ li:first-child{
   text-align: left;
   margin-top: 20px;
   float: left;
-  margin-left: 63px;
+  margin-left: 50px;
 }
 .navi-head{
   max-width: 560px;
