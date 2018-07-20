@@ -12,7 +12,7 @@
                         <input class="input-email" type="text" v-model="user.email" placeholder="elyse_sauer@yahoo.com">
                         <label>Password</label>
                         <input class="input-password" type="text" v-model="user.password" placeholder="********">
-                        <button type="submit">Log In</button>
+                        <router-link :to="{ name: 'Dashboard'}"><button type="submit">Log In</button></router-link>
                         <div class="no-account">
                             Don't have an account? <router-link :to="{ name: 'Register'}">Register</router-link>
                         </div>

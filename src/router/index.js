@@ -64,6 +64,7 @@ import CompanyTemplate from '@/components/cadmin/Template'
 import CompanyBilling from '@/components/cadmin/Billing'
 import CompanyBillingPayment from '@/components/cadmin/BillingPayment'
 import CompanyDIDs from '@/components/cadmin/DIDs'
+import SMSCenter from '@/components/cadmin/SMSCenter'
 
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
@@ -86,298 +87,303 @@ export default new Router({
         component: RegisterPage
     },
     {
-        path: '/dashboard',
+        path: '/sys/dashboard',
         name: 'Dashboard',
         component: Dashboard
     },
     {
-        path: '/reporting',
+        path: '/sys/reporting',
         name: 'Reporting',
         component: Reporting
     },
     {
-        path: '/product',
+        path: '/sys/product',
         name: 'Product',
         component: Product
     },
     {
-        path: '/addproduct',
+        path: '/sys/add-product',
         name: 'AddProduct',
         component: AddProduct
     },
     {
-        path: '/template',
+        path: '/sys/template',
         name: 'Template',
         component: Template
     },
     {
-        path: '/billing',
+        path: '/sys/billing',
         name: 'Billing',
         component: Billing
     },
     {
-        path: '/billingpayment',
+        path: '/sys/billing-payment',
         name: 'BillingPayment',
         component: BillingPayment
     },
     {
-        path: '/resellers',
+        path: '/sys/resellers',
         name: 'Resellers',
         component: Resellers
     },
     {
-        path: '/addreseller',
+        path: '/sys/add-reseller',
         name: 'AddReseller',
         component: AddReseller
     },
     {
-        path: '/editreseller',
+        path: '/sys/edit-reseller',
         name: 'EditReseller',
         component: EditReseller
     },
     {
-        path: '/paymenthistory',
+        path: '/sys/payment-history',
         name: 'PaymentHistory',
         component: PaymentHistory
     },
     {
-        path: '/invoicehistory',
+        path: '/sys/invoice-history',
         name: 'InvoiceHistory',
         component: InvoiceHistory
     },
     {
-        path: '/transactionhistory',
+        path: '/sys/transaction-history',
         name: 'TransactionHistory',
         component: TransactionHistory
     },
     {
-        path: '/users',
+        path: '/sys/users',
         name: 'Users',
         component: Users
     },
     {
-        path: '/adduser',
+        path: '/sys/add-user',
         name: 'AddUser',
         component: AddUser
     },
     {
-        path: '/edituser',
+        path: '/sys/edit-user',
         name: 'EditUser',
         component: EditUser
     },
     {
-        path: '/companies',
+        path: '/sys/companies',
         name: 'Companies',
         component: Companies
     },
     {
-        path: '/addcompany',
+        path: '/sys/add-company',
         name: 'AddCompany',
         component: AddCompany
     },
     {
-        path: '/editcompany',
+        path: '/sys/edit-company',
         name: 'EditCompany',
         component: EditCompany
     },
     {
-        path: '/vendors',
+        path: '/sys/vendors',
         name: 'Vendors',
         component: Vendors
     },
     {
-        path: '/addvendor',
+        path: '/sys/add-vendor',
         name: 'AddVendor',
         component: AddVendor
     },
     {
-        path: '/editvendor',
+        path: '/sys/edit-vendor',
         name: 'EditVendor',
         component: EditVendor
     },
     {
-        path: '/vendorsrate',
+        path: '/sys/vendors-rate',
         name: 'VendorsRate',
         component: VendorsRate
     },
     {
-        path: '/did',
+        path: '/sys/did',
         name: 'DID',
         component: DID
     },
     {
-        path: '/editdid',
+        path: '/sys/edit-did',
         name: 'EditDID',
         component: EditDID
     },
     {
-        path: '/importdid',
+        path: '/sys/import-did',
         name: 'ImportDID',
         component: ImportDID
     },
     {
-        path: '/verifydid',
+        path: '/sys/verify-did',
         name: 'VerifyDID',
         component: VerifyDID
     },
     {
-        path: '/filters',
+        path: '/sys/filters',
         name: 'Filters',
         component: Filters
     },
     {
-        path: '/profile',
+        path: '/r/profile',
         name: 'Profile',
         component: Profile
     },
     {
-        path: '/profilepayment',
+        path: '/r/payment',
         name: 'ProfilePayment',
         component: ProfilePayment
     },
     {
-        path: '/resellerproduct',
+        path: '/r/product',
         name: 'ResellerProduct',
         component: ResellerProduct
     },
     {
-        path: '/reselleraddproduct',
+        path: '/r/add-product',
         name: 'ResellerAddProduct',
         component: ResellerAddProduct
     },
     {
-        path: '/resellereditproduct',
+        path: '/r/edit-product',
         name: 'ResellerEditProduct',
         component: ResellerEditProduct
     },
     {
-        path: '/mailtemplateregister',
+        path: '/r/register',
         name: 'MailTemplateRegister',
         component: MailTemplateRegister
     },
     {
-        path: '/mailtemplate',
+        path: '/r/mail-template',
         name: 'MailTemplate',
         component: MailTemplate
     },
     {
-        path: '/resellertemplate',
+        path: '/r/template',
         name: 'ResellerTemplate',
         component: ResellerTemplate
     },
     {
-        path: '/resellerbilling',
+        path: '/r/billing',
         name: 'ResellerBilling',
         component: ResellerBilling
     },
     {
-        path: '/resellerbillingpayment',
+        path: '/r/billing-payment',
         name: 'ResellerBillingPayment',
         component: ResellerBillingPayment
     },
     {
-        path: '/resellerusers',
+        path: '/r/users',
         name: 'ResellerUsers',
         component: ResellerUsers
     },
     {
-        path: '/reselleradduser',
+        path: '/r/add-user',
         name: 'ResellerAddUser',
         component: ResellerAddUser
     },
     {
-        path: '/reselleredituser',
+        path: '/r/edit-user',
         name: 'ResellerEditUser',
         component: ResellerEditUser
     },
     {
-        path: '/resellercompanies',
+        path: '/r/companies',
         name: 'ResellerCompanies',
         component: ResellerCompanies
     },
     {
-        path: '/reselleraddcompany',
+        path: '/r/add-company',
         name: 'ResellerAddCompany',
         component: ResellerAddCompany
     },
     {
-        path: '/resellereditcompany',
+        path: '/r/edit-company',
         name: 'ResellerEditCompany',
         component: ResellerEditCompany
     },
     {
-        path: '/resellerpaymenthistory',
+        path: '/r/payment-history',
         name: 'ResellerPaymentHistory',
         component: ResellerPaymentHistory
     },
     {
-        path: '/resellerinvoicehistory',
+        path: '/r/invoice-history',
         name: 'ResellerInvoiceHistory',
         component: ResellerInvoiceHistory
     },
     {
-        path: '/resellertransactionhistory',
+        path: '/r/transaction-history',
         name: 'ResellerTransactionHistory',
         component: ResellerTransactionHistory
     },
     {
-        path: '/resellervendors',
+        path: '/r/vendors',
         name: 'ResellerVendors',
         component: ResellerVendors
     },
     {
-        path: '/reselleraddvendor',
+        path: '/r/add-vendor',
         name: 'ResellerAddVendor',
         component: ResellerAddVendor
     },
     {
-        path: '/resellereditvendor',
+        path: '/r/edit-vendor',
         name: 'ResellerEditVendor',
         component: ResellerEditVendor
     },
     {
-        path: '/resellerdids',
+        path: '/r/dids',
         name: 'ResellerDIDs',
         component: ResellerDIDs
     },
     {
-        path: '/resellerfilters',
+        path: '/r/filters',
         name: 'ResellerFilters',
         component: ResellerFilters
     },
     {
-        path: '/resellereditdids',
+        path: '/r/edit-dids',
         name: 'ResellerEditDIDs',
         component: ResellerEditDIDs
     },
     {
-        path: '/alert',
+        path: '/ca/alert',
         name: 'Alert',
         component: Alert
     },
     {
-        path: '/alertweekly',
+        path: '/ca/weekly',
         name: 'AlertWeekly',
         component: AlertWeekly
     },
     {
-        path: '/companytemplate',
+        path: '/ca/template',
         name: 'CompanyTemplate',
         component: CompanyTemplate
     },
     {
-        path: '/companybilling',
+        path: '/ca/billing',
         name: 'CompanyBilling',
         component: CompanyBilling
     },
     {
-        path: '/companybillingpayment',
+        path: '/ca/billing-payment',
         name: 'CompanyBillingPayment',
         component: CompanyBillingPayment
     },
     {
-        path: '/companydids',
+        path: '/ca/dids',
         name: 'CompanyDIDs',
         component: CompanyDIDs
+    },
+    {
+        path: '/r/smscenter',
+        name: 'SMSCenter',
+        component: SMSCenter
     }]
 })
