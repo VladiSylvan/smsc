@@ -126,6 +126,259 @@
               New Message
             </div>
           </div>
+          <div class="message">
+            <table class="sms-table" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Maud Stewart
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar-active"><div class="avatar"></div></td>
+                  <td class="sms-message-active">
+                    <div class="sms-table-name">
+                      Glen Moody
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date-active">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Lillie Walton
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Lenora Copeland
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Abbie Ortiz
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Randy Schwartz
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Mable Spencer
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Maude Lamb
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Ruth McLaughlin
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Glen Parsons
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      William Cortez
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sms-avatar"><div class="avatar"></div></td>
+                  <td class="sms-message">
+                    <div class="sms-table-name">
+                      Leo Bowman
+                    </div>
+                    <div class="sms-table-msg">
+                      What Makes A Hotel
+                    </div>
+                  </td>
+                  <td class="sms-date">
+                    <div class="sms-table-date">
+                      22 Sep
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="chat-input">
+            <input class="sms-input" type="text" v-model="user.smsInput" placeholder="Type a number or name">
+          </div>
+          <div class="chat-messages">
+            <div class="chat-receiver">
+              <div class="chat-receiver-text">
+                Quite a number of devices and sources on the market today will work with the use of HDMI.
+                The Blu-Ray disc player, a relatively new innovation, was created with the use of HDMI specifically
+                in mind.
+              </div>
+              <div class="chat-receiver-info">
+                352-626-4573 · 05 Jan 2018
+              </div>
+            </div>
+            <div class="chat-sender">
+              <div class="chat-avatar"></div>
+              <div class="chat-sender-text">
+                 Most personal computers that are sold today are ready for use with HDMI, as are the majority of
+                 video game consoles in the stores currently. A set-top box also is usually compatible with HDMI,
+                 as are such entertainment options as digital television. Essentially, any type of computer interface
+                 today will function with the use of HDMI. How Does HDMI Work?
+              </div>
+              <div class="chat-sender-info">
+                05 Jan 2018 · 149-777-3171
+              </div>
+            </div>
+            <div class="chat-receiver">
+              <div class="chat-receiver-image">
+
+              </div>
+              <div class="chat-receiver-text">
+                Quite a number of devices and sources on the market today will work with the use of HDMI.
+                The Blu-Ray disc player, a relatively new innovation, was created with the use of HDMI
+                specifically in mind.
+              </div>
+              <div class="chat-receiver-info">
+                352-626-4573 · 05 Jan 2018
+              </div>
+            </div>
+            <div class="chat-sender">
+              <div class="chat-avatar"></div>
+              <div class="chat-sender-text">
+                 5 Reasons To Purchase Desktop Computers
+              </div>
+              <div class="chat-sender-info">
+                05 Jan 2018 · 243-357-5470 · <span class="chat-info">Sent as SMS</span>
+              </div>
+            </div>
+          </div>
+          <input class="chat-insert" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Image.svg') + ')' }" type="text" v-model="user.smsInsert" placeholder="Type your message here">
+          <div class="send-button">
+            <img class="send-image" src="@/assets/Icon/Send.svg">
+          </div>
         </div>
       </div>
     </div>
@@ -167,6 +420,132 @@ export default {
 }
 </script>
 <style>
+.chat-info{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 10px;
+  line-height: 12px;
+}
+.chat-receiver-text{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  background-color: #F8F9FE;
+  max-width: 525px;
+  width: auto;
+  margin-right: 15px;
+  margin-top: 22px;
+}
+.chat-receiver-info{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 10px;
+  line-height: 12px;
+  float: right;
+  margin-right: 30px;
+  margin-top: 5px;
+}
+.chat-sender-info{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 10px;
+  line-height: 12px;
+  float: left;
+  margin-left: 70px;
+  margin-top: 5px;
+  max-width: 100%;
+  width: 100%;
+}
+.chat-receiver{
+  float: right;
+  display: inline-block;
+}
+.chat-receiver-image{
+  display: inline-block;
+  background-color: #F8F9FE;
+  width: 270px;
+  height: 300px;
+  border-radius: 15px;
+  margin-left: 285px;
+}
+.chat-sender-text{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  background-color: #F8F9FE;
+  display: inline-block;
+  float: left;
+  max-width: 525px;
+  width: auto;
+  margin-top: 22px;
+}
+.chat-sender{
+  float: left;
+  display: inline-block;
+}
+.send-button{
+  height: 60px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.send-image{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.sms-table-name{
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 12px;
+}
+.sms-table-msg{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+}
+.sms-table-date{
+  color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 12px;
+}
+.chat-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-right: 8px;
+  float: left;
+}
+.avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  margin-top: 12px;
+  float: left;
+}
 .svg-white{
   fill: #FFFFFF;
 }
@@ -177,15 +556,60 @@ export default {
   margin-left: 15px;
   margin-right: 8px;
 }
+.chat{
+  max-width: 70.1754385965%;
+  width: 100%;
+  float: right;
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 20px;
+  background-color: #FFFFFF;
+  height: auto;
+  margin-bottom: 20px;
+}
+.chat-input{
+  height: 60px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.chat-messages{
+  height: 828px;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.chat-insert{
+  height: 58px;
+  max-width: calc(100% - 115px);
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  border: 0;
+  padding-left: 55px;
+  background-color: #FFFFFF;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: 15px;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  width: 100%;
+  float: left;
+  display: inline-block;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
 .messages{
-  max-width: 27.2727272727%;
+  max-width: 26.3157894737%;
   width: 100%;
   float: left;
   display: inline-block;
   margin-top: 20px;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 .new-message{
+  width: 100%;
   border-radius: 4px 0 0 0;
   background-color: #51A3F3;
   height: 60px;
@@ -241,7 +665,13 @@ button{
   margin-left: 15px;
   margin-bottom: 10px;
 }
-input[type="text"]{
+.sms-input{
+  height: 36px !important;
+  max-width: 327px;
+  padding-left: 15px;
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 15px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -255,54 +685,59 @@ input[type="text"]{
   font-size: 14px;
   line-height: 25px;
 }
-.alert-search{
-  height: 36px !important;
-  max-width: calc(37.9090909091% - 43px);
-  margin-left: 13px;
-  padding-left: 40px;
-  width: 100%;
-}
-.alert-table{
-  margin-left: 20px;
+.sms-table{
   border: none;
-  max-width: calc(100% - 40px);
+  max-width: calc(100%);
   width: 100%;
   color: #212B36;
   font-family: "SF Pro Text";
   font-size: 14px;
   line-height: 16px;
-  margin-left: 15px;
   text-align: left;
 }
-.company{
-  width: 174px;
-  padding-left: 15px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+
+.sms-avatar-active{
+  width: 50px;
+  height: 74px;
+  background-color: #F0F1FA;
+  vertical-align: top;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.date{
-  width: 170px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+.sms-message-active{
+  width: 182px;
+  height: 74px;
+  background-color: #F0F1FA;
+  vertical-align: top;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.sms{
-  width: 701px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
+.sms-date-active{
+  width: 60px;
+  height: 74px;
+  background-color: #F0F1FA;
+  vertical-align: top;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.show-more{
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 23px;
+
+.sms-avatar{
+  width: 50px;
+  height: 74px;
+  background-color: #FFFFFF;
+  vertical-align: top;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-a#show-more{
-  	height: 15px;
-    width: 69px;
-    color: #51A3F3;
-    font-family: "SF Pro Text";
-    font-size: 13px;
-    line-height: 15px;
-    text-decoration: none;
+.sms-message{
+  width: 182px;
+  height: 74px;
+  background-color: #FFFFFF;
+  vertical-align: top;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.sms-date{
+  width: 60px;
+  height: 74px;
+  background-color: #FFFFFF;
+  vertical-align: top;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .svg-blue path{
   fill: #51A3F3;

@@ -287,7 +287,12 @@ button{
   margin-left: 15px;
   margin-bottom: 10px;
 }
-input[type="text"]{
+.alert-search{
+  height: 36px !important;
+  max-width: calc(37.9090909091% - 43px);
+  margin-left: 13px;
+  padding-left: 40px;
+  width: 100%;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -300,13 +305,6 @@ input[type="text"]{
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
-}
-.alert-search{
-  height: 36px !important;
-  max-width: calc(37.9090909091% - 43px);
-  margin-left: 13px;
-  padding-left: 40px;
-  width: 100%;
 }
 .alert-table{
   margin-left: 20px;

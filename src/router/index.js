@@ -65,6 +65,11 @@ import CompanyBilling from '@/components/cadmin/Billing'
 import CompanyBillingPayment from '@/components/cadmin/BillingPayment'
 import CompanyDIDs from '@/components/cadmin/DIDs'
 import SMSCenter from '@/components/cadmin/SMSCenter'
+import Callflows from '@/components/cadmin/Callflows'
+import Suppression from '@/components/cadmin/Suppression'
+import AddSuppression from '@/components/cadmin/AddSuppression'
+import CompanySMSWorkflow from '@/components/cadmin/SMSWorkflow'
+import CompanyReminderWorkflow from '@/components/cadmin/ReminderWorkflow'
 
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
@@ -382,8 +387,33 @@ export default new Router({
         component: CompanyDIDs
     },
     {
-        path: '/r/smscenter',
+        path: '/ca/smscenter',
         name: 'SMSCenter',
         component: SMSCenter
+    },
+    {
+        path: '/ca/callflows',
+        name: 'Callflows',
+        component: Callflows
+    },
+    {
+        path: '/ca/suppression',
+        name: 'Suppression',
+        component: Suppression
+    },
+    {
+        path: '/ca/add-suppression',
+        name: 'AddSuppression',
+        component: AddSuppression
+    },
+    {
+        path: '/ca/sms-workflow',
+        name: 'CompanySMSWorkflow',
+        component: CompanySMSWorkflow
+    },
+    {
+        path: '/ca/reminder-workflow',
+        name: 'CompanyReminderWorkflow',
+        component: CompanyReminderWorkflow
     }]
 })
