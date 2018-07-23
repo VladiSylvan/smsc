@@ -70,6 +70,10 @@ import Suppression from '@/components/cadmin/Suppression'
 import AddSuppression from '@/components/cadmin/AddSuppression'
 import CompanySMSWorkflow from '@/components/cadmin/SMSWorkflow'
 import CompanyReminderWorkflow from '@/components/cadmin/ReminderWorkflow'
+import CompanyCampaigns from '@/components/cadmin/Campaigns'
+import AllCampaigns from '@/components/cadmin/AllCampaigns'
+import KeywordManager from '@/components/cadmin/KeywordManager'
+import AddKeyword from '@/components/cadmin/AddKeyword'
 
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
@@ -415,5 +419,25 @@ export default new Router({
         path: '/ca/reminder-workflow',
         name: 'CompanyReminderWorkflow',
         component: CompanyReminderWorkflow
+    },
+    {
+        path: '/ca/campaigns',
+        name: 'CompanyCampaigns',
+        component: CompanyCampaigns
+    },
+    {
+        path: '/ca/all-campaings',
+        name: 'AllCampaigns',
+        component: AllCampaigns
+    },
+    {
+        path: '/ca/keyword-manager',
+        name: 'KeywordManager',
+        component: KeywordManager
+    },
+    {
+        path: '/ca/add-keyword',
+        name: 'AddKeyword',
+        component: AddKeyword
     }]
 })

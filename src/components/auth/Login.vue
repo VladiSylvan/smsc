@@ -9,10 +9,10 @@
                     <h1>Log In</h1>
                     <form v-on:submit="sendForm()">
                         <label>Email</label>
-                        <input class="input-email" type="text" v-model="user.email" placeholder="elyse_sauer@yahoo.com">
+                        <input required class="input-email" type="text" v-model="user.user_name" placeholder="elyse_sauer@yahoo.com">
                         <label>Password</label>
-                        <input class="input-password" type="text" v-model="user.password" placeholder="********">
-                        <router-link :to="{ name: 'Dashboard'}"><button type="submit">Log In</button></router-link>
+                        <input required class="input-password" type="password" v-model="user.password" placeholder="********">
+                        <button type="submit">Log In</button>
                         <div class="no-account">
                             Don't have an account? <router-link :to="{ name: 'Register'}">Register</router-link>
                         </div>
@@ -22,7 +22,6 @@
         </div>
     </div>
 </template>
-
 <script>
 import axios from 'axios'
 export default {
@@ -34,12 +33,20 @@ export default {
             }
         }
     },
+    mounted(){
+      console.log(localStorage.getItem("token"))
+   },
     methods:{
         sendForm(){
-            axios.post('http://88.198.106.121/api_smsc/v1/auth', this.user).then(function(res){
-              console.log(res)
+           var app = this;
+            axios.post('http://88.198.219.62/api_smsc/v1/auth', app.user).then(function(res){
+               localStorage.setItem("token", res.data.payload.token)
+               localStorage.setItem("token-exp", res.data.payload.exp)
+               console.log(res.data.payload.token)
+              app.$router.push({name: 'Dashboard'})
             }).catch(function(err){
-              console.log(err)
+              alert(err.response.data.error.message)
+              console.log(app.user)
             })
         }
     },
@@ -91,7 +98,7 @@ export default {
       margin-top: 5px;
     }
     label{
-    	color: #000000;	font-family: "Circular Std Book";
+        color: #000000; font-family: "Circular Std Book";
         font-size: 12px;
         font-weight: 300;
         letter-spacing: 0.21px;

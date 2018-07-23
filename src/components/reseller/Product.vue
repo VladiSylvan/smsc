@@ -345,7 +345,7 @@ export default {
   color: #FFFFFF;
 }
 .product-search{
-  width: 302px;
+  width: 282px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;

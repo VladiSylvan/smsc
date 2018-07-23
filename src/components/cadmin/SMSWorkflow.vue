@@ -65,7 +65,7 @@
         <li>
           <router-link :to="{ name: 'CompanyTemplate'}">
             <img class="image-box" src="@/assets/Icon/Template.svg">
-            <span v-if="show" class="side-link">Template</span>
+            <span v-if="show" class="side-link">Templates</span>
           </router-link>
         </li>
         <li>
@@ -111,7 +111,7 @@
       <div class="main">
         <div class="res-div">
           <div class="head-title">
-            DIDs
+            SMS Workflow
           </div>
         </div>
           <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for SMS workflow">
