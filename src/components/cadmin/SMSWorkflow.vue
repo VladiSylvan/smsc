@@ -115,7 +115,7 @@
           </div>
         </div>
           <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for SMS workflow">
-          <router-link :to="{ name: 'AddWorkflow'}"><button v-on:click="showModal()" id="did" type="submit">Add Workflow</button></router-link>
+          <router-link :to="{ name: 'AddSMSWorkflow'}"><button id="did" type="submit">Add Workflow</button></router-link>
           <div class="main-container">
             <table class="did-table" cellspacing="0" cellpadding="0">
               <thead>

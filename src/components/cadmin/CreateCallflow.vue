@@ -114,115 +114,31 @@
             DIDs
           </div>
         </div>
-        <div class="navbar">
-          <div class="nav-link-1">
-            <div id="active" class="nav-text">
-              All DIDs
-              <div class="nav-line-bill-1"></div>
-            </div>
+        <router-link :to="{ name: 'Callflows'}">
+          <div class="svg-back-call">
+            <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+              L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+              L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+              </path>
+            </svg>
           </div>
-          <div class="nav-link-2">
-            <router-link :to="{ name: 'Callflows' }">
-              <div class="nav-text">
-                All Callflows
-              </div>
-            </router-link>
+          <div class='back-call'>
+            Back to Callflows
           </div>
-          <div class="nav-link-3">
-            <router-link :to="{ name: 'Suppression' }">
-              <div class="nav-text">
-                Suppression
-              </div>
-            </router-link>
-          </div>
-        </div>
-          <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
-          <router-link :to="{ name: 'CompanyDIDs'}"><button v-on:click="showModal()" id="did" type="submit">Buy DID</button></router-link>
-          <router-link :to="{ name: 'CreateCallflow'}"><button id="did" type="submit">New Callflow</button></router-link>
+        </router-link>
+        <router-link :to="{ name: 'CreateCallflow'}"><button id="create" type="submit">Create</button></router-link>
+        <router-link :to="{ name: 'Callflows'}"><button id="call-cancel" type="submit">Cancel</button></router-link>
           <div class="main-container">
-            <table class="did-table" cellspacing="0" cellpadding="0">
-              <thead>
-                <tr class="did-table-th">
-                  <th class="did-active"></th>
-                  <th class="did-number">Number</th>
-                  <th class="did-created">Created On</th>
-                  <th class="did-created-by">Created By</th>
-                  <th class="did-country">Country</th>
-                  <th class="did-type">Type</th>
-                  <th class="did-assigned">Assigned To</th>
-                  <th class="did-option"></th>
-                  <th class="did-option"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">050-185-4229</td>
-                  <td class="did-created">10-03-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">San Marino</div></td>
-                  <td class="did-country">Ethiopia</td>
-                  <td class="did-type">Toll Free</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Appolo Inc.</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">215-054-1288</td>
-                  <td class="did-created">11-28-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Douglas Richards</div></td>
-                  <td class="did-country">South Africa</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">George Burns</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">697-431-7827</td>
-                  <td class="did-created">01-26-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Eleanor Jensen</div></td>
-                  <td class="did-country">Marshall</td>
-                  <td class="did-type">Toll Free</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Stanley Powell</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">239-429-1353</td>
-                  <td class="did-created">01-24-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Evelyn Holland</div></td>
-                  <td class="did-country">Angola</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Allen Roberts</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-offline">
-                  <td class="did-active"><div class="product-not-active"></div></td>
-                  <td class="did-number">625-867-0083</td>
-                  <td class="did-created">12-14-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Polly Mitchell</div></td>
-                  <td class="did-country">Dominican</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Susie Dean</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-offline">
-                  <td class="did-active"><div class="product-not-active"></div></td>
-                  <td class="did-number">542-961-8296</td>
-                  <td class="did-created">10-03-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Winnie Medina</div></td>
-                  <td class="did-country">Isle of Man</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Peter Nelson</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'ResellerEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="callflow-create">
+              <div class="callflow-main-title">
+                Create callflow
+              </div>
+              <div class="callflow-title">
+                Callflow Name
+              </div>
+              <input class="callflow-input" type="text" v-model="user.search" placeholder="Enter campaign name">
+            </div>
           </div>
         </div>
         <div id="app">
@@ -268,6 +184,48 @@ export default {
 }
 </script>
 <style>
+.callflow-main-title{
+	color: #000000;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  float: left;
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.callflow-title{
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  float: left;
+  display: inline-block;
+  text-transform: uppercase;
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.callflow-create{
+  max-width: calc(100% - 40px);
+  width: 100%;
+  padding: 15px;
+  background-color: #FFFFFF;
+  height: 115px;
+}
+.callflow-input{
+  max-width: 45.6140350877%;
+  width: 100%;
+  height: 40px;
+  float: left;
+  display: inline-block;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
 .navbar{
   height: 50px;
   width: 100%;
@@ -359,6 +317,25 @@ a{
 }
 .svg-active path{
   fill: white;
+}
+.svg-back-call{
+  float: left;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+.back-call{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  float: left;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .did-table{
   border: none;
@@ -463,21 +440,40 @@ input[type="text"]{
   margin-left: 20px;
   margin-top: 20px;
 }
-button#did{
+button#create{
   	height: 40px;
-    width: 130px;
+    border: 1px solid #51A3F3;
     border-radius: 4px;
     background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
+    color: #FFFFFF;
     font-family: "Helvetica Neue";
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 30px;
     text-align: center;
-    margin-top: 20px;
     float: right;
     margin-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+}
+button#call-cancel{
+  	height: 40px;
+    border: 1px solid #BDBFD8;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #55616E;
+    font-family: "Circular Std";
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 19px;
+    text-align: center;
+    float: right;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+    margin-right: 15px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;

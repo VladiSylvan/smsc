@@ -207,9 +207,9 @@
               </select>
             </div>
           </div>
-          <div class="connect">
+          <div class="connect-4">
           </div>
-          <div class="sms-action-2">
+          <div class="sms-action-2-fix">
             <div class="circle-grey">
               <div class="circle-grey-box">
                 <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -463,6 +463,7 @@ export default {
 .connect{
   height: 62px;
   width: 2px;
+  border-left: 2px solid #BDBFD8;
   display: inline-block;
   float: left;
   margin-left: 30px;
@@ -470,6 +471,7 @@ export default {
 .connect-2{
   height: 30px;
   width: 2px;
+  border-left: 2px solid #BDBFD8;
   display: inline-block;
   float: left;
   margin-left: 140px;
@@ -477,9 +479,19 @@ export default {
 .connect-3{
   height: 30px;
   width: 2px;
+  border-left: 2px solid #BDBFD8;
   display: inline-block;
   float: left;
   margin-left: 250px;
+}
+.connect-4{
+  height: 90px;
+  width: 90px;
+  border-left: 2px solid #BDBFD8;
+  border-bottom: 2px solid #BDBFD8;
+  display: inline-block;
+  float: left;
+  margin-left: 30px;
 }
 .sms-grid-remove{
   transform: rotate(45deg);
@@ -509,6 +521,14 @@ export default {
   display: inline-block;
   float: left;
   margin-left: 220px;
+}
+.sms-action-2-fix{
+  max-width: 100%;
+  width: 100%;
+  display: inline-block;
+  float: left;
+  margin-left: 110px;
+  margin-top: -30px;
 }
 .circle-big{
 	height: 60px;

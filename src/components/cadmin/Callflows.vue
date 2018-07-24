@@ -138,7 +138,7 @@
         </div>
           <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchCallflow" placeholder="Search for callflow">
           <router-link :to="{ name: 'CompanyDIDs'}"><button v-on:click="showModal()" id="did" type="submit">Buy DID</button></router-link>
-          <router-link :to="{ name: 'CompanyDIDCallflow'}"><button id="did" type="submit">New Callflow</button></router-link>
+          <router-link :to="{ name: 'CreateCallflow'}"><button id="did" type="submit">New Callflow</button></router-link>
           <div class="main-container">
             <table class="did-table" cellspacing="0" cellpadding="0">
               <thead>

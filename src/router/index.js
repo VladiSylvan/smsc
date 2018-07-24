@@ -75,6 +75,10 @@ import AllCampaigns from '@/components/cadmin/AllCampaigns'
 import KeywordManager from '@/components/cadmin/KeywordManager'
 import AddKeyword from '@/components/cadmin/AddKeyword'
 import EditSMSWorkflow from '@/components/cadmin/EditSMSWorkflow'
+import EditReminderWorkflow from '@/components/cadmin/EditReminderWorkflow'
+import AddSMSWorkflow from '@/components/cadmin/AddSMSWorkflow'
+import AddReminderWorkflow from '@/components/cadmin/AddReminderWorkflow'
+import CreateCallflow from '@/components/cadmin/CreateCallflow'
 
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
@@ -445,5 +449,25 @@ export default new Router({
         path: '/ca/edit-sms-workflow',
         name: 'EditSMSWorkflow',
         component: EditSMSWorkflow
+    },
+    {
+        path: '/ca/edit-reminder-workflow',
+        name: 'EditReminderWorkflow',
+        component: EditReminderWorkflow
+    },
+    {
+        path: '/ca/add-sms-workflow',
+        name: 'AddSMSWorkflow',
+        component: AddSMSWorkflow
+    },
+    {
+        path: '/ca/add-reminder-workflow',
+        name: 'AddReminderWorkflow',
+        component: AddReminderWorkflow
+    },
+    {
+        path: '/ca/create-callflow',
+        name: 'CreateCallflow',
+        component: CreateCallflow
     }]
 })

@@ -115,7 +115,7 @@
           </div>
         </div>
         <router-link :to="{ name: 'CompanySMSWorkflow'}">
-          <div class="svg-back">
+          <div class="svg-back-sms">
             <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
               L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
@@ -123,15 +123,17 @@
               </path>
             </svg>
           </div>
-          <div class='back'>
+          <div class='back-sms'>
             Back to SMS Workflows
           </div>
         </router-link>
-        <router-link :to="{ name: 'CompanySMSWorkflow'}"><button id="delete" type="submit">Delete</button></router-link>
+        <router-link :to="{ name: 'AddSMSWorkflow'}"><button id="create" type="submit">Create</button></router-link>
+        <router-link :to="{ name: 'CompanySMSWorkflow'}"><button id="sms-cancel" type="submit">Cancel</button></router-link>
         <div class="main-sms-container">
           <div class="main-title">
-            South Cicero
+            Name SMS Workflow
           </div>
+          <input class="add-sms-input" type="text" v-model="user.search" placeholder="Type a name for the SMS workflow">
           <div class="sms-action">
             <div class="circle-big">
               <div class="circle-box">
@@ -447,6 +449,15 @@ export default {
 }
 </script>
 <style>
+.add-sms-input{
+  max-width: 30%;
+  width: 100%;
+  height: 40px;
+  float: left;
+  display: inline-block;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
 .add-circle{
 	box-sizing: border-box;
 	height: 41px;
@@ -532,14 +543,17 @@ export default {
   margin-right: 25px;
 }
 .main-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
   max-width: 100%;
   width: 100%;
-  margin-bottom: 15px;
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  float: left;
 }
 .sms-grid-title{
   max-width: 100%;
@@ -701,7 +715,7 @@ a{
 .svg path{
   fill: #51A3F3;
 }
-.svg-back{
+.svg-back-sms{
   float: left;
   display: inline-block;
   margin-top: 25px;
@@ -709,7 +723,7 @@ a{
   margin-left: 20px;
   margin-right: 5px;
 }
-.back{
+.back-sms{
   color: #51A3F3;
   font-family: "Helvetica Neue";
   font-size: 16px;
@@ -848,6 +862,41 @@ button#add{
     margin-right: 10px;
     padding-left: 15px;
     padding-right: 15px;
+}
+button#create{
+  	height: 40px;
+    border: 1px solid #51A3F3;
+    border-radius: 4px;
+    background-color: #51A3F3;
+    color: #FFFFFF;
+    font-family: "Helvetica Neue";
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    float: right;
+    margin-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+}
+button#sms-cancel{
+  	height: 40px;
+    border: 1px solid #BDBFD8;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #55616E;
+    font-family: "Circular Std";
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 19px;
+    text-align: center;
+    float: right;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+    margin-right: 15px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
