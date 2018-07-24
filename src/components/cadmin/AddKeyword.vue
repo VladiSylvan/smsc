@@ -78,7 +78,7 @@
           Manage
         </div>
         <li>
-          <router-link :to="{ name: 'Company DIDs'}">
+          <router-link :to="{ name: 'CompanyDIDs'}">
             <img class="image-box" src="@/assets/Icon/DID.svg">
             <span v-if="show" class="side-link">DIDs</span>
           </router-link>
@@ -124,7 +124,7 @@
             </svg>
           </div>
           <div class='back'>
-            Back to Campaigns
+            Back to Keywords
           </div>
         </router-link>
         <router-link :to="{ name: 'AddKey'}"><button id="product" type="submit">Create</button></router-link>
@@ -136,15 +136,21 @@
             </div>
             <div class="keyw-grid">
               <div class="grid-title">
-                Number
+                Keyword
               </div>
-              <input class="grid-input" type="text" v-model="user.number" placeholder="Enter number to import">
+              <input class="grid-input" type="text" v-model="user.keyword" placeholder="Enter campaign name">
+            </div>
+            <div class="keyw-grid-2">
+              <div class="grid-title">
+                Script
+              </div>
+              <textarea class="grid-input-2" type="text" v-model="user.script" placeholder="Enter script"></textarea>
             </div>
             <div class="keyw-grid">
               <div class="grid-title">
-                Origination IP
+                Description
               </div>
-              <input class="grid-input" type="text" v-model="user.originationIP" placeholder="Enter Origination IP">
+              <textarea class="grid-input-3" type="text" v-model="user.description" placeholder="Enter description"></textarea>
             </div>
           </div>
         </div>
@@ -244,10 +250,17 @@ export default {
 }
 .keyw-grid{
   margin-left: 15px;
-  max-width: 47%;
+  max-width: calc(50% - 35px);
   display: inline-block;
   float: left;
-  margin-right: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.keyw-grid-2{
+  margin-right: 30px;
+  max-width: calc(50% - 35px);
+  display: inline-block;
+  float: right;
   margin-bottom: 15px;
   width: 100%;
 }
@@ -263,9 +276,24 @@ export default {
   margin-bottom: 5px;
 }
 .grid-input{
+  max-width: 100%;
   width: 100%;
-  height: 40px !important;
+  height: calc(40px - 4px);
   padding-left: 10px;
+}
+.grid-input-2{
+  max-width: 100%;
+  width: 100%;
+  padding-left: 10px;
+  height: calc(195px - 4px);
+  line-height: 30px;
+}
+.grid-input-3{
+  max-width: 100%;
+  width: 100%;
+  padding-left: 10px;
+  height: calc(120px - 4px);
+  line-height: 30px;
 }
 .grid-select{
   width: calc(100% + 13px);
@@ -366,6 +394,21 @@ input[type="text"]{
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
+}
+textarea{
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: 5px;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  resize: none;
 }
 button#product{
   	height: 40px;
@@ -766,6 +809,14 @@ li:first-child{
     }
     .grid-1, .grid-2, .grid-3, .grid-4{
       width: calc(100% - 40px);
+    }
+    .keyw-grid, .keyw-grid-2{
+      max-width: calc(100% - 40px);
+    }
+    .keyw-grid-2{
+      max-width: calc(100% - 40px);
+      float: left;
+      margin-left: 15px;
     }
 }
 </style>

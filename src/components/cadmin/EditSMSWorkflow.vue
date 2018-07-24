@@ -10,7 +10,7 @@
         </div>
         <div class="navi-head">
           <div class="head-title">
-            Campaigns
+            SMS Workflow
           </div>
         </div>
         <div class="navi-user">
@@ -83,10 +83,15 @@
             <span v-if="show" class="side-link">DIDs</span>
           </router-link>
         </li>
-        <li>
+        <li id="active">
           <router-link :to="{ name: 'CompanySMSWorkflow'}">
-            <img class="image-box" src="@/assets/Icon/SMS Flow.svg">
-            <span v-if="show" class="side-link">SMS Workflow</span>
+            <div class="image-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M24.045229,11.5054481 L18.7153792,11.5054481 L18.7153792,7.94701612 C18.7153792,7.42479355 18.2870386,7 17.7604554,7 L5.95492378,7 C5.42834061,7 5,7.42479355 5,7.94701612 L5,15.6881532 C5,16.2103757 5.42834061,16.6351693 5.95492378,16.6351693 L6.68715933,16.6351693 L5.99617648,18.5313986 C5.8744046,18.8655816 5.96118808,19.0945323 6.05545815,19.2276448 C6.17356312,19.394547 6.36882594,19.4942488 6.57783965,19.4942488 C6.73230812,19.4942488 6.88899202,19.4412917 7.04353688,19.3368169 L10.8694963,16.7498719 C10.9487932,16.6963086 11.1484868,16.6351693 11.2443612,16.6351693 L11.2846207,16.6351693 L11.2846207,20.1936771 C11.2846207,20.7158996 11.7129614,21.1406932 12.2395445,21.1406932 L18.755486,21.1406932 C18.8495269,21.1406932 19.0527347,21.2028174 19.1303509,21.25532 L22.9563103,23.8423408 C23.1313287,23.9607557 23.2887002,24 23.4202505,24 C23.6198677,23.9999242 23.7605853,23.9097683 23.8149014,23.8680238 C23.9049698,23.7987023 24.184877,23.5340681 24.0037471,23.0368467 L23.3127642,21.1406932 L24.0450762,21.1406932 C24.5716594,21.1406932 25,20.7158996 25,20.1936771 L25,12.4524642 C25.0001527,11.9302417 24.5717357,11.5054481 24.045229,11.5054481 Z M10.2241206,15.8108865 L7.54620876,17.621657 L7.91251752,16.6163047 C8.01091286,16.346443 7.9779107,16.0652171 7.82206714,15.8451306 C7.66629997,15.6249682 7.41091516,15.4987499 7.12153505,15.4987499 L6.14590853,15.4987499 L6.14590853,8.13641934 L17.5694707,8.13641934 L17.5694707,15.4987499 L11.868041,15.4987499 C11.8645269,15.4986742 11.8611655,15.4982196 11.8576514,15.4982196 C11.8541373,15.4982196 11.850776,15.4986742 11.8472618,15.4987499 L11.2444376,15.4987499 C10.920833,15.4987499 10.4917284,15.6299685 10.2241206,15.8108865 Z M23.8542442,20.0041981 L22.8786177,20.0041981 C22.5892376,20.0041981 22.3338528,20.1304921 22.1780092,20.3505787 C22.0221657,20.570741 21.9892399,20.8518154 22.0875588,21.1217528 L22.4538676,22.1271052 L19.775803,20.3163346 C19.5083479,20.1354924 19.0792434,20.0042738 18.755486,20.0042738 L12.4306821,20.0042738 L12.4306821,16.6351693 L17.7604554,16.6351693 C18.2870386,16.6351693 18.7153792,16.2103757 18.7153792,15.6881532 L18.7153792,12.6418675 L23.8542442,12.6418675 L23.8542442,20.0041981 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
+            <span v-if="show" class="side-link" id="active">SMS Workflow</span>
           </router-link>
         </li>
         <li>
@@ -95,15 +100,10 @@
             <span v-if="show" class="side-link">Reminder Workflow</span>
           </router-link>
         </li>
-        <li id="active">
+        <li>
           <router-link :to="{ name: 'CompanyCampaigns'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M24.302168,8.01773234 L5.67750678,8.01773234 C5.30336043,8.01773234 5,8.32983271 5,8.71475836 L5,22.2642751 C5,22.649145 5.30336043,22.9613011 5.67750678,22.9613011 L24.302168,22.9613011 C24.6762602,22.9613011 24.9796748,22.649145 24.9796748,22.2642751 L24.9796748,8.71475836 C24.9796748,8.32988848 24.6762602,8.01773234 24.302168,8.01773234 Z M23.6246612,21.5673048 L6.35501355,21.5673048 L6.35501355,9.41178439 L23.6246612,9.41178439 L23.6246612,21.5673048 Z M8.1303523,12.695223 L14.6344173,16.8181041 C14.7433604,16.8871933 14.8665583,16.92171 14.9898103,16.92171 C15.1130623,16.92171 15.2362602,16.8871933 15.3452033,16.8181041 L21.8492683,12.695223 C22.1678049,12.4933086 22.2669919,12.0638848 22.0707317,11.736171 C21.8744715,11.4084572 21.4569648,11.3064126 21.1385366,11.5083829 L14.9898103,15.4059294 L8.84113821,11.5083829 C8.52271003,11.3065799 8.10531165,11.4084015 7.90894309,11.736171 C7.71262873,12.063829 7.81176152,12.4933086 8.1303523,12.695223 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Campaigns</span>
+            <img class="image-box" src="@/assets/Icon/Reseller.svg">
+            <span v-if="show" class="side-link">Campaigns</span>
           </router-link>
         </li>
       </ul>
@@ -111,84 +111,42 @@
       <div class="main">
         <div class="res-div">
           <div class="head-title">
-            Campaigns
+            SMS Workflow
           </div>
         </div>
-        <div class="navbar">
-          <div class="camp-nav-link-1">
-            <router-link :to="{ name: 'CompanyCampaigns' }">
-              <div class="nav-text">
-                Dashboard
-              </div>
-            </router-link>
+        <router-link :to="{ name: 'CompanySMSWorkflow'}">
+          <div class="svg-back">
+            <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
+              L7.00735931,16.25 L7,16.25 L7,16.2426407 L6,15.2426407 L6.00421371,15.238427 L6,15.2342133 L7.41421356,13.8199997 L7.41842728,13.8242134 L10.2426407,11
+              L11.6568542,12.4142136 L9.82106781,14.25 Z" id="path-1">
+              </path>
+            </svg>
           </div>
-          <div class="camp-nav-link-2">
-            <router-link :to="{ name: 'AllCampaigns' }">
-              <div class="nav-text">
-                All Campaigns
-              </div>
-            </router-link>
+          <div class='back'>
+            Back to SMS Workflows
           </div>
-          <div class="camp-nav-link-3">
-            <div id="active"  class="nav-text">
-              Keyword Manager
-              <div class="camp-nav-line-bill-3"></div>
+        </router-link>
+        <router-link :to="{ name: 'CompanySMSWorkflow'}"><button id="delete" type="submit">Delete</button></router-link>
+        <div class="main-container">
+          <div class="circle-big">
+            <div class="circle-box">
+              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M24.7133515,13.5075766 L15.4490463,5.20674095 C15.1919891,4.97649025 14.8079564,4.97649025 14.5509537,5.20674095 L5.2866485,13.5075766 C5.00376022,13.7610585 4.97542234,14.2010585 5.22337875,14.4903621 C5.47133515,14.7794986 5.90179837,14.8085237 6.18468665,14.5549861 L6.90201635,13.912312 L6.90201635,24.2696379 C6.90201635,24.6542061 7.20697548,24.9660167 7.58321526,24.9660167 L12.7457766,24.9660167 L17.2542234,24.9660167 L22.4167302,24.9660167 C22.79297,24.9660167 23.0979292,24.6542061 23.0979292,24.2696379 L23.0979292,13.9123677 L23.8152589,14.5550975 C23.9445777,14.6708635 24.1046866,14.7277994 24.2639782,14.7277994 C24.453406,14.7277994 24.6418529,14.6475209 24.7765123,14.4904178 C25.0246322,14.2010585 24.9962943,13.7611142 24.7133515,13.5075766 Z M13.4269755,23.5733148 L13.4269755,17.8366574 L16.57297,17.8366574 L16.57297,23.5733148 L13.4269755,23.5733148 Z M21.7356403,12.6969916 L21.7356403,23.5732591 L17.9355313,23.5732591 L17.9355313,17.1402786 C17.9355313,16.7557103 17.6304632,16.4438997 17.2543324,16.4438997 L12.7458856,16.4438997 C12.3697003,16.4438997 12.0646866,16.7557103 12.0646866,17.1402786 L12.0646866,23.5733148 L8.26446866,23.5733148 L8.26446866,12.6969916 C8.26446866,12.6952089 8.26425068,12.6935376 8.26425068,12.6918106 L15,6.65643454 L21.7358583,12.6917549 C21.7359128,12.6935933 21.7356403,12.6952089 21.7356403,12.6969916 Z M13.4741144,11.5592201 C13.4741144,11.943844 13.7790736,12.2555989 14.1553134,12.2555989 L15.8446866,12.2555989 C16.2208719,12.2555989 16.5258856,11.943844 16.5258856,11.5592201 C16.5258856,11.1745961 16.2208719,10.8628412 15.8446866,10.8628412 L14.1553134,10.8628412 C13.7791281,10.8628412 13.4741144,11.1745961 13.4741144,11.5592201 Z" id="path-1">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <div class="grid-1">
+            <div class="grid-title">
+              Trigger
             </div>
           </div>
         </div>
-          <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for keyword">
-          <router-link :to="{ name: 'AddKeyword'}"><button id="campaign" type="submit">Add Keyword</button></router-link>
-          <div class="main-container">
-            <table class="key-table" cellspacing="0" cellpadding="0">
-              <thead>
-                <tr class="key-table-th">
-                  <th class="key-active"></th>
-                  <th class="key-keyword">Keyword</th>
-                  <th class="key-description">Description</th>
-                  <th class="key-option"></th>
-                  <th class="key-option"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="key-online">
-                  <td class="key-active"><div class="key-green"></div></td>
-                  <td class="key-keyword">Port Dominique</td>
-                  <td class="key-description">Steps In Installing Rack Mount Lcd Monitors</td>
-                  <td class="key-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="key-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="key-online">
-                  <td class="key-active"><div class="key-green"></div></td>
-                  <td class="key-keyword">Demarcoland</td>
-                  <td class="key-description">Compare Prices Find The Best Computer Accessory</td>
-                  <td class="key-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="key-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="key-online">
-                  <td class="key-active"><div class="key-green"></div></td>
-                  <td class="key-keyword">West Tomasberg</td>
-                  <td class="key-description">Download Free Song For Ipod</td>
-                  <td class="key-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="key-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="key-offline">
-                  <td class="key-active"><div class="key-red"></div></td>
-                  <td class="key-keyword">South Sigmund</td>
-                  <td class="key-description">Popular Uses Of The Internet</td>
-                  <td class="key-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="key-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div id="app">
-          <modal v-show="isModalVisible" @close="closeModal"/>
-        </div>
+      </div>
     </div>
 </template>
 <script>
-import modal from '@/components/DIDsModal.vue'
 
 export default {
     name: 'app',
@@ -209,7 +167,6 @@ export default {
         }
     },
     components:{
-      modal
     },
     methods:{
         sendForm(){
@@ -225,6 +182,37 @@ export default {
 }
 </script>
 <style>
+.circle-big {
+	height: 60px;
+	width: 60px;
+	border-radius: 30px;
+	background-color: #51A3F3;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  float: left;
+  display: inline-block;
+  margin-right: 15px;
+}
+.sms-grid-title{
+  color: #000000;
+  font-family: "Circular Std";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.21px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+.sms-grid{
+  
+}
+.circle-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
 .navbar{
   height: 50px;
   width: 100%;
@@ -247,29 +235,29 @@ export default {
 a{
   text-decoration: none;
 }
-.camp-nav-link-1{
+.nav-link-1{
   display: inline-block;
   float: left;
   height: 50px;
-  width: 105px;
+  width: 90px;
   margin-left: 20px;
 }
-.camp-nav-line-bill-3{
+.nav-line-bill-1{
   border-bottom: 2px solid #51A3F3;
-  width: 170px;
+  width: 90px;
   margin-top: 13px;
 }
-.camp-nav-link-2{
+.nav-link-2{
   display: inline-block;
   float: left;
   height: 50px;
-  width: 130px;
+  width: 120px;
 }
-.camp-nav-link-3{
+.nav-link-3{
   display: inline-block;
   float: left;
   height: 50px;
-  width: 170px;
+  width: 120px;
 }
 
 .did-name-fix{
@@ -317,7 +305,29 @@ a{
 .svg-active path{
   fill: white;
 }
-.key-table{
+.svg path{
+  fill: #51A3F3;
+}
+.svg-back{
+  float: left;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+.back{
+  color: #51A3F3;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  float: left;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.did-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
@@ -328,34 +338,40 @@ a{
   line-height: 16px;
   text-align: left;
 }
-.key-table-th{
+.smsw-table-th{
   height: 37px;
 }
-.key-online{
+.smsw-online{
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
   height: 50px;
 }
-.key-offline{
+.smsw-offline{
   background-color: #F0F1FA;
   box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
   height: 50px;
 }
-.key-active{
+.smsw-active{
   width: 20px;
   padding-left: 7px;
 }
-.key-keyword{
-  width: 300px;
+.smsw-name{
+  width: 319px;
 }
-.key-description{
-  width: 677px;
+.smsw-created{
+  width: 189px;
 }
-.key-option{
+.smsw-created-by{
+  width: 267px;
+}
+.smsw-assigned{
+  width: 190px;
+}
+.smsw-option{
   width: 50px;
 }
 
-.key-green{
+.product-active{
   box-sizing: border-box;
   height: 10px;
   width: 10px;
@@ -364,7 +380,7 @@ a{
   float: left;
   margin-left: 3px;
 }
-.key-red{
+.product-not-active{
   box-sizing: border-box;
   height: 10px;
   width: 10px;
@@ -372,6 +388,12 @@ a{
   background-color: #D2305B;
   float: left;
   margin-left: 3px;
+}
+.did-control-info{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: -10px;
 }
 .side a{
   text-decoration: none;
@@ -402,22 +424,21 @@ input[type="text"]{
   margin-left: 20px;
   margin-top: 20px;
 }
-button#campaign{
+button#delete{
   	height: 40px;
+    width: 90px;
     border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
+    border: 1px solid #D2305B;
+    background-color: #FFFFFF;
+    color: #D2305B;
     font-family: "Helvetica Neue";
     font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
+    font-weight: 500;
+    line-height: 18px;
     text-align: center;
     margin-top: 20px;
     float: right;
     margin-right: 20px;
-    padding-right: 15px;
-    padding-left: 15px;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 2s;
@@ -729,12 +750,6 @@ li:first-child{
   width: calc(100% - 15px);
   margin-left: 15px;
 }
-@media only screen and (max-width: 1270px) {
-  .cont-grid{
-    max-width: 19.6363636364%;
-    width: 100%;
-  }
-}
 @media only screen and (max-width: 1200px) {
     .navi-head{
       display: none;
@@ -748,9 +763,6 @@ li:first-child{
     }
     .did-input-search{
       max-width: calc(100% - 80px);
-    }
-    .cont-grid{
-      max-width: 24.5454545454%;
     }
 }
 @media only screen and (max-width: 990px) {
@@ -776,16 +788,6 @@ li:first-child{
     .main{
       max-width: 100%;
     }
-}
-@media only screen and (max-width: 620px) {
-  .cont-grid{
-    max-width: 32.7272727273%;
-  }
-}
-@media only screen and (max-width: 430px) {
-  .cont-grid{
-    max-width: 49.0909090909%;
-  }
 }
 @media only screen and (max-width: 390px) {
     .username{

@@ -78,7 +78,7 @@
           Manage
         </div>
         <li>
-          <router-link :to="{ name: 'Company DIDs'}">
+          <router-link :to="{ name: 'CompanyDIDs'}">
             <img class="image-box" src="@/assets/Icon/DID.svg">
             <span v-if="show" class="side-link">DIDs</span>
           </router-link>

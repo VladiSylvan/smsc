@@ -74,6 +74,7 @@ import CompanyCampaigns from '@/components/cadmin/Campaigns'
 import AllCampaigns from '@/components/cadmin/AllCampaigns'
 import KeywordManager from '@/components/cadmin/KeywordManager'
 import AddKeyword from '@/components/cadmin/AddKeyword'
+import EditSMSWorkflow from '@/components/cadmin/EditSMSWorkflow'
 
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
@@ -439,5 +440,10 @@ export default new Router({
         path: '/ca/add-keyword',
         name: 'AddKeyword',
         component: AddKeyword
+    },
+    {
+        path: '/ca/edit-sms-workflow',
+        name: 'EditSMSWorkflow',
+        component: EditSMSWorkflow
     }]
 })

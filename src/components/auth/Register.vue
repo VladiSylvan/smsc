@@ -25,6 +25,10 @@
                           <label>Address</label>
                           <input class="input-address" type="text" v-model="user.address" placeholder="Enter address">
                         </div>
+                        <div class="col-md-12">
+                          <div class="label-contact-person">Contact Person</div>
+                          <input class="input-contact-person" type="text" v-model="user.contactPerson" placeholder="Enter contact person">
+                        </div>
                         <div class="col-md-3">
                           <label>Country</label>
                           <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.country">
@@ -96,6 +100,9 @@ export default {
     .col-md-6{
       width: 45.83%;
     }
+    .col-md-12{
+      width: 96%;
+    }
     .col-md-3{
       width: 20.8%;
     }
@@ -151,6 +158,25 @@ export default {
       margin-bottom: 20px;
       margin-top: 5px;
       padding-left: 15px;
+    }
+
+    .input-contact-person{
+      width: calc(50% - 30px);
+      height: 40px !important;
+      margin-bottom: 20px;
+      margin-top: 5px;
+      padding-left: 15px;
+    }
+
+    .label-contact-person{
+      width: 600px;
+      color: #000000;
+      font-family: "Circular Std Book";
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.21px;
+      line-height: 15px;
+      text-transform: uppercase;
     }
 
     .input-city{
