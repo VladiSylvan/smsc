@@ -454,7 +454,8 @@ input[type="text"]{
   line-height: 25px;
 }
 .template-input-search{
-  width: 317px;
+  max-width: 27.8070175439%;
+  width: 100%;
   height: 40px !important;
   margin-left: 20px;
   margin-top: 20px;
