@@ -79,6 +79,8 @@ import EditReminderWorkflow from '@/components/cadmin/EditReminderWorkflow'
 import AddSMSWorkflow from '@/components/cadmin/AddSMSWorkflow'
 import AddReminderWorkflow from '@/components/cadmin/AddReminderWorkflow'
 import CreateCallflow from '@/components/cadmin/CreateCallflow'
+import AddCampaign from '@/components/cadmin/AddCampaign'
+import AddCampaignSecond from '@/components/cadmin/AddCampaignSecond'
 
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
@@ -469,5 +471,15 @@ export default new Router({
         path: '/ca/create-callflow',
         name: 'CreateCallflow',
         component: CreateCallflow
+    },
+    {
+        path: '/ca/add-campaign',
+        name: 'AddCampaign',
+        component: AddCampaign
+    },
+    {
+        path: '/ca/add-campaign-second',
+        name: 'AddCampaignSecond',
+        component: AddCampaignSecond
     }]
 })

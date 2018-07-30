@@ -166,6 +166,9 @@
             </div>
             <div class="callflow-main-cont">
               <div class="callflow-circle-grey">
+                <div class="callflow-circle-grey-box">
+                  <img src="@/assets/Icon/Callflow/Greeting.svg">
+                </div>
               </div>
               <div class="callflow-main-div">
                 <div class="callflow-cont-title">
@@ -196,6 +199,9 @@
             </div>
             <div class="callflow-main-cont">
               <div class="callflow-circle-grey">
+                <div class="callflow-dial-box">
+                  <img style="transform: rotate(215deg);" src="@/assets/Icon/Callflow/Dial.svg">
+                </div>
               </div>
               <div class="callflow-main-div">
                 <div class="callflow-cont-title">
@@ -211,10 +217,13 @@
                   <option value="Number">Number</option>
                 </select>
                 <input class="callflow-cont-input" type="text" v-model="user.input">
-                <input class="callflow-checkbox" type="checkbox">
-                <div class="callflow-input-text">
-                  Prevent voicemails and automated systems from answering a call.
-                </div>
+                <label class="checkbox-cont">
+                  <div class="callflow-checkbox-text">
+                    Prevent voicemails and automated systems from answering a call.
+                  </div>
+                  <input type="checkbox">
+                  <span class="checkbox-mark"></span>
+                </label>
                 <div class="callflow-grey">
                   <div class="callflow-grey-text">
                     If the destination does not answer within
@@ -230,6 +239,9 @@
             </div>
             <div class="callflow-main-cont">
               <div class="callflow-circle-grey">
+                <div class="callflow-simulcall-box">
+                  <img src="@/assets/Icon/Callflow/Call.svg">
+                </div>
               </div>
               <div class="callflow-main-div">
                 <div class="callflow-cont-title">
@@ -277,15 +289,21 @@
                   Add Number
                 </div>
                 <div style="clear: both;"></div>
-                <input class="callflow-checkbox" type="checkbox" checked="checked">
-                <div class="callflow-input-text">
-                  Prevent voicemails and automated systems from answering a call.
-                </div>
+                <label class="checkbox-cont">
+                  <div class="callflow-checkbox-text">
+                    Prevent voicemails and automated systems from answering a call.
+                  </div>
+                  <input type="checkbox" checked="checked">
+                  <span class="checkbox-mark"></span>
+                </label>
                 <div style="clear: both;"></div>
-                <input class="callflow-checkbox" type="checkbox">
-                <div class="callflow-input-text">
-                  Route previous callers to the number that answered last time they called.
-                </div>
+                <label class="checkbox-cont">
+                  <div class="callflow-checkbox-text">
+                    Route previous callers to the number that answered last time they called.
+                  </div>
+                  <input type="checkbox">
+                  <span class="checkbox-mark"></span>
+                </label>
                 <div class="callflow-grey">
                   <div class="callflow-grey-text">
                     If the destination does not answer within
@@ -300,6 +318,9 @@
               </div>
               <div class="callflow-main-cont">
                 <div class="callflow-circle-grey">
+                  <div class="callflow-circle-grey-box">
+                    <img src="@/assets/Icon/Callflow/Menu.svg">
+                  </div>
                 </div>
                 <div class="callflow-main-div">
                   <div class="callflow-cont-title">
@@ -357,6 +378,9 @@
               </div>
               <div class="callflow-main-cont">
                 <div class="callflow-circle-grey">
+                  <div class="callflow-circle-grey-box">
+                    <img src="@/assets/Icon/Callflow/Schedule.svg">
+                  </div>
                 </div>
                 <div class="callflow-main-div">
                   <div class="callflow-cont-title">
@@ -382,15 +406,225 @@
                   <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Hours" class="callflow-select-75" v-model="user.hour1">
                     <option value="5PM">5PM</option>
                   </select>
+                  <div class="callflow-symbol-1">
+                    :
+                  </div>
                   <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Minutes" class="callflow-select-60" v-model="user.minutes1">
                     <option value="00">00</option>
                   </select>
+                  <div class="callflow-symbol-2">
+                    &
+                  </div>
                   <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Hours" class="callflow-select-75" v-model="user.hour2">
                     <option value="8PM">8PM</option>
                   </select>
+                  <div class="callflow-symbol-1">
+                    :
+                  </div>
                   <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Minutes" class="callflow-select-60" v-model="user.minutes2">
                     <option value="00">00</option>
                   </select>
+                  <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Weekdays" class="callflow-select-120" v-model="user.weekends">
+                    <option value="Weekends">Weekends</option>
+                  </select>
+                  <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Between" class="callflow-select-110" v-model="user.between2">
+                    <option value="All day">All day</option>
+                  </select>
+                  <div style="clear: both;"></div>
+                  <div class="callflow-plus">
+                    <div class="plus"></div>
+                  </div>
+                  <div class="callflow-link">
+                    Add Time
+                  </div>
+                  <div class="callflow-blue">
+                    <div class="callflow-blue-text">
+                      <b>Schedule Branch B:</b> If a call is received during the following times
+                    </div>
+                  </div>
+                  <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Weekdays" class="callflow-select-120" v-model="user.weekdays">
+                    <option value="Weekdays">Weekdays</option>
+                  </select>
+                  <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Between" class="callflow-select-110" v-model="user.between">
+                    <option value="Between">Between</option>
+                  </select>
+                  <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Hours" class="callflow-select-85" v-model="user.hour3">
+                    <option value="12PM">12PM</option>
+                  </select>
+                  <div class="callflow-symbol-1">
+                    :
+                  </div>
+                  <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Minutes" class="callflow-select-60" v-model="user.minutes1">
+                    <option value="00">00</option>
+                  </select>
+                  <div class="callflow-symbol-2">
+                    &
+                  </div>
+                  <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Hours" class="callflow-select-85" v-model="user.hour3">
+                    <option value="12PM">12PM</option>
+                  </select>
+                  <div class="callflow-symbol-1">
+                    :
+                  </div>
+                  <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Minutes" class="callflow-select-60" v-model="user.minutes2">
+                    <option value="00">00</option>
+                  </select>
+                  <div style="clear: both;"></div>
+                  <div class="callflow-plus">
+                    <div class="plus"></div>
+                  </div>
+                  <div class="callflow-link">
+                    Add Time
+                  </div>
+                  <div style="clear: both;"></div>
+                  <button class="callflow-blue-button" type="submit">Add Schedule Branch</button>
+                  <div class="callflow-red">
+                    <div class="callflow-red-text">
+                      <b>Any other time</b>
+                    </div>
+                  </div>
+                </div>
+                <div class="callflow-main-cont">
+                  <div class="callflow-circle-grey">
+                    <div class="callflow-geo-box">
+                      <img src="@/assets/Icon/Callflow/Geo.svg">
+                    </div>
+                  </div>
+                  <div class="callflow-main-div">
+                    <div class="callflow-cont-title">
+                      Geo-Routing
+                    </div>
+                    <div class="callflow-cont-text">
+                      Route callers to different destinations automatically by area code, or manually by zip
+                      code.
+                    </div>
+                    <div class="callflow-cont-nav">
+                      <div class="callflow-cont-navbar-active">
+                        Area Code
+                      </div>
+                      <div class="callflow-cont-navbar">
+                        ZIP Code
+                      </div>
+                    </div>
+                    <div class="callflow-blue">
+                      <div class="callflow-blue-text">
+                        <b>Location 1:</b> If the caller’s area code matches the following area codes:
+                      </div>
+                    </div>
+                    <input class="callflow-input-90" value="815" type="text" v-model="user.areaCode1">
+                    <div class="callflow-area-cross">
+                      <div class="cross-2"></div>
+                    </div>
+                    <input class="callflow-input-90" value="918" type="text" v-model="user.areaCode2">
+                    <div class="callflow-area-cross">
+                      <div class="cross-2"></div>
+                    </div>
+                    <input class="callflow-input-90" value="" type="text" v-model="user.areaCode3">
+                    <div class="callflow-area-cross">
+                      <div class="cross-2"></div>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class="callflow-plus">
+                      <div class="plus"></div>
+                    </div>
+                    <div class="callflow-link">
+                      Add Area Code
+                    </div>
+                    <div class="callflow-blue">
+                      <div class="callflow-blue-text">
+                        <b>Location 2:</b> If the caller’s area code matches the following area codes:
+                      </div>
+                    </div>
+                    <input class="callflow-input-90" value="417" type="text" v-model="user.areaCode4">
+                    <div class="callflow-area-cross">
+                      <div class="cross-2"></div>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class="callflow-plus">
+                      <div class="plus"></div>
+                    </div>
+                    <div class="callflow-link">
+                      Add Area Code
+                    </div>
+                    <div style="clear: both;"></div>
+                    <button class="callflow-blue-button" type="submit">Add Location</button>
+                    <div class="callflow-blue">
+                      <div class="callflow-blue-text">
+                        <b>Any other time</b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="callflow-main-cont">
+                    <div class="callflow-circle-grey">
+                      <div class="callflow-tag-box">
+                        <img src="@/assets/Icon/Callflow/Tag.svg">
+                      </div>
+                    </div>
+                    <div class="callflow-main-div">
+                      <div class="callflow-cont-title">
+                        Tag
+                      </div>
+                      <div class="callflow-cont-text">
+                        Add one or more tags to the call.
+                      </div>
+                      <div class="callflow-input-title">
+                        Apply tags
+                      </div>
+                      <button class="callflow-yellow-button" type="submit">
+                        <div class="callflow-button-text">
+                          Conversion
+                        </div>
+                        <div class="callflow-button-cross">
+                          <div class="cross-2"></div>
+                        </div>
+                      </button>
+                      <button class="callflow-purple-button" type="submit">
+                        <div class="callflow-button-text">
+                          Missed Call
+                        </div>
+                        <div class="callflow-button-cross">
+                          <div class="cross-2"></div>
+                        </div>
+                      </button>
+                      <div style="clear: both;"></div>
+                      <div class="callflow-plus">
+                        <div class="plus"></div>
+                      </div>
+                      <div class="callflow-link">
+                        Add Tag
+                      </div>
+                    </div>
+                  </div>
+                  <div class="callflow-main-cont">
+                    <div class="callflow-circle-grey">
+                      <div class="callflow-hang-box">
+                        <img src="@/assets/Icon/Callflow/Dial.svg">
+                      </div>
+                    </div>
+                    <div class="callflow-main-div">
+                      <div class="callflow-cont-title">
+                        Hang up
+                      </div>
+                      <div class="callflow-cont-text">
+                        The call will be disconnected.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="callflow-main-cont">
+                    <div class="callflow-circle-green">
+                      <div class="callflow-plus-box">
+                        <img src="@/assets/Icon/Callflow/Plus.svg">
+                      </div>
+                    </div>
+                    <div class="callflow-green-div">
+                      <div class="callflow-green-title">
+                        What would you like to happen next?
+                      </div>
+                      <div class="callflow-grid">
+                        <img src="@/assets/Icon/Callflow/Greeting.svg">
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -426,6 +660,13 @@ export default {
                 minutes1: '00',
                 hour2: '8PM',
                 minutes2: '00',
+                weekends: 'Weekends',
+                between2: 'All day',
+                hour3: '12PM',
+                areaCode1: '815',
+                areaCode2: '918',
+                areaCode3: '',
+                areaCode4: '417',
             },
 
         }
@@ -448,6 +689,196 @@ export default {
 </script>
 <style>
 
+.checkbox-cont {
+    position: relative;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 20px;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-cont input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkbox-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #D0D9E1;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-cont input:checked ~ .checkbox-mark {
+    background-color: #24E2B8;
+    border: 1px solid #24E2B8;
+    border-radius: 6px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-cont input:checked ~ .checkbox-mark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-cont .checkbox-mark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.callflow-green-title{
+  color: #161D29;
+  font-family: "Proxima Nova";
+  font-size: 21px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 44px;
+  margin-bottom: 15px;
+}
+.callflow-grid{
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.callflow-plus-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.callflow-hang-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 12px;
+  margin-left: 9px;
+  margin-right: 10px;
+}
+.callflow-geo-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 12px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.callflow-tag-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 12px;
+  margin-left: 13px;
+  margin-right: 10px;
+}
+.callflow-simulcall-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+  margin-left: 9px;
+  margin-right: 10px;
+}
+.callflow-dial-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+  margin-left: 11px;
+  margin-right: 10px;
+}
+.callflow-blue-button{
+  border-radius: 6px;
+  border: 1px solid #51A3F3;
+  background-color: #51A3F3;
+  color: #FFFFFF;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  float: left;
+  display: inline-block;
+  height: 40px;
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 30px;
+}
+.callflow-button-text{
+  float: left;
+  display: inline-block;
+  margin-top: 10px;
+}
+.callflow-yellow-button{
+  border: 1px solid #FEDE7F;
+  border-radius: 3px;
+  background-color: #FEDE7F;
+  color: #31333B;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  float: left;
+  display: inline-block;
+  height: 40px;
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+}
+.callflow-purple-button{
+  border: 1px solid #BBB4FF;
+  border-radius: 3px;
+  background-color: #BBB4FF;
+  color: #31333B;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  float: left;
+  display: inline-block;
+  height: 40px;
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+}
 .callflow-select-120{
   width: 17.1428571429%;
   border: 1px solid #EDEEF3;
@@ -457,6 +888,7 @@ export default {
   padding-left: 10px;
   float: left;
   margin-right: 10px;
+  margin-bottom: 15px;
 }
 .callflow-select-110{
   width: 15.7142857143%;
@@ -467,6 +899,30 @@ export default {
   padding-left: 10px;
   float: left;
   margin-right: 15px;
+  margin-bottom: 15px;
+}
+.callflow-input-90{
+  width: 11%;
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  height: 36px;
+  margin-top: 5px;
+  padding-left: 10px;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 15px;
+}
+.callflow-select-85{
+  width: 12.1428571429%;
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  height: 40px;
+  padding-left: 10px;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 15px;
 }
 .callflow-select-75{
   width: 10.7142857143%;
@@ -477,6 +933,7 @@ export default {
   padding-left: 10px;
   float: left;
   margin-right: 5px;
+  margin-bottom: 15px;
 }
 .callflow-select-60{
   width: 8.57142857143%;
@@ -487,6 +944,21 @@ export default {
   padding-left: 10px;
   float: left;
   margin-right: 10px;
+  margin-bottom: 15px;
+}
+.callflow-symbol-1{
+  margin-right: 5px;
+  margin-top: 10px;
+  float: left;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.callflow-symbol-2{
+  margin-right: 10px;
+  margin-top: 10px;
+  float: left;
+  display: inline-block;
+  margin-bottom: 15px;
 }
 
 .callflow-blue{
@@ -526,12 +998,27 @@ export default {
   padding-top: 10px;
   padding-left: 15px;
 }
+.callflow-area-cross{
+  float: left;
+  display: inline-block;
+  height: 40px;
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-left: 5px;
+}
 .callflow-color-cross{
   float: left;
   display: inline-block;
   height: 40px;
   padding-top: 20px;
   padding-left: 15px;
+}
+.callflow-button-cross{
+  float: left;
+  display: inline-block;
+  height: 40px;
+  padding-top: 12px;
+  padding-left: 10px;
 }
 .cross{
   position: relative;
@@ -558,6 +1045,35 @@ export default {
 }
 
 .cross::after {
+    transform: rotate(-45deg);
+}
+
+
+.cross-2{
+  position: relative;
+  display: inline-block;
+  float: left;
+  height: 17px; /* this can be anything */
+  width: 17px;  /* ...but maintain 1:1 aspect ratio */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cross-2::before,
+.cross-2::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px; /* cross thickness */
+    background-color: grey;
+}
+
+.cross-2::before {
+    transform: rotate(45deg);
+}
+
+.cross-2::after {
     transform: rotate(-45deg);
 }
 
@@ -598,6 +1114,10 @@ export default {
 .callflow-radio-text{
   margin-left: 45px;
   margin-top: 22px;
+}
+.callflow-checkbox-text{
+  margin-left: 35px;
+  margin-top: 2px;
 }
 /* The container */
 .callflow-radio-container {
@@ -700,6 +1220,17 @@ export default {
   margin-left: 30px;
 }
 .callflow-blue-text{
+  color: #31333B;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  line-height: 40px;
+  float: left;
+  display: inline-block;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+.callflow-red-text{
   color: #31333B;
   font-family: "Helvetica Neue";
   font-size: 16px;
@@ -858,6 +1389,18 @@ export default {
   display: inline-block;
   margin-top: 40px;
 }
+.callflow-green-div{
+  width: 700px;
+  height: auto;
+  float: left;
+  display: inline-block;
+  border: 3px solid #24E2B8;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  margin-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .callflow-main-div{
   width: 700px;
   height: auto;
@@ -894,6 +1437,16 @@ export default {
 	width: 54px;
 	border-radius: 30px;
 	background-color: #55616E;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.callflow-circle-green{
+	height: 54px;
+	width: 54px;
+	border-radius: 30px;
+	background-color: #24E2B8;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
   position: absolute;
   margin-top: 15px;
@@ -997,6 +1550,15 @@ input:checked + .slider:before {
   vertical-align: top;
   margin-top: 15px;
   margin-left: 15px;
+  margin-right: 10px;
+}
+.callflow-circle-grey-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 12px;
+  margin-left: 12px;
   margin-right: 10px;
 }
 .callflow-title-big{
@@ -1361,6 +1923,7 @@ button#call-cancel{
   width: calc(100% - 30px);
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 .side#active svg g{
   fill: white;
