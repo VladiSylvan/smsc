@@ -329,74 +329,53 @@
         </div>
         <div class="chat">
           <div class="chat-input">
-            <div class="chat-sms-avatar"></div>
-            <div class="chat-sms-name">
-              Glen Moody
+            <div v-if="users" class="chat-menu">
+              <input v-on:click="users = !users" class="sms-input-menu" type="text" v-model="user.smsInputMenu" placeholder="Type a number or name">
+              <router-link :to="{ name: 'SMSCenterEmpty' }">
+                <div class="chat-menu-users">
+                  <div class="chat-menu-avatar"></div>
+                  <div class="chat-menu-name">
+                    Glen Moody
+                  </div>
+                </div>
+              </router-link>
+              <div class="chat-menu-title">
+                Recent
+              </div>
+              <div class="chat-menu-recent">
+                <div class="chat-menu-avatar"></div>
+                <div class="chat-menu-name">
+                  Cole Hart
+                </div>
+              </div>
+              <div class="chat-menu-recent">
+                <div class="chat-menu-avatar"></div>
+                <div class="chat-menu-name">
+                  John Davidson
+                </div>
+              </div>
+              <div class="chat-menu-recent">
+                <div class="chat-menu-avatar"></div>
+                <div class="chat-menu-name">
+                  Olivia Copeland
+                </div>
+              </div>
+              <div class="chat-menu-recent">
+                <div class="chat-menu-avatar"></div>
+                <div class="chat-menu-name">
+                  Evelyn Graves
+                </div>
+              </div>
+              <div class="chat-menu-recent">
+                <div class="chat-menu-avatar"></div>
+                <div class="chat-menu-name">
+                  John Davidson
+                </div>
+              </div>
             </div>
-            <div class="chat-sms-more">
-              <img src="@/assets/Icon/More.svg">
-            </div>
-            <div class="chat-sms-call">
-              <img src="@/assets/Icon/Call.svg">
-            </div>
+            <input v-on:click="users = !users" class="sms-input" type="text" v-model="user.smsInput" placeholder="Type a number or name">
           </div>
           <div class="chat-messages">
-            <div class="chat-message">
-              <div class="chat-receiver">
-                <div class="chat-receiver-text">
-                  Quite a number of devices and sources on the market today will work with the use of HDMI.
-                  The Blu-Ray disc player, a relatively new innovation, was created with the use of HDMI specifically
-                  in mind.
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-receiver-info">
-                  352-626-4573 · 05 Jan 2018
-                </div>
-              </div>
-            </div>
-            <div class="chat-message">
-              <div class="chat-sender">
-                <div class="chat-avatar"></div>
-                <div class="chat-sender-text">
-                   Most personal computers that are sold today are ready for use with HDMI, as are the majority of
-                   video game consoles in the stores currently. A set-top box also is usually compatible with HDMI,
-                   as are such entertainment options as digital television. Essentially, any type of computer interface
-                   today will function with the use of HDMI. How Does HDMI Work?
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-sender-info">
-                  05 Jan 2018 · 149-777-3171
-                </div>
-              </div>
-            </div>
-            <div class="chat-message">
-              <div class="chat-receiver">
-                <div class="chat-receiver-image">
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-receiver-text">
-                  Quite a number of devices and sources on the market today will work with the use of HDMI.
-                  The Blu-Ray disc player, a relatively new innovation, was created with the use of HDMI specifically
-                  in mind.
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-receiver-info">
-                  352-626-4573 · 05 Jan 2018
-                </div>
-              </div>
-            </div>
-            <div class="chat-message">
-              <div class="chat-sender">
-                <div class="chat-avatar"></div>
-                <div class="chat-sender-text">
-                   5 Reasons To Purchase Desktop Computers
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-sender-info">
-                  05 Jan 2018 · 243-357-5470 · <span class="chat-info">Sent as SMS</span>
-                </div>
-              </div>
-            </div>
           </div>
           <input class="chat-insert" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Image.svg') + ')' }" type="text" v-model="user.smsInsert" placeholder="Type your message here">
           <div class="send-button">
@@ -418,10 +397,12 @@ export default {
           transitionName: 'fade',
           popup: false,
           test: false,
+          users: false,
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
-                days: 'Last 30 days'
+                days: 'Last 30 days',
+                smsInputMenu: 'Glen',
             },
 
         }
@@ -452,37 +433,56 @@ export default {
   padding-right: 15px;
   padding-left: 15px;
 }
-.chat-sms-avatar{
+.chat-menu-title{
+    color: #BDBFD8;
+    font-family: "Circular Std";
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.chat-menu-avatar{
   height: 30px;
   width: 30px;
   background-color: #ECEEF0;
   border-radius: 50%;
   display: inline-block;
   margin-left: 15px;
-  margin-top: 15px;
+  margin-top: 7px;
   margin-right: 8px;
   float: left;
 }
-.chat-sms-name{
+.chat-menu-name{
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 25px;
   display: inline-block;
   float: left;
-  margin-top: 18px;
+  margin-top: 10px;
 }
-.chat-sms-call{
+.chat-menu-users{
+	background-color: #F8F9FE;
+	box-shadow: inset 0 1px 0 0 #F0F1FA, inset 0 -1px 0 0 #F0F1FA;
+  float: left;
   display: inline-block;
-  float: right;
-  margin-top: 15px;
-  margin-right: 15px;
+  max-width: 100%;
+  width: 100%;
+  height: 44px;
+  margin-top: 10px;
 }
-.chat-sms-more{
+.chat-menu-recent{
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  float: left;
   display: inline-block;
-  float: right;
-  margin-top: 15px;
-  margin-right: 15px;
+  max-width: 100%;
+  width: 100%;
+  height: 44px;
 }
 .chat-info{
   color: #51A3F3;
@@ -501,6 +501,7 @@ export default {
   background-color: #F8F9FE;
   max-width: 525px;
   width: auto;
+  margin-right: 15px;
   margin-top: 22px;
 }
 .chat-receiver-info{
@@ -596,6 +597,7 @@ export default {
   background-color: #ECEEF0;
   border-radius: 50%;
   display: inline-block;
+  margin-left: 15px;
   margin-top: 20px;
   margin-right: 8px;
   float: left;
@@ -637,6 +639,7 @@ export default {
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .chat-messages{
+  width: auto;
   height: 828px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
@@ -737,6 +740,26 @@ button{
   width: 100%;
   margin-top: 10px;
   margin-left: 15px;
+  border: 1px solid #EDEEF3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: 5px;
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+}
+.sms-input-menu{
+  height: 36px !important;
+  max-width: 327px;
+  padding-left: 15px;
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 10px;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -1006,6 +1029,17 @@ li:first-child{
     margin-top: 21px;
 }
 
+.chat-menu{
+	height: auto;
+	width: 365px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
+  vertical-align: top;
+  position: absolute;
+  z-index: 999999;
+  float: right;
+  margin-left: 5px;
+}
 
 .user-menu{
 	height: auto;

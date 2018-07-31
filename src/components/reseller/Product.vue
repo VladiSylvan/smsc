@@ -57,7 +57,7 @@
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'SMSCenter'}">
+          <router-link :to="{ name: 'ResellerSMSCenter'}">
             <img class="image-box" src="@/assets/Icon/Vendors.svg">
             <span v-if="show" class="side-link">SMS Center</span>
           </router-link>
@@ -345,7 +345,8 @@ export default {
   color: #FFFFFF;
 }
 .product-search{
-  width: 282px;
+  max-width: calc(28.51% - 43px);
+  width: 100%;
   border: 1px solid #EDEEF3;
   border-radius: 4px;
   background-color: #FFFFFF;

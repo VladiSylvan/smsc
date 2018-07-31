@@ -57,6 +57,9 @@ import ResellerEditVendor from '@/components/reseller/EditVendor'
 import ResellerDIDs from '@/components/reseller/DIDs'
 import ResellerFilters from '@/components/reseller/Filters'
 import ResellerEditDIDs from '@/components/reseller/EditDIDs'
+import ResellerSMSCenter from '@/components/reseller/SMSCenter'
+import ResellerSMSCenterNew from '@/components/reseller/SMSCenterNew'
+import ResellerSMSCenterEmpty from '@/components/reseller/SMSCenterEmpty'
 
 import Alert from '@/components/cadmin/Alert'
 import AlertWeekly from '@/components/cadmin/AlertWeekly'
@@ -81,6 +84,12 @@ import AddReminderWorkflow from '@/components/cadmin/AddReminderWorkflow'
 import CreateCallflow from '@/components/cadmin/CreateCallflow'
 import AddCampaign from '@/components/cadmin/AddCampaign'
 import AddCampaignSecond from '@/components/cadmin/AddCampaignSecond'
+import SMSCenterNew from '@/components/cadmin/SMSCenterNew'
+import SMSCenterEmpty from '@/components/cadmin/SMSCenterEmpty'
+
+import StaffSMSCenter from '@/components/cstaff/SMSCenter'
+import StaffSMSCenterNew from '@/components/cstaff/SMSCenterNew'
+import StaffSMSCenterEmpty from '@/components/cstaff/SMSCenterEmpty'
 
 import VueCharts from 'vue-chartjs'
 import { Bar, Line } from 'vue-chartjs'
@@ -338,6 +347,21 @@ export default new Router({
         component: ResellerTransactionHistory
     },
     {
+        path: '/r/sms-center',
+        name: 'ResellerSMSCenter',
+        component: ResellerSMSCenter
+    },
+    {
+        path: '/r/sms-center-new',
+        name: 'ResellerSMSCenterNew',
+        component: ResellerSMSCenterNew
+    },
+    {
+        path: '/r/sms-center-empty',
+        name: 'ResellerSMSCenterEmpty',
+        component: ResellerSMSCenterEmpty
+    },
+    {
         path: '/r/vendors',
         name: 'ResellerVendors',
         component: ResellerVendors
@@ -398,9 +422,19 @@ export default new Router({
         component: CompanyDIDs
     },
     {
-        path: '/ca/smscenter',
+        path: '/ca/sms-center',
         name: 'SMSCenter',
         component: SMSCenter
+    },
+    {
+        path: '/ca/sms-center-new',
+        name: 'SMSCenterNew',
+        component: SMSCenterNew
+    },
+    {
+        path: '/ca/sms-center-empty',
+        name: 'SMSCenterEmpty',
+        component: SMSCenterEmpty
     },
     {
         path: '/ca/callflows',
@@ -481,5 +515,20 @@ export default new Router({
         path: '/ca/add-campaign-second',
         name: 'AddCampaignSecond',
         component: AddCampaignSecond
+    },
+    {
+        path: '/cs/sms-center',
+        name: 'StaffSMSCenter',
+        component: StaffSMSCenter
+    },
+    {
+        path: '/cs/sms-center-new',
+        name: 'StaffSMSCenterNew',
+        component: StaffSMSCenterNew
+    },
+    {
+        path: '/cs/sms-center-empty',
+        name: 'StaffSMSCenterEmpty',
+        component: StaffSMSCenterEmpty
     }]
 })

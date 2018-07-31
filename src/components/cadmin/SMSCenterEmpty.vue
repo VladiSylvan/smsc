@@ -341,60 +341,10 @@
             </div>
           </div>
           <div class="chat-messages">
-            <div class="chat-message">
-              <div class="chat-receiver">
-                <div class="chat-receiver-text">
-                  Quite a number of devices and sources on the market today will work with the use of HDMI.
-                  The Blu-Ray disc player, a relatively new innovation, was created with the use of HDMI specifically
-                  in mind.
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-receiver-info">
-                  352-626-4573 · 05 Jan 2018
-                </div>
-              </div>
-            </div>
-            <div class="chat-message">
-              <div class="chat-sender">
-                <div class="chat-avatar"></div>
-                <div class="chat-sender-text">
-                   Most personal computers that are sold today are ready for use with HDMI, as are the majority of
-                   video game consoles in the stores currently. A set-top box also is usually compatible with HDMI,
-                   as are such entertainment options as digital television. Essentially, any type of computer interface
-                   today will function with the use of HDMI. How Does HDMI Work?
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-sender-info">
-                  05 Jan 2018 · 149-777-3171
-                </div>
-              </div>
-            </div>
-            <div class="chat-message">
-              <div class="chat-receiver">
-                <div class="chat-receiver-image">
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-receiver-text">
-                  Quite a number of devices and sources on the market today will work with the use of HDMI.
-                  The Blu-Ray disc player, a relatively new innovation, was created with the use of HDMI specifically
-                  in mind.
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-receiver-info">
-                  352-626-4573 · 05 Jan 2018
-                </div>
-              </div>
-            </div>
-            <div class="chat-message">
-              <div class="chat-sender">
-                <div class="chat-avatar"></div>
-                <div class="chat-sender-text">
-                   5 Reasons To Purchase Desktop Computers
-                </div>
-                <div style="clear: both;"></div>
-                <div class="chat-sender-info">
-                  05 Jan 2018 · 243-357-5470 · <span class="chat-info">Sent as SMS</span>
-                </div>
+            <div class="chat-no-messages">
+              <img class="chat-no-messages-image" src="@/assets/Icon/Vendors.svg">
+              <div class="chat-no-messages-text">
+                No messages yet
               </div>
             </div>
           </div>
@@ -452,6 +402,20 @@ export default {
   padding-right: 15px;
   padding-left: 15px;
 }
+.chat-no-messages-text{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 25px;
+  margin-left: 45%;
+}
+.chat-no-messages-image{
+  height: 150px;
+  width: 150px;
+  opacity: 0.1;
+  margin-top: 41%;
+  margin-left: 43%;
+}
 .chat-sms-avatar{
   height: 30px;
   width: 30px;
@@ -501,6 +465,7 @@ export default {
   background-color: #F8F9FE;
   max-width: 525px;
   width: auto;
+  margin-right: 15px;
   margin-top: 22px;
 }
 .chat-receiver-info{
@@ -596,6 +561,7 @@ export default {
   background-color: #ECEEF0;
   border-radius: 50%;
   display: inline-block;
+  margin-left: 15px;
   margin-top: 20px;
   margin-right: 8px;
   float: left;

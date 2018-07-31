@@ -457,7 +457,8 @@ input[type="text"]{
   line-height: 25px;
 }
 .did-input-search{
-  width: 302px;
+  max-width: calc(30.2631578947% - 43px);
+  width: 100%;
   height: 40px !important;
   padding-left: 40px;
   margin-left: 20px;
