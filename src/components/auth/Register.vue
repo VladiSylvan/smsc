@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="logo">
+            <div class="register-logo">
                 <img src="@/assets/logo.png">
             </div>
             <div class="register">
@@ -106,7 +106,7 @@ export default {
     .col-md-3{
       width: 20.8%;
     }
-    .logo{
+    .register-logo{
         text-align: center;
         margin-top: 45px;
     }

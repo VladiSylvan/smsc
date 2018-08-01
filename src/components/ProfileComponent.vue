@@ -58,3 +58,111 @@ export default {
     }
 }
 </script>
+<style>
+.navi-user{
+  max-width: 228px;
+  float: right;
+  display: inline-block;
+  width: auto;
+}
+.user-menu{
+	height: auto;
+	width: 228px;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
+  vertical-align: top;
+  position: fixed;
+  z-index: 999999;
+  float: right;
+}
+.username{
+  color: #55616E;
+  font-family: "Helvetica Neue";
+  font-size: 15px;
+  line-height: 20px;
+  text-align: left;
+  margin-top: 20px;
+  float: left;
+  margin-left: 63px;
+  cursor: pointer;
+}
+.user-circle{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  float: left;
+  cursor: pointer;
+}
+#avatar{
+  	font-family: "Helvetica Neue";
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 15px;
+    text-align: center;
+    margin-left: 11px;
+    margin-top: 7px;
+    display: inline-block;
+}
+.popup-image-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+#popup-link{
+  	height: 20px;
+    width: 158px;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#popup-link-active{
+  	height: 20px;
+    width: 158px;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    color: #51A3F3;
+}
+.popup-title{
+  	height: 30px;
+    width: 198px;
+    color: #BDBFD8;
+    font-family: "Circular Std";
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-top: 21px;
+}
+.popup-logout{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 390px) {
+    .username{
+      display: none;
+    }
+}
+</style>

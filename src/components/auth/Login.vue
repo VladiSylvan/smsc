@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="logo">
+            <div class="login-logo">
                 <img src="@/assets/logo.png">
             </div>
             <div class="login">
@@ -53,7 +53,7 @@ export default {
 }
 </script>
 <style>
-    .logo{
+    .login-logo{
         text-align: center;
         margin-top: 45px;
     }

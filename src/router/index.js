@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import LoginPage from '@/components/auth/Login'
 import RegisterPage from '@/components/auth/Register'
 
+
 import Dashboard from '@/components/admin/Dashboard'
 import Reporting from '@/components/admin/Reporting'
 import Product from '@/components/admin/Product'
