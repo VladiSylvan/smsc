@@ -1,98 +1,6 @@
 <template>
     <div class="container">
-      <nav class="navigation">
-        <div class="navi-logo">
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-close"></div>
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
-          <div v-if="!show" v-bind:class="{'navi-circle-open-menu': !show}" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
-          <img class="logo" src="@/assets/logo.png">
-          <img class="logo-small" src="@/assets/logo-min.png">
-        </div>
-        <div class="navi-head">
-          <div class="head-title">
-            Users
-          </div>
-        </div>
-        <profile-component></profile-component>
-      </nav>
-      <transition name="fade">
-      <ul v-bind:class="{'sidebar-hide': !show}" >
-        <li>
-          <router-link :to="{ name: 'Profile'}">
-            <img class="image-box" src="@/assets/Icon/Users.svg">
-            <span v-if="show" class="side-link">Profile</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'ResellerSMSCenter'}">
-            <img class="image-box" src="@/assets/Icon/Vendors.svg">
-            <span v-if="show" class="side-link">SMS Center</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'ResellerProduct'}">
-            <img class="image-box" src="@/assets/Icon/Product.svg">
-            <span v-if="show" class="side-link">Product</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'MailTemplateRegister'}">
-            <img class="image-box" src="@/assets/Icon/Reseller.svg">
-            <span v-if="show" class="side-link">Mail Template</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'ResellerTemplate'}">
-            <img class="image-box" src="@/assets/Icon/Template.svg">
-            <span v-if="show" class="side-link">Templates</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'ResellerBilling'}">
-            <img class="image-box" src="@/assets/Icon/Billing.svg">
-            <span v-if="show" class="side-link">Billing</span>
-          </router-link>
-        </li>
-        <div v-if="show" class="side-title">
-          Manage
-        </div>
-        <li id="active">
-          <router-link :to="{ name: 'ResellerUsers'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M19.3070588,15.3745636 L18.5167157,15.3745636 C20.0434804,14.3694763 21.0561275,12.6217456 21.0561275,10.6378055 C21.0561275,7.52907731 18.5704412,5 15.515049,5 C12.4596569,5 9.97397059,7.52907731 9.97397059,10.6378055 C9.97397059,12.6217456 10.9865196,14.3694763 12.5133824,15.3745636 L11.7230392,15.3745636 C9.69196078,15.3745636 8.03955882,17.0557107 8.03955882,19.1222444 L8.03955882,24.3573067 C8.03955882,24.7016459 8.31392157,24.9807481 8.65230392,24.9807481 L22.3777941,24.9807481 C22.7161765,24.9807481 22.9905392,24.7016459 22.9905392,24.3573067 L22.9905392,19.1221945 C22.9905392,17.0557107 21.3381373,15.3745636 19.3070588,15.3745636 Z M11.1994608,10.6378055 C11.1994608,8.21665835 13.1353922,6.24688279 15.515049,6.24688279 C17.8946569,6.24688279 19.8306373,8.21665835 19.8306373,10.6378055 C19.8306373,13.0589027 17.8946569,15.0286284 15.515049,15.0286284 C13.1353922,15.0286284 11.1994608,13.0589027 11.1994608,10.6378055 Z M17.3078431,15.9724688 L15.515049,17.7966085 L13.7222549,15.9725187 C14.2848529,16.1687781 14.8878922,16.2755112 15.515049,16.2755112 C16.1422059,16.2755112 16.7452941,16.1687781 17.3078431,15.9724688 Z M21.765049,23.7338155 L20.0983824,23.7338155 L20.0983824,20.7383541 C20.0983824,20.394015 19.8240196,20.1149127 19.4856373,20.1149127 C19.1472549,20.1149127 18.8728922,20.394015 18.8728922,20.7383541 L18.8728922,23.7338155 L12.1572059,23.7338155 L12.1572059,20.7383541 C12.1572059,20.394015 11.8828431,20.1149127 11.5444608,20.1149127 C11.2060784,20.1149127 10.9317157,20.394015 10.9317157,20.7383541 L10.9317157,23.7338155 L9.26504902,23.7338155 L9.26504902,19.1221945 C9.26504902,17.7432918 10.3676961,16.6213965 11.7230392,16.6213965 L12.6269118,16.6213965 L15.0817647,19.1190524 C15.2014216,19.240798 15.3582353,19.3016459 15.515049,19.3016459 C15.6718627,19.3016459 15.8285784,19.240798 15.9483333,19.1190524 L18.4031863,16.6213965 L19.3070588,16.6213965 C20.6623529,16.6213965 21.765049,17.743192 21.765049,19.1221945 L21.765049,23.7338155 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Users</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'ResellerCompanies'}">
-            <img class="image-box" src="@/assets/Icon/Companies.svg">
-            <span v-if="show" class="side-link">Companies</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'ResellerVendors'}">
-            <img class="image-box" src="@/assets/Icon/Vendors.svg">
-            <span v-if="show" class="side-link">Vendors</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'ResellerDIDs'}">
-            <img class="image-box" src="@/assets/Icon/DID.svg">
-            <span v-if="show" class="side-link">DIDs</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'ResellerFilters'}">
-            <img class="image-box" src="@/assets/Icon/Filters.svg">
-            <span v-if="show" class="side-link">Filters</span>
-          </router-link>
-        </li>
-      </ul>
-      </transition>
+      <reseller-navigation-component title="Users"></reseller-navigation-component>
       <div class="main-add">
         <div class="res-div">
           <div class="head-title">
@@ -178,7 +86,7 @@
 </template>
 <script>
 import modal from '@/components/modal.vue'
-import ProfileComponent from '@/components/ProfileComponent'
+import ResellerNavigationComponent from '@/components/ResellerNavigationComponent'
 
 export default {
     name: 'app',
@@ -219,7 +127,7 @@ export default {
     },
     components:{
       modal,
-      ProfileComponent,
+      ResellerNavigationComponent,
     },
     methods:{
         sendForm(){
@@ -497,180 +405,6 @@ button#cancel{
   vertical-align: top;
   float: left;
 }
-.side#active svg g{
-  fill: white;
-}
-.side-link{
-  	height: 20px;
-    width: 220px;
-    font-family: "Helvetica Neue";
-    font-size: 16px;
-    line-height: 20px;
-    display: inline-block;
-    margin-top: 10px;
-}
-.side-link#active{
-  	color: #FFFFFF;
-}
-ul{
-	height: 100vh;
-	max-width: 300px;
-  width: 100%;
-	background-color: #F0F1FA;
-  display: inline-block;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-li a{
-  text-decoration: none;
-  color: #55616E;
-  cursor: pointer;
-}
-.sidebar-hide {
-	height: 100vh;
-	width: 60px;
-	background-color: #F0F1FA;
-  display: inline-block;
-  float: left;
-  margin-right: 75px;
-}
-li{
-  height: 40px;
-  width: 100%;
-  color: #55616E;
-  display: inline-block;
-  cursor: pointer;
-}
-.side-hide{
-  height: 40px;
-  width: 60px;
-  color: #55616E;
-  display: inline-block;
-}
-.side-hide#active{
-	border-radius: 0 4px 4px 0;
-	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
-  color: #FFFFFF;
-  fill: #FFFFFF;
-}
-li#active{
-	border-radius: 0 4px 4px 0;
-	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
-  color: #FFFFFF;
-  fill: #FFFFFF;
-}
-li:first-child{
-  margin-top: 10px;
-}
-.image-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 5px;
-  margin-left: 15px;
-  margin-right: 10px;
-}
-.control-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 5px;
-}
-.side-title{
-  	height: 30px;
-    width: 270px;
-    color: #BDBFD8;
-    font-family: "Circular Std";
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: 30px;
-    display: inline-block;
-    text-transform: uppercase;
-    margin-left: 15px;
-    margin-top: 21px;
-}
-.navigation{
-  max-width: 100%;
-  height: 60px;
-  background-color: #FFFFFF;
-}
-.navi-logo{
-  max-width: 300px;
-  display: inline-block;
-  width: 100%;
-}
-.navi-circle-open{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: none;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-  transform: rotate(180deg);
-}
-.navi-circle-open-menu{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-  transform: rotate(180deg);
-}
-.navi-circle-close{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-}
-.navi-head{
-  max-width: 560px;
-  display: inline-block;
-  width: auto;
-}
-.head-title{
-    display: inline-block;
-    vertical-align: top;
-    vertical-align: top;
-    color: #55616E;
-    font-family: "Circular Std";
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 30px;
-    margin-left: 15px;
-    margin-top: 15px;
-    margin-right: 32px;
-}
-.logo{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-right: 20px;
-}
-.logo-small{
-  display: none;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-right: 20px;
-}
 .res-div{
   display: none;
   width: 100%;
@@ -681,13 +415,6 @@ li:first-child{
   margin-left: 15px;
 }
 @media only screen and (max-width: 1200px) {
-    .navi-head{
-      display: none;
-    }
-    .navi-logo{
-      max-width: 40.8333333333%;
-      width: 100%;
-    }
     .res-div{
       display: inline-block;
     }
@@ -705,25 +432,6 @@ li:first-child{
     }
 }
 @media only screen and (max-width: 750px) {
-    .logo{
-      display: none;
-    }
-    .logo-small{
-      display: inline-block;
-    }
-    .navi-logo{
-      max-width: 38.8333333333%;
-      width: 100%;
-    }
-    .navi-circle-open{
-      display: inline-block;
-    }
-    .navi-circle-close{
-      display: none;
-    }
-    ul, .sidebar-hide{
-      display: none;
-    }
     .main-add{
       max-width: 100%;
     }

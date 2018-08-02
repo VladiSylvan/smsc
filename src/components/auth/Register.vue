@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-md-6">
                           <label>Password</label>
-                          <input class="input-password" type="text" v-model="user.password" placeholder="********">
+                          <input class="input-register-password" type="text" v-model="user.password" placeholder="********">
                         </div>
                         <div class="col-md-6">
                           <label>Re-enter Password</label>
@@ -152,7 +152,7 @@ export default {
       font-size: 14px;
       line-height: 25px;
     }
-    .input-first-name, .input-second-name, .input-company-name, .input-phone-number, .input-register-email, .input-address, .input-password, .input-repassword{
+    .input-first-name, .input-second-name, .input-company-name, .input-phone-number, .input-register-email, .input-address, .input-register-password, .input-repassword{
       width: calc(100% - 15px);
       height: 40px !important;
       margin-bottom: 20px;

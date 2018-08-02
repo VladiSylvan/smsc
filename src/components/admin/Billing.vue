@@ -1,98 +1,6 @@
 <template>
     <div class="container">
-      <nav class="navigation">
-        <div class="navi-logo">
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-close"></div>
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
-          <div v-if="!show" v-bind:class="{'navi-circle-open-menu': !show}" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
-          <img class="logo" src="@/assets/logo.png">
-          <img class="logo-small" src="@/assets/logo-min.png">
-        </div>
-        <div class="navi-head">
-          <div class="head-title">
-            Billing
-          </div>
-        </div>
-        <profile-component></profile-component>
-      </nav>
-      <transition name="fade">
-      <ul v-bind:class="{'sidebar-hide': !show}" >
-        <li>
-          <router-link :to="{ name: 'Dashboard'}">
-            <img class="image-box" src="@/assets/Icon/Dashboard.svg">
-            <span v-if="show" class="side-link">Dashboard</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Reporting'}">
-            <img class="image-box" src="@/assets/Icon/Reporting.svg">
-            <span v-if="show" class="side-link">Reporting</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Product'}">
-            <img class="image-box" src="@/assets/Icon/Product.svg">
-            <span v-if="show" class="side-link">Product</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Template'}">
-            <img class="image-box" src="@/assets/Icon/Template.svg">
-            <span v-if="show" class="side-link">Template Approval</span>
-          </router-link>
-        </li>
-        <li id="active">
-          <router-link :to="{ name: 'Billing'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M24.2624044,8.95795211 L9.82234973,8.95795211 L8.99054645,7.0429662 C8.90540984,6.84697183 8.73005464,6.70241127 8.5184153,6.6536 L5.83961749,6.03628732 C5.47240437,5.95140282 5.10464481,6.17458592 5.01830601,6.53430141 C4.93185792,6.89396338 5.1595082,7.25410704 5.52677596,7.33872394 L7.86885246,7.87853803 L13.8646448,21.6829211 C13.6789617,22.0041014 13.5722951,22.3747887 13.5722951,22.769507 C13.5722951,23.9894141 14.5856284,24.9819099 15.8310929,24.9819099 C17.076612,24.9819099 18.0899454,23.9894676 18.0899454,22.769507 C18.0899454,22.4630451 18.0259016,22.1710338 17.9104372,21.9054085 L20.3700546,21.9054085 C20.2545902,22.1709803 20.1905464,22.4629915 20.1905464,22.769507 C20.1905464,23.9894141 21.2039344,24.9819099 22.4495082,24.9819099 C23.6949727,24.9819099 24.7082514,23.9894676 24.7082514,22.769507 C24.7082514,21.549493 23.6949727,20.5570507 22.4495082,20.5570507 L14.8647541,20.5673803 L13.929235,18.4135296 L24.262459,18.4135296 C24.6397268,18.4135296 24.9455191,18.1139718 24.9455191,17.7445155 L24.9455191,9.6269662 C24.9454645,9.25750986 24.6396721,8.95795211 24.2624044,8.95795211 Z M22.4508743,21.8957746 C22.9438251,21.8957746 23.3434426,22.2871211 23.3434426,22.7699352 C23.3434426,23.2526958 22.9438798,23.6440958 22.4508743,23.6440958 C21.9579235,23.6440958 21.5583607,23.2526958 21.5583607,22.7699352 C21.5583607,22.2871211 21.9579235,21.8957746 22.4508743,21.8957746 Z M15.8345355,21.8957746 C16.3274863,21.8957746 16.7271038,22.2871211 16.7271038,22.7699352 C16.7271038,23.2526958 16.3274863,23.6440958 15.8345355,23.6440958 C15.3415847,23.6440958 14.9420219,23.2526958 14.9420219,22.7699352 C14.9420219,22.2871211 15.3416393,21.8957746 15.8345355,21.8957746 Z M23.5793443,13.0167268 L19.0518033,13.0167268 C18.6745902,13.0167268 18.3687432,13.3162845 18.3687432,13.6857408 C18.3687432,14.0551972 18.6745902,14.3547549 19.0518033,14.3547549 L23.5793443,14.3547549 L23.5793443,17.0755014 L13.3481421,17.0755014 L10.4034426,10.2959803 L23.5793443,10.2959803 L23.5793443,13.0167268 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Billing</span>
-          </router-link>
-        </li>
-        <div v-if="show" class="side-title">
-          Manage
-        </div>
-        <li>
-          <router-link :to="{ name: 'Resellers'}">
-            <img class="image-box" src="@/assets/Icon/Reseller.svg">
-            <span v-if="show" class="side-link">Resellers</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Users'}">
-            <img class="image-box" src="@/assets/Icon/Users.svg">
-            <span v-if="show" class="side-link">Users</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Companies'}">
-            <img class="image-box" src="@/assets/Icon/Companies.svg">
-            <span v-if="show" class="side-link">Companies</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Vendors'}">
-            <img class="image-box" src="@/assets/Icon/Vendors.svg">
-            <span v-if="show" class="side-link">Vendors</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'DID'}">
-            <img class="image-box" src="@/assets/Icon/DID.svg">
-            <span v-if="show" class="side-link">DID</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Filters'}">
-            <img class="image-box" src="@/assets/Icon/Filters.svg">
-            <span v-if="show" class="side-link">Filters</span>
-          </router-link>
-        </li>
-      </ul>
-      </transition>
+      <navigation-component title="Billing"></navigation-component>
       <div class="main">
         <div class="res-div">
           <div class="head-title">
@@ -211,7 +119,7 @@
 </template>
 <script>
 import modal from '@/components/modal.vue'
-import ProfileComponent from '@/components/ProfileComponent'
+import NavigationComponent from '@/components/NavigationComponent'
 
 export default {
     name: 'app',
@@ -232,7 +140,7 @@ export default {
     },
     components:{
       modal,
-      ProfileComponent,
+      NavigationComponent,
     },
     methods:{
         sendForm(){
@@ -572,179 +480,6 @@ a{
   vertical-align: top;
   float: left;
 }
-.side#active svg g{
-  fill: white;
-}
-.side-link{
-  	height: 20px;
-    width: 220px;
-    font-family: "Helvetica Neue";
-    font-size: 16px;
-    line-height: 20px;
-    display: inline-block;
-    margin-top: 10px;
-}
-.side-link#active{
-  	color: #FFFFFF;
-}
-ul{
-	height: 100vh;
-	max-width: 300px;
-  width: 100%;
-	background-color: #F0F1FA;
-  display: inline-block;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-li a{
-  text-decoration: none;
-  color: #55616E;
-  cursor: pointer;
-}
-.sidebar-hide {
-	height: 100vh;
-	width: 60px;
-	background-color: #F0F1FA;
-  display: inline-block;
-  float: left;
-  margin-right: 75px;
-}
-li{
-  height: 40px;
-  width: 100%;
-  color: #55616E;
-  display: inline-block;
-  cursor: pointer;
-}
-.side-hide{
-  height: 40px;
-  width: 60px;
-  color: #55616E;
-  display: inline-block;
-}
-.side-hide#active{
-	border-radius: 0 4px 4px 0;
-	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
-  color: #FFFFFF;
-  fill: #FFFFFF;
-}
-li#active{
-	border-radius: 0 4px 4px 0;
-	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
-  color: #FFFFFF;
-  fill: #FFFFFF;
-}
-li:first-child{
-  margin-top: 10px;
-}
-.billing-control-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-}
-.image-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 5px;
-  margin-left: 15px;
-  margin-right: 10px;
-}
-.side-title{
-  	height: 30px;
-    width: 270px;
-    color: #BDBFD8;
-    font-family: "Circular Std";
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: 30px;
-    display: inline-block;
-    text-transform: uppercase;
-    margin-left: 15px;
-    margin-top: 21px;
-}
-.navigation{
-  max-width: 100%;
-  height: 60px;
-  background-color: #FFFFFF;
-}
-.navi-logo{
-  max-width: 300px;
-  display: inline-block;
-  width: 100%;
-}
-.navi-circle-open{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: none;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-  transform: rotate(180deg);
-}
-.navi-circle-open-menu{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-  transform: rotate(180deg);
-}
-.navi-circle-close{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-}
-.navi-head{
-  max-width: 560px;
-  display: inline-block;
-  width: auto;
-}
-.head-title{
-    display: inline-block;
-    vertical-align: top;
-    vertical-align: top;
-    color: #55616E;
-    font-family: "Circular Std";
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 30px;
-    margin-left: 15px;
-    margin-top: 15px;
-    margin-right: 32px;
-}
-.logo{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-right: 20px;
-}
-.logo-small{
-  display: none;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-right: 20px;
-}
 .res-div{
   display: none;
   width: 100%;
@@ -755,37 +490,11 @@ li:first-child{
   margin-left: 15px;
 }
 @media only screen and (max-width: 1200px) {
-    .navi-head{
-      display: none;
-    }
-    .navi-logo{
-      max-width: 40.8333333333%;
-      width: 100%;
-    }
     .res-div{
       display: inline-block;
     }
 }
 @media only screen and (max-width: 750px) {
-    .logo{
-      display: none;
-    }
-    .logo-small{
-      display: inline-block;
-    }
-    .navi-logo{
-      max-width: 38.8333333333%;
-      width: 100%;
-    }
-    .navi-circle-open{
-      display: inline-block;
-    }
-    .navi-circle-close{
-      display: none;
-    }
-    ul, .sidebar-hide{
-      display: none;
-    }
     .main{
       max-width: 100%;
     }

@@ -1,80 +1,6 @@
 <template>
     <div class="container">
-      <nav class="navigation">
-        <div class="navi-logo">
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-close"></div>
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
-          <div v-if="!show" v-bind:class="{'navi-circle-open-menu': !show}" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
-          <img class="logo" src="@/assets/logo.png">
-          <img class="logo-small" src="@/assets/logo-min.png">
-        </div>
-        <div class="navi-head">
-          <div class="head-title">
-            Campaigns
-          </div>
-        </div>
-        <profile-component></profile-component>
-      </nav>
-      <transition name="fade">
-      <ul v-bind:class="{'sidebar-hide': !show}" >
-        <li>
-          <router-link :to="{ name: 'Alert'}">
-            <img class="image-box" src="@/assets/Icon/Alerts.svg">
-            <span v-if="show" class="side-link">Alert</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'SMSCenter'}">
-            <img class="image-box" src="@/assets/Icon/Vendors.svg">
-            <span v-if="show" class="side-link">SMS Center</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'CompanyTemplate'}">
-            <img class="image-box" src="@/assets/Icon/Template.svg">
-            <span v-if="show" class="side-link">Templates</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'CompanyBilling'}">
-            <img class="image-box" src="@/assets/Icon/Billing.svg">
-            <span v-if="show" class="side-link">Billing</span>
-          </router-link>
-        </li>
-        <div v-if="show" class="side-title">
-          Manage
-        </div>
-        <li>
-          <router-link :to="{ name: 'CompanyDIDs'}">
-            <img class="image-box" src="@/assets/Icon/DID.svg">
-            <span v-if="show" class="side-link">DIDs</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'CompanySMSWorkflow'}">
-            <img class="image-box" src="@/assets/Icon/SMS Flow.svg">
-            <span v-if="show" class="side-link">SMS Workflow</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'CompanyReminderWorkflow'}">
-            <img class="image-box" src="@/assets/Icon/Alerts.svg">
-            <span v-if="show" class="side-link">Reminder Workflow</span>
-          </router-link>
-        </li>
-        <li id="active">
-          <router-link :to="{ name: 'CompanyCampaigns'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M24.302168,8.01773234 L5.67750678,8.01773234 C5.30336043,8.01773234 5,8.32983271 5,8.71475836 L5,22.2642751 C5,22.649145 5.30336043,22.9613011 5.67750678,22.9613011 L24.302168,22.9613011 C24.6762602,22.9613011 24.9796748,22.649145 24.9796748,22.2642751 L24.9796748,8.71475836 C24.9796748,8.32988848 24.6762602,8.01773234 24.302168,8.01773234 Z M23.6246612,21.5673048 L6.35501355,21.5673048 L6.35501355,9.41178439 L23.6246612,9.41178439 L23.6246612,21.5673048 Z M8.1303523,12.695223 L14.6344173,16.8181041 C14.7433604,16.8871933 14.8665583,16.92171 14.9898103,16.92171 C15.1130623,16.92171 15.2362602,16.8871933 15.3452033,16.8181041 L21.8492683,12.695223 C22.1678049,12.4933086 22.2669919,12.0638848 22.0707317,11.736171 C21.8744715,11.4084572 21.4569648,11.3064126 21.1385366,11.5083829 L14.9898103,15.4059294 L8.84113821,11.5083829 C8.52271003,11.3065799 8.10531165,11.4084015 7.90894309,11.736171 C7.71262873,12.063829 7.81176152,12.4933086 8.1303523,12.695223 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Campaigns</span>
-          </router-link>
-        </li>
-      </ul>
-      </transition>
+      <company-navigation-component title="Campaigns"></company-navigation-component>
       <div class="main">
         <div class="res-div">
           <div class="head-title">
@@ -156,7 +82,7 @@
 </template>
 <script>
 import modal from '@/components/DIDsModal.vue'
-import ProfileComponent from '@/components/ProfileComponent'
+import CompanyNavigationComponent from '@/components/CompanyNavigationComponent'
 
 export default {
     name: 'app',
@@ -178,7 +104,7 @@ export default {
     },
     components:{
       modal,
-      ProfileComponent,
+      CompanyNavigationComponent,
     },
     methods:{
         sendForm(){

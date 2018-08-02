@@ -1,98 +1,6 @@
 <template>
     <div class="container">
-      <nav class="navigation">
-        <div class="navi-logo">
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-close"></div>
-          <div v-if="show" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
-          <div v-if="!show" v-bind:class="{'navi-circle-open-menu': !show}" v-on:click="show = !show" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Menu/Close.svg') + ')' }" class="navi-circle-open"></div>
-          <img class="logo" src="@/assets/logo.png">
-          <img class="logo-small" src="@/assets/logo-min.png">
-        </div>
-        <div class="navi-head">
-          <div class="head-title">
-            Template
-          </div>
-        </div>
-        <profile-component></profile-component>
-      </nav>
-      <transition name="fade">
-      <ul v-bind:class="{'sidebar-hide': !show}">
-        <li>
-          <router-link :to="{ name: 'Dashboard'}">
-            <img class="image-box" src="@/assets/Icon/Dashboard.svg">
-            <span v-if="show" class="side-link">Dashboard</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Reporting'}">
-            <img class="image-box" src="@/assets/Icon/Reporting.svg">
-            <span v-if="show" class="side-link">Reporting</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Product'}">
-            <img class="image-box" src="@/assets/Icon/Product.svg">
-            <span v-if="show" class="side-link">Product</span>
-          </router-link>
-        </li>
-        <li id="active">
-          <router-link :to="{ name: 'Template'}">
-            <div class="image-box">
-              <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M21.8241579,6.62015748 L19.3376842,6.62015748 L19.3376842,5.65616798 C19.3376842,5.29375328 19.0431053,5 18.6797895,5 C18.3164737,5 18.0218947,5.29375328 18.0218947,5.65616798 L18.0218947,6.62015748 L15.6534737,6.62015748 L15.6534737,5.65616798 C15.6534737,5.29375328 15.3588947,5 14.9955789,5 C14.6322632,5 14.3376842,5.29375328 14.3376842,5.65616798 L14.3376842,6.62015748 L11.9692632,6.62015748 L11.9692632,5.65616798 C11.9692632,5.29375328 11.6746842,5 11.3113684,5 C10.9480526,5 10.6534737,5.29375328 10.6534737,5.65616798 L10.6534737,6.62015748 L8.167,6.62015748 C7.80368421,6.62015748 7.50910526,6.91396325 7.50910526,7.27632546 L7.50910526,24.3350131 C7.50910526,24.6973753 7.80368421,24.9911811 8.167,24.9911811 L21.8241579,24.9911811 C22.1874737,24.9911811 22.4820526,24.6973753 22.4820526,24.3350131 L22.4820526,7.27632546 C22.4820526,6.91396325 22.1874737,6.62015748 21.8241579,6.62015748 Z M21.1662632,23.6788451 L8.82489474,23.6788451 L8.82489474,7.93249344 L10.6534737,7.93249344 L10.6534737,8.6983727 C10.6534737,9.0607874 10.9480526,9.35454068 11.3113684,9.35454068 C11.6746842,9.35454068 11.9692632,9.0607874 11.9692632,8.6983727 L11.9692632,7.93249344 L14.3376842,7.93249344 L14.3376842,8.6983727 C14.3376842,9.0607874 14.6322632,9.35454068 14.9955789,9.35454068 C15.3588947,9.35454068 15.6534737,9.0607874 15.6534737,8.6983727 L15.6534737,7.93249344 L18.0218947,7.93249344 L18.0218947,8.6983727 C18.0218947,9.0607874 18.3164737,9.35454068 18.6797895,9.35454068 C19.0431053,9.35454068 19.3376842,9.0607874 19.3376842,8.6983727 L19.3376842,7.93249344 L21.1662632,7.93249344 L21.1662632,23.6788451 Z M18.8903158,12.336378 L11.1008421,12.336378 C10.7375263,12.336378 10.4429474,12.6301837 10.4429474,12.9925459 C10.4429474,13.3549081 10.7375263,13.6487139 11.1008421,13.6487139 L18.8903158,13.6487139 C19.2536316,13.6487139 19.5482105,13.3549081 19.5482105,12.9925459 C19.5482105,12.6301837 19.2536316,12.336378 18.8903158,12.336378 Z M18.8903158,16.0109186 L11.1008421,16.0109186 C10.7375263,16.0109186 10.4429474,16.3047769 10.4429474,16.6670866 C10.4429474,17.0294488 10.7375263,17.3232546 11.1008421,17.3232546 L18.8903158,17.3232546 C19.2536316,17.3232546 19.5482105,17.0294488 19.5482105,16.6670866 C19.5482105,16.3047244 19.2536316,16.0109186 18.8903158,16.0109186 Z M18.8903158,19.6854593 L11.1008421,19.6854593 C10.7375263,19.6854593 10.4429474,19.9793176 10.4429474,20.3416273 C10.4429474,20.7039895 10.7375263,20.9977953 11.1008421,20.9977953 L18.8903158,20.9977953 C19.2536316,20.9977953 19.5482105,20.7039895 19.5482105,20.3416273 C19.5482105,19.9792651 19.2536316,19.6854593 18.8903158,19.6854593 Z" id="path-1">
-                </path>
-              </svg>
-            </div>
-            <span v-if="show" class="side-link" id="active">Template Approval</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Billing'}">
-            <img class="image-box" src="@/assets/Icon/Billing.svg">
-            <span v-if="show" class="side-link">Billing</span>
-          </router-link>
-        </li>
-        <div v-if="show" class="side-title">
-          Manage
-        </div>
-        <li>
-          <router-link :to="{ name: 'Resellers'}">
-            <img class="image-box" src="@/assets/Icon/Reseller.svg">
-            <span v-if="show" class="side-link">Resellers</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Users'}">
-            <img class="image-box" src="@/assets/Icon/Users.svg">
-            <span v-if="show" class="side-link">Users</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Companies'}">
-            <img class="image-box" src="@/assets/Icon/Companies.svg">
-            <span v-if="show" class="side-link">Companies</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Vendors'}">
-            <img class="image-box" src="@/assets/Icon/Vendors.svg">
-            <span v-if="show" class="side-link">Vendors</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'DID'}">
-            <img class="image-box" src="@/assets/Icon/DID.svg">
-            <span v-if="show" class="side-link">DID</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Filters'}">
-            <img class="image-box" src="@/assets/Icon/Filters.svg">
-            <span v-if="show" class="side-link">Filters</span>
-          </router-link>
-        </li>
-      </ul>
-      </transition>
+      <navigation-component title="Template"></navigation-component>
       <div class="main">
         <div class="res-div">
           <div class="head-title">
@@ -190,7 +98,7 @@
 </template>
 <script>
 import modal from '@/components/modal.vue'
-import ProfileComponent from '@/components/ProfileComponent'
+import NavigationComponent from '@/components/NavigationComponent'
 
 export default {
     name: 'app',
@@ -210,7 +118,7 @@ export default {
     },
     components:{
       modal,
-      ProfileComponent,
+      NavigationComponent,
     },
     methods:{
         sendForm(){
@@ -507,235 +415,6 @@ button#product{
   position: relative;
   z-index: 1000;
 }
-.side#active svg g{
-  fill: white;
-}
-.navigation{
-    width: 100%;
-    height: 60px;
-    background-color: #FFFFFF;
-}
-.head-logo{
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 15px;
-    margin-right: 20px;
-}
-.head-logo-min{
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 15px;
-    margin-left: 25px;
-}
-.title {
-    display: inline-block;
-    vertical-align: top;
-    vertical-align: top;
-    margin-left: 15px;
-    height: 30px;
-    width: 100%;
-    color: #55616E;
-    font-family: "Circular Std";
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 30px;
-    margin-top: 15px;
-    margin-right: 32px;
-}
-.circle{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-}
-.logo-place{
-  margin: 0;
-  display: inline-block;
-  width: 20.8333333333%;
-  float: left;
-}
-.username {
-	color: #55616E;
-	font-family: "Helvetica Neue";
-	font-size: 15px;
-	line-height: 20px;
-	text-align: right;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-right: -3px;
-  float: left;
-}
-.side-link{
-  	height: 20px;
-    width: 220px;
-    font-family: "Helvetica Neue";
-    font-size: 16px;
-    line-height: 20px;
-    display: inline-block;
-    margin-top: 10px;
-}
-.side-link#active{
-  	color: #FFFFFF;
-}
-ul{
-	height: 100vh;
-	max-width: 300px;
-  width: 100%;
-	background-color: #F0F1FA;
-  display: inline-block;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-li a{
-  text-decoration: none;
-  color: #55616E;
-  cursor: pointer;
-}
-.sidebar-hide {
-	height: 100vh;
-	width: 60px;
-	background-color: #F0F1FA;
-  display: inline-block;
-  float: left;
-  margin-right: 75px;
-}
-li{
-  height: 40px;
-  width: 100%;
-  color: #55616E;
-  display: inline-block;
-  cursor: pointer;
-}
-.side-hide{
-  height: 40px;
-  width: 60px;
-  color: #55616E;
-  display: inline-block;
-}
-.side-hide#active{
-	border-radius: 0 4px 4px 0;
-	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
-  color: #FFFFFF;
-  fill: #FFFFFF;
-}
-li#active{
-	border-radius: 0 4px 4px 0;
-	background: linear-gradient(135deg, #51A3F3 0%, #51B5F3 100%);
-  color: #FFFFFF;
-  fill: #FFFFFF;
-}
-li:first-child{
-  margin-top: 10px;
-}
-.image-box{
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 5px;
-  margin-left: 15px;
-  margin-right: 10px;
-}
-.side-title{
-  	height: 30px;
-    width: 270px;
-    color: #BDBFD8;
-    font-family: "Circular Std";
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: 30px;
-    display: inline-block;
-    text-transform: uppercase;
-    margin-left: 15px;
-    margin-top: 21px;
-}
-.navigation{
-  max-width: 100%;
-  height: 60px;
-  background-color: #FFFFFF;
-}
-.navi-logo{
-  max-width: 300px;
-  display: inline-block;
-  width: 100%;
-}
-.navi-circle-open{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: none;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-  transform: rotate(180deg);
-}
-.navi-circle-open-menu{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-  transform: rotate(180deg);
-}
-.navi-circle-close{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-}
-.navi-head{
-  max-width: 560px;
-  display: inline-block;
-  width: auto;
-}
-.head-title{
-    display: inline-block;
-    vertical-align: top;
-    vertical-align: top;
-    color: #55616E;
-    font-family: "Circular Std";
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 30px;
-    margin-left: 15px;
-    margin-top: 15px;
-    margin-right: 32px;
-}
-.logo{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-right: 20px;
-}
-.logo-small{
-  display: none;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-right: 20px;
-}
 .res-div{
   display: none;
   width: 100%;
@@ -746,13 +425,6 @@ li:first-child{
   margin-left: 15px;
 }
 @media only screen and (max-width: 1200px) {
-    .navi-head{
-      display: none;
-    }
-    .navi-logo{
-      max-width: 40.8333333333%;
-      width: 100%;
-    }
     .res-div{
       display: inline-block;
     }

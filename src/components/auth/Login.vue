@@ -11,7 +11,7 @@
                         <label>Email</label>
                         <input required class="input-email" type="text" v-model="user.user_name" placeholder="elyse_sauer@yahoo.com">
                         <label>Password</label>
-                        <input required class="input-password" type="password" v-model="user.password" placeholder="********">
+                        <input required class="input-login-password" type="password" v-model="user.password" placeholder="********">
                         <button type="submit">Log In</button>
                         <div class="no-account">
                             Don't have an account? <router-link :to="{ name: 'Register'}">Register</router-link>
@@ -91,7 +91,7 @@ export default {
       font-size: 14px;
       line-height: 25px;
     }
-    .input-email, .input-password{
+    .input-email, .input-login-password{
       width: 100%;
       padding: 10px 15px;
       margin-bottom: 20px;
