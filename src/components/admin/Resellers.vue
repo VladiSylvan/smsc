@@ -50,7 +50,7 @@
                       </div>
                       <div class="reseller-menu-add">
                         <div class="reseller-span">
-                          Add Manual Payment
+                          <router-link :to="{ name: 'AddManualPayment'}">Add Manual Payment</router-link>
                         </div>
                       </div>
                     </div>
@@ -252,6 +252,10 @@ a{
 .reseller-span{
   padding-top: 10px;
   padding-left: 15px;
+  color: #51A3F3;
+}
+.reseller-span a{
+  color: #51A3F3;
 }
 .reseller-menu-add{
   color: #51A3F3;
@@ -260,12 +264,14 @@ a{
   line-height: 20px;
   height: 40px;
   background-color: #F8F9FE;
+  cursor: pointer;
 }
 .reseller-menu-button{
   float: right;
   display: inline-block;
   margin-top: -5px;
   margin-right: -7px;
+  cursor: pointer;
 }
 .svg-active path{
   fill: white;

@@ -17,6 +17,7 @@ import EditReseller from '@/components/admin/EditReseller'
 import PaymentHistory from '@/components/admin/PaymentHistory'
 import InvoiceHistory from '@/components/admin/InvoiceHistory'
 import TransactionHistory from '@/components/admin/TransactionHistory'
+import AddManualPayment from '@/components/admin/AddManualPayment'
 import Users from '@/components/admin/Users'
 import AddUser from '@/components/admin/AddUser'
 import EditUser from '@/components/admin/EditUser'
@@ -98,6 +99,17 @@ import { Bar, Line } from 'vue-chartjs'
 import CommitChart from '@/components/admin/CommitChart'
 import BarChart from '@/components/admin/BarChart'
 
+const checkAuth = (to, from, next) => {
+    var exp = new Date(localStorage.getItem('token-exp'))
+    var today = new Date()
+
+    if (localStorage.getItem('token') != '' && exp > today) {
+      next()
+      return
+    }
+    next('/login')
+}
+
 Vue.use(Router)
 
 export default new Router({
@@ -115,7 +127,8 @@ export default new Router({
     {
         path: '/sys/dashboard',
         name: 'Dashboard',
-        component: Dashboard
+        component: Dashboard,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/reporting',
@@ -176,6 +189,11 @@ export default new Router({
         path: '/sys/transaction-history',
         name: 'TransactionHistory',
         component: TransactionHistory
+    },
+    {
+        path: '/sys/add-manual-payment',
+        name: 'AddManualPayment',
+        component: AddManualPayment
     },
     {
         path: '/sys/users',

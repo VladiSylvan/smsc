@@ -36,43 +36,43 @@
             <tbody>
               <tr>
                 <td class="payment-date">04 Apr 2018</td>
-                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-company"><div class="payment-avatar"></div> <div class="payment-name-fix">Appolo Inc.</div></td>
                 <td class="payment-description">Payment ID#367192</td>
                 <td class="payment-amount">$74</td>
               </tr>
               <tr>
                 <td class="payment-date">12-30-2018</td>
-                <td class="payment-company">Universal Inc.</td>
+                <td class="payment-company"><div class="payment-avatar"></div> <div class="payment-name-fix">Universal Inc.</div></td>
                 <td class="payment-description">Payment ID#367192</td>
                 <td class="payment-amount">$38</td>
               </tr>
               <tr>
                 <td class="payment-date">07-30-2018</td>
-                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-company"><div class="payment-avatar"></div> <div class="payment-name-fix">Appolo Inc.</div></td>
                 <td class="payment-description">Payment ID#367192</td>
                 <td class="payment-amount">$71</td>
               </tr>
               <tr>
                 <td class="payment-date">08-10-2018</td>
-                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-company"><div class="payment-avatar"></div> <div class="payment-name-fix">Appolo Inc.</div></td>
                 <td class="payment-description">Payment ID#367192</td>
                 <td class="payment-amount">$76</td>
               </tr>
               <tr>
                 <td class="payment-date">05-08-2018</td>
-                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-company"><div class="payment-avatar"></div> <div class="payment-name-fix">Appolo Inc.</div></td>
                 <td class="payment-description">Payment ID#367192</td>
                 <td class="payment-amount">$61</td>
               </tr>
               <tr>
                 <td class="payment-date">12-19-2018</td>
-                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-company"><div class="payment-avatar"></div> <div class="payment-name-fix">Appolo Inc.</div></td>
                 <td class="payment-description">Payment ID#367192</td>
                 <td class="payment-amount">$18</td>
               </tr>
               <tr>
                 <td class="payment-date">02-27-2018</td>
-                <td class="payment-company">Appolo Inc.</td>
+                <td class="payment-company"><div class="payment-avatar"></div> <div class="payment-name-fix">Appolo Inc.</div></td>
                 <td class="payment-description">Payment ID#367192</td>
                 <td class="payment-amount">$4</td>
               </tr>
@@ -139,6 +139,20 @@ export default {
 }
 </script>
 <style>
+.payment-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.payment-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
 .payment-table{
   border: none;
   max-width: calc(100% - 10px);

@@ -312,6 +312,7 @@ export default {
   margin-bottom: 15px;
   margin-right: 10px;
   transform: rotate(180deg);
+  cursor: pointer;
 }
 .navi-circle-open-menu{
   height: 30px;
@@ -325,6 +326,7 @@ export default {
   margin-bottom: 15px;
   margin-right: 10px;
   transform: rotate(180deg);
+  cursor: pointer;
 }
 .navi-circle-close{
   height: 30px;
@@ -337,6 +339,7 @@ export default {
   margin-left: 15px;
   margin-bottom: 15px;
   margin-right: 10px;
+  cursor: pointer;
 }
 .navi-head{
   max-width: 560px;
@@ -502,6 +505,14 @@ li:first-child{
     text-transform: uppercase;
     margin-left: 15px;
     margin-top: 21px;
+}
+.control-box{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
     .navi-head{

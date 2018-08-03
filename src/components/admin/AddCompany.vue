@@ -79,6 +79,20 @@
               </div>
               <input class="grid-input" type="text" v-model="user.zipCode" placeholder="Caroline">
             </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Mode
+              </div>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select">
+                <option value="All">All</option>
+              </select>
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Test Credit
+              </div>
+              <input class="grid-input" type="text" placeholder="Enter Test Credit">
+            </div>
           </div>
           <div class="company-second">
             <div class="grid-title">

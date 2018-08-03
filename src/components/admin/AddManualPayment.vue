@@ -20,78 +20,20 @@
             Back to Resellers
           </div>
         </router-link>
+        <router-link :to="{ name: 'AddManualPayment'}"><button id="product" type="submit">Add Payment</button></router-link>
+        <router-link :to="{ name: 'Resellers'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-reseller">
-          <div class="transaction-title">
-            Transaction History
+          <div class="payment-history-title">
+            Payment History
           </div>
-          <table class="transaction-table" cellspacing="0" cellpadding="0">
-            <thead>
-              <tr>
-                <th class="transaction-date-th">Date</th>
-                <th class="transaction-type-th">Type</th>
-                <th class="transaction-description-th">Description</th>
-                <th class="transaction-company-th">Company</th>
-                <th class="transaction-amount-th">Amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="transaction-date">29 Dec 2018</td>
-                <td class="transaction-type">Monthly payment</td>
-                <td class="transaction-description">Payment ID#367192</td>
-                <td class="transaction-company"><div class="transaction-avatar"></div> <div class="transaction-name-fix">Appolo Inc</div></td>
-                <td class="transaction-amount">$78</td>
-              </tr>
-              <tr>
-                <td class="transaction-date">29 Dec 2018</td>
-                <td class="transaction-type">DID fee</td>
-                <td class="transaction-description">Payment ID#367192</td>
-                <td class="transaction-company"><div class="transaction-avatar"></div> <div class="transaction-name-fix">Appolo Inc</div></td>
-                <td class="transaction-amount">$78</td>
-              </tr>
-              <tr>
-                <td class="transaction-date">29 Dec 2018</td>
-                <td class="transaction-type">Yearly payment</td>
-                <td class="transaction-description">Payment ID#367192</td>
-                <td class="transaction-company"><div class="transaction-avatar"></div> <div class="transaction-name-fix">Appolo Inc</div></td>
-                <td class="transaction-amount">$78</td>
-              </tr>
-              <tr>
-                <td class="transaction-date">29 Dec 2018</td>
-                <td class="transaction-type">Monthly payment</td>
-                <td class="transaction-description">Payment ID#367192</td>
-                <td class="transaction-company"><div class="transaction-avatar"></div> <div class="transaction-name-fix">Appolo Inc</div></td>
-                <td class="transaction-amount">$78</td>
-              </tr>
-              <tr>
-                <td class="transaction-date">29 Dec 2018</td>
-                <td class="transaction-type">DID fee</td>
-                <td class="transaction-description">Payment ID#367192</td>
-                <td class="transaction-company"><div class="transaction-avatar"></div> <div class="transaction-name-fix">Appolo Inc</div></td>
-                <td class="transaction-amount">$78</td>
-              </tr>
-              <tr>
-                <td class="transaction-date">29 Dec 2018</td>
-                <td class="transaction-type">Yearly payment</td>
-                <td class="transaction-description">Payment ID#367192</td>
-                <td class="transaction-company"><div class="transaction-avatar"></div> <div class="transaction-name-fix">Appolo Inc</div></td>
-                <td class="transaction-amount">$78</td>
-              </tr>
-              <tr>
-                <td class="transaction-date">29 Dec 2018</td>
-                <td class="transaction-type">DID fee</td>
-                <td class="transaction-description">Payment ID#367192</td>
-                <td class="transaction-company"><div class="transaction-avatar"></div> <div class="transaction-name-fix">Appolo Inc</div></td>
-                <td class="transaction-amount">$78</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="payment-content">
+
+          </div>
         </div>
       </div>
     </div>
 </template>
 <script>
-import modal from '@/components/modal.vue'
 import NavigationComponent from '@/components/NavigationComponent'
 
 export default {
@@ -132,7 +74,6 @@ export default {
         }
     },
     components:{
-      modal,
       NavigationComponent,
     },
     methods:{
@@ -149,12 +90,18 @@ export default {
 }
 </script>
 <style>
-.transaction-name-fix{
+.payment-content{
+  background: #FFFFFF;
+  width: calc(100% - 10px);
+  height: 375px;
+  border-radius: 4px;
+}
+.payment-name-fix{
   display: inline-block;
   vertical-align: top;
   margin-top: 7px;
 }
-.transaction-avatar{
+.payment-avatar{
   height: 30px;
   width: 30px;
   background-color: #ECEEF0;
@@ -163,7 +110,7 @@ export default {
   vertical-align: top;
   margin-right: 5px;
 }
-.transaction-table{
+.payment-table{
   border: none;
   max-width: calc(100% - 10px);
   width: 100%;
@@ -173,7 +120,7 @@ export default {
   line-height: 16px;
   text-align: left;
 }
-.transaction-title{
+.payment-history-title{
   color: #000000;
   font-family: "Helvetica Neue";
   font-size: 18px;
@@ -183,54 +130,44 @@ export default {
   margin-bottom: 10px;
 }
 
-.transaction-date-th{
-  width: 201px;
+.payment-date-th{
+  width: 189px;
   padding-left: 15px;
   height: 37px;
 }
-.transaction-type-th{
-  width: 170px;
+.payment-company-th{
+  width: 263px;
   height: 37px;
 }
-.transaction-description-th{
-  width: 397px;
+.payment-description-th{
+  width: 493px;
   height: 37px;
 }
-.transaction-company-th{
-  width: 177px;
-  height: 37px;
-}
-.transaction-amount-th{
+.payment-amount-th{
   width: 140px;
   height: 37px;
 }
 
-.transaction-date{
-  width: 201px;
+.payment-date{
+  width: 189px;
   padding-left: 15px;
   height: 44px;
   background-color: #FFFFFF;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.transaction-type{
-  width: 170px;
+.payment-company{
+  width: 263px;
   height: 44px;
   background-color: #FFFFFF;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.transaction-description{
-  width: 397px;
+.payment-description{
+  width: 493px;
   height: 44px;
   background-color: #FFFFFF;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
-.transaction-company{
-  width: 177px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.transaction-amount{
+.payment-amount{
   width: 140px;
   height: 44px;
   background-color: #FFFFFF;

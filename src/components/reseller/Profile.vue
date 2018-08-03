@@ -8,13 +8,13 @@
           </div>
         </div>
         <div class="navbar-profile">
-          <div class="nav-link-profile">
+          <div class="nav-link-rprofile">
             <div id="active" class="nav-text-profile">
               Portal Customization
-              <div class="nav-line-profile"></div>
+              <div class="nav-line-rprofile"></div>
             </div>
           </div>
-          <div class="nav-link-profile">
+          <div class="nav-link-rprofile">
             <router-link :to="{ name: 'ProfilePayment' }">
               <div class="nav-text-profile">
                 Payment Gateway
@@ -106,14 +106,14 @@ a{
 a{
   text-decoration: none;
 }
-.nav-link-profile{
+.nav-link-rprofile{
   display: inline-block;
   float: left;
   height: 50px;
   width: 170px;
   margin-left: 20px;
 }
-.nav-line-profile{
+.nav-line-rprofile{
   border-bottom: 2px solid #51A3F3;
   width: 170px;
   margin-top: 13px;

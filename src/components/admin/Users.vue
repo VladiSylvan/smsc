@@ -8,7 +8,7 @@
           </div>
         </div>
           <div class="main-header">
-            <input class="user-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchUser" placeholder="Search for user">
+            <input class="user-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="search" placeholder="Search for user">
             <div class="user-header-title">
               Filter by:
             </div>
@@ -36,58 +36,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr v-for="user in users">
                   <td class="users-avatar"><div class="user-avatar"></div></td>
-                  <td class="users-name">Nellie Ferguson</td>
-                  <td class="users-username">nellief</td>
-                  <td class="users-company">San Marino</td>
-                  <td class="users-reseller">Mason Carroll</td>
-                  <td class="users-start">29 Apr 2018</td>
-                  <td class="users-role">Default</td>
-                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="users-avatar"><div class="user-avatar"></div></td>
-                  <td class="users-name">Frances Ruiz</td>
-                  <td class="users-username">Peanut</td>
-                  <td class="users-company">Latvia</td>
-                  <td class="users-reseller">Connor Phillips</td>
-                  <td class="users-start">20 Feb 2018</td>
-                  <td class="users-role">Premium</td>
-                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="users-avatar"><div class="user-avatar"></div></td>
-                  <td class="users-name">Keith Gardner</td>
-                  <td class="users-username">Samson</td>
-                  <td class="users-company">Grenada</td>
-                  <td class="users-reseller">Tom Terry</td>
-                  <td class="users-start">05 May 2018</td>
-                  <td class="users-role">VIP</td>
-                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="users-avatar"><div class="user-avatar"></div></td>
-                  <td class="users-name">Abbie Obrien</td>
-                  <td class="users-username">Madison</td>
-                  <td class="users-company">Pakistan</td>
-                  <td class="users-reseller">Martha Duncan</td>
-                  <td class="users-start">23 Sep 2018</td>
-                  <td class="users-role">Default</td>
-                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="users-avatar"><div class="user-avatar"></div></td>
-                  <td class="users-name">Willie Neal</td>
-                  <td class="users-username">Jack</td>
-                  <td class="users-company">India</td>
-                  <td class="users-reseller">Ada Beck</td>
-                  <td class="users-start">02 Jun 2018</td>
-                  <td class="users-role">Premium</td>
+                  <td class="users-name">{{ user.name }}</td>
+                  <td class="users-username">{{ user.name }}</td>
+                  <td class="users-company">{{ user.company_name }}</td>
+                  <td class="users-reseller">{{ user.reseller_name }}</td>
+                  <td class="users-start">{{ user.created_on }}</td>
+                  <td class="users-role">{{ user.rank }}</td>
                   <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
@@ -110,6 +66,8 @@ export default {
           transitionName: 'fade',
           popup: false,
           test: false,
+          users: [],
+          search: '',
           del: false,
           isModalVisible: false,
                 user:{
@@ -125,6 +83,40 @@ export default {
       modal,
       NavigationComponent,
     },
+    watch: {
+    search: function (val) {
+      console.log('val')
+      var app = this
+      this.axios.all([
+        this.axios.get('user/list?name=' + val + '*'),
+      ]).then( this.axios.spread((users) => {
+        console.log(users)
+        app.users = users.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
+    }
+  },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('user/list'),
+        this.axios.get('user/list?name=' + app.search + '*'),
+      ]).then( this.axios.spread((users, test) => {
+        console.log(test)
+        app.users = users.data.payload.items
+        app.test = test.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
+    },
+    // computed: {
+    //   filteredList() {
+    //     return this.users.filter(user => {
+    //       return user.name.toLowerCase().includes(this.search.toLowerCase())
+    //     })
+    //   }
+    // },
     methods:{
         sendForm(){
             event.preventDefault()

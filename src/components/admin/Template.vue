@@ -27,7 +27,7 @@
               </tr>
               <tr class="template-tr">
                 <td class="template-active-table"><div class="template-active"></div></td>
-                <td class="template-name">Parkerport</td>
+                <td class="template-name"><span v-on:click="showModal()">Parkerport</span></td>
                 <td class="template-created">10-03-2018</td>
                 <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
                 <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
@@ -49,7 +49,7 @@
               </tr>
                 <tr class="template-tr">
                 <td class="template-active-table"><div class="template-active"></div></td>
-                <td class="template-name">Braulioborough</td>
+                <td class="template-name"><span v-on:click="showModal()">Braulioborough</span></td>
                 <td class="template-created">10-03-2018</td>
                 <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
                 <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
@@ -74,7 +74,7 @@
               </tr>
               <tr class="template-tr">
                 <td class="template-active-table"><div class="template-active"></div></td>
-                <td class="template-name">New Lue</td>
+                <td class="template-name"><span v-on:click="showModal()">New Lue</span></td>
                 <td class="template-created">10-03-2018</td>
                 <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
                 <td class="template-sms-text">In the last five to six years the  device.</td>
@@ -83,7 +83,7 @@
               </tr>
               <tr class="template-tr">
                 <td class="template-active-table"><div class="template-not-active"></div></td>
-                <td class="template-name">Destineyland</td>
+                <td class="template-name"><span v-on:click="showModal()">Destineyland</span></td>
                 <td class="template-created">10-03-2018</td>
                 <td class="template-created-by"><div class="template-avatar"></div> <div class="template-name-fix">San Marino</div></td>
                 <td class="template-sms-text">In the last five to six years the FTA satellite receiver has become an everyday household electronic device.</td>
@@ -94,10 +94,13 @@
           </table>
         </div>
       </div>
+      <div id="app">
+        <template-modal v-show="isModalVisible" @close="closeModal"/>
+      </div>
     </div>
 </template>
 <script>
-import modal from '@/components/modal.vue'
+import TemplateModal from '@/components/TemplateModal.vue'
 import NavigationComponent from '@/components/NavigationComponent'
 
 export default {
@@ -117,7 +120,7 @@ export default {
         }
     },
     components:{
-      modal,
+      TemplateModal,
       NavigationComponent,
     },
     methods:{

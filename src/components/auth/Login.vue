@@ -7,7 +7,10 @@
             <div class="login">
                 <div class="content">
                     <h1>Log In</h1>
-                    <form v-on:submit="sendForm()">
+                    <div v-if="error">
+                        <h3 style="color: red">{{ errorMsg }}</h3>
+                    </div>
+                    <form v-on:submit="login()">
                         <label>Email</label>
                         <input required class="input-email" type="text" v-model="user.user_name" placeholder="elyse_sauer@yahoo.com">
                         <label>Password</label>
@@ -23,30 +26,36 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
 export default {
     data () {
         return {
-                user:{
-                user_name: '',
-                password: ''
-            }
+            user:{
+              user_name: 'admin',
+              password: 'yoo5Iche'
+            },
+            error: false,
+            errorMsg: '',
         }
     },
     mounted(){
       console.log(localStorage.getItem("token"))
    },
     methods:{
-        sendForm(){
-           var app = this;
-            axios.post('http://88.198.219.62/api_smsc/v1/auth', app.user).then(function(res){
-               localStorage.setItem("token", res.data.payload.token)
-               localStorage.setItem("token-exp", res.data.payload.exp)
-               console.log(res.data.payload.token)
-              app.$router.push({name: 'Dashboard'})
-            }).catch(function(err){
-              alert(err.response.data.error.message)
-              console.log(app.user)
+        login(){
+            var app = this
+
+            this.axios.post('auth', app.user).then( res => {
+                localStorage.setItem('token', res.data.payload.token)
+                localStorage.setItem('token-exp', res.data.payload.exp)
+                console.log('Token: ' + localStorage.getItem('token'))
+                console.log('Token expiry date: ' + localStorage.getItem('token-exp'))
+                this.$router.push('/sys/dashboard')
+            }).catch( err => {
+                var app = this
+
+                app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
             })
         }
     },

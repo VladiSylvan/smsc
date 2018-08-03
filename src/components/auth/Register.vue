@@ -7,27 +7,27 @@
             <div class="register">
                 <div class="content">
                     <h1>Sign up</h1>
-                    <form v-on:submit="sendForm()">
+                    <form v-on:submit="register()">
                       <div class="row">
                         <div class="col-md-6">
                           <label>First Name</label>
-                          <input class="input-first-name" type="text" v-model="user.firstName" placeholder="Enter first name">
+                          <input required class="input-first-name" type="text" v-model="user.firstName" placeholder="Enter first name">
                           <label>Company Name</label>
-                          <input class="input-company-name" type="text" v-model="user.companyName" placeholder="Enter company name">
+                          <input required class="input-company-name" type="text" v-model="user.companyName" placeholder="Enter company name">
                           <label>Phone Number</label>
-                          <input class="input-phone-number" type="text" v-model="user.phoneNumber" placeholder="Enter phone number">
+                          <input required class="input-phone-number" type="text" v-model="user.phoneNumber" placeholder="Enter phone number">
                         </div>
                         <div class="col-md-6">
                           <label>Second Name</label>
-                          <input class="input-second-name" type="text" v-model="user.secondName" placeholder="Enter second name">
+                          <input required class="input-second-name" type="text" v-model="user.secondName" placeholder="Enter second name">
                           <label>Email</label>
-                          <input class="input-register-email" type="text" v-model="user.email" placeholder="elyse_sauer@yahoo.com">
+                          <input required class="input-register-email" type="text" v-model="user.email" placeholder="elyse_sauer@yahoo.com">
                           <label>Address</label>
-                          <input class="input-address" type="text" v-model="user.address" placeholder="Enter address">
+                          <input required class="input-address" type="text" v-model="user.address" placeholder="Enter address">
                         </div>
                         <div class="col-md-12">
                           <div class="label-contact-person">Contact Person</div>
-                          <input class="input-contact-person" type="text" v-model="user.contactPerson" placeholder="Enter contact person">
+                          <input required class="input-contact-person" type="text" v-model="user.contactPerson" placeholder="Enter contact person">
                         </div>
                         <div class="col-md-3">
                           <label>Country</label>
@@ -43,19 +43,19 @@
                         </div>
                         <div class="col-md-3">
                           <label>City</label>
-                          <input class="input-city" type="text" v-model="user.city" placeholder="Enter city">
+                          <input required class="input-city" type="text" v-model="user.city" placeholder="Enter city">
                         </div>
                         <div class="col-md-3">
                           <label>Zip Code</label>
-                          <input class="input-zipCode" type="text" v-model="user.zipCode" placeholder="Enter zip code">
+                          <input required class="input-zipCode" type="text" v-model="user.zipCode" placeholder="Enter zip code">
                         </div>
                         <div class="col-md-6">
                           <label>Password</label>
-                          <input class="input-register-password" type="text" v-model="user.password" placeholder="********">
+                          <input required class="input-register-password" type="text" v-model="user.password" placeholder="********">
                         </div>
                         <div class="col-md-6">
                           <label>Re-enter Password</label>
-                          <input class="input-repassword" type="text" v-model="user.rePassword" placeholder="********">
+                          <input required class="input-repassword" type="text" v-model="user.rePassword" placeholder="********">
                         </div>
                       </div>
                         <button type="submit">Sign up</button>
@@ -86,12 +86,39 @@ export default {
                 zipCode: '',
                 password: '',
                 rePassword: ''
-            }
+            },
+            error: false,
+            errorMsg: '',
         }
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
+        register(){
+          var app = this
+
+          this.axios.post('registration/create', {
+            "company_url": "",
+            "contact": {
+              "email": app.user.email,
+              "state": app.user.state,
+              "logo_file_uuid": "",
+              "passwd": app.user.password,
+              "zipcode": app.user.zipCode,
+              "name": app.user.firstName,
+              "address": app.user.address,
+              "city": app.user.city,
+              "phone": app.user.phoneNumber,
+              "country_uuid": app.user.country
+            },
+            "company_name": app.user.companyName
+          }).then( res => {
+              this.$router.push('/login')
+          }).catch( err => {
+              var app = this
+
+              app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
     },
 }

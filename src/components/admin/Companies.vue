@@ -39,12 +39,12 @@
                 <tr>
                   <td class="companies-title" colspan="9"><div class="company-title-my">My Companies</div></td>
                 </tr>
-                <tr>
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Appolo Inc.</div></td>
-                  <td class="company-balance">$805</td>
-                  <td class="company-pay">$805/$781</td>
-                  <td class="company-contact-text">Eula Hernandez</td>
-                  <td class="company-resellers">Jean Riley</td>
+                <tr v-for="company in companies" v-if="user.user_id == company.user_id">
+                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">{{ company.company_name }}</div></td>
+                  <td class="company-balance">${{ company.balance }}</td>
+                  <td class="company-pay">{{ company.credit }}</td>
+                  <td class="company-contact-text">{{ company.contact.name }}</td>
+                  <td class="company-resellers">{{ company.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
@@ -75,58 +75,14 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Indonesia</div></td>
-                  <td class="company-balance">$776</td>
-                  <td class="company-pay">$776/$627</td>
-                  <td class="company-contact-text">Ray Dennis</td>
-                  <td class="company-resellers">Eva Armstrong</td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Dominica</div></td>
-                  <td class="company-balance">$691</td>
-                  <td class="company-pay">$691/$123</td>
-                  <td class="company-contact-text">Helen Schmidt</td>
-                  <td class="company-resellers">Joseph Little</td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
                   <td class="companies-title" colspan="9"><div class="company-title-all">All Companies</div></td>
                 </tr>
-                <tr>
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Appolo Inc.</div></td>
-                  <td class="company-balance">$805</td>
-                  <td class="company-pay">$805/$781</td>
-                  <td class="company-contact-text">Herman Goodwin</td>
-                  <td class="company-resellers">Anthony Christensen</td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Indonesia</div></td>
-                  <td class="company-balance">$776</td>
-                  <td class="company-pay">$776/$627</td>
-                  <td class="company-contact-text">Katie Guzman</td>
-                  <td class="company-resellers">Clifford Evans</td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">Dominica</div></td>
-                  <td class="company-balance">$691</td>
-                  <td class="company-pay">$691/$123</td>
-                  <td class="company-contact-text">Glenn Holmes</td>
-                  <td class="company-resellers">Eliza Dunn</td>
+                <tr v-for="company in companies">
+                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">{{ company.company_name }}</div></td>
+                  <td class="company-balance">${{ company.balance }}</td>
+                  <td class="company-pay">{{ company.credit }}</td>
+                  <td class="company-contact-text">{{ company.contact.name }}</td>
+                  <td class="company-resellers">{{ company.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
@@ -155,6 +111,8 @@ export default {
           popup: false,
           test: false,
           del: false,
+          companies: [],
+          user: [],
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
@@ -164,6 +122,25 @@ export default {
             },
 
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('company/list'),
+        this.axios.get('user')
+      ]).then( this.axios.spread((companies, user) => {
+        console.log(companies)
+        app.companies = companies.data.payload.items
+        app.user = user.data.payload
+      })).catch(error => {
+        console.log(error)
+      })
+      // this.axios.get('company/list').then( res => {
+      //   app.companies = res.data.payload.items
+      //   console.log(app.companies)
+      // }).catch(err => {
+      //   console.log(err)
+      // })
     },
     components:{
       modal,

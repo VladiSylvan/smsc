@@ -37,49 +37,49 @@
             <tbody>
               <tr>
                 <td class="invoice-created">29 Dec 2018</td>
-                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-company"><div class="invoice-avatar"></div> <div class="invoice-name-fix">Appolo Inc.</div></td>
                 <td class="invoice-paid">07 Jul 2018</td>
                 <td class="invoice-description">Payment ID#367192</td>
                 <td class="invoice-amount">$74</td>
               </tr>
               <tr>
                 <td class="invoice-created">15 Mar 2018</td>
-                <td class="invoice-company">Universal Inc.</td>
+                <td class="invoice-company"><div class="invoice-avatar"></div> <div class="invoice-name-fix">Universal Inc.</div></td>
                 <td class="invoice-paid">04 Jan 2018</td>
                 <td class="invoice-description">Payment ID#367192</td>
                 <td class="invoice-amount">$38</td>
               </tr>
               <tr>
                 <td class="invoice-created">29 Dec 2018</td>
-                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-company"><div class="invoice-avatar"></div> <div class="invoice-name-fix">Appolo Inc.</div></td>
                 <td class="invoice-paid">07 Jul 2018</td>
                 <td class="invoice-description">Payment ID#367192</td>
                 <td class="invoice-amount">$74</td>
               </tr>
               <tr>
                 <td class="invoice-created">29 Dec 2018</td>
-                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-company"><div class="invoice-avatar"></div> <div class="invoice-name-fix">Appolo Inc.</div></td>
                 <td class="invoice-paid">07 Jul 2018</td>
                 <td class="invoice-description">Payment ID#367192</td>
                 <td class="invoice-amount">$74</td>
               </tr>
               <tr>
                 <td class="invoice-created">29 Dec 2018</td>
-                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-company"><div class="invoice-avatar"></div> <div class="invoice-name-fix">Appolo Inc.</div></td>
                 <td class="invoice-paid">07 Jul 2018</td>
                 <td class="invoice-description">Payment ID#367192</td>
                 <td class="invoice-amount">$74</td>
               </tr>
               <tr>
                 <td class="invoice-created">29 Dec 2018</td>
-                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-company"><div class="invoice-avatar"></div> <div class="invoice-name-fix">Appolo Inc.</div></td>
                 <td class="invoice-paid">07 Jul 2018</td>
                 <td class="invoice-description">Payment ID#367192</td>
                 <td class="invoice-amount">$74</td>
               </tr>
               <tr>
                 <td class="invoice-created">29 Dec 2018</td>
-                <td class="invoice-company">Appolo Inc.</td>
+                <td class="invoice-company"><div class="invoice-avatar"></div> <div class="invoice-name-fix">Appolo Inc.</div></td>
                 <td class="invoice-paid">07 Jul 2018</td>
                 <td class="invoice-description">Payment ID#367192</td>
                 <td class="invoice-amount">$74</td>
@@ -149,6 +149,20 @@ export default {
 }
 </script>
 <style>
+.invoice-name-fix{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.invoice-avatar{
+  height: 30px;
+  width: 30px;
+  background-color: #ECEEF0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
 .invoice-table{
   border: none;
   max-width: calc(100% - 10px);

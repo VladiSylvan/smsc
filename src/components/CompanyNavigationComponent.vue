@@ -246,6 +246,7 @@ export default {
   margin-bottom: 15px;
   margin-right: 10px;
   transform: rotate(180deg);
+  cursor: pointer;
 }
 .navi-circle-open-menu{
   height: 30px;
@@ -259,6 +260,7 @@ export default {
   margin-bottom: 15px;
   margin-right: 10px;
   transform: rotate(180deg);
+  cursor: pointer;
 }
 .navi-circle-close{
   height: 30px;
@@ -271,6 +273,7 @@ export default {
   margin-left: 15px;
   margin-bottom: 15px;
   margin-right: 10px;
+  cursor: pointer;
 }
 .navi-head{
   max-width: 560px;
