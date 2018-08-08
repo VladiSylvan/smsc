@@ -95,22 +95,7 @@ export default {
         register(){
           var app = this
 
-          this.axios.post('registration/create', {
-            "company_url": "",
-            "contact": {
-              "email": app.user.email,
-              "state": app.user.state,
-              "logo_file_uuid": "",
-              "passwd": app.user.password,
-              "zipcode": app.user.zipCode,
-              "name": app.user.firstName,
-              "address": app.user.address,
-              "city": app.user.city,
-              "phone": app.user.phoneNumber,
-              "country_uuid": app.user.country
-            },
-            "company_name": app.user.companyName
-          }).then( res => {
+          this.axios.post('registration/create', app.user).then( res => {
               this.$router.push('/login')
           }).catch( err => {
               var app = this

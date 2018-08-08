@@ -133,142 +133,169 @@ export default new Router({
     {
         path: '/sys/reporting',
         name: 'Reporting',
-        component: Reporting
+        component: Reporting,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/product',
         name: 'Product',
-        component: Product
+        component: Product,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/add-product',
         name: 'AddProduct',
-        component: AddProduct
+        component: AddProduct,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/template',
         name: 'Template',
-        component: Template
+        component: Template,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/billing',
         name: 'Billing',
-        component: Billing
+        component: Billing,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/billing-payment',
         name: 'BillingPayment',
-        component: BillingPayment
+        component: BillingPayment,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/resellers',
         name: 'Resellers',
-        component: Resellers
+        component: Resellers,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/add-reseller',
         name: 'AddReseller',
-        component: AddReseller
+        component: AddReseller,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/edit-reseller',
         name: 'EditReseller',
-        component: EditReseller
+        component: EditReseller,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/payment-history',
         name: 'PaymentHistory',
-        component: PaymentHistory
-    },
+        component: PaymentHistory,
+        beforeEnter: checkAuth
     {
         path: '/sys/invoice-history',
         name: 'InvoiceHistory',
-        component: InvoiceHistory
+        component: InvoiceHistory,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/transaction-history',
         name: 'TransactionHistory',
-        component: TransactionHistory
+        component: TransactionHistory,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/add-manual-payment',
         name: 'AddManualPayment',
-        component: AddManualPayment
+        component: AddManualPayment,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/users',
         name: 'Users',
-        component: Users
+        component: Users,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/add-user',
         name: 'AddUser',
-        component: AddUser
+        component: AddUser,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/edit-user',
         name: 'EditUser',
-        component: EditUser
+        component: EditUser,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/companies',
         name: 'Companies',
-        component: Companies
+        component: Companies,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/add-company',
         name: 'AddCompany',
-        component: AddCompany
+        component: AddCompany,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/edit-company',
         name: 'EditCompany',
-        component: EditCompany
+        component: EditCompany,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/vendors',
         name: 'Vendors',
-        component: Vendors
+        component: Vendors,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/add-vendor',
         name: 'AddVendor',
-        component: AddVendor
+        component: AddVendor,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/edit-vendor',
         name: 'EditVendor',
-        component: EditVendor
+        component: EditVendor,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/vendors-rate',
         name: 'VendorsRate',
-        component: VendorsRate
+        component: VendorsRate,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/did',
         name: 'DID',
-        component: DID
+        component: DID,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/edit-did',
         name: 'EditDID',
-        component: EditDID
+        component: EditDID,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/import-did',
         name: 'ImportDID',
-        component: ImportDID
+        component: ImportDID,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/verify-did',
         name: 'VerifyDID',
-        component: VerifyDID
+        component: VerifyDID,
+        beforeEnter: checkAuth
     },
     {
         path: '/sys/filters',
         name: 'Filters',
-        component: Filters
+        component: Filters,
+        beforeEnter: checkAuth
     },
     {
         path: '/r/profile',
