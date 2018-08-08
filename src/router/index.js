@@ -189,6 +189,7 @@ export default new Router({
         name: 'PaymentHistory',
         component: PaymentHistory,
         beforeEnter: checkAuth
+    },
     {
         path: '/sys/invoice-history',
         name: 'InvoiceHistory',
