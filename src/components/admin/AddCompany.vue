@@ -20,92 +20,94 @@
             Back to Companies
           </div>
         </router-link>
-        <router-link :to="{ name: 'AddCompany'}"><button id="product" type="submit">Add Company</button></router-link>
-        <router-link :to="{ name: 'Companies'}"><button id="cancel" type="submit">Cancel</button></router-link>
-        <div class="add-company">
-          <div class="company-main">
-            <div class="company-add-title">
-              Add Company Information
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Company Name
+        <form v-on:submit="create()">
+          <button id="product" type="submit">Add Company</button>
+          <router-link :to="{ name: 'Companies'}"><button id="cancel" type="submit">Cancel</button></router-link>
+          <div class="add-company">
+            <div class="company-main">
+              <div class="company-add-title">
+                Add Company Information
               </div>
-              <input class="grid-input" type="text" v-model="user.companyName" placeholder="Company Name">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Phone Number
+              <div class="grid-4">
+                <div class="grid-title">
+                  Company Name
+                </div>
+                <input class="grid-input" type="text" v-model="company.company_name" placeholder="Company Name">
               </div>
-              <input class="grid-input" type="text" v-model="user.phoneNumber" placeholder="Enter phone number">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Email
+              <div class="grid-4">
+                <div class="grid-title">
+                  Phone Number
+                </div>
+                <input class="grid-input" type="text" v-model="company.contact.phone" placeholder="Enter phone number">
               </div>
-              <input class="grid-input" type="text" v-model="user.email" placeholder="Thomas">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Address
+              <div class="grid-4">
+                <div class="grid-title">
+                  Email
+                </div>
+                <input class="grid-input" type="text" v-model="company.contact.email" placeholder="Thomas">
               </div>
-              <input class="grid-input" type="text" v-model="user.address" placeholder="Caroline">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Country
+              <div class="grid-4">
+                <div class="grid-title">
+                  Address
+                </div>
+                <input class="grid-input" type="text" v-model="company.contact.address" placeholder="Caroline">
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="user.country">
-                <option value="459-362-5221">459-362-5221</option>
-              </select>
-            </div>
-            <div class="grid-3">
-              <div class="grid-title">
-                State
+              <div class="grid-4">
+                <div class="grid-title">
+                  Country
+                </div>
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="company.contact.country_uuid">
+                  <option value="1">Country</option>
+                </select>
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="user.state">
-                <option value="MD">MD</option>
-              </select>
-            </div>
-            <div class="grid-3">
-              <div class="grid-title">
-                City
+              <div class="grid-3">
+                <div class="grid-title">
+                  State
+                </div>
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="company.contact.state">
+                  <option value="MD">MD</option>
+                </select>
               </div>
-              <input class="grid-input" type="text" v-model="user.city" placeholder="Caroline">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Zip Code
+              <div class="grid-3">
+                <div class="grid-title">
+                  City
+                </div>
+                <input class="grid-input" type="text" v-model="company.contact.city" placeholder="Caroline">
               </div>
-              <input class="grid-input" type="text" v-model="user.zipCode" placeholder="Caroline">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Mode
+              <div class="grid-4">
+                <div class="grid-title">
+                  Zip Code
+                </div>
+                <input class="grid-input" type="text" v-model="company.contact.zipcode" placeholder="Caroline">
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select">
-                <option value="All">All</option>
-              </select>
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Test Credit
+              <div class="grid-4">
+                <div class="grid-title">
+                  Mode
+                </div>
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Mode" class="grid-select">
+                  <option value="All">All</option>
+                </select>
               </div>
-              <input class="grid-input" type="text" placeholder="Enter Test Credit">
+              <div class="grid-4">
+                <div class="grid-title">
+                  Test Credit
+                </div>
+                <input class="grid-input" type="text" v-model="company.credit" placeholder="Enter Test Credit">
+              </div>
+            </div>
+            <div class="company-second">
+              <div class="grid-title">
+                Choose Logo
+              </div>
+              <div class="upload">
+                <div class="upload-title">
+                  Drop logo here or browse
+                </div>
+                <button class="upload-button" type="submit">Upload logo</button>
+              </div>
             </div>
           </div>
-          <div class="company-second">
-            <div class="grid-title">
-              Choose Logo
-            </div>
-            <div class="upload">
-              <div class="upload-title">
-                Drop logo here or browse
-              </div>
-              <button class="upload-button" type="submit">Upload logo</button>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
 </template>
@@ -123,26 +125,25 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
-                user:{
-                country: '459-362-5221',
-                state: 'MD',
+          company:{
+            credit: '',
+            prepay: true,
+            reseller_uuid: '',
+            contact: {
+              email: '',
+              state: '',
+              logo_file_uuid: '',
+              passwd: '',
+              zipcode: '',
+              name: '',
+              address: '',
+              city: '',
+              phone: '',
+              country_uuid: '1'
             },
-            user2:{
-              country: 'China',
-              operator: 'China Mobile',
-              sellRate: '0.0012'
-            },
-            user3:{
-              country: 'United States',
-              operator: 'AT & T',
-              sellRate: '0.0003'
-            },
-            vendor:{
-              vendorName1: 'Vendor BB',
-              vendorName2: 'Vendor CC',
-              vendorRate1: '0.0009',
-              vendorRate2: '0.0008'
-            }
+            company_url: '',
+            company_name: ''
+          }
         }
     },
     components:{
@@ -158,6 +159,19 @@ export default {
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        create(){
+          var app = this
+
+          this.axios.post('company/create', app.company).then( res => {
+              this.$router.push('/sys/companies')
+          }).catch( err => {
+              var app = this
+
+              app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
     },
 }

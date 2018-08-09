@@ -46,7 +46,7 @@
                   <td class="company-contact-text">{{ company.contact.name }}</td>
                   <td class="company-resellers">{{ company.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: company.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option">
                     <div v-on:click="test = !test" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
@@ -84,7 +84,7 @@
                   <td class="company-contact-text">{{ company.contact.name }}</td>
                   <td class="company-resellers">{{ company.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: company.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
                 </tr>

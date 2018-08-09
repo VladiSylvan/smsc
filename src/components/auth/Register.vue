@@ -11,19 +11,19 @@
                       <div class="row">
                         <div class="col-md-6">
                           <label>First Name</label>
-                          <input required class="input-first-name" type="text" v-model="user.firstName" placeholder="Enter first name">
+                          <input required class="input-first-name" type="text" v-model="user.contact.name" placeholder="Enter first name">
                           <label>Company Name</label>
-                          <input required class="input-company-name" type="text" v-model="user.companyName" placeholder="Enter company name">
+                          <input required class="input-company-name" type="text" v-model="user.company_name" placeholder="Enter company name">
                           <label>Phone Number</label>
-                          <input required class="input-phone-number" type="text" v-model="user.phoneNumber" placeholder="Enter phone number">
+                          <input required class="input-phone-number" type="text" v-model="user.contact.phone" placeholder="Enter phone number">
                         </div>
                         <div class="col-md-6">
                           <label>Second Name</label>
                           <input required class="input-second-name" type="text" v-model="user.secondName" placeholder="Enter second name">
                           <label>Email</label>
-                          <input required class="input-register-email" type="text" v-model="user.email" placeholder="elyse_sauer@yahoo.com">
+                          <input required class="input-register-email" type="text" v-model="user.contact.email" placeholder="elyse_sauer@yahoo.com">
                           <label>Address</label>
-                          <input required class="input-address" type="text" v-model="user.address" placeholder="Enter address">
+                          <input required class="input-address" type="text" v-model="user.contact.address" placeholder="Enter address">
                         </div>
                         <div class="col-md-12">
                           <div class="label-contact-person">Contact Person</div>
@@ -37,25 +37,25 @@
                         </div>
                         <div class="col-md-3">
                           <label id="state">State</label>
-                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="state" v-model="user.state">
+                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="state" v-model="user.contact.state">
                             <option value="Nebraska">Nebraska</option>
                           </select>
                         </div>
                         <div class="col-md-3">
                           <label>City</label>
-                          <input required class="input-city" type="text" v-model="user.city" placeholder="Enter city">
+                          <input required class="input-city" type="text" v-model="user.contact.city" placeholder="Enter city">
                         </div>
                         <div class="col-md-3">
                           <label>Zip Code</label>
-                          <input required class="input-zipCode" type="text" v-model="user.zipCode" placeholder="Enter zip code">
+                          <input required class="input-zipCode" type="text" v-model="user.contact.zipcode" placeholder="Enter zip code">
                         </div>
                         <div class="col-md-6">
                           <label>Password</label>
-                          <input required class="input-register-password" type="text" v-model="user.password" placeholder="********">
+                          <input required class="input-register-password" type="text" v-model="user.contact.passwd" placeholder="********">
                         </div>
                         <div class="col-md-6">
                           <label>Re-enter Password</label>
-                          <input required class="input-repassword" type="text" v-model="user.rePassword" placeholder="********">
+                          <input required class="input-repassword" type="text" v-model="user.passwd2" placeholder="********">
                         </div>
                       </div>
                         <button type="submit">Sign up</button>
@@ -73,19 +73,35 @@
 export default {
     data () {
         return {
-                user:{
-                firstName: '',
-                secondName: '',
-                companyName: '',
-                email: '',
-                phoneNumber: '',
-                address: '',
-                country: 'Luxembourg',
-                state: 'Nebraska',
-                city: '',
-                zipCode: '',
-                password: '',
-                rePassword: ''
+            //     user:{
+            //     firstName: '',
+            //     secondName: '',
+            //     companyName: '',
+            //     email: '',
+            //     phoneNumber: '',
+            //     address: '',
+            //     country: 'Luxembourg',
+            //     state: 'Nebraska',
+            //     city: '',
+            //     zipCode: '',
+            //     password: '',
+            //     rePassword: ''
+            // },
+            user:{
+                company_url: 'http://sss.lt',
+                contact: {
+                    email: 'sdasgsa@fdsfds.lt',
+                    state: 'UA',
+                    logo_file_uuid: '1',
+                    passwd: 'asdas',
+                    zipcode: '61642',
+                    name: 'sadas',
+                    address: 'adsadsa',
+                    city: 'asdsad',
+                    phone: '1613346',
+                    country_uuid: '1'
+                },
+                company_name: 'Afsdafsd',
             },
             error: false,
             errorMsg: '',

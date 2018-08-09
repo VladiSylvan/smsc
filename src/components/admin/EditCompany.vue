@@ -31,25 +31,25 @@
               <div class="grid-title">
                 Company Name
               </div>
-              <input class="grid-input" type="text" v-model="user.companyName" placeholder="Company Name">
+              <input class="grid-input" type="text" v-model="companies.company_name" placeholder="Company Name">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Phone Number
               </div>
-              <input class="grid-input" type="text" v-model="user.phoneNumber" placeholder="Enter phone number">
+              <input class="grid-input" type="text" v-model="companies.contact.phone" placeholder="Enter phone number">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Email
               </div>
-              <input class="grid-input" type="text" v-model="user.email" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="companies.contact.email" placeholder="Thomas">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Address
               </div>
-              <input class="grid-input" type="text" v-model="user.address" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="companies.contact.address" placeholder="Caroline">
             </div>
             <div class="grid-4">
               <div class="grid-title">
@@ -63,7 +63,7 @@
               <div class="grid-title">
                 State
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="user.state">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="companies.contact.state">
                 <option value="Nebraska">Nebraska</option>
               </select>
             </div>
@@ -71,13 +71,13 @@
               <div class="grid-title">
                 City
               </div>
-              <input class="grid-input" type="text" v-model="user.city" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="companies.contact.city" placeholder="Caroline">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Zip Code
               </div>
-              <input class="grid-input" type="text" v-model="user.zipCode" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="companies.contact.zipcode" placeholder="Caroline">
             </div>
           </div>
           <div class="company-second">
@@ -114,6 +114,7 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          companies: [],
                 user:{
                 companyName: 'Appolo Inc.',
                 phoneNumber: '459-362-5221',
@@ -141,6 +142,17 @@ export default {
               vendorRate2: '0.0008'
             }
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('company/' + this.$route.params.id),
+      ]).then( this.axios.spread((companies) => {
+        console.log(companies)
+        app.companies = companies.data.payload
+      })).catch(error => {
+        console.log(error)
+      })
     },
     components:{
       modal,
