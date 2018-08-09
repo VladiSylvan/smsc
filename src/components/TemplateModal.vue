@@ -85,28 +85,6 @@
   float: left;
   display: inline-block;
 }
-input[type="text"]{
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 5px;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
-}
-select{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
-}
 .template-modal-tr{
   height: 45px;
 }

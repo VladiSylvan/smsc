@@ -224,6 +224,15 @@ export default {
 }
 </script>
 <style>
+.svg-active path{
+  fill: white;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 .navigation{
   max-width: 100%;
   height: 60px;

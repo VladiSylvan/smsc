@@ -34,6 +34,7 @@ import ImportDID from '@/components/admin/ImportDID'
 import VerifyDID from '@/components/admin/VerifyDID'
 import Filters from '@/components/admin/Filters'
 
+import ResellerRegister from '@/components/reseller/Register'
 import Profile from '@/components/reseller/Profile'
 import ProfilePayment from '@/components/reseller/ProfilePayment'
 import ResellerProduct from '@/components/reseller/Product'
@@ -299,6 +300,11 @@ export default new Router({
         beforeEnter: checkAuth
     },
     {
+        path: '/r/register',
+        name: 'ResellerRegister',
+        component: ResellerRegister
+    },
+    {
         path: '/r/profile',
         name: 'Profile',
         component: Profile
@@ -324,7 +330,7 @@ export default new Router({
         component: ResellerEditProduct
     },
     {
-        path: '/r/register',
+        path: '/r/mail-register',
         name: 'MailTemplateRegister',
         component: MailTemplateRegister
     },

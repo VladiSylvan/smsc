@@ -238,9 +238,6 @@ export default {
   line-height: 30px;
   margin: 15px;
 }
-.svg-active path{
-  fill: white;
-}
 .vendor-rate-table{
   border: none;
   max-width: 100%;
@@ -313,14 +310,6 @@ export default {
   float: left;
   margin-top: -10px;
 }
-.side a{
-  text-decoration: none;
-  color: #55616E;
-}
-.side#active a{
-  text-decoration: none;
-  color: #FFFFFF;
-}
 input[type="text"]#vendor-search{
   width: 345px;
   border: 1px solid #EDEEF3;
@@ -356,18 +345,6 @@ button#product{
     margin-top: 20px;
     float: right;
     margin-right: 20px;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 2s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-.col-md-6{
-  width: 45.83%;
-}
-.col-md-3{
-  width: 20.8%;
 }
 .main{
   max-width: calc(100% - 300px);
@@ -550,15 +527,6 @@ li:first-child{
   margin-top: 15px;
   margin-right: 20px;
 }
-.res-div{
-  display: none;
-  width: 100%;
-}
-.res-select{
-  display: inline-block;
-  width: calc(100% - 15px);
-  margin-left: 15px;
-}
 @media only screen and (max-width: 1200px) {
     .navi-head{
       display: none;
@@ -566,9 +534,6 @@ li:first-child{
     .navi-logo{
       max-width: 40.8333333333%;
       width: 100%;
-    }
-    .res-div{
-      display: inline-block;
     }
     .vendor-input-search{
       max-width: calc(100% - 80px);

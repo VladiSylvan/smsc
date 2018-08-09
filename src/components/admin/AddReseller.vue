@@ -334,28 +334,6 @@ export default {
   margin-bottom: 5px;
   padding-top: 10px;
 }
-.side a{
-  text-decoration: none;
-  color: #55616E;
-}
-.side#active a{
-  text-decoration: none;
-  color: #FFFFFF;
-}
-input[type="text"]{
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 5px;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
-}
 button#product{
   	height: 40px;
     width: 130px;
@@ -372,14 +350,6 @@ button#product{
     margin-right: 20px;
     margin-bottom: 20px;
     float: right;
-}
-select{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
 }
 button#cancel{
   height: 40px;
@@ -398,18 +368,6 @@ button#cancel{
   margin-right: 15px;
   float: right;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 2s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-.col-md-6{
-  width: 45.83%;
-}
-.col-md-3{
-  width: 20.8%;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;
@@ -417,19 +375,7 @@ button#cancel{
   vertical-align: top;
   float: left;
 }
-.res-div{
-  display: none;
-  width: 100%;
-}
-.res-select{
-  display: inline-block;
-  width: calc(100% - 15px);
-  margin-left: 15px;
-}
 @media only screen and (max-width: 1200px) {
-    .res-div{
-      display: inline-block;
-    }
     .grid-1, .grid-2, .grid-3, .grid-4{
       width: calc(100% - 40px);
     }

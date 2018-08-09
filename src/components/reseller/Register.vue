@@ -14,51 +14,51 @@
                       <div class="row">
                         <div class="col-md-6">
                           <label>First Name</label>
-                          <input required class="input-first-name" type="text" v-model="user.contact.name" placeholder="Enter first name">
+                          <input required class="input-first-name" type="text" v-model="reseller.contact.name" placeholder="Enter first name">
                           <label>Company Name</label>
-                          <input required class="input-company-name" type="text" v-model="user.company_name" placeholder="Enter company name">
+                          <input required class="input-company-name" type="text" v-model="reseller.reseller_name" placeholder="Enter company name">
                           <label>Phone Number</label>
-                          <input required class="input-phone-number" type="text" v-model="user.contact.phone" placeholder="Enter phone number">
+                          <input required class="input-phone-number" type="text" v-model="reseller.contact.phone" placeholder="Enter phone number">
                         </div>
                         <div class="col-md-6">
                           <label>Second Name</label>
-                          <input required class="input-second-name" type="text" v-model="user.secondName" placeholder="Enter second name">
+                          <input required class="input-second-name" type="text" v-model="reseller.secondName" placeholder="Enter second name">
                           <label>Email</label>
-                          <input required class="input-register-email" type="text" v-model="user.contact.email" placeholder="elyse_sauer@yahoo.com">
+                          <input required class="input-register-email" type="text" v-model="reseller.contact.email" placeholder="elyse_sauer@yahoo.com">
                           <label>Address</label>
-                          <input required class="input-address" type="text" v-model="user.contact.address" placeholder="Enter address">
+                          <input required class="input-address" type="text" v-model="reseller.contact.address" placeholder="Enter address">
                         </div>
                         <div class="col-md-12">
                           <div class="label-contact-person">Contact Person</div>
-                          <input required class="input-contact-person" type="text" v-model="user.contactPerson" placeholder="Enter contact person">
+                          <input required class="input-contact-person" type="text" v-model="reseller.contactPerson" placeholder="Enter contact person">
                         </div>
                         <div class="col-md-3">
                           <label>Country</label>
-                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.contact.country_uuid">
+                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="reseller.contact.country_uuid">
                             <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                           </select>
                         </div>
                         <div class="col-md-3">
                           <label id="state">State</label>
-                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="state" v-model="user.contact.state">
+                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="state" v-model="reseller.contact.state">
                             <option value="Nebraska">Nebraska</option>
                           </select>
                         </div>
                         <div class="col-md-3">
                           <label>City</label>
-                          <input required class="input-city" type="text" v-model="user.contact.city" placeholder="Enter city">
+                          <input required class="input-city" type="text" v-model="reseller.contact.city" placeholder="Enter city">
                         </div>
                         <div class="col-md-3">
                           <label>Zip Code</label>
-                          <input required class="input-zipCode" type="text" v-model="user.contact.zipcode" placeholder="Enter zip code">
+                          <input required class="input-zipCode" type="text" v-model="reseller.contact.zipcode" placeholder="Enter zip code">
                         </div>
                         <div class="col-md-6">
                           <label>Password</label>
-                          <input required class="input-register-password" type="password" v-model="user.contact.passwd" placeholder="********">
+                          <input required class="input-register-password" type="password" v-model="reseller.contact.passwd" placeholder="********">
                         </div>
                         <div class="col-md-6">
                           <label>Re-enter Password</label>
-                          <input required class="input-repassword" type="password" v-model="user.passwd2" placeholder="********">
+                          <input required class="input-repassword" type="password" v-model="reseller.passwd2" placeholder="********">
                         </div>
                       </div>
                         <button type="submit">Sign up</button>
@@ -77,21 +77,22 @@ export default {
     data () {
         return {
             countries: [],
-            user:{
-                // company_url: '',
-                contact: {
-                    email: '',
-                    state: '',
-                    // logo_file_uuid: '1',
-                    passwd: '',
-                    zipcode: '',
-                    name: '',
-                    address: '',
-                    city: '',
-                    phone: '',
-                    country_uuid: ''
-                },
-                company_name: '',
+            test: [],
+            reseller:{
+              reseller_url: "http://test.lt",
+              reseller_name: '',
+              contact: {
+                email: '',
+                state: '',
+                // logo_file_uuid: "string",
+                passwd: '',
+                zipcode: '',
+                name: '',
+                address: '',
+                city: '',
+                phone: '',
+                country_uuid: ''
+              }
             },
             error: false,
             errorMsg: '',
@@ -101,22 +102,21 @@ export default {
         register(){
           var app = this
           event.preventDefault()
-          if (this.user.contact.passwd == this.user.passwd2 && this.user.contact.passwd.length > 5){
-            this.axios.post('registration/create', app.user).then( res => {
+          if (this.reseller.contact.passwd == this.reseller.passwd2 && this.reseller.contact.passwd.length > 5){
+            this.axios.post('reseller/create', app.reseller).then( res => {
                 this.$router.push('/login')
             }).catch( err => {
                 var app = this
 
-                app.errorMsg = err.response.data.error.message
                 app.error = true
                 console.log(err.response)
             })
           }
           else{
-            if(app.user.contact.passwd != app.user.passwd2){
+            if(app.reseller.contact.passwd != app.reseller.passwd2){
               app.errorMsg = "Password and re-password must match!"
             }
-            if(app.user.contact.passwd.length < 6){
+            if(app.reseller.contact.passwd.length < 6){
               app.errorMsg = "Password too short. Minimum length: 6"
             }
             app.error = true

@@ -377,14 +377,6 @@ export default {
     margin-top: 10px;
     margin-right: 15px;
 }
-select{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
-}
 .usage{
   display: inline-block;
   float: right;
@@ -445,9 +437,6 @@ a{
   margin-top: 15px;
   margin-left: 20px;
   margin-bottom: 10px;
-}
-.svg-active path{
-  fill: white;
 }
 .reporting-table{
   margin-left: 20px;
@@ -583,28 +572,6 @@ a#show-more{
     line-height: 15px;
     text-decoration: none;
 }
-.side a{
-  text-decoration: none;
-  color: #55616E;
-}
-.side#active a{
-  text-decoration: none;
-  color: #FFFFFF;
-}
-input[type="text"]{
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
-  background-position-x: 5px;
-  background-position-y: 5px;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
-}
 .reporting-search{
   height: 36px !important;
   width: calc(69.621421976% - 30px);
@@ -625,12 +592,6 @@ button{
     text-align: center;
     margin-top: 15px;
     margin-left: 10px;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 2s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
 }
 .cont-1-rep{
   width: 47.5%;
@@ -745,19 +706,7 @@ button{
 .chart-2-reporting#second{
   margin-left: 60px;
 }
-.res-div{
-  display: none;
-  width: 100%;
-}
-.res-select{
-  display: inline-block;
-  width: calc(100% - 15px);
-  margin-left: 15px;
-}
 @media only screen and (max-width: 1200px) {
-    .res-div{
-      display: inline-block;
-    }
     .cont-1-rep, .cont-2-rep{
       width: calc(100% - 30px);
     }

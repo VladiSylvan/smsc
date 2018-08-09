@@ -251,10 +251,6 @@ a{
   width: 76px;
   margin-top: 13px;
 }
-
-.svg-active path{
-  fill: white;
-}
 .payment-table{
   border: none;
   max-width: 100%;
@@ -401,46 +397,12 @@ a{
   height: 30px;
   float: left;
 }
-.side a{
-  text-decoration: none;
-  color: #55616E;
-}
-.side#active a{
-  text-decoration: none;
-  color: #FFFFFF;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 2s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-.col-md-6{
-  width: 45.83%;
-}
-.col-md-3{
-  width: 20.8%;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.res-div{
-  display: none;
-  width: 100%;
-}
-.res-select{
-  display: inline-block;
-  width: calc(100% - 15px);
-  margin-left: 15px;
-}
-@media only screen and (max-width: 1200px) {
-    .res-div{
-      display: inline-block;
-    }
 }
 @media only screen and (max-width: 750px) {
     .main{

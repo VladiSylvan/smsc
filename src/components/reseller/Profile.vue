@@ -118,26 +118,6 @@ a{
   width: 170px;
   margin-top: 13px;
 }
-.side a{
-  text-decoration: none;
-  color: #55616E;
-}
-.side#active a{
-  text-decoration: none;
-  color: #FFFFFF;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 2s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-.col-md-6{
-  width: 45.83%;
-}
-.col-md-3{
-  width: 20.8%;
-}
 button#payment{
   	height: 40px;
     width: auto;
@@ -161,20 +141,6 @@ button#payment{
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.res-div{
-  display: none;
-  width: 100%;
-}
-.res-select{
-  display: inline-block;
-  width: calc(100% - 15px);
-  margin-left: 15px;
-}
-@media only screen and (max-width: 1200px) {
-    .res-div{
-      display: inline-block;
-    }
 }
 @media only screen and (max-width: 750px) {
     .main{

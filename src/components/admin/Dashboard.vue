@@ -112,23 +112,6 @@ export default {
 </script>
 
 <style>
-.svg-active path{
-  fill: white;
-}
-.side a{
-  text-decoration: none;
-  color: #55616E;
-}
-.side#active a{
-  text-decoration: none;
-  color: #FFFFFF;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 2s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 .cont-1{
   width: 74%;
   float: left;
@@ -147,21 +130,6 @@ export default {
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.header{
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: 61.1111111111%;
-  float: left;
-}
-.header-min{
-  display: inline-block;
-  vertical-align: top;
-  margin-left: -150px;
-  margin-right: 150px;
-  position: relative;
-  z-index: 1000;
 }
 .chart-1{
   height: auto;
@@ -250,19 +218,12 @@ export default {
   margin-top: 20px;
   margin-left: 40px;
 }
-.res-div{
-  display: none;
-  width: 100%;
-}
 .res-select{
   display: inline-block;
   width: calc(100% - 15px);
   margin-left: 15px;
 }
 @media only screen and (max-width: 1200px) {
-    .res-div{
-      display: inline-block;
-    }
     .cont-1, .cont-2, .cont-3{
       width: calc(100% - 30px);
     }
