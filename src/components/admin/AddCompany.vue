@@ -25,6 +25,9 @@
           <router-link :to="{ name: 'Companies'}"><button id="cancel" type="submit">Cancel</button></router-link>
           <div class="add-company">
             <div class="company-main">
+              <div v-if="error">
+                  <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
+              </div>
               <div class="company-add-title">
                 Add Company Information
               </div>
@@ -128,11 +131,11 @@ export default {
           company:{
             credit: '45',
             prepay: true,
-            reseller_uuid: '1',
+            // reseller_uuid: '1',
             contact: {
               email: 'fsdfsd@fsdfsda.lt',
               state: 'UA',
-              logo_file_uuid: '1',
+              // logo_file_uuid: '1',
               passwd: 'afdsfsdfds',
               zipcode: '15645656',
               name: 'Afsadfds',
@@ -143,7 +146,9 @@ export default {
             },
             company_url: 'http://gsadfds.lt',
             company_name: 'SAfsadfsad'
-          }
+          },
+          error: false,
+          errorMsg: '',
         }
     },
     components:{

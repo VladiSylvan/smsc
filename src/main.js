@@ -10,6 +10,7 @@ axios.defaults.baseURL = 'http://88.198.219.62/api_smsc/v1'
 axios.defaults.headers.common['X-Auth-Token'] = localStorage.getItem('token');
 
 Vue.use(VueAxios, axios)
+Vue.use(require('vue-moment'));
 
 
 require('./assets/grid.css')

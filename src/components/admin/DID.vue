@@ -25,69 +25,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="did-online">
+                <tr v-for="did in dids" class="did-online">
                   <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">050-185-4229</td>
-                  <td class="did-created">10-03-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">San Marino</div></td>
-                  <td class="did-country">Ethiopia</td>
-                  <td class="did-type">Toll Free</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Appolo Inc.</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">215-054-1288</td>
-                  <td class="did-created">11-28-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Douglas Richards</div></td>
-                  <td class="did-country">South Africa</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">George Burns</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">697-431-7827</td>
-                  <td class="did-created">01-26-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Eleanor Jensen</div></td>
-                  <td class="did-country">Marshall</td>
-                  <td class="did-type">Toll Free</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Stanley Powell</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-online">
-                  <td class="did-active"><div class="product-active"></div></td>
-                  <td class="did-number">239-429-1353</td>
-                  <td class="did-created">01-24-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Evelyn Holland</div></td>
-                  <td class="did-country">Angola</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Allen Roberts</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-offline">
-                  <td class="did-active"><div class="product-not-active"></div></td>
-                  <td class="did-number">625-867-0083</td>
-                  <td class="did-created">12-14-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Polly Mitchell</div></td>
-                  <td class="did-country">Dominican</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Susie Dean</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="did-offline">
-                  <td class="did-active"><div class="product-not-active"></div></td>
-                  <td class="did-number">542-961-8296</td>
-                  <td class="did-created">10-03-2018</td>
-                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">Winnie Medina</div></td>
-                  <td class="did-country">Isle of Man</td>
-                  <td class="did-type">Local</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">Peter Nelson</div></td>
+                  <td class="did-number">{{ did.number }}</td>
+                  <td class="did-created">{{ did.created_on | moment("MM-DD-YYYY") }}</td>
+                  <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.created_by }}</div></td>
+                  <td class="did-country">{{ did.country_name }}</td>
+                  <td class="did-type">{{ did.type }}</td>
+                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.vendor_uuid }}</div></td>
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
@@ -111,6 +56,7 @@ export default {
           popup: false,
           test: false,
           del: false,
+          dids: [],
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
@@ -122,6 +68,17 @@ export default {
     components:{
       modal,
       NavigationComponent,
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('did/list'),
+      ]).then( this.axios.spread((dids) => {
+        console.log(dids)
+        app.dids = dids.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
     methods:{
         sendForm(){

@@ -42,7 +42,7 @@
                   <td class="users-username">{{ user.name }}</td>
                   <td class="users-company">{{ user.company_name }}</td>
                   <td class="users-reseller">{{ user.reseller_name }}</td>
-                  <td class="users-start">{{ user.created_on }}</td>
+                  <td class="users-start">{{ user.created_on | moment("DD MMM YYYY") }}</td>
                   <td class="users-role">{{ user.rank }}</td>
                   <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="users-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
@@ -126,7 +126,7 @@ export default {
         },
         closeModal() {
           this.isModalVisible = false;
-        }
+        },
     },
 }
 </script>

@@ -15,6 +15,7 @@
                         <input required class="input-email" type="text" v-model="user.user_name" placeholder="elyse_sauer@yahoo.com">
                         <label>Password</label>
                         <input required class="input-login-password" type="password" v-model="user.password" placeholder="********">
+                        <input type="checkbox"> Remember me<br>
                         <button type="submit">Log In</button>
                         <div class="no-account">
                             Don't have an account? <router-link :to="{ name: 'Register'}">Register</router-link>

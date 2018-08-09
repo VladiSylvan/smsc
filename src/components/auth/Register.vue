@@ -7,6 +7,9 @@
             <div class="register">
                 <div class="content">
                     <h1>Sign up</h1>
+                    <div v-if="error">
+                        <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
+                    </div>
                     <form v-on:submit="register()">
                       <div class="row">
                         <div class="col-md-6">
@@ -98,15 +101,26 @@ export default {
         register(){
           var app = this
           event.preventDefault()
-          this.axios.post('registration/create', app.user).then( res => {
-              this.$router.push('/login')
-          }).catch( err => {
-              var app = this
+          if (this.user.contact.passwd == this.user.passwd2 && this.user.contact.passwd.length > 5){
+            this.axios.post('registration/create', app.user).then( res => {
+                this.$router.push('/login')
+            }).catch( err => {
+                var app = this
 
-              app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
+                app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
+            })
+          }
+          else{
+            if(app.user.contact.passwd != app.user.passwd2){
+              app.errorMsg = "Password and re-password must match!"
+            }
+            if(app.user.contact.passwd.length < 6){
+              app.errorMsg = "Password too short. Minimum length: 6"
+            }
+            app.error = true
+          }
         }
     },
     mounted(){
