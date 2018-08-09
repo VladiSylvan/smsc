@@ -31,8 +31,8 @@
                         </div>
                         <div class="col-md-3">
                           <label>Country</label>
-                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.country">
-                            <option value="Luxembourg">Luxembourg</option>
+                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.contact.country_uuid">
+                            <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                           </select>
                         </div>
                         <div class="col-md-3">
@@ -51,11 +51,11 @@
                         </div>
                         <div class="col-md-6">
                           <label>Password</label>
-                          <input required class="input-register-password" type="text" v-model="user.contact.passwd" placeholder="********">
+                          <input required class="input-register-password" type="password" v-model="user.contact.passwd" placeholder="********">
                         </div>
                         <div class="col-md-6">
                           <label>Re-enter Password</label>
-                          <input required class="input-repassword" type="text" v-model="user.passwd2" placeholder="********">
+                          <input required class="input-repassword" type="password" v-model="user.passwd2" placeholder="********">
                         </div>
                       </div>
                         <button type="submit">Sign up</button>
@@ -73,35 +73,22 @@
 export default {
     data () {
         return {
-            //     user:{
-            //     firstName: '',
-            //     secondName: '',
-            //     companyName: '',
-            //     email: '',
-            //     phoneNumber: '',
-            //     address: '',
-            //     country: 'Luxembourg',
-            //     state: 'Nebraska',
-            //     city: '',
-            //     zipCode: '',
-            //     password: '',
-            //     rePassword: ''
-            // },
+            countries: [],
             user:{
-                company_url: 'http://sss.lt',
+                // company_url: '',
                 contact: {
-                    email: 'sdasgsa@fdsfds.lt',
-                    state: 'UA',
-                    logo_file_uuid: '1',
-                    passwd: 'asdas',
-                    zipcode: '61642',
-                    name: 'sadas',
-                    address: 'adsadsa',
-                    city: 'asdsad',
-                    phone: '1613346',
-                    country_uuid: '1'
+                    email: '',
+                    state: '',
+                    // logo_file_uuid: '1',
+                    passwd: '',
+                    zipcode: '',
+                    name: '',
+                    address: '',
+                    city: '',
+                    phone: '',
+                    country_uuid: ''
                 },
-                company_name: 'Afsdafsd',
+                company_name: '',
             },
             error: false,
             errorMsg: '',
@@ -110,7 +97,7 @@ export default {
     methods:{
         register(){
           var app = this
-
+          event.preventDefault()
           this.axios.post('registration/create', app.user).then( res => {
               this.$router.push('/login')
           }).catch( err => {
@@ -121,6 +108,17 @@ export default {
               console.log(err.response)
           })
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('country/list'),
+      ]).then( this.axios.spread((countries) => {
+        console.log(countries)
+        app.countries = countries.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
 }
 </script>

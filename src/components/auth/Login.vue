@@ -8,7 +8,7 @@
                 <div class="content">
                     <h1>Log In</h1>
                     <div v-if="error">
-                        <h3 style="color: red">{{ errorMsg }}</h3>
+                        <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
                     </div>
                     <form v-on:submit="login()">
                         <label>Email</label>

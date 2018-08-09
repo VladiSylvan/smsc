@@ -126,23 +126,23 @@ export default {
           isModalVisible: false,
           vendors: true,
           company:{
-            credit: '',
+            credit: '45',
             prepay: true,
-            reseller_uuid: '',
+            reseller_uuid: '1',
             contact: {
-              email: '',
-              state: '',
-              logo_file_uuid: '',
-              passwd: '',
-              zipcode: '',
-              name: '',
-              address: '',
-              city: '',
-              phone: '',
+              email: 'fsdfsd@fsdfsda.lt',
+              state: 'UA',
+              logo_file_uuid: '1',
+              passwd: 'afdsfsdfds',
+              zipcode: '15645656',
+              name: 'Afsadfds',
+              address: 'Afasdfsdafsf',
+              city: 'Afsadfdfsd',
+              phone: '52615156',
               country_uuid: '1'
             },
-            company_url: '',
-            company_name: ''
+            company_url: 'http://gsadfds.lt',
+            company_name: 'SAfsadfsad'
           }
         }
     },
@@ -151,9 +151,6 @@ export default {
       NavigationComponent
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
@@ -162,7 +159,7 @@ export default {
         },
         create(){
           var app = this
-
+          event.preventDefault();
           this.axios.post('company/create', app.company).then( res => {
               this.$router.push('/sys/companies')
           }).catch( err => {
