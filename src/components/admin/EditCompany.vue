@@ -20,7 +20,7 @@
             Back to Companies
           </div>
         </router-link>
-        <router-link :to="{ name: 'EditCompany'}"><button id="product" type="submit">Save Company</button></router-link>
+        <router-link :to="{ name: 'EditCompany'}"><button id="product" v-on:click="edit()" type="submit">Save Company</button></router-link>
         <router-link :to="{ name: 'Companies'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-company">
           <div class="company-main">
@@ -114,7 +114,17 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
-          companies: [],
+          companies:{
+            company_name: '',
+            contact:{
+              phone: '',
+              email: '',
+              address: '',
+              state: '',
+              city: '',
+              zipcode: '',
+            }
+          },
                 user:{
                 companyName: 'Appolo Inc.',
                 phoneNumber: '459-362-5221',
@@ -159,14 +169,35 @@ export default {
       NavigationComponent,
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        edit(){
+          var app = this
+          event.preventDefault();
+          var updateData = {
+            company_name: this.companies.company_name,
+            contact:{
+              phone: this.companies.contact.phone,
+              email: this.companies.contact.email,
+              address: this.companies.contact.address,
+              state: this.companies.contact.state,
+              city: this.companies.contact.city,
+              zipcode: this.companies.contact.zipcode,
+            }
+          }
+          this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
+              this.$router.push('/sys/companies')
+          }).catch( err => {
+              var app = this
+
+              // app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
     },
 }

@@ -20,7 +20,7 @@
             Back to Resellers
           </div>
         </router-link>
-        <router-link :to="{ name: 'EditReseller'}"><button id="product" type="submit">Save Reseller</button></router-link>
+        <router-link :to="{ name: 'EditReseller'}"><button v-on:click="edit()" id="product" type="submit">Save Reseller</button></router-link>
         <router-link :to="{ name: 'Resellers'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-reseller">
           <div class="reseller-main">
@@ -31,31 +31,31 @@
               <div class="grid-title">
                 First Name
               </div>
-              <input class="grid-input" type="text" v-model="user.firstName" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="resellers.contact.name" placeholder="Caroline">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Last Name
               </div>
-              <input class="grid-input" type="text" v-model="user.lastName" placeholder="Thomas">
+              <input class="grid-input" type="text" placeholder="Thomas">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Username
               </div>
-              <input class="grid-input" type="text" v-model="user.username" placeholder="cthomas">
+              <input class="grid-input" type="text" placeholder="cthomas">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Phone Number
               </div>
-              <input class="grid-input" type="text" v-model="user.phoneNumber" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="resellers.contact.phone" placeholder="Caroline">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Email
               </div>
-              <input class="grid-input" type="text" v-model="user.email" placeholder="Enter Email">
+              <input class="grid-input" type="text" v-model="resellers.contact.email" placeholder="Enter Email">
             </div>
             <div class="grid-1">
               <div class="grid-title">
@@ -69,35 +69,35 @@
               <div class="grid-title">
                 Address
               </div>
-              <input class="grid-input" type="text" v-model="user.address" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="resellers.contact.address" placeholder="Caroline">
             </div>
             <div class="grid-3">
               <div class="grid-title">
                 Zip Code
               </div>
-              <input class="grid-input" type="text" v-model="user.zipCode" placeholder="75832-4568">
+              <input class="grid-input" type="text" v-model="resellers.contact.zipcode" placeholder="75832-4568">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Country
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="user.country">
-                <option value="Luxembourg">Luxembourg</option>
+                <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
               </select>
             </div>
             <div class="grid-3">
               <div class="grid-title">
                 State
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="user.state">
-                <option value="Nebraska">Nebraska</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="resellers.contact.state">
+                <option :value="resellers.contact.state">{{ resellers.contact.state }}</option>
               </select>
             </div>
             <div class="grid-3">
               <div class="grid-title">
                 City
               </div>
-              <input class="grid-input" type="text" v-model="user.city" placeholder="Port Joyce">
+              <input class="grid-input" type="text" v-model="resellers.contact.city" placeholder="Port Joyce">
             </div>
           </div>
           <div class="reseller-second">
@@ -134,6 +134,18 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          resellers:{
+            contact:{
+              name: '',
+              phone: '',
+              email: '',
+              address: '',
+              zipcode: '',
+              state: '',
+              city: ''
+            }
+          },
+          countries: [],
                 user:{
                 firstName: 'Caroline',
                 lastName: 'Thomas',
@@ -169,15 +181,48 @@ export default {
       modal,
       NavigationComponent,
     },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('reseller/' + this.$route.params.id),
+        this.axios.get('country/list'),
+      ]).then( this.axios.spread((resellers, countries) => {
+        console.log(resellers)
+        app.resellers = resellers.data.payload
+        app.countries = countries.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
+    },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        edit(){
+          var app = this
+          event.preventDefault();
+          var updateData = {
+            contact:{
+              phone: this.resellers.contact.phone,
+              email: this.resellers.contact.email,
+              address: this.resellers.contact.address,
+              zipcode: this.resellers.contact.zipcode,
+              state: this.resellers.contact.state,
+              city: this.resellers.contact.city,
+            }
+          }
+          this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
+              this.$router.push('/sys/resellers')
+          }).catch( err => {
+              var app = this
+
+              // app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
     },
 }

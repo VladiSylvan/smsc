@@ -60,7 +60,7 @@
                   Country
                 </div>
                 <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="company.contact.country_uuid">
-                  <option value="1">Country</option>
+                  <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                 </select>
               </div>
               <div class="grid-3">
@@ -128,24 +128,25 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          countries: [],
           company:{
-            credit: '45',
+            credit: '4555',
             prepay: true,
             // reseller_uuid: '1',
             contact: {
-              email: 'fsdfsd@fsdfsda.lt',
+              email: 'test@test.test',
               state: 'UA',
               // logo_file_uuid: '1',
-              passwd: 'afdsfsdfds',
+              passwd: 'test',
               zipcode: '15645656',
-              name: 'Afsadfds',
-              address: 'Afasdfsdafsf',
-              city: 'Afsadfdfsd',
+              name: 'Test',
+              address: 'Test',
+              city: 'Test',
               phone: '52615156',
-              country_uuid: '1'
+              country_uuid: ''
             },
-            company_url: 'http://gsadfds.lt',
-            company_name: 'SAfsadfsad'
+            company_url: 'http://gsadfdss.lt',
+            company_name: 'Test'
           },
           error: false,
           errorMsg: '',
@@ -175,6 +176,17 @@ export default {
               console.log(err.response)
           })
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('country/list'),
+      ]).then( this.axios.spread((countries) => {
+        console.log(countries)
+        app.countries = countries.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
 }
 </script>

@@ -24,27 +24,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="online">
+              <tr v-for="product, index in products" class="online">
                 <td class="product-table-active"><div class="product-active"></div></td>
-                <td class="name">Parkerport</td>
+                <td class="name">{{ product.product_name }}</td>
                 <td class="created">10-03-2018</td>
                 <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
-                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">Appolo Inc.</div></td>
+                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">{{ product.reseller_name }}</div></td>
                 <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
                 <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                <td class="options"><div class="product-control-info"><img v-on:click="productDelete(product.product_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
               </tr>
-              <tr class="online">
-                <td class="product-table-active"><div class="product-active"></div></td>
-                <td class="name">Blickview</td>
-                <td class="created">08-19-2018</td>
-                <td class="created-by"><div class="product-avatar"></div> <div class="product-name-fix">San Marino</div></td>
-                <td class="owned-by"><div class="product-avatar"></div> <div class="product-name-fix">Appolo Inc.</div></td>
-                <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-              </tr>
-              <tr class="offline">
+              <!-- <tr class="offline">
                 <td class="product-table-active"><div class="product-not-active"></div></td>
                 <td class="name">Lake Woodrow</td>
                 <td class="created">01-04-2018</td>
@@ -53,7 +43,7 @@
                 <td class="options"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/DID.svg"></div></td>
                 <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
                 <td class="options"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -76,6 +66,7 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
+          products: [],
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -87,15 +78,39 @@ export default {
       modal,
       NavigationComponent,
     },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('product/list'),
+        this.axios.get('user')
+      ]).then( this.axios.spread((products) => {
+        console.log(products)
+        app.products = products.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
+    },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        productDelete(value, index){
+          var app = this
+          event.preventDefault();
+          this.axios.delete('product/' + value).then( res => {
+              this.$router.push('/sys/product')
+              console.log(product)
+              this.product.splice(index, 1)
+          }).catch( err => {
+              var app = this
+
+              app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
     },
 }

@@ -23,7 +23,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-if="!del">
+                <!-- <tr v-if="!del">
                   <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">San Marino</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">12</td>
@@ -55,8 +55,8 @@
                       </div>
                     </div>
                   </td>
-                </tr>
-                <tr v-if="del">
+                </tr> -->
+                <!-- <tr v-if="del">
                   <td class="reseller-name-del"><div class="reseller-avatar"></div> <div class="reseller-name-fix">San Marino</div></td>
                   <td class="reseller-balance-del"><b>$38</b></td>
                   <td class="reseller-clients-del">12</td>
@@ -74,60 +74,39 @@
                       Reseller Removed
                     </div>
                   </td>
-                </tr>
-                <tr>
-                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Henrietta McDaniel</div></td>
+                </tr> -->
+                <tr v-for="reseller, index in resellers">
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">{{ reseller.contact.name }}</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">70</td>
                   <td class="reseller-member-since">10-03-2018</td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Mollie Garrett</div></td>
-                  <td class="reseller-balance"><b>$38</b></td>
-                  <td class="reseller-clients">19</td>
-                  <td class="reseller-member-since">10-03-2018</td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Martha Vasquez</div></td>
-                  <td class="reseller-balance"><b>$38</b></td>
-                  <td class="reseller-clients">81</td>
-                  <td class="reseller-member-since">10-03-2018</td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Stanley Burgess</div></td>
-                  <td class="reseller-balance"><b>$38</b></td>
-                  <td class="reseller-clients">78</td>
-                  <td class="reseller-member-since">10-03-2018</td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Leona Duncan</div></td>
-                  <td class="reseller-balance"><b>$38</b></td>
-                  <td class="reseller-clients">27</td>
-                  <td class="reseller-member-since">10-03-2018</td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
-                </tr>
-                <tr>
-                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">Alex Elliott</div></td>
-                  <td class="reseller-balance"><b>$38</b></td>
-                  <td class="reseller-clients">26</td>
-                  <td class="reseller-member-since">10-03-2018</td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Edit.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+                  <td class="reseller-option"><div class="product-control-info"><router-link :to="{ name: 'EditReseller', params: { id: reseller.reseller_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="reseller-option"><div class="product-control-info"><img v-on:click="resellerDelete(reseller.reseller_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="reseller-option">
+                    <div v-on:click="test = reseller.reseller_uuid" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
+                    <div v-if="test === reseller.reseller_uuid" class="reseller-menu">
+                      <div class="reseller-menu-link">
+                        <router-link :to="{ name: 'PaymentHistory'}">Payment History</router-link>
+                        <div v-on:click="test = ''" class="reseller-menu-button">
+                          <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="M10,16 C9.44771525,16 9,15.5522847 9,15 C9,14.4477153 9.44771525,14 10,14 C10.5522847,14 11,14.4477153 11,15 C11,15.5522847 10.5522847,16 10,16 Z M15,16 C14.4477153,16 14,15.5522847 14,15 C14,14.4477153 14.4477153,14 15,14 C15.5522847,14 16,14.4477153 16,15 C16,15.5522847 15.5522847,16 15,16 Z M20,16 C19.4477153,16 19,15.5522847 19,15 C19,14.4477153 19.4477153,14 20,14 C20.5522847,14 21,14.4477153 21,15 C21,15.5522847 20.5522847,16 20,16 Z" id="path-1">
+                            </path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="reseller-menu-link">
+                        <router-link :to="{ name: 'InvoiceHistory'}">Invoice History</router-link>
+                      </div>
+                      <div class="reseller-menu-link">
+                        <router-link :to="{ name: 'TransactionHistory'}">Transaction History</router-link>
+                      </div>
+                      <div class="reseller-menu-add">
+                        <div class="reseller-span">
+                          <router-link :to="{ name: 'AddManualPayment'}">Add Manual Payment</router-link>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -147,9 +126,10 @@ export default {
           width: '60px',
           transitionName: 'fade',
           popup: false,
-          test: false,
+          test: '',
           del: false,
           isModalVisible: false,
+          resellers: [],
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -161,15 +141,38 @@ export default {
       modal,
       NavigationComponent,
     },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('reseller/list'),
+      ]).then( this.axios.spread((resellers) => {
+        console.log(resellers)
+        app.resellers = resellers.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
+    },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        resellerDelete(value, index){
+          var app = this
+          var value
+          event.preventDefault();
+          this.axios.delete('reseller/' + value).then( res => {
+              // this.$router.push('/sys/resellers')
+              this.resellers.splice(index, 1)
+          }).catch( err => {
+              var app = this
+
+              app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
     },
 }

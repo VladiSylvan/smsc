@@ -180,7 +180,7 @@ export default new Router({
         beforeEnter: checkAuth
     },
     {
-        path: '/sys/edit-reseller',
+        path: '/sys/edit-reseller/:id',
         name: 'EditReseller',
         component: EditReseller,
         beforeEnter: checkAuth

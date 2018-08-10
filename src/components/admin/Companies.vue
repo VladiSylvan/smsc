@@ -47,13 +47,13 @@
                   <td class="company-resellers">{{ company.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: company.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete()" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option">
-                    <div v-on:click="test = !test" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
-                    <div v-if="test" class="company-menu">
+                    <div v-on:click="test = company.company_uuid" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
+                    <div v-if="test === company.company_uuid" class="company-menu">
                       <div class="company-menu-link">
                         <router-link :to="{ name: 'PaymentHistory'}">Payment History</router-link>
-                        <div v-on:click="test = !test" class="company-menu-button">
+                        <div v-on:click="test = ''" class="company-menu-button">
                           <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <path d="M10,16 C9.44771525,16 9,15.5522847 9,15 C9,14.4477153 9.44771525,14 10,14 C10.5522847,14 11,14.4477153 11,15 C11,15.5522847 10.5522847,16 10,16 Z M15,16 C14.4477153,16 14,15.5522847 14,15 C14,14.4477153 14.4477153,14 15,14 C15.5522847,14 16,14.4477153 16,15 C16,15.5522847 15.5522847,16 15,16 Z M20,16 C19.4477153,16 19,15.5522847 19,15 C19,14.4477153 19.4477153,14 20,14 C20.5522847,14 21,14.4477153 21,15 C21,15.5522847 20.5522847,16 20,16 Z" id="path-1">
                             </path>
@@ -77,7 +77,7 @@
                 <tr>
                   <td class="companies-title" colspan="9"><div class="company-title-all">All Companies</div></td>
                 </tr>
-                <tr v-for="company in companies">
+                <tr v-for="company, index in companies">
                   <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">{{ company.company_name }}</div></td>
                   <td class="company-balance">${{ company.balance }}</td>
                   <td class="company-pay">{{ company.credit }}</td>
@@ -85,8 +85,32 @@
                   <td class="company-resellers">{{ company.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: company.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(company.company_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="company-option">
+                    <div v-on:click="test = company.company_uuid" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
+                    <div v-if="test === company.company_uuid" class="company-menu">
+                      <div class="company-menu-link">
+                        <router-link :to="{ name: 'PaymentHistory'}">Payment History</router-link>
+                        <div v-on:click="test = ''" class="company-menu-button">
+                          <svg class="svg-blue" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="M10,16 C9.44771525,16 9,15.5522847 9,15 C9,14.4477153 9.44771525,14 10,14 C10.5522847,14 11,14.4477153 11,15 C11,15.5522847 10.5522847,16 10,16 Z M15,16 C14.4477153,16 14,15.5522847 14,15 C14,14.4477153 14.4477153,14 15,14 C15.5522847,14 16,14.4477153 16,15 C16,15.5522847 15.5522847,16 15,16 Z M20,16 C19.4477153,16 19,15.5522847 19,15 C19,14.4477153 19.4477153,14 20,14 C20.5522847,14 21,14.4477153 21,15 C21,15.5522847 20.5522847,16 20,16 Z" id="path-1">
+                            </path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="company-menu-link">
+                        <router-link :to="{ name: 'InvoiceHistory'}">Invoice History</router-link>
+                      </div>
+                      <div class="company-menu-link">
+                        <router-link :to="{ name: 'TransactionHistory'}">Transaction History</router-link>
+                      </div>
+                      <div class="company-menu-add">
+                        <div class="company-span">
+                          Add Manual Payment
+                        </div>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -109,7 +133,7 @@ export default {
           width: '60px',
           transitionName: 'fade',
           popup: false,
-          test: false,
+          test: '',
           del: false,
           companies: [],
           user: [],
@@ -147,14 +171,25 @@ export default {
       NavigationComponent,
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        companyDelete(value, index){
+          var app = this
+          event.preventDefault();
+          this.axios.delete('company/' + value).then( res => {
+              // this.$router.push('/sys/companies')
+              this.companies.splice(index, 1)
+          }).catch( err => {
+              var app = this
+
+              app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
     },
 }
@@ -234,6 +269,7 @@ a{
   display: inline-block;
   margin-top: -5px;
   margin-right: -7px;
+  cursor: pointer;
 }
 .companies-table{
   border: none;

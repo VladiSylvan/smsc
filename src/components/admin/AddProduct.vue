@@ -20,156 +20,158 @@
             Back to Products
           </div>
         </router-link>
-        <router-link :to="{ name: 'AddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
-        <router-link :to="{ name: 'Product'}"><button id="cancel" type="submit">Cancel</button></router-link>
-        <div class="product-add-main">
-          <div class="add-product">
-            <div class="product-add-title">
-              Add Product Information
-            </div>
-            <div class="product-input-name">
-              Product Name
-            </div>
-            <input class="product-input" type="text" v-model="user.productName" placeholder="Product Name">
-            <table class="add-product-table" cellspacing="0" cellpadding="0">
-              <tbody>
-                <tr>
-                  <td class="add-product-country"><div class="product-input-name">Country</div></td>
-                  <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
-                  <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
-                  <td class="add-product-icon"></td>
-                </tr>
-                <tr>
-                  <td class="add-product-country">
-                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.country">
-                      <option value="China">China</option>
-                    </select>
-                  </td>
-                  <td class="add-product-operator">
-                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user.operator">
-                      <option value="China Unicom">China Unicom</option>
-                    </select>
-                  </td>
-                  <td class="add-product-sell-rate">
-                    <input class="product-input-sell-rate" type="text" v-model="user.sellRate" placeholder="Sell Rate">
-                  </td>
-                  <td class="add-product-icon">
-                    <img class="delete-image" src="@/assets/Icon/Close.svg">
-                  </td>
-                </tr>
-              </tbody>
-              <tbody v-bind:class="{'active-table': !vendors}" v-on:click="vendors = false">
-                <tr>
-                  <td class="add-product-country"><div class="product-input-name">Country</div></td>
-                  <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
-                  <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td class="add-product-country">
-                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user2.country">
-                      <option value="China">China</option>
-                    </select>
-                  </td>
-                  <td class="add-product-operator">
-                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user2.operator">
-                      <option value="China Mobile">China Mobile</option>
-                    </select>
-                  </td>
-                  <td class="add-product-sell-rate">
-                    <input class="product-input-sell-rate" type="text" v-model="user2.sellRate" placeholder="Sell Rate">
-                  </td>
-                  <td class="add-product-icon">
-                    <img class="delete-image" src="@/assets/Icon/Close.svg">
-                  </td>
-                </tr>
-              </tbody>
-              <tbody v-bind:class="{'active-table': vendors}" v-on:click="vendors = true">
-                <tr>
-                  <td class="add-product-country"><div class="product-input-name">Country</div></td>
-                  <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
-                  <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td class="add-product-country">
-                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user3.country">
-                      <option value="United States">United States</option>
-                    </select>
-                  </td>
-                  <td class="add-product-operator">
-                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user3.operator">
-                      <option value="AT & T">AT & T</option>
-                    </select>
-                  </td>
-                  <td class="add-product-sell-rate">
-                    <input class="product-input-sell-rate" type="text" v-model="user3.sellRate" placeholder="Sell Rate">
-                  </td>
-                  <td class="add-product-icon">
-                    <img class="delete-image" src="@/assets/Icon/Close.svg">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="add-operator">
-              <div class="operator-image">
-                <img src="@/assets/Icon/Plus.svg">
+        <form v-on:submit="create()">
+          <router-link :to="{ name: 'AddProduct'}"><button id="product" v-on:click="create()" type="submit">Add Product</button></router-link>
+          <router-link :to="{ name: 'Product'}"><button id="cancel" type="submit">Cancel</button></router-link>
+          <div class="product-add-main">
+            <div class="add-product">
+              <div class="product-add-title">
+                Add Product Information
               </div>
-              <div class="operator-text">
-                Add Operator
+              <div class="product-input-name">
+                Product Name
+              </div>
+              <input class="product-input" type="text" v-model="product.product_name" placeholder="Product Name">
+              <table class="add-product-table" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td class="add-product-country"><div class="product-input-name">Country</div></td>
+                    <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
+                    <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                    <td class="add-product-icon"></td>
+                  </tr>
+                  <tr>
+                    <td class="add-product-country">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.country">
+                        <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
+                      </select>
+                    </td>
+                    <td class="add-product-operator">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user.operator">
+                        <option value="China Unicom">China Unicom</option>
+                      </select>
+                    </td>
+                    <td class="add-product-sell-rate">
+                      <input class="product-input-sell-rate" type="text" v-model="user.sellRate" placeholder="Sell Rate">
+                    </td>
+                    <td class="add-product-icon">
+                      <img class="delete-image" src="@/assets/Icon/Close.svg">
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody v-bind:class="{'active-table': !vendors}" v-on:click="vendors = false">
+                  <tr>
+                    <td class="add-product-country"><div class="product-input-name">Country</div></td>
+                    <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
+                    <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="add-product-country">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user2.country">
+                        <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
+                      </select>
+                    </td>
+                    <td class="add-product-operator">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user2.operator">
+                        <option value="China Mobile">China Mobile</option>
+                      </select>
+                    </td>
+                    <td class="add-product-sell-rate">
+                      <input class="product-input-sell-rate" type="text" v-model="user2.sellRate" placeholder="Sell Rate">
+                    </td>
+                    <td class="add-product-icon">
+                      <img class="delete-image" src="@/assets/Icon/Close.svg">
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody v-bind:class="{'active-table': vendors}" v-on:click="vendors = true">
+                  <tr>
+                    <td class="add-product-country"><div class="product-input-name">Country</div></td>
+                    <td class="add-product-operator"><div class="product-input-name">Operator</div></td>
+                    <td class="add-product-sell-rate"><div class="product-input-name">Sell Rate</div></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="add-product-country">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user3.country">
+                        <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
+                      </select>
+                    </td>
+                    <td class="add-product-operator">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user3.operator">
+                        <option value="AT & T">AT & T</option>
+                      </select>
+                    </td>
+                    <td class="add-product-sell-rate">
+                      <input class="product-input-sell-rate" type="text" v-model="user3.sellRate" placeholder="Sell Rate">
+                    </td>
+                    <td class="add-product-icon">
+                      <img class="delete-image" src="@/assets/Icon/Close.svg">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="add-operator">
+                <div class="operator-image">
+                  <img src="@/assets/Icon/Plus.svg">
+                </div>
+                <div class="operator-text">
+                  Add Operator
+                </div>
+              </div>
+            </div>
+            <div class="product-page-vendor">
+              <div v-if="vendors" class="vendor-title">
+                Vendors for AT & T
+              </div>
+              <div v-if="!vendors" class="vendor-title">
+                Vendors for China Mobile
+              </div>
+              <table v-if="vendors" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td class="vendor-select">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName1">
+                        <option value="Vendor BB">Vendor BB</option>
+                      </select>
+                    </td>
+                    <td class="vendor-input">
+                      <input class="product-input-vendor" type="text" v-model="vendor.vendorRate1" placeholder="Vendor">
+                    </td>
+                    <td class="vendor-icon">
+                      <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="vendor-select">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName2">
+                        <option value="Vendor CC">Vendor CC</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input class="product-input-vendor" type="text" v-model="vendor.vendorRate2" placeholder="Vendor">
+                    </td>
+                    <td>
+                      <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="add-vendor">
+                <div class="vendor-image">
+                  <img src="@/assets/Icon/Plus.svg">
+                </div>
+                <div v-if="vendors" class="vendor-text">
+                  Add Vendor for AT & T
+                </div>
+                <div v-if="!vendors" class="vendor-text">
+                  Add Vendor for China Mobile
+                </div>
               </div>
             </div>
           </div>
-          <div class="product-page-vendor">
-            <div v-if="vendors" class="vendor-title">
-              Vendors for AT & T
-            </div>
-            <div v-if="!vendors" class="vendor-title">
-              Vendors for China Mobile
-            </div>
-            <table v-if="vendors" cellspacing="0" cellpadding="0">
-              <tbody>
-                <tr>
-                  <td class="vendor-select">
-                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName1">
-                      <option value="Vendor BB">Vendor BB</option>
-                    </select>
-                  </td>
-                  <td class="vendor-input">
-                    <input class="product-input-vendor" type="text" v-model="vendor.vendorRate1" placeholder="Vendor">
-                  </td>
-                  <td class="vendor-icon">
-                    <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
-                  </td>
-                </tr>
-                <tr>
-                  <td class="vendor-select">
-                    <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName2">
-                      <option value="Vendor CC">Vendor CC</option>
-                    </select>
-                  </td>
-                  <td>
-                    <input class="product-input-vendor" type="text" v-model="vendor.vendorRate2" placeholder="Vendor">
-                  </td>
-                  <td>
-                    <img class="delete-vendor-image" src="@/assets/Icon/Close.svg">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="add-vendor">
-              <div class="vendor-image">
-                <img src="@/assets/Icon/Plus.svg">
-              </div>
-              <div v-if="vendors" class="vendor-text">
-                Add Vendor for AT & T
-              </div>
-              <div v-if="!vendors" class="vendor-text">
-                Add Vendor for China Mobile
-              </div>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
 </template>
@@ -187,7 +189,13 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
-                user:{
+          countries: [],
+          product:{
+            // rate_table_uuid: '1',
+            product_name: 'AASdsadasdas',
+            reseller_uuid: 'd4ff6a98-938b-49ca-9294-1b4d15daa9cc',
+          },
+            user:{
                 productName: 'Caroline',
                 country: 'China',
                 operator: 'China Unicom',
@@ -216,15 +224,37 @@ export default {
       NavigationComponent,
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        create(){
+          var app = this
+          event.preventDefault();
+          this.axios.post('product/create', app.product).then( res => {
+              this.$router.push('/sys/product')
+              console.log(product)
+          }).catch( err => {
+              var app = this
+
+              app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('country/list'),
+      ]).then( this.axios.spread((countries) => {
+        console.log(countries)
+        app.countries = countries.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
 }
 </script>
