@@ -285,28 +285,6 @@ export default {
 .add-product-sell-rate{
   width: 150px;
 }
-.svg path{
-  fill: #51A3F3;
-}
-.svg-back{
-  float: left;
-  display: inline-block;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 20px;
-  margin-right: 5px;
-}
-.back{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  float: left;
-  display: inline-block;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
 .product-add-main{
   float: left;
   display: inline-block;

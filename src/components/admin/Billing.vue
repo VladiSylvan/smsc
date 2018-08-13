@@ -36,13 +36,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr v-for="invoice in invoices">
                 <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
+                <td class="billing-id">{{ invoice.invoice_number }}</td>
+                <td class="billing-created">{{ invoice.created_on | moment("MM-DD-YYYY") }}</td>
+                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">{{ invoice.created_by }}</div></td>
+                <td class="billing-company">{{ invoice.company_name }}</td>
+                <td class="billing-total"><b>${{ invoice.amount }}</b></td>
                 <td class="billing-options">
                   <div v-on:click="test = !test" class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div>
                   <div v-if="test" class="billing-menu">
@@ -62,51 +62,6 @@
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="billing-active"><div class="billing-active-img"></div></td>
-                <td class="billing-id">25964</td>
-                <td class="billing-created">10-03-2018</td>
-                <td class="billing-created-by"><div class="billing-avatar"></div> <div class="billing-name-fix">San Marino</div></td>
-                <td class="billing-company">Appolo Inc.</td>
-                <td class="billing-total"><b>$38</b></td>
-                <td class="billing-options"><div class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div></td>
               </tr>
             </tbody>
           </table>
@@ -131,6 +86,7 @@ export default {
           popup: false,
           test: false,
           isModalVisible: false,
+          invoices: [],
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -143,15 +99,23 @@ export default {
       NavigationComponent,
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('invoice/list'),
+      ]).then( this.axios.spread((invoices) => {
+        console.log(invoices)
+        app.invoices = invoices.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
 }
 </script>

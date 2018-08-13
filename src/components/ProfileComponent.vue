@@ -75,6 +75,11 @@ export default {
   z-index: 999999;
   float: right;
 }
+@-moz-document url-prefix() {
+  h1 {
+    color: red;
+  }
+}
 .username{
   color: #55616E;
   font-family: "Helvetica Neue";
@@ -83,7 +88,7 @@ export default {
   text-align: left;
   margin-top: 20px;
   float: left;
-  margin-left: 63px;
+  margin-left: 83px;
   cursor: pointer;
 }
 .user-circle{
@@ -99,6 +104,19 @@ export default {
   margin-right: 15px;
   float: left;
   cursor: pointer;
+}
+@-moz-document url-prefix() {
+  .username{
+    color: #55616E;
+    font-family: "Helvetica Neue";
+    font-size: 15px;
+    line-height: 20px;
+    text-align: left;
+    margin-top: 20px;
+    float: left;
+    margin-left: 63px;
+    cursor: pointer;
+  }
 }
 #avatar{
   	font-family: "Helvetica Neue";

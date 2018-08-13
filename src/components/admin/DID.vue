@@ -33,7 +33,7 @@
                   <td class="did-country">{{ did.country_name }}</td>
                   <td class="did-type">{{ did.type }}</td>
                   <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.vendor_uuid }}</div></td>
-                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID', params: { id: did.did_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img v-on:click="didDelete(did.did_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
               </tbody>

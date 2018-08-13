@@ -139,30 +139,6 @@
   width: 450px;
   height: 30px;
 }
-.svg path{
-  fill: #51A3F3;
-}
-.svg-back{
-  float: left;
-  display: inline-block;
-  margin-top: 20px;
-  margin-left: 15px;
-  margin-right: 5px;
-  padding-bottom: 1px;
-  cursor: pointer;
-}
-.back{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  float: left;
-  display: inline-block;
-  margin-top: 25px;
-  padding-bottom: 15px;
-  cursor: pointer;
-}
 .template-modal-mask {
 position: fixed;
 z-index: 9998;

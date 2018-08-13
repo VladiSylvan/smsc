@@ -16,7 +16,8 @@
               <option value="Company">Company</option>
             </select>
             <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Choose Company" class="company2" v-model="user.chooseCompany">
-              <option value="Choose Company">Choose Company</option>
+              <option value="">Choose Company</option>
+              <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
             </select>
             <router-link :to="{ name: 'AddUser'}"><button id="users" type="submit">Add User</button></router-link>
           </div>
@@ -70,11 +71,12 @@ export default {
           search: '',
           del: false,
           isModalVisible: false,
+          companies: [],
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days',
                 company: 'Company',
-                chooseCompany: 'Choose Company',
+                chooseCompany: '',
             },
 
         }
@@ -101,26 +103,15 @@ export default {
       var app = this
       this.axios.all([
         this.axios.get('user/list'),
-        this.axios.get('user/list?name=' + app.search + '*'),
-      ]).then( this.axios.spread((users, test) => {
-        console.log(test)
+        this.axios.get('company/list'),
+      ]).then( this.axios.spread((users, companies) => {
         app.users = users.data.payload.items
-        app.test = test.data.payload.items
+        app.companies = companies.data.payload.items
       })).catch(error => {
         console.log(error)
       })
     },
-    // computed: {
-    //   filteredList() {
-    //     return this.users.filter(user => {
-    //       return user.name.toLowerCase().includes(this.search.toLowerCase())
-    //     })
-    //   }
-    // },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },

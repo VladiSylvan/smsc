@@ -25,70 +25,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="online">
+              <tr v-for="vendor in vendors" class="online">
                 <td class="vendor-active"><div class="vendor-active-circle"></div></td>
                 <td class="vendor-company"><div class="vendor-avatar"></div> <div class="vendor-name-fix">Appolo Inc.</div></td>
-                <td class="vendor-contact">Chad Sullivan</td>
-                <td class="vendor-type">SMPP</td>
-                <td class="vendor-person">Eula Hernandez</td>
-                <td class="vendor-noc">tri…ue@yahoo.com</td>
-                <td class="vendor-sales">tri…ue@yahoo.com</td>
-                <td class="vendor-rate">tri…ue@yahoo.com</td>
-                <td class="vendor-options"><router-link :to="{ name: 'VendorsRate'}"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reporting.svg"></div></router-link></td>
-              </tr>
-              <tr class="online">
-                <td class="vendor-active"><div class="vendor-active-circle"></div></td>
-                <td class="vendor-company"><div class="vendor-avatar"></div> <div class="vendor-name-fix">Appolo Inc.</div></td>
-                <td class="vendor-contact">Herbert Williamson</td>
-                <td class="vendor-type">SMPP</td>
-                <td class="vendor-person">Eula Hernandez</td>
-                <td class="vendor-noc">tri…ue@yahoo.com</td>
-                <td class="vendor-sales">tri…ue@yahoo.com</td>
-                <td class="vendor-rate">tri…ue@yahoo.com</td>
-                <td class="vendor-options"><router-link :to="{ name: 'VendorsRate'}"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reporting.svg"></div></router-link></td>
-              </tr>
-              <tr class="online">
-                <td class="vendor-active"><div class="vendor-active-circle"></div></td>
-                <td class="vendor-company"><div class="vendor-avatar"></div> <div class="vendor-name-fix">Appolo Inc.</div></td>
-                <td class="vendor-contact">Erik Adams</td>
-                <td class="vendor-type">SMPP</td>
-                <td class="vendor-person">Eula Hernandez</td>
-                <td class="vendor-noc">tri…ue@yahoo.com</td>
-                <td class="vendor-sales">tri…ue@yahoo.com</td>
-                <td class="vendor-rate">tri…ue@yahoo.com</td>
-                <td class="vendor-options"><router-link :to="{ name: 'VendorsRate'}"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reporting.svg"></div></router-link></td>
-              </tr>
-              <tr class="online">
-                <td class="vendor-active"><div class="vendor-active-circle"></div></td>
-                <td class="vendor-company"><div class="vendor-avatar"></div> <div class="vendor-name-fix">Appolo Inc.</div></td>
-                <td class="vendor-contact">Rosie Collins</td>
-                <td class="vendor-type">SMPP</td>
-                <td class="vendor-person">Eula Hernandez</td>
-                <td class="vendor-noc">tri…ue@yahoo.com</td>
-                <td class="vendor-sales">tri…ue@yahoo.com</td>
-                <td class="vendor-rate">tri…ue@yahoo.com</td>
-                <td class="vendor-options"><router-link :to="{ name: 'VendorsRate'}"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reporting.svg"></div></router-link></td>
-              </tr>
-              <tr class="offline">
-                <td class="vendor-active"><div class="vendor-not-active-circle"></div></td>
-                <td class="vendor-company"><div class="vendor-avatar"></div> <div class="vendor-name-fix">Appolo Inc.</div></td>
-                <td class="vendor-contact">Chad Sullivan</td>
-                <td class="vendor-type">SMPP</td>
-                <td class="vendor-person">Eula Hernandez</td>
-                <td class="vendor-noc">tri…ue@yahoo.com</td>
-                <td class="vendor-sales">tri…ue@yahoo.com</td>
-                <td class="vendor-rate">tri…ue@yahoo.com</td>
-                <td class="vendor-options"><router-link :to="{ name: 'VendorsRate'}"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reporting.svg"></div></router-link></td>
-              </tr>
-              <tr class="offline">
-                <td class="vendor-active"><div class="vendor-not-active-circle"></div></td>
-                <td class="vendor-company"><div class="vendor-avatar"></div> <div class="vendor-name-fix">Appolo Inc.</div></td>
-                <td class="vendor-contact">George Fitzgerald</td>
-                <td class="vendor-type">SMPP</td>
-                <td class="vendor-person">Eula Hernandez</td>
-                <td class="vendor-noc">tri…ue@yahoo.com</td>
-                <td class="vendor-sales">tri…ue@yahoo.com</td>
-                <td class="vendor-rate">tri…ue@yahoo.com</td>
+                <td class="vendor-contact">{{ vendor.vendor_name }}</td>
+                <td class="vendor-type">{{ vendor.vendor_type }}</td>
+                <td class="vendor-person">{{ vendor.contact_person }}</td>
+                <td class="vendor-noc">{{ vendor.noc_email }}</td>
+                <td class="vendor-sales">{{ vendor.sales_email }}</td>
+                <td class="vendor-rate">{{ vendor.rate_email }}</td>
                 <td class="vendor-options"><router-link :to="{ name: 'VendorsRate'}"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reporting.svg"></div></router-link></td>
               </tr>
             </tbody>
@@ -113,6 +58,7 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
+          vendors: [],
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -125,15 +71,23 @@ export default {
       NavigationComponent,
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('vendor/list'),
+      ]).then( this.axios.spread((vendors) => {
+        console.log(vendors)
+        app.vendors = vendors.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
 }
 </script>

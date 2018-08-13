@@ -20,7 +20,7 @@
             Back to DID
           </div>
         </router-link>
-        <router-link :to="{ name: 'EditDID'}"><button id="product" type="submit">Save DID</button></router-link>
+        <router-link :to="{ name: 'EditDID'}"><button v-on:click="edit()" id="product" type="submit">Save DID</button></router-link>
         <router-link :to="{ name: 'DID'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-did">
           <div class="did-main">
@@ -31,14 +31,14 @@
               <div class="grid-title">
                 Phone Number
               </div>
-              <input class="grid-input" type="text" v-model="user.phoneNumber" placeholder="640-463-3807">
+              <input class="grid-input" type="text" v-model="dids.number" placeholder="640-463-3807">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Location
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Location" class="grid-select" v-model="user.location">
-                <option value="North Malcolm">North Malcolm</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Location" class="grid-select" v-model="dids.country_uuid">
+                <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
               </select>
             </div>
             <div class="grid-4">
@@ -60,8 +60,8 @@
               <div class="grid-title">
                 Company
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company">
-                <option value="Appolo Inc.">Appolo Inc.</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="dids.company_uuid">
+                <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name }}</option>
               </select>
             </div>
           </div>
@@ -85,6 +85,18 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          countries: [],
+          companies: [],
+          dids:{
+            auto_resp_uuid: '',
+            company_uuid: '',
+            max_sms_per_hour: 0,
+            country_uuid: '',
+            vendor_uuid: '',
+            max_sms_per_day: 0,
+            number: '',
+            type: 'Local',
+          },
                 user:{
                 location: 'North Malcolm',
                 billingRule: '$1.00',
@@ -114,15 +126,50 @@ export default {
       NavigationComponent,
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        edit(){
+          var app = this
+          event.preventDefault();
+          var updateData = {
+            company_uuid: this.dids.company_uuid,
+            max_sms_per_hour: 0,
+            country_uuid: this.dids.country_uuid,
+            max_sms_per_day: 0,
+            number: this.dids.number,
+            type: 'Local',
+          }
+          this.axios.patch('did/' + this.$route.params.id, updateData).then( res => {
+              this.$router.push('/sys/did')
+          }).catch( err => {
+              var app = this
+
+              // app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('did/' + this.$route.params.id),
+        this.axios.get('country/list'),
+        this.axios.get('company/list'),
+      ]).then( this.axios.spread((dids, countries, companies) => {
+        console.log(dids)
+        console.log(countries)
+        console.log(companies)
+        app.dids = dids.data.payload
+        app.countries = countries.data.payload.items
+        app.companies = companies.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
 }
 </script>
@@ -218,17 +265,6 @@ export default {
   float: left;
   margin-bottom: 15px;
 }
-.grid-title{
-  width: 100%;
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
 .grid-input{
   width: 100%;
   height: 40px !important;
@@ -240,28 +276,6 @@ export default {
   border-radius: 4px;
   background-color: #FFFFFF;
   height: 44px;
-}
-.svg path{
-  fill: #51A3F3;
-}
-.svg-back{
-  float: left;
-  display: inline-block;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 20px;
-  margin-right: 5px;
-}
-.back{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  float: left;
-  display: inline-block;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 .add-did{
   float: left;

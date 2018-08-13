@@ -276,7 +276,7 @@ export default new Router({
         beforeEnter: checkAuth
     },
     {
-        path: '/sys/edit-did',
+        path: '/sys/edit-did/:id',
         name: 'EditDID',
         component: EditDID,
         beforeEnter: checkAuth

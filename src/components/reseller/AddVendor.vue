@@ -196,17 +196,6 @@ export default {
   margin-right: 10px;
   margin-bottom: 15px;
 }
-.grid-title{
-  width: 100%;
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
 .grid-input{
   width: 100%;
   height: 40px;
@@ -223,28 +212,6 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
-}
-.svg path{
-  fill: #51A3F3;
-}
-.svg-back{
-  float: left;
-  display: inline-block;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 20px;
-  margin-right: 5px;
-}
-.back{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  float: left;
-  display: inline-block;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 .add-vendor{
   float: left;

@@ -68,7 +68,10 @@
                 Role
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Role" class="grid-select" v-model="user.role">
-                <option value="Choose Role">Choose Role</option>
+                <option value="">Choose Role</option>
+                <option value="VIP">VIP</option>
+                <option value="Premium">Premium</option>
+                <option value="Default">Default</option>
               </select>
             </div>
             <div class="grid-4">
@@ -108,7 +111,7 @@ export default {
           isModalVisible: false,
           vendors: true,
                 user:{
-                role: 'Choose Role',
+                role: '',
             },
             user2:{
               country: 'China',
@@ -205,17 +208,6 @@ export default {
   margin-right: 10px;
   margin-bottom: 15px;
 }
-.grid-title{
-  width: 100%;
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
 .grid-input{
   width: 100%;
   height: 40px !important;
@@ -230,28 +222,6 @@ export default {
 }
 .active-table{
 	background-color: #F8F9FE;
-}
-.svg path{
-  fill: #51A3F3;
-}
-.svg-back{
-  float: left;
-  display: inline-block;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 20px;
-  margin-right: 5px;
-}
-.back{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  float: left;
-  display: inline-block;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 .add-user{
   float: left;
