@@ -187,20 +187,6 @@ a{
   margin-top: 5px;
   margin-right: 15px;
 }
-.svg-blue path{
-  fill: #51A3F3;
-}
-.did-table{
-  border: none;
-  max-width: calc(100% - 10px);
-  width: 100%;
-  margin-top: 20px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  text-align: left;
-}
 .did-table-th{
   height: 37px;
 }

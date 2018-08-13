@@ -31,13 +31,13 @@
               <div class="grid-title">
                 Campaign name
               </div>
-              <input class="grid-input" type="text" v-model="user.campaignName" placeholder="Enter campaign name">
+              <input class="grid-camp-input" type="text" v-model="user.campaignName" placeholder="Enter campaign name">
             </div>
             <div class="camp-grid-2">
               <div class="grid-title">
                 Type
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-select" v-model="user.campType">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-camp-select" v-model="user.campType">
                 <option value="Long Code">Long Code</option>
               </select>
             </div>
@@ -106,7 +106,7 @@
               <div class="grid-title">
                 Start date
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="StartDate" class="grid-select" v-model="user.campStartDate">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="StartDate" class="grid-camp-select" v-model="user.campStartDate">
                 <option value="DD MM YYYY">DD MM YYYY</option>
               </select>
             </div>
@@ -114,7 +114,7 @@
               <div class="grid-title">
                 List
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="List" class="grid-select" v-model="user.campList">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="List" class="grid-camp-select" v-model="user.campList">
                 <option value="Select Recipient List">Select Recipient List</option>
               </select>
             </div>
@@ -234,7 +234,7 @@
               <div class="grid-title">
                 Run from
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="RunFrom" class="grid-select" v-model="user.campRunFrom">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="RunFrom" class="grid-camp-select" v-model="user.campRunFrom">
                 <option value="8AM">8AM</option>
               </select>
             </div>
@@ -242,7 +242,7 @@
               <div class="grid-title">
                 Run Until
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="RunUntill" class="grid-select" v-model="user.campRunUntill">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="RunUntill" class="grid-camp-select" v-model="user.campRunUntill">
                 <option value="9PM">9PM</option>
               </select>
             </div>
@@ -250,7 +250,7 @@
               <div class="grid-title">
                 Delivery speed
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="DeliverySpeed" class="grid-select" v-model="user.campDeliverySpeed">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="DeliverySpeed" class="grid-camp-select" v-model="user.campDeliverySpeed">
                 <option value="60 msg/minute">60 msg/minute</option>
               </select>
               <label class="small-checkbox-cont">
@@ -277,7 +277,7 @@
               <div class="grid-title">
                 Callback URL
               </div>
-              <input class="grid-input" type="text" v-model="user.campCallbackUrl" placeholder="Status URL">
+              <input class="grid-camp-input" type="text" v-model="user.campCallbackUrl" placeholder="Status URL">
             </div>
           </div>
         </div>
@@ -763,24 +763,11 @@ export default {
   max-width: 48.6363636364%;
   width: 100%;
 }
-.grid-input{
-  max-width: calc(100% - 13px);
-  width: 100%;
-  height: calc(40px - 4px);
-  padding-left: 10px;
-}
 .grid-search{
   max-width: calc(100% - 43px);
   width: 100%;
   height: calc(40px - 4px);
   padding-left: 40px;
-}
-.grid-select{
-  width: 100%;
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  height: 40px;
 }
 .add-camp{
   float: left;
@@ -831,40 +818,6 @@ export default {
   text-transform: uppercase;
   margin-bottom: 5px;
   padding-top: 10px;
-}
-button#product{
-  	height: 40px;
-    width: 130px;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    float: right;
-}
-button#cancel{
-  height: 40px;
-  width: 90px;
-  border: 1px solid #BDBFD8;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  color: #55616E;
-  font-family: "Circular Std";
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 19px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 15px;
-  float: right;
 }
 .main-add{
   max-width: calc(100% - 300px);

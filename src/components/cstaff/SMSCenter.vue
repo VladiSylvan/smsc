@@ -647,17 +647,6 @@ button{
   font-size: 14px;
   line-height: 25px;
 }
-.sms-table{
-  border: none;
-  max-width: calc(100%);
-  width: 100%;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  text-align: left;
-}
-
 .sms-avatar-active{
   width: 50px;
   height: 74px;
@@ -700,9 +689,6 @@ button{
   background-color: #FFFFFF;
   vertical-align: top;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.svg-blue path{
-  fill: #51A3F3;
 }
 a{
   text-decoration: none;

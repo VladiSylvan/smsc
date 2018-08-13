@@ -16,7 +16,7 @@
                         <label>Password</label>
                         <input required class="input-login-password" type="password" v-model="user.password" placeholder="********">
                         <input type="checkbox"> Remember me<br>
-                        <button type="submit">Log In</button>
+                        <button id="login" type="submit">Log In</button>
                         <div class="no-account">
                             Don't have an account? <router-link :to="{ name: 'Register'}">Register</router-link>
                         </div>
@@ -115,7 +115,7 @@ export default {
         line-height: 15px;
         text-transform: uppercase;
     }
-    button{
+    button#login{
         height: 40px;
         width: 90px;
         border-radius: 4px;

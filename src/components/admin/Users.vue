@@ -122,9 +122,6 @@ export default {
 }
 </script>
 <style>
-.svg-blue path{
-  fill: #51A3F3;
-}
 a{
   text-decoration: none;
   color: #55616E;

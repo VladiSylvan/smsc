@@ -217,9 +217,6 @@ export default {
   margin-top: 5px;
   margin-right: 15px;
 }
-.svg-blue path{
-  fill: #51A3F3;
-}
 a{
   text-decoration: none;
   color: #55616E;

@@ -272,9 +272,6 @@ export default {
   max-width: 100%;
   width: 100%;
 }
-.active-table{
-	background-color: #F8F9FE;
-}
 .add-product-country{
   width: 190px;
   padding-left: 15px;
@@ -357,23 +354,6 @@ export default {
   margin-bottom: 5px;
   padding-left: 10px;
 }
-button#product{
-  	height: 40px;
-    width: 130px;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    float: right;
-}
 .country{
     width: 180px !important;
     height: 40px !important;
@@ -431,23 +411,6 @@ button#product{
     vertical-align: top;
     margin-left: 15px;
     margin-bottom: 5px;
-}
-button#cancel{
-  height: 40px;
-  width: 90px;
-  border: 1px solid #BDBFD8;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  color: #55616E;
-  font-family: "Circular Std";
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 19px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 15px;
-  float: right;
 }
 .main-add{
   max-width: calc(100% - 300px);

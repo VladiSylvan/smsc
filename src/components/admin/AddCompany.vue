@@ -197,57 +197,6 @@ export default {
 }
 </script>
 <style>
-.upload{
-  border: 1px dashed #5171F3;
-  border-radius: 6px;
-  background-color: #FFFFFF;
-  height: 280px;
-  text-align: center;
-}
-.upload-title{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  margin-top: 97px;
-  margin-bottom: 10px;
-}
-.upload-button{
-  border-radius: 4px;
-  background-color: #51A3F3;
-  color: #FFFFFF;
-  font-family: "Helvetica Neue";
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 30px;
-  height: 36px;
-  width: 136px;
-}
-.grid-1{
-  margin-left: 15px;
-  width: 29.3%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
-.grid-2{
-  margin-left: 15px;
-  width: 69%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
-.grid-3{
-  margin-left: 15px;
-  width: 21.0672064777%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
 .grid-4{
   margin-left: 15px;
   width: 45.5%;
@@ -255,25 +204,6 @@ export default {
   float: left;
   margin-right: 10px;
   margin-bottom: 15px;
-}
-.grid-input{
-  width: 100%;
-  height: 40px !important;
-  padding-left: 10px;
-}
-.grid-select{
-  width: calc(100% + 13px);
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  height: 44px;
-}
-table{
-  max-width: 100%;
-  width: 100%;
-}
-.active-table{
-	background-color: #F8F9FE;
 }
 td#add-country{
   width: 190px;
@@ -341,40 +271,6 @@ td#add-sell-rate{
   margin-bottom: 5px;
   padding-top: 10px;
 }
-button#product{
-  	height: 40px;
-    width: 130px;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    float: right;
-}
-button#cancel{
-  height: 40px;
-  width: 90px;
-  border: 1px solid #BDBFD8;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  color: #55616E;
-  font-family: "Circular Std";
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 19px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 15px;
-  float: right;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;
@@ -383,7 +279,7 @@ button#cancel{
   float: left;
 }
 @media only screen and (max-width: 1200px) {
-    .grid-1, .grid-2, .grid-3, .grid-4{
+    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
       width: calc(50% - 40px);
     }
     .company-main{
@@ -402,7 +298,7 @@ button#cancel{
     }
 }
 @media only screen and (max-width: 390px) {
-    .grid-1, .grid-2, .grid-3, .grid-4{
+    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
       width: calc(100% - 40px);
     }
 }

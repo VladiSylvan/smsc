@@ -24,7 +24,7 @@
           <div class="payment-history-title">
             Payment History
           </div>
-          <table class='payment-table' cellspacing="0" cellpadding="0">
+          <table class='payment-table-2' cellspacing="0" cellpadding="0">
             <thead>
               <tr>
                 <th class="payment-date-th">Date</th>
@@ -139,16 +139,6 @@ export default {
 }
 </script>
 <style>
-.payment-table{
-  border: none;
-  max-width: calc(100% - 10px);
-  width: 100%;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  text-align: left;
-}
 .payment-history-title{
   color: #000000;
   font-family: "Helvetica Neue";
@@ -208,40 +198,6 @@ export default {
   width: calc(100% - 30px);
   margin-left: 20px;
   margin-right: 20px;
-}
-button#product{
-  	height: 40px;
-    width: 130px;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    float: right;
-}
-button#cancel{
-  height: 40px;
-  width: 90px;
-  border: 1px solid #BDBFD8;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  color: #55616E;
-  font-family: "Circular Std";
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 19px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 15px;
-  float: right;
 }
 .main-add{
   max-width: calc(100% - 300px);

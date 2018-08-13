@@ -206,9 +206,6 @@ a{
   margin-top: 5px;
   margin-right: 15px;
 }
-.svg-blue path{
-  fill: #51A3F3;
-}
 .key-table{
   border: none;
   max-width: calc(100% - 10px);

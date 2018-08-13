@@ -670,13 +670,6 @@ button{
   margin-left: 15px;
   margin-bottom: 10px;
 }
-.chart-box{
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-}
 .chart-2-reporting{
   height: auto;
   width: 100%;

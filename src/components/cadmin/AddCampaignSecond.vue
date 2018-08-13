@@ -31,13 +31,13 @@
               <div class="grid-title">
                 Campaign name
               </div>
-              <input class="grid-input" type="text" v-model="user.campaignName" placeholder="Enter campaign name">
+              <input class="grid-camp-input" type="text" v-model="user.campaignName" placeholder="Enter campaign name">
             </div>
             <div class="camp-grid-2">
               <div class="grid-title">
                 Type
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-select" v-model="user.campType">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-camp-select" v-model="user.campType">
                 <option value="Long Code">Long Code</option>
               </select>
             </div>
@@ -197,7 +197,7 @@
               <div class="grid-title">
                 Notification Email
               </div>
-              <input class="grid-input" type="text" v-model="user.campNotification" placeholder="We will send an email when a new request is posted">
+              <input class="grid-camp-input" type="text" v-model="user.campNotification" placeholder="We will send an email when a new request is posted">
               <label class="checkbox-cont">
                 <div class="camp-checkbox-text">
                   User Area Code Mapping
@@ -690,24 +690,11 @@ export default {
   max-width: 48.6363636364%;
   width: 100%;
 }
-.grid-input{
-  max-width: calc(100% - 13px);
-  width: 100%;
-  height: calc(40px - 4px);
-  padding-left: 10px;
-}
 .grid-search{
   max-width: calc(100% - 43px);
   width: 100%;
   height: calc(40px - 4px);
   padding-left: 40px;
-}
-.grid-select{
-  width: 100%;
-  border: 1px solid #EDEEF3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  height: 40px;
 }
 .add-camp{
   float: left;
@@ -758,40 +745,6 @@ export default {
   text-transform: uppercase;
   margin-bottom: 5px;
   padding-top: 10px;
-}
-button#product{
-  	height: 40px;
-    width: 130px;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    float: right;
-}
-button#cancel{
-  height: 40px;
-  width: 90px;
-  border: 1px solid #BDBFD8;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  color: #55616E;
-  font-family: "Circular Std";
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 19px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 15px;
-  float: right;
 }
 .main-add{
   max-width: calc(100% - 300px);

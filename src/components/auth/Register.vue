@@ -61,7 +61,7 @@
                           <input required class="input-repassword" type="password" v-model="user.passwd2" placeholder="********">
                         </div>
                       </div>
-                        <button type="submit">Sign up</button>
+                        <button id="register" type="submit">Sign up</button>
                         <div class="no-account">
                             Have an account? <router-link :to="{ name: 'Login'}">Log in</router-link>
                         </div>
@@ -291,7 +291,7 @@ export default {
     label#state{
       margin-left: 10px;
     }
-    button{
+    button#register{
         height: 40px;
         width: 90px;
         border-radius: 4px;

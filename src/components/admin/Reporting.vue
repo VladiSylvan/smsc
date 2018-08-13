@@ -17,7 +17,7 @@
               </div>
               <resellers-line :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></resellers-line>
               <input class="reporting-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
-              <button type="submit">Filter</button>
+              <button type="submit" id="reporting">Filter</button>
               <table class="reporting-table" cellspacing="0" cellpadding="0">
                 <thead>
                   <tr>
@@ -89,7 +89,7 @@
                 Activity
               </div>
               <div class="chart-box">
-              <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
+                <img style="transform: rotate(180deg);" src="@/assets/Icon/Arrow/Down.svg">
               </div>
               <bar-chart2 :options="{responsive: false, maintainAspectRatio: false}" :width="230" :height="100"></bar-chart2>
             </div>
@@ -246,11 +246,10 @@ a#show-more{
   margin-left: 13px;
   padding-left: 40px;
 }
-button{
+button#reporting{
   	height: 36px;
     width: calc(16.7737765466% + 10px);
-    border: 1px
-    solid #BDBFD8;
+    border: 1px solid #BDBFD8;
     border-radius: 4px;
     background-color: #FFFFFF;
     font-family: "Helvetica Neue";
@@ -324,13 +323,6 @@ button{
   margin-top: 15px;
   margin-left: 15px;
   margin-bottom: 10px;
-}
-.chart-box{
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
 }
 .chart-2-reporting{
   height: auto;

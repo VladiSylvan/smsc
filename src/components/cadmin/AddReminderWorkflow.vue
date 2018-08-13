@@ -593,12 +593,6 @@ a{
   margin-top: 5px;
   margin-right: 15px;
 }
-.svg-blue path{
-  fill: #51A3F3;
-}
-.svg path{
-  fill: #51A3F3;
-}
 .svg-back-sms{
   float: left;
   display: inline-block;
@@ -617,17 +611,6 @@ a{
   display: inline-block;
   margin-top: 30px;
   margin-bottom: 30px;
-}
-.did-table{
-  border: none;
-  max-width: calc(100% - 10px);
-  width: 100%;
-  margin-top: 20px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  text-align: left;
 }
 .smsw-table-th{
   height: 37px;

@@ -136,9 +136,6 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
 }
-.svg-blue path{
-  fill: #51A3F3;
-}
 a{
   text-decoration: none;
   color: #55616E;
@@ -219,12 +216,6 @@ a{
   border-bottom: 2px solid #51A3F3;
   width: 76px;
   margin-top: 13px;
-}
-.payment-table{
-  border: none;
-  max-width: 100%;
-  width: 100%;
-  margin-top: 20px;
 }
 .payment-id-th{
   width: 241px;

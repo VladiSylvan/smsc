@@ -185,25 +185,6 @@ button#DID{
     margin-bottom: 20px;
     float: left;
 }
-
-button#cancel{
-  height: 40px;
-  width: 90px;
-  border: 1px solid #BDBFD8;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  color: #55616E;
-  font-family: "Circular Std";
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 19px;
-  text-align: center;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 20px;
-  float: left;
-}
-
 .modal-header{
   margin-top: 100px;
   width: 720px;

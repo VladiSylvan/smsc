@@ -134,9 +134,6 @@ export default {
   vertical-align: top;
   margin-right: 5px;
 }
-.svg-blue path{
-  fill: #51A3F3;
-}
 a{
   text-decoration: none;
   color: #55616E;

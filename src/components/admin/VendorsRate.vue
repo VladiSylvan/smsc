@@ -310,22 +310,6 @@ input[type="text"]#vendor-search{
   margin-top: 20px;
   height: 40px !important;
 }
-button#product{
-  	height: 40px;
-    width: 130px;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 20px;
-    float: right;
-    margin-right: 20px;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
