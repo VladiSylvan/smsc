@@ -136,23 +136,23 @@ export default {
           vendors: true,
           countries: [],
           company:{
-            credit: '4555',
+            credit: '',
             prepay: true,
             // reseller_uuid: '1',
             contact: {
-              email: 'test@test.test',
-              state: 'UA',
+              email: '',
+              state: '',
               // logo_file_uuid: '1',
-              passwd: 'test',
-              zipcode: '15645656',
-              name: 'Test',
-              address: 'Test',
-              city: 'Test',
-              phone: '52615156',
+              passwd: '',
+              zipcode: '',
+              // name: 'Test1',
+              address: '',
+              city: '',
+              phone: '',
               country_uuid: ''
             },
             company_url: 'http://gsadfdss.lt',
-            company_name: 'Test'
+            company_name: ''
           },
           error: false,
           errorMsg: '',
