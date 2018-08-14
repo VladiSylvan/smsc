@@ -87,9 +87,9 @@
             </div>
             <div class="upload">
               <div class="upload-title">
-                Drop photo here or browse
+                <input type="file" accept="image/*" id="file-input">
+                <button class="upload-button" @click="uploadImage($event)">Upload logo</button>
               </div>
-              <button class="upload-button" type="submit">Upload photo</button>
             </div>
           </div>
         </div>
@@ -108,6 +108,8 @@ export default {
           width: '60px',
           transitionName: 'fade',
           popup: false,
+          file: '',
+          users: [],
           isModalVisible: false,
           vendors: true,
                 user:{
@@ -135,28 +137,50 @@ export default {
       modal,
       NavigationComponent,
     },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('user/list'),
+      ]).then( this.axios.spread((users) => {
+        app.users = users.data.payload.items
+        console.log(users)
+      })).catch(error => {
+        console.log(error)
+      })
+    },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        uploadImage(event) {
+        console.log(event)
+        let data = new FormData();
+        data.append('file', event.target.files[0]);
+        data.append('belongs_to', 'user.logo')
+
+        let config = {
+          header : {
+            'Content-Type' : 'image/png'
+          }
         }
-    },
+
+        this.axios.post(
+          '/file',
+          data,
+          config
+        ).then(
+          response => {
+            console.log('image upload response > ', response)
+          }
+        )
+      }
+    }
 }
 </script>
 <style>
-.grid-4{
-  margin-left: 15px;
-  width: 45.5%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
 .add-user{
   float: left;
   display: inline-block;
@@ -186,14 +210,6 @@ export default {
   background-color: #F8F9FE;
   height: 458px;
 }
-.delete-image{
-  margin-top: -10px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
 .user-add-title{
   color: #000000;
   font-family: "Helvetica Neue";
@@ -221,9 +237,6 @@ export default {
   float: left;
 }
 @media only screen and (max-width: 1200px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(50% - 40px);
-    }
     .user-main{
       max-width: 100%;
     }
@@ -237,11 +250,6 @@ export default {
 @media only screen and (max-width: 750px) {
     .main-add{
       max-width: 100%;
-    }
-}
-@media only screen and (max-width: 390px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(100% - 40px);
     }
 }
 </style>

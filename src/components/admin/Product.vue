@@ -152,28 +152,6 @@ export default {
   margin-left: 15px;
   text-align: left;
 }
-.online{
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-  height: 44px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
 .product-table-active{
   width: 18px;
 }

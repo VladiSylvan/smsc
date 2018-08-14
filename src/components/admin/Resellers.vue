@@ -76,7 +76,7 @@
                   </td>
                 </tr> -->
                 <tr v-for="reseller, index in resellers">
-                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">{{ reseller.contact.name }}</div></td>
+                  <td class="reseller-name"><div class="reseller-avatar"></div> <div class="reseller-name-fix">{{ reseller.reseller_name }}</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">70</td>
                   <td class="reseller-member-since">10-03-2018</td>

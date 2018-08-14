@@ -232,15 +232,6 @@ export default {
   margin-left: 15px;
   text-align: left;
 }
-
-.online{
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-}
 .vendor-rate-active{
   width: 18px;
   padding-left: 8px;

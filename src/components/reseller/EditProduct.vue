@@ -305,14 +305,6 @@ export default {
   background-color: #F8F9FE;
   height: 458px;
 }
-.delete-image{
-  margin-top: -10px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
 .product-add-title{
   color: #000000;
   font-family: "Helvetica Neue";

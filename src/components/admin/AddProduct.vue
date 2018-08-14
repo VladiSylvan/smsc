@@ -315,7 +315,6 @@ export default {
 }
 .vendor-select{
   width: 250px;
-  padding-right: 20px;
 }
 .vendor-input{
   width: 120px;
@@ -358,15 +357,6 @@ export default {
   width: 100%;
   background-color: #F8F9FE;
   height: 458px;
-}
-.delete-image{
-  margin-top: -10px;
-  margin-left: 5px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 15px;
 }
 .product-add-title{
   color: #000000;
@@ -478,9 +468,6 @@ export default {
   float: left;
 }
 @media only screen and (max-width: 1200px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(50% - 40px);
-    }
     .company-main{
       max-width: 100%;
     }
@@ -513,11 +500,6 @@ export default {
     }
     .main-add{
       max-width: 100%;
-    }
-}
-@media only screen and (max-width: 390px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(100% - 40px);
     }
 }
 </style>

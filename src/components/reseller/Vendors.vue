@@ -170,16 +170,6 @@ export default {
   line-height: 16px;
   text-align: left;
 }
-.online{
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-  height: 44px;
-}
-.offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-  height: 44px;
-}
 .vendors-table-th{
   height: 37px;
 }

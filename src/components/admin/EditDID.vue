@@ -220,64 +220,6 @@ export default {
   height: 36px;
   width: 136px;
 }
-.grid-4{
-  margin-left: 15px;
-  width: 45.5%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
-.grid-5{
-  width: 46%;
-  display: inline-block;
-  float: left;
-  margin-right: 25px;
-  margin-bottom: 15px;
-}
-.grid-5-second{
-  width: 46%;
-  display: inline-block;
-  float: left;
-  margin-bottom: 15px;
-}
-.add-did{
-  float: left;
-  display: inline-block;
-  background-color: #FFFFFF;
-  width: calc(100% - 40px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.did-main{
-  display: inline-block;
-  float: left;
-  max-width: 66.8181818182%;
-  width: 100%;
-}
-.did-second{
-  display: inline-block;
-  float: left;
-  max-width: 31.8%;
-  width: 100%;
-  margin-top: 60px;
-}
-.product-did{
-  display: inline-block;
-  float: left;
-  max-width: calc(100% - 58.1818181818%);
-  width: 100%;
-  background-color: #F8F9FE;
-  height: 458px;
-}
-.delete-image{
-  margin-top: -10px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
 .did-add-title{
   color: #000000;
   font-family: "Helvetica Neue";
@@ -304,31 +246,9 @@ export default {
   vertical-align: top;
   float: left;
 }
-@media only screen and (max-width: 1200px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(50% - 35px);
-    }
-    .grid-5, .grid-5-second{
-      width: calc(50% - 13px);
-    }
-    .did-main{
-      max-width: 100%;
-    }
-    .did-second{
-      margin-top: 0px;
-      max-width: calc(100% - 30px);
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-}
 @media only screen and (max-width: 750px) {
     .main-add{
       max-width: 100%;
-    }
-}
-@media only screen and (max-width: 390px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(100% - 45px);
     }
 }
 </style>

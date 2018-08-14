@@ -100,31 +100,6 @@ export default {
 }
 </script>
 <style>
-.undo-title{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 30px;
-}
-.undo-image{
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
-}
-.undo-undo{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 15px;
-}
 .filters-table{
   border: none;
   max-width: calc(100% - 10px);

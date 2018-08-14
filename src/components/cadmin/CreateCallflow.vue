@@ -1521,25 +1521,6 @@ input:checked + .slider:before {
   padding-left: 10px;
   margin-bottom: 30px;
 }
-.navbar{
-  height: 50px;
-  width: 100%;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 1px 0 0 #F8F9FE;
-}
-.nav-text{
-  color: #BDBFD8;
-  font-family: "Circular Std";
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 20px;
-  text-align: center;
-  margin-top: 15px;
-}
-.nav-text#active{
-  color: #51A3F3;
-  font-weight: 500;
-}
 a{
   text-decoration: none;
 }

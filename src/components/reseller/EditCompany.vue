@@ -206,14 +206,6 @@ export default {
   height: 36px;
   width: 136px;
 }
-.grid-4{
-  margin-left: 15px;
-  width: 45.5%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
 .add-company{
   float: left;
   display: inline-block;
@@ -243,14 +235,6 @@ export default {
   background-color: #F8F9FE;
   height: 458px;
 }
-.delete-image{
-  margin-top: -10px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
 .company-add-title{
   color: #000000;
   font-family: "Helvetica Neue";
@@ -278,9 +262,6 @@ export default {
   float: left;
 }
 @media only screen and (max-width: 1200px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(50% - 40px);
-    }
     .company-main{
       max-width: 100%;
     }
@@ -294,11 +275,6 @@ export default {
 @media only screen and (max-width: 750px) {
     .main-add{
       max-width: 100%;
-    }
-}
-@media only screen and (max-width: 390px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(100% - 40px);
     }
 }
 </style>

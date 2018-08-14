@@ -20,8 +20,7 @@
             Back to Companies
           </div>
         </router-link>
-        <form v-on:submit="create()">
-          <button id="product" type="submit">Add Company</button>
+          <button id="product" @click="create()" type="submit">Add Company</button>
           <router-link :to="{ name: 'Companies'}"><button id="cancel" type="submit">Cancel</button></router-link>
           <div class="add-company">
             <div class="company-main">
@@ -110,13 +109,12 @@
               </div>
               <div class="upload">
                 <div class="upload-title">
-                  Drop logo here or browse
+                  <input type="file" @change="onFileChanged($event)" accept="image/*" id="file-input">
+                  <button class="upload-button" @click="uploadImage()">Upload logo</button>
                 </div>
-                <button class="upload-button" type="submit">Upload logo</button>
               </div>
             </div>
           </div>
-        </form>
       </div>
     </div>
 </template>
@@ -134,6 +132,7 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          selectedFile: null,
           countries: [],
           company:{
             credit: '',
@@ -142,7 +141,7 @@ export default {
             contact: {
               email: '',
               state: '',
-              // logo_file_uuid: '1',
+              logo_file_uuid: '',
               passwd: '',
               zipcode: '',
               // name: 'Test1',
@@ -181,7 +180,26 @@ export default {
               app.error = true
               console.log(err.response)
           })
-        }
+        },
+        onFileChanged(event){
+          console.log(event)
+          this.selectedFile = event.target.files[0]
+        },
+        uploadImage() {
+        let data = new FormData();
+        data.append('file', this.selectedFile);
+        data.append('belongs_to', 'user.logo')
+
+        this.axios.post(
+          '/file',
+          data
+        ).then(
+          response => {
+            this.company.contact.logo_file_uuid = response.data.object_uuid
+            console.log('image upload response > ', response)
+          }
+        )
+      }
     },
     mounted(){
       var app = this
@@ -197,14 +215,6 @@ export default {
 }
 </script>
 <style>
-.grid-4{
-  margin-left: 15px;
-  width: 45.5%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
 td#add-country{
   width: 190px;
   padding-left: 15px;
@@ -244,14 +254,6 @@ td#add-sell-rate{
   background-color: #F8F9FE;
   height: 458px;
 }
-.delete-image{
-  margin-top: -10px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
 .company-add-title{
   color: #000000;
   font-family: "Helvetica Neue";
@@ -279,9 +281,6 @@ td#add-sell-rate{
   float: left;
 }
 @media only screen and (max-width: 1200px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(50% - 40px);
-    }
     .company-main{
       max-width: 100%;
     }
@@ -295,11 +294,6 @@ td#add-sell-rate{
 @media only screen and (max-width: 750px) {
     .main-add{
       max-width: 100%;
-    }
-}
-@media only screen and (max-width: 390px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(100% - 40px);
     }
 }
 </style>

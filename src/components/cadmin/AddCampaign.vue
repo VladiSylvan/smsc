@@ -778,28 +778,6 @@ export default {
   margin-right: 20px;
   margin-bottom: 20px;
 }
-.did-main{
-  display: inline-block;
-  float: left;
-  max-width: 100%;
-  width: 100%;
-}
-.product-did{
-  display: inline-block;
-  float: left;
-  max-width: calc(100% - 58.1818181818%);
-  width: 100%;
-  background-color: #F8F9FE;
-  height: 200px;
-}
-.delete-image{
-  margin-top: -10px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
 .did-add-title{
   color: #000000;
   font-family: "Helvetica Neue";

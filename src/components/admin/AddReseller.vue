@@ -77,7 +77,7 @@
               </div>
               <input class="grid-input" type="text" v-model="user.zipCode" placeholder="75832-4568">
             </div>
-            <div class="grid-4">
+            <div class="grid-4-sec">
               <div class="grid-title">
                 Country
               </div>
@@ -174,14 +174,6 @@ export default {
 }
 </script>
 <style>
-.grid-4{
-  margin-left: 15px;
-  width: 43.5%;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
 .add-reseller{
   float: left;
   display: inline-block;
@@ -211,14 +203,6 @@ export default {
   background-color: #F8F9FE;
   height: 458px;
 }
-.delete-image{
-  margin-top: -10px;
-}
-.delete-vendor-image{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
 .reseller-add-title{
   color: #000000;
   font-family: "Helvetica Neue";
@@ -246,9 +230,6 @@ export default {
   float: left;
 }
 @media only screen and (max-width: 1200px) {
-    .grid-1, .grid-2, .grid-3, .grid-3-sec, .grid-4{
-      width: calc(100% - 40px);
-    }
     .reseller-main{
       max-width: 100%;
     }
@@ -257,11 +238,6 @@ export default {
       max-width: calc(100% - 30px);
       margin-left: 15px;
       margin-right: 15px;
-    }
-}
-@media only screen and (max-width: 750px) {
-    .main-add{
-      max-width: 100%;
     }
 }
 </style>

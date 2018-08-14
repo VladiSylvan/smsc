@@ -166,7 +166,7 @@ export default {
 .add-reseller{
   float: left;
   display: inline-block;
-  width: calc(100% - 30px);
+  width: calc(100% - 40px);
   margin-left: 20px;
   margin-right: 20px;
 }
