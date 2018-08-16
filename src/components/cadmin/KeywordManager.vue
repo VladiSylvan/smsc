@@ -147,46 +147,6 @@ a{
   height: 50px;
   width: 170px;
 }
-
-.did-name-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
-}
-.did-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.undo-title{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 30px;
-}
-.undo-image{
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
-}
-.undo-undo{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 15px;
-}
 .key-table{
   border: none;
   max-width: calc(100% - 10px);
@@ -273,13 +233,6 @@ button#campaign{
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.main-container{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .side#active svg g{
   fill: white;

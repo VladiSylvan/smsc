@@ -215,70 +215,12 @@ export default {
 }
 </script>
 <style>
-td#add-country{
-  width: 190px;
-  padding-left: 15px;
-}
-td#add-operator{
-  width: 215px;
-}
-td#add-sell-rate{
-  width: 150px;
-}
-.add-company{
-  float: left;
-  display: inline-block;
-  background-color: #FFFFFF;
-  width: calc(100% - 40px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.company-main{
-  display: inline-block;
-  float: left;
-  max-width: 66.8181818182%;
-  width: 100%;
-}
-.company-second{
-  display: inline-block;
-  float: left;
-  max-width: 31.8%;
-  width: 100%;
-  margin-top: 60px;
-}
-.product-vendor{
-  display: inline-block;
-  float: left;
-  max-width: calc(100% - 58.1818181818%);
-  width: 100%;
-  background-color: #F8F9FE;
-  height: 458px;
-}
-.company-add-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin: 15px;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-@media only screen and (max-width: 1200px) {
-    .company-main{
-      max-width: 100%;
-    }
-    .company-second{
-      margin-top: 0px;
-      max-width: calc(100% - 30px);
-      margin-left: 15px;
-      margin-right: 15px;
-    }
 }
 @media only screen and (max-width: 990px) {
     .main-add{

@@ -137,73 +137,12 @@ export default {
 }
 </script>
 <style>
-.add-vendor{
-  float: left;
-  display: inline-block;
-  background-color: #FFFFFF;
-  width: calc(100% - 40px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.vendor-main{
-  display: inline-block;
-  float: left;
-  max-width: 66.8181818182%;
-  width: 100%;
-  height: auto;
-}
-.vendor-second{
-  display: inline-block;
-  float: left;
-  max-width: 31.8%;
-  width: 100%;
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-.product-vendor{
-  display: inline-block;
-  float: left;
-  max-width: calc(100% - 58.1818181818%);
-  width: 100%;
-  background-color: #F8F9FE;
-  height: 458px;
-}
-.vendor-add-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin: 15px;
-}
-.product-input-name{
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  padding-top: 10px;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-@media only screen and (max-width: 1200px) {
-    .vendor-main{
-      max-width: 100%;
-    }
-    .vendor-second{
-      margin-top: 0px;
-      max-width: calc(100% - 30px);
-      margin-left: 15px;
-      margin-right: 15px;
-    }
 }
 @media only screen and (max-width: 990px) {
     .main-add{

@@ -112,118 +112,12 @@ export default {
 </script>
 
 <style>
-.cont-1{
-  width: 74%;
-  float: left;
-}
-.cont-2{
-  width: 21%;
-  float: left;
-}
-.cont-3{
-  width: 47.5%;
-  float: left;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.chart-1{
-  height: auto;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.chart-1-title{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-2{
-  height: auto;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-  position: relative;
-}
-.chart-2-title{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3{
-  height: auto;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.chart-3-title{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3#second{
-  margin-top: 20px;
-  margin-left: 40px;
-}
-.res-select{
-  display: inline-block;
-  width: calc(100% - 15px);
-  margin-left: 15px;
-}
-@media only screen and (max-width: 1200px) {
-    .cont-1, .cont-2, .cont-3{
-      width: calc(100% - 30px);
-    }
-    .chart-1, .chart-2, .chart-3, .chart-3#second{
-      margin-left: 15px;
-      margin-right: 15px;
-    }
 }
 @media only screen and (max-width: 990px) {
     .main{

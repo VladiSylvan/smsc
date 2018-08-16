@@ -20,7 +20,7 @@
             Back to Companies
           </div>
         </router-link>
-        <div class="add-reseller">
+        <div class="history-main">
           <div class="invoice-title">
             Invoice History
           </div>
@@ -221,13 +221,6 @@ export default {
   height: 44px;
   background-color: #FFFFFF;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.add-reseller{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .main-add{
   max-width: calc(100% - 300px);

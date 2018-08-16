@@ -21,49 +21,49 @@
               <table class="reporting-table" cellspacing="0" cellpadding="0">
                 <thead>
                   <tr>
-                    <th class="resellers">Resellers</th>
-                    <th class="date">Date</th>
-                    <th class="status">Status</th>
+                    <th class="reporting-resellers">Resellers</th>
+                    <th class="reporting-date">Date</th>
+                    <th class="reporting-status">Status</th>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="reporting-resellers">Nellie Ferguson</td>
+                    <td class="reporting-date">29 Apr 2018</td>
+                    <td class="reporting-status"><div class="reporting-active">Active</div></td>
                   </tr>
                   <tr>
-                    <td class="resellers">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
-                    <td class="status"><div class="not-active">Not Active</div></td>
+                    <td class="reporting-resellers">Lou Haynes</td>
+                    <td class="reporting-date">06 Nov 2018</td>
+                    <td class="reporting-status"><div class="reporting-not-active">Not Active</div></td>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="reporting-resellers">Nellie Ferguson</td>
+                    <td class="reporting-date">29 Apr 2018</td>
+                    <td class="reporting-status"><div class="reporting-active">Active</div></td>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="reporting-resellers">Nellie Ferguson</td>
+                    <td class="reporting-date">29 Apr 2018</td>
+                    <td class="reporting-status"><div class="reporting-active">Active</div></td>
                   </tr>
                   <tr>
-                    <td class="resellers">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
-                    <td class="status"><div class="not-active">Not Active</div></td>
+                    <td class="reporting-resellers">Lou Haynes</td>
+                    <td class="reporting-date">06 Nov 2018</td>
+                    <td class="reporting-status"><div class="reporting-not-active">Not Active</div></td>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="reporting-resellers">Nellie Ferguson</td>
+                    <td class="reporting-date">29 Apr 2018</td>
+                    <td class="reporting-status"><div class="reporting-active">Active</div></td>
                   </tr>
                   <tr>
-                    <td class="resellers">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
-                    <td class="status"><div class="not-active">Not Active</div></td>
+                    <td class="reporting-resellers">Lou Haynes</td>
+                    <td class="reporting-date">06 Nov 2018</td>
+                    <td class="reporting-status"><div class="reporting-not-active">Not Active</div></td>
                   </tr>
                   <tr>
-                    <td class="resellers">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="status"><div class="active">Active</div></td>
+                    <td class="reporting-resellers">Nellie Ferguson</td>
+                    <td class="reporting-date">29 Apr 2018</td>
+                    <td class="reporting-status"><div class="reporting-active">Active</div></td>
                   </tr>
                 </thead>
               </table>
@@ -169,198 +169,12 @@ export default {
 }
 </script>
 <style>
-.reporting-table{
-  margin-left: 20px;
-  border: none;
-  max-width: calc(100% - 40px);
-  width: 100%;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.resellers{
-  width: 174px;
-  padding-left: 15px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.date{
-  width: 189px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.status{
-  width: 132px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-
-.active{
-  box-sizing: border-box;
-  height: 24px;
-  width: 59px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
-  background-color: #24E2B8;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
-}
-.not-active{
-  box-sizing: border-box;
-  height: 24px;
-  width: 85px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
-  background-color: #D2305B;
-  color: #FFFFFF;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
-}
-.show-more{
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 23px;
-}
-a#show-more{
-  	height: 15px;
-    width: 69px;
-    color: #51A3F3;
-    font-family: "SF Pro Text";
-    font-size: 13px;
-    line-height: 15px;
-    text-decoration: none;
-}
-.reporting-search{
-  height: 36px !important;
-  width: calc(69.621421976% - 30px);
-  margin-left: 13px;
-  padding-left: 40px;
-}
-button#reporting{
-  	height: 36px;
-    width: calc(16.7737765466% + 10px);
-    border: 1px solid #BDBFD8;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 15px;
-    margin-left: 10px;
-}
-.cont-1-rep{
-  width: 47.5%;
-  float: left;
-}
-.cont-2-rep{
-  width: 22.9%;
-  float: left;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.chart-1-reporting{
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.chart-1-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-3-reporting{
-  height: auto;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-}
-.chart-3-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-2-reporting{
-  height: auto;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 40px;
-  position: relative;
-}
-.chart-2-title-reporting{
-  height: 30px;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
-.chart-2-reporting#second{
-  margin-left: 60px;
-}
-@media only screen and (max-width: 1200px) {
-    .cont-1-rep, .cont-2-rep{
-      width: calc(100% - 30px);
-    }
-    .chart-1-reporting, .chart-2-reporting, .chart-2-reporting#second, .chart-3-reporting, .chart-3#second{
-      margin-left: 15px;
-      margin-right: 15px;
-    }
 }
 @media only screen and (max-width: 990px) {
     .main{

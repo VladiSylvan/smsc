@@ -1295,6 +1295,7 @@ export default {
   margin-top: 40px;
   padding-left: 30px;
   padding-right: 30px;
+  margin-bottom: 20px;
 }
 .callflow-main-div{
   width: 700px;
@@ -1548,46 +1549,6 @@ a{
   height: 50px;
   width: 120px;
 }
-
-.did-name-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
-}
-.did-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.undo-title{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 30px;
-}
-.undo-image{
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
-}
-.undo-undo{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 15px;
-}
 .svg-back-call{
   float: left;
   display: inline-block;
@@ -1606,76 +1567,6 @@ a{
   display: inline-block;
   margin-top: 30px;
   margin-bottom: 30px;
-}
-.did-table-th{
-  height: 37px;
-}
-.did-online{
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-  height: 50px;
-}
-.did-offline{
-  background-color: #F0F1FA;
-  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
-  height: 50px;
-}
-.did-active{
-  width: 20px;
-  padding-left: 7px;
-}
-.did-number{
-  width: 199px;
-}
-.did-created{
-  width: 119px;
-}
-.did-created-by{
-  width: 223px;
-}
-.did-country{
-  width: 116px;
-}
-.did-type{
-  width: 118px;
-}
-.did-assigned{
-  width: 190px;
-}
-.did-option{
-  width: 50px;
-}
-
-.product-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #24E2B8;
-  float: left;
-  margin-left: 3px;
-}
-.product-not-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #D2305B;
-  float: left;
-  margin-left: 3px;
-}
-.did-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: -10px;
-}
-.did-input-search{
-  width: 302px;
-  height: 40px !important;
-  padding-left: 40px;
-  margin-left: 20px;
-  margin-top: 20px;
 }
 button#create{
   	height: 40px;
@@ -1718,14 +1609,6 @@ button#call-cancel{
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.main-container{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
 }
 .side#active svg g{
   fill: white;

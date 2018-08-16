@@ -20,7 +20,7 @@
             Back to Companies
           </div>
         </router-link>
-        <div class="add-reseller">
+        <div class="history-main">
           <div class="transaction-title">
             Transaction History
           </div>
@@ -149,86 +149,6 @@ export default {
 }
 </script>
 <style>
-.transaction-table{
-  border: none;
-  max-width: calc(100% - 10px);
-  width: 100%;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  text-align: left;
-}
-.transaction-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin-left: 5px;
-  margin-bottom: 10px;
-}
-
-.transaction-date-th{
-  width: 201px;
-  padding-left: 15px;
-  height: 37px;
-}
-.transaction-type-th{
-  width: 170px;
-  height: 37px;
-}
-.transaction-description-th{
-  width: 397px;
-  height: 37px;
-}
-.transaction-company-th{
-  width: 177px;
-  height: 37px;
-}
-.transaction-amount-th{
-  width: 140px;
-  height: 37px;
-}
-
-.transaction-date{
-  width: 201px;
-  padding-left: 15px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.transaction-type{
-  width: 170px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.transaction-description{
-  width: 397px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.transaction-company{
-  width: 177px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.transaction-amount{
-  width: 140px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.add-reseller{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;

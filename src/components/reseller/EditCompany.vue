@@ -84,7 +84,7 @@
             <div class="grid-title">
               Change Logo
             </div>
-            <div class="upload-edit">
+            <div class="upload-edit-sec">
               <div class="upload-image">
                 <div class="upload-circle"></div>
               </div>
@@ -160,52 +160,6 @@ export default {
 }
 </script>
 <style>
-.upload-circle{
-  box-sizing: border-box;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  background-color: #F0F1FA;
-  margin: 5px;
-}
-.upload-image{
-  border: 1px dashed #5171F3;
-  border-radius: 50%;
-  height: 90px;
-  width: 90px;
-  text-align: center;
-  float: left;
-  display: inline-block;
-  margin-right: 15px;
-}
-.upload-edit{
-  background-color: #FFFFFF;
-  height: 280px;
-}
-.upload-container{
-  float: left;
-  display: inline-block;
-  height: 90px;
-  margin-top: 15px;
-}
-.upload-title-edit{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-}
-.upload-button-edit{
-  border-radius: 4px;
-  background-color: #51A3F3;
-  color: #FFFFFF;
-  font-family: "Helvetica Neue";
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 30px;
-  height: 36px;
-  width: 136px;
-}
 .add-company{
   float: left;
   display: inline-block;
@@ -227,14 +181,6 @@ export default {
   width: 100%;
   margin-top: 60px;
 }
-.product-vendor{
-  display: inline-block;
-  float: left;
-  max-width: calc(100% - 58.1818181818%);
-  width: 100%;
-  background-color: #F8F9FE;
-  height: 458px;
-}
 .company-add-title{
   color: #000000;
   font-family: "Helvetica Neue";
@@ -242,17 +188,6 @@ export default {
   font-weight: 500;
   line-height: 30px;
   margin: 15px;
-}
-.product-input-name{
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  padding-top: 10px;
 }
 .main-add{
   max-width: calc(100% - 300px);

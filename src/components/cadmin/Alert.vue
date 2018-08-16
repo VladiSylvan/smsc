@@ -229,27 +229,6 @@ button{
   height: 37px;
   box-shadow: inset 0 -1px 0 0 #DFE3E8;
 }
-.show-more{
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 23px;
-}
-a#show-more{
-  	height: 15px;
-    width: 69px;
-    color: #51A3F3;
-    font-family: "SF Pro Text";
-    font-size: 13px;
-    line-height: 15px;
-    text-decoration: none;
-}
-a{
-  text-decoration: none;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-}
 .navbar-profile{
   height: 50px;
   width: 100%;

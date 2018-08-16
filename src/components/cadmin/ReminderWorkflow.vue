@@ -117,46 +117,6 @@ a{
   height: 50px;
   width: 120px;
 }
-
-.did-name-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
-}
-.did-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.undo-title{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 30px;
-}
-.undo-image{
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
-}
-.undo-undo{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  display: inline-block;
-  float: right;
-  margin-top: 5px;
-  margin-right: 15px;
-}
 .smsw-table-th{
   height: 37px;
 }
@@ -189,67 +149,12 @@ a{
 .smsw-option{
   width: 50px;
 }
-
-.product-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #24E2B8;
-  float: left;
-  margin-left: 3px;
-}
-.product-not-active{
-  box-sizing: border-box;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: #D2305B;
-  float: left;
-  margin-left: 3px;
-}
-.did-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: -10px;
-}
-.did-input-search{
-  width: 302px;
-  height: 40px !important;
-  padding-left: 40px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-button#did{
-  	height: 40px;
-    width: 130px;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 20px;
-    float: right;
-    margin-right: 20px;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.main-container{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .side#active svg g{
   fill: white;

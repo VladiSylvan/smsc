@@ -20,7 +20,7 @@
             Back to Resellers
           </div>
         </router-link>
-        <div class="add-reseller">
+        <div class="history-main">
           <div class="payment-history-title">
             Payment History
           </div>
@@ -139,80 +139,6 @@ export default {
 }
 </script>
 <style>
-.payment-name-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
-}
-.payment-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.payment-history-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin-left: 5px;
-  margin-bottom: 10px;
-}
-
-.payment-date-th{
-  width: 189px;
-  padding-left: 15px;
-  height: 37px;
-}
-.payment-company-th{
-  width: 263px;
-  height: 37px;
-}
-.payment-description-th{
-  width: 493px;
-  height: 37px;
-}
-.payment-amount-th{
-  width: 140px;
-  height: 37px;
-}
-
-.payment-date{
-  width: 189px;
-  padding-left: 15px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-company{
-  width: 263px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-description{
-  width: 493px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-amount{
-  width: 140px;
-  height: 44px;
-  background-color: #FFFFFF;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.add-reseller{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;

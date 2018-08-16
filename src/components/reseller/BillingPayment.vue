@@ -42,7 +42,7 @@
                 <td class="payment-method">Wire</td>
                 <td class="payment-total"><b>$4</b></td>
                 <td class="payment-options">
-                  <div v-on:click="test = !test" class="billing-control-info"><img class="billing-control-box" src="@/assets/Icon/More.svg"></div>
+                  <div v-on:click="test = !test" class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div>
                   <div v-if="test" class="billing-payment-menu">
                     <div class="billing-payment-menu-link">
                       <div v-on:click="test = !test" class="billing-payment-menu-button">
@@ -53,10 +53,10 @@
                       </div>
                     </div>
                     <div class="billing-payment-menu-link">
-                      <router-link :to="{ name: 'BillingPayment'}">Download Excel Summary</router-link>
+                      <router-link :to="{ name: 'InvoiceHistory'}">Download Excel Summary</router-link>
                     </div>
                     <div class="billing-payment-menu-link">
-                      <router-link :to="{ name: 'BillingPayment'}">Download PDF</router-link>
+                      <router-link :to="{ name: 'TransactionHistory'}">Download PDF</router-link>
                     </div>
                   </div>
                 </td>
@@ -146,229 +146,6 @@ export default {
 }
 </script>
 <style>
-.payment-name-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
-}
-.payment-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.billing-main{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 40px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-a{
-  text-decoration: none;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-}
-.billing-payment-menu{
-	height: 140px;
-	width: 250px;
-	border-radius: 4px;
-  background-color: #FFFFFF;
-  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1);
-  display: inline-block;
-  vertical-align: top;
-  position: fixed;
-  z-index: 1;
-  float: right;
-  margin-left: -205px;
-  margin-top: -54px;
-}
-.billing-payment-menu-link{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  height: 40px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-.billing-payment-menu-link:first-child{
-  margin-top: 25px;
-}
-.billing-payment-span{
-  padding-top: 10px;
-  padding-left: 15px;
-}
-.billing-payment-menu-add{
-  color: #51A3F3;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-  height: 40px;
-  background-color: #F8F9FE;
-}
-.billing-payment-menu-button{
-  float: right;
-  display: inline-block;
-  margin-top: -5px;
-}
-.nav-link{
-  display: inline-block;
-  float: left;
-  height: 50px;
-  width: 76px;
-  margin-left: 20px;
-}
-.nav-line-pay{
-  border-bottom: 2px solid #51A3F3;
-  width: 76px;
-  margin-top: 13px;
-}
-.payment-id-th{
-  width: 241px;
-  padding-left: 15px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.payment-paid-th{
-  width: 234px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.payment-gateway-th{
-  width: 225px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.payment-method-th{
-  width: 200px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.payment-total-th{
-  width: 140px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.payment-options-th{
-  width: 45px;
-  height: 37px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-
-.payment-id{
-  width: 241px;
-  padding-left: 15px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-paid{
-  width: 234px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-gateway{
-  width: 225px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-method{
-  width: 200px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-total{
-  width: 140px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-options{
-  width: 45px;
-  height: 50px;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.payment-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;

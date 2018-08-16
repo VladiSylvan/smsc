@@ -12,10 +12,10 @@
             <div class="user-header-title">
               Filter by:
             </div>
-            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="company" v-model="user.company">
+            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="company-select" v-model="user.company">
               <option value="Company">Company</option>
             </select>
-            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Choose Company" class="company2" v-model="filter">
+            <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Choose Company" class="company-select-2" v-model="filter">
               <option value="">Choose Company</option>
               <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
             </select>
@@ -153,74 +153,12 @@ export default {
 }
 </script>
 <style>
-a{
-  text-decoration: none;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 16px;
-  line-height: 20px;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.main-container{
-  float: left;
-  display: inline-block;
-  width: calc(100% - 30px);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.company{
-    max-width: 13.6363636364%;
-    width: 100%;
-    height: 40px !important;
-    border: 1px solid #EDEEF3;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 10px 15px;
-    font-size: 14px;
-    line-height: 25px;
-    font-family: "Helvetica Neue";
-    color: #55616E;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    float: left;
-    margin-top: 20px;
-    margin-left: 10px;
-}
-.company2{
-    max-width: 16.3636363636%;
-    width: 100%;
-    height: 40px !important;
-    border: 1px solid #EDEEF3;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 10px 15px;
-    font-size: 14px;
-    line-height: 25px;
-    font-family: "Helvetica Neue";
-    color: #55616E;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    float: left;
-    margin-top: 20px;
-    margin-left: 10px;
-}
-@media only screen and (max-width: 1200px) {
-    .company, .company2{
-      max-width: 30%;
-      width: 100%;
-    }
 }
 @media only screen and (max-width: 990px) {
     .main{

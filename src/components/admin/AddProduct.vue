@@ -42,12 +42,12 @@
                   </tr>
                   <tr>
                     <td class="add-product-country">
-                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.country">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="product-country" v-model="user.country">
                         <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                       </select>
                     </td>
                     <td class="add-product-operator">
-                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user.operator">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="product-operator" v-model="user.operator">
                         <option value="China Unicom">China Unicom</option>
                       </select>
                     </td>
@@ -68,12 +68,12 @@
                   </tr>
                   <tr>
                     <td class="add-product-country">
-                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user2.country">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="product-country" v-model="user2.country">
                         <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                       </select>
                     </td>
                     <td class="add-product-operator">
-                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user2.operator">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="product-operator" v-model="user2.operator">
                         <option value="China Mobile">China Mobile</option>
                       </select>
                     </td>
@@ -94,12 +94,12 @@
                   </tr>
                   <tr>
                     <td class="add-product-country">
-                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user3.country">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="product-country" v-model="user3.country">
                         <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                       </select>
                     </td>
                     <td class="add-product-operator">
-                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="operator" v-model="user3.operator">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Operator" class="product-operator" v-model="user3.operator">
                         <option value="AT & T">AT & T</option>
                       </select>
                     </td>
@@ -132,7 +132,7 @@
                 <tbody>
                   <tr>
                     <td class="vendor-select">
-                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName1">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="product-vendor" v-model="vendor.vendorName1">
                         <option value="Vendor BB">Vendor BB</option>
                       </select>
                     </td>
@@ -145,7 +145,7 @@
                   </tr>
                   <tr>
                     <td class="vendor-select">
-                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="vendor" v-model="vendor.vendorName2">
+                      <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Vendor" class="product-vendor" v-model="vendor.vendorName2">
                         <option value="Vendor CC">Vendor CC</option>
                       </select>
                     </td>
@@ -158,7 +158,7 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="add-vendor">
+              <div class="add-product-vendor">
                 <div class="vendor-image">
                   <img src="@/assets/Icon/Plus.svg">
                 </div>
@@ -259,196 +259,6 @@ export default {
 }
 </script>
 <style>
-.vendor-title{
-  color: #BDBFD8;
-  font-family: "Helvetica Neue";
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 30px;
-  text-transform: uppercase;
-  margin-top: 15px;
-  margin-left: 15px;
-}
-.add-operator{
-  height: 60px;
-  display: inline-block;
-}
-.add-vendor{
-  height: 60px;
-  display: inline-block;
-}
-.operator-text{
-  float: left;
-  display: inline-block;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
-  margin-top: 20px;
-}
-.vendor-text{
-  float: left;
-  display: inline-block;
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 25px;
-  margin-top: 20px;
-}
-.operator-image{
-  float: left;
-  display: inline-block;
-  margin-top: 17px;
-  margin-right: 7px;
-}
-.vendor-image{
-  float: left;
-  display: inline-block;
-  margin-top: 17px;
-  margin-right: 7px;
-  margin-left: 15px;
-}
-.add-product-table{
-  max-width: 100%;
-  width: 100%;
-}
-.vendor-select{
-  width: 250px;
-}
-.vendor-input{
-  width: 120px;
-}
-.vendor-icon{
-  width: 30px;
-}
-.add-product-country{
-  width: 150px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.add-product-operator{
-  width: 170px;
-  padding-right: 15px;
-}
-.add-product-sell-rate{
-  width: 140px;
-}
-.add-product-icon{
-  width: 40px;
-}
-.product-add-main{
-  float: left;
-  display: inline-block;
-  background-color: #FFFFFF;
-  width: calc(100% - 70px);
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 15px;
-}
-.add-product{
-  float: left;
-  max-width: 58.4112149533%;
-  width: 100%;
-}
-.product-page-vendor{
-  float: left;
-  max-width: 41.5887850467%;
-  width: 100%;
-  background-color: #F8F9FE;
-  height: 458px;
-}
-.product-add-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin-bottom: 15px;
-}
-.product-input{
-  max-width: 90.0142601538%;
-  width: 100%;
-  margin-bottom: 20px;
-  height: 36px;
-  padding-left: 10px;
-}
-.product-input-sell-rate{
-  max-width: 150px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  height: 36px;
-  width: 100%;
-}
-.product-input-vendor{
-  max-width: 120px;
-  width: 100%;
-  height: 36px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-left: 10px;
-}
-.country{
-    max-width: 180px;
-    width: 100%;
-    height: 40px !important;
-    border: 1px solid #EDEEF3;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 10px 15px;
-    font-size: 14px;
-    line-height: 25px;
-    font-family: "Helvetica Neue";
-    color: #55616E;
-    margin-top: 5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    margin-bottom: 10px;
-}
-.operator{
-    max-width: 205px;
-    width: 100%;
-    height: 40px !important;
-    border: 1px solid #EDEEF3;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 10px 15px;
-    font-size: 14px;
-    line-height: 25px;
-    font-family: "Helvetica Neue";
-    color: #55616E;
-    margin-top: 5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    margin-bottom: 10px;
-}
-.vendor{
-    max-width: 245px;
-    width: 100%;
-    height: 40px !important;
-    border: 1px solid #EDEEF3;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 10px 15px;
-    font-size: 14px;
-    line-height: 25px;
-    font-family: "Helvetica Neue";
-    color: #55616E;
-    margin-top: 5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 15px;
-    margin-bottom: 5px;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;
@@ -456,37 +266,7 @@ export default {
   vertical-align: top;
   float: left;
 }
-@media only screen and (max-width: 1200px) {
-    .company-main{
-      max-width: 100%;
-    }
-    .company-second{
-      margin-top: 0px;
-      max-width: calc(100% - 30px);
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-}
-@media only screen and (max-width: 1000px) {
-    .logo{
-      display: none;
-    }
-    .logo-small{
-      display: inline-block;
-    }
-    .navi-logo{
-      max-width: 38.8333333333%;
-      width: 100%;
-    }
-    .navi-circle-open{
-      display: inline-block;
-    }
-    .navi-circle-close{
-      display: none;
-    }
-    ul, .sidebar-hide{
-      display: none;
-    }
+@media only screen and (max-width: 990px) {
     .main-add{
       max-width: 100%;
     }

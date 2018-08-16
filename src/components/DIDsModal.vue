@@ -167,24 +167,6 @@ font-family: Helvetica, Arial, sans-serif;
     display: inline-block;
     float: right;
 }
-
-button#DID{
-  	height: 40px;
-    width: 120px;
-    border-radius: 4px;
-    background-color: #51A3F3;
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-bottom: 20px;
-    float: left;
-}
 .modal-header{
   margin-top: 100px;
   width: 720px;

@@ -220,12 +220,6 @@ export default {
   float: left;
   margin-left: 3px;
 }
-.product-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: -10px;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;

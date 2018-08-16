@@ -154,14 +154,6 @@ export default {
   margin-top: 60px;
   margin-bottom: 20px;
 }
-.product-vendor{
-  display: inline-block;
-  float: left;
-  max-width: calc(100% - 58.1818181818%);
-  width: 100%;
-  background-color: #F8F9FE;
-  height: 458px;
-}
 .user-add-title{
   color: #000000;
   font-family: "Helvetica Neue";
@@ -169,17 +161,6 @@ export default {
   font-weight: 500;
   line-height: 30px;
   margin: 15px;
-}
-.product-input-name{
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  padding-top: 10px;
 }
 .main-add{
   max-width: calc(100% - 300px);
