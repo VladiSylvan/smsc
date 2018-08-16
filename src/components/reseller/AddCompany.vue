@@ -225,7 +225,7 @@ td#add-sell-rate{
       margin-right: 15px;
     }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 990px) {
     .main-add{
       max-width: 100%;
     }

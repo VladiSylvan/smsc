@@ -366,17 +366,6 @@ export default {
   line-height: 30px;
   margin-bottom: 15px;
 }
-.product-input-name{
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  padding-top: 10px;
-}
 .product-input{
   max-width: 90.0142601538%;
   width: 100%;

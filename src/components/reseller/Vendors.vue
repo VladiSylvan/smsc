@@ -226,13 +226,6 @@ export default {
   float: left;
   margin-top: -10px;
 }
-.vendor-input-search{
-  width: 317px;
-  height: 40px;
-  padding-left: 40px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
@@ -421,9 +414,6 @@ li:first-child{
     .navi-logo{
       max-width: 40.8333333333%;
       width: 100%;
-    }
-    .vendor-input-search{
-      max-width: calc(100% - 80px);
     }
 }
 @media only screen and (max-width: 990px) {

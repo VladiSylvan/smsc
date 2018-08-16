@@ -60,7 +60,7 @@ export default {
 </script>
 <style>
 .navi-user{
-  max-width: 228px;
+  max-width: 240px;
   float: right;
   display: inline-block;
   width: auto;
@@ -88,7 +88,7 @@ export default {
   text-align: left;
   margin-top: 20px;
   float: left;
-  margin-left: 83px;
+  margin-left: 88px;
   cursor: pointer;
 }
 .user-circle{
@@ -101,7 +101,7 @@ export default {
   margin-top: 15px;
   margin-left: 10px;
   margin-bottom: 15px;
-  margin-right: 15px;
+  margin-right: 10px;
   float: left;
   cursor: pointer;
 }

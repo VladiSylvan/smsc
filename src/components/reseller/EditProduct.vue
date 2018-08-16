@@ -593,9 +593,6 @@ li:first-child{
       max-width: 40.8333333333%;
       width: 100%;
     }
-    .vendor-input-search{
-      max-width: calc(100% - 80px);
-    }
 }
 @media only screen and (max-width: 990px) {
     .logo{

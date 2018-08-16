@@ -377,13 +377,6 @@ a{
   float: left;
   margin-left: 3px;
 }
-.product-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: -10px;
-  margin-left: 15px;
-}
 .reseller-input-search{
   width: 302px;
   height: 40px !important;
@@ -421,7 +414,7 @@ button#reseller{
   margin-left: 20px;
   margin-right: 20px;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 990px) {
     .main{
       max-width: 100%;
     }

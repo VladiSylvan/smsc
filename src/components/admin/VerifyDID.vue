@@ -91,25 +91,6 @@ export default {
 }
 </script>
 <style>
-.did-add-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin: 15px;
-}
-.product-input-name{
-  color: #000000;
-  font-family: "Circular Std";
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.21px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  padding-top: 10px;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;
@@ -117,7 +98,7 @@ export default {
   vertical-align: top;
   float: left;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 990px) {
     .main-add{
       max-width: 100%;
     }

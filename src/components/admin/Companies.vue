@@ -39,18 +39,18 @@
                 <tr>
                   <td class="companies-title" colspan="9"><div class="company-title-my">My Companies</div></td>
                 </tr>
-                <tr v-for="company in companies" v-if="company.is_created_by_admin == true">
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">{{ company.company_name }}</div></td>
-                  <td class="company-balance">${{ company.balance }}</td>
-                  <td class="company-pay">{{ company.credit }}</td>
-                  <td class="company-contact-text">{{ company.contact.first_name }} {{ company.contact.last_name }}</td>
-                  <td class="company-resellers">{{ company.reseller_name }}</td>
+                <tr v-for="myCompany, index in myCompanies">
+                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">{{ myCompany.company_name }}</div></td>
+                  <td class="company-balance">${{ myCompany.balance }}</td>
+                  <td class="company-pay">{{ myCompany.credit }}</td>
+                  <td class="company-contact-text">{{ myCompany.contact.first_name }} {{ myCompany.contact.last_name }}</td>
+                  <td class="company-resellers">{{ myCompany.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
-                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: company.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete()" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: myCompany.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(myCompany.company_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option">
-                    <div v-on:click="test = company.company_uuid" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
-                    <div v-if="test === company.company_uuid" class="company-menu">
+                    <div v-on:click="test = myCompany.company_uuid" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
+                    <div v-if="test === myCompany.company_uuid" class="company-menu">
                       <div class="company-menu-link">
                         <router-link :to="{ name: 'PaymentHistory'}">Payment History</router-link>
                         <div v-on:click="test = ''" class="company-menu-button">
@@ -136,6 +136,7 @@ export default {
           test: '',
           del: false,
           companies: [],
+          myCompanies: [],
           user: [],
           isModalVisible: false,
                 user:{
@@ -151,10 +152,12 @@ export default {
       var app = this
       this.axios.all([
         this.axios.get('company/list'),
+        this.axios.get('company/list?is_created_by_admin=true'),
         this.axios.get('user'),
-      ]).then( this.axios.spread((companies, user) => {
-        console.log(images)
+      ]).then( this.axios.spread((companies, myCompanies, user) => {
+        console.log(companies)
         app.companies = companies.data.payload.items
+        app.myCompanies = myCompanies.data.payload.items
         app.user = user.data.payload
       })).catch(error => {
         console.log(error)
@@ -368,13 +371,6 @@ a{
   height: 44px;
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
-}
-.product-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: -10px;
-  margin-left: 15px;
 }
 .company-header-title{
   color: #55616E;

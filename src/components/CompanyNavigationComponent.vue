@@ -465,14 +465,6 @@ li:first-child{
     }
 }
 @media only screen and (max-width: 990px) {
-    .system{
-      width: 46.5%;
-    }
-    .days{
-      width: 46.5%;
-    }
-}
-@media only screen and (max-width: 750px) {
     .logo{
       display: none;
     }
@@ -492,6 +484,14 @@ li:first-child{
     ul, .sidebar-hide{
       display: none;
     }
+    .system{
+      width: 46.5%;
+    }
+    .days{
+      width: 46.5%;
+    }
+}
+@media only screen and (max-width: 750px) {
     .system{
       width: 46.5%;
     }

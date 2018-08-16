@@ -329,13 +329,6 @@ export default {
   background-color: #D2305B;
   margin-left: 12px;
 }
-.product-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: -10px;
-  margin-left: 15px;
-}
 .template-input-search{
   width: 317px;
   height: 40px !important;

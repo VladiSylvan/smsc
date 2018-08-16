@@ -188,13 +188,6 @@ export default {
   float: left;
   margin-left: 3px;
 }
-.product-control-info{
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: -10px;
-  margin-left: 15px;
-}
 .product-search{
   width: 302px;
   border: 1px solid #EDEEF3;
@@ -222,7 +215,7 @@ export default {
   vertical-align: top;
   float: left;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 990px) {
     .main{
       max-width: 100%;
     }

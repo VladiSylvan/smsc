@@ -362,7 +362,7 @@ button#reporting{
       margin-right: 15px;
     }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 990px) {
     .main{
       max-width: 100%;
     }
