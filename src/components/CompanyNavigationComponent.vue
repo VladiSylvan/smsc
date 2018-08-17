@@ -189,7 +189,7 @@
               </path>
             </svg>
           </div>
-          <span v-if="show" class="side-link" id="active">Reminder Workflow</span>
+          <span v-if="show" class="side-link" id="active">Campaigns</span>
         </router-link>
       </li>
       <li v-if="title !== 'Campaigns'">

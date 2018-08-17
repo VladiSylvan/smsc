@@ -127,14 +127,6 @@ export default {
 }
 </script>
 <style>
-.did-add-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin: 15px;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;

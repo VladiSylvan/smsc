@@ -41,93 +41,93 @@
                 <thead>
                   <tr>
                     <th class="company">Company</th>
-                    <th class="date">Date</th>
-                    <th class="sms">SMS</th>
+                    <th class="mail-date">Date</th>
+                    <th class="mail-sms">SMS</th>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">97322</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">97322</td>
                   </tr>
                   <tr>
                     <td class="company">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
-                    <td class="sms">86906</td>
+                    <td class="mail-date">06 Nov 2018</td>
+                    <td class="mail-sms">86906</td>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">49288</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">49288</td>
                   </tr>
                   <tr>
                     <td class="company">Littelfort</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">18248</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">18248</td>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">97322</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">97322</td>
                   </tr>
                   <tr>
                     <td class="company">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
-                    <td class="sms">86906</td>
+                    <td class="mail-date">06 Nov 2018</td>
+                    <td class="mail-sms">86906</td>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">49288</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">49288</td>
                   </tr>
                   <tr>
                     <td class="company">Littelfort</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">18248</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">18248</td>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">97322</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">97322</td>
                   </tr>
                   <tr>
                     <td class="company">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
-                    <td class="sms">86906</td>
+                    <td class="mail-date">06 Nov 2018</td>
+                    <td class="mail-sms">86906</td>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">49288</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">49288</td>
                   </tr>
                   <tr>
                     <td class="company">Littelfort</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">18248</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">18248</td>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">97322</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">97322</td>
                   </tr>
                   <tr>
                     <td class="company">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
-                    <td class="sms">86906</td>
+                    <td class="mail-date">06 Nov 2018</td>
+                    <td class="mail-sms">86906</td>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">49288</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">49288</td>
                   </tr>
                   <tr>
                     <td class="company">Littelfort</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">18248</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">18248</td>
                   </tr>
                   <tr>
                     <td class="company">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
-                    <td class="sms">97322</td>
+                    <td class="mail-date">29 Apr 2018</td>
+                    <td class="mail-sms">97322</td>
                   </tr>
                 </thead>
               </table>
@@ -150,52 +150,52 @@
                 <thead>
                   <tr>
                     <th class="title">Title</th>
-                    <th class="date">Date</th>
+                    <th class="mail-date">Date</th>
                     <th class="status">Status</th>
                   </tr>
                   <tr>
                     <td class="title">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
+                    <td class="mail-date">29 Apr 2018</td>
                     <td class="status"><div class="active">Below</div></td>
                   </tr>
                   <tr>
                     <td class="title">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
+                    <td class="mail-date">06 Nov 2018</td>
                     <td class="status"><div class="not-active">Not Active</div></td>
                   </tr>
                   <tr>
                     <td class="title">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
+                    <td class="mail-date">29 Apr 2018</td>
                     <td class="status"><div class="active">Active</div></td>
                   </tr>
                   <tr>
                     <td class="title">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
+                    <td class="mail-date">29 Apr 2018</td>
                     <td class="status"><div class="active">Active</div></td>
                   </tr>
                   <tr>
                     <td class="title">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
+                    <td class="mail-date">06 Nov 2018</td>
                     <td class="status"><div class="not-active">Not Active</div></td>
                   </tr>
                   <tr>
                     <td class="title">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
+                    <td class="mail-date">29 Apr 2018</td>
                     <td class="status"><div class="active">Active</div></td>
                   </tr>
                   <tr>
                     <td class="title">Lou Haynes</td>
-                    <td class="date">06 Nov 2018</td>
+                    <td class="mail-date">06 Nov 2018</td>
                     <td class="status"><div class="not-active">Not Active</div></td>
                   </tr>
                   <tr>
                     <td class="title">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
+                    <td class="mail-date">29 Apr 2018</td>
                     <td class="status"><div class="active">Active</div></td>
                   </tr>
                   <tr>
                     <td class="title">Nellie Ferguson</td>
-                    <td class="date">29 Apr 2018</td>
+                    <td class="mail-date">29 Apr 2018</td>
                     <td class="status"><div class="active">Active</div></td>
                   </tr>
                 </thead>
@@ -344,256 +344,12 @@ export default {
 }
 </script>
 <style>
-.mail-avatar-fix{
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
-}
-.mail-avatar{
-  height: 30px;
-  width: 30px;
-  background-color: #ECEEF0;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.mail-days{
-    width: 170px;
-    height: 40px;
-    border: 1px solid #EDEEF3;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 10px 15px;
-    font-size: 14px;
-    line-height: 25px;
-    font-family: "Helvetica Neue";
-    color: #55616E;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 10px;
-    margin-right: 15px;
-}
-.usage{
-  display: inline-block;
-  float: right;
-  width: 150px;
-}
-.credit{
-  display: inline-block;
-  float: right;
-  width: 185px;
-}
-.mail-nav-text{
-  color: #BDBFD8;
-  font-family: "Circular Std";
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 20px;
-  text-align: center;
-  margin-top: 15px;
-}
-.mail-nav-text#active{
-  color: #51A3F3;
-  font-weight: 500;
-}
-a{
-  text-decoration: none;
-}
-.mail-nav-link{
-  display: inline-block;
-  float: left;
-  height: 50px;
-  width: 35px;
-  margin-left: 20px;
-}
-.nav-line-mail{
-  border-bottom: 2px solid #51A3F3;
-  width: 45px;
-  margin-top: 13px;
-}
-.header-text{
-  color: #55616E;
-  font-family: "Helvetica Neue";
-  font-size: 13px;
-  line-height: 25px;
-  margin-left: 20px;
-  display: inline-block;
-  float: left;
-}
-.header-title{
-  height: auto;
-  width: calc(100% - 60px);
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-.reporting-table{
-  margin-left: 20px;
-  border: none;
-  max-width: calc(100% - 40px);
-  width: 100%;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 15px;
-  text-align: left;
-}
-.invoice-table{
-  border: none;
-  max-width: calc(100%);
-  width: 100%;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 14px;
-  line-height: 16px;
-  text-align: left;
-}
-.company{
-  width: 174px;
-  padding-left: 15px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.title{
-  width: 174px;
-  padding-left: 15px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.date{
-  width: 189px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.sms{
-  width: 132px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.status{
-  width: 132px;
-  height: 37px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.created{
-  width: 134px;
-  height: 44px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-  padding-left: 15px;
-}
-.company2{
-  width: 169px;
-  height: 44px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.paid{
-  width: 96px;
-  height: 44px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.amount{
-  width: 96px;
-  height: 44px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.date2{
-  padding-left: 15px;
-  width: 124px;
-  height: 44px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.company3{
-  width: 129px;
-  height: 44px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.description{
-  width: 162px;
-  height: 44px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-.amount2{
-  width: 70px;
-  height: 44px;
-  box-shadow: inset 0 -1px 0 0 #DFE3E8;
-}
-
-.active{
-  box-sizing: border-box;
-  height: 24px;
-  width: 59px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
-  background-color: #24E2B8;
-  color: #212B36;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
-}
-.not-active{
-  box-sizing: border-box;
-  height: 24px;
-  width: 85px;
-  border: 2px solid #FFFFFF;
-  border-radius: 100px;
-  background-color: #D2305B;
-  color: #FFFFFF;
-  font-family: "SF Pro Text";
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  padding-top: 2px;
-}
-button{
-  	height: 36px;
-    width: calc(16.7737765466% + 10px);
-    border: 1px
-    solid #BDBFD8;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    font-family: "Helvetica Neue";
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 15px;
-    margin-left: 10px;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.header{
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: 61.1111111111%;
-  float: left;
-}
-.header-min{
-  display: inline-block;
-  vertical-align: top;
-  margin-left: -150px;
-  margin-right: 150px;
-  position: relative;
-  z-index: 1000;
 }
 @media only screen and (max-width: 990px) {
     .main{

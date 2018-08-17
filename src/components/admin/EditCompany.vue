@@ -24,6 +24,9 @@
         <router-link :to="{ name: 'Companies'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-company">
           <div class="company-main">
+            <div v-if="error">
+                <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
+            </div>
             <div class="company-add-title">
               Edit Company Information
             </div>
@@ -114,6 +117,8 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          error: false,
+          errorMsg: '',
           companies:{
             company_name: '',
             contact:{

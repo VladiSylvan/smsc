@@ -258,7 +258,7 @@ export default new Router({
         beforeEnter: checkAuth
     },
     {
-        path: '/sys/edit-vendor',
+        path: '/sys/edit-vendor/:id',
         name: 'EditVendor',
         component: EditVendor,
         beforeEnter: checkAuth

@@ -35,6 +35,8 @@
                 <td class="vendor-sales">{{ vendor.sales_email }}</td>
                 <td class="vendor-rate">{{ vendor.rate_email }}</td>
                 <td class="vendor-options"><router-link :to="{ name: 'VendorsRate'}"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reporting.svg"></div></router-link></td>
+                <td class="vendor-option"><div class="product-control-info"><router-link :to="{ name: 'EditVendor', params: { id: vendor.vendor_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                <td class="vendor-option"><div class="product-control-info"><img v-on:click="companyDelete(vendor.vendor_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
               </tr>
             </tbody>
           </table>

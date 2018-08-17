@@ -78,15 +78,6 @@ export default {
     .content{
         padding: 60px;
     }
-    h1{
-        color: #000000;
-        font-family: "Circular Std Medium";
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 24px;
-        text-align: center;
-        margin-bottom: 30px;
-    }
     input[type="text"], input[type="password"]{
       border: 1px solid #EDEEF3;
       border-radius: 4px;

@@ -104,50 +104,6 @@ export default {
 }
 </script>
 <style>
-.keyw-grid{
-  margin-left: 15px;
-  max-width: calc(50% - 35px);
-  display: inline-block;
-  float: left;
-  margin-bottom: 15px;
-  width: 100%;
-}
-.keyw-grid-2{
-  margin-right: 30px;
-  max-width: calc(50% - 35px);
-  display: inline-block;
-  float: right;
-  margin-bottom: 15px;
-  width: 100%;
-}
-.grid-input-2{
-  max-width: 100%;
-  width: 100%;
-  padding-left: 10px;
-  height: calc(195px - 4px);
-  line-height: 30px;
-}
-.grid-input-3{
-  max-width: 100%;
-  width: 100%;
-  padding-left: 10px;
-  height: calc(120px - 4px);
-  line-height: 30px;
-}
-.keyword-main{
-  display: inline-block;
-  float: left;
-  max-width: 100%;
-  width: 100%;
-}
-.did-add-title{
-  color: #000000;
-  font-family: "Helvetica Neue";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  margin: 15px;
-}
 .main-add{
   max-width: calc(100% - 300px);
   width: 100%;
@@ -155,24 +111,9 @@ export default {
   vertical-align: top;
   float: left;
 }
-@media only screen and (max-width: 1200px) {
-    .keyword-main{
-      max-width: 100%;
-    }
-}
 @media only screen and (max-width: 990px) {
     .main-add{
       max-width: 100%;
-    }
-}
-@media only screen and (max-width: 390px) {
-    .keyw-grid, .keyw-grid-2{
-      max-width: calc(100% - 40px);
-    }
-    .keyw-grid-2{
-      max-width: calc(100% - 40px);
-      float: left;
-      margin-left: 15px;
     }
 }
 </style>

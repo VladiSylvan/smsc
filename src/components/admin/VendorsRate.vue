@@ -37,7 +37,7 @@
               </thead>
               <tbody>
                 <tr class="vendor-rate-tr">
-                  <th class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
+                  <td class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
                   <td class="vendor-country">China</td>
                   <td class="vendor-operator">China Mobile</td>
                   <td class="vendor-sell-rate">0.001</td>
@@ -55,7 +55,7 @@
                   </td>
                 </tr>
                 <tr class="vendor-rate-tr">
-                  <th class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
+                  <td class="vendor-rate-active"><div class="vendor-active-circle"></div></th>
                   <td class="vendor-country">China</td>
                   <td class="vendor-operator">China Unicom</td>
                   <td class="vendor-sell-rate">0.0012</td>

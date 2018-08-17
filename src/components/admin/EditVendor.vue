@@ -20,7 +20,7 @@
             Back to Vendors
           </div>
         </router-link>
-        <router-link :to="{ name: 'EditVendor'}"><button id="product" type="submit">Save Vendor</button></router-link>
+        <router-link :to="{ name: 'EditVendor'}"><button id="product" v-on:click="edit()">Save Vendor</button></router-link>
         <router-link :to="{ name: 'Vendors'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-vendor">
           <div class="vendor-main">
@@ -31,13 +31,13 @@
               <div class="grid-title">
                 Company Name
               </div>
-              <input class="grid-input" type="text" v-model="user.companyName" placeholder="Company Name">
+              <input class="grid-input" type="text" v-model="vendors.company_name" placeholder="Company Name">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Contact
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Contact" class="grid-select" v-model="user.contact">
+              <select id="vendors" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Contact" class="grid-select" v-model="user.contact">
                 <option value="Chad Sullivan">Chad Sullivan</option>
               </select>
             </div>
@@ -45,7 +45,7 @@
               <div class="grid-title">
                 Type
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-select" v-model="user.type">
+              <select id="vendors" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-select" v-model="user.type">
                 <option value="SMPP">SMPP</option>
               </select>
             </div>
@@ -53,19 +53,25 @@
               <div class="grid-title">
                 Rate Email
               </div>
-              <input class="grid-input" type="text" v-model="user.rateEmail" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="vendors.rate_email" placeholder="Thomas">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Sales Email
               </div>
-              <input class="grid-input" type="text" v-model="user.salesEmail" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="vendors.sales_email" placeholder="Thomas">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 NOC Email
               </div>
-              <input class="grid-input" type="text" v-model="user.nocEmail" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="vendors.noc_email" placeholder="Thomas">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Vendor Name
+              </div>
+              <input class="grid-input" type="text" v-model="vendors.vendor_name" placeholder="Vendor Name">
             </div>
           </div>
           <div class="vendor-second">
@@ -101,7 +107,12 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
-          vendors: true,
+          vendors: {
+            noc_email: '',
+            rate_email: '',
+            sales_email: '',
+            vendor_name: '',
+          },
                 user:{
                 companyName: 'Appolo Inc.',
                 contact: 'Chad Sullivan',
@@ -128,6 +139,17 @@ export default {
             }
         }
     },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('vendor/' + this.$route.params.id),
+      ]).then( this.axios.spread((vendors) => {
+        console.log(vendors)
+        app.vendors = vendors.data.payload
+      })).catch(error => {
+        console.log(error)
+      })
+    },
     components:{
       modal,
       NavigationComponent,
@@ -141,6 +163,25 @@ export default {
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        edit(){
+          var app = this
+          event.preventDefault();
+          var updateData = {
+            noc_email: this.vendors.noc_email,
+            rate_email: this.vendors.rate_email,
+            sales_email: this.vendors.sales_email,
+            vendor_name: this.vendors.vendor_name,
+          }
+          this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
+              this.$router.push('/sys/vendors')
+          }).catch( err => {
+              var app = this
+
+              // app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         }
     },
 }

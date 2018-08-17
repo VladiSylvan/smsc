@@ -24,6 +24,9 @@
         <router-link :to="{ name: 'Resellers'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="edit-reseller">
           <div class="reseller-main">
+            <div v-if="error">
+                <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
+            </div>
             <div class="reseller-add-title">
               Edit Reseller Information
             </div>
@@ -31,13 +34,13 @@
               <div class="grid-title">
                 First Name
               </div>
-              <input class="grid-input" type="text" v-model="resellers.contact.name" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="resellers.first_name" placeholder="Caroline">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Last Name
               </div>
-              <input class="grid-input" type="text" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="resellers.last_name" placeholder="Thomas">
             </div>
             <div class="grid-1">
               <div class="grid-title">
@@ -134,9 +137,12 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          error: false,
+          errorMsg: '',
           resellers:{
+            first_name: '',
+            last_name: '',
             contact:{
-              name: '',
               phone: '',
               email: '',
               address: '',

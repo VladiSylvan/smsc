@@ -101,32 +101,12 @@ export default {
 }
 </script>
 <style>
-.routing-link{
-  text-decoration: underline;
-  color: #51A3F3;
-  cursor: pointer;
-}
 .main{
   max-width: calc(100% - 300px);
   width: 100%;
   display: inline-block;
   vertical-align: top;
   float: left;
-}
-.header{
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: 61.1111111111%;
-  float: left;
-}
-.header-min{
-  display: inline-block;
-  vertical-align: top;
-  margin-left: -150px;
-  margin-right: 150px;
-  position: relative;
-  z-index: 1000;
 }
 @media only screen and (max-width: 990px) {
     .main{

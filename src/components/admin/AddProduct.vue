@@ -24,6 +24,9 @@
           <router-link :to="{ name: 'AddProduct'}"><button id="product" v-on:click="create()" type="submit">Add Product</button></router-link>
           <router-link :to="{ name: 'Product'}"><button id="cancel" type="submit">Cancel</button></router-link>
           <div class="product-add-main">
+            <div v-if="error">
+                <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
+            </div>
             <div class="add-product">
               <div class="product-add-title">
                 Add Product Information
@@ -190,6 +193,8 @@ export default {
           isModalVisible: false,
           vendors: true,
           countries: [],
+          error: false,
+          errorMsg: '',
           product:{
             // rate_table_uuid: '1',
             product_name: 'AASdsadasdas',

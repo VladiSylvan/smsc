@@ -25,6 +25,9 @@
           <router-link :to="{ name: 'Vendors'}"><button id="cancel" type="submit">Cancel</button></router-link>
           <div class="add-vendor">
             <div class="vendor-main">
+              <div v-if="error">
+                  <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
+              </div>
               <div class="vendor-add-title">
                 Add Vendor Information
               </div>
@@ -32,7 +35,7 @@
                 <div class="grid-title">
                   Company Name
                 </div>
-                <input class="grid-input" type="text" v-model="vendor.vendor_name" placeholder="Company Name">
+                <input class="grid-input" type="text" v-model="vendor.company_name" placeholder="Company Name">
               </div>
               <div class="grid-4">
                 <div class="grid-title">
@@ -54,19 +57,25 @@
                 <div class="grid-title">
                   Rate Email
                 </div>
-                <input class="grid-input" type="text" v-model="vendor.vendor_email" placeholder="Thomas">
+                <input class="grid-input" type="text" v-model="vendor.rate_email" placeholder="Thomas">
               </div>
               <div class="grid-4">
                 <div class="grid-title">
                   Sales Email
                 </div>
-                <input class="grid-input" type="text" v-model="vendor.vendor_email" placeholder="Thomas">
+                <input class="grid-input" type="text" v-model="vendor.sales_email" placeholder="Thomas">
               </div>
               <div class="grid-4">
                 <div class="grid-title">
                   NOC Email
                 </div>
-                <input class="grid-input" type="text" v-model="vendor.vendor_email" placeholder="Thomas">
+                <input class="grid-input" type="text" v-model="vendor.noc_email" placeholder="Thomas">
+              </div>
+              <div class="grid-4">
+                <div class="grid-title">
+                  Vendor Name
+                </div>
+                <input class="grid-input" type="text" v-model="vendor.vendor_name" placeholder="Vendor Name">
               </div>
             </div>
             <div class="vendor-second">
@@ -99,6 +108,8 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          error: false,
+          errorMsg: '',
           vendor:{
             vendor_email: '',
             reseller_uuid: 'd4ff6a98-938b-49ca-9294-1b4d15daa9cc',

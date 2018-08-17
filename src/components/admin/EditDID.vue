@@ -24,6 +24,9 @@
         <router-link :to="{ name: 'DID'}"><button id="cancel" type="submit">Cancel</button></router-link>
         <div class="add-did">
           <div class="did-main">
+            <div v-if="error">
+                <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
+            </div>
             <div class="did-add-title">
               Edit DID
             </div>
@@ -87,6 +90,8 @@ export default {
           vendors: true,
           countries: [],
           companies: [],
+          error: false,
+          errorMsg: '',
           dids:{
             auto_resp_uuid: '',
             company_uuid: '',
