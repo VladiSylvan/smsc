@@ -188,7 +188,7 @@ export default {
             var app = this
             event.preventDefault();
             this.axios.post('company/' + value + '/send_confirm').then( res => {
-                this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
+                this.successMsg = 'OK'
                 console.log(res)
             }).catch( err => {
                 var app = this
