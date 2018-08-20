@@ -34,13 +34,13 @@
               <div class="grid-title">
                 First Name
               </div>
-              <input class="grid-input" type="text" v-model="resellers.first_name" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="resellers.contact.first_name" placeholder="Caroline">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Last Name
               </div>
-              <input class="grid-input" type="text" v-model="resellers.last_name" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="resellers.contact.last_name" placeholder="Thomas">
             </div>
             <div class="grid-1">
               <div class="grid-title">
@@ -139,18 +139,7 @@ export default {
           vendors: true,
           error: false,
           errorMsg: '',
-          resellers:{
-            first_name: '',
-            last_name: '',
-            contact:{
-              phone: '',
-              email: '',
-              address: '',
-              zipcode: '',
-              state: '',
-              city: ''
-            }
-          },
+          resellers: [],
           countries: [],
                 user:{
                 firstName: 'Caroline',

@@ -8,6 +8,11 @@
           </div>
         </div>
           <div class="main-header">
+            <div v-if="successMsg != ''">
+              <h5 style="color: green; text-align: center;">
+                {{ successMsg }}
+              </h5>
+            </div>
             <input class="user-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="search" placeholder="Search for user">
             <div class="user-header-title">
               Filter by:
@@ -39,7 +44,7 @@
               <tbody>
                 <tr v-for="user, index in users">
                   <td class="users-avatar"><div class="user-avatar"></div></td>
-                  <td class="users-name">{{ user.first_name }} {{ user.last_name }}</td>
+                  <td class="users-name">{{ user.full_name }}</td>
                   <td class="users-username">{{ user.first_name }}</td>
                   <td class="users-company">{{ user.company_name }}</td>
                   <td class="users-reseller">{{ user.reseller_name }}</td>
@@ -73,6 +78,7 @@ export default {
           filter: '',
           del: false,
           isModalVisible: false,
+          successMsg: '',
           companies: [],
                 user:{
                 system: 'Overall system',
@@ -141,6 +147,8 @@ export default {
           event.preventDefault();
           this.axios.delete('user/' + value).then( res => {
               this.users.splice(index, 1)
+              this.$route.params.successMsg = null
+              this.successMsg = 'OK'
           }).catch( err => {
               var app = this
 

@@ -40,9 +40,7 @@
                         </div>
                         <div class="col-md-3">
                           <label id="state">State</label>
-                          <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="state" v-model="user.contact.state">
-                            <option value="Nebraska">Nebraska</option>
-                          </select>
+                          <input required class="state" type="text" v-model="user.contact.state" placeholder="Enter state">
                         </div>
                         <div class="col-md-3">
                           <label>City</label>
@@ -103,7 +101,7 @@ export default {
           event.preventDefault()
           if (this.user.contact.passwd == this.user.passwd2 && this.user.contact.passwd.length > 5){
             this.axios.post('registration/create', app.user).then( res => {
-                this.$router.push('/login')
+                this.$router.push({ name: 'Login', params: { successMsg: 'OK' }})
             }).catch( err => {
                 var app = this
 

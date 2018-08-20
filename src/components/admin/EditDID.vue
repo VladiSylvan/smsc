@@ -149,7 +149,7 @@ export default {
             type: 'Local',
           }
           this.axios.patch('did/' + this.$route.params.id, updateData).then( res => {
-              this.$router.push('/sys/did')
+              this.$router.push({ name: 'DID', params: { successMsg: 'OK' }})
           }).catch( err => {
               var app = this
 

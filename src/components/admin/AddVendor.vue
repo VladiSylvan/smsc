@@ -33,9 +33,11 @@
               </div>
               <div class="grid-4">
                 <div class="grid-title">
-                  Company Name
+                  Company
                 </div>
-                <input class="grid-input" type="text" v-model="vendor.company_name" placeholder="Company Name">
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="vendor.company_uuid">
+                  <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
+                </select>
               </div>
               <div class="grid-4">
                 <div class="grid-title">
@@ -110,6 +112,7 @@ export default {
           vendors: true,
           error: false,
           errorMsg: '',
+          companies: [],
           vendor:{
             vendor_email: '',
             reseller_uuid: 'd4ff6a98-938b-49ca-9294-1b4d15daa9cc',
@@ -141,6 +144,16 @@ export default {
       modal,
       NavigationComponent,
     },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('company/list'),
+      ]).then( this.axios.spread((companies) => {
+        app.companies = companies.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
+    },
     methods:{
         showModal() {
           this.isModalVisible = true;
@@ -152,7 +165,7 @@ export default {
           var app = this
           event.preventDefault();
           this.axios.post('vendor/create', app.vendor).then( res => {
-              this.$router.push('/sys/vendors')
+              this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
           }).catch( err => {
               var app = this
 

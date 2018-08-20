@@ -8,6 +8,16 @@
           </div>
         </div>
           <div class="main-header">
+            <div v-if="successMsg != ''">
+              <h5 style="color: green; text-align: center;">
+                {{ successMsg }}
+              </h5>
+            </div>
+            <div v-if="this.$route.params.successMsg != null">
+              <h5 style="color: green; text-align: center;">
+                {{ this.$route.params.successMsg }}
+              </h5>
+            </div>
             <input class="company-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchCompany" placeholder="Search for company">
             <div class="company-header-title">
               Filter by:
@@ -45,7 +55,7 @@
                   <td class="company-pay">{{ myCompany.credit }}</td>
                   <td class="company-contact-text">{{ myCompany.contact.first_name }} {{ myCompany.contact.last_name }}</td>
                   <td class="company-resellers">{{ myCompany.reseller_name }}</td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="confirmDialog(myCompany.company_uuid)" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: myCompany.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(myCompany.company_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option">
@@ -83,7 +93,7 @@
                   <td class="company-pay">{{ company.credit }}</td>
                   <td class="company-contact-text">{{ company.contact.first_name }} {{ company.contact.last_name }}</td>
                   <td class="company-resellers">{{ company.reseller_name }}</td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="showModal()" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="confirmDialog(company.company_uuid)" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: company.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(company.company_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option">
@@ -116,9 +126,6 @@
             </table>
           </div>
         </div>
-        <div id="app">
-          <modal v-show="isModalVisible" @close="closeModal"/>
-        </div>
     </div>
 </template>
 <script>
@@ -138,6 +145,7 @@ export default {
           companies: [],
           myCompanies: [],
           user: [],
+          successMsg: '',
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
@@ -174,11 +182,22 @@ export default {
       NavigationComponent,
     },
     methods:{
-        showModal() {
-          this.isModalVisible = true;
-        },
-        closeModal() {
-          this.isModalVisible = false;
+        confirmDialog(value){
+          var r = confirm("Are you sure?");
+          if(r == true){
+            var app = this
+            event.preventDefault();
+            this.axios.post('company/' + value + '/send_confirm').then( res => {
+                this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
+                console.log(res)
+            }).catch( err => {
+                var app = this
+
+                app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
+            })
+          }
         },
         companyDelete(value, index){
           var app = this
@@ -186,6 +205,8 @@ export default {
           this.axios.delete('company/' + value).then( res => {
               // this.$router.push('/sys/companies')
               this.companies.splice(index, 1)
+              this.$route.params.successMsg = null
+              this.successMsg = 'OK'
           }).catch( err => {
               var app = this
 

@@ -15,6 +15,11 @@
             </select>
           </div>
         </div>
+        <div v-if="this.$route.params.successMsg != null">
+          <h5 style="color: green; text-align: center;">
+            {{ this.$route.params.successMsg }}
+          </h5>
+        </div>
         <div class="cont-1">
           <div class="chart-1">
             <div class="chart-1-title">

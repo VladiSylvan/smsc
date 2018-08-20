@@ -15,7 +15,7 @@
               <tr class="product-tr">
                 <th class="product-table-active"></th>
                 <th class="name">Product Name</th>
-                <th class="created">Created On</th>
+                <th class="product-created">Created On</th>
                 <th class="created-by">Created By</th>
                 <th class="owned-by">Owned By</th>
                 <th class="options"></th>

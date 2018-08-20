@@ -31,7 +31,9 @@
               <div class="grid-title">
                 Company Name
               </div>
-              <input class="grid-input" type="text" v-model="vendors.company_name" placeholder="Company Name">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="vendors.company_uuid">
+                <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
+              </select>
             </div>
             <div class="grid-4">
               <div class="grid-title">
@@ -107,11 +109,13 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
+          companies: [],
           vendors: {
             noc_email: '',
             rate_email: '',
             sales_email: '',
             vendor_name: '',
+            company_uuid: '',
           },
                 user:{
                 companyName: 'Appolo Inc.',
@@ -143,9 +147,11 @@ export default {
       var app = this
       this.axios.all([
         this.axios.get('vendor/' + this.$route.params.id),
-      ]).then( this.axios.spread((vendors) => {
+        this.axios.get('company/list'),
+      ]).then( this.axios.spread((vendors, companies) => {
         console.log(vendors)
         app.vendors = vendors.data.payload
+        app.companies = companies.data.payload.items
       })).catch(error => {
         console.log(error)
       })
@@ -172,9 +178,10 @@ export default {
             rate_email: this.vendors.rate_email,
             sales_email: this.vendors.sales_email,
             vendor_name: this.vendors.vendor_name,
+            company_uuid: this.vendors.company_uuid,
           }
           this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
-              this.$router.push('/sys/vendors')
+              this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
           }).catch( err => {
               var app = this
 

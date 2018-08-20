@@ -72,9 +72,7 @@
                 <div class="grid-title">
                   State
                 </div>
-                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="company.contact.state">
-                  <option value="MD">MD</option>
-                </select>
+                <input class="grid-input" type="text" v-model="company.contact.state" placeholder="MD">
               </div>
               <div class="grid-3">
                 <div class="grid-title">
@@ -93,7 +91,8 @@
                   Mode
                 </div>
                 <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Mode" class="grid-select">
-                  <option value="All">All</option>
+                  <option value="Prepay">Prepay</option>
+                  <option value="Postpay">Postpay</option>
                 </select>
               </div>
               <div class="grid-4">
@@ -172,7 +171,7 @@ export default {
           var app = this
           event.preventDefault();
           this.axios.post('company/create', app.company).then( res => {
-              this.$router.push('/sys/companies')
+              this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
           }).catch( err => {
               var app = this
 

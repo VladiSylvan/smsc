@@ -7,6 +7,16 @@
             DID
           </div>
         </div>
+        <div v-if="successMsg != ''">
+          <h5 style="color: green; text-align: center;">
+            {{ successMsg }}
+          </h5>
+        </div>
+        <div v-if="this.$route.params.successMsg != null">
+          <h5 style="color: green; text-align: center;">
+            {{ this.$route.params.successMsg }}
+          </h5>
+        </div>
           <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
           <router-link :to="{ name: 'ImportDID'}"><button id="did" type="submit">Import DID</button></router-link>
           <div class="main-container">
@@ -57,6 +67,7 @@ export default {
           test: false,
           del: false,
           dids: [],
+          successMsg: '',
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
@@ -94,6 +105,8 @@ export default {
           this.axios.delete('did/' + value).then( res => {
               // this.$router.push('/sys/did')
               this.dids.splice(index, 1)
+              this.$route.params.successMsg = null
+              this.successMsg = 'OK'
           }).catch( err => {
               var app = this
 

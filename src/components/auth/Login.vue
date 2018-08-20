@@ -10,6 +10,11 @@
                     <div v-if="error">
                         <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
                     </div>
+                    <div v-if="this.$route.params.successMsg != null">
+                      <h5 style="color: green; text-align: center;">
+                        {{ this.$route.params.successMsg }}
+                      </h5>
+                    </div>
                     <form v-on:submit="login()">
                         <label>Email</label>
                         <input required class="input-email" type="text" v-model="user.user_name" placeholder="elyse_sauer@yahoo.com">
@@ -50,7 +55,7 @@ export default {
                 localStorage.setItem('token-exp', res.data.payload.exp)
                 console.log('Token: ' + localStorage.getItem('token'))
                 console.log('Token expiry date: ' + localStorage.getItem('token-exp'))
-                this.$router.push('/sys/dashboard')
+                this.$router.push({ name: 'Dashboard', params: { successMsg: 'OK' }})
             }).catch( err => {
                 var app = this
 

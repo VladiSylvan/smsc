@@ -195,7 +195,7 @@ export default {
             }
           }
           this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
-              this.$router.push('/sys/companies')
+              this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
           }).catch( err => {
               var app = this
 
