@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <company-navigation-component title="Campaigns"></company-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Campaigns
@@ -31,6 +31,8 @@
         </div>
           <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for campaigns">
           <router-link :to="{ name: 'AddCampaign'}"><button id="campaign" type="submit">Add Campaign</button></router-link>
+        </div>
+        <div class="main">
           <div class="main-container">
             <div class="container-1">
               <div class="container-1-title">
@@ -205,17 +207,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

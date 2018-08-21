@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <company-navigation-component title="Campaigns"></company-navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
             Campaigns
@@ -22,6 +22,8 @@
         </router-link>
         <router-link :to="{ name: 'AddKeyword'}"><button id="product" type="submit">Schedule</button></router-link>
         <router-link :to="{ name: 'AllCampaigns'}"><button id="cancel" type="submit">Cancel</button></router-link>
+      </div>
+      <div class="main-add">
         <div class="add-camp">
           <div class="camp-title">
             Schedule Campaign
@@ -253,17 +255,3 @@ export default {
     },
 }
 </script>
-<style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
-</style>

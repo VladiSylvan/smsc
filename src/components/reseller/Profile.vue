@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <reseller-navigation-component title="Profile"></reseller-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Profile
@@ -25,7 +25,9 @@
         <div class="profile-main">
           <router-link :to="{ name: 'ProfilePayment'}"><button id="payment" type="submit">Next: Payment Gateway</button></router-link>
         </div>
-        </div>
+      </div>
+      <div class="main">
+      </div>
     </div>
 </template>
 <script>
@@ -66,17 +68,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

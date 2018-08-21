@@ -1,12 +1,14 @@
 <template>
     <div class="container">
       <staff-navigation-component title="SMS Center"></staff-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             SMS Center
           </div>
         </div>
+      </div>
+      <div class="main">
         <div class="messages">
           <div class="new-message">
             <div class="svg-add">
@@ -318,17 +320,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

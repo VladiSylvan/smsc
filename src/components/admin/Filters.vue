@@ -1,13 +1,15 @@
 <template>
     <div class="container">
       <navigation-component title="Filters"></navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Filters
           </div>
         </div>
           <input class="filters-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchFilters" placeholder="Search for filter">
+        </div>
+        <div class="main">
           <div class="main-container">
             <table class="filters-table" cellspacing="0" cellpadding="0">
               <thead>
@@ -99,17 +101,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <reseller-navigation-component title="Product"></reseller-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Product
@@ -9,6 +9,8 @@
         </div>
         <input class="product-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for product">
         <router-link :to="{ name: 'ResellerAddProduct'}"><button id="product" type="submit">Add Product</button></router-link>
+      </div>
+      <div class="main">
         <div class="product-main">
           <table class="product-table" cellspacing="0" cellpadding="0">
             <thead>
@@ -100,17 +102,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

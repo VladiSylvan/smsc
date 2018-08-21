@@ -1,12 +1,14 @@
 <template>
     <div class="container">
       <navigation-component title="Reporting"></navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Reporting
           </div>
         </div>
+      </div>
+      <div class="main">
         <div class="cont-1-rep">
             <div class="chart-1-reporting">
               <div class="chart-1-title-reporting">
@@ -168,17 +170,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

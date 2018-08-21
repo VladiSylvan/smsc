@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <company-navigation-component title="Alert"></company-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Alert
@@ -23,6 +23,8 @@
             </router-link>
           </div>
         </div>
+      </div>
+      <div class="main">
         <div class="cont-1-alert">
             <div class="chart-1-alert">
               <alert-weekly-line :options="{responsive: false, maintainAspectRatio: false}" :width="1000" :height="280"></alert-weekly-line>
@@ -138,17 +140,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

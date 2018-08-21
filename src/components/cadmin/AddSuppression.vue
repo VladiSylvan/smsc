@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <company-navigation-component title="DIDs"></company-navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
             DIDs
@@ -22,6 +22,8 @@
         </router-link>
         <router-link :to="{ name: 'AddSuppression'}"><button id="product" type="submit">Create</button></router-link>
         <router-link :to="{ name: 'Suppression'}"><button id="cancel" type="submit">Cancel</button></router-link>
+      </div>
+      <div class="main-add">
         <div class="add-did">
           <div class="did-main">
             <div class="did-add-title">
@@ -91,17 +93,3 @@ export default {
     },
 }
 </script>
-<style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
-</style>

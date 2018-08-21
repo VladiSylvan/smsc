@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <company-navigation-component title="Reminder Workflow"></company-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Reminder Workflow
@@ -22,6 +22,8 @@
         </router-link>
         <router-link :to="{ name: 'AddReminderWorkflow'}"><button id="create" type="submit">Create</button></router-link>
         <router-link :to="{ name: 'CompanyReminderWorkflow'}"><button id="sms-cancel" type="submit">Cancel</button></router-link>
+      </div>
+      <div class="main">
         <div class="main-sms-container">
           <div class="add-main-title">
             Name Reminder Workflow
@@ -343,17 +345,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

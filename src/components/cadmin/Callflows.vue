@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <company-navigation-component title="DIDs"></company-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             DIDs
@@ -32,6 +32,8 @@
           <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchCallflow" placeholder="Search for callflow">
           <router-link :to="{ name: 'CompanyDIDs'}"><button v-on:click="showModal()" id="did" type="submit">Buy DID</button></router-link>
           <router-link :to="{ name: 'CreateCallflow'}"><button id="did" type="submit">New Callflow</button></router-link>
+        </div>
+        <div class="main">
           <div class="main-container">
             <table class="did-table" cellspacing="0" cellpadding="0">
               <thead>
@@ -106,17 +108,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

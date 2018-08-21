@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <navigation-component title="Companies"></navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
             Companies
@@ -22,6 +22,8 @@
         </router-link>
         <router-link :to="{ name: 'EditCompany'}"><button id="product" v-on:click="edit()" type="submit">Save Company</button></router-link>
         <router-link :to="{ name: 'Companies'}"><button id="cancel" type="submit">Cancel</button></router-link>
+      </div>
+      <div class="main-add">
         <div class="add-company">
           <div class="company-main">
             <div v-if="error">
@@ -207,17 +209,3 @@ export default {
     },
 }
 </script>
-<style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
-</style>

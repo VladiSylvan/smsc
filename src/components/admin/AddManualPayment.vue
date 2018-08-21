@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <navigation-component title="Resellers"></navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
             Resellers
@@ -22,6 +22,8 @@
         </router-link>
         <router-link :to="{ name: 'AddManualPayment'}"><button id="product" type="submit">Add Payment</button></router-link>
         <router-link :to="{ name: 'Resellers'}"><button id="cancel" type="submit">Cancel</button></router-link>
+      </div>
+      <div class="main-add">
         <div class="history-main">
           <div class="payment-history-title">
             Payment History
@@ -89,17 +91,3 @@ export default {
     },
 }
 </script>
-<style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
-</style>

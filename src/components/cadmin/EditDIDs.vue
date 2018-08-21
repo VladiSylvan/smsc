@@ -1,13 +1,13 @@
 <template>
     <div class="container">
-      <reseller-navigation-component title="Vendors"></reseller-navigation-component>
+      <company-navigation-component title="DIDs"></company-navigation-component>
       <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
-            Vendors
+            DIDs
           </div>
         </div>
-        <router-link :to="{ name: 'ResellerVendors'}">
+        <router-link :to="{ name: 'CompanyDIDs'}">
           <div class="svg-back">
             <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <path d="M9.82106781,14.25 L23,14.25 L23,16.25 L9.84421387,16.25 L11.6568542,18.0626404 L10.2426407,19.4768539 L7.41842728,16.6526405 L7.41421356,16.6568542
@@ -17,69 +17,57 @@
             </svg>
           </div>
           <div class='back'>
-            Back to Vendors
+            Back to DID
           </div>
         </router-link>
-        <router-link :to="{ name: 'ResellerAddVendor'}"><button id="product" type="submit">Add Vendor</button></router-link>
-        <router-link :to="{ name: 'ResellerVendors'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        <router-link :to="{ name: 'CompanyEditDIDs'}"><button id="product" type="submit">Save DID</button></router-link>
+        <router-link :to="{ name: 'CompanyDIDs'}"><button id="cancel" type="submit">Cancel</button></router-link>
       </div>
       <div class="main-add">
-        <div class="add-vendor">
-          <div class="vendor-main">
-            <div class="vendor-add-title">
-              Add Vendor Information
+        <div class="add-did">
+          <div class="did-main">
+            <div class="did-add-title">
+              Edit DID
             </div>
             <div class="grid-4">
               <div class="grid-title">
-                Company Name
+                Phone Number
               </div>
-              <input class="grid-input" type="text" v-model="user.companyName" placeholder="Company Name">
+              <input class="grid-input" type="text" v-model="user.phoneNumber" placeholder="640-463-3807">
             </div>
             <div class="grid-4">
               <div class="grid-title">
-                Contact
+                Location
               </div>
-              <select id="vendors" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Contact" class="grid-select" v-model="user.contact">
-                <option value="Chad Sullivan">Chad Sullivan</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Location" class="grid-select" v-model="user.location">
+                <option value="North Malcolm">North Malcolm</option>
               </select>
             </div>
             <div class="grid-4">
               <div class="grid-title">
-                Type
+                Billing Rule
               </div>
-              <select id="vendors" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-select" v-model="user.type">
-                <option value="SMPP">SMPP</option>
+              <div class="grid-5">
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Rule" class="grid-select" v-model="user.billingRule">
+                  <option value="$1.00">$1.00</option>
+                </select>
+              </div>
+              <div class="grid-5-second">
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Rule Time" class="grid-select" v-model="user.billingRuleTime">
+                  <option value="per month">per month</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Company
+              </div>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company">
+                <option value="Appolo Inc.">Appolo Inc.</option>
               </select>
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Rate Email
-              </div>
-              <input class="grid-input" type="text" v-model="user.rateEmail" placeholder="Thomas">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                Sales Email
-              </div>
-              <input class="grid-input" type="text" v-model="user.salesEmail" placeholder="Thomas">
-            </div>
-            <div class="grid-4">
-              <div class="grid-title">
-                NOC Email
-              </div>
-              <input class="grid-input" type="text" v-model="user.nocEmail" placeholder="Thomas">
             </div>
           </div>
           <div class="vendor-second">
-            <div class="grid-title">
-              Choose Photo
-            </div>
-            <div class="upload">
-              <div class="upload-title">
-                Drop photo here or browse
-              </div>
-              <button class="upload-button" type="submit">Upload photo</button>
-            </div>
           </div>
         </div>
       </div>
@@ -87,7 +75,7 @@
 </template>
 <script>
 import modal from '@/components/modal.vue'
-import ResellerNavigationComponent from '@/components/ResellerNavigationComponent'
+import CompanyNavigationComponent from '@/components/CompanyNavigationComponent'
 
 export default {
     name: 'app',
@@ -100,8 +88,10 @@ export default {
           isModalVisible: false,
           vendors: true,
                 user:{
-                contact: 'Chad Sullivan',
-                type: 'SMPP',
+                location: 'North Malcolm',
+                billingRule: '$1.00',
+                billingRuleTime: 'per month',
+                company: 'Appolo Inc.'
             },
             user2:{
               country: 'China',
@@ -123,7 +113,7 @@ export default {
     },
     components:{
       modal,
-      ResellerNavigationComponent,
+      CompanyNavigationComponent,
     },
     methods:{
         sendForm(){

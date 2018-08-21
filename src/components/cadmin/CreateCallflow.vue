@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <company-navigation-component title="DIDs"></company-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             DIDs
@@ -22,6 +22,8 @@
         </router-link>
         <router-link :to="{ name: 'CreateCallflow'}"><button id="create" type="submit">Create</button></router-link>
         <router-link :to="{ name: 'Callflows'}"><button id="call-cancel" type="submit">Cancel</button></router-link>
+        </div>
+        <div class="main">
           <div class="main-container">
             <div class="callflow-create">
               <div class="callflow-main-title">
@@ -58,12 +60,12 @@
               </div>
             </div>
             <div class="callflow-main-cont">
-              <div class="callflow-circle-grey">
-                <div class="callflow-circle-grey-box">
-                  <img src="@/assets/Icon/Callflow/Greeting.svg">
-                </div>
-              </div>
               <div class="callflow-main-div">
+                <div class="callflow-circle-grey">
+                  <div class="callflow-circle-grey-box">
+                    <img src="@/assets/Icon/Callflow/Greeting.svg">
+                  </div>
+                </div>
                 <div class="callflow-cont-title">
                   Greeting
                 </div>
@@ -91,12 +93,12 @@
               </div>
             </div>
             <div class="callflow-main-cont">
-              <div class="callflow-circle-grey">
-                <div class="callflow-dial-box">
-                  <img style="transform: rotate(215deg);" src="@/assets/Icon/Callflow/Dial.svg">
-                </div>
-              </div>
               <div class="callflow-main-div">
+                <div class="callflow-circle-grey">
+                  <div class="callflow-dial-box">
+                    <img style="transform: rotate(215deg);" src="@/assets/Icon/Callflow/Dial.svg">
+                  </div>
+                </div>
                 <div class="callflow-cont-title">
                   Dial
                 </div>
@@ -131,12 +133,12 @@
               </div>
             </div>
             <div class="callflow-main-cont">
-              <div class="callflow-circle-grey">
-                <div class="callflow-simulcall-box">
-                  <img src="@/assets/Icon/Callflow/Call.svg">
-                </div>
-              </div>
               <div class="callflow-main-div">
+                <div class="callflow-circle-grey">
+                  <div class="callflow-simulcall-box">
+                    <img src="@/assets/Icon/Callflow/Call.svg">
+                  </div>
+                </div>
                 <div class="callflow-cont-title">
                   Simulcall
                 </div>
@@ -150,7 +152,7 @@
                       Ring in sequence
                     </div>
                     <input type="radio" checked="checked" name="radio">
-                    <span class="checkmark"></span>
+                    <span class="checkmark-call"></span>
                   </label>
                 </div>
                 <div class="callflow-radio-content">
@@ -159,7 +161,7 @@
                       Ring all at once
                     </div>
                     <input type="radio" name="radio">
-                    <span class="checkmark"></span>
+                    <span class="checkmark-call"></span>
                   </label>
                 </div>
                 <div class="callflow-input-title">
@@ -210,12 +212,12 @@
                 </div>
               </div>
               <div class="callflow-main-cont">
-                <div class="callflow-circle-grey">
-                  <div class="callflow-circle-grey-box">
-                    <img src="@/assets/Icon/Callflow/Menu.svg">
-                  </div>
-                </div>
                 <div class="callflow-main-div">
+                  <div class="callflow-circle-grey">
+                    <div class="callflow-circle-grey-box">
+                      <img src="@/assets/Icon/Callflow/Menu.svg">
+                    </div>
+                  </div>
                   <div class="callflow-cont-title">
                     Menu
                   </div>
@@ -270,12 +272,12 @@
                 </div>
               </div>
               <div class="callflow-main-cont">
-                <div class="callflow-circle-grey">
-                  <div class="callflow-circle-grey-box">
-                    <img src="@/assets/Icon/Callflow/Schedule.svg">
-                  </div>
-                </div>
                 <div class="callflow-main-div">
+                  <div class="callflow-circle-grey">
+                    <div class="callflow-circle-grey-box">
+                      <img src="@/assets/Icon/Callflow/Schedule.svg">
+                    </div>
+                  </div>
                   <div class="callflow-cont-title">
                     Schedule
                   </div>
@@ -378,12 +380,12 @@
                   </div>
                 </div>
                 <div class="callflow-main-cont">
-                  <div class="callflow-circle-grey">
-                    <div class="callflow-geo-box">
-                      <img src="@/assets/Icon/Callflow/Geo.svg">
-                    </div>
-                  </div>
                   <div class="callflow-main-div">
+                    <div class="callflow-circle-grey">
+                      <div class="callflow-geo-box">
+                        <img src="@/assets/Icon/Callflow/Geo.svg">
+                      </div>
+                    </div>
                     <div class="callflow-cont-title">
                       Geo-Routing
                     </div>
@@ -448,12 +450,12 @@
                     </div>
                   </div>
                   <div class="callflow-main-cont">
-                    <div class="callflow-circle-grey">
-                      <div class="callflow-tag-box">
-                        <img src="@/assets/Icon/Callflow/Tag.svg">
-                      </div>
-                    </div>
                     <div class="callflow-main-div">
+                      <div class="callflow-circle-grey">
+                        <div class="callflow-tag-box">
+                          <img src="@/assets/Icon/Callflow/Tag.svg">
+                        </div>
+                      </div>
                       <div class="callflow-cont-title">
                         Tag
                       </div>
@@ -489,12 +491,12 @@
                     </div>
                   </div>
                   <div class="callflow-main-cont">
-                    <div class="callflow-circle-grey">
-                      <div class="callflow-hang-box">
-                        <img src="@/assets/Icon/Callflow/Dial.svg">
-                      </div>
-                    </div>
                     <div class="callflow-main-div">
+                      <div class="callflow-circle-grey">
+                        <div class="callflow-hang-box">
+                          <img src="@/assets/Icon/Callflow/Dial.svg">
+                        </div>
+                      </div>
                       <div class="callflow-cont-title">
                         Hang up
                       </div>
@@ -504,12 +506,12 @@
                     </div>
                   </div>
                   <div class="callflow-main-cont">
-                    <div class="callflow-circle-green">
-                      <div class="callflow-plus-box">
-                        <img src="@/assets/Icon/Callflow/Plus.svg">
-                      </div>
-                    </div>
                     <div class="callflow-green-div">
+                      <div class="callflow-circle-green">
+                        <div class="callflow-plus-box">
+                          <img src="@/assets/Icon/Callflow/Plus.svg">
+                        </div>
+                      </div>
                       <div class="callflow-green-title">
                         What would you like to happen next?
                       </div>
@@ -582,17 +584,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

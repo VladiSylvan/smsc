@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LoginPage from '@/components/auth/Login'
 import RegisterPage from '@/components/auth/Register'
+import Upload from '@/components/admin/Upload'
 
 
 import Dashboard from '@/components/admin/Dashboard'
@@ -89,6 +90,8 @@ import AddCampaign from '@/components/cadmin/AddCampaign'
 import AddCampaignSecond from '@/components/cadmin/AddCampaignSecond'
 import SMSCenterNew from '@/components/cadmin/SMSCenterNew'
 import SMSCenterEmpty from '@/components/cadmin/SMSCenterEmpty'
+import Recipients from '@/components/cadmin/Recipients'
+import CompanyEditDIDs from '@/components/cadmin/EditDIDs'
 
 import StaffSMSCenter from '@/components/cstaff/SMSCenter'
 import StaffSMSCenterNew from '@/components/cstaff/SMSCenterNew'
@@ -124,6 +127,11 @@ export default new Router({
         path: '/register',
         name: 'Register',
         component: RegisterPage
+    },
+    {
+        path: '/sys/upload',
+        name: 'Upload',
+        component: Upload
     },
     {
         path: '/sys/dashboard',
@@ -568,6 +576,16 @@ export default new Router({
         path: '/ca/add-campaign-second',
         name: 'AddCampaignSecond',
         component: AddCampaignSecond
+    },
+    {
+        path: '/ca/recipients',
+        name: 'Recipients',
+        component: Recipients
+    },
+    {
+        path: '/ca/edit-dids',
+        name: 'CompanyEditDIDs',
+        component: CompanyEditDIDs
     },
     {
         path: '/cs/sms-center',

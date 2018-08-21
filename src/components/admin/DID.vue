@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <navigation-component title="DID"></navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             DID
@@ -19,6 +19,8 @@
         </div>
           <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for DID">
           <router-link :to="{ name: 'ImportDID'}"><button id="did" type="submit">Import DID</button></router-link>
+        </div>
+        <div class="main">
           <div class="main-container">
             <table class="did-table" cellspacing="0" cellpadding="0">
               <thead>
@@ -118,17 +120,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <reseller-navigation-component title="Products"></reseller-navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <router-link :to="{ name: 'ResellerProduct'}">
           <div class="svg-back">
             <svg class="svg" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -17,6 +17,8 @@
         </router-link>
         <router-link :to="{ name: 'ResellerEditProduct'}"><button id="product" type="submit">Save Product</button></router-link>
         <router-link :to="{ name: 'ResellerProduct'}"><button id="cancel" type="submit">Cancel</button></router-link>
+      </div>
+      <div class="main-add">
         <div class="product-add-main">
           <div class="add-reseller-product">
             <div class="product-add-title">
@@ -217,17 +219,3 @@ export default {
     },
 }
 </script>
-<style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
-</style>

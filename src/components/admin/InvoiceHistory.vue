@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <navigation-component title="Resellers"></navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
             Resellers
@@ -20,6 +20,8 @@
             Back to Resellers
           </div>
         </router-link>
+      </div>
+      <div class="main-add">
         <div class="history-main">
           <div class="invoice-title">
             Invoice History
@@ -148,17 +150,3 @@ export default {
     },
 }
 </script>
-<style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
-</style>

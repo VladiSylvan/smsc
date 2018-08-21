@@ -442,7 +442,7 @@ select{
   	color: #FFFFFF;
 }
 ul{
-	height: 100vh;
+	height: calc(100vh - 60px);
 	max-width: 300px;
   width: 100%;
 	background-color: #F0F1FA;

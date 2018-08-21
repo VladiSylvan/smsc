@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <reseller-navigation-component title="Companies"></reseller-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Billing
@@ -22,6 +22,8 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="main">
         <div class="billing-main">
           <table class="payment-table" cellspacing="0" cellpadding="0">
             <thead>
@@ -145,17 +147,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

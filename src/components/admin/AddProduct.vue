@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <navigation-component title="Product"></navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
             Product
@@ -20,9 +20,10 @@
             Back to Products
           </div>
         </router-link>
-        <form v-on:submit="create()">
-          <router-link :to="{ name: 'AddProduct'}"><button id="product" v-on:click="create()" type="submit">Add Product</button></router-link>
-          <router-link :to="{ name: 'Product'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        <router-link :to="{ name: 'AddProduct'}"><button id="product" v-on:click="create()" type="submit">Add Product</button></router-link>
+        <router-link :to="{ name: 'Product'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        </div>
+        <div class="main-add">
           <div class="product-add-main">
             <div v-if="error">
                 <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
@@ -174,7 +175,6 @@
               </div>
             </div>
           </div>
-        </form>
       </div>
     </div>
 </template>
@@ -263,17 +263,3 @@ export default {
     },
 }
 </script>
-<style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
-</style>

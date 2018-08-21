@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <navigation-component title="Vendors"></navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
             Vendors
@@ -20,9 +20,10 @@
             Back to Vendors
           </div>
         </router-link>
-        <form v-on:submit="create()">
-          <router-link :to="{ name: 'AddVendor'}"><button v-on:click="create()" id="product" type="submit">Add Vendor</button></router-link>
-          <router-link :to="{ name: 'Vendors'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        <router-link :to="{ name: 'AddVendor'}"><button v-on:click="create()" id="product" type="submit">Add Vendor</button></router-link>
+        <router-link :to="{ name: 'Vendors'}"><button id="cancel" type="submit">Cancel</button></router-link>
+      </div>
+        <div class="main-add">
           <div class="add-vendor">
             <div class="vendor-main">
               <div v-if="error">
@@ -92,7 +93,6 @@
               </div>
             </div>
           </div>
-        </form>
       </div>
     </div>
 </template>
@@ -177,17 +177,3 @@ export default {
     },
 }
 </script>
-<style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
-</style>

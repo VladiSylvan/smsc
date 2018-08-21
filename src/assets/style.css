@@ -136,7 +136,20 @@ button#product{
   border-radius: 6px;
   background-color: #FFFFFF;
   height: 280px;
+  width: 100%;
   text-align: center;
+}
+.upload-input{
+  border: 1px dashed #5171F3;
+  border-radius: 6px;
+  height: 280px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: -165px;
+}
+.upload input{
+  opacity: 0;
 }
 .upload-title{
   color: #55616E;
@@ -1660,6 +1673,14 @@ button#reporting{
   height: 40px !important;
   padding-left: 40px;
 }
+.recipients-input-search{
+  max-width: 26.4912280702%;
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 20px;
+  height: 40px !important;
+  padding-left: 40px;
+}
 button#did{
   	height: 40px;
     width: 130px;
@@ -1749,6 +1770,56 @@ button#did{
   height: 30px;
   float: left;
   margin-top: -10px;
+}
+.recipients-table{
+  border: none;
+  max-width: calc(100% - 10px);
+  width: 100%;
+  margin-top: 20px;
+  color: #212B36;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+}
+.recipients-table-th{
+  height: 37px;
+  font-weight: 600;
+}
+.recipients-online{
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  height: 50px;
+}
+.recipients-offline{
+  background-color: #F0F1FA;
+  box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
+  height: 50px;
+}
+.recipients-active{
+  width: 20px;
+  padding-left: 7px;
+}
+.recipients-active-td{
+  width: 20px;
+  padding-left: 7px;
+  vertical-align: text-top;
+  padding-top: 15px;
+}
+.recipients-name{
+  width: 269px;
+  vertical-align: text-top;
+}
+.recipients-phone{
+  width: 210px;
+  vertical-align: text-top;
+}
+.recipients-address{
+  width: 486px;
+  vertical-align: text-top;
+}
+.recipients-option{
+  width: 50px;
 }
 .upload-circle{
   box-sizing: border-box;
@@ -4613,7 +4684,7 @@ button#campaign{
     opacity: 0;
     cursor: pointer;
 }
-.checkmark {
+.checkmark-call {
     position: absolute;
     top: 0;
     left: 0;
@@ -4625,23 +4696,23 @@ button#campaign{
     margin-top: 23px;
     margin-left: 15px;
 }
-.callflow-radio-container:hover input ~ .checkmark {
+.callflow-radio-container:hover input ~ .checkmark-call {
     background-color: #FFF;
 }
-.callflow-radio-container input:checked ~ .checkmark {
+.callflow-radio-container input:checked ~ .checkmark-call {
     background-color: #24E2B8;
     border: 2px solid #24E2B8;
     margin-top: 22px;
 }
-.checkmark:after {
+.checkmark-call:after {
     content: "";
     position: absolute;
     display: none;
 }
-.callflow-radio-container input:checked ~ .checkmark:after {
+.callflow-radio-container input:checked ~ .checkmark-call:after {
     display: block;
 }
-.callflow-radio-container .checkmark:after {
+.callflow-radio-container .checkmark-call:after {
  	top: 3px;
 	left: 3px;
 	width: 10px;
@@ -4884,7 +4955,6 @@ button#campaign{
   line-height: 30px;
   display: inline-block;
   float: left;
-  margin-top: 37px;
   width: 85%;
   height: 30px;
 }
@@ -4904,9 +4974,9 @@ button#campaign{
 	border-radius: 30px;
 	background-color: #55616E;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  position: absolute;
-  margin-top: 15px;
-  margin-left: 15px;
+  position: relative;
+  top: -28px;
+  z-index: 999999;
 }
 .callflow-circle-green{
 	height: 54px;
@@ -4914,9 +4984,9 @@ button#campaign{
 	border-radius: 30px;
 	background-color: #24E2B8;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-  position: absolute;
-  margin-top: 15px;
-  margin-left: 15px;
+  position: relative;
+  top: -28px;
+  z-index: 999999;
 }
 .callflow-record-question{
   color: #A6B6BE;
@@ -6014,6 +6084,59 @@ button#preview{
   background-color: #F0F1FA;
   box-shadow: inset 0 -1px 0 0 rgba(189,191,216,0.36);
 }
+.main-add-navi{
+  max-width: calc(100% - 300px);
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+}
+.main-add{
+  max-width: calc(100% - 300px);
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  height: calc(100vh - 170px);
+  overflow: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+.main-add::-webkit-scrollbar{
+  display: none;
+}
+.main-navi{
+  max-width: calc(100% - 300px);
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+}
+.main{
+  max-width: calc(100% - 300px);
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  height: calc(100vh - 170px);
+  overflow: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+.main::-webkit-scrollbar{
+  display: none;
+}
+.popup-link{
+  	height: 20px;
+    width: 158px;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    color: #000000;
+    margin-top: 15px;
+    cursor: pointer;
+}
 @media only screen and (max-width: 1270px) {
   .cont-grid{
     max-width: 19.6363636364%;
@@ -6126,6 +6249,20 @@ button#preview{
     }
     .cont-grid{
       max-width: 24.5454545454%;
+    }
+}
+@media only screen and (max-width: 990px) {
+    .main-add{
+      max-width: 100%;
+    }
+    .main-add-navi{
+      max-width: 100%;
+    }
+    .main{
+      max-width: 100%;
+    }
+    .main-navi{
+      max-width: 100%;
     }
 }
 @media only screen and (max-width: 620px) {

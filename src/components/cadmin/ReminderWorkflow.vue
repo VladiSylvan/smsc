@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <company-navigation-component title="Reminder Workflow"></company-navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Reminder Workflow
@@ -9,6 +9,8 @@
         </div>
           <input class="did-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchDID" placeholder="Search for Reminder Workflow">
           <router-link :to="{ name: 'AddReminderWorkflow'}"><button v-on:click="showModal()" id="did" type="submit">Add Workflow</button></router-link>
+        </div>
+        <div class="main">
           <div class="main-container">
             <table class="did-table" cellspacing="0" cellpadding="0">
               <thead>
@@ -89,17 +91,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

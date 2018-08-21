@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <navigation-component title="Vendors"></navigation-component>
-      <div class="main">
+      <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
             Vendors
@@ -20,6 +20,8 @@
             Back to Vendors
           </div>
         </router-link>
+      </div>
+      <div class="main">
         <div class="add-vendor-rate">
           <div class="vendor-rate-main">
             <div class="vendor-add-title">
@@ -155,17 +157,3 @@ export default {
     },
 }
 </script>
-<style>
-.main{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main{
-      max-width: 100%;
-    }
-}
-</style>

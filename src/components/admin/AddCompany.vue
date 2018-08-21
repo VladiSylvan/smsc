@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <navigation-component title="Companies"></navigation-component>
-      <div class="main-add">
+      <div class="main-add-navi">
         <div class="res-div">
           <div class="head-title">
             Companies
@@ -22,6 +22,8 @@
         </router-link>
           <button id="product" @click="create()" type="submit">Add Company</button>
           <router-link :to="{ name: 'Companies'}"><button id="cancel" type="submit">Cancel</button></router-link>
+        </div>
+        <div class="main-add">
           <div class="add-company">
             <div class="company-main">
               <div v-if="error">
@@ -107,10 +109,18 @@
                 Choose Logo
               </div>
               <div class="upload">
-                <div class="upload-title">
-                  <input type="file" @change="onFileChanged($event)" accept="image/*" id="file-input">
-                  <button class="upload-button" @click="uploadImage()">Upload logo</button>
+                <div v-if="selectedFile == null" class="upload-title">
+                  Drop photo here or browse
                 </div>
+                <button v-if="selectedFile == null" class="upload-button" type="submit">Upload photo</button>
+                <div v-if="selectedFile != null" class="upload-title">
+                  {{ selectedFile.name }}
+                </div>
+                <form role="form" enctype="multipart/form-data" @submit.prevent="onSubmit">
+                  <div class="dropArea" @ondragover="onFileChanged($event)" :class="dragging ? 'dropAreaDragging' : ''" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
+                    <input type="file" class="upload-input" name="selectedFile" required multiple @change="onFileChanged($event)" accept="image/*">
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -132,6 +142,7 @@ export default {
           isModalVisible: false,
           vendors: true,
           selectedFile: null,
+          dragging: false,
           countries: [],
           company:{
             credit: '',
@@ -168,37 +179,34 @@ export default {
           this.isModalVisible = false;
         },
         create(){
-          var app = this
-          event.preventDefault();
-          this.axios.post('company/create', app.company).then( res => {
-              this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
-          }).catch( err => {
-              var app = this
+          let data = new FormData();
+          data.append('file', this.selectedFile);
+          data.append('belongs_to', 'user.logo')
 
-              app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
+          this.axios.post(
+            '/file',
+            data
+          ).then(
+            response => {
+              var app = this
+              event.preventDefault();
+              this.axios.post('company/create', app.company).then( res => {
+              this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
+              }).catch( err => {
+                  var app = this
+
+                  app.errorMsg = err.response.data.error.message
+                  app.error = true
+                  console.log(err.response)
+              })
+              this.company.contact.logo_file_uuid = response.data.object_uuid
+              console.log('image upload response > ', response)
+            }
+          )
         },
         onFileChanged(event){
-          console.log(event)
           this.selectedFile = event.target.files[0]
         },
-        uploadImage() {
-        let data = new FormData();
-        data.append('file', this.selectedFile);
-        data.append('belongs_to', 'user.logo')
-
-        this.axios.post(
-          '/file',
-          data
-        ).then(
-          response => {
-            this.company.contact.logo_file_uuid = response.data.object_uuid
-            console.log('image upload response > ', response)
-          }
-        )
-      }
     },
     mounted(){
       var app = this
@@ -214,16 +222,4 @@ export default {
 }
 </script>
 <style>
-.main-add{
-  max-width: calc(100% - 300px);
-  width: 100%;
-  display: inline-block;
-  vertical-align: top;
-  float: left;
-}
-@media only screen and (max-width: 990px) {
-    .main-add{
-      max-width: 100%;
-    }
-}
 </style>
