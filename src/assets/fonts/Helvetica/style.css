@@ -2,12 +2,12 @@
 font-family: 'Helvetica';
 font-style: normal;
 font-weight: normal;
-src: local('Helvetica'), url('Helvetica.ttc') format('ttc');
+src: local('Helvetica'), url('Helvetica.ttf') format('truetype');
 }
 
 @font-face {
 font-family: 'Helvetica Neue';
 font-style: normal;
 font-weight: normal;
-src: local('Helvetica Neue'), url('HelveticaNeue.ttc') format('ttc');
+src: local('Helvetica Neue'), url('HelveticaNeue.ttf') format('truetype');
 }

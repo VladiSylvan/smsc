@@ -106,6 +106,7 @@ export default {
 .username{
   color: #55616E;
   font-family: "Helvetica Neue";
+  font-weight: bold;
   font-size: 15px;
   line-height: 20px;
   text-align: left;
@@ -132,6 +133,7 @@ export default {
   .username{
     color: #55616E;
     font-family: "Helvetica Neue";
+    font-weight: bold;
     font-size: 15px;
     line-height: 20px;
     text-align: left;
@@ -143,8 +145,8 @@ export default {
 }
 #avatar{
   	font-family: "Helvetica Neue";
+    font-weight: bold;
     font-size: 12px;
-    font-weight: 500;
     letter-spacing: 1px;
     line-height: 15px;
     text-align: center;
@@ -165,6 +167,7 @@ export default {
   	height: 20px;
     width: 158px;
     font-family: "Helvetica Neue";
+    font-weight: bold;
     font-size: 16px;
     line-height: 20px;
     display: inline-block;
@@ -175,6 +178,7 @@ export default {
   	height: 20px;
     width: 158px;
     font-family: "Helvetica Neue";
+    font-weight: bold;
     font-size: 16px;
     line-height: 20px;
     display: inline-block;

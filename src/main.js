@@ -16,6 +16,7 @@ Vue.use(require('vue-moment'));
 require('./assets/grid.css')
 require('./assets/style.css')
 require('./assets/fonts/circular/style.css')
+require('./assets/fonts/Helvetica/style.css')
 
 Vue.config.productionTip = false
 

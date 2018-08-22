@@ -393,6 +393,7 @@ li#active svg g{
     font-size: 14px;
     line-height: 25px;
     font-family: "Helvetica Neue";
+    font-weight: bold;
     color: #55616E;
     margin-top: 5px;
     -webkit-box-sizing: border-box;
@@ -413,6 +414,7 @@ li#active svg g{
     font-size: 14px;
     line-height: 25px;
     font-family: "Helvetica Neue";
+    font-weight: bold;
     color: #55616E;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -437,6 +439,7 @@ select{
     line-height: 20px;
     display: inline-block;
     margin-top: 10px;
+    font-weight: bold;
 }
 .side-link#active{
   	color: #FFFFFF;
