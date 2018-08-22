@@ -38,7 +38,6 @@
                   <th class="users-company-th">Company</th>
                   <th class="users-reseller-th">Reseller</th>
                   <th class="users-start-th">Start from</th>
-                  <th class="users-role-th">Role</th>
                   <th class="users-option-th"></th>
                   <th class="users-option-th"></th>
                 </tr>
@@ -47,11 +46,10 @@
                 <tr v-for="user, index in users">
                   <td class="users-avatar"><div class="user-avatar"></div></td>
                   <td class="users-name">{{ user.full_name }}</td>
-                  <td class="users-username">{{ user.first_name }}</td>
+                  <td class="users-username">{{ user.user_name }}</td>
                   <td class="users-company">{{ user.company_name }}</td>
                   <td class="users-reseller">{{ user.reseller_name }}</td>
                   <td class="users-start">{{ user.created_on | moment("DD MMM YYYY") }}</td>
-                  <td class="users-role">{{ user.rank }}</td>
                   <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="users-option"><div class="product-control-info"><img v-on:click="userDelete(user.user_id, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>

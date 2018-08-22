@@ -185,17 +185,17 @@ export default {
     },
     methods:{
         confirmDialog(value){
-          var r = confirm("Are you sure?");
+          var r = confirm("Are you sure want send email?");
           if(r == true){
             var app = this
             event.preventDefault();
             this.axios.post('company/' + value + '/send_confirm').then( res => {
-                this.successMsg = 'OK'
+                this.successMsg = 'Mail has been sent successfully'
                 console.log(res)
             }).catch( err => {
                 var app = this
 
-                app.errorMsg = err.response.data.error.message
+                app.errorMsg = 'Failed to send an email'
                 app.error = true
                 console.log(err.response)
             })

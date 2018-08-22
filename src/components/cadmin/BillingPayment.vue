@@ -37,12 +37,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="payment-id">25964</td>
-                <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
-                <td class="payment-method">Wire</td>
-                <td class="payment-total"><b>$4</b></td>
+              <tr v-for="payment in payments">
+                <td class="payment-id">{{ payment.invoice_number }}</td>
+                <td class="payment-paid">{{ payment.paid_on | moment("MM-DD-YYYY") }}</td>
+                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">{{ payment.company_name }}</div></td>
+                <td class="payment-method">{{ payment.method }}</td>
+                <td class="payment-total"><b>${{ payment.amount }}</b></td>
                 <td class="payment-options">
                   <div v-on:click="test = !test" class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div>
                   <div v-if="test" class="billing-payment-menu">
@@ -62,46 +62,6 @@
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
-                <td class="payment-id">25964</td>
-                <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
-                <td class="payment-method">Paypal</td>
-                <td class="payment-total"><b>$19</b></td>
-                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="payment-id">25964</td>
-                <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
-                <td class="payment-method">ACH</td>
-                <td class="payment-total"><b>$80</b></td>
-                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="payment-id">25964</td>
-                <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
-                <td class="payment-method">Wire</td>
-                <td class="payment-total"><b>$4</b></td>
-                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="payment-id">25964</td>
-                <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
-                <td class="payment-method">Paypal</td>
-                <td class="payment-total"><b>$19</b></td>
-                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
-              </tr>
-              <tr>
-                <td class="payment-id">25964</td>
-                <td class="payment-paid">10-03-2018</td>
-                <td class="payment-gateway"><div class="payment-avatar"></div> <div class="payment-name-fix">San Marino</div></td>
-                <td class="payment-method">ACH</td>
-                <td class="payment-total"><b>$80</b></td>
-                <td class="payment-options"><div class="payment-control-info"><img class="payment-control-box" src="@/assets/Icon/More.svg"></div></td>
               </tr>
             </tbody>
           </table>
@@ -123,6 +83,7 @@ export default {
           popup: false,
           test: false,
           isModalVisible: false,
+          payments: [],
                 user:{
                 system: 'Overall system',
                 days: 'Last 30 days'
@@ -135,15 +96,23 @@ export default {
       CompanyNavigationComponent,
     },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
         }
+    },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('payment/list'),
+      ]).then( this.axios.spread((payments) => {
+        console.log(payments)
+        app.payments = payments.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
 }
 </script>

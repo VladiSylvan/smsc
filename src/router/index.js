@@ -92,6 +92,7 @@ import SMSCenterNew from '@/components/cadmin/SMSCenterNew'
 import SMSCenterEmpty from '@/components/cadmin/SMSCenterEmpty'
 import Recipients from '@/components/cadmin/Recipients'
 import CompanyEditDIDs from '@/components/cadmin/EditDIDs'
+import CompanyLogin from '@/components/cadmin/Login'
 
 import StaffSMSCenter from '@/components/cstaff/SMSCenter'
 import StaffSMSCenterNew from '@/components/cstaff/SMSCenterNew'
@@ -456,6 +457,11 @@ export default new Router({
         path: '/ca/alert',
         name: 'Alert',
         component: Alert
+    },
+    {
+        path: '/ca/login',
+        name: 'CompanyLogin',
+        component: CompanyLogin
     },
     {
         path: '/ca/weekly',

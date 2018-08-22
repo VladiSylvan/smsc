@@ -20,7 +20,7 @@
         </select>
       </span>
     </div>
-    <profile-component></profile-component>
+    <profile-component name="Company"></profile-component>
     <div class="clear: both;"></div>
     <transition name="fade">
     <ul v-bind:class="{'sidebar-hide': !show}">

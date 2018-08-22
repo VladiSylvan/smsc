@@ -44,9 +44,7 @@
                 <div class="grid-title">
                   Contact
                 </div>
-                <select id="vendors" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Contact" class="grid-select" v-model="user.contact">
-                  <option value="Chad Sullivan">Chad Sullivan</option>
-                </select>
+                <input class="grid-input" type="text" v-model="vendor.contact_person" placeholder="Thomas">
               </div>
               <div class="grid-4">
                 <div class="grid-title">
@@ -83,13 +81,21 @@
             </div>
             <div class="vendor-second">
               <div class="grid-title">
-                Choose Photo
+                Choose Logo
               </div>
               <div class="upload">
-                <div class="upload-title">
+                <div v-if="selectedFile == null" class="upload-title">
                   Drop photo here or browse
                 </div>
-                <button class="upload-button" type="submit">Upload photo</button>
+                <button v-if="selectedFile == null" class="upload-button" type="submit">Upload photo</button>
+                <div v-if="selectedFile != null" class="upload-title">
+                  {{ selectedFile.name }}
+                </div>
+                <form role="form" enctype="multipart/form-data" @submit.prevent="onSubmit">
+                  <div class="dropArea" @ondragover="onFileChanged($event)" :class="dragging ? 'dropAreaDragging' : ''" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
+                    <input type="file" class="upload-input" name="selectedFile" required multiple @change="onFileChanged($event)" accept="image/*">
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -112,6 +118,8 @@ export default {
           vendors: true,
           error: false,
           errorMsg: '',
+          selectedFile: null,
+          dragging: false,
           companies: [],
           vendor:{
             vendor_email: '',
@@ -162,18 +170,34 @@ export default {
           this.isModalVisible = false;
         },
         create(){
-          var app = this
-          event.preventDefault();
-          this.axios.post('vendor/create', app.vendor).then( res => {
-              this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
-          }).catch( err => {
-              var app = this
+          let data = new FormData();
+          data.append('file', this.selectedFile);
+          data.append('belongs_to', 'user.logo')
 
-              app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
-        }
+          this.axios.post(
+            '/file',
+            data
+          ).then(
+            response => {
+              var app = this
+              event.preventDefault();
+              this.axios.post('vendor/create', app.vendor).then( res => {
+                  this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
+              }).catch( err => {
+                  var app = this
+
+                  app.errorMsg = err.response.data.error.message
+                  app.error = true
+                  console.log(err.response)
+              })
+              this.vendor.logo_file_uuid = response.data.object_uuid
+              console.log('image upload response > ', response)
+            }
+          )
+        },
+        onFileChanged(event){
+          this.selectedFile = event.target.files[0]
+        },
     },
 }
 </script>
