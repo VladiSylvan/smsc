@@ -87,18 +87,26 @@
           </div>
           <div class="company-second">
             <div class="grid-title">
-              Change Logo
+              Change Photo
             </div>
-            <div class="upload-edit-sec">
+            <div class="upload-edit">
               <div class="upload-image">
                 <div class="upload-circle"></div>
               </div>
               <div class="upload-container">
-                <div class="upload-title-edit">
-                  Drop logo here or browse
+                <div v-if="selectedFile == null" class="upload-title-edit">
+                  Drop photo here or browse
                 </div>
-                <button class="upload-button-edit" type="submit">Upload logo</button>
+                <button v-if="selectedFile == null" class="upload-button-edit" type="submit">Upload photo</button>
+                <div v-if="selectedFile != null" class="upload-title-edit">
+                  {{ selectedFile.name }}
+                </div>
               </div>
+              <form role="form" enctype="multipart/form-data" @submit.prevent="onSubmit">
+                <div class="dropArea" @ondragover="onFileChanged($event)" :class="dragging ? 'dropAreaDragging' : ''" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
+                  <input type="file" class="upload-input-edit" name="selectedFile" required multiple @change="onFileChanged($event)" accept="image/*">
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -121,6 +129,8 @@ export default {
           vendors: true,
           error: false,
           errorMsg: '',
+          selectedFile: null,
+          dragging: false,
           companies:{
             company_name: '',
             contact:{
@@ -130,6 +140,7 @@ export default {
               state: '',
               city: '',
               zipcode: '',
+              logo_file_uuid: '',
             }
           },
                 user:{
@@ -183,29 +194,72 @@ export default {
           this.isModalVisible = false;
         },
         edit(){
-          var app = this
-          event.preventDefault();
-          var updateData = {
-            company_name: this.companies.company_name,
-            contact:{
-              phone: this.companies.contact.phone,
-              email: this.companies.contact.email,
-              address: this.companies.contact.address,
-              state: this.companies.contact.state,
-              city: this.companies.contact.city,
-              zipcode: this.companies.contact.zipcode,
+          if(this.selectedFile === null){
+            var app = this
+            event.preventDefault();
+            var updateData = {
+              company_name: this.companies.company_name,
+              contact:{
+                phone: this.companies.contact.phone,
+                email: this.companies.contact.email,
+                address: this.companies.contact.address,
+                state: this.companies.contact.state,
+                city: this.companies.contact.city,
+                zipcode: this.companies.contact.zipcode,
+                logo_file_uuid: this.companies.contact.logo_file_uuid,
+              }
             }
-          }
-          this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
-              this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
-          }).catch( err => {
-              var app = this
+            this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
+                this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
+            }).catch( err => {
+                var app = this
 
-              // app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
-        }
+                // app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
+            })
+          }
+          else{
+            let data = new FormData();
+            data.append('file', this.selectedFile);
+            data.append('belongs_to', 'user.logo')
+
+            this.axios.post(
+              '/file',
+              data
+            ).then(
+              response => {
+                var app = this
+                event.preventDefault();
+                var updateData = {
+                  company_name: this.companies.company_name,
+                  contact:{
+                    phone: this.companies.contact.phone,
+                    email: this.companies.contact.email,
+                    address: this.companies.contact.address,
+                    state: this.companies.contact.state,
+                    city: this.companies.contact.city,
+                    zipcode: this.companies.contact.zipcode,
+                    logo_file_uuid: response.data.object_uuid,
+                  }
+                }
+                this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
+                    this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
+                }).catch( err => {
+                    var app = this
+
+                    // app.errorMsg = err.response.data.error.message
+                    app.error = true
+                    console.log(err.response)
+                })
+                console.log('image upload response > ', response)
+              }
+            )
+          }
+        },
+        onFileChanged(event){
+          this.selectedFile = event.target.files[0]
+        },
     },
 }
 </script>

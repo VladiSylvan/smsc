@@ -43,9 +43,9 @@
                 <td class="vendor-contact">{{ vendor.vendor_name }}</td>
                 <td class="vendor-type">{{ vendor.vendor_type }}</td>
                 <td class="vendor-person">{{ vendor.contact_person }}</td>
-                <td class="vendor-noc">{{ vendor.noc_email }}</td>
-                <td class="vendor-sales">{{ vendor.sales_email }}</td>
-                <td class="vendor-rate">{{ vendor.rate_email }}</td>
+                <td class="vendor-noc">{{ emailSplit(vendor.noc_email) }}</td>
+                <td class="vendor-sales">{{ emailSplit(vendor.sales_email) }}</td>
+                <td class="vendor-rate">{{ emailSplit(vendor.rate_email) }}</td>
                 <td class="vendor-options"><router-link :to="{ name: 'VendorsRate'}"><div class="product-control-info"><img class="control-box" src="@/assets/Icon/Reporting.svg"></div></router-link></td>
                 <td class="vendor-option"><div class="product-control-info"><router-link :to="{ name: 'EditVendor', params: { id: vendor.vendor_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                 <td class="vendor-option"><div class="product-control-info"><img v-on:click="vendorDelete(vendor.vendor_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
@@ -107,6 +107,15 @@ export default {
               app.error = true
               console.log(err.response)
           })
+        },
+        emailSplit(value){
+          var email
+          var splited = value.split("@")
+          var size = splited[0].length
+          var a = size - 1
+          var b = size - 2
+          email = value[0] + value[1] + '...' + value[a] + value[b] + '@' + splited[1]
+          return email
         }
     },
     mounted(){

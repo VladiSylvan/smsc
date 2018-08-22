@@ -183,7 +183,7 @@ export default {
           this.isModalVisible = false;
         },
         edit(){
-          if(this.selectedFile == null){
+          if(this.selectedFile === null){
             var app = this
             event.preventDefault();
             var updateData = {
@@ -224,7 +224,7 @@ export default {
                   vendor_name: this.vendors.vendor_name,
                   company_uuid: this.vendors.company_uuid,
                   contact_person: this.vendors.contact_person,
-                  logo_file_uuid: this.vendors.logo_file_uuid,
+                  logo_file_uuid: response.data.object_uuid,
                 }
                 this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
                     this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
@@ -235,7 +235,6 @@ export default {
                     app.error = true
                     console.log(err.response)
                 })
-                this.vendors.logo_file_uuid = response.data.object_uuid
                 console.log('image upload response > ', response)
               }
             )
