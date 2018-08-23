@@ -36,7 +36,7 @@
                 <div class="grid-title">
                   Company
                 </div>
-                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="vendor.company_uuid">
+                <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="vendor.company_uuid" required>
                   <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
                 </select>
               </div>
@@ -170,15 +170,33 @@ export default {
           this.isModalVisible = false;
         },
         create(){
-          let data = new FormData();
-          data.append('file', this.selectedFile);
-          data.append('belongs_to', 'user.logo')
+          if(this.vendor.company_uuid != null){
+            if(this.selectedFile != null){
+              let data = new FormData();
+              data.append('file', this.selectedFile);
+              data.append('belongs_to', 'vendor.logo')
+              this.axios.post(
+                '/file',
+                data
+              ).then(
+                response => {
+                  var app = this
+                  event.preventDefault();
+                  this.axios.post('vendor/create', app.vendor).then( res => {
+                      this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
+                  }).catch( err => {
+                      var app = this
 
-          this.axios.post(
-            '/file',
-            data
-          ).then(
-            response => {
+                      app.errorMsg = err.response.data.error.message
+                      app.error = true
+                      console.log(err.response)
+                  })
+                  this.vendor.logo_file_uuid = response.data.object_uuid
+                  console.log('image upload response > ', response)
+                }
+              )
+            }
+            else{
               var app = this
               event.preventDefault();
               this.axios.post('vendor/create', app.vendor).then( res => {
@@ -190,10 +208,12 @@ export default {
                   app.error = true
                   console.log(err.response)
               })
-              this.vendor.logo_file_uuid = response.data.object_uuid
-              console.log('image upload response > ', response)
             }
-          )
+          }
+          else{
+            this.errorMsg = 'Select Company'
+            this.error = true
+          }
         },
         onFileChanged(event){
           this.selectedFile = event.target.files[0]

@@ -151,7 +151,6 @@ export default {
             contact: {
               email: '',
               state: '',
-              logo_file_uuid: '',
               passwd: '',
               zipcode: '',
               // name: 'Test1',
@@ -179,30 +178,45 @@ export default {
           this.isModalVisible = false;
         },
         create(){
-          let data = new FormData();
-          data.append('file', this.selectedFile);
-          data.append('belongs_to', 'user.logo')
+          if(this.selectedFile != null){
+            let data = new FormData();
+            data.append('file', this.selectedFile);
+            data.append('belongs_to', 'user.logo')
 
-          this.axios.post(
-            '/file',
-            data
-          ).then(
-            response => {
-              var app = this
-              event.preventDefault();
-              this.axios.post('company/create', app.company).then( res => {
-              this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
-              }).catch( err => {
-                  var app = this
+            this.axios.post(
+              '/file',
+              data
+            ).then(
+              response => {
+                var app = this
+                event.preventDefault();
+                this.axios.post('company/create', app.company).then( res => {
+                this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
+                }).catch( err => {
+                    var app = this
 
-                  app.errorMsg = err.response.data.error.message
-                  app.error = true
-                  console.log(err.response)
-              })
-              this.company.contact.logo_file_uuid = response.data.object_uuid
-              console.log('image upload response > ', response)
-            }
-          )
+                    app.errorMsg = err.response.data.error.message
+                    app.error = true
+                    console.log(err.response)
+                })
+                this.company.contact.logo_file_uuid = response.data.object_uuid
+                console.log('image upload response > ', response)
+              }
+            )
+          }
+          else{
+            var app = this
+            event.preventDefault();
+            this.axios.post('company/create', app.company).then( res => {
+            this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
+            }).catch( err => {
+                var app = this
+
+                app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
+            })
+          }
         },
         onFileChanged(event){
           this.selectedFile = event.target.files[0]

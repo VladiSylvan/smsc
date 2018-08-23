@@ -8,9 +8,14 @@
           </div>
         </div>
           <input class="recipients-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchRecipients" placeholder="Search for recipients">
-          <router-link :to="{ name: 'AddCampaign'}"><button id="product" type="submit">Add Campaign</button></router-link>
+          <router-link :to="{ name: 'AddRecipient'}"><button id="product" type="submit">Add Recipient</button></router-link>
         </div>
         <div class="main">
+          <div v-if="successMsg != ''">
+            <h5 style="color: green; text-align: center;">
+              {{ successMsg }}
+            </h5>
+          </div>
           <div class="main-container">
             <table class="recipients-table" cellspacing="0" cellpadding="0">
               <thead>
@@ -24,44 +29,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="recipients-online">
+                <tr v-for="recipient in recipients" class="recipients-online">
                   <td class="recipients-active-td"><div class="product-active"></div></td>
-                  <td class="recipients-name">Mario Haynes</td>
-                  <td class="recipients-phone">175-843-6478</td>
-                  <td class="recipients-address">254 Schumm Forest</td>
-                  <td class="recipients-option"><div class="did-control-info"><router-link :to="{ name: 'CompanyEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="recipients-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="recipients-online">
-                  <td class="recipients-active-td"><div class="product-active"></div></td>
-                  <td class="recipients-name">Cecilia Fitzgerald</td>
-                  <td class="recipients-phone">397-060-0359</td>
-                  <td class="recipients-address">69 Ciara Brook</td>
-                  <td class="recipients-option"><div class="did-control-info"><router-link :to="{ name: 'CompanyEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="recipients-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="recipients-online">
-                  <td class="recipients-active-td"><div class="product-active"></div></td>
-                  <td class="recipients-name">Susan Morris</td>
-                  <td class="recipients-phone">011-151-1553</td>
-                  <td class="recipients-address">2383 Lewis Turnpike</td>
-                  <td class="recipients-option"><div class="did-control-info"><router-link :to="{ name: 'CompanyEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="recipients-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="recipients-offline">
-                  <td class="recipients-active-td"><div class="product-not-active"></div></td>
-                  <td class="recipients-name">Rodney Moreno</td>
-                  <td class="recipients-phone">780-454-9508</td>
-                  <td class="recipients-address">286 Towne Mountains Apt. 891</td>
-                  <td class="recipients-option"><div class="did-control-info"><router-link :to="{ name: 'CompanyEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="recipients-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
-                </tr>
-                <tr class="recipients-offline">
-                  <td class="recipients-active-td"><div class="product-not-active"></div></td>
-                  <td class="recipients-name">Emma Hale</td>
-                  <td class="recipients-phone">782-956-2332</td>
-                  <td class="recipients-address">2603 Maye Cove</td>
-                  <td class="recipients-option"><div class="did-control-info"><router-link :to="{ name: 'CompanyEditDIDs' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="recipients-name">{{ recipient.recipient_name }}</td>
+                  <td class="recipients-phone">{{ recipient.phone_number }}</td>
+                  <td class="recipients-address">{{ recipient.address }}</td>
+                  <td class="recipients-option"><div class="did-control-info"><router-link :to="{ name: 'EditRecipient', params: { id: recipient.recipient_uuid } }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="recipients-option"><div class="did-control-info"><img class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
               </tbody>
@@ -84,6 +57,8 @@ export default {
           popup: false,
           test: false,
           del: false,
+          recipients: [],
+          successMsg: '',
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
@@ -96,16 +71,16 @@ export default {
       modal,
       CompanyNavigationComponent,
     },
-    methods:{
-        sendForm(){
-            event.preventDefault()
-        },
-        showModal() {
-          this.isModalVisible = true;
-        },
-        closeModal() {
-          this.isModalVisible = false;
-        }
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('recipient/list'),
+      ]).then( this.axios.spread((recipients) => {
+        console.log(recipients)
+        app.recipients = recipients.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
     },
 }
 </script>

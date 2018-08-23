@@ -105,8 +105,8 @@ export default {
 }
 .username{
   color: #55616E;
-  font-family: "Helvetica Neue";
-  font-weight: bold;
+  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  font-weight: 300;
   font-size: 15px;
   line-height: 20px;
   text-align: left;
@@ -132,8 +132,8 @@ export default {
 @-moz-document url-prefix() {
   .username{
     color: #55616E;
-    font-family: "Helvetica Neue";
-    font-weight: bold;
+    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    font-weight: 300;
     font-size: 15px;
     line-height: 20px;
     text-align: left;
@@ -144,8 +144,8 @@ export default {
   }
 }
 #avatar{
-  	font-family: "Helvetica Neue";
-    font-weight: bold;
+  	font-family: "Helvetica Neue, Arial, Sans-Serif";
+    font-weight: 300;
     font-size: 12px;
     letter-spacing: 1px;
     line-height: 15px;
@@ -166,8 +166,8 @@ export default {
 #popup-link{
   	height: 20px;
     width: 158px;
-    font-family: "Helvetica Neue";
-    font-weight: bold;
+    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    font-weight: 300;
     font-size: 16px;
     line-height: 20px;
     display: inline-block;
@@ -177,8 +177,8 @@ export default {
 #popup-link-active{
   	height: 20px;
     width: 158px;
-    font-family: "Helvetica Neue";
-    font-weight: bold;
+    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    font-weight: 300;
     font-size: 16px;
     line-height: 20px;
     display: inline-block;

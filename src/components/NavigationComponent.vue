@@ -392,8 +392,8 @@ li#active svg g{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue";
-    font-weight: bold;
+    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    font-weight: 300;
     color: #55616E;
     margin-top: 5px;
     -webkit-box-sizing: border-box;
@@ -413,8 +413,8 @@ li#active svg g{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue";
-    font-weight: bold;
+    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    font-weight: 300;
     color: #55616E;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -434,12 +434,12 @@ select{
 .side-link{
   	height: 20px;
     width: 220px;
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica Neue, Arial, Sans-Serif";
     font-size: 16px;
     line-height: 20px;
     display: inline-block;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 300;
 }
 .side-link#active{
   	color: #FFFFFF;

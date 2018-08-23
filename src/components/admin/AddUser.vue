@@ -20,7 +20,7 @@
             Back to Users
           </div>
         </router-link>
-        <router-link :to="{ name: 'AddUser'}"><button id="product" type="submit">Add User</button></router-link>
+        <router-link :to="{ name: 'AddUser'}"><button id="product" @click="create()" type="submit">Add User</button></router-link>
         <router-link :to="{ name: 'Users'}"><button id="cancel" type="submit">Cancel</button></router-link>
       </div>
       <div class="main-add">
@@ -33,43 +33,43 @@
               <div class="grid-title">
                 First Name
               </div>
-              <input class="grid-input" type="text" v-model="user.firstName" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="users.first_name" placeholder="Caroline">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Last Name
               </div>
-              <input class="grid-input" type="text" v-model="user.lastName" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="users.last_name" placeholder="Thomas">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Username
               </div>
-              <input class="grid-input" type="text" v-model="user.username" placeholder="Enter username">
+              <input class="grid-input" type="text" v-model="users.user_name" placeholder="Enter username">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Email
               </div>
-              <input class="grid-input" type="text" v-model="user.email" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="users.email" placeholder="Thomas">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Password
               </div>
-              <input class="grid-input" type="text" v-model="user.password" placeholder="********">
+              <input class="grid-input" type="password" v-model="users.passwd" placeholder="********">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Re-Enter Password
               </div>
-              <input class="grid-input" type="text" v-model="user.rePassword" placeholder="********">
+              <input class="grid-input" type="password" v-model="user.passwd" placeholder="********">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Role
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Role" class="grid-select" v-model="user.role">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Role" class="grid-select" v-model="users.rank">
                 <option value="">Choose Role</option>
                 <option value="VIP">VIP</option>
                 <option value="Premium">Premium</option>
@@ -80,18 +80,26 @@
               <div class="grid-title">
                 Company name
               </div>
-              <input class="grid-input" type="text" v-model="user.companyName" placeholder="Enter company name">
+              <input class="grid-input" type="text" v-model="users.company_name" placeholder="Enter company name">
             </div>
           </div>
           <div class="user-second">
             <div class="grid-title">
-              Choose Photo
+              Choose Logo
             </div>
             <div class="upload">
-              <div class="upload-title">
-                <input type="file" accept="image/*" id="file-input">
-                <button class="upload-button" @click="uploadImage($event)">Upload logo</button>
+              <div v-if="selectedFile == null" class="upload-title">
+                Drop photo here or browse
               </div>
+              <button v-if="selectedFile == null" class="upload-button" type="submit">Upload photo</button>
+              <div v-if="selectedFile != null" class="upload-title">
+                {{ selectedFile.name }}
+              </div>
+              <form role="form" enctype="multipart/form-data" @submit.prevent="onSubmit">
+                <div class="dropArea" @ondragover="onFileChanged($event)" :class="dragging ? 'dropAreaDragging' : ''" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
+                  <input type="file" class="upload-input" name="selectedFile" required multiple @change="onFileChanged($event)" accept="image/*">
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -110,8 +118,19 @@ export default {
           width: '60px',
           transitionName: 'fade',
           popup: false,
-          file: '',
-          users: [],
+          error: false,
+          errorMsg: '',
+          selectedFile: null,
+          dragging: false,
+          users: {
+            first_name: '',
+            company_name: '',
+            last_name: '',
+            user_name: '',
+            email: '',
+            passwd: '',
+            rank: '',
+          },
           isModalVisible: false,
           vendors: true,
                 user:{
@@ -151,34 +170,49 @@ export default {
       })
     },
     methods:{
-        showModal() {
-          this.isModalVisible = true;
-        },
-        closeModal() {
-          this.isModalVisible = false;
-        },
-        uploadImage(event) {
-        console.log(event)
-        let data = new FormData();
-        data.append('file', event.target.files[0]);
-        data.append('belongs_to', 'user.logo')
+      create(){
+        if(this.selectedFile != null){
+          let data = new FormData();
+          data.append('file', this.selectedFile);
+          data.append('belongs_to', 'user.logo')
+          this.axios.post(
+            '/file',
+            data
+          ).then(
+            response => {
+              var app = this
+              event.preventDefault();
+              this.axios.post('user/create', app.users).then( res => {
+                  this.$router.push({ name: 'Users', params: { successMsg: 'OK' }})
+              }).catch( err => {
+                  var app = this
 
-        let config = {
-          header : {
-            'Content-Type' : 'image/png'
-          }
+                  app.errorMsg = err.response.data.error.message
+                  app.error = true
+                  console.log(err.response)
+              })
+              this.users.logo_file_uuid = response.data.object_uuid
+              console.log('image upload response > ', response)
+            }
+          )
         }
+        else{
+          var app = this
+          event.preventDefault();
+          this.axios.post('users/create', app.users).then( res => {
+              this.$router.push({ name: 'Users', params: { successMsg: 'OK' }})
+          }).catch( err => {
+              var app = this
 
-        this.axios.post(
-          '/file',
-          data,
-          config
-        ).then(
-          response => {
-            console.log('image upload response > ', response)
-          }
-        )
-      }
+              app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
+        }
+      },
+      onFileChanged(event){
+        this.selectedFile = event.target.files[0]
+      },
     }
 }
 </script>
