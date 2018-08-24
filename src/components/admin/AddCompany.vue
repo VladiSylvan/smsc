@@ -116,7 +116,7 @@
                 <div v-if="selectedFile != null" class="upload-title">
                   {{ selectedFile.name }}
                 </div>
-                <form role="form" enctype="multipart/form-data" @submit.prevent="onSubmit">
+                <form role="form" @submit.prevent="onSubmit">
                   <div class="dropArea" @ondragover="onFileChanged($event)" :class="dragging ? 'dropAreaDragging' : ''" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
                     <input type="file" class="upload-input" name="selectedFile" required multiple @change="onFileChanged($event)" accept="image/*">
                   </div>
@@ -179,17 +179,26 @@ export default {
         },
         create(){
           if(this.selectedFile != null){
+            this.axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
+
+            const config = {
+              headers: {
+                'Content-Type': this.selectedFile.type,
+              },
+              data: {},
+            };
+
             let data = new FormData();
-            data.append('file', this.selectedFile);
+            data.append('file', this.selectedFile, this.selectedFile.name);
             data.append('belongs_to', 'user.logo')
 
             this.axios.post(
               '/file',
-              data
+              data,
+              config
             ).then(
               response => {
                 var app = this
-                event.preventDefault();
                 this.axios.post('company/create', app.company).then( res => {
                 this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
                 }).catch( err => {
@@ -206,7 +215,6 @@ export default {
           }
           else{
             var app = this
-            event.preventDefault();
             this.axios.post('company/create', app.company).then( res => {
             this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
             }).catch( err => {
@@ -220,6 +228,7 @@ export default {
         },
         onFileChanged(event){
           this.selectedFile = event.target.files[0]
+          console.log(this.selectedFile)
         },
     },
     mounted(){

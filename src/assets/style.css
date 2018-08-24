@@ -484,6 +484,7 @@ table{
   width: calc(100% - 40px);
   margin-left: 20px;
   margin-right: 20px;
+  overflow-x: auto;
 }
 .vendors-table{
   border: none;
@@ -499,11 +500,11 @@ table{
   height: 37px;
 }
 .vendor-active{
-  width: 25px;
+  min-width: 20px;
   padding-left: 8px;
 }
 .vendor-company{
-  width: 218px;
+  min-width: 120px;
 }
 .vendor-contact{
   width: 168px;
@@ -512,16 +513,16 @@ table{
   width: 70px;
 }
 .vendor-person{
-  width: 167px;
+  min-width: 120px;
 }
 .vendor-noc{
-  width: 145px;
+  min-width: 115px;
 }
 .vendor-sales{
-  width: 145px;
+  min-width: 115px;
 }
 .vendor-rate{
-  width: 165px;
+  min-width: 115px;
 }
 .vendor-option{
   width: 30px;
@@ -3682,11 +3683,10 @@ td#add-sell-rate{
   margin-left: 110px;
 }
 .connect-3{
-  height: 30px;
-  width: 2px;
   display: inline-block;
   float: left;
-  margin-left: 250px;
+  margin-top: 31px;
+  margin-left: 220px;
 }
 .sms-grid-remove{
   transform: rotate(45deg);

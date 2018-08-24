@@ -46,7 +46,7 @@
                   <td class="did-type">{{ did.type }}</td>
                   <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.vendor_uuid }}</div></td>
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID', params: { id: did.did_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="did-option"><div class="did-control-info"><img v-on:click="didDelete(did.did_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="did-option"><div class="did-control-info"><img v-on:click="didDelete(did.did_uuid, did.number, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
               </tbody>
             </table>
@@ -100,22 +100,23 @@ export default {
         closeModal() {
           this.isModalVisible = false;
         },
-        didDelete(value, index){
-          var app = this
-          var value
-          event.preventDefault();
-          this.axios.delete('did/' + value).then( res => {
-              // this.$router.push('/sys/did')
-              this.dids.splice(index, 1)
-              this.$route.params.successMsg = null
-              this.successMsg = 'OK'
-          }).catch( err => {
-              var app = this
+        didDelete(value, name, index){
+          var r = confirm("Do you really want to delete " + name + " DID?");
+          if(r == true){
+            var app = this
+            this.axios.delete('did/' + value).then( res => {
+                // this.$router.push('/sys/did')
+                this.dids.splice(index, 1)
+                this.$route.params.successMsg = null
+                this.successMsg = 'OK'
+            }).catch( err => {
+                var app = this
 
-              app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
+                app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
+            })
+          }
         }
     },
 }

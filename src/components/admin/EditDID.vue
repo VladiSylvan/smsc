@@ -141,7 +141,6 @@ export default {
         },
         edit(){
           var app = this
-          event.preventDefault();
           var updateData = {
             company_uuid: this.dids.company_uuid,
             max_sms_per_hour: 0,

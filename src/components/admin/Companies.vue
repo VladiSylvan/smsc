@@ -8,14 +8,14 @@
           </div>
         </div>
           <div class="main-header">
-            <div v-if="successMsg != ''">
-              <h5 style="color: green; text-align: center;">
-                {{ successMsg }}
-              </h5>
-            </div>
             <div v-if="this.$route.params.successMsg != null">
               <h5 style="color: green; text-align: center;">
                 {{ this.$route.params.successMsg }}
+              </h5>
+            </div>
+            <div v-if="successMsg != null">
+              <h5 style="color: green; text-align: center;">
+                {{ successMsg }}
               </h5>
             </div>
             <input class="company-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchCompany" placeholder="Search for company">
@@ -52,14 +52,14 @@
                   <td class="companies-title" colspan="9"><div class="company-title-my">My Companies</div></td>
                 </tr>
                 <tr v-for="myCompany, index in myCompanies">
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">{{ myCompany.company_name }}</div></td>
+                  <td class="company-name"><div class="company-avatar"></div><img :data="logo.data"> <div class="company-name-fix">{{ myCompany.company_name }}</div></td>
                   <td class="company-balance">${{ myCompany.balance }}</td>
                   <td class="company-pay">{{ myCompany.credit }}</td>
                   <td class="company-contact-text">{{ myCompany.contact.first_name }} {{ myCompany.contact.last_name }}</td>
                   <td class="company-resellers">{{ myCompany.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="confirmDialog(myCompany.company_uuid)" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: myCompany.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(myCompany.company_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(myCompany.company_uuid, myCompany.company_name, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option">
                     <div v-on:click="test = myCompany.company_uuid" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
                     <div v-if="test === myCompany.company_uuid" class="company-menu">
@@ -97,7 +97,7 @@
                   <td class="company-resellers">{{ company.reseller_name }}</td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="confirmDialog(company.company_uuid)" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: company.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(company.company_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(company.company_uuid, company.company_name, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="company-option">
                     <div v-on:click="test = company.company_uuid" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
                     <div v-if="test === company.company_uuid" class="company-menu">
@@ -147,6 +147,7 @@ export default {
           companies: [],
           myCompanies: [],
           user: [],
+          logo: [],
           successMsg: '',
           isModalVisible: false,
                 user:{
@@ -164,8 +165,10 @@ export default {
         this.axios.get('company/list'),
         this.axios.get('company/list?is_created_by_admin=true'),
         this.axios.get('user'),
-      ]).then( this.axios.spread((companies, myCompanies, user) => {
+        this.axios.get('file/79cbe021-3b64-44b7-bb33-7d981c7391d9'),
+      ]).then( this.axios.spread((companies, myCompanies, user, logo) => {
         console.log(companies)
+        console.log(logo)
         app.companies = companies.data.payload.items
         app.myCompanies = myCompanies.data.payload.items
         app.user = user.data.payload
@@ -201,21 +204,23 @@ export default {
             })
           }
         },
-        companyDelete(value, index){
+        companyDelete(value, name, index){
           var app = this
-          event.preventDefault();
-          this.axios.delete('company/' + value).then( res => {
-              // this.$router.push('/sys/companies')
-              this.companies.splice(index, 1)
-              this.$route.params.successMsg = null
-              this.successMsg = 'OK'
-          }).catch( err => {
-              var app = this
+          var r = confirm("Do you really want to delete " + name + " company?");
+          if(r == true){
+            this.axios.delete('company/' + value).then( res => {
+                // this.$router.push('/sys/companies')
+                this.companies.splice(index, 1)
+                this.$route.params.successMsg = null
+                this.successMsg = 'OK'
+            }).catch( err => {
+                var app = this
 
-              app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
+                app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
+            })
+          }
         }
     },
 }

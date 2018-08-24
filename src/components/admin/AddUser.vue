@@ -181,7 +181,6 @@ export default {
           ).then(
             response => {
               var app = this
-              event.preventDefault();
               this.axios.post('user/create', app.users).then( res => {
                   this.$router.push({ name: 'Users', params: { successMsg: 'OK' }})
               }).catch( err => {
@@ -198,7 +197,6 @@ export default {
         }
         else{
           var app = this
-          event.preventDefault();
           this.axios.post('users/create', app.users).then( res => {
               this.$router.push({ name: 'Users', params: { successMsg: 'OK' }})
           }).catch( err => {

@@ -200,7 +200,6 @@ export default {
         },
         edit(){
           var app = this
-          event.preventDefault();
           var updateData = {
             contact:{
               phone: this.resellers.contact.phone,

@@ -48,8 +48,8 @@ export default {
    },
     methods:{
         login(){
+            event.preventDefault()
             var app = this
-
             this.axios.post('auth', app.user).then( res => {
                 localStorage.setItem('token', res.data.payload.token)
                 localStorage.setItem('token-exp', res.data.payload.exp)

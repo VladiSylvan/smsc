@@ -127,7 +127,6 @@ export default {
             vendor_name: '',
             company_uuid: '',
             contact_person: '',
-            logo_file_uuid: '',
           },
                 user:{
                 companyName: 'Appolo Inc.',
@@ -185,7 +184,6 @@ export default {
         edit(){
           if(this.selectedFile === null){
             var app = this
-            event.preventDefault();
             var updateData = {
               noc_email: this.vendors.noc_email,
               rate_email: this.vendors.rate_email,
@@ -193,7 +191,6 @@ export default {
               vendor_name: this.vendors.vendor_name,
               company_uuid: this.vendors.company_uuid,
               contact_person: this.vendors.contact_person,
-              logo_file_uuid: this.vendors.logo_file_uuid,
             }
             this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
                 this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
@@ -216,7 +213,6 @@ export default {
             ).then(
               response => {
                 var app = this
-                event.preventDefault();
                 var updateData = {
                   noc_email: this.vendors.noc_email,
                   rate_email: this.vendors.rate_email,

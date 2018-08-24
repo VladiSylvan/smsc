@@ -12,6 +12,16 @@
         </div>
         <div class="main">
           <div class="main-container">
+            <div v-if="this.$route.params.successMsg != null">
+              <h5 style="color: green; text-align: center;">
+                {{ this.$route.params.successMsg }}
+              </h5>
+            </div>
+            <div v-if="successMsg != null">
+              <h5 style="color: green; text-align: center;">
+                {{ successMsg }}
+              </h5>
+            </div>
             <table class="resellers-table" cellspacing="0" cellpadding="0">
               <thead>
                 <tr>
@@ -83,7 +93,7 @@
                   <td class="reseller-clients">70</td>
                   <td class="reseller-member-since">10-03-2018</td>
                   <td class="reseller-option"><div class="product-control-info"><router-link :to="{ name: 'EditReseller', params: { id: reseller.reseller_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="reseller-option"><div class="product-control-info"><img v-on:click="resellerDelete(reseller.reseller_uuid, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="reseller-option"><div class="product-control-info"><img v-on:click="resellerDelete(reseller.reseller_uuid, reseller.reseller_name, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                   <td class="reseller-option">
                     <div v-on:click="test = reseller.reseller_uuid" class="product-control-info"><img class="control-box" src="@/assets/Icon/More.svg"></div>
                     <div v-if="test === reseller.reseller_uuid" class="reseller-menu">
@@ -129,6 +139,7 @@ export default {
           transitionName: 'fade',
           popup: false,
           test: '',
+          successMsg: '',
           del: false,
           isModalVisible: false,
           resellers: [],
@@ -161,20 +172,22 @@ export default {
         closeModal() {
           this.isModalVisible = false;
         },
-        resellerDelete(value, index){
-          var app = this
-          var value
-          event.preventDefault();
-          this.axios.delete('reseller/' + value).then( res => {
-              // this.$router.push('/sys/resellers')
-              this.resellers.splice(index, 1)
-          }).catch( err => {
-              var app = this
+        resellerDelete(value, name, index){
+          var r = confirm("Do you really want to delete " + name + " reseller?");
+          if(r == true){
+            var app = this
+            this.axios.delete('reseller/' + value).then( res => {
+                this.resellers.splice(index, 1)
+                this.$route.params.successMsg = null
+                this.successMsg = 'OK'
+            }).catch( err => {
+                var app = this
 
-              app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
+                app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
+            })
+          }
         }
     },
 }

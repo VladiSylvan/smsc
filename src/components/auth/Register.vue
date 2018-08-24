@@ -10,7 +10,7 @@
                     <div v-if="error">
                         <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
                     </div>
-                    <form v-on:submit="register()">
+                    <form @submit.prevent="register">
                       <div class="row">
                         <div class="col-md-6">
                           <label>First Name</label>
@@ -98,7 +98,7 @@ export default {
     methods:{
         register(){
           var app = this
-          event.preventDefault()
+          // event.preventDefault()
           if (this.user.contact.passwd == this.user.passwd2 && this.user.contact.passwd.length > 5){
             this.axios.post('registration/create', app.user).then( res => {
                 this.$router.push({ name: 'Login', params: { successMsg: 'OK' }})

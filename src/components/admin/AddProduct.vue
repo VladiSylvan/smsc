@@ -237,7 +237,6 @@ export default {
         },
         create(){
           var app = this
-          event.preventDefault();
           this.axios.post('product/create', app.product).then( res => {
               this.$router.push('/sys/product')
               console.log(product)

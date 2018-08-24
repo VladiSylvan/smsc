@@ -196,7 +196,6 @@ export default {
         edit(){
           if(this.selectedFile === null){
             var app = this
-            event.preventDefault();
             var updateData = {
               company_name: this.companies.company_name,
               contact:{
@@ -230,7 +229,6 @@ export default {
             ).then(
               response => {
                 var app = this
-                event.preventDefault();
                 var updateData = {
                   company_name: this.companies.company_name,
                   contact:{

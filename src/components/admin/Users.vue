@@ -51,7 +51,7 @@
                   <td class="users-reseller">{{ user.reseller_name }}</td>
                   <td class="users-start">{{ user.created_on | moment("DD MMM YYYY") }}</td>
                   <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
-                  <td class="users-option"><div class="product-control-info"><img v-on:click="userDelete(user.user_id, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
+                  <td class="users-option"><div class="product-control-info"><img v-on:click="userDelete(user.user_id, user.full_name, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
               </tbody>
             </table>
@@ -142,20 +142,22 @@ export default {
         closeModal() {
           this.isModalVisible = false;
         },
-        userDelete(value, index){
-          var app = this
-          event.preventDefault();
-          this.axios.delete('user/' + value).then( res => {
-              this.users.splice(index, 1)
-              this.$route.params.successMsg = null
-              this.successMsg = 'OK'
-          }).catch( err => {
-              var app = this
+        userDelete(value, name, index){
+          var r = confirm("Do you really want to delete " + name + " user?");
+          if(r == true){
+            var app = this
+            this.axios.delete('user/' + value).then( res => {
+                this.users.splice(index, 1)
+                this.$route.params.successMsg = null
+                this.successMsg = 'OK'
+            }).catch( err => {
+                var app = this
 
-              app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
+                app.errorMsg = err.response.data.error.message
+                app.error = true
+                console.log(err.response)
+            })
+          }
         }
     },
 }
