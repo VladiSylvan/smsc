@@ -6270,6 +6270,9 @@ button#preview{
     max-width: 19.6363636364%;
     width: 100%;
   }
+  .grid-3{
+    width: 20.5%;
+  }
 }
 @media only screen and (max-width: 1200px) {
     .res-div{
