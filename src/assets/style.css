@@ -6260,6 +6260,11 @@ button#preview{
   margin-right: 10px;
   margin-bottom: 15px;
 }
+.image-resize{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
 @media only screen and (max-width: 1270px) {
   .cont-grid{
     max-width: 19.6363636364%;

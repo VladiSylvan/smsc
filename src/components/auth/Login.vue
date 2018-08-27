@@ -48,7 +48,6 @@ export default {
    },
     methods:{
         login(){
-            event.preventDefault()
             var app = this
             this.axios.post('auth', app.user).then( res => {
                 localStorage.setItem('token', res.data.payload.token)
@@ -98,7 +97,7 @@ export default {
       background-position-x: 5px;
       background-position-y: 5px;
       color: #55616E;
-      font-family: "Helvetica Neue";
+      font-family: "Helvetica Neue, Arial, Sans-Serif";
       font-size: 14px;
       line-height: 25px;
     }
@@ -122,7 +121,7 @@ export default {
         border-radius: 4px;
         background-color: #51A3F3;
         color: #FFFFFF;
-        font-family: "Helvetica Neue";
+        font-family: "Helvetica Neue, Arial, Sans-Serif";
         font-size: 15px;
         font-weight: 300;
         line-height: 30px;
@@ -132,14 +131,14 @@ export default {
     .no-account{
         float: right;
         color: #55616E;
-        font-family: "Helvetica Neue";
+        font-family: "Helvetica Neue, Arial, Sans-Serif";
         font-size: 16px;
         line-height: 20px;
         margin-top: 25px;
     }
     .no-account a{
         color: #51A3F3;
-        font-family: "Helvetica Neue";
+        font-family: "Helvetica Neue, Arial, Sans-Serif";
         font-size: 16px;
         line-height: 20px;
         text-decoration: none;

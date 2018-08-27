@@ -52,7 +52,7 @@
                   <td class="companies-title" colspan="9"><div class="company-title-my">My Companies</div></td>
                 </tr>
                 <tr v-for="myCompany, index in myCompanies">
-                  <td class="company-name"><div class="company-avatar"></div><img :data="logo.data"> <div class="company-name-fix">{{ myCompany.company_name }}</div></td>
+                  <td class="company-name"><div class="company-avatar"><img class="image-resize" :src="logo.responseURL"></div><div class="company-name-fix">{{ myCompany.company_name }}</div></td>
                   <td class="company-balance">${{ myCompany.balance }}</td>
                   <td class="company-pay">{{ myCompany.credit }}</td>
                   <td class="company-contact-text">{{ myCompany.contact.first_name }} {{ myCompany.contact.last_name }}</td>
@@ -90,7 +90,7 @@
                   <td class="companies-title" colspan="9"><div class="company-title-all">All Companies</div></td>
                 </tr>
                 <tr v-for="company, index in companies">
-                  <td class="company-name"><div class="company-avatar"></div> <div class="company-name-fix">{{ company.company_name }}</div></td>
+                  <td class="company-name"><div class="company-avatar"><img class="image-resize" :src="logo.responseURL"></div> <div class="company-name-fix">{{ company.company_name }}</div></td>
                   <td class="company-balance">${{ company.balance }}</td>
                   <td class="company-pay">{{ company.credit }}</td>
                   <td class="company-contact-text">{{ company.contact.first_name }} {{ company.contact.last_name }}</td>
@@ -167,11 +167,11 @@ export default {
         this.axios.get('user'),
         this.axios.get('file/79cbe021-3b64-44b7-bb33-7d981c7391d9'),
       ]).then( this.axios.spread((companies, myCompanies, user, logo) => {
-        console.log(companies)
         console.log(logo)
         app.companies = companies.data.payload.items
         app.myCompanies = myCompanies.data.payload.items
         app.user = user.data.payload
+        app.logo = logo.request
       })).catch(error => {
         console.log(error)
       })
@@ -221,7 +221,7 @@ export default {
                 console.log(err.response)
             })
           }
-        }
+        },
     },
 }
 </script>
