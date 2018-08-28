@@ -170,51 +170,31 @@ export default {
           this.isModalVisible = false;
         },
         create(){
-          if(this.vendor.company_uuid != null){
-            if(this.selectedFile != null){
-              let data = new FormData();
-              data.append('file', this.selectedFile);
-              data.append('belongs_to', 'vendor.logo')
-              this.axios.post(
-                '/file',
-                data
-              ).then(
-                response => {
-                  var app = this
-                  this.axios.post('vendor/create', app.vendor).then( res => {
-                      this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
-                  }).catch( err => {
-                      var app = this
+          var app = this
+          this.axios.post('vendor/create', app.vendor).then(res => {
+          this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
+          }).catch( err => {
+            var app = this
 
-                      app.errorMsg = err.response.data.error.message
-                      app.error = true
-                      console.log(err.response)
-                  })
-                  this.vendor.logo_file_uuid = response.data.object_uuid
-                  console.log('image upload response > ', response)
-                }
-              )
-            }
-            else{
-              var app = this
-              this.axios.post('vendor/create', app.vendor).then( res => {
-                  this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
-              }).catch( err => {
-                  var app = this
-
-                  app.errorMsg = err.response.data.error.message
-                  app.error = true
-                  console.log(err.response)
-              })
-            }
-          }
-          else{
-            this.errorMsg = 'Select Company'
-            this.error = true
-          }
+            app.errorMsg = err.res.data.error.message
+            app.error = true
+            console.log(err.res)
+          })
         },
         onFileChanged(event){
           this.selectedFile = event.target.files[0]
+          var sendData = new FormData()
+
+          sendData.append('file', this.selectedFile)
+          sendData.append('belongs_to', 'user.logo')
+          sendData.append('public', true)
+
+          this.axios.post('file', sendData).then(res => {
+          this.vendor.logo_file_uuid = res.data.object_uuid
+          console.log(res)
+          }).catch(err => {
+            console.log(err)
+          })
         },
     },
 }

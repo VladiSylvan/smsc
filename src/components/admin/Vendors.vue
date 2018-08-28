@@ -40,7 +40,7 @@
               <tr v-for="vendor, index in vendors" class="online">
                 <td class="vendor-active"><div class="vendor-active-circle"></div></td>
                 <td v-for="company in companies" v-if="company.company_uuid == vendor.company_uuid" class="vendor-company">
-                  <div class="vendor-avatar"></div>
+                  <div class="vendor-avatar"><img class="image-resize" :src="getLogo(vendor.logo_file_uuid)"></div>
                   <div class="vendor-name-fix">
                     {{ company.company_name }}
                   </div>
@@ -124,6 +124,10 @@ export default {
           var b = size - 2
           email = value[0] + value[1] + '...' + value[a] + value[b] + '@' + splited[1]
           return email
+        },
+        getLogo(value){
+          var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
+          return logo
         }
     },
     mounted(){

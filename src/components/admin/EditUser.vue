@@ -20,7 +20,7 @@
             Back to Users
           </div>
         </router-link>
-        <router-link :to="{ name: 'EditUser'}"><button id="product" type="submit">Save User</button></router-link>
+        <router-link :to="{ name: 'EditUser'}"><button id="product" v-on:click="edit()" type="submit">Save User</button></router-link>
         <router-link :to="{ name: 'Users'}"><button id="cancel" type="submit">Cancel</button></router-link>
       </div>
       <div class="main-add">
@@ -33,17 +33,17 @@
               <div class="grid-title">
                 First Name
               </div>
-              <input class="grid-input" type="text" v-model="user.firstName" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="users.first_name" placeholder="Caroline">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Last Name
               </div>
-              <input class="grid-input" type="text" v-model="user.lastName" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="users.last_name" placeholder="Thomas">
             </div>
             <div class="grid-4">
               <div class="grid-title">
-                username
+                Username
               </div>
               <input class="grid-input" type="text" v-model="user.username" placeholder="Enter username">
             </div>
@@ -51,26 +51,29 @@
               <div class="grid-title">
                 Email
               </div>
-              <input class="grid-input" type="text" v-model="user.email" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="users.email" placeholder="Thomas">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Password
               </div>
-              <input class="grid-input" type="text" v-model="user.password" placeholder="********">
+              <input class="grid-input" type="text" v-model="users.passwd" placeholder="********">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Re-Enter Password
               </div>
-              <input class="grid-input" type="text" v-model="user.rePassword" placeholder="********">
+              <input class="grid-input" type="text" v-model="users.passwd" placeholder="********">
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Role
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Role" class="grid-select" v-model="user.role">
-                <option value="Choose Role">Choose Role</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Role" class="grid-select" v-model="users.rank">
+                <option value="">Choose Role</option>
+                <option value="VIP">VIP</option>
+                <option value="Premium">Premium</option>
+                <option value="Default">Default</option>
               </select>
             </div>
           </div>
@@ -78,16 +81,24 @@
             <div class="grid-title">
               Change Photo
             </div>
-            <div class="upload-edit-sec">
-              <div class="upload-image">
-                <div class="upload-circle"></div>
+            <div class="upload-edit">
+              <div v-if="selectedFile == null" class="upload-image">
+                <div class="upload-circle"><img v-if="users.logo_file_uuid != null" class="image-resize-upload" :src="getLogo(users.logo_file_uuid)"></div>
               </div>
               <div class="upload-container">
-                <div class="upload-title-edit">
+                <div v-if="selectedFile == null" class="upload-title-edit">
                   Drop photo here or browse
                 </div>
-                <button class="upload-button-edit" type="submit">Upload photo</button>
+                <button v-if="selectedFile == null" class="upload-button-edit" type="submit">Upload photo</button>
+                <div v-if="selectedFile != null" class="upload-title-edit">
+                  {{ selectedFile.name }}
+                </div>
               </div>
+              <form role="form" enctype="multipart/form-data" @submit.prevent="onSubmit">
+                <div class="dropArea" @ondragover="onFileChanged($event)" :class="dragging ? 'dropAreaDragging' : ''" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
+                  <input type="file" class="upload-input-edit" name="selectedFile" required multiple @change="onFileChanged($event)" accept="image/*">
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -107,7 +118,16 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
+          selectedFile: null,
+          dragging: false,
           vendors: true,
+          users: {
+            first_name: '',
+            last_name: '',
+            email: '',
+            passwd: '',
+            rank: '',
+          },
                 user:{
                 firstName: 'Caroline',
                 lastName: 'Thomas',
@@ -139,16 +159,68 @@ export default {
       modal,
       NavigationComponent,
     },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('user/' + this.$route.params.id),
+      ]).then( this.axios.spread((users) => {
+        console.log(users)
+        app.users = users.data.payload
+      })).catch(error => {
+        console.log(error)
+      })
+    },
     methods:{
-        sendForm(){
-            event.preventDefault()
-        },
-        showModal() {
-          this.isModalVisible = true;
-        },
-        closeModal() {
-          this.isModalVisible = false;
+      edit(){
+        var app = this
+        if(this.selectedFile == null){
+          var updateData = {
+            first_name: this.users.first_name,
+            last_name: this.users.last_name,
+            email: this.users.email,
+            passwd: this.users.passwd,
+            rank: this.users.rank,
+          }
         }
+        else{
+          var updateData = {
+            first_name: this.users.first_name,
+            last_name: this.users.last_name,
+            email: this.users.email,
+            logo_file_uuid: this.users.logo_file_uuid,
+            passwd: this.users.passwd,
+            rank: this.users.rank,
+          }
+        }
+        this.axios.patch('user/' + this.$route.params.id, updateData).then( res => {
+            this.$router.push('/sys/users')
+        }).catch( err => {
+            var app = this
+
+            // app.errorMsg = err.response.data.error.message
+            app.error = true
+            console.log(err.response)
+        })
+      },
+      onFileChanged(event){
+        this.selectedFile = event.target.files[0]
+        var sendData = new FormData()
+
+        sendData.append('file', this.selectedFile)
+        sendData.append('belongs_to', 'user.logo')
+        sendData.append('public', true)
+
+        this.axios.post('file', sendData).then(res => {
+        this.users.logo_file_uuid = res.data.object_uuid
+        console.log(res)
+        }).catch(err => {
+          console.log(err)
+        })
+      },
+      getLogo(value){
+        var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
+        return logo
+      }
     },
 }
 </script>

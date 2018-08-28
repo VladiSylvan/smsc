@@ -36,13 +36,13 @@
               <div class="grid-title">
                 First Name
               </div>
-              <input class="grid-input" type="text" v-model="resellers.contact.first_name" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="resellers.first_name" placeholder="Caroline">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Last Name
               </div>
-              <input class="grid-input" type="text" v-model="resellers.contact.last_name" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="resellers.last_name" placeholder="Thomas">
             </div>
             <div class="grid-1">
               <div class="grid-title">
@@ -66,8 +66,8 @@
               <div class="grid-title">
                 Company
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company">
-                <option value="Appolo Inc.">Appolo Inc.</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company_uuid" required>
+                <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
               </select>
             </div>
             <div class="grid-2">
@@ -94,9 +94,7 @@
               <div class="grid-title">
                 State
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="resellers.contact.state">
-                <option :value="resellers.contact.state">{{ resellers.contact.state }}</option>
-              </select>
+              <input class="grid-input" type="text" v-model="resellers.contact.state" placeholder="Port Joyce">
             </div>
             <div class="grid-3-sec">
               <div class="grid-title">
@@ -109,16 +107,24 @@
             <div class="grid-title">
               Change Photo
             </div>
-            <div class="upload-edit-sec">
-              <div class="upload-image">
-                <div class="upload-circle"></div>
+            <div class="upload-edit">
+              <div v-if="selectedFile == null" class="upload-image">
+                <div class="upload-circle"><img v-if="resellers.contact.logo_file_uuid != null" class="image-resize-upload" :src="getLogo(resellers.contact.logo_file_uuid)"></div>
               </div>
               <div class="upload-container">
-                <div class="upload-title-edit">
+                <div v-if="selectedFile == null" class="upload-title-edit">
                   Drop photo here or browse
                 </div>
-                <button class="upload-button-edit" type="submit">Upload photo</button>
+                <button v-if="selectedFile == null" class="upload-button-edit" type="submit">Upload photo</button>
+                <div v-if="selectedFile != null" class="upload-title-edit">
+                  {{ selectedFile.name }}
+                </div>
               </div>
+              <form role="form" enctype="multipart/form-data" @submit.prevent="onSubmit">
+                <div class="dropArea" @ondragover="onFileChanged($event)" :class="dragging ? 'dropAreaDragging' : ''" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
+                  <input type="file" class="upload-input-edit" name="selectedFile" required multiple @change="onFileChanged($event)" accept="image/*">
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -139,9 +145,23 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
+          selectedFile: null,
+          dragging: false,
           error: false,
           errorMsg: '',
-          resellers: [],
+          companies: '',
+          resellers: {
+            first_name: '',
+            last_name: '',
+            contact:{
+              phone: '',
+              email: '',
+              address: '',
+              zipcode: '',
+              state: '',
+              city: '',
+            }
+          },
           countries: [],
                 user:{
                 firstName: 'Caroline',
@@ -183,10 +203,12 @@ export default {
       this.axios.all([
         this.axios.get('reseller/' + this.$route.params.id),
         this.axios.get('country/list'),
-      ]).then( this.axios.spread((resellers, countries) => {
+        this.axios.get('company/list'),
+      ]).then( this.axios.spread((resellers, countries, companies) => {
         console.log(resellers)
         app.resellers = resellers.data.payload
         app.countries = countries.data.payload.items
+        app.companies = companies.data.payload.items
       })).catch(error => {
         console.log(error)
       })
@@ -200,17 +222,36 @@ export default {
         },
         edit(){
           var app = this
-          var updateData = {
-            contact:{
-              phone: this.resellers.contact.phone,
-              email: this.resellers.contact.email,
-              address: this.resellers.contact.address,
-              zipcode: this.resellers.contact.zipcode,
-              state: this.resellers.contact.state,
-              city: this.resellers.contact.city,
+          if(this.selectedFile == null){
+            var updateData = {
+              first_name: this.resellers.first_name,
+              last_name: this.resellers.last_name,
+              contact:{
+                phone: this.resellers.contact.phone,
+                email: this.resellers.contact.email,
+                address: this.resellers.contact.address,
+                zipcode: this.resellers.contact.zipcode,
+                state: this.resellers.contact.state,
+                city: this.resellers.contact.city,
+              }
             }
           }
-          this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
+          else{
+            var updateData = {
+              first_name: this.resellers.first_name,
+              last_name: this.resellers.last_name,
+              contact:{
+                phone: this.resellers.contact.phone,
+                email: this.resellers.contact.email,
+                address: this.resellers.contact.address,
+                zipcode: this.resellers.contact.zipcode,
+                state: this.resellers.contact.state,
+                city: this.resellers.contact.city,
+                logo_file_uuid: this.resellers.contact.logo_file_uuid
+              }
+            }
+          }
+          this.axios.patch('reseller/' + this.$route.params.id, updateData).then( res => {
               this.$router.push('/sys/resellers')
           }).catch( err => {
               var app = this
@@ -219,6 +260,25 @@ export default {
               app.error = true
               console.log(err.response)
           })
+        },
+        onFileChanged(event){
+          this.selectedFile = event.target.files[0]
+          var sendData = new FormData()
+
+          sendData.append('file', this.selectedFile)
+          sendData.append('belongs_to', 'user.logo')
+          sendData.append('public', true)
+
+          this.axios.post('file', sendData).then(res => {
+          this.resellers.contact.logo_file_uuid = res.data.object_uuid
+          console.log(res)
+          }).catch(err => {
+            console.log(err)
+          })
+        },
+        getLogo(value){
+          var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
+          return logo
         }
     },
 }

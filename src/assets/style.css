@@ -6202,7 +6202,6 @@ button#preview{
   height: calc(100vh - 170px);
   overflow: auto;
   -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
 }
 .main-add::-webkit-scrollbar{
   display: none;
@@ -6223,7 +6222,6 @@ button#preview{
   height: calc(100vh - 170px);
   overflow: auto;
   -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
 }
 .main::-webkit-scrollbar{
   display: none;
@@ -6265,13 +6263,18 @@ button#preview{
   width: 30px;
   border-radius: 50%;
 }
+.image-resize-upload{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
 @media only screen and (max-width: 1270px) {
   .cont-grid{
     max-width: 19.6363636364%;
     width: 100%;
   }
   .grid-3{
-    width: 20.5%;
+    width: 20.7%;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -6434,4 +6437,11 @@ button#preview{
       float: left;
       margin-left: 15px;
     }
+}
+
+@-moz-document url-prefix() {
+  .main, main-add{
+    overflow-x: hidden;
+    -moz-appearance: scrollbar;
+  }
 }

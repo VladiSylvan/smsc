@@ -113,7 +113,6 @@ export default {
     methods:{
       edit(){
         var app = this
-        event.preventDefault();
         var updateData = {
           recipient_name: this.recipient.recipient_name,
           phone_number: this.recipient.phone_number,

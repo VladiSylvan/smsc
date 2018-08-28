@@ -78,9 +78,11 @@
             </div>
             <div class="grid-4">
               <div class="grid-title">
-                Company name
+                Company
               </div>
-              <input class="grid-input" type="text" v-model="users.company_name" placeholder="Enter company name">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="users.company_uuid" required>
+                <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
+              </select>
             </div>
           </div>
           <div class="user-second">
@@ -122,14 +124,15 @@ export default {
           errorMsg: '',
           selectedFile: null,
           dragging: false,
+          companies: [],
           users: {
-            first_name: '',
-            company_name: '',
-            last_name: '',
-            user_name: '',
-            email: '',
             passwd: '',
+            first_name: '',
+            last_name: '',
             rank: '',
+            company_uuid: '',
+            user_name: '',
+            email: ''
           },
           isModalVisible: false,
           vendors: true,
@@ -161,55 +164,40 @@ export default {
     mounted(){
       var app = this
       this.axios.all([
-        this.axios.get('user/list'),
-      ]).then( this.axios.spread((users) => {
-        app.users = users.data.payload.items
-        console.log(users)
+        this.axios.get('company/list'),
+      ]).then( this.axios.spread((companies) => {
+        app.companies = companies.data.payload.items
       })).catch(error => {
         console.log(error)
       })
     },
     methods:{
       create(){
-        if(this.selectedFile != null){
-          let data = new FormData();
-          data.append('file', this.selectedFile);
-          data.append('belongs_to', 'user.logo')
-          this.axios.post(
-            '/file',
-            data
-          ).then(
-            response => {
-              var app = this
-              this.axios.post('user/create', app.users).then( res => {
-                  this.$router.push({ name: 'Users', params: { successMsg: 'OK' }})
-              }).catch( err => {
-                  var app = this
-
-                  app.errorMsg = err.response.data.error.message
-                  app.error = true
-                  console.log(err.response)
-              })
-              this.users.logo_file_uuid = response.data.object_uuid
-              console.log('image upload response > ', response)
-            }
-          )
-        }
-        else{
+        var app = this
+        this.axios.post('user/create', app.users).then(res => {
+        this.$router.push({ name: 'Users', params: { successMsg: 'OK' }})
+        }).catch( err => {
           var app = this
-          this.axios.post('users/create', app.users).then( res => {
-              this.$router.push({ name: 'Users', params: { successMsg: 'OK' }})
-          }).catch( err => {
-              var app = this
 
-              app.errorMsg = err.response.data.error.message
-              app.error = true
-              console.log(err.response)
-          })
-        }
+          app.errorMsg = err.res.data.error.message
+          app.error = true
+          console.log(err.res)
+        })
       },
       onFileChanged(event){
         this.selectedFile = event.target.files[0]
+        var sendData = new FormData()
+
+        sendData.append('file', this.selectedFile)
+        sendData.append('belongs_to', 'user.logo')
+        sendData.append('public', true)
+
+        this.axios.post('file', sendData).then(res => {
+        this.users.logo_file_uuid = res.data.object_uuid
+        console.log(res)
+        }).catch(err => {
+          console.log(err)
+        })
       },
     }
 }

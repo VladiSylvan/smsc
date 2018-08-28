@@ -20,7 +20,7 @@
             Back to Resellers
           </div>
         </router-link>
-        <router-link :to="{ name: 'AddReseller'}"><button id="product" type="submit">Add Reseller</button></router-link>
+        <router-link :to="{ name: 'AddReseller'}"><button id="product" v-on:click="create()" type="submit">Add Reseller</button></router-link>
         <router-link :to="{ name: 'Resellers'}"><button id="cancel" type="submit">Cancel</button></router-link>
       </div>
       <div class="main-add">
@@ -33,13 +33,13 @@
               <div class="grid-title">
                 First Name
               </div>
-              <input class="grid-input" type="text" v-model="user.firstName" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="reseller.first_name" placeholder="Caroline">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Last Name
               </div>
-              <input class="grid-input" type="text" v-model="user.lastName" placeholder="Thomas">
+              <input class="grid-input" type="text" v-model="reseller.last_name" placeholder="Thomas">
             </div>
             <div class="grid-1">
               <div class="grid-title">
@@ -51,66 +51,72 @@
               <div class="grid-title">
                 Phone Number
               </div>
-              <input class="grid-input" type="text" v-model="user.phoneNumber" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="reseller.contact.phone" placeholder="Caroline">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Email
               </div>
-              <input class="grid-input" type="text" v-model="user.email" placeholder="Enter Email">
+              <input class="grid-input" type="text" v-model="reseller.contact.email" placeholder="Enter Email">
             </div>
             <div class="grid-1">
               <div class="grid-title">
                 Company
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company">
-                <option value="Choose Company">Choose Company</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company_uuid" required>
+                <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
               </select>
             </div>
             <div class="grid-2">
               <div class="grid-title">
                 Address
               </div>
-              <input class="grid-input" type="text" v-model="user.address" placeholder="Caroline">
+              <input class="grid-input" type="text" v-model="reseller.contact.address" placeholder="Caroline">
             </div>
             <div class="grid-3-sec">
               <div class="grid-title">
                 Zip Code
               </div>
-              <input class="grid-input" type="text" v-model="user.zipCode" placeholder="75832-4568">
+              <input class="grid-input" type="text" v-model="reseller.contact.zipcode" placeholder="75832-4568">
             </div>
             <div class="grid-4-sec">
               <div class="grid-title">
                 Country
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="user.country">
-                <option value="Select">Select</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="reseller.contact.country_uuid">
+                <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
               </select>
             </div>
             <div class="grid-3-sec">
               <div class="grid-title">
                 State
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="user.state">
-                <option value="Select State">Select State</option>
-              </select>
+              <input class="grid-input" type="text" v-model="reseller.contact.state" placeholder="MD">
             </div>
             <div class="grid-3-sec">
               <div class="grid-title">
                 City
               </div>
-              <input class="grid-input" type="text" v-model="user.city" placeholder="Port Joyce">
+              <input class="grid-input" type="text" v-model="reseller.contact.city" placeholder="Port Joyce">
             </div>
           </div>
           <div class="reseller-second">
             <div class="grid-title">
-              Choose Photo
+              Choose Logo
             </div>
             <div class="upload">
-              <div class="upload-title">
+              <div v-if="selectedFile == null" class="upload-title">
                 Drop photo here or browse
               </div>
-              <button class="upload-button" type="submit">Upload photo</button>
+              <button v-if="selectedFile == null" class="upload-button" type="submit">Upload photo</button>
+              <div v-if="selectedFile != null" class="upload-title">
+                {{ selectedFile.name }}
+              </div>
+              <form role="form" @submit.prevent="onSubmit">
+                <div class="dropArea" @ondragover="onFileChanged($event)" :class="dragging ? 'dropAreaDragging' : ''" @dragenter="dragging=true" @dragend="dragging=false" @dragleave="dragging=false">
+                  <input type="file" class="upload-input" name="selectedFile" required multiple @change="onFileChanged($event)" accept="image/*">
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -130,6 +136,25 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
+          selectedFile: null,
+          dragging: false,
+          countries: [],
+          reseller: {
+            first_name: '',
+            contact: {
+              country_uuid: '',
+              city: '',
+              zipcode: '',
+              address: '',
+              // logo_file_uuid: '',
+              state: '',
+              phone: '',
+              email: ''
+            },
+            last_name: '',
+            reseller_url: 'http://reseller.com'
+          },
+          companies: [],
           vendors: true,
                 user:{
                 productName: 'Caroline',
@@ -162,13 +187,52 @@ export default {
       modal,
       NavigationComponent,
     },
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('company/list'),
+        this.axios.get('country/list'),
+      ]).then( this.axios.spread((companies, countries) => {
+        app.companies = companies.data.payload.items
+        app.countries = countries.data.payload.items
+      })).catch(error => {
+        console.log(error)
+      })
+    },
     methods:{
         showModal() {
           this.isModalVisible = true;
         },
         closeModal() {
           this.isModalVisible = false;
-        }
+        },
+        create(){
+          var app = this
+          this.axios.post('reseller/create', app.reseller).then(res => {
+          this.$router.push({ name: 'Resellers', params: { successMsg: 'OK' }})
+          }).catch( err => {
+            var app = this
+
+            app.errorMsg = err.res.data.error.message
+            app.error = true
+            console.log(err.res)
+          })
+        },
+        onFileChanged(event){
+          this.selectedFile = event.target.files[0]
+          var sendData = new FormData()
+
+          sendData.append('file', this.selectedFile)
+          sendData.append('belongs_to', 'user.logo')
+          sendData.append('public', true)
+
+          this.axios.post('file', sendData).then(res => {
+          this.reseller.contact.logo_file_uuid = res.data.object_uuid
+          console.log(res)
+          }).catch(err => {
+            console.log(err)
+          })
+        },
     },
 }
 </script>

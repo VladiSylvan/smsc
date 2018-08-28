@@ -101,7 +101,6 @@ export default {
     methods:{
       create(){
         var app = this
-        event.preventDefault();
         this.axios.post('recipient/create', this.recipient).then( res => {
         this.$router.push({ name: 'Recipients', params: { successMsg: 'OK' }})
         }).catch( err => {

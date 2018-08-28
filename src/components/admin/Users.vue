@@ -44,13 +44,13 @@
               </thead>
               <tbody>
                 <tr v-for="user, index in users">
-                  <td class="users-avatar"><div class="user-avatar"></div></td>
+                  <td class="users-avatar"><div class="user-avatar"><img class="image-resize" :src="getLogo(user.logo_file_uuid)"></div></td>
                   <td class="users-name">{{ user.full_name }}</td>
                   <td class="users-username">{{ user.user_name }}</td>
                   <td class="users-company">{{ user.company_name }}</td>
                   <td class="users-reseller">{{ user.reseller_name }}</td>
                   <td class="users-start">{{ user.created_on | moment("DD MMM YYYY") }}</td>
-                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser' }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
+                  <td class="users-option"><div class="product-control-info"><router-link :to="{ name: 'EditUser', params: { id: user.user_id } }"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="users-option"><div class="product-control-info"><img v-on:click="userDelete(user.user_id, user.full_name, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
               </tbody>
@@ -158,6 +158,10 @@ export default {
                 console.log(err.response)
             })
           }
+        },
+        getLogo(value){
+          var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
+          return logo
         }
     },
 }

@@ -226,7 +226,7 @@ export default new Router({
         beforeEnter: checkAuth
     },
     {
-        path: '/sys/edit-user',
+        path: '/sys/edit-user/:id',
         name: 'EditUser',
         component: EditUser,
         beforeEnter: checkAuth

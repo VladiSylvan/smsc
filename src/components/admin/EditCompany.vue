@@ -90,8 +90,8 @@
               Change Photo
             </div>
             <div class="upload-edit">
-              <div class="upload-image">
-                <div class="upload-circle"></div>
+              <div v-if="selectedFile == null" class="upload-image">
+                <div class="upload-circle"><img v-if="companies.contact.logo_file_uuid != null" class="image-resize-upload" :src="getLogo(companies.contact.logo_file_uuid)"></div>
               </div>
               <div class="upload-container">
                 <div v-if="selectedFile == null" class="upload-title-edit">
@@ -194,70 +194,48 @@ export default {
           this.isModalVisible = false;
         },
         edit(){
-          if(this.selectedFile === null){
-            var app = this
-            var updateData = {
-              company_name: this.companies.company_name,
-              contact:{
-                phone: this.companies.contact.phone,
-                email: this.companies.contact.email,
-                address: this.companies.contact.address,
-                state: this.companies.contact.state,
-                city: this.companies.contact.city,
-                zipcode: this.companies.contact.zipcode,
-                logo_file_uuid: this.companies.contact.logo_file_uuid,
-              }
+          var app = this
+          var updateData = {
+            company_name: this.companies.company_name,
+            contact:{
+              phone: this.companies.contact.phone,
+              email: this.companies.contact.email,
+              address: this.companies.contact.address,
+              state: this.companies.contact.state,
+              city: this.companies.contact.city,
+              zipcode: this.companies.contact.zipcode,
+              logo_file_uuid: this.companies.contact.logo_file_uuid,
             }
-            this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
-                this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
-            }).catch( err => {
-                var app = this
-
-                // app.errorMsg = err.response.data.error.message
-                app.error = true
-                console.log(err.response)
-            })
           }
-          else{
-            let data = new FormData();
-            data.append('file', this.selectedFile);
-            data.append('belongs_to', 'user.logo')
+          this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
+              this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
+          }).catch( err => {
+              var app = this
 
-            this.axios.post(
-              '/file',
-              data
-            ).then(
-              response => {
-                var app = this
-                var updateData = {
-                  company_name: this.companies.company_name,
-                  contact:{
-                    phone: this.companies.contact.phone,
-                    email: this.companies.contact.email,
-                    address: this.companies.contact.address,
-                    state: this.companies.contact.state,
-                    city: this.companies.contact.city,
-                    zipcode: this.companies.contact.zipcode,
-                    logo_file_uuid: response.data.object_uuid,
-                  }
-                }
-                this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
-                    this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
-                }).catch( err => {
-                    var app = this
-
-                    // app.errorMsg = err.response.data.error.message
-                    app.error = true
-                    console.log(err.response)
-                })
-                console.log('image upload response > ', response)
-              }
-            )
-          }
+              // app.errorMsg = err.response.data.error.message
+              app.error = true
+              console.log(err.response)
+          })
         },
         onFileChanged(event){
           this.selectedFile = event.target.files[0]
+          var sendData = new FormData()
+
+          sendData.append('file', this.selectedFile)
+          sendData.append('belongs_to', 'user.logo')
+          sendData.append('public', true)
+
+          this.axios.post('file', sendData).then(res => {
+          this.companies.contact.logo_file_uuid = res.data.object_uuid
+          console.log(res)
+          }).catch(err => {
+            console.log(err)
+          })
         },
+        getLogo(value){
+          var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
+          return logo
+        }
     },
 }
 </script>

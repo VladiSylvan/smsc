@@ -98,11 +98,6 @@ export default {
   z-index: 999999;
   float: right;
 }
-@-moz-document url-prefix() {
-  h1 {
-    color: red;
-  }
-}
 .username{
   color: #55616E;
   font-family: "Helvetica Neue, Arial, Sans-Serif";

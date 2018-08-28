@@ -81,8 +81,8 @@
               Change Photo
             </div>
             <div class="upload-edit">
-              <div class="upload-image">
-                <div class="upload-circle"></div>
+              <div v-if="selectedFile == null" class="upload-image">
+                <div class="upload-circle"><img v-if="vendor.logo_file_uuid != null" class="image-resize-upload" :src="getLogo(vendors.logo_file_uuid)"></div>
               </div>
               <div class="upload-container">
                 <div v-if="selectedFile == null" class="upload-title-edit">
@@ -182,63 +182,43 @@ export default {
           this.isModalVisible = false;
         },
         edit(){
-          if(this.selectedFile === null){
-            var app = this
-            var updateData = {
-              noc_email: this.vendors.noc_email,
-              rate_email: this.vendors.rate_email,
-              sales_email: this.vendors.sales_email,
-              vendor_name: this.vendors.vendor_name,
-              company_uuid: this.vendors.company_uuid,
-              contact_person: this.vendors.contact_person,
-            }
-            this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
-                this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
-            }).catch( err => {
-                var app = this
-
-                // app.errorMsg = err.response.data.error.message
-                app.error = true
-                console.log(err.response)
-            })
+          var app = this
+          var updateData = {
+            noc_email: this.vendors.noc_email,
+            rate_email: this.vendors.rate_email,
+            sales_email: this.vendors.sales_email,
+            vendor_name: this.vendors.vendor_name,
+            company_uuid: this.vendors.company_uuid,
+            contact_person: this.vendors.contact_person,
+            logo_file_uuid: this.vendors.logo_file_uuid
           }
-          else{
-            let data = new FormData();
-            data.append('file', this.selectedFile);
-            data.append('belongs_to', 'user.logo')
-
-            this.axios.post(
-              '/file',
-              data
-            ).then(
-              response => {
-                var app = this
-                var updateData = {
-                  noc_email: this.vendors.noc_email,
-                  rate_email: this.vendors.rate_email,
-                  sales_email: this.vendors.sales_email,
-                  vendor_name: this.vendors.vendor_name,
-                  company_uuid: this.vendors.company_uuid,
-                  contact_person: this.vendors.contact_person,
-                  logo_file_uuid: response.data.object_uuid,
-                }
-                this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
-                    this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
-                }).catch( err => {
-                    var app = this
-
-                    // app.errorMsg = err.response.data.error.message
-                    app.error = true
-                    console.log(err.response)
-                })
-                console.log('image upload response > ', response)
-              }
-            )
-          }
+          this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
+              this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
+          }).catch( err => {
+              var app = this
+              app.error = true
+              console.log(err.response)
+          })
         },
         onFileChanged(event){
           this.selectedFile = event.target.files[0]
+          var sendData = new FormData()
+
+          sendData.append('file', this.selectedFile)
+          sendData.append('belongs_to', 'user.logo')
+          sendData.append('public', true)
+
+          this.axios.post('file', sendData).then(res => {
+          this.vendors.logo_file_uuid = res.data.object_uuid
+          console.log(res)
+          }).catch(err => {
+            console.log(err)
+          })
         },
+        getLogo(value){
+          var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
+          return logo
+        }
     },
 }
 </script>
