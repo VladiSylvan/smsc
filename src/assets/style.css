@@ -1,3 +1,6 @@
+button{
+  cursor: pointer;
+}
 select{
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -16,7 +19,7 @@ input[type="text"]{
   background-position-x: 5px;
   background-position-y: 5px;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -31,7 +34,7 @@ input[type="password"]{
   background-position-x: 5px;
   background-position-y: 5px;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -46,7 +49,7 @@ textarea{
   background-position-x: 5px;
   background-position-y: 5px;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -81,7 +84,7 @@ textarea{
 }
 .back{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -107,6 +110,7 @@ button#cancel{
   margin-bottom: 20px;
   margin-right: 15px;
   float: right;
+  cursor: pointer;
 }
 button#product{
   	height: 40px;
@@ -115,7 +119,7 @@ button#product{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -123,6 +127,7 @@ button#product{
     margin-top: 20px;
     float: right;
     margin-right: 20px;
+    cursor: pointer;
 }
 .chart-box{
   height: 30px;
@@ -150,6 +155,7 @@ button#product{
   text-align: center;
   position: relative;
   top: -165px;
+  cursor: pointer;
 }
 .upload-input-edit{
   border-radius: 6px;
@@ -167,7 +173,7 @@ button#product{
 }
 .upload-title{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -179,12 +185,13 @@ button#product{
   border-radius: 4px;
   background-color: #51A3F3;
   color: #FFFFFF;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 15px;
   line-height: 30px;
   height: 36px;
   width: 136px;
+  cursor: pointer;
 }
 .grid-input{
   width: 100%;
@@ -379,7 +386,7 @@ table{
 }
 .did-info-text{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 12px;
   line-height: 15px;
@@ -415,7 +422,7 @@ table{
 }
 .did-add-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -648,7 +655,7 @@ table{
 }
 .user-header-title{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -674,7 +681,7 @@ button#users{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -682,6 +689,7 @@ button#users{
     margin-top: 20px;
     margin-right: 20px;
     float: right;
+    cursor: pointer;
 }
 .company-select{
     max-width: 13.6363636364%;
@@ -693,7 +701,7 @@ button#users{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     color: #55616E;
     -webkit-box-sizing: border-box;
@@ -715,7 +723,7 @@ button#users{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     color: #55616E;
     -webkit-box-sizing: border-box;
@@ -760,7 +768,7 @@ button#users{
 }
 .transaction-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -888,7 +896,7 @@ button#users{
 }
 .template-title-new{
   color: #BDBFD8;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 1px;
@@ -899,7 +907,7 @@ button#users{
 }
 .template-title-all{
   color: #BDBFD8;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 1px;
@@ -974,7 +982,7 @@ button#users{
   width: 370px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -984,7 +992,7 @@ button#users{
   width: 117px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -1047,7 +1055,7 @@ button#users{
 }
 .undo-title{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -1063,7 +1071,7 @@ button#users{
 }
 .undo-undo{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -1087,7 +1095,7 @@ button#users{
 }
 .reseller-menu-link{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -1097,7 +1105,7 @@ button#users{
 }
 .reseller-menu-link a{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -1116,7 +1124,7 @@ button#users{
 }
 .reseller-menu-add{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -1242,7 +1250,7 @@ button#reseller{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -1250,6 +1258,7 @@ button#reseller{
     margin-top: 20px;
     float: right;
     margin-right: 20px;
+    cursor: pointer;
 }
 .reseller-input-search{
   max-width: 26.4912280702%;
@@ -1342,13 +1351,14 @@ button#reporting{
     border: 1px solid #BDBFD8;
     border-radius: 4px;
     background-color: #FFFFFF;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
     text-align: center;
     margin-top: 15px;
     margin-left: 10px;
+    cursor: pointer;
 }
 .cont-1-rep{
   width: 47.5%;
@@ -1372,7 +1382,7 @@ button#reporting{
   height: 30px;
   width: calc(100% - 60px);
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -1397,7 +1407,7 @@ button#reporting{
   height: 30px;
   width: calc(100% - 60px);
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -1423,7 +1433,7 @@ button#reporting{
   height: 30px;
   width: calc(100% - 60px);
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -1516,7 +1526,7 @@ button#reporting{
   height: 40px !important;
   padding-left: 40px;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -1540,7 +1550,7 @@ button#reporting{
 }
 .payment-history-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -1622,7 +1632,7 @@ button#reporting{
 }
 .invoice-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -1705,7 +1715,7 @@ button#did{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -1713,6 +1723,7 @@ button#did{
     margin-top: 20px;
     float: right;
     margin-right: 20px;
+    cursor: pointer;
 }
 .filters-table{
   border: none;
@@ -1872,7 +1883,7 @@ button#did{
 }
 .upload-title-edit{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -1882,7 +1893,7 @@ button#did{
   border-radius: 4px;
   background-color: #51A3F3;
   color: #FFFFFF;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 15px;
   line-height: 30px;
@@ -1925,7 +1936,7 @@ button#did{
 }
 .vendor-add-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -1961,7 +1972,7 @@ button#did{
 }
 .recipient-add-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -1976,7 +1987,7 @@ button#did{
 }
 .user-add-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -2013,7 +2024,7 @@ button#did{
 }
 .reseller-add-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -2042,7 +2053,7 @@ button#did{
 }
 .company-add-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -2141,7 +2152,7 @@ button#did{
   height: 30px;
   width: calc(100% - 60px);
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -2167,7 +2178,7 @@ button#did{
   height: 30px;
   width: calc(100% - 60px);
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -2192,7 +2203,7 @@ button#did{
   height: 30px;
   width: calc(100% - 60px);
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -2213,7 +2224,7 @@ button#did{
 }
 .company-title-my{
   color: #BDBFD8;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 1px;
@@ -2224,7 +2235,7 @@ button#did{
 }
 .company-title-all{
   color: #BDBFD8;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 1px;
@@ -2248,7 +2259,7 @@ button#did{
 }
 .company-menu-link{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2265,7 +2276,7 @@ button#did{
 }
 .company-menu-add{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2357,7 +2368,7 @@ button#did{
 }
 .company-contact-text{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -2391,7 +2402,7 @@ button#did{
 }
 .company-menu-link a{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2399,7 +2410,7 @@ button#did{
 }
 .company-header-title{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -2425,7 +2436,7 @@ button#company{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -2433,6 +2444,7 @@ button#company{
     margin-top: 20px;
     margin-right: 20px;
     float: right;
+    cursor: pointer;
 }
 .reseller{
     max-width: 13.6363636364%;
@@ -2444,7 +2456,7 @@ button#company{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     color: #55616E;
     -webkit-box-sizing: border-box;
@@ -2466,7 +2478,7 @@ button#company{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     color: #55616E;
     -webkit-box-sizing: border-box;
@@ -2488,7 +2500,7 @@ button#company{
 .nav-link a{
   text-decoration: none;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2509,7 +2521,7 @@ button#company{
 }
 .billing-payment-menu-link{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2526,7 +2538,7 @@ button#company{
 }
 .billing-payment-menu-add{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2720,7 +2732,7 @@ button#company{
 }
 .billing-menu-link{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2737,7 +2749,7 @@ button#company{
 }
 .billing-menu-add{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2936,7 +2948,7 @@ button#company{
 }
 .billing-menu-link a{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2944,7 +2956,7 @@ button#company{
 }
 .billing-payment-menu-link a{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -2967,7 +2979,7 @@ td#add-sell-rate{
 }
 .vendor-title{
   color: #BDBFD8;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 1px;
@@ -2984,7 +2996,7 @@ td#add-sell-rate{
   float: left;
   display: inline-block;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -2994,7 +3006,7 @@ td#add-sell-rate{
   float: left;
   display: inline-block;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -3080,7 +3092,7 @@ td#add-sell-rate{
 }
 .product-add-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -3118,7 +3130,7 @@ td#add-sell-rate{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     color: #55616E;
     margin-top: 5px;
@@ -3139,7 +3151,7 @@ td#add-sell-rate{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     color: #55616E;
     margin-top: 5px;
@@ -3160,7 +3172,7 @@ td#add-sell-rate{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     color: #55616E;
     margin-top: 5px;
@@ -3174,7 +3186,7 @@ td#add-sell-rate{
 }
 .camp-text-count{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 13px;
   line-height: 15px;
@@ -3324,7 +3336,7 @@ td#add-sell-rate{
 }
 .camp-run-text{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 13px;
   line-height: 15px;
@@ -3332,7 +3344,7 @@ td#add-sell-rate{
 }
 .camp-text-buttons{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 13px;
   line-height: 15px;
@@ -3340,7 +3352,7 @@ td#add-sell-rate{
 }
 .camp-text-small{
 	color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 10px;
   line-height: 12px;
@@ -3415,7 +3427,7 @@ td#add-sell-rate{
 }
 .camp-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -3449,7 +3461,7 @@ td#add-sell-rate{
 }
 .camp-selected-text{
   color: #FFFFFF;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -3476,7 +3488,7 @@ td#add-sell-rate{
 }
 .camp-used-text{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -3525,7 +3537,7 @@ td#add-sell-rate{
 }
 .camp-title-small{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 12px;
   line-height: 15px;
@@ -3799,7 +3811,7 @@ td#add-sell-rate{
 }
 .main-title{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -3887,7 +3899,7 @@ a{
 }
 .back-sms{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -3935,7 +3947,7 @@ button#delete{
     border: 1px solid #D2305B;
     background-color: #FFFFFF;
     color: #D2305B;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 18px;
@@ -3950,7 +3962,7 @@ button#add{
     border: 1px solid #24E2A5;
     background-color: #FFFFFF;
     color: #24E2A5;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 18px;
@@ -3966,7 +3978,7 @@ button#create{
     border-radius: 4px;
     background-color: #51A3F3;
     color: #FFFFFF;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -4003,11 +4015,12 @@ button#sms-cancel{
   border: 1px solid #BDBFD8;
   border-radius: 4px;
   background-color: #FFFFFF;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 15px;
   line-height: 30px;
   text-align: center;
+  cursor: pointer;
 }
 .cont-1-alert{
   width: calc(100% - 40px);
@@ -4026,7 +4039,7 @@ button#sms-cancel{
 .chart-1-title-alert{
   height: 30px;
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
@@ -4051,7 +4064,7 @@ button#sms-cancel{
   background-position-x: 5px;
   background-position-y: 5px;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -4141,7 +4154,7 @@ button#payment{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -4150,6 +4163,7 @@ button#payment{
     float: right;
     padding-left: 15px;
     padding-right: 15px;
+    cursor: pointer;
 }
 .camp-nav-link-1{
   display: inline-block;
@@ -4275,7 +4289,7 @@ button#campaign{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -4314,7 +4328,7 @@ button#campaign{
 }
 .cont-grid-title{
   color: #BDBFD8;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 1px;
@@ -4323,14 +4337,14 @@ button#campaign{
 }
 .cont-grid-price{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-size: 36px;
   font-weight: 300;
   line-height: 50px;
 }
 .cont-grid-text{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 13px;
   line-height: 15px;
@@ -4350,7 +4364,7 @@ button#campaign{
   height: 30px;
   width: calc(100% - 60px);
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-size: 18px;
   font-weight: 500;
   line-height: 30px;
@@ -4477,7 +4491,7 @@ button#campaign{
   border: 1px solid #51A3F3;
   background-color: #51A3F3;
   color: #FFFFFF;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
@@ -4500,7 +4514,7 @@ button#campaign{
   border-radius: 3px;
   background-color: #FEDE7F;
   color: #31333B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -4519,7 +4533,7 @@ button#campaign{
   border-radius: 3px;
   background-color: #BBB4FF;
   color: #31333B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -4821,7 +4835,7 @@ button#campaign{
 }
 .callflow-input-text{
   color: #31333B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 40px;
@@ -4830,7 +4844,7 @@ button#campaign{
 }
 .callflow-grey-text{
   color: #31333B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 40px;
@@ -4842,7 +4856,7 @@ button#campaign{
 }
 .callflow-blue-text{
   color: #31333B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 40px;
@@ -4854,7 +4868,7 @@ button#campaign{
 }
 .callflow-red-text{
   color: #31333B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 40px;
@@ -4866,7 +4880,7 @@ button#campaign{
 }
 .callflow-grey-text-second{
   color: #31333B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 40px;
@@ -4978,7 +4992,7 @@ button#campaign{
 }
 .callflow-link{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -4988,7 +5002,7 @@ button#campaign{
 .callflow-cont-navbar{
   width: 123px;
   color: #70828B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 30px;
@@ -5001,7 +5015,7 @@ button#campaign{
   width: 123px;
   border-bottom: 2px solid #51A3F3;
   color: #222A37;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 30px;
@@ -5051,7 +5065,7 @@ button#campaign{
 }
 .callflow-cont-text{
   color: #70828B;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5082,7 +5096,7 @@ button#campaign{
 }
 .callflow-record-question{
   color: #A6B6BE;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -5106,7 +5120,7 @@ button#campaign{
 }
 .callflow-record{
 	color: #4D545E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
@@ -5204,7 +5218,7 @@ input:checked + .slider:before {
 }
 .callflow-main-title{
 	color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-size: 18px;
   font-weight: 500;
   line-height: 30px;
@@ -5256,7 +5270,7 @@ input:checked + .slider:before {
 }
 .back-call{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -5365,7 +5379,7 @@ button#call-cancel{
 }
 .chat-sms-name{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5387,14 +5401,14 @@ button#call-cancel{
 }
 .chat-info{
   color: #51A3F3;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 10px;
   line-height: 12px;
 }
 .chat-receiver-text{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5408,7 +5422,7 @@ button#call-cancel{
 }
 .chat-receiver-info{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 10px;
   line-height: 12px;
@@ -5418,7 +5432,7 @@ button#call-cancel{
 }
 .chat-sender-info{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 10px;
   line-height: 12px;
@@ -5445,7 +5459,7 @@ button#call-cancel{
 }
 .chat-sender-text{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5478,7 +5492,7 @@ button#call-cancel{
 }
 .sms-table-name{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5486,14 +5500,14 @@ button#call-cancel{
 }
 .sms-table-msg{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
 }
 .sms-table-date{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5554,7 +5568,7 @@ button#call-cancel{
   height: 58px;
   max-width: calc(100% - 115px);
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5591,7 +5605,7 @@ button#call-cancel{
 }
 .new-message-text{
   color: #FFFFFF;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5613,7 +5627,7 @@ button#call-cancel{
   background-position-x: 5px;
   background-position-y: 5px;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5662,7 +5676,7 @@ button#call-cancel{
 }
 .chat-no-messages-text{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5700,7 +5714,7 @@ button#call-cancel{
 }
 .chat-menu-name{
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5743,7 +5757,7 @@ button#call-cancel{
   background-position-x: 5px;
   background-position-y: 5px;
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 14px;
   line-height: 25px;
@@ -5759,7 +5773,7 @@ button#suppression{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 15px;
     line-height: 30px;
@@ -5793,7 +5807,7 @@ button#suppression{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     color: #55616E;
     -webkit-box-sizing: border-box;
@@ -5841,7 +5855,7 @@ button#suppression{
 }
 .header-text{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-weight: 300;
   font-size: 13px;
   line-height: 25px;
@@ -5853,7 +5867,7 @@ button#suppression{
   height: auto;
   width: calc(100% - 60px);
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-size: 18px;
   font-weight: 500;
   line-height: 30px;
@@ -6000,13 +6014,14 @@ button#template{
     background-color: #51A3F3;
     border-radius: 4px;
     color: #fff;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-size: 15px;
     font-weight: 300;
     line-height: 30px;
     text-align: center;
     margin-top: 20px;
     float: left;
+    cursor: pointer;
 }
 .nav-link-rprofile{
   display: inline-block;
@@ -6089,7 +6104,7 @@ button#template{
 .profile-payment-title{
   clear:both;
   color: #000000;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
   font-size: 18px;
   font-weight: 500;
   line-height: 30px;
@@ -6165,6 +6180,7 @@ button#preview{
     float: left;
     padding-left: 15px;
     padding-right: 15px;
+    cursor: pointer;
 }
 .vendor-rate-table{
   border: none;
@@ -6237,7 +6253,7 @@ button#preview{
 .popup-link{
   	height: 20px;
     width: 158px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
@@ -6249,7 +6265,7 @@ button#preview{
 .popup-link-active{
   	height: 20px;
     width: 158px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
+    /* font-family: "Helvetica Neue, Arial, Sans-Serif"; */
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;

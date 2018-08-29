@@ -38,7 +38,7 @@
               </div>
               <resellers-line :options="{responsive: false, maintainAspectRatio: false}" :width="510" :height="280"></resellers-line>
               <input class="reporting-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search">
-              <button type="submit">Filter</button>
+              <button id="reporting" type="submit">Filter</button>
               <table class="reporting-table" cellspacing="0" cellpadding="0">
                 <thead>
                   <tr>

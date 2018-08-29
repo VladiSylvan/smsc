@@ -76,6 +76,15 @@
                 <option value="Default">Default</option>
               </select>
             </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Company
+              </div>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="users.company_uuid" required>
+                <option value="">Select Company</option>
+                <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
+              </select>
+            </div>
           </div>
           <div class="user-second">
             <div class="grid-title">
@@ -120,6 +129,7 @@ export default {
           isModalVisible: false,
           selectedFile: null,
           dragging: false,
+          companies: [],
           vendors: true,
           editImage: '',
           users: {
@@ -128,6 +138,7 @@ export default {
             email: '',
             passwd: '',
             rank: '',
+            company_uuid: '',
           },
                 user:{
                 firstName: 'Caroline',
@@ -164,9 +175,11 @@ export default {
       var app = this
       this.axios.all([
         this.axios.get('user/' + this.$route.params.id),
-      ]).then( this.axios.spread((users) => {
+        this.axios.get('company/list'),
+      ]).then( this.axios.spread((users, companies) => {
         console.log(users)
         app.users = users.data.payload
+        app.companies = companies.data.payload.items
         this.editImage = this.users.logo_file_uuid
       })).catch(error => {
         console.log(error)

@@ -53,6 +53,8 @@ export default {
             this.axios.post('auth', app.user).then( res => {
                 localStorage.setItem('token', res.data.payload.token)
                 localStorage.setItem('token-exp', res.data.payload.exp)
+                localStorage.setItem('user-type', res.data.payload.user_type)
+                localStorage.setItem('user-name', app.user.user_name)
                 console.log('Token: ' + localStorage.getItem('token'))
                 console.log('Token expiry date: ' + localStorage.getItem('token-exp'))
                 if(res.data.payload.user_type == "company_admin"){
@@ -128,6 +130,7 @@ export default {
         line-height: 30px;
         text-align: center;
         margin-top: 15px;
+        cursor: pointer;
     }
     .no-account{
         float: right;

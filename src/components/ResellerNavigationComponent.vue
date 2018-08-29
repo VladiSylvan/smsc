@@ -392,7 +392,6 @@ li#active svg g{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
     font-weight: 300;
     color: #55616E;
     margin-top: 5px;
@@ -413,7 +412,6 @@ li#active svg g{
     padding: 10px 15px;
     font-size: 14px;
     line-height: 25px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
     font-weight: 300;
     color: #55616E;
     -webkit-box-sizing: border-box;
@@ -434,7 +432,6 @@ select{
 .side-link{
   	height: 20px;
     width: 220px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;

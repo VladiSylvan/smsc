@@ -2,9 +2,9 @@
   <div class="navi-user">
     <div v-if="popup" class="user-menu">
       <div v-on:click="popup = !popup" class="username">
-        {{ UserName }}
+        {{ profileUser.first_name }} {{ profileUser.last_name }}
       </div>
-      <div v-on:click="popup = !popup" class="user-circle"><span id="avatar">A</span></div>
+      <div v-on:click="popup = !popup" class="user-circle"><img v-if="profileUser.logo_file_uuid != null" class="image-resize" :src="getLogo(profileUser.logo_file_uuid)"></div>
       <img class="popup-image-box" src="@/assets/Icon/Users.svg">
       <span class="popup-link">Profile</span>
       <img class="popup-image-box" src="@/assets/Icon/Settings.svg">
@@ -65,9 +65,9 @@
       </div>
     </div>
     <div v-on:click="popup = !popup" class="username">
-      {{ UserName }}
+      {{ profileUser.first_name }} {{ profileUser.last_name }}
     </div>
-    <div v-on:click="popup = !popup" class="user-circle"><span id="avatar">A</span></div>
+    <div v-on:click="popup = !popup" class="user-circle"><img v-if="profileUser.logo_file_uuid != null" class="image-resize" :src="getLogo(profileUser.logo_file_uuid)"></div>
   </div>
 </template>
 <script>
@@ -75,10 +75,27 @@ export default {
     data () {
       return {
         popup: false,
-        UserName: 'Linnie Weaver',
+        profileUser: [],
       }
     },
     props: ['name'],
+    mounted(){
+      var app = this
+      this.axios.all([
+        this.axios.get('user'),
+      ]).then( this.axios.spread((profileUser) => {
+        console.log(profileUser)
+        app.profileUser = profileUser.data.payload
+      })).catch(error => {
+        console.log(error)
+      })
+    },
+    methods:{
+      getLogo(value){
+        var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
+        return logo
+      }
+    }
 }
 </script>
 <style>
@@ -100,14 +117,13 @@ export default {
 }
 .username{
   color: #55616E;
-  font-family: "Helvetica Neue, Arial, Sans-Serif";
   font-weight: 300;
   font-size: 15px;
   line-height: 20px;
-  text-align: left;
+  text-align: right;
   margin-top: 20px;
   float: left;
-  margin-left: 88px;
+  width: 178px;
   cursor: pointer;
 }
 .user-circle{
@@ -127,19 +143,17 @@ export default {
 @-moz-document url-prefix() {
   .username{
     color: #55616E;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
     font-weight: 300;
     font-size: 15px;
     line-height: 20px;
-    text-align: left;
+    text-align: right;
     margin-top: 20px;
     float: left;
-    margin-left: 63px;
+    width: 178px;
     cursor: pointer;
   }
 }
 #avatar{
-  	font-family: "Helvetica Neue, Arial, Sans-Serif";
     font-weight: 300;
     font-size: 12px;
     letter-spacing: 1px;
@@ -161,7 +175,6 @@ export default {
 #popup-link{
   	height: 20px;
     width: 158px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
@@ -172,7 +185,6 @@ export default {
 #popup-link-active{
   	height: 20px;
     width: 158px;
-    font-family: "Helvetica Neue, Arial, Sans-Serif";
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;

@@ -226,7 +226,7 @@ export default {
         },
         edit(){
           var app = this
-          if(this.selectedFile == null){
+          if(this.selectedFile == null && this.editImage == null){
             var updateData = {
               first_name: this.resellers.first_name,
               last_name: this.resellers.last_name,
@@ -237,6 +237,21 @@ export default {
                 zipcode: this.resellers.contact.zipcode,
                 state: this.resellers.contact.state,
                 city: this.resellers.contact.city,
+              }
+            }
+          }
+          else if(this.selectedFile == null && this.editImage != null){
+            var updateData = {
+              first_name: this.resellers.first_name,
+              last_name: this.resellers.last_name,
+              contact:{
+                phone: this.resellers.contact.phone,
+                email: this.resellers.contact.email,
+                address: this.resellers.contact.address,
+                zipcode: this.resellers.contact.zipcode,
+                state: this.resellers.contact.state,
+                city: this.resellers.contact.city,
+                logo_file_uuid: this.editImage,
               }
             }
           }
@@ -251,7 +266,7 @@ export default {
                 zipcode: this.resellers.contact.zipcode,
                 state: this.resellers.contact.state,
                 city: this.resellers.contact.city,
-                logo_file_uuid: this.resellers.contact.logo_file_uuid,
+                logo_file_uuid: this.resellers.contact.logo_file_uuid
               }
             }
           }

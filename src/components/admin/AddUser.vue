@@ -81,6 +81,7 @@
                 Company
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="users.company_uuid" required>
+                <option value="">Select Company</option>
                 <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
               </select>
             </div>

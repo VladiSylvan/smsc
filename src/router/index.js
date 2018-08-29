@@ -115,6 +115,54 @@ const checkAuth = (to, from, next) => {
     next('/login')
 }
 
+const checkAdmin = (to, from, next) => {
+  if(localStorage.getItem('user-type') == 'admin'){
+    next()
+    return
+  }
+  else{
+    if(localStorage.getItem('user-type') == "company_admin"){
+      next('/ca/alert')
+    }
+    else if(localStorage.getItem('user-type') == "reseller"){
+      next('/r/profile')
+    }
+    else{
+      next('/login')
+    }
+  }
+}
+
+const checkReseller = (to, from, next) => {
+  if(localStorage.getItem('user-type') == 'reseller' || localStorage.getItem('user-type') == "admin"){
+    next()
+    return
+  }
+  else{
+    if(localStorage.getItem('user-type') == "company_admin"){
+      next('/ca/alert')
+    }
+    else{
+      next('/login')
+    }
+  }
+}
+
+const checkCompanyAdmin = (to, from, next) => {
+  if(localStorage.getItem('user-type') == 'company_admin' || localStorage.getItem('user-type') == "admin"){
+    next()
+    return
+  }
+  else{
+    if(localStorage.getItem('user-type') == "reseller"){
+      next('/r/profile')
+    }
+    else{
+      next('/login')
+    }
+  }
+}
+
 Vue.use(Router)
 
 export default new Router({
@@ -133,175 +181,204 @@ export default new Router({
         path: '/sys/dashboard',
         name: 'Dashboard',
         component: Dashboard,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/reporting',
         name: 'Reporting',
         component: Reporting,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/product',
         name: 'Product',
         component: Product,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/add-product',
         name: 'AddProduct',
         component: AddProduct,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/template',
         name: 'Template',
         component: Template,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/billing',
         name: 'Billing',
         component: Billing,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/billing-payment',
         name: 'BillingPayment',
         component: BillingPayment,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/resellers',
         name: 'Resellers',
         component: Resellers,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/add-reseller',
         name: 'AddReseller',
         component: AddReseller,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/edit-reseller/:id',
         name: 'EditReseller',
         component: EditReseller,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/payment-history',
         name: 'PaymentHistory',
         component: PaymentHistory,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/invoice-history',
         name: 'InvoiceHistory',
         component: InvoiceHistory,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/transaction-history',
         name: 'TransactionHistory',
         component: TransactionHistory,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/add-manual-payment',
         name: 'AddManualPayment',
         component: AddManualPayment,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/users',
         name: 'Users',
         component: Users,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/add-user',
         name: 'AddUser',
         component: AddUser,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/edit-user/:id',
         name: 'EditUser',
         component: EditUser,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/companies',
         name: 'Companies',
         component: Companies,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/add-company',
         name: 'AddCompany',
         component: AddCompany,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/edit-company/:id',
         name: 'EditCompany',
         component: EditCompany,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/vendors',
         name: 'Vendors',
         component: Vendors,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/add-vendor',
         name: 'AddVendor',
         component: AddVendor,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/edit-vendor/:id',
         name: 'EditVendor',
         component: EditVendor,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/vendors-rate',
         name: 'VendorsRate',
         component: VendorsRate,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/did',
         name: 'DID',
         component: DID,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/edit-did/:id',
         name: 'EditDID',
         component: EditDID,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/import-did',
         name: 'ImportDID',
         component: ImportDID,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/verify-did',
         name: 'VerifyDID',
         component: VerifyDID,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/sys/filters',
         name: 'Filters',
         component: Filters,
-        beforeEnter: checkAuth
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/register',
@@ -311,287 +388,401 @@ export default new Router({
     {
         path: '/r/profile',
         name: 'Profile',
-        component: Profile
+        component: Profile,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/payment',
         name: 'ProfilePayment',
-        component: ProfilePayment
+        component: ProfilePayment,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/product',
         name: 'ResellerProduct',
-        component: ResellerProduct
+        component: ResellerProduct,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/add-product',
         name: 'ResellerAddProduct',
-        component: ResellerAddProduct
+        component: ResellerAddProduct,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/edit-product',
         name: 'ResellerEditProduct',
-        component: ResellerEditProduct
+        component: ResellerEditProduct,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/mail-register',
         name: 'MailTemplateRegister',
-        component: MailTemplateRegister
+        component: MailTemplateRegister,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/mail-template',
         name: 'MailTemplate',
-        component: MailTemplate
+        component: MailTemplate,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/template',
         name: 'ResellerTemplate',
-        component: ResellerTemplate
+        component: ResellerTemplate,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/billing',
         name: 'ResellerBilling',
-        component: ResellerBilling
+        component: ResellerBilling,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/billing-payment',
         name: 'ResellerBillingPayment',
-        component: ResellerBillingPayment
+        component: ResellerBillingPayment,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/users',
         name: 'ResellerUsers',
-        component: ResellerUsers
+        component: ResellerUsers,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/add-user',
         name: 'ResellerAddUser',
-        component: ResellerAddUser
+        component: ResellerAddUser,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/edit-user',
         name: 'ResellerEditUser',
-        component: ResellerEditUser
+        component: ResellerEditUser,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/companies',
         name: 'ResellerCompanies',
-        component: ResellerCompanies
+        component: ResellerCompanies,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/add-company',
         name: 'ResellerAddCompany',
-        component: ResellerAddCompany
+        component: ResellerAddCompany,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/edit-company',
         name: 'ResellerEditCompany',
-        component: ResellerEditCompany
+        component: ResellerEditCompany,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/payment-history',
         name: 'ResellerPaymentHistory',
-        component: ResellerPaymentHistory
+        component: ResellerPaymentHistory,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/invoice-history',
         name: 'ResellerInvoiceHistory',
-        component: ResellerInvoiceHistory
+        component: ResellerInvoiceHistory,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/transaction-history',
         name: 'ResellerTransactionHistory',
-        component: ResellerTransactionHistory
+        component: ResellerTransactionHistory,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/sms-center',
         name: 'ResellerSMSCenter',
-        component: ResellerSMSCenter
+        component: ResellerSMSCenter,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/sms-center-new',
         name: 'ResellerSMSCenterNew',
-        component: ResellerSMSCenterNew
+        component: ResellerSMSCenterNew,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/sms-center-empty',
         name: 'ResellerSMSCenterEmpty',
-        component: ResellerSMSCenterEmpty
+        component: ResellerSMSCenterEmpty,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/vendors',
         name: 'ResellerVendors',
-        component: ResellerVendors
+        component: ResellerVendors,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/add-vendor',
         name: 'ResellerAddVendor',
-        component: ResellerAddVendor
+        component: ResellerAddVendor,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/edit-vendor',
         name: 'ResellerEditVendor',
-        component: ResellerEditVendor
+        component: ResellerEditVendor,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/dids',
         name: 'ResellerDIDs',
-        component: ResellerDIDs
+        component: ResellerDIDs,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/filters',
         name: 'ResellerFilters',
-        component: ResellerFilters
+        component: ResellerFilters,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/r/edit-dids',
         name: 'ResellerEditDIDs',
-        component: ResellerEditDIDs
+        component: ResellerEditDIDs,
+        beforeEnter: checkAuth,
+        beforeEnter: checkAdmin,
     },
     {
         path: '/ca/alert',
         name: 'Alert',
-        component: Alert
+        component: Alert,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/weekly',
         name: 'AlertWeekly',
-        component: AlertWeekly
+        component: AlertWeekly,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/template',
         name: 'CompanyTemplate',
-        component: CompanyTemplate
+        component: CompanyTemplate,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/billing',
         name: 'CompanyBilling',
-        component: CompanyBilling
+        component: CompanyBilling,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/billing-payment',
         name: 'CompanyBillingPayment',
-        component: CompanyBillingPayment
+        component: CompanyBillingPayment,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/dids',
         name: 'CompanyDIDs',
-        component: CompanyDIDs
+        component: CompanyDIDs,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/sms-center',
         name: 'SMSCenter',
-        component: SMSCenter
+        component: SMSCenter,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/sms-center-new',
         name: 'SMSCenterNew',
-        component: SMSCenterNew
+        component: SMSCenterNew,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/sms-center-empty',
         name: 'SMSCenterEmpty',
-        component: SMSCenterEmpty
+        component: SMSCenterEmpty,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/callflows',
         name: 'Callflows',
-        component: Callflows
+        component: Callflows,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/suppression',
         name: 'Suppression',
-        component: Suppression
+        component: Suppression,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/add-suppression',
         name: 'AddSuppression',
-        component: AddSuppression
+        component: AddSuppression,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/sms-workflow',
         name: 'CompanySMSWorkflow',
-        component: CompanySMSWorkflow
+        component: CompanySMSWorkflow,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/reminder-workflow',
         name: 'CompanyReminderWorkflow',
-        component: CompanyReminderWorkflow
+        component: CompanyReminderWorkflow,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/campaigns',
         name: 'CompanyCampaigns',
-        component: CompanyCampaigns
+        component: CompanyCampaigns,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/all-campaings',
         name: 'AllCampaigns',
-        component: AllCampaigns
+        component: AllCampaigns,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/keyword-manager',
         name: 'KeywordManager',
-        component: KeywordManager
+        component: KeywordManager,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/add-keyword',
         name: 'AddKeyword',
-        component: AddKeyword
+        component: AddKeyword,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/edit-sms-workflow',
         name: 'EditSMSWorkflow',
-        component: EditSMSWorkflow
+        component: EditSMSWorkflow,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/edit-reminder-workflow',
         name: 'EditReminderWorkflow',
-        component: EditReminderWorkflow
+        component: EditReminderWorkflow,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/add-sms-workflow',
         name: 'AddSMSWorkflow',
-        component: AddSMSWorkflow
+        component: AddSMSWorkflow,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/add-reminder-workflow',
         name: 'AddReminderWorkflow',
-        component: AddReminderWorkflow
+        component: AddReminderWorkflow,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/create-callflow',
         name: 'CreateCallflow',
-        component: CreateCallflow
+        component: CreateCallflow,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/add-campaign',
         name: 'AddCampaign',
-        component: AddCampaign
+        component: AddCampaign,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/add-campaign-second',
         name: 'AddCampaignSecond',
-        component: AddCampaignSecond
+        component: AddCampaignSecond,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/recipients',
         name: 'Recipients',
-        component: Recipients
+        component: Recipients,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/edit-dids',
         name: 'CompanyEditDIDs',
-        component: CompanyEditDIDs
+        component: CompanyEditDIDs,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/add-recipient',
         name: 'AddRecipient',
-        component: AddRecipient
+        component: AddRecipient,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/ca/edit-recipient/:id',
         name: 'EditRecipient',
-        component: EditRecipient
+        component: EditRecipient,
+        beforeEnter: checkAuth,
+        beforeEnter: checkCompanyAdmin,
     },
     {
         path: '/cs/sms-center',

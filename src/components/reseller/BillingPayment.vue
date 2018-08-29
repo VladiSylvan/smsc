@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <reseller-navigation-component title="Companies"></reseller-navigation-component>
+      <reseller-navigation-component title="Billing"></reseller-navigation-component>
       <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
