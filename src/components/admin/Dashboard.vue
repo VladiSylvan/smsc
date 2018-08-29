@@ -110,10 +110,5 @@ export default {
       CompaniesChart,
       NavigationComponent,
     },
-    methods:{
-        sendForm(){
-            event.preventDefault()
-        }
-    },
 }
 </script>

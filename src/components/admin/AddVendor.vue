@@ -37,6 +37,7 @@
                   Company
                 </div>
                 <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="vendor.company_uuid" required>
+                  <option value="">Select Company</option>
                   <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
                 </select>
               </div>
@@ -121,10 +122,9 @@ export default {
           selectedFile: null,
           dragging: false,
           companies: [],
-          vendor:{
-            vendor_email: '',
-            reseller_uuid: 'd4ff6a98-938b-49ca-9294-1b4d15daa9cc',
-            vendor_name: '',
+          vendor: [],
+          vendor: {
+            company_uuid: null,
           },
                 user:{
                 contact: 'Chad Sullivan',

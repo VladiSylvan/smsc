@@ -64,6 +64,7 @@
                 Company
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company_uuid" required>
+                <option value="">Choose Company</option>
                 <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
               </select>
             </div>
@@ -84,6 +85,7 @@
                 Country
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="reseller.contact.country_uuid">
+                <option value="">Choose Country</option>
                 <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
               </select>
             </div>
@@ -146,7 +148,6 @@ export default {
               city: '',
               zipcode: '',
               address: '',
-              // logo_file_uuid: '',
               state: '',
               phone: '',
               email: ''
@@ -161,7 +162,7 @@ export default {
                 country: 'China',
                 operator: 'China Unicom',
                 sellRate: '0.001',
-                company: 'Choose Company',
+                company_uuid: '',
                 country: 'Select',
                 state: 'Select State',
             },

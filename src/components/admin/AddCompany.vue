@@ -67,6 +67,7 @@
                   Country
                 </div>
                 <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="company.contact.country_uuid">
+                  <option value="">Select Country</option>
                   <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                 </select>
               </div>

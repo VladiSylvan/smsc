@@ -15,7 +15,7 @@
                         {{ this.$route.params.successMsg }}
                       </h5>
                     </div>
-                    <form v-on:submit="login()">
+                    <form v-on:submit="login($event)">
                         <label>Email</label>
                         <input required class="input-email" type="text" v-model="user.user_name" placeholder="elyse_sauer@yahoo.com">
                         <label>Password</label>
@@ -47,7 +47,8 @@ export default {
       console.log(localStorage.getItem("token"))
    },
     methods:{
-        login(){
+        login(event){
+            event.preventDefault()
             var app = this
             this.axios.post('auth', app.user).then( res => {
                 localStorage.setItem('token', res.data.payload.token)

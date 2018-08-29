@@ -47,6 +47,7 @@
                   <tr>
                     <td class="add-product-country">
                       <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="product-country" v-model="user.country">
+                        <option value="">Select Country</option>
                         <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                       </select>
                     </td>
@@ -73,6 +74,7 @@
                   <tr>
                     <td class="add-product-country">
                       <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="product-country" v-model="user2.country">
+                        <option value="">Select Country</option>
                         <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                       </select>
                     </td>
@@ -99,6 +101,7 @@
                   <tr>
                     <td class="add-product-country">
                       <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="product-country" v-model="user3.country">
+                        <option value="">Select Country</option>
                         <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                       </select>
                     </td>
@@ -202,17 +205,17 @@ export default {
           },
             user:{
                 productName: 'Caroline',
-                country: 'China',
+                country: '',
                 operator: 'China Unicom',
                 sellRate: '0.001'
             },
             user2:{
-              country: 'China',
+              country: '',
               operator: 'China Mobile',
               sellRate: '0.0012'
             },
             user3:{
-              country: 'United States',
+              country: '',
               operator: 'AT & T',
               sellRate: '0.0003'
             },

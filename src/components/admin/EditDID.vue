@@ -43,6 +43,7 @@
                 Location
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Location" class="grid-select" v-model="dids.country_uuid">
+                <option value="">Select Location</option>
                 <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
               </select>
             </div>
@@ -66,6 +67,7 @@
                 Company
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="dids.company_uuid">
+                <option value="">Select Company</option>
                 <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name }}</option>
               </select>
             </div>

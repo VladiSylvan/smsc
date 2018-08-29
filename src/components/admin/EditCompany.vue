@@ -52,6 +52,12 @@
             </div>
             <div class="grid-4">
               <div class="grid-title">
+                Password
+              </div>
+              <input class="grid-input" type="password" v-model="companies.contact.passwd" placeholder="Password">
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
                 Address
               </div>
               <input class="grid-input" type="text" v-model="companies.contact.address" placeholder="Caroline">
@@ -60,17 +66,15 @@
               <div class="grid-title">
                 Country
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="user.country">
-                <option value="Luxembourg">Luxembourg</option>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="companies.contact.country_uuid">
+                <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
               </select>
             </div>
             <div class="grid-3">
               <div class="grid-title">
                 State
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="State" class="grid-select" v-model="companies.contact.state">
-                <option value="Nebraska">Nebraska</option>
-              </select>
+              <input class="grid-input" type="text" v-model="companies.contact.state" placeholder="MD">
             </div>
             <div class="grid-3">
               <div class="grid-title">
@@ -84,6 +88,21 @@
               </div>
               <input class="grid-input" type="text" v-model="companies.contact.zipcode" placeholder="Caroline">
             </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Mode
+              </div>
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Mode" class="grid-select">
+                <option value="Prepay">Prepay</option>
+                <option value="Postpay">Postpay</option>
+              </select>
+            </div>
+            <div class="grid-4">
+              <div class="grid-title">
+                Test Credit
+              </div>
+              <input class="grid-input" type="text" v-model="companies.credit" placeholder="Enter Test Credit">
+            </div>
           </div>
           <div class="company-second">
             <div class="grid-title">
@@ -91,7 +110,7 @@
             </div>
             <div class="upload-edit">
               <div v-if="selectedFile == null" class="upload-image">
-                <div class="upload-circle"><img v-if="companies.contact.logo_file_uuid != null" class="image-resize-upload" :src="getLogo(companies.contact.logo_file_uuid)"></div>
+                <div class="upload-circle"><img v-if="editImage != null" class="image-resize-upload" :src="getLogo(editImage)"></div>
               </div>
               <div class="upload-container">
                 <div v-if="selectedFile == null" class="upload-title-edit">
@@ -131,10 +150,15 @@ export default {
           errorMsg: '',
           selectedFile: null,
           dragging: false,
+          editImage: '',
+          countries: [],
           companies:{
             company_name: '',
+            credit: '',
             contact:{
               phone: '',
+              country_uuid: '',
+              passwd: '',
               email: '',
               address: '',
               state: '',
@@ -175,9 +199,12 @@ export default {
       var app = this
       this.axios.all([
         this.axios.get('company/' + this.$route.params.id),
-      ]).then( this.axios.spread((companies) => {
+        this.axios.get('country/list'),
+      ]).then( this.axios.spread((companies, countries) => {
         console.log(companies)
         app.companies = companies.data.payload
+        app.countries = countries.data.payload.items
+        this.editImage = this.companies.contact.logo_file_uuid
       })).catch(error => {
         console.log(error)
       })
@@ -197,10 +224,13 @@ export default {
           var app = this
           var updateData = {
             company_name: this.companies.company_name,
+            credit: this.companies.credit,
             contact:{
               phone: this.companies.contact.phone,
               email: this.companies.contact.email,
               address: this.companies.contact.address,
+              country_uuid: this.companies.contact.country_uuid,
+              passwd: this.companies.contact.passwd,
               state: this.companies.contact.state,
               city: this.companies.contact.city,
               zipcode: this.companies.contact.zipcode,

@@ -44,7 +44,7 @@
               </thead>
               <tbody>
                 <tr v-for="user, index in users">
-                  <td class="users-avatar"><div class="user-avatar"><img class="image-resize" :src="getLogo(user.logo_file_uuid)"></div></td>
+                  <td class="users-avatar"><div class="user-avatar"><img v-if="user.logo_file_uuid != null" class="image-resize" :src="getLogo(user.logo_file_uuid)"></div></td>
                   <td class="users-name">{{ user.full_name }}</td>
                   <td class="users-username">{{ user.user_name }}</td>
                   <td class="users-company">{{ user.company_name }}</td>
@@ -97,7 +97,7 @@ export default {
       console.log('val')
       var app = this
       this.axios.all([
-        this.axios.get('user/list?first_name=' + val + '*'),
+        this.axios.get('user/list?full_name=*' + val + '*'),
       ]).then( this.axios.spread((users) => {
         console.log(users)
         app.users = users.data.payload.items

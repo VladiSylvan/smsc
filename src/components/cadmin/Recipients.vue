@@ -7,7 +7,7 @@
             Recipients
           </div>
         </div>
-          <input class="recipients-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchRecipients" placeholder="Search for recipients">
+          <input class="recipients-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="search" placeholder="Search for recipients">
           <router-link :to="{ name: 'AddRecipient'}"><button id="product" type="submit">Add Recipient</button></router-link>
         </div>
         <div class="main">
@@ -57,6 +57,7 @@ export default {
           popup: false,
           test: false,
           del: false,
+          search: '',
           recipients: [],
           successMsg: '',
           isModalVisible: false,
@@ -70,6 +71,19 @@ export default {
     components:{
       modal,
       CompanyNavigationComponent,
+    },
+    watch: {
+      search: function (val) {
+        console.log('val')
+        var app = this
+        this.axios.all([
+          this.axios.get('recipient/list?recipient_name=*' + val + '*'),
+        ]).then( this.axios.spread((recipients) => {
+          app.recipients = recipients.data.payload.items
+        })).catch(error => {
+          console.log(error)
+        })
+      },
     },
     mounted(){
       var app = this

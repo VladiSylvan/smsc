@@ -7,7 +7,7 @@
             Resellers
           </div>
         </div>
-          <input class="reseller-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.searchReseller" placeholder="Search for reseller">
+          <input class="reseller-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="search" placeholder="Search for reseller">
           <router-link :to="{ name: 'AddReseller'}"><button id="reseller" type="submit">Add Reseller</button></router-link>
         </div>
         <div class="main">
@@ -88,7 +88,7 @@
                   </td>
                 </tr> -->
                 <tr v-for="reseller, index in resellers">
-                  <td class="reseller-name"><div class="reseller-avatar"><img class="image-resize" :src="getLogo(reseller.contact.logo_file_uuid)"></div> <div class="reseller-name-fix">{{ reseller.reseller_name }}</div></td>
+                  <td class="reseller-name"><div class="reseller-avatar"><img v-if="reseller.contact.logo_file_uuid != null" class="image-resize" :src="getLogo(reseller.contact.logo_file_uuid)"></div> <div class="reseller-name-fix">{{ reseller.reseller_name }}</div></td>
                   <td class="reseller-balance"><b>$38</b></td>
                   <td class="reseller-clients">70</td>
                   <td class="reseller-member-since">10-03-2018</td>
@@ -141,6 +141,7 @@ export default {
           test: '',
           successMsg: '',
           del: false,
+          search: '',
           isModalVisible: false,
           resellers: [],
                 user:{
@@ -164,6 +165,19 @@ export default {
       })).catch(error => {
         console.log(error)
       })
+    },
+    watch: {
+      search: function (val) {
+        console.log('val')
+        var app = this
+        this.axios.all([
+          this.axios.get('reseller/list?reseller_name=*' + val + '*'),
+        ]).then( this.axios.spread((resellers) => {
+          app.resellers = resellers.data.payload.items
+        })).catch(error => {
+          console.log(error)
+        })
+      },
     },
     methods:{
         showModal() {

@@ -35,6 +35,7 @@
                         <div class="col-md-3">
                           <label>Country</label>
                           <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="country" v-model="user.contact.country_uuid">
+                            <option value="">Select Country</option>
                             <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
                           </select>
                         </div>
@@ -87,7 +88,7 @@ export default {
                     address: '',
                     city: '',
                     phone: '',
-                    country_uuid: ''
+                    country_uuid: '',
                 },
                 company_name: '',
             },

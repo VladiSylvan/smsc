@@ -17,7 +17,7 @@
             {{ successMsg }}
           </h5>
         </div>
-        <input class="vendor-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="user.search" placeholder="Search for vendor">
+        <input class="vendor-input-search" :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" type="text" v-model="search" placeholder="Search for vendor">
         <router-link :to="{ name: 'AddVendor'}"><button id="product" type="submit">Add Vendor</button></router-link>
       </div>
       <div class="main">
@@ -27,7 +27,7 @@
               <tr class="vendors-table-th">
                 <th class="vendor-active"></th>
                 <th class="vendor-company">Company Name</th>
-                <th class="vendor-contact">Contact Name</th>
+                <th class="vendor-contact">Vendor Name</th>
                 <th class="vendor-type">Type</th>
                 <th class="vendor-person">Contact Person</th>
                 <th class="vendor-noc">NOC Email</th>
@@ -40,7 +40,7 @@
               <tr v-for="vendor, index in vendors" class="online">
                 <td class="vendor-active"><div class="vendor-active-circle"></div></td>
                 <td v-for="company in companies" v-if="company.company_uuid == vendor.company_uuid" class="vendor-company">
-                  <div class="vendor-avatar"><img class="image-resize" :src="getLogo(vendor.logo_file_uuid)"></div>
+                  <div class="vendor-avatar"><img v-if="vendor.logo_file_uuid != null" class="image-resize" :src="getLogo(vendor.logo_file_uuid)"></div>
                   <div class="vendor-name-fix">
                     {{ company.company_name }}
                   </div>
@@ -78,6 +78,7 @@ export default {
           popup: false,
           isModalVisible: false,
           successMsg: '',
+          search: '',
           companies: [],
           vendors: [],
                 user:{
@@ -90,6 +91,19 @@ export default {
     components:{
       modal,
       NavigationComponent,
+    },
+    watch: {
+      search: function (val) {
+        console.log('val')
+        var app = this
+        this.axios.all([
+          this.axios.get('vendor/list?vendor_name=*' + val + '*'),
+        ]).then( this.axios.spread((vendors) => {
+          app.vendors = vendors.data.payload.items
+        })).catch(error => {
+          console.log(error)
+        })
+      },
     },
     methods:{
         showModal() {
@@ -120,9 +134,14 @@ export default {
           var email
           var splited = value.split("@")
           var size = splited[0].length
-          var a = size - 1
-          var b = size - 2
-          email = value[0] + value[1] + '...' + value[a] + value[b] + '@' + splited[1]
+          if(size > 4){
+            var a = size - 1
+            var b = size - 2
+            email = value[0] + value[1] + '...' + value[a] + value[b] + '@' + splited[1]
+          }
+          else{
+            email = value
+          }
           return email
         },
         getLogo(value){

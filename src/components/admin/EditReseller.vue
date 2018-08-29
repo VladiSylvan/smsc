@@ -67,6 +67,7 @@
                 Company
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="user.company_uuid" required>
+                <option value="">Select Company</option>
                 <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name}}</option>
               </select>
             </div>
@@ -86,7 +87,7 @@
               <div class="grid-title">
                 Country
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="user.country">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Country" class="grid-select" v-model="resellers.contact.country_uuid">
                 <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
               </select>
             </div>
@@ -109,7 +110,7 @@
             </div>
             <div class="upload-edit">
               <div v-if="selectedFile == null" class="upload-image">
-                <div class="upload-circle"><img v-if="resellers.contact.logo_file_uuid != null" class="image-resize-upload" :src="getLogo(resellers.contact.logo_file_uuid)"></div>
+                <div class="upload-circle"><img v-if="editImage != null" class="image-resize-upload" :src="getLogo(editImage)"></div>
               </div>
               <div class="upload-container">
                 <div v-if="selectedFile == null" class="upload-title-edit">
@@ -148,6 +149,7 @@ export default {
           selectedFile: null,
           dragging: false,
           error: false,
+          editImage: '',
           errorMsg: '',
           companies: '',
           resellers: {
@@ -164,6 +166,7 @@ export default {
           },
           countries: [],
                 user:{
+                company_uuid: '',
                 firstName: 'Caroline',
                 lastName: 'Thomas',
                 username: 'cthomas',
@@ -209,6 +212,7 @@ export default {
         app.resellers = resellers.data.payload
         app.countries = countries.data.payload.items
         app.companies = companies.data.payload.items
+        this.editImage = this.resellers.contact.logo_file_uuid
       })).catch(error => {
         console.log(error)
       })
@@ -247,7 +251,7 @@ export default {
                 zipcode: this.resellers.contact.zipcode,
                 state: this.resellers.contact.state,
                 city: this.resellers.contact.city,
-                logo_file_uuid: this.resellers.contact.logo_file_uuid
+                logo_file_uuid: this.resellers.contact.logo_file_uuid,
               }
             }
           }

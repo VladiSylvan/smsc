@@ -26,7 +26,7 @@
       <div class="main-add">
         <div class="history-main">
           <div class="payment-history-title">
-            Payment History
+            Add Manual Payment
           </div>
           <div class="payment-content">
 

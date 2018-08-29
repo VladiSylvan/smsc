@@ -1095,6 +1095,14 @@ button#users{
   margin-left: 15px;
   margin-right: 15px;
 }
+.reseller-menu-link a{
+  color: #55616E;
+  font-family: "Helvetica Neue, Arial, Sans-Serif";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+}
 .reseller-menu-link:first-child{
   margin-top: 35px;
 }
@@ -6437,11 +6445,4 @@ button#preview{
       float: left;
       margin-left: 15px;
     }
-}
-
-@-moz-document url-prefix() {
-  .main, main-add{
-    overflow-x: hidden;
-    -moz-appearance: scrollbar;
-  }
 }

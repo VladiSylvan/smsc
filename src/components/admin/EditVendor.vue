@@ -82,7 +82,7 @@
             </div>
             <div class="upload-edit">
               <div v-if="selectedFile == null" class="upload-image">
-                <div class="upload-circle"><img v-if="vendor.logo_file_uuid != null" class="image-resize-upload" :src="getLogo(vendors.logo_file_uuid)"></div>
+                <div class="upload-circle"><img v-if="editImage != null" class="image-resize-upload" :src="getLogo(editImage)"></div>
               </div>
               <div class="upload-container">
                 <div v-if="selectedFile == null" class="upload-title-edit">
@@ -120,6 +120,7 @@ export default {
           companies: [],
           selectedFile: null,
           dragging: false,
+          editImage: '',
           vendors: {
             noc_email: '',
             rate_email: '',
@@ -163,6 +164,7 @@ export default {
         console.log(vendors)
         app.vendors = vendors.data.payload
         app.companies = companies.data.payload.items
+        this.editImage = this.vendors.logo_file_uuid
       })).catch(error => {
         console.log(error)
       })
@@ -190,7 +192,7 @@ export default {
             vendor_name: this.vendors.vendor_name,
             company_uuid: this.vendors.company_uuid,
             contact_person: this.vendors.contact_person,
-            logo_file_uuid: this.vendors.logo_file_uuid
+            logo_file_uuid: this.vendors.logo_file_uuid,
           }
           this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
               this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})
@@ -205,7 +207,7 @@ export default {
           var sendData = new FormData()
 
           sendData.append('file', this.selectedFile)
-          sendData.append('belongs_to', 'user.logo')
+          sendData.append('belongs_to', 'vendor.logo')
           sendData.append('public', true)
 
           this.axios.post('file', sendData).then(res => {

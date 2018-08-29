@@ -83,7 +83,7 @@
             </div>
             <div class="upload-edit">
               <div v-if="selectedFile == null" class="upload-image">
-                <div class="upload-circle"><img v-if="users.logo_file_uuid != null" class="image-resize-upload" :src="getLogo(users.logo_file_uuid)"></div>
+                <div class="upload-circle"><img v-if="editImage != null" class="image-resize-upload" :src="getLogo(editImage)"></div>
               </div>
               <div class="upload-container">
                 <div v-if="selectedFile == null" class="upload-title-edit">
@@ -121,6 +121,7 @@ export default {
           selectedFile: null,
           dragging: false,
           vendors: true,
+          editImage: '',
           users: {
             first_name: '',
             last_name: '',
@@ -166,6 +167,7 @@ export default {
       ]).then( this.axios.spread((users) => {
         console.log(users)
         app.users = users.data.payload
+        this.editImage = this.users.logo_file_uuid
       })).catch(error => {
         console.log(error)
       })
