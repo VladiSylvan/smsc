@@ -44,12 +44,16 @@
                   <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.created_by }}</div></td>
                   <td class="did-country">{{ did.country_name }}</td>
                   <td class="did-type">{{ did.type }}</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.vendor_uuid }}</div></td>
+                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.vendor_name }}</div></td>
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID', params: { id: did.did_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img v-on:click="didDelete(did.did_uuid, did.number, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
               </tbody>
             </table>
+            <div class="pagination">
+              <button type="button" id="previousPage" @click="previousPage()" disabled>Previous</button>
+              <button type="button" id="nextPage" @click="nextPage()">Next</button>
+            </div>
           </div>
         </div>
     </div>
@@ -68,6 +72,8 @@ export default {
           popup: false,
           test: false,
           del: false,
+          totalPages: 0,
+          pageNumber: 0,
           dids: [],
           successMsg: '',
           isModalVisible: false,
@@ -83,15 +89,7 @@ export default {
       NavigationComponent,
     },
     mounted(){
-      var app = this
-      this.axios.all([
-        this.axios.get('did/list'),
-      ]).then( this.axios.spread((dids) => {
-        console.log(dids)
-        app.dids = dids.data.payload.items
-      })).catch(error => {
-        console.log(error)
-      })
+      this.getData()
     },
     methods:{
         showModal() {
@@ -117,6 +115,38 @@ export default {
                 console.log(err.response)
             })
           }
+        },
+        getData(page = 0){
+          var app = this
+          this.axios.all([
+            this.axios.get('did/list?page=' + page),
+          ]).then( this.axios.spread((res) => {
+            app.dids = res.data.payload.items
+            this.totalPages = Math.floor(res.data.payload.total / res.data.payload.per_page)
+            if(this.totalPages == 0){
+              document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+            }
+          })).catch(error => {
+            console.log(error)
+          })
+        },
+        nextPage(){
+          this.pageNumber++;
+          document.getElementById('previousPage').removeAttribute('disabled')
+          if(this.pageNumber == this.totalPages){
+            document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+          }
+          this.getData(this.pageNumber)
+        },
+        previousPage(){
+          this.pageNumber--
+          if(this.pageNumber == 0){
+            document.getElementById('previousPage').setAttribute('disabled', 'disabled')
+          }
+          if(this.pageNumber < this.totalPages){
+            document.getElementById('nextPage').removeAttribute('disabled')
+          }
+          this.getData(this.pageNumber)
         }
     },
 }

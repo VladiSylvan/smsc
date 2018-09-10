@@ -65,6 +65,10 @@
               </tr>
             </tbody>
           </table>
+          <div class="pagination">
+            <button type="button" id="previousPage" @click="previousPage()" disabled>Previous</button>
+            <button type="button" id="nextPage" @click="nextPage()">Next</button>
+          </div>
         </div>
       </div>
     </div>
@@ -83,6 +87,8 @@ export default {
           popup: false,
           test: false,
           isModalVisible: false,
+          totalPages: 0,
+          pageNumber: 0,
           payments: [],
                 user:{
                 system: 'Overall system',
@@ -101,18 +107,40 @@ export default {
         },
         closeModal() {
           this.isModalVisible = false;
+        },
+        getData(page = 0){
+          this.axios.get('payment/list?page=' + page).then(res => {
+            this.payments = res.data.payload.items
+            this.totalPages = Math.floor(res.data.payload.total / res.data.payload.per_page)
+            if(this.totalPages == 0){
+              console.log(this.totalPages)
+              document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+            }
+          }).catch(err => {
+            console.log(er)
+          })
+        },
+        nextPage(){
+          this.pageNumber++;
+          document.getElementById('previousPage').removeAttribute('disabled')
+          if(this.pageNumber == this.totalPages){
+            document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+          }
+          this.getData(this.pageNumber)
+        },
+        previousPage(){
+          this.pageNumber--
+          if(this.pageNumber == 0){
+            document.getElementById('previousPage').setAttribute('disabled', 'disabled')
+          }
+          if(this.pageNumber < this.totalPages){
+            document.getElementById('nextPage').removeAttribute('disabled')
+          }
+          this.getData(this.pageNumber)
         }
     },
     mounted(){
-      var app = this
-      this.axios.all([
-        this.axios.get('payment/list'),
-      ]).then( this.axios.spread((payments) => {
-        console.log(payments)
-        app.payments = payments.data.payload.items
-      })).catch(error => {
-        console.log(error)
-      })
+      this.getData()
     },
 }
 </script>

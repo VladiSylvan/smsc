@@ -122,6 +122,10 @@
                 </tr>
               </tbody>
             </table>
+            <div class="pagination">
+              <button type="button" id="previousPage" @click="previousPage()" disabled>Previous</button>
+              <button type="button" id="nextPage" @click="nextPage()">Next</button>
+            </div>
           </div>
         </div>
     </div>
@@ -142,6 +146,8 @@ export default {
           successMsg: '',
           del: false,
           search: '',
+          totalPages: 0,
+          pageNumber: 0,
           isModalVisible: false,
           resellers: [],
                 user:{
@@ -156,19 +162,10 @@ export default {
       NavigationComponent,
     },
     mounted(){
-      var app = this
-      this.axios.all([
-        this.axios.get('reseller/list'),
-      ]).then( this.axios.spread((resellers) => {
-        console.log(resellers)
-        app.resellers = resellers.data.payload.items
-      })).catch(error => {
-        console.log(error)
-      })
+      this.getData()
     },
     watch: {
       search: function (val) {
-        console.log('val')
         var app = this
         this.axios.all([
           this.axios.get('reseller/list?reseller_name=*' + val + '*'),
@@ -180,6 +177,17 @@ export default {
       },
     },
     methods:{
+        getData(page = 0){
+          this.axios.get('reseller/list?page=' + page).then(res => {
+            this.resellers = res.data.payload.items
+            this.totalPages = Math.floor(res.data.payload.total / res.data.payload.per_page)
+            if(this.totalPages == 0){
+              document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+            }
+          }).catch(err => {
+            console.log(err)
+          })
+        },
         showModal() {
           this.isModalVisible = true;
         },
@@ -206,6 +214,24 @@ export default {
         getLogo(value){
           var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
           return logo
+        },
+        nextPage(){
+          this.pageNumber++;
+          document.getElementById('previousPage').removeAttribute('disabled')
+          if(this.pageNumber == this.totalPages){
+            document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+          }
+          this.getData(this.pageNumber)
+        },
+        previousPage(){
+          this.pageNumber--
+          if(this.pageNumber == 0){
+            document.getElementById('previousPage').setAttribute('disabled', 'disabled')
+          }
+          if(this.pageNumber < this.totalPages){
+            document.getElementById('nextPage').removeAttribute('disabled')
+          }
+          this.getData(this.pageNumber)
         }
     },
 }

@@ -46,6 +46,7 @@
                   <th class="company-option-th"></th>
                   <th class="company-option-th"></th>
                   <th class="company-option-th"></th>
+                  <th class="company-option-th"></th>
                 </tr>
               </thead>
               <tbody>
@@ -58,6 +59,12 @@
                   <td class="company-pay">{{ myCompany.credit }}</td>
                   <td class="company-contact-text">{{ myCompany.contact.first_name }} {{ myCompany.contact.last_name }}</td>
                   <td class="company-resellers">{{ myCompany.reseller_name }}</td>
+                  <td class="company-option">
+                    <div class="product-control-info">
+                      <img v-on:click="activate(myCompany.company_uuid)" class="control-box" src="@/assets/Icon/Plus.svg" v-if="!myCompany.is_active">
+                      <img v-on:click="deactivate(myCompany.company_uuid)" class="control-box" src="@/assets/Icon/Close.svg" v-if="myCompany.is_active">
+                    </div>
+                  </td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="confirmDialog(myCompany.company_uuid)" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: myCompany.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(myCompany.company_uuid, myCompany.company_name, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
@@ -88,7 +95,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="companies-title" colspan="9"><div class="company-title-all">All Companies</div></td>
+                  <td class="companies-title" colspan="10"><div class="company-title-all">All Companies</div></td>
                 </tr>
                 <tr v-for="company, index in companies">
                   <td class="company-name"><div class="company-avatar"><img v-if="company.contact.logo_file_uuid != null" class="image-resize" :src="getLogo(company.contact.logo_file_uuid)"></div> <div class="company-name-fix">{{ company.company_name }}</div></td>
@@ -96,6 +103,12 @@
                   <td class="company-pay">{{ company.credit }}</td>
                   <td class="company-contact-text">{{ company.contact.first_name }} {{ company.contact.last_name }}</td>
                   <td class="company-resellers">{{ company.reseller_name }}</td>
+                  <td class="company-option">
+                    <div class="product-control-info">
+                      <img v-on:click="activate(company.company_uuid)" class="control-box" src="@/assets/Icon/Plus.svg" v-if="!company.is_active">
+                      <img v-on:click="deactivate(company.company_uuid)" class="control-box" src="@/assets/Icon/Close.svg" v-if="company.is_active">
+                    </div>
+                  </td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="confirmDialog(company.company_uuid)" class="control-box" src="@/assets/Icon/Reseller.svg"></div></td>
                   <td class="company-option"><div class="product-control-info"><router-link :to="{ name: 'EditCompany', params: { id: company.company_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="company-option"><div class="product-control-info"><img v-on:click="companyDelete(company.company_uuid, company.company_name, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
@@ -127,6 +140,10 @@
                 </tr>
               </tbody>
             </table>
+            <div class="pagination">
+              <button type="button" id="previousPage" @click="previousPage()" disabled>Previous</button>
+              <button type="button" id="nextPage" @click="nextPage()">Next</button>
+            </div>
           </div>
         </div>
     </div>
@@ -155,24 +172,12 @@ export default {
           successMsg: '',
           reseller: 'Reseller',
           isModalVisible: false,
+          totalPages: 0,
+          pageNumber: 0,
         }
     },
     mounted(){
-      var app = this
-      this.axios.all([
-        this.axios.get('company/list'),
-        this.axios.get('company/list?is_created_by_admin=true'),
-        this.axios.get('user'),
-        this.axios.get('reseller/list')
-      ]).then( this.axios.spread((companies, myCompanies, user, resellers) => {
-        console.log(companies)
-        app.companies = companies.data.payload.items
-        app.myCompanies = myCompanies.data.payload.items
-        app.user = user.data.payload
-        app.resellers = resellers.data.payload.items
-      })).catch(error => {
-        console.log(error)
-      })
+      this.getData()
     },
     components:{
       modal,
@@ -206,6 +211,47 @@ export default {
     },
   },
     methods:{
+        getData(page = 0){
+          var app = this
+          this.axios.all([
+            this.axios.get('company/list?page=' + page),
+            this.axios.get('company/list?is_created_by_admin=true'),
+            this.axios.get('user'),
+            this.axios.get('reseller/list')
+          ]).then( this.axios.spread((companies, myCompanies, user, resellers) => {
+            app.companies = companies.data.payload.items
+            app.myCompanies = myCompanies.data.payload.items
+            app.user = user.data.payload
+            app.resellers = resellers.data.payload.items
+
+            this.totalPages = Math.floor(companies.data.payload.total / companies.data.payload.per_page)
+            if(this.totalPages == 0){
+              document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+            }
+          })).catch(error => {
+            console.log(error)
+          })
+        },
+        activate(id){
+          var update = {
+            is_active: true
+          }
+          this.axios.patch('company/' + id, update).then(res => {
+            this.getData()
+          }).catch(err => {
+            console.log(err)
+          })
+        },
+        deactivate(id){
+          var update = {
+            is_active: false
+          }
+          this.axios.patch('company/' + id, update).then(res => {
+            this.getData()
+          }).catch(err => {
+            console.log(err)
+          })
+        },
         confirmDialog(value){
           var r = confirm("Are you sure want send email?");
           if(r == true){

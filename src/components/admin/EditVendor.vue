@@ -161,7 +161,6 @@ export default {
         this.axios.get('vendor/' + this.$route.params.id),
         this.axios.get('company/list'),
       ]).then( this.axios.spread((vendors, companies) => {
-        console.log(vendors)
         app.vendors = vendors.data.payload
         app.companies = companies.data.payload.items
         this.editImage = this.vendors.logo_file_uuid
@@ -192,7 +191,7 @@ export default {
             vendor_name: this.vendors.vendor_name,
             company_uuid: this.vendors.company_uuid,
             contact_person: this.vendors.contact_person,
-            logo_file_uuid: this.vendors.logo_file_uuid,
+            // logo_file_uuid: this.vendors.logo_file_uuid,
           }
           this.axios.patch('vendor/' + this.$route.params.id, updateData).then( res => {
               this.$router.push({ name: 'Vendors', params: { successMsg: 'OK' }})

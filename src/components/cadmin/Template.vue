@@ -68,6 +68,10 @@
               </tr>
             </tbody>
           </table>
+          <div class="pagination">
+            <button type="button" id="previousPage" @click="previousPage()" disabled>Previous</button>
+            <button type="button" id="nextPage" @click="nextPage()" disabled>Next</button>
+          </div>
         </div>
       </div>
     </div>
@@ -114,21 +118,44 @@ export default {
             app.errorMsg = err.response.data.errors[0]
             app.error = true
         })
+      },
+      getData(page = 0){
+        this.axios.all([
+          this.axios.get('sms_template/list?admin_approved=false&company_admin_approved=false'),
+          this.axios.get('sms_template/list?company_admin_approved=true&page=' + page),
+        ]).then( this.axios.spread((newTemplates, allTemplates) => {
+          this.newTemplates = newTemplates.data.payload.items
+          this.allTemplates = allTemplates.data.payload.items
+
+          this.totalPages = Math.floor(allTemplates.data.payload.total / allTemplates.data.payload.per_page)
+          if(this.totalPages == 0){
+            document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+          }
+        })).catch(error => {
+          console.log(error)
+        })
+      },
+      nextPage(){
+        this.pageNumber++;
+        document.getElementById('previousPage').removeAttribute('disabled')
+        if(this.pageNumber == this.totalPages){
+          document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+        }
+        this.getData(this.pageNumber)
+      },
+      previousPage(){
+        this.pageNumber--
+        if(this.pageNumber == 0){
+          document.getElementById('previousPage').setAttribute('disabled', 'disabled')
+        }
+        if(this.pageNumber < this.totalPages){
+          document.getElementById('nextPage').removeAttribute('disabled')
+        }
+        this.getData(this.pageNumber)
       }
     },
     mounted(){
-      var app = this
-      this.axios.all([
-        this.axios.get('sms_template/list?admin_approved=false&company_admin_approved=false'),
-        this.axios.get('sms_template/list?company_admin_approved=true'),
-      ]).then( this.axios.spread((newTemplates, allTemplates) => {
-        console.log(newTemplates)
-        console.log(allTemplates)
-        app.newTemplates = newTemplates.data.payload.items
-        app.allTemplates = allTemplates.data.payload.items
-      })).catch(error => {
-        console.log(error)
-      })
+      this.getData()
     },
 }
 </script>

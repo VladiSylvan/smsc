@@ -67,7 +67,7 @@
                 Company
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Company" class="grid-select" v-model="dids.company_uuid">
-                <option value="">Select Company</option>
+                <option v-model="dids.company_uuid">Select Company</option>
                 <option v-for="company in companies" :value="company.company_uuid">{{ company.company_name }}</option>
               </select>
             </div>
@@ -91,7 +91,7 @@ export default {
           transitionName: 'fade',
           popup: false,
           isModalVisible: false,
-          vendors: true,
+
           countries: [],
           companies: [],
           error: false,
@@ -106,28 +106,11 @@ export default {
             number: '',
             type: 'Local',
           },
-                user:{
-                location: 'North Malcolm',
-                billingRule: '$1.00',
-                billingRuleTime: 'per month',
-                company: 'Appolo Inc.'
-            },
-            user2:{
-              country: 'China',
-              operator: 'China Mobile',
-              sellRate: '0.0012'
-            },
-            user3:{
-              country: 'United States',
-              operator: 'AT & T',
-              sellRate: '0.0003'
-            },
-            vendor:{
-              vendorName1: 'Vendor BB',
-              vendorName2: 'Vendor CC',
-              vendorRate1: '0.0009',
-              vendorRate2: '0.0008'
-            }
+            user:{
+            location: 'North Malcolm',
+            billingRule: '$1.00',
+            billingRuleTime: 'per month',
+        },
         }
     },
     components:{
@@ -150,12 +133,12 @@ export default {
             max_sms_per_day: 0,
             number: this.dids.number,
             type: 'Local',
+            company_uuid: this.dids.company_uuid
           }
           this.axios.patch('did/' + this.$route.params.id, updateData).then( res => {
               this.$router.push({ name: 'DID', params: { successMsg: 'OK' }})
           }).catch( err => {
               var app = this
-
               // app.errorMsg = err.response.data.error.message
               app.error = true
               console.log(err.response)
@@ -169,12 +152,10 @@ export default {
         this.axios.get('country/list'),
         this.axios.get('company/list'),
       ]).then( this.axios.spread((dids, countries, companies) => {
-        console.log(dids)
-        console.log(countries)
-        console.log(companies)
         app.dids = dids.data.payload
         app.countries = countries.data.payload.items
         app.companies = companies.data.payload.items
+        console.log(app.dids)
       })).catch(error => {
         console.log(error)
       })

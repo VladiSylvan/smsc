@@ -45,6 +45,10 @@
                 </tr>
               </tbody>
             </table>
+            <div class="pagination">
+              <button type="button" id="previousPage" @click="previousPage()" disabled>Previous</button>
+              <button type="button" id="nextPage" @click="nextPage()" disabled>Next</button>
+            </div>
           </div>
         </div>
         <div id="app">

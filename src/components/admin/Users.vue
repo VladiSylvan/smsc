@@ -55,6 +55,10 @@
                 </tr>
               </tbody>
             </table>
+            <div class="pagination">
+              <button type="button" id="previousPage" @click="previousPage()" disabled>Previous</button>
+              <button type="button" id="nextPage" @click="nextPage()">Next</button>
+            </div>
           </div>
         </div>
     </div>
@@ -78,6 +82,8 @@ export default {
           filter: '',
           del: false,
           isModalVisible: false,
+          totalPages: 0,
+          pageNumber: 0,
           successMsg: '',
           companies: [],
                 user:{
@@ -118,22 +124,7 @@ export default {
     },
   },
     mounted(){
-      var app = this
-      var test = {
-        page: 1
-      }
-      this.axios.all([
-        this.axios.get('user/list'),
-        this.axios.get('company/list'),
-        this.axios.get('file/list', test)
-      ]).then( this.axios.spread((users, companies, uploads) => {
-        console.log(uploads)
-        app.users = users.data.payload.items
-        app.companies = companies.data.payload.items
-        console.log(users)
-      })).catch(error => {
-        console.log(error)
-      })
+      this.getData()
     },
     methods:{
         showModal() {
@@ -162,6 +153,44 @@ export default {
         getLogo(value){
           var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
           return logo
+        },
+        getData(page = 0){
+          var app = this
+          var test = {
+            page: 1
+          }
+          this.axios.all([
+            this.axios.get('user/list?page=' + page),
+            this.axios.get('company/list'),
+            this.axios.get('file/list', test)
+          ]).then( this.axios.spread((users, companies, uploads) => {
+            app.users = users.data.payload.items
+            app.companies = companies.data.payload.items
+            this.totalPages = Math.floor(users.data.payload.total / users.data.payload.per_page)
+            if(this.totalPages == 0){
+              document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+            }
+          })).catch(error => {
+            console.log(error)
+          })
+        },
+        nextPage(){
+          this.pageNumber++;
+          document.getElementById('previousPage').removeAttribute('disabled')
+          if(this.pageNumber == this.totalPages){
+            document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+          }
+          this.getData(this.pageNumber)
+        },
+        previousPage(){
+          this.pageNumber--
+          if(this.pageNumber == 0){
+            document.getElementById('previousPage').setAttribute('disabled', 'disabled')
+          }
+          if(this.pageNumber < this.totalPages){
+            document.getElementById('nextPage').removeAttribute('disabled')
+          }
+          this.getData(this.pageNumber)
         }
     },
 }
