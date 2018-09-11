@@ -86,7 +86,7 @@ export default {
       search: function (val) {
         var app = this
         this.axios.all([
-          this.axios.get('recipient/list?recipient_name=*' + val + '*'),
+          this.axios.get('recipient/list?recipient_name=' + val + '*'),
         ]).then( this.axios.spread((res) => {
           app.recipients = res.data.payload.items
           this.pageNumber = 0
@@ -102,6 +102,9 @@ export default {
         this.axios.get('recipient/list?page=' + page).then(res => {
           this.recipients = res.data.payload.items
           this.totalPages = Math.floor(res.data.payload.total / res.data.payload.per_page)
+          if(this.totalPages == 0){
+            document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+          }
         }).catch(err => {
           console.log(err)
         })

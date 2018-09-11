@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 100%; float: left">
     <div class="circle-grey">
       <div class="circle-grey-box">
         <svg class="svg-active" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -34,5 +34,6 @@
         </path>
       </svg>
     </div>
+    <br>
   </div>
 </template>

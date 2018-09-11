@@ -1,6 +1,9 @@
 <template>
     <div class="container">
       <company-navigation-component title="SMS Workflow"></company-navigation-component>
+      <div id="badumc">
+        <test-component>1</test-component>
+      </div>
       <div class="main-navi">
         <div class="res-div">
           <div class="head-title">
