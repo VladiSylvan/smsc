@@ -140,10 +140,10 @@ export default {
             this.axios.delete('user/' + value).then( res => {
                 this.users.splice(index, 1)
                 this.$route.params.successMsg = null
-                this.successMsg = 'OK'
+                this.successMsg = 'User successfully deleted!'
+                this.getData()
             }).catch( err => {
                 var app = this
-
                 app.errorMsg = err.response.data.error.message
                 app.error = true
                 console.log(err.response)

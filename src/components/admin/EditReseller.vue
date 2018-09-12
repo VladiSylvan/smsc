@@ -26,7 +26,7 @@
       <div class="main-add">
         <div class="edit-reseller">
           <div class="reseller-main">
-            <div v-if="error">
+            <div v-if="errorMsg">
                 <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
             </div>
             <div class="reseller-add-title">
@@ -246,7 +246,7 @@ export default {
               last_name: this.resellers.last_name,
               contact:{
                 phone: this.resellers.contact.phone,
-                email: this.resellers.contact.email,
+                // email: this.resellers.contact.email,
                 address: this.resellers.contact.address,
                 zipcode: this.resellers.contact.zipcode,
                 state: this.resellers.contact.state,
@@ -261,7 +261,7 @@ export default {
               last_name: this.resellers.last_name,
               contact:{
                 phone: this.resellers.contact.phone,
-                email: this.resellers.contact.email,
+                // email: this.resellers.contact.email,
                 address: this.resellers.contact.address,
                 zipcode: this.resellers.contact.zipcode,
                 state: this.resellers.contact.state,
@@ -270,13 +270,13 @@ export default {
               }
             }
           }
-          this.axios.patch('reseller/' + this.$route.params.id, updateData).then( res => {
+          this.axios.patch('reseller/' + this.$route.params.id, this.resellers).then( res => {
               this.$router.push('/sys/resellers')
           }).catch( err => {
               var app = this
 
               // app.errorMsg = err.response.data.error.message
-              app.error = true
+              app.errorMsg = err.response.data.error
               console.log(err.response)
           })
         },

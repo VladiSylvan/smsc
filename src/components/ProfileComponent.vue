@@ -2,6 +2,10 @@
   <div class="navi-user">
     <div v-if="popup" class="user-menu">
       <div v-on:click="popup = !popup" class="username">
+        <span v-if="user_type == 'company_admin'">
+          {{ getCompanyName(company_id) }}
+          {{ greetingsName }}
+        </span>
         {{ profileUser.first_name }} {{ profileUser.last_name }}
       </div>
       <div v-on:click="popup = !popup" class="user-circle"><img v-if="profileUser.logo_file_uuid != null" class="image-resize" :src="getLogo(profileUser.logo_file_uuid)"></div>
@@ -65,6 +69,10 @@
       </div>
     </div>
     <div v-on:click="popup = !popup" class="username">
+      <span v-if="user_type == 'company_admin'">
+        {{ getCompanyName(company_id) }}
+        {{ greetingsName }}
+      </span>
       {{ profileUser.first_name }} {{ profileUser.last_name }}
     </div>
     <div v-on:click="popup = !popup" class="user-circle"><img v-if="profileUser.logo_file_uuid != null" class="image-resize" :src="getLogo(profileUser.logo_file_uuid)"></div>
@@ -76,6 +84,9 @@ export default {
       return {
         popup: false,
         profileUser: [],
+        user_type: localStorage.getItem('user-type'),
+        company_id: localStorage.getItem('company_id'),
+        greetingsName: '',
       }
     },
     props: ['name'],
@@ -84,7 +95,7 @@ export default {
       this.axios.all([
         this.axios.get('user'),
       ]).then( this.axios.spread((profileUser) => {
-        console.log(profileUser)
+        // console.log(profileUser)
         app.profileUser = profileUser.data.payload
       })).catch(error => {
         console.log(error)
@@ -94,6 +105,15 @@ export default {
       getLogo(value){
         var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
         return logo
+      },
+      getCompanyName(id){
+        var company = []
+
+        this.axios.get('company/' +id).then(res => {
+          this.greetingsName = res.data.payload.company_name
+        }).catch(err => {
+          console.log(err)
+        })
       }
     }
 }

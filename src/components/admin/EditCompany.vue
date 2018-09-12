@@ -26,7 +26,7 @@
       <div class="main-add">
         <div class="add-company">
           <div class="company-main">
-            <div v-if="error">
+            <div v-if="errorMsg">
                 <h5 style="color: red; text-align: center;">{{ errorMsg }}</h5>
             </div>
             <div class="company-add-title">
@@ -167,16 +167,7 @@ export default {
               logo_file_uuid: '',
             }
           },
-                user:{
-                companyName: 'Appolo Inc.',
-                phoneNumber: '459-362-5221',
-                email: 'seth-thiel@hotmail.com',
-                address: '894 Wallace Roads',
-                country: 'Luxembourg',
-                state: 'Nebraska',
-                city: 'Port Joyce',
-                zipCode: '75832-4568',
-            },
+
             user2:{
               country: 'China',
               operator: 'China Mobile',
@@ -234,9 +225,13 @@ export default {
               state: this.companies.contact.state,
               city: this.companies.contact.city,
               zipcode: this.companies.contact.zipcode,
-              logo_file_uuid: this.companies.contact.logo_file_uuid,
             }
           }
+
+          if(this.companies.contact.logo_file_uuid != null){
+            updateData.contact.logo_file_uuid = this.companies.contact.logo_file_uuid
+          }
+
           this.axios.patch('company/' + this.$route.params.id, updateData).then( res => {
               this.$router.push({ name: 'Companies', params: { successMsg: 'OK' }})
           }).catch( err => {
@@ -244,6 +239,7 @@ export default {
 
               // app.errorMsg = err.response.data.error.message
               app.error = true
+              app.errorMsg = err.response.data.errors
               console.log(err.response)
           })
         },

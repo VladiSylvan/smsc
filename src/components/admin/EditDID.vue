@@ -36,13 +36,13 @@
               <div class="grid-title">
                 Phone Number
               </div>
-              <input class="grid-input" type="text" v-model="dids.number" placeholder="640-463-3807">
+              <input class="grid-input" type="text" v-model="dids.number" placeholder="640-463-3807" disabled>
             </div>
             <div class="grid-4">
               <div class="grid-title">
                 Location
               </div>
-              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Location" class="grid-select" v-model="dids.country_uuid">
+              <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Location" class="grid-select" v-model="dids.country_uuid" disabled>
                 <option value="">Select Location</option>
                 <option v-for="country in countries" :value="country.country_uuid">{{ country.name }}</option>
               </select>

@@ -133,20 +133,20 @@ const checkAdmin = (to, from, next) => {
   }
 }
 
-const checkReseller = (to, from, next) => {
-  if(localStorage.getItem('user-type') == 'reseller' || localStorage.getItem('user-type') == "admin"){
-    next()
-    return
-  }
-  else{
-    if(localStorage.getItem('user-type') == "company_admin"){
-      next('/ca/alert')
-    }
-    else{
-      next('/login')
-    }
-  }
-}
+// const checkReseller = (to, from, next) => {
+//   if(localStorage.getItem('user-type') == 'reseller' || localStorage.getItem('user-type') == "admin"){
+//     next()
+//     return
+//   }
+//   else{
+//     if(localStorage.getItem('user-type') == "company_admin"){
+//       next('/ca/alert')
+//     }
+//     else{
+//       next('/login')
+//     }
+//   }
+// }
 
 const checkCompanyAdmin = (to, from, next) => {
   if(localStorage.getItem('user-type') == 'company_admin' || localStorage.getItem('user-type') == "admin"){

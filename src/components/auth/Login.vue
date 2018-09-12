@@ -55,6 +55,9 @@ export default {
                 localStorage.setItem('token-exp', res.data.payload.exp)
                 localStorage.setItem('user-type', res.data.payload.user_type)
                 localStorage.setItem('user-name', app.user.user_name)
+                if(res.data.payload.user_type == 'company_admin'){
+                  localStorage.setItem('company_id', res.data.payload.company_uuid)
+                }
                 console.log('Token: ' + localStorage.getItem('token'))
                 console.log('Token expiry date: ' + localStorage.getItem('token-exp'))
                 if(res.data.payload.user_type == "company_admin"){

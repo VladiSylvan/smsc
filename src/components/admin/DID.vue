@@ -44,7 +44,13 @@
                   <td class="did-created-by"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.created_by }}</div></td>
                   <td class="did-country">{{ did.country_name }}</td>
                   <td class="did-type">{{ did.type }}</td>
-                  <td class="did-assigned"><div class="did-avatar"></div> <div class="did-name-fix">{{ did.vendor_name }}</div></td>
+                  <td class="did-assigned">
+                    <div class="user-avatar" v-if="did.is_assigned">
+                      {{getLogo(did.company_uuid)}}
+                      <img class="image-resize" :src="tempImgUrl">
+                    </div>
+                    <div class="did-name-fix" v-if="did.is_assigned">{{ did.company_name }}</div>
+                  </td>
                   <td class="did-option"><div class="did-control-info"><router-link :to="{ name: 'EditDID', params: { id: did.did_uuid }}"><img class="control-box" src="@/assets/Icon/Edit.svg"></router-link></div></td>
                   <td class="did-option"><div class="did-control-info"><img v-on:click="didDelete(did.did_uuid, did.number, index)" class="control-box" src="@/assets/Icon/Delete.svg"></div></td>
                 </tr>
@@ -76,6 +82,7 @@ export default {
           pageNumber: 0,
           dids: [],
           successMsg: '',
+          tempImgUrl: '',
           isModalVisible: false,
                 user:{
                 system: 'Overall system',
@@ -103,13 +110,11 @@ export default {
           if(r == true){
             var app = this
             this.axios.delete('did/' + value).then( res => {
-                // this.$router.push('/sys/did')
                 this.dids.splice(index, 1)
                 this.$route.params.successMsg = null
-                this.successMsg = 'OK'
+                this.successMsg = 'DID was successfully deleted!'
             }).catch( err => {
                 var app = this
-
                 app.errorMsg = err.response.data.error.message
                 app.error = true
                 console.log(err.response)
@@ -122,6 +127,7 @@ export default {
             this.axios.get('did/list?page=' + page),
           ]).then( this.axios.spread((res) => {
             app.dids = res.data.payload.items
+            console.log(app.dids)
             this.totalPages = Math.floor(res.data.payload.total / res.data.payload.per_page)
             if(this.totalPages == 0){
               document.getElementById('nextPage').setAttribute('disabled', 'disabled')
@@ -147,7 +153,15 @@ export default {
             document.getElementById('nextPage').removeAttribute('disabled')
           }
           this.getData(this.pageNumber)
-        }
+        },
+        getLogo(id){
+          this.axios.get('company/' + id).then(res => {
+            this.tempImgUrl = this.axios.defaults.baseURL + '/file/' + res.data.payload.contact.logo_file_uuid
+            return this.tempImgUrl
+          }).catch(err => {
+            console.log(err)
+          })
+        },
     },
 }
 </script>

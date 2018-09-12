@@ -42,6 +42,7 @@
                   <th class="company-pay-th">Prepay/Postpay</th>
                   <th class="company-contact-th">Contact Person</th>
                   <th class="company-resellers-th">Resellers</th>
+                  <th class="company-option-th">Status</th>
                   <th class="company-option-th"></th>
                   <th class="company-option-th"></th>
                   <th class="company-option-th"></th>
@@ -51,7 +52,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="companies-title" colspan="9"><div class="company-title-my">My Companies</div></td>
+                  <td class="companies-title" colspan="10"><div class="company-title-my">My Companies</div></td>
                 </tr>
                 <tr v-for="myCompany, index in myCompanies">
                   <td class="company-name"><div class="company-avatar"><img v-if="myCompany.contact.logo_file_uuid != null" class="image-resize" :src="getLogo(myCompany.contact.logo_file_uuid)"></div><div class="company-name-fix">{{ myCompany.company_name }}</div></td>
@@ -238,6 +239,7 @@ export default {
           }
           this.axios.patch('company/' + id, update).then(res => {
             this.getData()
+            this.successMsg = 'Company successfully activated!'
           }).catch(err => {
             console.log(err)
           })
@@ -248,6 +250,7 @@ export default {
           }
           this.axios.patch('company/' + id, update).then(res => {
             this.getData()
+            this.successMsg = 'Company successfully deactivated!'
           }).catch(err => {
             console.log(err)
           })
@@ -277,7 +280,7 @@ export default {
                 // this.$router.push('/sys/companies')
                 this.companies.splice(index, 1)
                 this.$route.params.successMsg = null
-                this.successMsg = 'OK'
+                this.successMsg = 'Company was successfully deleted!'
             }).catch( err => {
                 var app = this
 
@@ -290,7 +293,25 @@ export default {
         getLogo(value){
           var logo = "http://88.198.219.62/api_smsc/v1/file/" + value
           return logo
-        }
+        },
+        nextPage(){
+          this.pageNumber++;
+          document.getElementById('previousPage').removeAttribute('disabled')
+          if(this.pageNumber == this.totalPages){
+            document.getElementById('nextPage').setAttribute('disabled', 'disabled')
+          }
+          this.getData(this.pageNumber)
+        },
+        previousPage(){
+          this.pageNumber--
+          if(this.pageNumber == 0){
+            document.getElementById('previousPage').setAttribute('disabled', 'disabled')
+          }
+          if(this.pageNumber < this.totalPages){
+            document.getElementById('nextPage').removeAttribute('disabled')
+          }
+          this.getData(this.pageNumber)
+        },
     },
 }
 </script>
