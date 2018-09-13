@@ -36,12 +36,12 @@
               <input class="grid-camp-input" type="text" v-model="user.campaignName" placeholder="Enter campaign name">
             </div>
             <div class="camp-grid-2">
-              <div class="grid-title">
+              <!-- <div class="grid-title">
                 Type
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="Type" class="grid-camp-select" v-model="user.campType">
                 <option value="Long Code">Long Code</option>
-              </select>
+              </select> -->
             </div>
             <div class="camp-grid-4">
               <div class="grid-title">
@@ -118,13 +118,14 @@
               </div>
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="List" class="grid-camp-select" v-model="user.campList">
                 <option value="Select Recipient List">Select Recipient List</option>
+                <option v-for="recipient in recipients" :value="recipient.recipient_uuid">{{ recipient.recipient_name }}</option>
               </select>
             </div>
             <div class="camp-grid-4">
-              <div class="grid-title">
+              <!-- <div class="grid-title">
                 Groups/Routes:
               </div>
-              <input :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" class="grid-search" type="text" v-model="user.campGroupsRoutes" placeholder="Search groups">
+              <input :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Search.svg') + ')' }" class="grid-search" type="text" v-model="user.campGroupsRoutes" placeholder="Search groups"> -->
               <div class="camp-title-small">
                 Frequently used
               </div>
@@ -255,16 +256,16 @@
               <select :style="{ backgroundImage: 'url(' + require('@/assets/Icon/Arrow/Down.svg') + ')' }" name="DeliverySpeed" class="grid-camp-select" v-model="user.campDeliverySpeed">
                 <option value="60 msg/minute">60 msg/minute</option>
               </select>
-              <label class="small-checkbox-cont">
+              <!-- <label class="small-checkbox-cont">
                 <div class="camp-checkbox-text-small">
                   Areacode Matching Only
                 </div>
                 <input type="checkbox" checked="checked">
                 <span class="small-checkbox-mark"></span>
-              </label>
+              </label> -->
             </div>
           </div>
-          <div class="camp-second">
+          <!-- <div class="camp-second">
             <div class="camp-run-text">
               Verify wireless numbers additional cost
             </div>
@@ -281,7 +282,7 @@
               </div>
               <input class="grid-camp-input" type="text" v-model="user.campCallbackUrl" placeholder="Status URL">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -300,30 +301,41 @@ export default {
           popup: false,
           isModalVisible: false,
           vendors: true,
-                user:{
-                campType: 'Long Code',
-                campStartDate: 'DD MM YYYY',
-                campList: 'Select Recipient List',
-                campRunFrom: '8AM',
-                campRunUntill: '9PM',
-                campDeliverySpeed: '60 msg/minute',
-                campMessage: ''
-                }
+          user: {
+            campType: 'Long Code',
+            campStartDate: 'DD MM YYYY',
+            campList: 'Select Recipient List',
+            campRunFrom: '8AM',
+            campRunUntill: '9PM',
+            campDeliverySpeed: '60 msg/minute',
+            campMessage: ''
+          },
+          recipients: [],
         }
     },
     components:{
       modal,
       CompanyNavigationComponent,
     },
+    mounted(){
+      this.getRecipientsList()
+    },
     methods:{
         sendForm(){
             event.preventDefault()
         },
         showModal() {
-          this.isModalVisible = true;
+          this.isModalVisible = true
         },
         closeModal() {
-          this.isModalVisible = false;
+          this.isModalVisible = false
+        },
+        getRecipientsList(){
+          this.axios.get('recipient/list?per_page=1000').then(res => {
+            this.recipients = res.data.payload.items
+          }).catch(err => {
+            console.log(err)
+          })
         }
     },
 }
