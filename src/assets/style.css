@@ -221,6 +221,15 @@ table{
   line-height: 16px;
   text-align: left;
 }
+.sms-table tr{
+  background: #fff;
+  transition: all 0.3s;
+}
+.sms-table tr:hover{
+  background-color: #f0f1faa3;
+  transition: all 0.3s;
+  cursor: pointer;
+}
 .did-table{
   border: none;
   max-width: calc(100% - 10px);
@@ -5478,9 +5487,20 @@ button#call-cancel{
   display: inline-block;
 }
 .send-button{
-  height: 60px;
-  box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  height: 64px;
+  /* box-shadow: inset 0 -1px 0 0 #F0F1FA; */
+  transition: all 0.3s;
 }
+.send-button:hover{
+  background: #cacaca1f;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.send-button button{
+  background: transparent;
+  border: none;
+}
+
 .send-image{
   width: 30px;
   height: 30px;
@@ -5559,10 +5579,29 @@ button#call-cancel{
   height: 60px;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
+.chat-input input{
+    outline: none;
+}
+.chat .chat-input .recipients-dropdown{
+  background: #fff;
+  width: 345px;
+  padding-left: 15px;
+  position: absolute;
+}
+.chat .chat-input .recipients-dropdown table tr:hover{
+  background: #F0F1FA;
+  cursor: pointer;
+}
+.chat .chat-input .recipients-dropdown table .list{
+  border-bottom: solid 1px #F0F1FA;
+  padding-bottom: 5px;
+}
 .chat-messages{
   width: auto;
-  height: 828px;
+  height: calc(100vh - 250px);
+  overflow: scroll;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+  padding: 12px 0;
 }
 .chat-insert{
   height: 58px;
@@ -5602,6 +5641,9 @@ button#call-cancel{
   border-radius: 4px 0 0 0;
   background-color: #51A3F3;
   height: 60px;
+}
+.new-message:hover{
+  cursor: pointer;
 }
 .new-message-text{
   color: #FFFFFF;
@@ -5656,21 +5698,33 @@ button#call-cancel{
 .sms-avatar{
   width: 50px;
   height: 74px;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
   vertical-align: top;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
+}
+.message-zone .attachment-button{
+  float: left;
+  width: 10%;
+}
+.message-zone .tex-tarea{
+  float: left;
+  width: 80%;
+}
+.message-zone .send-button{
+  float: left;
+  width: 10%;
 }
 .sms-message{
   width: 182px;
   height: 74px;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
   vertical-align: top;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
 .sms-date{
   width: 60px;
   height: 74px;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
   vertical-align: top;
   box-shadow: inset 0 -1px 0 0 #F0F1FA;
 }
@@ -6243,7 +6297,8 @@ button#preview{
   display: inline-block;
   vertical-align: top;
   float: left;
-  height: calc(100vh - 170px);
+  /* height: calc(100vh - 170px); */
+  height: calc(100vh - 60px);
   overflow: auto;
   -ms-overflow-style: none;
 }
