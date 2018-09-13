@@ -26,17 +26,17 @@
           <div class="message">
             <table class="sms-table" cellspacing="0" cellpadding="0">
               <tbody>
-                <tr style="background: #fff!important; cursor: default">
+                <!-- <tr style="background: #fff!important; cursor: default">
                   <td style="padding: 15px">No recent messages</td>
-                </tr>
-                <!-- <tr>
+                </tr> -->
+                <tr v-for="recipient in history" @click="selectRecipient(recipient)">
                   <td class="sms-avatar"><div class="avatar"></div></td>
                   <td class="sms-message">
                     <div class="sms-table-name">
-                      Maud Stewart
+                      {{ recipient.recipient_name }}
                     </div>
                     <div class="sms-table-msg">
-                      What Makes A Hotel
+                      ...
                     </div>
                   </td>
                   <td class="sms-date">
@@ -45,7 +45,7 @@
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td class="sms-avatar-active"><div class="avatar"></div></td>
                   <td class="sms-message-active">
                     <div class="sms-table-name">
@@ -165,6 +165,9 @@ export default {
             recipient_uuid: '',
             text: ''
           },
+          history: [],
+          historySingle: [],
+          lastMessage: [],
           messages: [],
           allRecipients: [],
           isModalVisible: false,
@@ -207,6 +210,7 @@ export default {
           this.axios.post('sms/create', this.message).then(res => {
             this.getRecipientMessages(this.message.recipient_uuid)
             this.message.text = ''
+            // this.getChatHistory()
           }).catch(err => {
             console.log(err)
           })
@@ -236,7 +240,7 @@ export default {
         getAllRecipients(){
           this.axios.get('recipient/list?per_page=50000').then(res => {
             this.allRecipients = res.data.payload.items
-            // console.log(this.allRecipients)
+            this.getChatHistory()
           }).catch(err => {
             console.log(err)
           })
@@ -261,9 +265,34 @@ export default {
           }).catch(err => {
             console.log(err)
           })
+          this.messages.reverse()
         },
         getChatHistory(){
-          
+          this.history = []
+          this.allRecipients.forEach(item => {
+            this.axios.get('sms/list?recipient_uuid=' + item.recipient_uuid + '&order_by=sms_uuid').then(res => {
+              if(res.data.payload.items.length > 0){
+                // this.history.push(item.recipient_uuid)
+                this.getRecipient(item.recipient_uuid)
+              }
+            }).catch(err => {
+              console.log(err)
+            })
+          })
+        },
+        getRecipient(recipient){
+          this.axios.get('recipient/' + recipient).then(res => {
+            this.history.push(res.data.payload)
+          }).catch(err => {
+            console.log(err)
+          })
+        },
+        getLastMessage(recipient){
+          this.axios.get('sms/list?recipient_uuid=' + recipient).then(res => {
+            this.lastMessage = res.data.payload.items[0]
+          }).catch(err => {
+            console.log(err)
+          })
         }
     },
 }
